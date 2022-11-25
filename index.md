@@ -1,4 +1,4 @@
-## The C++ Guy
+## Eduardo Fernandes
 
 This is a place for sharing code and ideias.
 
@@ -12,9 +12,5 @@ int main()
     return 0;
 }
 ```
-Me on Medium : https://medium.com/@eduardofernande
+Me on Medium : https://medium.com/@dionisioedu
 
-Articles:
-* https://medium.com/@eduardofernande/hello-world-c-e98aadff3739
-* https://medium.com/@eduardofernande/n%C3%A3o-escreva-c%C3%B3digo-apenas-para-o-compilador-a540110f77b6
-* https://medium.com/@eduardofernande/sqlite-com-autentica%C3%A7%C3%A3o-sqlcipher-e03fb9b3499f
