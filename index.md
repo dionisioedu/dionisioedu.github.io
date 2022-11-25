@@ -15,8 +15,6 @@ int main()
     <li><a href="https://github.com/dionisioedu/Self-driving-car">Self-driving Car</a></li>
     <li><a href="https://github.com/dionisioedu/pythonpinggame">Python Ping Game</a></li>
     <li><a href="https://github.com/dionisioedu/wifi_relay">Wifi Relay</a></li>
-    <li><a href="https://github.com/dionisioedu/rest-api-go">Rest Api Go</a></li>
-    <li><a href="https://github.com/dionisioedu/eva-python-ia">Eva Python AI</a></li>
 </ul>
 
 
