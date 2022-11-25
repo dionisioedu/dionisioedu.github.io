@@ -1,9 +1,3 @@
-##Software Developer Portfolio
-
-### Eduardo Fernandes
-
-This is a place for sharing code and ideias.
-
 ```c++
 #include <iostream.h>
 
@@ -14,5 +8,8 @@ int main()
     return 0;
 }
 ```
-Me on Medium : https://medium.com/@dionisioedu
+<a href="https://medium.com/@dionisioedu">Me on Medium</a>
+
+Some cool repos:
+
 
