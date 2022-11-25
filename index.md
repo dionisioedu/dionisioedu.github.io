@@ -12,9 +12,10 @@ int main()
 
 <h3>Some cool repos:</h3>
 <ul>
-    <li><a href="https://github.com/dionisioedu/Self-driving-car">Self-driving Car</a></li>
-    <li><a href="https://github.com/dionisioedu/pythonpinggame">Python Ping Game</a></li>
-    <li><a href="https://github.com/dionisioedu/wifi_relay">Wifi Relay</a></li>
+    <li><a href="https://github.com/dionisioedu/Self-driving-car">Self-driving Car</a> <i>(JavaScript and Neural Networks)</i></li>
+    <li><a href="https://github.com/dionisioedu/pythonpinggame">Python Ping Game</a> <i>(Python and Pygame)</i></li>
+    <li><a href="https://github.com/dionisioedu/wifi_relay">Wifi Relay</a> <i>(C)</i></li>
+    <li><a href="https://github.com/dionisioedu/rest-api-go">Rest Api Go</a> <i>(Go)</i></li>
 </ul>
 
 
