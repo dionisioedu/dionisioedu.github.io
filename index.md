@@ -17,6 +17,8 @@ int main()
     <li><a href="https://github.com/dionisioedu/wifi_relay">Wifi Relay</a> <i>(C)</i></li>
     <li><a href="https://github.com/dionisioedu/rest-api-go">Rest Api Go</a> <i>(Go)</i></li>
     <li><a href="https://github.com/dionisioedu/eva-python-ia">Eva Python AI</a> <i>(Python and Psychoanalysis)</i></li>
+    <li><a href="https://github.com/dionisioedu/gtest_simple">GTest Simple Example</a> <i>(CMake)</i></li>
+    <li><a href="https://github.com/dionisioedu/RandomFox">Random Fox</a> <i>(Android with Kotlin)</i></li>
 </ul>
 
 
