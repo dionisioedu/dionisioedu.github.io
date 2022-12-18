@@ -22,6 +22,7 @@ I am kind of generalist, so I've worked with C# and Python for some years and mo
     <li><a href="https://github.com/dionisioedu/eva-python-ia">Eva Python AI</a> <i>(Python and Psychoanalysis)</i></li>
     <li><a href="https://github.com/dionisioedu/gtest_simple">GTest Simple Example</a> <i>(CMake)</i></li>
     <li><a href="https://github.com/dionisioedu/RandomFox">Random Fox</a> <i>(Android with Kotlin)</i></li>
+    <li><a href="https://github.com/dionisioedu/VisitorPattern">Visitor Pattern</a> <i>(C++)</i></li>
 </ul>
 
 
