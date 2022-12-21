@@ -6,10 +6,8 @@ int main(int argc, char* argv[])
     return 0;
 }
 ```
-I am a software developer that is writing code since 1995 when I won my first PC, an old 286 running a DOS 5.0 OS. I saved lots of files on floppy disks in that time.
-I've been working professionally since 2001, when I first got a job to maintain a Delphi software in a bank.
-In 2006 I got my first job to work with C and C++ and since then I've been focusing my career in this stack.
-I am kind of generalist, so I've worked with C# and Python for some years and more recently I worked with Android and Java too.
+I am a 41 years old software engineer with two kids born and raised in São Paulo, Brazil.
+My main stack is C/C++ and I'm also interested in Artificial Intelligence.
 
 <a href="https://medium.com/@dionisioedu">Me on Medium</a>
 
