@@ -9,6 +9,8 @@ int main(int argc, char* argv[])
 I am a 41 years old software engineer with two kids born and raised in São Paulo, Brazil.
 My main stack is C/C++ and I'm also interested in Artificial Intelligence.
 
+<a href="https://dionisioedu.github.io/ai-search-visualization/">AI Search Algorithms Visualization</a>
+
 <a href="https://medium.com/@dionisioedu">Me on Medium</a>
 
 <h3>Some cool repos:</h3>
