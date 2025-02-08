@@ -1,6 +1,20 @@
+title: Dionisio
+description: Software Developer Portfolio
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
 
-title: Eduardo Fernandes
-description: Software Developer Portfolio
+# Navegação principal
+nav:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Projetos
+    url: /projects/
+  - title: Ebooks
+    url: /ebooks/
+  - title: Mentoria
+    url: /mentoria/
+  - title: Newsletter
+    url: /newsletter/
