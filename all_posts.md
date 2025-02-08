@@ -4,7 +4,7 @@ title: Artigos e Notícias
 landing-title: 'All posts'
 nav-menu: true
 description: null
-image: null
+image: assets/images/news-1.webp
 author: null
 show_tile: true
 ---
