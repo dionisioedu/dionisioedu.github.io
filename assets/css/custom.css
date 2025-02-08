@@ -55,3 +55,15 @@ body {
     background-color: #fff;
   }
   
+/* Estado inicial dos elementos que serão revelados */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado final, quando o elemento se torna visível */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
