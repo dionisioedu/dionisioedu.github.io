@@ -3,9 +3,9 @@ layout: allposts
 title: Artigos e Notícias
 landing-title: 'All posts'
 nav-menu: true
-description: null
+description: Artigos e Notícias sobre tecnologia
 image: assets/images/news-1.webp
-author: null
+author: Dionisio
 show_tile: true
 ---
 
