@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sobre
+title: About
 ---
 
 # Sobre
