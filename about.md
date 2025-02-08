@@ -19,3 +19,5 @@ Aqui você encontrará:
 * **Histórias e inspiração:** Narrativas que unem técnica e emoção, mostrando como o conhecimento pode transformar vidas e impulsionar carreiras.
 
 Se você sente que está preparado ou se precisa de orientação e inspiração para dar o próximo passo na sua carreira, **esse lugar é para você!**
+
+<span class="image fit"><img src="{% link assets/images/welcome-1.webp %}" alt="" /></span>

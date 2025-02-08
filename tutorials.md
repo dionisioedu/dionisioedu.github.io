@@ -1,10 +1,10 @@
 ---
-title: Landing
+title: Tutoriais
 layout: landing
-description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
-image: assets/images/pic07.jpg
-nav-menu: false
-show_tile: false
+description: 'Dicas e passo-a-passo de como fazer na prática!'
+image: assets/images/tutorial-2.webp
+nav-menu: true
+show_tile: true
 ---
 
 <!-- Main -->
