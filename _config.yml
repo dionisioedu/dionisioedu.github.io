@@ -1,17 +1,17 @@
 # site settings
 title: Dionisio
-subtitle: by HTML5 UP
+subtitle: Software
 email: dionisiosoftware@gmail.com
-description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
+description: Alcance o próximo nível na sua carreira em tecnologia
 baseurl: "" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
-author:
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
+url: "https://dionisio.dev" # the base hostname & protocol for your site
+author: "Eduardo (Dionisio) Fernandes"
+street_address: 
+city:
+state:
+zip_code:
+country:
+phone: +55 11 996643485
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
@@ -22,14 +22,15 @@ tiles-count: 6
 # Icons are not shown if value is empty
 # You need to restart jekyll for changes to have an effect
 socials:
-  GitHub: https://github.com/andrewbanchich
+  GitHub: https://github.com/dionisioedu
   GitLab:
   Google-Plus: https://plus.google.com/u/0/+AndrewBanchich
   Instagram:
-  LinkedIn: https://www.linkedin.com/in/andrew-banchich-a4ba1195
-  Twitter: https://twitter.com/andrewbanchich
+  LinkedIn: https://www.linkedin.com/in/dionisiodev
+  Twitter: https://twitter.com/dionisiodev
   Facebook:
   Slack:
+  Youtube: https://www.youtube.com/@dionisiodev
 
 # build settings
 markdown: kramdown
