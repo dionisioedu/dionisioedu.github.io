@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: about
 title: Sobre
 description: Nossa proposta
 image: assets/images/desktop-1.webp

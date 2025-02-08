@@ -11,28 +11,36 @@
   <body>
 
     {% include header.html %} 
-    
-    
+
     <!-- Main -->
     <div id="main" class="alt">
-
       <!-- One -->
       <section id="one">
-	      <div class="inner">
+        <div class="inner">
           {% for post in site.posts %}
-          {% if post.title != 404 %}
-          <header class="major">
-            <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-          </header>
-          {% if post.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
-          {% if post.date %}<p>{{ post.date | date: "%d/%m/%Y" }}</p>{% endif %}
-          <p>{{ post.excerpt }}</p>
-          <p><a href="{{ post.url }}">Artigo completo...</a></p>
-          {% endif %}
+            {% if post.title != 404 %}
+              <div style="display: table; width: 100%; margin-bottom: 1em;">
+                <!-- Coluna esquerda: título e excerpt -->
+                <div style="display: table-cell; vertical-align: middle; width: 70%;">
+                  <h2 style="margin: 0;">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  </h2>
+                  <p style="margin: 0;">{{ post.excerpt }}</p>
+                  <a href="{{ post.url | relative_url }}" class="button">LER MAIS...</a>
+                </div>
+                <!-- Coluna direita: miniatura -->
+                <div style="display: table-cell; vertical-align: middle; width: 30%; padding: 3%;">
+                  {% if post.image %}
+                    <a href="{{ post.url | relative_url }}">
+                      <img src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       </section>
-
     </div>
 
     {% include footer.html %}
