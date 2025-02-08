@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Home
-landing-title: 'Programação | Inteligência Artificial | Carreira Tech'
+landing-title: 'Programação | IA | Carreira Tech'
 description: 'Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira'
 image: null
 author: Dionisio

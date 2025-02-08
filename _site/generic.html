@@ -7,13 +7,19 @@
 <html>
 
 <head>
-	<title>Generic | Forty</title>
+	<title>Generic | Dionisio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<!--[if lte IE 8]><script src="/forty-jekyll-theme/assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="/forty-jekyll-theme/assets/css/main.css" />
-	<!--[if lte IE 9]><link rel="stylesheet" href="/forty-jekyll-theme/assets/css/ie9.css" /><![endif]-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="/forty-jekyll-theme/assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+	<meta http-equiv="Content-Security-Policy" content="
+	default-src 'self';
+	style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+	font-src 'self' https://fonts.gstatic.com;
+	img-src 'self' data:;
+  	">
 </head>
 
 
@@ -24,7 +30,7 @@
 
 <!-- Header -->
 <header id="header">
-	<a href="http://localhost:4000/forty-jekyll-theme/" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
 	<nav>
 		<a href="#menu">Menu</a>
 	</nav>
@@ -43,7 +49,7 @@
 		    
 		
 		    
-		        <li><a href="http://localhost:4000/forty-jekyll-theme/">Home</a></li>
+		        <li><a href="http://localhost:4000//">Home</a></li>
 	    	
 		
 		    
@@ -54,26 +60,26 @@
 		    
 		
 		    
-		        <li><a href="http://localhost:4000/forty-jekyll-theme/all_posts.html">All posts</a></li>
+		        <li><a href="http://localhost:4000/all_posts.html">All posts</a></li>
 		    
 		
 		    
-		        <li><a href="http://localhost:4000/forty-jekyll-theme/elements.html">Elements</a></li>
+		        <li><a href="http://localhost:4000/elements.html">Elements</a></li>
 		    
 		
 		    
-		        <li><a href="http://localhost:4000/forty-jekyll-theme/generic.html">Generic</a></li>
+		        <li><a href="http://localhost:4000/generic.html">Generic</a></li>
 		    
 		
 		    
 		
 		    
-		        <li><a href="http://localhost:4000/forty-jekyll-theme/landing.html">Landing</a></li>
+		        <li><a href="http://localhost:4000/landing.html">Landing</a></li>
 		    
 		
 	</ul>
 	<ul class="actions vertical">
-		<li><a href="#" class="button special fit">Get Started</a></li>
+		<li><a href="#" class="button special fit">Início</a></li>
 		<li><a href="#" class="button fit">Log In</a></li>
 	</ul>
 </nav>
@@ -89,7 +95,7 @@
 		<header class="major">
 			<h1>Generic</h1>
 		</header>
-		<span class="image main"><img src="/forty-jekyll-theme/assets/images/pic11.jpg" alt="" /></span>
+		<span class="image main"><img src="/assets/images/pic11.jpg" alt="" /></span>
 		<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
@@ -105,9 +111,9 @@
 <section id="contact">
 	<div class="inner">
 		<section>
-			<form action="https://formspree.io/youremailaddress@gmail.com" method="POST">
+			<form action="https://formspree.io/dionisiosoftware@gmail.com" method="POST">
 				<div class="field half first">
-					<label for="name">Name</label>
+					<label for="name">Nome</label>
 					<input type="text" name="name" id="name" />
 				</div>
 				<div class="field half">
@@ -115,12 +121,12 @@
 					<input type="text" name="_replyto" id="email" />
 				</div>
 				<div class="field">
-					<label for="message">Message</label>
+					<label for="message">Mensagem</label>
 					<textarea name="message" id="message" rows="6"></textarea>
 				</div>
 				<ul class="actions">
-					<li><input type="submit" value="Send Message" class="special" /></li>
-					<li><input type="reset" value="Clear" /></li>
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
 				</ul>
 			</form>
 		</section>
@@ -129,39 +135,29 @@
 				<div class="contact-method">
 					<span class="icon alt fa-envelope"></span>
 					<h3>Email</h3>
-					<a href="mailto:youremailaddress@gmail.com">youremailaddress@gmail.com</a>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
 				</div>
 			</section>
 			<section>
 				<div class="contact-method">
 					<span class="icon alt fa-phone"></span>
-					<h3>Phone</h3>
-					<a href="tel:(716) 555-5555">(716) 555-5555</a>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
 				</div>
 			</section>
-			<section>
+			<!--section>
 				<div class="contact-method">
 					<span class="icon alt fa-home"></span>
 					<h3>Address</h3>
 					<span>
 					
-					    1234 Somewhere Road<br />
 					
 					
-					    Nashville,
 					
-					
-					    TN 
-					
-					
-					    55555<br />
-					
-					
-					    United States of America
 					
 					</span>
 				</div>
-			</section>
+			</section-->
 		</section>
 	</div>
 </section>
@@ -173,27 +169,15 @@
 				
 					
 						<li>
-							<a href="https://github.com/andrewbanchich" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
 								<span class="label">GitHub</span>
 							</a>
 						</li>
 					
 				
 					
-				
-					
 						<li>
-							<a href="https://plus.google.com/u/0/+AndrewBanchich" class="icon alt fa-google-plus" target="_blank" rel="noopener noreferrer" aria-label="Google-Plus">
-								<span class="label">Google-Plus</span>
-							</a>
-						</li>
-					
-				
-					
-				
-					
-						<li>
-							<a href="https://www.linkedin.com/in/andrew-banchich-a4ba1195" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
 								<span class="label">LinkedIn</span>
 							</a>
 						</li>
@@ -201,21 +185,25 @@
 				
 					
 						<li>
-							<a href="https://twitter.com/andrewbanchich" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
 								<span class="label">Twitter</span>
 							</a>
 						</li>
 					
 				
 					
-				
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
 					
 				
 			</ul>
 			<ul class="copyright">
-				<li>&copy; Forty by HTML5 UP</li>
-				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li>
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
 
 			</ul>
 		</div>
@@ -224,13 +212,13 @@
 </div>
 
 <!-- Scripts -->
-	<script src="http://localhost:4000/forty-jekyll-theme/assets/js/jquery.min.js"></script>
-	<script src="http://localhost:4000/forty-jekyll-theme/assets/js/jquery.scrolly.min.js"></script>
-	<script src="http://localhost:4000/forty-jekyll-theme/assets/js/jquery.scrollex.min.js"></script>
-	<script src="http://localhost:4000/forty-jekyll-theme/assets/js/skel.min.js"></script>
-	<script src="http://localhost:4000/forty-jekyll-theme/assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="http://localhost:4000/forty-jekyll-theme/assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="http://localhost:4000/forty-jekyll-theme/assets/js/main.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
 
 
 </body>
