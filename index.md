@@ -1,10 +1,10 @@
 ---
 layout: home
 title: Home
-landing-title: 'Hi, my name is Forty'
-description: null
+landing-title: 'Desenvolvimento de Software, Inteligência Artificial e Carreira Tech'
+description: 'Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira'
 image: null
-author: null
+author: Dionisio
 show_tile: false
 ---
 
