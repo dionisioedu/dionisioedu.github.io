@@ -7,5 +7,5 @@ image: null
 author: Dionisio
 show_tile: false
 ---
-
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.
+<strong>Você quer <i>aprender</i> ou <i>reaprender</i> os conceitos básicos da <b>programação</b> para detonar nas entrevistas de emprego ou até mesmo conseguir uma <i>promoção</i> no seu emprego atual?</strong><br>
+<p>Dá uma olhada em <b>tudo</b> o que você pode aprender aqui!</p>
