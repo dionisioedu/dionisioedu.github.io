@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Sobre | Dionisio</title>
+	<title>Hello World no C++ | Dionisio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -114,27 +114,52 @@
 <!-- One -->
 <section id="one">
 	<div class="inner">
+		<a href="/tutorials" class="button">Tutoriais</a>
 		<header class="major">
-			<h1>Sobre</h1>
+			<h1>Hello World no C++</h1>
 		</header>
-		<span class="image main"><img src="/assets/images/desktop-1.webp" alt="" /></span>
-		<p>Nesse espaço você vai encontrar <em>artigos técnicos</em>, <em>tutoriais</em> e <em>notícias</em> para aprimorar seus conhecimentos e manter você informado sobre tudo o que acontece no mundo da tecnologia e do desenvolvimento de software.</p>
+		
+		<p>Eu vou te mostrar algo <i>simples</i> e <i>fundamental</i> para todo <b>programador C/C++</b> que é a capacidade de compilar e rodar uma aplicação simples <mark>sem nenhuma dependência</mark> e sem a necessidade de IDEs ou ferramentas gráficas.</p>
 
-<p>Com mais de 20 anos de experiência no mundo da tecnologia, eu entendo sobre os desafios que você pode encontrar na sua carreira e quero compartilhar meus conhecimentos e insights para te ajudar a chegar aonde você quiser!</p>
+<div class="box">
+&#128073; Para realizar este tutorial estou usando <b>Linux</b>, e vamos fazer tudo no console, sem a necessidade de utilizar interfaces gráficas, assim, se você estiver acessando um servidor ou estiver em um sistema muito básico, vai conseguir escrever, compilar e rodar as suas aplicações sem problemas.
+</div>
+<p>Abra um terminal:</p>
+<div class="box">
+&#128073; <b>Windows:</b> Win + R, digite cmd ou powershell.<br />
+&#128073; <b>macOS:</b> Cmd + Espaço, digite Terminal.<br />
+&#128073; <b>Linux:</b> Ctrl + Alt + T (na maioria das distribuições).<br />
+</div>
+<p>Digite os seguintes comandos para <i>criar uma pasta</i>, entrar na pasta, e criar o seu <i>primeiro arquivo</i> de <b>código C++</b>.</p>
+<pre><code>~$ mkdir projeto
+~$ cd projeto
+~$ vi main.cpp
+</code></pre>
+<div class="box">
+<p><b>vi</b> é um editor de textos no console, nativo de praticamente todos os sistemas operacionais baseados em Linux. A usabilidade não é nada intuitiva, então, é bom também que você reserve algum tempo para aprender a trabalhar com essa ferramenta, que pode ser muito útil em diversas situações.</p>
+</div>
+<p>❗️ Para iniciar o modo de edição do vi você precisa digitar a tecla ‘<b>a</b>’.</p>
+<pre><code>#include "iostream"
+int main()
+{
+    std::cout &lt;&lt; "Hello World!" &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<p>❗️ Ao terminar a edição, digite a tecla ‘Esc’ para sair do modo de edição do <b>vi</b>.<br />
+💡 Para salvar e sair você deve digitar ‘<b>:qw</b>’ e confirmar com a tecla ‘<b>Enter</b>’ (q -&gt; quit, w -&gt; write).</p>
 
-<p>Acredito que compartilhar conhecimento e trocar ideias com outros profissionais seja a <em>forma mais eficiente</em> de crescer na carreira.</p>
+<p>De volta ao prompt de comando, já com nosso código pronto, vamos compilar nossa aplicação:</p>
+<pre><code>~$ g++ main.cpp</code></pre>
+<p>👉 Após a compilação um arquivo executável será criado com o nome <b>a.out</b> <i>(nome padrão, mas podemos informar o nome que quisermos)</i>.</p>
 
-<p>Aqui você encontrará:</p>
-
-<ul>
-  <li><strong>Artigos técnicos:</strong> Explicações detalhadas, exemplos práticos e casos reais que facilitam a compreensão dos principais desafios do desenvolvimento de software.<br /></li>
-  <li><strong>Dicas de carreira:</strong> Estratégias, insights e orientações para ajudar você a alcançar o próximo nível profissional.<br /></li>
-  <li><strong>Histórias e inspiração:</strong> Narrativas que unem técnica e emoção, mostrando como o conhecimento pode transformar vidas e impulsionar carreiras.</li>
-</ul>
-
-<p>Se você sente que está preparado ou se precisa de orientação e inspiração para dar o próximo passo na sua carreira, <strong>esse lugar é para você!</strong></p>
-
-<p><span class="image fit"><img src="/assets/images/welcome-1.webp" alt="" /></span></p>
+<p>Agora sua aplicação está pronta para ser executada! 🎉</p>
+<pre><code>~$ ./a.out
+Hello World!
+</code></pre>
+<p>Tudo isso foi <i>muito simples</i>, mas essas ferramentas que utilizamos são muito poderosas!</p>
+<p>Se você investir um tempo se aprofundando no uso do <b>vi</b> e do <b>gdb</b> vai ter um truque incrível na manga.</p>
+<p>Pensa que interessante você poder acessar qualquer terminal e em minutos ter um programa seu sendo executado, como um <strong>hacker</strong> em um <b>filme de ação</b>! &#128187;</p>
 
 	</div>
 </section>
