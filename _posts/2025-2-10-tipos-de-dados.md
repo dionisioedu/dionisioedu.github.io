@@ -53,6 +53,9 @@ Cada linguagem implementa sua maneira de fazer **casting**, e assim é possível
 Aqui listamos o espaço que cada **Tipo de Dados** ocupa na memória, e quais os valores que cada um deles pode armazenar. Esses nomes vieram do C, mas são bem parecidos para as linguagens que vieram depois. Contudo, algumas linguagens usam nomes diferentes para esses mesmos Tipos.
 
 ![Tipos de Dados](/assets/images/data-types-table.webp)
+<blockquote>
+O tipo int geralmente usa 32 bits para aproveitar a arquitetura do processador, otimizando o desempenho e mantendo compatibilidade histórica, mesmo em sistemas de 64 bits.
+</blockquote>
 
 ## Conclusão
 Bom, isso é o básico que você precisa saber sobre **Tipos de Dados** para ser capaz de entender o segundo conceito mais importante na programação que são as **Estruturas de Dados**.
