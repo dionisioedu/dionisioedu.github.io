@@ -4,6 +4,7 @@ title: Sobre
 description: Nossa proposta
 image: assets/images/desktop-1.webp
 nav-menu: true
+show_tile: false
 ---
 
 Nesse espaço você vai encontrar _artigos técnicos_, _tutoriais_ e _notícias_ para aprimorar seus conhecimentos e manter você informado sobre tudo o que acontece no mundo da tecnologia e do desenvolvimento de software.
