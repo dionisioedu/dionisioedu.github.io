@@ -41,17 +41,17 @@ show_tile: true
 		</div>
 	</section>
 	<section>
-		<a href="https://wheeloflist.com" class="image">
+		<a href="http://wheeloflist.com" class="image">
 			<img src="{% link assets/images/wheel-of-list.png %}" alt="" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3><a href="https://wheeloflist.com">Wheel Of List</a></h3>
+					<h3><a href="http://wheeloflist.com">Wheel Of List</a></h3>
 				</header>
 				<p>Um site simples de roleta de nomes. Serve para fazer sorteios, ele salva um placar com a lista dos nomes sorteados em ordem.</p>
 				<ul class="actions">
-					<li><a href="https://wheeloflist.com" class="button">VISITAR SITE</a></li>
+					<li><a href="http://wheeloflist.com" class="button">VISITAR SITE</a></li>
 				</ul>
 			</div>
 		</div>
