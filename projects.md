@@ -40,23 +40,23 @@ show_tile: true
 			</div>
 		</div>
 	</section>
-	<!--section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic09.jpg %}" alt="" data-position="top center" />
+	<section>
+		<a href="https://wheeloflist.com" class="image">
+			<img src="{% link assets/images/wheel-of-list.png %}" alt="" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Rhoncus magna</h3>
+					<h3><a href="https://wheeloflist.com">Wheel Of List</a></h3>
 				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+				<p>Um site simples de roleta de nomes. Serve para fazer sorteios, ele salva um placar com a lista dos nomes sorteados em ordem.</p>
 				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
+					<li><a href="https://wheeloflist.com" class="button">VISITAR SITE</a></li>
 				</ul>
 			</div>
 		</div>
 	</section>
-	<section>
+	<!--section>
 		<a href="generic.html" class="image">
 			<img src="{% link assets/images/pic10.jpg %}" alt="" data-position="25% 25%" />
 		</a>
