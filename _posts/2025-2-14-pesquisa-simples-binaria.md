@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pesquisa Simples vs. Pesquisa Binária: A Escolha que Pode Salvar seu Código
+title: Pesquisa Simples vs. Pesquisa Binária - A Escolha que Pode Salvar seu Código
 description: 
 author: Dionisio
 image: assets/images/bigo.jpg
