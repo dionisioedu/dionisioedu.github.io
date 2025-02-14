@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Tipos De Dados | Dionisio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+	<meta http-equiv="Content-Security-Policy" content="
+	default-src 'self';
+	style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+	font-src 'self' https://fonts.gstatic.com;
+	img-src 'self' data:;
+  	">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-7BZ62SG9QF');
+	</script>
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Início</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/about.html">Sobre</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">Artigos e Notícias</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/books.html">eBooks</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/projects.html">Projetos</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/trainning.html">Treinamento</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/tutorials.html">Tutoriais</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Início</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<a href="/all_posts" class="button">Voltar</a>
+		<header class="major">
+			<h1>Tipos De Dados</h1>
+		</header>
+		<span class="image main"><img src="/assets/images/bigo.jpg" alt="" /></span>
+		<h1 id="pesquisa-simples-vs-pesquisa-binária-a-escolha-que-pode-salvar-seu-código">Pesquisa Simples vs. Pesquisa Binária: A Escolha que Pode Salvar seu Código</h1>
+
+<p>Seu sistema parece rápido agora, mas e quando os dados crescerem? Muitas vezes, o problema não é o hardware, mas um detalhe que passa despercebido: o algoritmo de busca.</p>
+
+<p>Se você nunca ouviu falar sobre pesquisa binária antes, não se preocupe! Este conceito pode parecer técnico à primeira vista, mas é uma das otimizações mais simples e impactantes que você pode aplicar no seu código. Entender essa diferença pode transformar a forma como você encara a performance de um sistema.</p>
+
+<p>Se você já procurou um nome na lista telefônica, sabe que não começa da primeira página—vai direto ao meio, certo? Isso é busca binária, e pode ser a diferença entre uma aplicação fluida ou um desastre de performance.</p>
+
+<h2 id="a-armadilha-da-comodidade">A Armadilha da Comodidade</h2>
+
+<p>A pesquisa linear é fácil de implementar e parece suficiente para conjuntos pequenos. Ela simplesmente percorre a lista do começo ao fim até encontrar o que precisa:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pesquisa Linear
+</span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">valor</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">def</span> <span class="nf">busca_linear</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">valor</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">busca_linear</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">valor</span><span class="p">))</span>  <span class="c1"># True
+</span></code></pre></div></div>
+
+<p>Mas quando os dados crescem, ela se torna um gargalo. Agora imagine que sua lista tem milhões de elementos! Nesse caso, a busca binária é uma solução muito mais eficiente, pois reduz drasticamente o número de comparações:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pesquisa Binária
+</span><span class="kn">import</span> <span class="n">bisect</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">valor</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">.</span><span class="nf">bisect_left</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">indice</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> <span class="ow">and</span> <span class="n">lista</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span> <span class="o">==</span> <span class="n">valor</span><span class="p">)</span>  <span class="c1"># True
+</span></code></pre></div></div>
+
+<p>Em vez de percorrer a lista inteira, a pesquisa binária divide os dados pela metade a cada passo, reduzindo significativamente o tempo de busca.</p>
+
+<h2 id="o-impacto-real-pequeno-agora-gigantesco-depois">O Impacto Real: Pequeno Agora, Gigantesco Depois</h2>
+
+<p>Agora, vamos tornar isso mais tangível:</p>
+
+<ul>
+  <li><strong>Pesquisa Simples:</strong> Para <strong>1 milhão de registros</strong>, no pior caso, faz <strong>1.000.000 comparações</strong>.</li>
+  <li><strong>Pesquisa Binária:</strong> No pior caso, apenas <strong>20 comparações</strong>. Isso porque 2^20 ≈ 1 milhão.</li>
+</ul>
+
+<p>Esse número cresce exponencialmente para a pesquisa linear, enquanto a busca binária mantém a eficiência. Pequeno detalhe? Nem tanto!</p>
+
+<h2 id="mas-sempre-funcionou-assim">“Mas Sempre Funcionou Assim…”</h2>
+
+<p>Talvez você já tenha pensado: <em>“Funciona bem agora, então está tudo certo.”</em> Mas sistemas crescem. Hoje são 1.000 registros, amanhã 10 milhões. Pequenas otimizações hoje podem evitar grandes dores de cabeça amanhã.</p>
+
+<p>Imagine um e-commerce que busca produtos por nome. Se ele crescer e continuar usando busca linear, pode acabar travando sob alta demanda. Já a busca binária, quando possível, mantém tudo fluindo sem problemas.</p>
+
+<p>Outro exemplo prático: ao procurar um contato na agenda do seu celular, você não rola a lista inteira, certo? Você usa a barra de busca ou desliza rapidamente para uma letra específica. Essa otimização natural é equivalente ao que a busca binária faz nos bastidores.</p>
+
+<h2 id="conclusão-hora-de-abrir-os-olhos">Conclusão: Hora de Abrir os Olhos</h2>
+
+<p>A performance da sua aplicação depende de escolhas estratégicas. Implementar um algoritmo eficiente pode evitar retrabalho e garantir escalabilidade.</p>
+
+<p>Se você é iniciante, absorver conceitos como esse desde cedo pode te colocar um passo à frente. Agora que você entende a diferença, já pensou em revisar seu código para ver onde pode aplicar a pesquisa binária?</p>
+
+<p>Então, seu código está pronto para o futuro, ou você só está torcendo para que os dados nunca cresçam demais?</p>
+
+
+		<i style="margin: 0;">14/02/2025</i> - <i>Dionisio</i>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/xnnjzodw" method="POST">
+				<div class="field half first">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
+				</div>
+			</section>
+			<!--section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					
+					
+					
+					
+					</span>
+				</div>
+			</section-->
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
