@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Tipos De Dados
+title: Pesquisa Simples vs. Pesquisa Binária: A Escolha que Pode Salvar seu Código
 description: 
 author: Dionisio
 image: assets/images/bigo.jpg
 ---
-# Pesquisa Simples vs. Pesquisa Binária: A Escolha que Pode Salvar seu Código
-
 Seu sistema parece rápido agora, mas e quando os dados crescerem? Muitas vezes, o problema não é o hardware, mas um detalhe que passa despercebido: o algoritmo de busca. 
 
 Se você nunca ouviu falar sobre pesquisa binária antes, não se preocupe! Este conceito pode parecer técnico à primeira vista, mas é uma das otimizações mais simples e impactantes que você pode aplicar no seu código. Entender essa diferença pode transformar a forma como você encara a performance de um sistema.
