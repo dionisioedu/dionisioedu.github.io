@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Padrão de Projeto Command - O Segredo para Desacoplar Comandos e Tornar Seu Código Mais Flexível | Dionisio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+	<meta http-equiv="Content-Security-Policy" content="
+	default-src 'self';
+	style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+	font-src 'self' https://fonts.gstatic.com;
+	img-src 'self' data:;
+  	">
+	<meta name="google-adsense-account" content="ca-pub-6858130394830057">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-7BZ62SG9QF');
+	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057"
+	crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Início</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/about.html">Sobre</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">Artigos e Notícias</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/books.html">eBooks</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/projects.html">Projetos</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/trainning.html">Treinamento</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/tutorials.html">Tutoriais</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Início</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<a href="/all_posts" class="button">Voltar</a>
+		<header class="major">
+			<h1>Padrão de Projeto Command - O Segredo para Desacoplar Comandos e Tornar Seu Código Mais Flexível</h1>
+		</header>
+		<span class="image main"><img src="/assets/images/padrao-command.webp" alt="" /></span>
+		<p>Se você já precisou implementar um sistema onde diferentes operações precisavam ser executadas dinamicamente, com possibilidade de desfazer ações ou mesmo armazená-las para execução posterior, então você precisa conhecer o <strong>padrão de projeto Command</strong>.</p>
+
+<h2 id="o-que-é-o-padrão-command">O Que é o Padrão Command?</h2>
+
+<p>O Command é um padrão de projeto <strong>comportamental</strong> que encapsula uma solicitação como um objeto, permitindo que você parametrize clientes com operações, enfileire ou registre solicitações e implemente funcionalidades de desfazer (undo).</p>
+
+<p>A ideia central é separar <strong>quem solicita</strong> a execução de um comando de <strong>quem realmente o executa</strong>, promovendo <strong>baixo acoplamento</strong> e facilitando a expansão do sistema.</p>
+
+<h2 id="estrutura-do-padrão">Estrutura do Padrão</h2>
+
+<p>O Command segue uma estrutura bem definida:</p>
+
+<ul>
+  <li><strong>Command (interface ou classe abstrata):</strong> Define uma interface comum para todos os comandos.</li>
+  <li><strong>ConcreteCommand:</strong> Implementa a interface Command e encapsula a lógica da operação.</li>
+  <li><strong>Receiver:</strong> O objeto que realmente executa a lógica da operação.</li>
+  <li><strong>Invoker:</strong> Responsável por chamar os comandos, mantendo uma referência para eles.</li>
+  <li><strong>Client:</strong> Cria e configura os comandos, passando-os para o Invoker.</li>
+</ul>
+
+<h2 id="exemplo-prático-em-python">Exemplo Prático em Python</h2>
+
+<p>Imagine um sistema de controle remoto onde podemos ligar e desligar uma luz:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Interface Command
+</span><span class="k">class</span> <span class="nc">Command</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="c1"># Receiver
+</span><span class="k">class</span> <span class="nc">Luz</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">ligar</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Luz ligada</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">desligar</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Luz desligada</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Concrete Commands
+</span><span class="k">class</span> <span class="nc">LigarLuzCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">luz</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">luz</span> <span class="o">=</span> <span class="n">luz</span>
+    
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">luz</span><span class="p">.</span><span class="nf">ligar</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">luz</span><span class="p">.</span><span class="nf">desligar</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">DesligarLuzCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">luz</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">luz</span> <span class="o">=</span> <span class="n">luz</span>
+    
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">luz</span><span class="p">.</span><span class="nf">desligar</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">luz</span><span class="p">.</span><span class="nf">ligar</span><span class="p">()</span>
+
+<span class="c1"># Invoker
+</span><span class="k">class</span> <span class="nc">ControleRemoto</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">comando</span> <span class="o">=</span> <span class="bp">None</span>
+    
+    <span class="k">def</span> <span class="nf">set_comando</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">comando</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">comando</span> <span class="o">=</span> <span class="n">comando</span>
+    
+    <span class="k">def</span> <span class="nf">pressionar_botao</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">comando</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">pressionar_desfazer</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">comando</span><span class="p">.</span><span class="nf">undo</span><span class="p">()</span>
+
+<span class="c1"># Uso do padrão Command
+</span><span class="n">luz</span> <span class="o">=</span> <span class="nc">Luz</span><span class="p">()</span>
+<span class="n">ligar_luz</span> <span class="o">=</span> <span class="nc">LigarLuzCommand</span><span class="p">(</span><span class="n">luz</span><span class="p">)</span>
+<span class="n">desligar_luz</span> <span class="o">=</span> <span class="nc">DesligarLuzCommand</span><span class="p">(</span><span class="n">luz</span><span class="p">)</span>
+
+<span class="n">controle</span> <span class="o">=</span> <span class="nc">ControleRemoto</span><span class="p">()</span>
+<span class="n">controle</span><span class="p">.</span><span class="nf">set_comando</span><span class="p">(</span><span class="n">ligar_luz</span><span class="p">)</span>
+<span class="n">controle</span><span class="p">.</span><span class="nf">pressionar_botao</span><span class="p">()</span>  <span class="c1"># Saída: Luz ligada
+</span><span class="n">controle</span><span class="p">.</span><span class="nf">pressionar_desfazer</span><span class="p">()</span>  <span class="c1"># Saída: Luz desligada
+</span></code></pre></div></div>
+
+<h2 id="benefícios-do-padrão-command">Benefícios do Padrão Command</h2>
+
+<ol>
+  <li><strong>Desacoplamento</strong> – O cliente não precisa conhecer os detalhes de implementação do comando.</li>
+  <li><strong>Histórico de Comandos</strong> – Possibilidade de armazenar comandos para execução posterior.</li>
+  <li><strong>Undo/Redo</strong> – Implementação facilitada para desfazer e refazer comandos.</li>
+  <li><strong>Extensibilidade</strong> – Novos comandos podem ser adicionados sem modificar código existente.</li>
+</ol>
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p>O padrão Command é uma solução poderosa para desacoplar partes do sistema, trazendo mais flexibilidade, reutilização e facilidade de manutenção. Se você quer um código mais organizado e adaptável a mudanças, vale a pena investir nesse padrão!</p>
+
+<p>E você, já usou o Command em algum projeto? Compartilhe sua experiência!</p>
+
+
+		<i style="margin: 0;">14/02/2025</i> - <i>Dionisio</i>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/xnnjzodw" method="POST">
+				<div class="field half first">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
+				</div>
+			</section>
+			<!--section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					
+					
+					
+					
+					</span>
+				</div>
+			</section-->
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
