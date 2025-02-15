@@ -24,16 +24,17 @@ show_tile: true
 <section id="two" class="spotlights">
 	<section>
 		<a href="http://www.amorfy.com.br" class="image">
-			<img src="{% link assets/images/amorfy-logo.png %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/amorfy.png %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3><a href="http://www.amorfy.com.br">Amorfy - Teste de Afinidades do Casal</a></h3>
 				</header>
-				<p>Um webapp desenvolvido com Python (Django) no backend e Javascript (Vue.js) no front end.</p>
-				<p>O banco de dados utilizado é o PostgreSql.</p>
-				<p>O objetivo do site é realizar um teste de afinidades para o casal, para receber insights baseados na psicologia e com possibilidade de uma análise mais aprofundada utilizando <b>Inteligência Artificial</b>.</p>
+				<p><b>Amorfy</b> é um site interativo que utiliza conceitos de <b>psicologia</b> e <b>psicanálise</b> para ajudar
+				 você a compreender melhor sua vida amorosa. Através de um questionário dinâmico de 10 níveis,
+				 ele avalia sua personalidade, emoções e padrões de relacionamento, fornecendo um insight
+				 personalizado e místico no final.</p>
 				<ul class="actions">
 					<li><a href="http://www.amorfy.com.br" class="button">Visite o Site</a></li>
 				</ul>
