@@ -5,7 +5,6 @@ description:
 author: Dionisio
 image: assets/images/chatgpt-1.webp
 ---
-
 Você já se pegou imaginando como seria ter um entrevistador incansável, sempre pronto para fazer aquela pergunta cabeluda de OOP ou sobre integração de IA em sistemas embarcados? Pois é, enquanto ainda não inventaram o “Entrevistador 3000”, o ChatGPT pode ser seu parceiro ideal na preparação para entrevistas! Neste post, vou mostrar como usar essa ferramenta para simular entrevistas e te ajudar a dar o próximo passo na sua carreira em tecnologia (sem ser anti-ético).
 
 # Por Que Simular Entrevistas?
