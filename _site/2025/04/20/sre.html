@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>O Que é SRE? | Dionisio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+	<meta http-equiv="Content-Security-Policy" content="
+	default-src 'self';
+	style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+	font-src 'self' https://fonts.gstatic.com;
+	img-src 'self' data:;
+  	">
+	<meta name="google-adsense-account" content="ca-pub-6858130394830057">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-7BZ62SG9QF');
+	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057"
+	crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Início</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/about.html">Sobre</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">Artigos e Notícias</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/books.html">eBooks</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/projects.html">Projetos</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/trainning.html">Treinamento</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/tutorials.html">Tutoriais</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Início</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<a href="/all_posts" class="button">Voltar</a>
+		<header class="major">
+			<h1>O Que é SRE?</h1>
+		</header>
+		<span class="image main"><img src="/assets/images/sre.png" alt="" /></span>
+		<p>Se você é dev e nunca ouviu falar de <strong>Site Reliability Engineering</strong>, ou já ouviu mas acha que é só mais um termo da moda, chegou a hora de entender o que está por trás dessa sigla que virou um pilar das grandes empresas de tecnologia.</p>
+
+<p>Imagine isso:
+Você trabalha em uma fintech que lida com bilhões de reais por dia. Tudo parece bem… até que, de repente, a API de pagamentos cai. O time de Dev está dormindo, o de Ops está apagando incêndios às cegas, e o CEO está gritando no Slack.
+Quem entra em cena?</p>
+
+<p>O SRE.</p>
+
+<h2 id="o-que-é-sre">O que é SRE?</h2>
+
+<p><strong>Site Reliability Engineering</strong> (SRE) é uma disciplina de engenharia de software aplicada à <strong>infraestrutura e operações</strong>. <br />
+Criado pelo Google nos anos 2000, o objetivo do SRE é <strong>aumentar a confiabilidade de sistemas complexos</strong> usando <strong>automação, métricas, engenharia de software e pensamento sistêmico</strong>.</p>
+
+<p>SRE é a ponte entre <strong>desenvolvimento e operação</strong>. Mas não é “DevOps”. DevOps é a filosofia. SRE é a <strong>implementação prática</strong>.</p>
+
+<h2 id="por-que-sre-é-tão-importante">Por que SRE é tão importante?</h2>
+
+<p>Porque sistemas grandes falham. E falham de maneiras que você nem imagina.</p>
+
+<p>O SRE nasce da premissa de que <strong>falhas são inevitáveis</strong>, mas o caos não precisa ser. <br />
+Se o seu sistema é crítico, global, e está crescendo, você precisa tratar confiabilidade como uma feature.</p>
+
+<blockquote>
+  <p>“Hope is not a strategy.” – dita famosa no SRE handbook do Google.</p>
+</blockquote>
+
+<h2 id="os-fundamentos-de-sre">Os Fundamentos de SRE</h2>
+
+<p>Vamos direto aos conceitos que você precisa dominar:</p>
+
+<h3 id="1-sli-service-level-indicator">1. SLI (Service Level Indicator)</h3>
+<p>É uma <strong>métrica real</strong> que mede a performance de um serviço. <br />
+Exemplo: porcentagem de requisições HTTP 200 nos últimos 30 dias.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SLI = requests OK / total requests
+</code></pre></div></div>
+
+<h3 id="2-slo-service-level-objective">2. SLO (Service Level Objective)</h3>
+<p>É o <strong>alvo que você quer atingir</strong> com o SLI. <br />
+Exemplo: 99.9% das requisições devem ser bem-sucedidas.</p>
+
+<p>Isso define o que é “bom o suficiente”. E o que não for, vira dívida de confiabilidade.</p>
+
+<h3 id="3-sla-service-level-agreement">3. SLA (Service Level Agreement)</h3>
+<p>É o que você promete para o cliente, com possíveis penalidades. <br />
+<strong>SLA = contrato, SLO = objetivo interno, SLI = métrica real.</strong></p>
+
+<h3 id="4-error-budget">4. Error Budget</h3>
+<p>Essa é a parte mais linda do SRE. <br />
+Se seu SLO é 99.9%, então <strong>0.1% de falhas é aceitável</strong>. Esse 0.1% é seu orçamento de erro. <br />
+Você pode usá-lo para inovar, lançar features arriscadas, fazer deploys ousados. <br />
+<strong>Mas se o erro estoura o budget, os lançamentos são congelados.</strong> <br />
+Simples. Rígido. Justo.</p>
+
+<h2 id="as-práticas-do-sre">As Práticas do SRE</h2>
+<p>Aqui começa a engenharia de verdade. O SRE vive em três mundos ao mesmo tempo:</p>
+
+<h3 id="️-1-engenharia-de-software">🛠️ 1. Engenharia de Software</h3>
+<ul>
+  <li>Automatização de tarefas (scripts, bots, ferramentas)</li>
+  <li>Desenvolvimento de pipelines de CI/CD</li>
+  <li>Integração com observabilidade (Prometheus, Grafana, ELK)</li>
+  <li>Resiliência por design (circuit breakers, retries, backoff)</li>
+</ul>
+
+<h3 id="-2-gerenciamento-de-incidentes">🔥 2. Gerenciamento de Incidentes</h3>
+<ul>
+  <li>Detecção (alertas, logs, health checks)</li>
+  <li>Resposta rápida (playbooks, escalonamento)</li>
+  <li>Post-mortems sem culpados (blameless)</li>
+  <li>Correções com foco na causa raiz</li>
+</ul>
+
+<h3 id="-3-observabilidade">📊 3. Observabilidade</h3>
+<ul>
+  <li>Métricas: para saber “quanto”</li>
+  <li>Logs: para saber “o que”</li>
+  <li>Traces: para saber “onde”</li>
+  <li>Dashboards: para ver “como está agora”</li>
+</ul>
+
+<h2 id="exemplos-práticos-de-atuação-sre">Exemplos Práticos de Atuação SRE</h2>
+<h3 id="️-no-cloud">☁️ No Cloud</h3>
+<ul>
+  <li>Definir a arquitetura de alta disponibilidade</li>
+  <li>Monitorar instâncias com auto-scaling e failover</li>
+  <li>Otimizar custos via right-sizing e spot instances</li>
+</ul>
+
+<h3 id="-em-testes">🧪 Em Testes</h3>
+<ul>
+  <li>Testes de carga e estresse</li>
+  <li>Chaos Engineering (Netflix: Chaos Monkey)</li>
+  <li>Testes automatizados de rollback e deploys canary</li>
+</ul>
+
+<h3 id="-em-segurança">🔐 Em Segurança</h3>
+<ul>
+  <li>Monitorar tráfego anômalo</li>
+  <li>Automatizar regras de firewall</li>
+  <li>Implementar rate limits e circuit breakers</li>
+</ul>
+
+<h2 id="como-ser-um-bom-sre">Como ser um bom SRE?</h2>
+<p>Você precisa:</p>
+<ul>
+  <li><strong>Pensar como engenheiro e agir como bombeiro</strong></li>
+  <li><strong>Automatizar tudo que for manual</strong></li>
+  <li><strong>Ler logs como quem lê poesia</strong></li>
+  <li><strong>Não entrar em pânico (mesmo com o CEO no telefone)</strong> <br />
+E claro:
+    <blockquote>
+      <p>“Ser SRE é ser a última linha de defesa entre o caos e o sistema funcionando.”</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="ferramentas-comuns">Ferramentas Comuns</h2>
+<ul>
+  <li><strong>Prometheus + Grafana</strong> – métricas e dashboards</li>
+  <li><strong>ELK (Elasticsearch, Logstash, Kibana)</strong> – logs estruturados</li>
+  <li><strong>PagerDuty, OpsGenie</strong> – gerenciamento de incidentes</li>
+  <li><strong>Terraform, Ansible, Helm</strong> – IaC (Infrastructure as Code)</li>
+  <li><strong>Kubernetes</strong> – orquestração moderna (com seus próprios dragões)</li>
+  <li><strong>Sentry, Datadog, New Relic</strong> – APMs e monitoramento profundo</li>
+</ul>
+
+<h2 id="conclusão-sre-é-o-novo-devops">Conclusão: SRE é o novo DevOps?</h2>
+<p>Não. É a evolução. <br />
+DevOps uniu Dev e Ops com uma filosofia de colaboração. <br />
+<strong>SRE entrega isso na prática com engenharia, métrica e automação.</strong> <br />
+Se você está cansado de apagar incêndio sem saber a causa… <br />
+Se sua aplicação quebra e ninguém entende por quê… <br />
+Se você quer escalar sem perder noites de sono… \</p>
+<blockquote>
+  <p>Você precisa de um SRE. Ou virar um.</p>
+</blockquote>
+
+<p>Se curtiu esse artigo, compartilha. Se discordou, me chama pra conversar. E se quer aprender mais: cola aqui. Porque no fim das contas…</p>
+
+		<i style="margin: 0;">20/04/2025</i> - <i>Dionisio</i>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/xnnjzodw" method="POST">
+				<div class="field half first">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
+				</div>
+			</section>
+			<!--section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					
+					
+					
+					
+					</span>
+				</div>
+			</section-->
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
