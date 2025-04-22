@@ -29,7 +29,7 @@ show_tile: true
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3><a href="https://sportpulse.today">SportPulse – Plataforma de Agregação de Dados Esportivos em Tempo Real</a></h3>
+					<h3><a href="/projects/sportpulse">SportPulse – Plataforma de Agregação de Dados Esportivos em Tempo Real</a></h3>
 				</header>
 				<p><b>SportPulse</b> é uma aplicação de backend em C++ desenvolvida com foco em alta performance, modularidade e integração com serviços externos. O projeto centraliza, busca e expõe dados esportivos por meio de uma API REST moderna.</p>
 				<ul class="actions">
