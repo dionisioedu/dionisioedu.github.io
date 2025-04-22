@@ -23,6 +23,22 @@ show_tile: true
 <!-- Two -->
 <section id="two" class="spotlights">
 	<section>
+		<a href="https://sportpulse.today" class="image">
+			<img src="{% link assets/images/sportpulse.png %}" alt="" data-position="25% 25%" />
+		</a>
+		<div class="content">
+			<div class="inner">
+				<header class="major">
+					<h3><a href="https://sportpulse.today">SportPulse – Plataforma de Agregação de Dados Esportivos em Tempo Real</a></h3>
+				</header>
+				<p><b>SportPulse</b> é uma aplicação de backend em C++ desenvolvida com foco em alta performance, modularidade e integração com serviços externos. O projeto centraliza, busca e expõe dados esportivos por meio de uma API REST moderna.</p>
+				<ul class="actions">
+					<li><a href="/projects/sportpulse" class="button">VER MAIS</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section>
 		<a href="http://www.amorfy.com.br" class="image">
 			<img src="{% link assets/images/amorfy.png %}" alt="" data-position="center center" />
 		</a>
@@ -57,22 +73,6 @@ show_tile: true
 			</div>
 		</div>
 	</section>
-	<!--section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic10.jpg %}" alt="" data-position="25% 25%" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Sed nunc ligula</h3>
-				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section-->
 </section>
 
 <!-- Three -->

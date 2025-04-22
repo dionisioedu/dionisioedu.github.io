@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>404 | Dionisio</title>
+	<title>🏟️ SportPulse – Plataforma de Dados Esportivos em Tempo Real | Dionisio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -83,6 +83,8 @@
 		
 		    
 		
+		    
+		
 		
 		    
 		
@@ -137,14 +139,106 @@
 <!-- One -->
 <section id="one">
 	<div class="inner">
-		<a href="/all_posts" class="button">Voltar</a>
+		<a href="/projects" class="button">Projetos</a>
 		<header class="major">
-			<h1>404</h1>
+			<h1>🏟️ SportPulse – Plataforma de Dados Esportivos em Tempo Real</h1>
 		</header>
 		
-		<p>Page not found! :(</p>
+		<p><strong>SportPulse</strong> é uma aplicação de backend em C++ desenvolvida com foco em alta performance, modularidade e integração com serviços externos. O projeto centraliza, busca e expõe dados esportivos por meio de uma API REST moderna.</p>
 
-		<i style="margin: 0;"></i> - <i></i>
+<p><img src="/assets/images/sportpulse_diagram.png" alt="Diagram" /></p>
+
+<p><a href="https://sportpulse.today">Visitar Site</a></p>
+
+<h3 id="-tecnologias-e-arquitetura">🔧 Tecnologias e Arquitetura</h3>
+
+<ul>
+  <li><strong>Linguagem:</strong> C++ moderno (C++17)</li>
+  <li><strong>Frameworks:</strong>
+    <ul>
+      <li><a href="https://github.com/microsoft/cpprestsdk">CppRESTSDK</a> para criação do servidor REST</li>
+      <li><a href="https://github.com/nlohmann/json">nlohmann/json</a> para parsing de JSON</li>
+    </ul>
+  </li>
+  <li><strong>Design Modular:</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">LeagueService</code>, <code class="language-plaintext highlighter-rouge">SportService</code>, <code class="language-plaintext highlighter-rouge">CountryService</code>, <code class="language-plaintext highlighter-rouge">SearchService</code>, <code class="language-plaintext highlighter-rouge">LeagueForCountryService</code></li>
+    </ul>
+  </li>
+  <li><strong>API externa:</strong> Integração com <a href="https://www.thesportsdb.com/">TheSportsDB</a></li>
+  <li><strong>Interfaces de acesso:</strong>
+    <ul>
+      <li>API REST (<code class="language-plaintext highlighter-rouge">RestServer</code>)</li>
+      <li>Terminal interativo (<code class="language-plaintext highlighter-rouge">CLIInterface</code>)</li>
+    </ul>
+  </li>
+  <li><strong>Padrões adotados:</strong>
+    <ul>
+      <li>Inversão de dependência com <code class="language-plaintext highlighter-rouge">IApiClient</code></li>
+      <li>Logging centralizado</li>
+      <li>Separação clara entre modelos, serviços e interfaces</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="-funcionalidades">📦 Funcionalidades</h3>
+
+<ul>
+  <li>Listagem de:
+    <ul>
+      <li>Esportes</li>
+      <li>Ligas</li>
+      <li>Países</li>
+    </ul>
+  </li>
+  <li>Buscas por:
+    <ul>
+      <li><strong>Times</strong> (nome ou código)</li>
+      <li><strong>Jogadores</strong> (nome ou time)</li>
+      <li><strong>Eventos</strong> (nome, ano, ou filename)</li>
+      <li><strong>Locais/Venues</strong></li>
+    </ul>
+  </li>
+  <li>Agrupamento de ligas por país e esporte</li>
+  <li>Respostas formatadas em JSON via REST</li>
+</ul>
+
+<h3 id="-modelagem-de-dados">🧩 Modelagem de Dados</h3>
+
+<ul>
+  <li>Estruturas de dados modeladas a partir da API externa:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Sport</code>, <code class="language-plaintext highlighter-rouge">League</code>, <code class="language-plaintext highlighter-rouge">Country</code>, <code class="language-plaintext highlighter-rouge">Team</code>, <code class="language-plaintext highlighter-rouge">Player</code>, <code class="language-plaintext highlighter-rouge">Event</code>, <code class="language-plaintext highlighter-rouge">Venue</code>, <code class="language-plaintext highlighter-rouge">LeagueForCountry</code></li>
+    </ul>
+  </li>
+  <li>Mapeamento robusto de atributos, incluindo mídias, descrições multilíngues, relações entre entidades e metadados.</li>
+</ul>
+
+<h3 id="-casos-de-uso">📡 Casos de Uso</h3>
+
+<ul>
+  <li>Base para sistemas de <strong>placares ao vivo</strong></li>
+  <li>Backend para <strong>apps mobile</strong> esportivos</li>
+  <li>Geração de <strong>dashboards esportivos customizados</strong></li>
+  <li>Projetos com foco em <strong>recomendações e análise de dados esportivos</strong></li>
+</ul>
+
+<h3 id="-status">🌐 Status</h3>
+
+<p>Projeto em constante evolução, com arquitetura preparada para:</p>
+<ul>
+  <li>Escalabilidade horizontal</li>
+  <li>Cache de resultados</li>
+  <li>Suporte futuro a WebSockets para <strong>eventos em tempo real</strong></li>
+  <li>Autenticação e autorização</li>
+</ul>
+
+<hr />
+
+<p>Se quiser ver o código ou colaborar, entre em contato comigo pelo <a href="https://www.x.com/dionisiodev">X @dionisiodev</a> ou confira mais detalhes nos repositórios do projeto: <br />
+<a href="https://github.com/dionisioedu/SportPulse">SportPulse Backend</a> <br />
+<a href="https://github.com/dionisioedu/SportPulse-UI">SportPulse Frontend</a></p>
+
 	</div>
 </section>
 
