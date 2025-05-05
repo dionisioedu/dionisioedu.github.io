@@ -92,7 +92,12 @@ show_tile: false
       <p>Nosso microcurso foi desenvolvido com base nas tendências e melhores práticas do mercado global, oferecendo uma experiência completa e prática que vai além do conteúdo teórico. Ele foi pensado para atender tanto iniciantes quanto profissionais, preparando você para desafios reais e para se destacar em um mercado altamente competitivo.</p>
       </div>
       <strong>Se você está pronto para transformar sua base de conhecimento e dar um salto significativo na sua carreira, venha aprender conosco!</strong>
+      <br/>
+      <br/>
+
+      <p><i>Em breve! (Material em construção)</i></p>
     </div>
+
   </section>
 
 </div>

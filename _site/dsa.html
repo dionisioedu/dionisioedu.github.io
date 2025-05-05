@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Estruturas de Dados e Algoritmos | Dionisio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+	<meta http-equiv="Content-Security-Policy" content="
+	default-src 'self';
+	style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+	font-src 'self' https://fonts.gstatic.com;
+	img-src 'self' data:;
+  	">
+	<meta name="google-adsense-account" content="ca-pub-6858130394830057">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-7BZ62SG9QF');
+	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057"
+	crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <script type="text/javascript">document.body.classList.add("is-loading");</script>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Início</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/about.html">Sobre</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">Artigos e Notícias</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/books.html">eBooks</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/dsa.html">Estruturas de Dados e Algoritmos</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/projects.html">Projetos</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/trainning.html">Treinamento</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/tutorials.html">Tutoriais</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Início</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    <section id="banner" class="style2">
+        <div class="inner">
+            <span class="image">
+                <img src="/assets/images/dsa-1.png" alt="">
+            </span>
+            <header class="major">
+
+                <h1>Estruturas de Dados e Algoritmos</h1>
+
+            </header>
+            <div class="content">
+
+                Índice abrangente, com profundidade e exemplos, para dominar DSA do zero ao avançado.
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+
+        <!-- One -->
+        <section id="one">
+            <div class="inner">
+                <blockquote>
+  <p><strong>Por que guardar este link?</strong><br />
+Ele condensa anos de conteúdo espalhado em livros, blogs e fóruns em <strong>um índice vivo</strong>. Cada item será (ou já é) uma página dedicada com código, GIFs, benchmarks e desafios. Compartilhe no seu grupo — e volte sempre que precisar de referência rápida.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="sumário">Sumário</h1>
+<ol>
+  <li><a href="#panorama-geral">Panorama Geral</a></li>
+  <li><a href="#estruturas-de-dados">Estruturas de Dados — Visão Detalhada</a></li>
+  <li><a href="#algoritmos-essenciais">Algoritmos Essenciais — Visão Detalhada</a></li>
+  <li><a href="#mapas-mentais">Mapas Mentais &amp; Analogias</a></li>
+  <li><a href="#plano-12-semanas">Caminho de Aprendizado de 12 Semanas</a></li>
+  <li><a href="#padrões-de-entrevista">Padrões de Entrevista</a></li>
+  <li><a href="#cases">Estudos de Caso Reais</a></li>
+  <li><a href="#recursos">Ferramentas &amp; Bibliografia</a></li>
+  <li><a href="#faq">FAQ Rápido</a></li>
+</ol>
+
+<hr />
+
+<h2 id="1--panorama-geral"><a name="panorama-geral"></a>1 · Panorama Geral</h2>
+
+<p>O universo de DSA pode ser dividido em <strong>4 eixos</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Eixo</th>
+      <th>Pergunta que responde</th>
+      <th>Exemplo rápido</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Estrutura de Dados</strong></td>
+      <td><em>Como armazeno a informação?</em></td>
+      <td>Hash → chave→valor rápido</td>
+    </tr>
+    <tr>
+      <td><strong>Algoritmo</strong></td>
+      <td><em>Como transformo a informação?</em></td>
+      <td>Dijkstra → menor caminho</td>
+    </tr>
+    <tr>
+      <td><strong>Paradigma</strong></td>
+      <td><em>Qual estratégia geral?</em></td>
+      <td>Dividir &amp; Conquistar, DP</td>
+    </tr>
+    <tr>
+      <td><strong>Complexidade</strong></td>
+      <td><em>Quanto custa a operação?</em></td>
+      <td>ver <a href="/2025/05/05/bigo.html">Big O</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2--estruturas-de-dados--visão-detalhada"><a name="estruturas-de-dados"></a>2 · Estruturas de Dados — Visão Detalhada</h2>
+
+<h3 id="21-lineares-clássicas">2.1 Lineares Clássicas</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estrutura</th>
+      <th>Operações principais</th>
+      <th>Quando NÃO usar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">Array</a></strong></td>
+      <td>Acesso aleatório <strong>O(1)</strong></td>
+      <td>Inserir no meio frequentemente</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Vector/ArrayList</a></strong></td>
+      <td>Inserção amortizada <strong>O(1)</strong></td>
+      <td>Tamanho explode além da RAM</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Lista Ligada</a></strong></td>
+      <td>Inserção O(1) na cabeça</td>
+      <td>Precisa de busca aleatória</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="dica-prática">Dica prática</h4>
+<blockquote>
+  <p>Arrays aproveitam cache de CPU muito melhor que listas ligadas — para <strong>loops intensos</strong>, escolha array mesmo que inserções sejam um pouco mais caras.</p>
+</blockquote>
+
+<h3 id="22-estruturas-de-auxílio">2.2 Estruturas de Auxílio</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estrutura</th>
+      <th>Conceito</th>
+      <th>Uso moderno</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">Stack</a></strong></td>
+      <td>LIFO</td>
+      <td>Desfazer Ctrl+Z, parsing de expressões</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Queue</a></strong></td>
+      <td>FIFO</td>
+      <td>Fila de tarefas, BFS</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Deque</a></strong></td>
+      <td>Fila dupla</td>
+      <td>Algoritmo de janela máxima</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="23-árvores--derivados">2.3 Árvores &amp; Derivados</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estrutura</th>
+      <th>Altura</th>
+      <th>Vantagem distintiva</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">AVL</a></strong></td>
+      <td>balanceada</td>
+      <td>Rotinas de insert/delete determinísticas</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Red‑Black</a></strong></td>
+      <td>balanceada</td>
+      <td>Implementação simples na STL/Java</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">B‑Tree</a></strong></td>
+      <td>baixa (ordem m)</td>
+      <td>Índices de disco, bancos de dados</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Segment Tree</a></strong></td>
+      <td>log n</td>
+      <td>Range queries com updates</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Fenwick (BIT)</a></strong></td>
+      <td>log n</td>
+      <td>Implementação concisa de prefix sum</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="24-estruturas-de-grafos">2.4 Estruturas de Grafos</h3>
+
+<ul>
+  <li><strong>Adjacency List</strong> — memória <strong>O(V+E)</strong>, ideal para grafos esparsos.</li>
+  <li><strong>Adjacency Matrix</strong> — acesso <strong>O(1)</strong>, pesado em memória <strong>O(V²)</strong>.</li>
+</ul>
+
+<h3 id="25-estruturas-probabilísticas">2.5 Estruturas Probabilísticas</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estrutura</th>
+      <th>Tamanho</th>
+      <th>Falso positivo</th>
+      <th>Aplicação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">Bloom Filter</a></strong></td>
+      <td>muito pequeno</td>
+      <td>sim</td>
+      <td>Filtro de cache, anti‑spam</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Count‑Min Sketch</a></strong></td>
+      <td>pequeno</td>
+      <td>aproximação</td>
+      <td>Detector de trending topics</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3--algoritmos-essenciais--visão-detalhada"><a name="algoritmos-essenciais"></a>3 · Algoritmos Essenciais — Visão Detalhada</h2>
+
+<h3 id="31-ordenação-sorting">3.1 Ordenação (Sorting)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Algoritmo</th>
+      <th>Estável?</th>
+      <th>Pior caso</th>
+      <th>Espaço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">Merge</a></strong></td>
+      <td>Sim</td>
+      <td>O(n log n)</td>
+      <td>O(n)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Quick</a></strong></td>
+      <td>Não</td>
+      <td>O(n²)</td>
+      <td>O(log n)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Heap</a></strong></td>
+      <td>Não</td>
+      <td>O(n log n)</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Counting/Radix</a></strong></td>
+      <td>Sim</td>
+      <td>O(n+k)</td>
+      <td>O(n+k)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="32-pesquisa--seleção">3.2 Pesquisa &amp; Seleção</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Algoritmo</th>
+      <th>Caso de uso</th>
+      <th>Complexidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">Binary Search</a></strong></td>
+      <td>Procurar valor em array ordenado</td>
+      <td>O(log n)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">QuickSelect</a></strong></td>
+      <td>k‑ésimo menor</td>
+      <td>O(n) médio</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="33-grafos">3.3 Grafos</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Algoritmo</th>
+      <th>Tipo de grafo</th>
+      <th>Nota</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">BFS</a></strong></td>
+      <td>não ponderado</td>
+      <td>Caminho mínimo em níveis</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">DFS</a></strong></td>
+      <td>geral</td>
+      <td>Detectar ciclos, topologia</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Dijkstra</a></strong></td>
+      <td>pesos positivos</td>
+      <td>Fila de prioridade</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">A*</a></strong></td>
+      <td>heurístico</td>
+      <td>Jogos 2D/3D</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Kruskal</a></strong></td>
+      <td>MST</td>
+      <td>Union‑Find</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="34-programação-dinâmica">3.4 Programação Dinâmica</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Problema</th>
+      <th>Abordagem</th>
+      <th>Complexidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">Knapsack</a></strong></td>
+      <td>Tabela DP</td>
+      <td>O(n W) espaço otimizado p/ O(W)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Longest Common Subsequence</a></strong></td>
+      <td>Matriz DP</td>
+      <td>O(n m)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Edit Distance</a></strong></td>
+      <td>DP</td>
+      <td>O(n m)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="35-strings">3.5 Strings</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Algoritmo</th>
+      <th>O quê faz</th>
+      <th>Complexidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="#">KMP</a></strong></td>
+      <td>Busca substring</td>
+      <td>O(n+m)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Trie</a></strong></td>
+      <td>Busca prefixo</td>
+      <td>O(L)</td>
+    </tr>
+    <tr>
+      <td><strong><a href="#">Suffix Array + LCP</a></strong></td>
+      <td>Múltiplas consultas</td>
+      <td>O(n log n) build</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="4--mapas-mentais--analogias"><a name="mapas-mentais"></a>4 · Mapas Mentais &amp; Analogias</h2>
+
+<ul>
+  <li>Array = <strong>prédios numerados</strong> em rua reta.</li>
+  <li>Lista ligada = <strong>caça‑tesouro</strong>: cada pista aponta para próxima.</li>
+  <li>Árvore = <strong>pastas do computador</strong>.</li>
+  <li>Heap = <strong>fila VIP</strong> onde o menor ou maior sai primeiro.</li>
+  <li>Trie = <strong>dicionário por prefixo</strong>: cor‑, cora‑, coração.</li>
+</ul>
+
+<p>Experimente desenhar essas analogias para fixar!</p>
+
+<h2 id="5--caminho-de-aprendizado-12semanas"><a name="plano-12-semanas"></a>5 · Caminho de Aprendizado (12 Semanas)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Semana</th>
+      <th>Tema</th>
+      <th>Entregável</th>
+      <th>Problema “Boss”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1‑2</td>
+      <td>Arrays &amp; Hashes</td>
+      <td>CRUD simples</td>
+      <td>“Two Sum”</td>
+    </tr>
+    <tr>
+      <td>3‑4</td>
+      <td>Stack, Queue, Deque</td>
+      <td>LRU Cache</td>
+      <td>“Sliding Window Max”</td>
+    </tr>
+    <tr>
+      <td>5‑6</td>
+      <td>Árvores BST &amp; Heap</td>
+      <td>Priority Queue</td>
+      <td>“Kth Largest in Stream”</td>
+    </tr>
+    <tr>
+      <td>7‑8</td>
+      <td>Grafos</td>
+      <td>BFS/DFS</td>
+      <td>“Course Schedule”</td>
+    </tr>
+    <tr>
+      <td>9‑10</td>
+      <td>DP</td>
+      <td>Tabulação vs memo</td>
+      <td>“Word Break”</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Strings</td>
+      <td>KMP, Trie</td>
+      <td>“Implement Trie”</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Revisão &amp; Contest</td>
+      <td>Codeforces Div 4</td>
+      <td>2 h simuladas</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="6--padrões-de-entrevista"><a name="padrões-de-entrevista"></a>6 · Padrões de Entrevista</h2>
+
+<ol>
+  <li><strong>Two Pointers</strong> — remoção duplicados, reverso string.</li>
+  <li><strong>Sliding Window</strong> — substring sem repetir caracteres.</li>
+  <li><strong>Fast &amp; Slow Pointers</strong> — detectar ciclo em lista.</li>
+  <li><strong>Merge Intervals</strong> — calendários, reservas.</li>
+  <li><strong>Top K</strong> — heap ou QuickSelect.</li>
+</ol>
+
+<blockquote>
+  <p>Resolva <strong>2 problemas de cada padrão</strong> para internalizar.</p>
+</blockquote>
+
+<h2 id="7--estudos-de-caso-reais"><a name="cases"></a>7 · Estudos de Caso Reais</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Empresa</th>
+      <th>Desafio</th>
+      <th>Solução DSA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Netflix</td>
+      <td>Recomendação em escala</td>
+      <td>Trie + grafos de similaridade</td>
+    </tr>
+    <tr>
+      <td>Uber</td>
+      <td>Matching motorista‑passageiro</td>
+      <td>Heap + Dijkstra em mapa</td>
+    </tr>
+    <tr>
+      <td>Google Maps</td>
+      <td>Rotas em tempo real</td>
+      <td>A* + heurística Haversine</td>
+    </tr>
+    <tr>
+      <td>Instagram</td>
+      <td>Feed ordenado</td>
+      <td>Merge múltiplas filas de prioridade</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="8--ferramentas--bibliografia"><a name="recursos"></a>8 · Ferramentas &amp; Bibliografia</h2>
+
+<ul>
+  <li><strong>VisuAlgo</strong> — animações interativas.</li>
+  <li><strong>AlgoExpert / NeetCode</strong> — playlists focadas.</li>
+  <li><strong>Livros</strong>: <em>CLRS</em>, <em>Grokking Algorithms</em>, <em>Algorithm Design Manual</em>.</li>
+  <li><strong>Perf Tools</strong>: <code class="language-plaintext highlighter-rouge">hyperfine</code> (benchmarks), <code class="language-plaintext highlighter-rouge">perf</code>, <code class="language-plaintext highlighter-rouge">gprof</code>.</li>
+</ul>
+
+<h2 id="9--faq-rápido"><a name="faq"></a>9 · FAQ Rápido</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pergunta</th>
+      <th>Resposta curta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Preciso decorar todos os algoritmos?</td>
+      <td>Não, aprenda <strong>padrões</strong>.</td>
+    </tr>
+    <tr>
+      <td>Qual linguagem usar em entrevistas?</td>
+      <td>A que você digita sem pensar — Python é aceito na maioria.</td>
+    </tr>
+    <tr>
+      <td>Quanto tempo para dominar DSA?</td>
+      <td>Com 1 h/dia, 3‑6 meses para ficar confortável.</td>
+    </tr>
+    <tr>
+      <td>Big‑O é tudo?</td>
+      <td>Importante, mas <strong>cache, paralelismo, I/O</strong> também contam em produção.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="compartilhe">Compartilhe!</h3>
+
+<p>Se achou útil, envie para colegas. Cada clique ajuda a comunidade a crescer 📚🚀</p>
+
+            </div>
+        </section>
+    
+    </div>
+    
+    
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/xnnjzodw" method="POST">
+				<div class="field half first">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
+				</div>
+			</section>
+			<!--section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					
+					
+					
+					
+					</span>
+				</div>
+			</section-->
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@ layout: landing
 description: 'Dicas e passo-a-passo de como fazer na prática!'
 image: assets/images/tutorial-2.webp
 nav-menu: true
-show_tile: true
+show_tile: false
 ---
 
 <!-- Main -->
