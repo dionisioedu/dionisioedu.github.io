@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Principais Bibliotecas do Python — guia completo | Dionisio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Content‑Security‑Policy -->
+  <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src
+          'self'
+          https://www.googletagmanager.com
+          https://pagead2.googlesyndication.com
+          https://fundingchoicesmessages.google.com
+          https://ep1.adtrafficquality.google
+          https://ep2.adtrafficquality.google
+          'sha256-2hhfvpGg/vP7kTYDS7XGua28XNgpVp20L8IkYrVpE5Y=';
+        frame-src
+          'self'
+          https://googleads.g.doubleclick.net
+          https://fundingchoicesmessages.google.com
+          https://ep2.adtrafficquality.google
+          https://www.google.com
+          https://pagead2.googlesyndication.com;
+        fenced-frame-src
+          'self'
+          about:
+          https://googleads.g.doubleclick.net
+          https://fundingchoicesmessages.google.com
+          https://ep2.adtrafficquality.google
+          https://www.google.com
+          https://pagead2.googlesyndication.com;
+        connect-src
+          'self'
+          https://www.googletagmanager.com
+          https://pagead2.googlesyndication.com
+          https://ep1.adtrafficquality.google
+          https://ep2.adtrafficquality.google
+          https://www.google-analytics.com
+          https://fundingchoicesmessages.google.com;
+        style-src
+          'self'
+          'unsafe-inline'
+          https://fonts.googleapis.com;
+        font-src
+          'self'
+          https://fonts.gstatic.com;
+        img-src
+          'self'
+          https://pagead2.googlesyndication.com
+          https://ep1.adtrafficquality.google
+          https://www.google-analytics.com
+          data:;
+      ">
+
+  <!-- Google AdSense verification -->
+  <meta name="google-adsense-account" content="ca-pub-6858130394830057">
+
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-7BZ62SG9QF');</script>
+
+  <!-- Google AdSense -->
+  <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057"
+          crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Início</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/about.html">Sobre</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">Artigos e Notícias</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/books.html">eBooks</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/dsa.html">Estruturas de Dados e Algoritmos</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/projects.html">Projetos</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/trainning.html">Treinamento</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/tutorials.html">Tutoriais</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Início</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<a href="/all_posts" class="button">Voltar</a>
+		<header class="major">
+			<h1>Principais Bibliotecas do Python — guia completo</h1>
+		</header>
+		<span class="image main"><img src="/assets/images/python-libs.png" alt="" /></span>
+		<p>Python conquistou seu espaço em praticamente todas as áreas da computação — de jogos indie a pesquisas de ponta em inteligência artificial. O segredo? Um ecossistema de bibliotecas vibrante, mantido por comunidades apaixonadas e grandes empresas. Neste guia reunimos <strong>35 bibliotecas essenciais</strong>, com descrições curtas, curiosidades de bastidores, projetos que já as utilizam e um <em>hello‑world</em> mínimo para você experimentar agora mesmo.</p>
+
+<blockquote>
+  <p><strong>🚀 Como usar</strong></p>
+  <ol>
+    <li>Instale cada lib com <code class="language-plaintext highlighter-rouge">pip install &lt;pacote&gt;</code> (ou consulte a doc oficial).</li>
+    <li>Rode o snippet para sentir o sabor.</li>
+    <li>Explore além!</li>
+  </ol>
+</blockquote>
+
+<h2 id="índice">Índice</h2>
+
+<ul>
+  <li><a href="#pygame">Pygame</a></li>
+  <li><a href="#tensorflow">TensorFlow</a></li>
+  <li><a href="#pytorch">PyTorch</a></li>
+  <li><a href="#tkinter">Tkinter</a></li>
+  <li><a href="#opencv">OpenCV</a></li>
+  <li><a href="#numpy">NumPy</a></li>
+  <li><a href="#kivy">Kivy</a></li>
+  <li><a href="#beautiful-soup">Beautiful Soup</a></li>
+  <li><a href="#mechanical-soup">Mechanical Soup</a></li>
+  <li><a href="#selenium">Selenium</a></li>
+  <li><a href="#scrapy">Scrapy</a></li>
+  <li><a href="#sqlite">SQLite (sqlite3)</a></li>
+  <li><a href="#pillow">Pillow</a></li>
+  <li><a href="#matplotlib">Matplotlib</a></li>
+  <li><a href="#sympy">SymPy</a></li>
+  <li><a href="#scipy">SciPy</a></li>
+  <li><a href="#scikit-learn">Scikit‑Learn</a></li>
+  <li><a href="#pybrain">PyBrain</a></li>
+  <li><a href="#theano">Theano</a></li>
+  <li><a href="#nltk">Natural Language Toolkit</a></li>
+  <li><a href="#pickle">Pickle</a></li>
+  <li><a href="#pyglet">Pyglet</a></li>
+  <li><a href="#vpython">VPython</a></li>
+  <li><a href="#turtle">Turtle</a></li>
+  <li><a href="#rpy2">RPy2</a></li>
+  <li><a href="#spacy">spaCy</a></li>
+  <li><a href="#bokeh">Bokeh</a></li>
+  <li><a href="#plotly">Plotly</a></li>
+  <li><a href="#sqlalchemy">SQLAlchemy</a></li>
+  <li><a href="#fastapi">FastAPI</a></li>
+  <li><a href="#django">Django</a></li>
+  <li><a href="#flask">Flask</a></li>
+  <li><a href="#pywin32">PyWin32</a></li>
+  <li><a href="#py2exe">py2exe</a></li>
+  <li><a href="#pyqt">PyQt</a></li>
+</ul>
+
+<h2 id="pygame-">Pygame <a name="pygame"></a></h2>
+
+<p><strong>Descrição:</strong> Motor de jogos 2D construído sobre SDL. Ótimo para prototipar games, simulações e ensino de programação.<br />
+<strong>Curiosidade:</strong> Começou em 2000; usado em milhares de game‑jams e cursos mundo afora.<br />
+<strong>Projetos notáveis:</strong><br />
+• <em>Frets On Fire</em> (jogo estilo Guitar Hero)
+• <em>Super Potato Bruh</em> (vencedor Ludum Dare)
+• IDEs educacionais como <em>CodeSkulptor</em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pygame</span><span class="p">,</span> <span class="n">sys</span>
+<span class="n">pygame</span><span class="p">.</span><span class="nf">init</span><span class="p">()</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="nf">set_mode</span><span class="p">((</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">))</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">pygame</span><span class="p">.</span><span class="n">event</span><span class="p">.</span><span class="nf">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">e</span><span class="p">.</span><span class="nb">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="p">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">pygame</span><span class="p">.</span><span class="nf">quit</span><span class="p">();</span> <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">()</span>
+    <span class="n">screen</span><span class="p">.</span><span class="nf">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">pygame</span><span class="p">.</span><span class="n">draw</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="nf">flip</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="tensorflow-">TensorFlow <a name="tensorflow"></a></h2>
+
+<p><strong>Descrição:</strong> Framework de Machine Learning da Google com execução distribuída e aceleração por GPU/TPU. Inclui API de alto nível (Keras).<br />
+<strong>Curiosidade:</strong> Foi anunciado no Google I/O 2015 como sucessor open‑source do DistBelief.<br />
+<strong>Projetos notáveis:</strong><br />
+• Google Photos (reconhecimento de imagem)
+• Airbnb, Twitter, Lyft — modelos de previsão e classificação
+• CERN — análise de colisões de partículas</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="nf">constant</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="nf">constant</span><span class="p">([[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="pytorch-">PyTorch <a name="pytorch"></a></h2>
+
+<p><strong>Descrição:</strong> Framework de Deep Learning focado em dinamismo (define‑by‑run) e usabilidade Pythonic, mantido pela Meta AI.<br />
+<strong>Curiosidade:</strong> Migrado para Linux Foundation sob a PyTorch Foundation em 2022.<br />
+<strong>Projetos notáveis:</strong><br />
+• OpenAI GPT‑2/3 (fase de pesquisa)
+• Tesla Autopilot NN
+• HuggingFace Transformers</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">y</span><span class="p">.</span><span class="nf">mean</span><span class="p">().</span><span class="nf">backward</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">grad</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="tkinter-">Tkinter <a name="tkinter"></a></h2>
+
+<p><strong>Descrição:</strong> Toolkit GUI padrão que acompanha o CPython, baseado no Tcl/Tk.<br />
+<strong>Curiosidade:</strong> O editor IDLE, que vem com Python, é inteiro escrito em Tkinter.<br />
+<strong>Projetos notáveis:</strong><br />
+• Ferramentas internas da NASA
+• Softwares de laboratório acadêmico que precisam de GUI rápida</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">tkinter</span> <span class="k">as</span> <span class="n">tk</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">Tk</span><span class="p">()</span>
+<span class="n">tk</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Olá, mundo!</span><span class="sh">"</span><span class="p">).</span><span class="nf">pack</span><span class="p">()</span>
+<span class="n">root</span><span class="p">.</span><span class="nf">mainloop</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="opencv-">OpenCV <a name="opencv"></a></h2>
+
+<p><strong>Descrição:</strong> Biblioteca de visão computacional com mais de 2500 algoritmos clássicos e suporte a CUDA/ONNX.<br />
+<strong>Curiosidade:</strong> Criada pela Intel em 1999; hoje mantida pela OpenCV.org.<br />
+<strong>Projetos notáveis:</strong><br />
+• Sistemas ADAS de montadoras (e.g. Toyota)
+• Aplicativos de AR no Snapchat
+• Controle de qualidade de fábricas (BMW, Siemens)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">"</span><span class="s">foto.jpg</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imwrite</span><span class="p">(</span><span class="sh">"</span><span class="s">cinza.jpg</span><span class="sh">"</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="numpy-">NumPy <a name="numpy"></a></h2>
+
+<p><strong>Descrição:</strong> Base de arrays N‑dimensionais, álgebra linear e broadcasting — pilar do stack científico Python.<br />
+<strong>Curiosidade:</strong> Nasceu como Numeric (1995), evoluiu para Numarray e fundiu‑se em NumPy 1.0 (2006).<br />
+<strong>Projetos notáveis:</strong><br />
+• NASA e JPL — trajetórias espaciais
+• Spotify — análises de recommender
+• Quase TODO notebook científico no Kaggle</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="nf">inv</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<h2 id="kivy-">Kivy <a name="kivy"></a></h2>
+
+<p><strong>Descrição:</strong> Framework multitouch para apps desktop e mobile, usando OpenGL ES 2.<br />
+<strong>Curiosidade:</strong> Suporta Raspberry Pi e foi usado em quiosques de museus interativos.<br />
+<strong>Projetos notáveis:</strong><br />
+• <em>Kivy Launcher</em> (Play Store)
+• Interface do robô <em>Project J.A.R.V.I.S</em> na Maker Faire
+• Apps educacionais em OLPC</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="kn">from</span> <span class="n">kivy.uix.label</span> <span class="kn">import</span> <span class="n">Label</span>
+
+<span class="k">class</span> <span class="nc">Hello</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nc">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Touch me 👆</span><span class="sh">"</span><span class="p">)</span>
+<span class="nc">Hello</span><span class="p">().</span><span class="nf">run</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="beautiful-soup-">Beautiful Soup <a name="beautiful-soup"></a></h2>
+
+<p><strong>Descrição:</strong> Parser HTML/XML resiliente a tags quebradas; converte o DOM em objetos navegáveis.<br />
+<strong>Curiosidade:</strong> Autor Leonard Richardson escolheu o nome em homenagem ao poema de <em>Alice no País das Maravilhas</em>.<br />
+<strong>Projetos notáveis:</strong><br />
+• Wikicode parser do ArchiveTeam
+• Extratores de dados do IMDb e jornais on‑line</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="n">html</span> <span class="o">=</span> <span class="sh">"</span><span class="s">&lt;h1&gt;Título&lt;/h1&gt;</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="sh">"</span><span class="s">html.parser</span><span class="sh">"</span><span class="p">).</span><span class="n">h1</span><span class="p">.</span><span class="n">string</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="mechanical-soup-">Mechanical Soup <a name="mechanical-soup"></a></h2>
+
+<p><strong>Descrição:</strong> Combina <code class="language-plaintext highlighter-rouge">requests</code> + Beautiful Soup para automatizar formulários sem abrir navegador.<br />
+<strong>Curiosidade:</strong> Ideal para sites simples, economizando um Selenium inteiro.<br />
+<strong>Projetos notáveis:</strong><br />
+• Rastreadores acadêmicos (paginação de periódicos)
+• Bots de submissão de formulários governamentais</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mechanicalsoup</span>
+<span class="n">browser</span> <span class="o">=</span> <span class="n">mechanicalsoup</span><span class="p">.</span><span class="nc">StatefulBrowser</span><span class="p">()</span>
+<span class="n">browser</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">https://httpbin.org/forms/post</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">browser</span><span class="p">.</span><span class="nf">select_form</span><span class="p">(</span><span class="sh">'</span><span class="s">form</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">browser</span><span class="p">[</span><span class="sh">"</span><span class="s">custname</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Edu</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">browser</span><span class="p">.</span><span class="nf">submit_selected</span><span class="p">().</span><span class="n">status_code</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="selenium-">Selenium <a name="selenium"></a></h2>
+
+<p><strong>Descrição:</strong> Automatiza navegadores reais via WebDriver; fundamental para testes E2E.<br />
+<strong>Curiosidade:</strong> Originalmente criado por engenheiros da ThoughtWorks (2004).<br />
+<strong>Projetos notáveis:</strong><br />
+• Testes do YouTube, Netflix, Spotify
+• Robot Framework usa SeleniumLibrary por baixo</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="k">with</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Firefox</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://example.com</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="scrapy-">Scrapy <a name="scrapy"></a></h2>
+
+<p><strong>Descrição:</strong> Framework de scraping assíncrono baseado em Twisted; escala em milhões de páginas/dia.<br />
+<strong>Curiosidade:</strong> Criado dentro da startup brasileira APT (2008).<br />
+<strong>Projetos notáveis:</strong><br />
+• Parse.ly (analytics de mídia)
+• Data.gov.uk crawler oficial
+• Vários comparadores de preço (Buscapé)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">scrapy</span>
+
+<span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="p">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">quotes</span><span class="sh">"</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">http://quotes.toscrape.com</span><span class="sh">"</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="sh">"</span><span class="s">span.text::text</span><span class="sh">"</span><span class="p">).</span><span class="nf">getall</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="p">{</span><span class="sh">"</span><span class="s">quote</span><span class="sh">"</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="sqlite-sqlite3-">SQLite (sqlite3) <a name="sqlite"></a></h2>
+
+<p><strong>Descrição:</strong> Motor SQL zero‑conf embutido; inteiro cabe em &lt;700 KiB.<br />
+<strong>Curiosidade:</strong> Armazena o histórico do Firefox, Telegram e até o firmware de drones DJI.<br />
+<strong>Projetos notáveis:</strong><br />
+• Android usa SQLite para todas as apps
+• iOS Core Data default
+• Git internamente (config)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sqlite3</span><span class="p">,</span> <span class="n">pathlib</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">'</span><span class="s">demo.db</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">'</span><span class="s">create table if not exists notes(txt)</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">'</span><span class="s">insert into notes values(?)</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="sh">'</span><span class="s">Olá</span><span class="sh">'</span><span class="p">,))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">'</span><span class="s">select * from notes</span><span class="sh">'</span><span class="p">).</span><span class="nf">fetchall</span><span class="p">())</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+<span class="n">pathlib</span><span class="p">.</span><span class="nc">Path</span><span class="p">(</span><span class="sh">'</span><span class="s">demo.db</span><span class="sh">'</span><span class="p">).</span><span class="nf">unlink</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="pillow-">Pillow <a name="pillow"></a></h2>
+
+<p><strong>Descrição:</strong> Fork moderno da Python Imaging Library (PIL) para edição e processamento de imagens.<br />
+<strong>Curiosidade:</strong> Em 2011 a PIL ficou sem manutenção; a comunidade criou Pillow para mantê‑la viva.<br />
+<strong>Projetos notáveis:</strong><br />
+• Processamento de thumbnails no Instagram early days
+• Ferramentas de ETL de imagens na Wikimedia</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageFilter</span>
+<span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">foto.jpg</span><span class="sh">'</span><span class="p">).</span><span class="nf">filter</span><span class="p">(</span><span class="n">ImageFilter</span><span class="p">.</span><span class="n">BLUR</span><span class="p">).</span><span class="nf">save</span><span class="p">(</span><span class="sh">'</span><span class="s">blur.jpg</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="matplotlib-">Matplotlib <a name="matplotlib"></a></h2>
+
+<p><strong>Descrição:</strong> Biblioteca de plots 2D/3D inspirada no MATLAB, coração dos notebooks Jupyter.<br />
+<strong>Curiosidade:</strong> História curiosa: John D. Hunter criou para visualização médica em um stent cardíaco.<br />
+<strong>Projetos notáveis:</strong><br />
+• Publicações da Nature/Science
+• Visualizações de telemetria SpaceX
+• CERN ROOT bindings</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span> <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="sympy-">SymPy <a name="sympy"></a></h2>
+
+<p><strong>Descrição:</strong> Álgebra simbólica escrita 100 % em Python puro, sem dependências C.<br />
+<strong>Curiosidade:</strong> Permite gerar código (C, Fortran, LLVM) diretamente de expressões simbólicas.<br />
+<strong>Projetos notáveis:</strong><br />
+• CAS em aplicativos móveis (e.g. Photomath)
+• NASA JPL autoderivação de equações de órbita</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sympy</span> <span class="k">as</span> <span class="n">sp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="p">.</span><span class="nf">symbols</span><span class="p">(</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sp</span><span class="p">.</span><span class="nf">integrate</span><span class="p">(</span><span class="n">sp</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="p">.</span><span class="n">oo</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<h2 id="scipy-">SciPy <a name="scipy"></a></h2>
+
+<p><strong>Descrição:</strong> Camada de algoritmos de alto nível para otimização, sinal, imagem e estatística; depende do NumPy.<br />
+<strong>Curiosidade:</strong> A conferência anual SciPy é um dos pilares da comunidade científica Python.<br />
+<strong>Projetos notáveis:</strong><br />
+• Processamento de sinais do LIGO (ondas gravitacionais)
+• Análise sísmica da USGS</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">optimize</span><span class="p">.</span><span class="nf">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="scikitlearn-">Scikit‑Learn <a name="scikit-learn"></a></h2>
+
+<p><strong>Descrição:</strong> Conjunto de ML tradicional (árvores, SVM, clustering) sobre NumPy/SciPy; API padronizada <code class="language-plaintext highlighter-rouge">fit/predict</code>.<br />
+<strong>Curiosidade:</strong> Nome ‘scikit’ vem de SciPy Toolkit — era apenas um addon experimental.<br />
+<strong>Projetos notáveis:</strong><br />
+• Spotify recomendação
+• Birch clustering do CERN
+• Pesquisas biomédicas em larga escala</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="n">X</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="nf">load_iris</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nc">RandomForestClassifier</span><span class="p">().</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">).</span><span class="nf">predict</span><span class="p">([</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
+</code></pre></div></div>
+
+<h2 id="pybrain-">PyBrain <a name="pybrain"></a></h2>
+
+<p><strong>Descrição:</strong> ‘Python Brain’ — biblioteca de RL e NN antes da febre DL; ótima para didática.<br />
+<strong>Curiosidade:</strong> Parou no tempo (último release 2013), mas ainda aparece em papers clássicos.<br />
+<strong>Projetos notáveis:</strong><br />
+• Pesquisas de robótica na Uni. Bielefeld
+• Prototipagem de agentes RL simples</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pybrain.structure</span> <span class="kn">import</span> <span class="n">FeedForwardNetwork</span>
+<span class="n">net</span> <span class="o">=</span> <span class="nc">FeedForwardNetwork</span><span class="p">();</span> <span class="nf">print</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="theano-">Theano <a name="theano"></a></h2>
+
+<p><strong>Descrição:</strong> Pioneiro em computation graphs e auto‑grad; influência direta de TensorFlow.<br />
+<strong>Curiosidade:</strong> Descontinuado em 2017, porém renasceu como Theano‑PyMC em 2020.<br />
+<strong>Projetos notáveis:</strong><br />
+• Modelagem bayesiana no PyMC3/PyMC4
+• Pesquisa da MILA (Canadá)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">theano.tensor</span> <span class="k">as</span> <span class="n">T</span>
+<span class="kn">from</span> <span class="n">theano</span> <span class="kn">import</span> <span class="n">function</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="nf">dscalars</span><span class="p">(</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">function</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="natural-language-toolkit-">Natural Language Toolkit <a name="nltk"></a></h2>
+
+<p><strong>Descrição:</strong> Toolkit educacional para NLP: tokenizers, POS taggers, corpora.<br />
+<strong>Curiosidade:</strong> Usado no curso clássico de NLP de Steven Bird em Berkeley.<br />
+<strong>Projetos notáveis:</strong><br />
+• MOOCs de NLP por toda parte
+• Prototipagem de chatbots acadêmicos</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">nltk</span><span class="p">,</span> <span class="n">ssl</span>
+<span class="n">ssl</span><span class="p">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">_create_unverified_context</span>
+<span class="n">nltk</span><span class="p">.</span><span class="nf">download</span><span class="p">(</span><span class="sh">'</span><span class="s">punkt</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">nltk</span><span class="p">.</span><span class="nf">word_tokenize</span><span class="p">(</span><span class="sh">'</span><span class="s">Olá mundo!</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="pickle-">Pickle <a name="pickle"></a></h2>
+
+<p><strong>Descrição:</strong> Mecanismo built‑in de serialização binária de objetos Python.<br />
+<strong>Curiosidade:</strong> O formato usa opcodes estilo assembly de pilha.<br />
+<strong>Projetos notáveis:</strong><br />
+• Cache de modelos em scikit‑learn
+• Troca de dados no multiprocessing</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pickle</span><span class="p">,</span> <span class="n">pathlib</span>
+<span class="n">pickle</span><span class="p">.</span><span class="nf">dump</span><span class="p">({</span><span class="sh">'</span><span class="s">pi</span><span class="sh">'</span><span class="p">:</span><span class="mf">3.14</span><span class="p">},</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">d.pkl</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">wb</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">pickle</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">d.pkl</span><span class="sh">'</span><span class="p">,</span><span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)))</span>
+<span class="n">pathlib</span><span class="p">.</span><span class="nc">Path</span><span class="p">(</span><span class="sh">'</span><span class="s">d.pkl</span><span class="sh">'</span><span class="p">).</span><span class="nf">unlink</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="pyglet-">Pyglet <a name="pyglet"></a></h2>
+
+<p><strong>Descrição:</strong> Biblioteca multimídia leve (OpenGL, áudio, janela); zero dependências externas.<br />
+<strong>Curiosidade:</strong> Utilizada na implementação original do OctoPrint para pré‑visualizar G‑code 3D.<br />
+<strong>Projetos notáveis:</strong><br />
+• Simuladores 3D educacionais
+• Ferramentas de visualização molecular</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pyglet</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">pyglet</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="nc">Window</span><span class="p">()</span>
+<span class="nd">@win.event</span>
+<span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
+    <span class="n">win</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
+    <span class="n">pyglet</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="sh">'</span><span class="s">Hey!</span><span class="sh">'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">win</span><span class="p">.</span><span class="n">height</span><span class="o">//</span><span class="mi">2</span><span class="p">).</span><span class="nf">draw</span><span class="p">()</span>
+<span class="n">pyglet</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="vpython-">VPython <a name="vpython"></a></h2>
+
+<p><strong>Descrição:</strong> API super simples para construir cenas 3D ‘físicas’ no navegador via WebGL.<br />
+<strong>Curiosidade:</strong> Muito usado em cursos de física introdutória (Motion of Planets).<br />
+<strong>Projetos notáveis:</strong><br />
+• MOOCs da edX/Stanford
+• Visualizações em GlowScript</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">vpython</span> <span class="kn">import</span> <span class="n">sphere</span><span class="p">,</span> <span class="n">vector</span>
+<span class="nf">sphere</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="nf">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="turtle-">Turtle <a name="turtle"></a></h2>
+
+<p><strong>Descrição:</strong> Interface ‘Logo’ embutida no Python para ensinar algorítmica.<br />
+<strong>Curiosidade:</strong> Faz parte da biblioteca padrão desde o Python 2.5.<br />
+<strong>Projetos notáveis:</strong><br />
+• Atividades do Hour of Code
+• Livro <em>Python for Kids</em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">turtle</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">turtle</span><span class="p">.</span><span class="nc">Turtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">.</span><span class="nf">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="n">t</span><span class="p">.</span><span class="nf">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">turtle</span><span class="p">.</span><span class="nf">done</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="rpy2-">RPy2 <a name="rpy2"></a></h2>
+
+<p><strong>Descrição:</strong> Ponte bidirecional entre Python e o interpretador R — chamada funções e troca de objetos.<br />
+<strong>Curiosidade:</strong> Permite usar ggplot2 diretamente em notebooks Python.<br />
+<strong>Projetos notáveis:</strong><br />
+• Bioinformática no Bioconductor
+• Estatísticas avançadas em econometria</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">rpy2.robjects</span> <span class="k">as</span> <span class="n">ro</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">ro</span><span class="p">.</span><span class="nf">r</span><span class="p">(</span><span class="sh">'</span><span class="s">mean(rnorm(100))</span><span class="sh">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="spacy-">spaCy <a name="spacy"></a></h2>
+
+<p><strong>Descrição:</strong> Biblioteca industrial de NLP otimizada em Cython com modelos pré‑treinados rápidos.<br />
+<strong>Curiosidade:</strong> Possui sistema de <em>pipes</em> modular e integra Transformers via spaCy v3.<br />
+<strong>Projetos notáveis:</strong><br />
+• Prodigy annotation tool
+• Extração de entidades em fin‑techs</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">spacy</span><span class="p">,</span> <span class="n">warnings</span>
+<span class="n">warnings</span><span class="p">.</span><span class="nf">filterwarnings</span><span class="p">(</span><span class="sh">'</span><span class="s">ignore</span><span class="sh">'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">UserWarning</span><span class="p">)</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="sh">'</span><span class="s">en_core_web_sm</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="nf">nlp</span><span class="p">(</span><span class="sh">'</span><span class="s">Apple is looking at buying U.K. startup for $1 billion</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">([(</span><span class="n">ent</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="p">.</span><span class="n">label_</span><span class="p">)</span> <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">.</span><span class="n">ents</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="bokeh-">Bokeh <a name="bokeh"></a></h2>
+
+<p><strong>Descrição:</strong> Visualização interativa gerando HTML/JS; suporta streaming de dados em tempo real.<br />
+<strong>Curiosidade:</strong> Nome vem do termo japonês de fotografia ‘bokeh’ (desfocado).<br />
+<strong>Projetos notáveis:</strong><br />
+• Painéis do NASA JPL DSN
+• Dashboards de trading crypto em tempo real</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nf">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">'</span><span class="s">Linha simples</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">line</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="nf">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="plotly-">Plotly <a name="plotly"></a></h2>
+
+<p><strong>Descrição:</strong> Biblioteca cross‑language para gráficos interativos e dashboards; versão open‑source ‘Plotly Express’.<br />
+<strong>Curiosidade:</strong> Back‑end é WebGL/D3 — pode exportar como imagem vetorial.<br />
+<strong>Projetos notáveis:</strong><br />
+• Dashboards de COVID‑19 Johns Hopkins
+• Analytics internos do Uber Movement</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">plotly.express</span> <span class="k">as</span> <span class="n">px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="sqlalchemy-">SQLAlchemy <a name="sqlalchemy"></a></h2>
+
+<p><strong>Descrição:</strong> Toolkit + ORM que abstrai múltiplos bancos; filosofia ‘SQL of SQLAlchemy’ — você ainda escreve SQL.<br />
+<strong>Curiosidade:</strong> Autor Mike Bayer foi vocal contra ORMs ‘magia negra’ e manteve foco na visibilidade.<br />
+<strong>Projetos notáveis:</strong><br />
+• Reddit migração para Postgres
+• Serviços OpenStack
+• CERN ATLAS</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">text</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sh">'</span><span class="s">sqlite:///:memory:</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">engine</span><span class="p">.</span><span class="nf">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">conn</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="nf">text</span><span class="p">(</span><span class="sh">'</span><span class="s">create table users(name)</span><span class="sh">'</span><span class="p">))</span>
+    <span class="n">conn</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="nf">text</span><span class="p">(</span><span class="sh">"</span><span class="s">insert into users values (</span><span class="sh">'</span><span class="s">Edu</span><span class="sh">'</span><span class="s">)</span><span class="sh">"</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="nf">text</span><span class="p">(</span><span class="sh">'</span><span class="s">select * from users</span><span class="sh">'</span><span class="p">)).</span><span class="nf">all</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h2 id="fastapi-">FastAPI <a name="fastapi"></a></h2>
+
+<p><strong>Descrição:</strong> Framework moderno para APIs REST/GraphQL assíncronas, baseado em Starlette + Pydantic.<br />
+<strong>Curiosidade:</strong> Automaticamente gera docs Swagger e Redoc; criado por Sebastián Ramírez.<br />
+<strong>Projetos notáveis:</strong><br />
+• Backend do DataStax Astra
+• Prototipação de serviços da Microsoft Xbox Live</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="n">app</span> <span class="o">=</span> <span class="nc">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app.get</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">read_root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">'</span><span class="s">msg</span><span class="sh">'</span><span class="p">:</span><span class="sh">'</span><span class="s">Olá, FastAPI!</span><span class="sh">'</span><span class="p">}</span>
+<span class="c1"># uvicorn main:app --reload
+</span></code></pre></div></div>
+
+<h2 id="django-">Django <a name="django"></a></h2>
+
+<p><strong>Descrição:</strong> Framework full‑stack ‘batteries‑included’ que popularizou o ORM + admin auto.<br />
+<strong>Curiosidade:</strong> Criado para o jornal <em>Lawrence Journal‑World</em> em 2005.<br />
+<strong>Projetos notáveis:</strong><br />
+• Instagram (primeiros anos)
+• Disqus, Pinterest beta
+• GOV.UK serviços públicos</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">mysite</span>
+<span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span>
+</code></pre></div></div>
+
+<h2 id="flask-">Flask <a name="flask"></a></h2>
+
+<p><strong>Descrição:</strong> Micro‑framework WSGI baseado em Werkzeug &amp; Jinja2; filosofia minimalista ‘bring your own modules’.<br />
+<strong>Curiosidade:</strong> Começou como piada de 1º de Abril chamada <em>Denied</em> até virar projeto sério.<br />
+<strong>Projetos notáveis:</strong><br />
+• API do Pinterest original
+• Netflix metadata service
+• Microservices da Lyft</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="sh">'</span><span class="s">Hello, Flask!</span><span class="sh">'</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="pywin32-">PyWin32 <a name="pywin32"></a></h2>
+
+<p><strong>Descrição:</strong> Extensões para acessar APIs Win32: COM, registry, serviços, MAPI.<br />
+<strong>Curiosidade:</strong> Mark Hammond lançou em 1996; a Microsoft patrocinou a migração para GitHub em 2016.<br />
+<strong>Projetos notáveis:</strong><br />
+• Automação de planilhas Office
+• Scripts de build do Unreal Engine</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">win32com.client</span>
+<span class="n">shell</span> <span class="o">=</span> <span class="n">win32com</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="nc">Dispatch</span><span class="p">(</span><span class="sh">'</span><span class="s">WScript.Shell</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">shell</span><span class="p">.</span><span class="nc">Popup</span><span class="p">(</span><span class="sh">'</span><span class="s">Olá do Windows!</span><span class="sh">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sh">'</span><span class="s">PyWin32</span><span class="sh">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="py2exe-">py2exe <a name="py2exe"></a></h2>
+
+<p><strong>Descrição:</strong> Empacotador que converte scripts Python em executáveis .exe para Windows.<br />
+<strong>Curiosidade:</strong> Popular nos anos 2000 para distribuir ferramentas shareware.<br />
+<strong>Projetos notáveis:</strong><br />
+• Utilitários desktop independentes
+• Jogos indie standalone</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># setup.py
+</span><span class="kn">from</span> <span class="n">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
+<span class="kn">import</span> <span class="n">py2exe</span>
+<span class="nf">setup</span><span class="p">(</span><span class="n">console</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">main.py</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="pyqt-">PyQt <a name="pyqt"></a></h2>
+
+<p><strong>Descrição:</strong> Bindings da Qt (C++) para Python; produz GUIs cross‑platform profissionais.<br />
+<strong>Curiosidade:</strong> Licenciamento dual GPL/comercial; alternativa LGPL é PySide.<br />
+<strong>Projetos notáveis:</strong><br />
+• Anki (flashcards)
+• Calibre e‑book manager
+• Dropbox desktop client (early)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QLabel</span>
+<span class="n">app</span> <span class="o">=</span> <span class="nc">QApplication</span><span class="p">([])</span>
+<span class="n">label</span> <span class="o">=</span> <span class="nc">QLabel</span><span class="p">(</span><span class="sh">'</span><span class="s">PyQt 💚 dionisio.dev</span><span class="sh">'</span><span class="p">);</span> <span class="n">label</span><span class="p">.</span><span class="nf">show</span><span class="p">();</span> <span class="n">app</span><span class="p">.</span><span class="nf">exec_</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Fique de olho para mais postagens informativas sobre o mundo do desenvolvimento de software.
+E se você gostou desse artigo, continue explorando o site, pois sempre tem muita coisa interessante para quem gosta e quer se aprofundar em tecnologia.</p>
+
+		<i style="margin: 0;">06/05/2025</i> - <i>Dionisio</i>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/xnnjzodw" method="POST">
+				<div class="field half first">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
+				</div>
+			</section>
+			<!--section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					
+					
+					
+					
+					</span>
+				</div>
+			</section-->
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
