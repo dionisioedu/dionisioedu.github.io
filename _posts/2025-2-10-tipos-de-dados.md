@@ -27,13 +27,13 @@ coordenadas = (10.0, 20.0) #Tupla
 </code></pre>
 * **Abstratos**: São interfaces para **estruturas de dados** que não especificam a implementação: (_Listas_, _Filas_, _Pilhas_, _Árvores_, _Grafos_).
 
-## Tipagem Estática x Tipagem Dinânica
+## Tipagem Estática x Tipagem Dinâmica
 Algumas linguagens, como _C_, _C++_, _Java_, _C#_ e _Rust_ implementam **Tipagem Estática**. Ou seja, os **Tipos de Dados** são declarados pelo programador e validados quando o sistema é **compilado**.
 <pre><code>int idade = 30;
 double salario = 9500.00;
 String nome = "Carlos";
 </code></pre>
-Já nas linguagens que trabalham com **Tipagem Dinânica**, como _JavaScript_, _Python_ e _Ruby_, os **Tipos de Dados** não são declarados pelo **programador**, e são definidos em **tempo de execução**, ou seja, quando o sistema está rodando.
+Já nas linguagens que trabalham com **Tipagem Dinâmica**, como _JavaScript_, _Python_ e _Ruby_, os **Tipos de Dados** não são declarados pelo **programador**, e são definidos em **tempo de execução**, ou seja, quando o sistema está rodando.
 <pre><code>idade = 30
 idade = "trinta"
 </code></pre>

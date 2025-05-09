@@ -1,0 +1,103 @@
+/* aptitude-quiz.css */
+
+/* Layout */
+.quiz-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;        /* menor que 100 vh p/ não empurrar footer */
+  padding: 1rem;
+}
+.quiz-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Card genérico */
+.quiz-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Tipografia */
+.quiz-title {
+  color:#382564;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+.quiz-subtitle {
+  color:#242323;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.quiz-question {
+  font-size: 2rem;
+  color:#1b1b1b;
+  margin-bottom: 1.5rem;
+}
+.quiz-result-main {
+  font-size: 2rem;
+  font-weight: 800;
+  color:#6b46c1;
+  margin:1rem 0;
+}
+
+/* Inputs */
+.quiz-input {
+  width: 100%;
+  color:#333;
+  padding: .5rem .75rem;
+  margin-bottom: .75rem;
+  border: 1px solid #d1d5db !important;
+  border-radius: .375rem !important;
+}
+.quiz-label {
+  display:block;
+  font-weight:600;
+  margin-bottom:0.25rem;
+  color:#2d3748;        /* cinza escuro legível */
+}
+
+/* Botões */
+.btn {
+  width: 100%;
+  border: 0;
+  border-radius: .375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.btn-primary {
+  background:#6b46c1;
+  color:#fff;
+}
+.btn-primary:hover {
+  background:#553c9a;
+}
+.btn-option {
+  background:#4c51bf;
+  color:#fff;
+  margin-bottom:.5rem;
+}
+.btn-option:hover {
+  background:#434190;
+}
+.btn-secondary {
+  background:#e2e8f0;
+  color:#2d3748;
+}
+.btn-secondary:hover {
+  background:#cbd5e0;
+}
+
+/* Flip-in animation (card swap) */
+.flip-enter { transform: rotateY(-180deg) scale(.95); opacity:0; }
+.flip-active {
+  animation: flip .6s forwards;
+}
+@keyframes flip {
+  to { transform: rotateY(0) scale(1); opacity:1; }
+}
