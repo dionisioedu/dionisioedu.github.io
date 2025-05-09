@@ -58,7 +58,7 @@ function intro(){
       <input id="age"   class="quiz-input" placeholder="Sua idade" type="number" />
 
       <label class="quiz-label" for="email">Email</label>
-      <input id="email" class="quiz-input" placeholder="Seu email" type="email" />
+      <input id="email" class="quiz-input" placeholder="Seu email" type="email" style="color:#333;"/>
 
       <button id="start" class="btn btn-primary">Começar</button>
     </div>`;
