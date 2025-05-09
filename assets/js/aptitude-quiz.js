@@ -113,7 +113,14 @@ function result(){
 /* ========= Persistência (placeholder) ========= */
 async function save(data){
   console.log('Pronto para enviar', data);
-  // await fetch('/api/quiz', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbyvmg_1b-4vhW0grZSKVP0LWXFkyjjcDniICJl9tKfgh6CKFzwFEPWJfHCOWuUIZVD-/exec",{
+      method:"POST",
+      body: JSON.stringify(data)
+      });
+  } catch (err) {
+    console.error("Falha ao salvar:", err);
+  }
 }
 
 /* ========= BOOT ========= */
