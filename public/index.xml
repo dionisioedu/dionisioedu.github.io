@@ -6,6 +6,7 @@
     <description>Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
+    <lastBuildDate>Sat, 24 May 2025 23:04:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artigos e Notícias</title>
@@ -29,10 +30,10 @@
       <description></description>
     </item>
     <item>
-      <title>C&#43;&#43; e STL</title>
-      <link>http://localhost:1313/cstl/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cstl/index.html</guid>
+      <title>C&#43;&#43;</title>
+      <link>http://localhost:1313/cpp/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/cpp/index.html</guid>
       <description></description>
     </item>
     <item>
