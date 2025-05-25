@@ -76,8 +76,45 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
-    "title": "Etiqueta | Algoritmos",
-    "uri": "/tags/algoritmos/index.html"
+    "title": "Etiqueta | C++",
+    "uri": "/tags/c\u0026#43;\u0026#43;/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Contagem",
+    "uri": "/tags/contagem/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Conta o número de elementos em um intervalo [first, last) que são iguais a um valor especificado.\nCabeçalho: \u003calgorithm\u003e Assinatura: count(InputIt first, InputIt last, const T\u0026 value); Parâmetros: first, last - Iteradores que definem o intervalo de busca. value - Valor a ser contado. Retorno: Número de elementos iguais a value no intervalo (tipo std::iterator_traits::difference_type). Exceções: Nenhuma, a menos que operações de comparação lancem. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 2, 3, 2, 4}; auto result = std::count(vec.begin(), vec.end(), 2); // Conta ocorrências de 2 std::cout \u003c\u003c result \u003c\u003c '\\n'; // Imprime: 3 return 0; }",
+    "description": "Detalhes sobre a função std::count da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Contagem"
+    ],
+    "title": "std::count",
+    "uri": "/cpp/stl/algorithm/count/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | STL",
+    "uri": "/tags/stl/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiquetas",
+    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -88,12 +125,85 @@ var relearn_searchindex = [
     "uri": "/tags/busca/index.html"
   },
   {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Busca o primeiro elemento em um intervalo [first, last) que satisfaz um predicado especificado.\nCabeçalho: \u003calgorithm\u003e Assinatura: find_if(InputIt first, InputIt last, UnaryPredicate pred); Parâmetros: first, last - Iteradores que definem o intervalo de busca. pred - Predicado unário que retorna true para o elemento desejado. Retorno: Iterador para o primeiro elemento que satisfaz pred ou last se não encontrado. Exceções: Nenhuma, a menos que o predicado pred lance. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 3, 4, 6}; auto it = std::find_if(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; }); // Busca o primeiro número par if (it != vec.end()) std::cout \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 4 return 0; }",
+    "description": "Detalhes sobre a função std::find_if da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Busca"
+    ],
+    "title": "std::find_if",
+    "uri": "/cpp/stl/algorithm/find_if/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Encontra o primeiro elemento maior que um valor em um intervalo ordenado [first, last) usando busca binária.\nCabeçalho: \u003calgorithm\u003e Assinatura: upper_bound(ForwardIt first, ForwardIt last, const T\u0026 value); upper_bound(ForwardIt first, ForwardIt last, const T\u0026 value, Compare comp); Parâmetros: first, last - Iteradores que definem o intervalo ordenado de busca. value - Valor de referência para a busca. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo (padrão: std::less). Retorno: Iterador para o primeiro elemento maior que value ou last se não encontrado. Exceções: Nenhuma, a menos que a função de comparação comp lance. Versão: C++98 Performance: O(log N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 4, 4, 5}; auto it = std::upper_bound(vec.begin(), vec.end(), 2); // Aponta para o primeiro 4 if (it != vec.end()) std::cout \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 4 // Com comparação personalizada auto comp = [](int a, int b) { return a \u003e b; }; std::vector\u003cint\u003e vec_desc = {5, 4, 4, 2, 1}; it = std::upper_bound(vec_desc.begin(), vec_desc.end(), 4, comp); // Aponta para o primeiro 2 if (it != vec_desc.end()) std::cout \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 2 return 0; }",
+    "description": "Detalhes sobre a função std::upper_bound da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Busca"
+    ],
+    "title": "std::upper_bound",
+    "uri": "/cpp/stl/algorithm/upper_bound/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Encontra o primeiro elemento não menor que um valor em um intervalo ordenado [first, last) usando busca binária.\nCabeçalho: \u003calgorithm\u003e Assinatura: lower_bound(ForwardIt first, ForwardIt last, const T\u0026 value); lower_bound(ForwardIt first, ForwardIt last, const T\u0026 value, Compare comp); Parâmetros: first, last - Iteradores que definem o intervalo ordenado de busca. value - Valor de referência para a busca. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo (padrão: std::less). Retorno: Iterador para o primeiro elemento não menor que value ou last se não encontrado. Exceções: Nenhuma, a menos que a função de comparação comp lance. Versão: C++98 Performance: O(log N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 4, 4, 5}; auto it = std::lower_bound(vec.begin(), vec.end(), 3); // Aponta para o primeiro 4 if (it != vec.end()) std::cout \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 4 // Com comparação personalizada auto comp = [](int a, int b) { return a \u003e b; }; std::vector\u003cint\u003e vec_desc = {5, 4, 4, 2, 1}; it = std::lower_bound(vec_desc.begin(), vec_desc.end(), 3, comp); // Aponta para o primeiro 2 if (it != vec_desc.end()) std::cout \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 2 return 0; }",
+    "description": "Detalhes sobre a função std::lower_bound da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Busca"
+    ],
+    "title": "std::lower_bound",
+    "uri": "/cpp/stl/algorithm/lower_bound/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Verifica se um valor existe em um intervalo ordenado [first, last) usando busca binária.\nCabeçalho: \u003calgorithm\u003e Assinatura: binary_search(ForwardIt first, ForwardIt last, const T\u0026 value); binary_search(ForwardIt first, ForwardIt last, const T\u0026 value, Compare comp); Parâmetros: first, last - Iteradores que definem o intervalo ordenado de busca. value - Valor a ser procurado. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo (padrão: std::less). Retorno: bool indicando se o valor foi encontrado no intervalo. Exceções: Nenhuma, a menos que a função de comparação comp lance. Versão: C++98 Performance: O(log N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 3, 4, 5}; bool found = std::binary_search(vec.begin(), vec.end(), 3); // true std::cout \u003c\u003c std::boolalpha \u003c\u003c found \u003c\u003c '\\n'; // Imprime: true // Com comparação personalizada auto comp = [](int a, int b) { return a \u003e b; }; std::vector\u003cint\u003e vec_desc = {5, 4, 3, 2, 1}; found = std::binary_search(vec_desc.begin(), vec_desc.end(), 3, comp); // true std::cout \u003c\u003c found \u003c\u003c '\\n'; // Imprime: true return 0; }",
+    "description": "Detalhes sobre a função std::binary_search da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Busca"
+    ],
+    "title": "std::binary_search",
+    "uri": "/cpp/stl/algorithm/binary_search/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Aplica uma operação unária ou binária a cada elemento de um intervalo [first, last) e armazena os resultados em um intervalo de saída.\nCabeçalho: \u003calgorithm\u003e Assinatura: transform(InputIt first, InputIt last, OutputIt result, UnaryOperation op); transform(InputIt1 first1, InputIt1 last1, InputIt2 first2, OutputIt result, BinaryOperation op); Parâmetros: first, last - Iteradores que definem o intervalo de entrada para a versão unária. first1, last1 - Iteradores que definem o primeiro intervalo de entrada para a versão binária. first2 - Iterador para o início do segundo intervalo de entrada (versão binária). result - Iterador para o início do intervalo de saída. op - Operação unária ou binária a ser aplicada aos elementos. Retorno: Iterador para o fim do intervalo de saída. Exceções: Depende da operação op fornecida; a própria transform não lança exceções, a menos que op o faça. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { // Versão unária std::vector\u003cint\u003e vec = {1, 2, 3, 4}; std::vector\u003cint\u003e result(4); std::transform(vec.begin(), vec.end(), result.begin(), [](int x) { return x * 2; }); for (int x : result) std::cout \u003c\u003c x \u003c\u003c \" \"; // Imprime: 2 4 6 8 // Versão binária std::vector\u003cint\u003e vec2 = {10, 20, 30, 40}; std::transform(vec.begin(), vec.end(), vec2.begin(), result.begin(), std::plus\u003cint\u003e{}); for (int x : result) std::cout \u003c\u003c x \u003c\u003c \" \"; // Imprime: 11 22 33 44 return 0; }",
+    "description": "Detalhes sobre a função std::transform da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Transformação"
+    ],
+    "title": "std::transform",
+    "uri": "/cpp/stl/algorithm/transform/index.html"
+  },
+  {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
     "content": "",
     "description": "",
     "tags": [],
-    "title": "Etiqueta | C++",
-    "uri": "/tags/c\u0026#43;\u0026#43;/index.html"
+    "title": "Etiqueta | Transformação",
+    "uri": "/tags/transforma%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Algoritmos",
+    "uri": "/tags/algoritmos/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -179,22 +289,6 @@ var relearn_searchindex = [
     ],
     "title": "std::sort",
     "uri": "/cpp/stl/algorithm/sort/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiqueta | STL",
-    "uri": "/tags/stl/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiquetas",
-    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
