@@ -3,7 +3,7 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Altere para 'migration-hugo' se quiser testar antes do merge
+      - master
 
 permissions:
   contents: write
@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código-fonte
+      - name: Checkout do código
         uses: actions/checkout@v3
         with:
-          submodules: true  # importante se estiver usando submódulo para o tema
+          submodules: true
           fetch-depth: 0
 
-      - name: Setup Hugo
+      - name: Instalação do Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.127.0'
