@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desenvolvimento | Etiqueta | Dionisio Software</title>
+    <link>http://localhost:1313/tags/desenvolvimento/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 07 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/desenvolvimento/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tudo o que você precisa para começar com Linux</title>
+      <link>http://localhost:1313/blog/tudo-sobre-linux/index.html</link>
+      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tudo-sobre-linux/index.html</guid>
+      <description>Sabe aquele momento em que você sente que está pronto pra levar a carreira de desenvolvedor a sério? Quase como quando você troca o videogame pelo primeiro PC. Aprender Linux é isso: um salto de maturidade.&#xA;Não importa se você está começando agora ou se já trabalha com programação há um tempo — em algum momento, você vai se deparar com uma tela preta, um terminal piscando… e aquele pensamento: “E agora?</description>
+    </item>
+  </channel>
+</rss>

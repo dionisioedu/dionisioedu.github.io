@@ -6,6 +6,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/blog/index.html</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/ebooks/guia/index.html</loc>
@@ -15,6 +16,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/projects/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/dsa/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/cpp/index.html</loc>
@@ -44,6 +48,10 @@
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/itera%C3%A7%C3%A3o/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/ordena%C3%A7%C3%A3o/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
@@ -60,6 +68,10 @@
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/for_each/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/cpp/stl/algorithm/sort/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
@@ -70,6 +82,58 @@
   <url>
     <loc>http://localhost:1313/tags/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/desenvolvimento/index.html</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/iniciantes/index.html</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/linux/index.html</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/tudo-sobre-linux/index.html</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/bibliotecas/index.html</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/exemplos/index.html</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/guia/index.html</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/python-bibliotecas/index.html</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/python/index.html</loc>
+    <lastmod>2025-05-06T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/bigo/index.html</loc>
+    <lastmod>2025-05-05T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/big-o/index.html</loc>
+    <lastmod>2025-05-05T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/complexidade/index.html</loc>
+    <lastmod>2025-05-05T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/dsa/index.html</loc>
+    <lastmod>2025-05-05T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>

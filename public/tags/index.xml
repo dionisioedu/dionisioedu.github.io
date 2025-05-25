@@ -44,6 +44,13 @@
       <description></description>
     </item>
     <item>
+      <title>Etiqueta | Iteração</title>
+      <link>http://localhost:1313/tags/itera%C3%A7%C3%A3o/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/itera%C3%A7%C3%A3o/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Etiqueta | Ordenação</title>
       <link>http://localhost:1313/tags/ordena%C3%A7%C3%A3o/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
@@ -62,6 +69,76 @@
       <link>http://localhost:1313/tags/stl/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/stl/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Desenvolvimento</title>
+      <link>http://localhost:1313/tags/desenvolvimento/index.html</link>
+      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/desenvolvimento/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Iniciantes</title>
+      <link>http://localhost:1313/tags/iniciantes/index.html</link>
+      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/iniciantes/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Linux</title>
+      <link>http://localhost:1313/tags/linux/index.html</link>
+      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Bibliotecas</title>
+      <link>http://localhost:1313/tags/bibliotecas/index.html</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bibliotecas/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Exemplos</title>
+      <link>http://localhost:1313/tags/exemplos/index.html</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/exemplos/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Guia</title>
+      <link>http://localhost:1313/tags/guia/index.html</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/guia/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Python</title>
+      <link>http://localhost:1313/tags/python/index.html</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Big-O</title>
+      <link>http://localhost:1313/tags/big-o/index.html</link>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/big-o/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Complexidade</title>
+      <link>http://localhost:1313/tags/complexidade/index.html</link>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/complexidade/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Dsa</title>
+      <link>http://localhost:1313/tags/dsa/index.html</link>
+      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dsa/index.html</guid>
       <description></description>
     </item>
   </channel>

@@ -11,7 +11,7 @@
     <item>
       <title>Artigos e Notícias</title>
       <link>http://localhost:1313/blog/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/index.html</guid>
       <description>Artigos e notícias</description>
     </item>
@@ -30,6 +30,13 @@
       <description></description>
     </item>
     <item>
+      <title>Estruturas de Dados e Algoritmos</title>
+      <link>http://localhost:1313/dsa/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dsa/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>C&#43;&#43;</title>
       <link>http://localhost:1313/cpp/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
@@ -41,7 +48,7 @@
       <link>http://localhost:1313/ebooks/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ebooks/index.html</guid>
-      <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;Dominando a STL em C++ Arquitetura para Devs Iniciantes 10 Estratégias para Evoluir na Carreira Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
+      <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;O Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
     </item>
   </channel>
 </rss>

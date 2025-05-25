@@ -24,6 +24,7 @@ home = ["HTML", "RSS", "JSON"]
   disableBreadcrumb = false
   showVisitedLinks = true
   disableInlineHeader = true
+  showtoc = true
 
 [params.author]
   name = "Edu Dionisio"

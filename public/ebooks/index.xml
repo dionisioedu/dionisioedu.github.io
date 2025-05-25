@@ -3,7 +3,7 @@
   <channel>
     <title>eBooks | Dionisio Software</title>
     <link>http://localhost:1313/ebooks/index.html</link>
-    <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;Dominando a STL em C++ Arquitetura para Devs Iniciantes 10 Estratégias para Evoluir na Carreira Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
+    <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;O Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
     <atom:link href="http://localhost:1313/ebooks/index.xml" rel="self" type="application/rss+xml" />

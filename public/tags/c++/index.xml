@@ -23,6 +23,13 @@
       <description>Detalhes sobre a função std::find da STL.</description>
     </item>
     <item>
+      <title>std::for_each</title>
+      <link>http://localhost:1313/cpp/stl/algorithm/for_each/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/cpp/stl/algorithm/for_each/index.html</guid>
+      <description>Detalhes sobre a função std::for_each da STL.</description>
+    </item>
+    <item>
       <title>std::sort</title>
       <link>http://localhost:1313/cpp/stl/algorithm/sort/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>

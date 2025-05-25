@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Etiqueta | Dionisio Software</title>
+    <link>http://localhost:1313/tags/python/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principais Bibliotecas do Python — guia completo</title>
+      <link>http://localhost:1313/blog/python-bibliotecas/index.html</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/python-bibliotecas/index.html</guid>
+      <description>Visão panorâmica das bibliotecas mais influentes do ecossistema Python, com descrições, curiosidades, projetos famosos e snippets para começar.</description>
+    </item>
+  </channel>
+</rss>

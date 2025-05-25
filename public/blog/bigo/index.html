@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="description" content="Visão Rápida — A notação Big‑O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. Dominar Big‑O é saber identificar padrões de custo para tomar decisões informadas.
+1. Por que Big‑O importa? Escalabilidade previsível — evita surpresas quando n passa de 1 k para 10 M. Linguagem comum — candidatos e entrevistadores discutem soluções usando Big‑O. Comparação objetiva — decide rapidamente qual implementação vale manter e otimizar.">
+    <meta name="author" content="Edu Dionisio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos | Dionisio Software">
+    <meta name="twitter:description" content="Visão Rápida — A notação Big‑O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. Dominar Big‑O é saber identificar padrões de custo para tomar decisões informadas.
+1. Por que Big‑O importa? Escalabilidade previsível — evita surpresas quando n passa de 1 k para 10 M. Linguagem comum — candidatos e entrevistadores discutem soluções usando Big‑O. Comparação objetiva — decide rapidamente qual implementação vale manter e otimizar.">
+    <meta property="og:url" content="http://localhost:1313/blog/bigo/index.html">
+    <meta property="og:site_name" content="Dionisio Software">
+    <meta property="og:title" content="Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos | Dionisio Software">
+    <meta property="og:description" content="Visão Rápida — A notação Big‑O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. Dominar Big‑O é saber identificar padrões de custo para tomar decisões informadas.
+1. Por que Big‑O importa? Escalabilidade previsível — evita surpresas quando n passa de 1 k para 10 M. Linguagem comum — candidatos e entrevistadores discutem soluções usando Big‑O. Comparação objetiva — decide rapidamente qual implementação vale manter e otimizar.">
+    <meta property="og:locale" content="pt_br">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Artigos e Notícias">
+    <meta property="article:published_time" content="2025-05-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-05T00:00:00+00:00">
+    <meta property="article:tag" content="Big-O">
+    <meta property="article:tag" content="Complexidade">
+    <meta property="article:tag" content="Algoritmos">
+    <meta property="article:tag" content="Dsa">
+    <meta itemprop="name" content="Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos | Dionisio Software">
+    <meta itemprop="description" content="Visão Rápida — A notação Big‑O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. Dominar Big‑O é saber identificar padrões de custo para tomar decisões informadas.
+1. Por que Big‑O importa? Escalabilidade previsível — evita surpresas quando n passa de 1 k para 10 M. Linguagem comum — candidatos e entrevistadores discutem soluções usando Big‑O. Comparação objetiva — decide rapidamente qual implementação vale manter e otimizar.">
+    <meta itemprop="datePublished" content="2025-05-05T00:00:00+00:00">
+    <meta itemprop="dateModified" content="2025-05-05T00:00:00+00:00">
+    <meta itemprop="wordCount" content="1710">
+    <meta itemprop="keywords" content="Big-O,Complexidade,Algoritmos,Dsa">
+    <title>Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos | Dionisio Software</title>
+    <link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748144253" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748144253" rel="stylesheet"></noscript>
+    <link href="http://localhost:1313/css/perfect-scrollbar/perfect-scrollbar.min.css?1748144253" rel="stylesheet">
+    <link href="http://localhost:1313/css/theme.css?1748144253" rel="stylesheet">
+    <link href="http://localhost:1313/css/format-html.css?1748144253" rel="stylesheet" id="R-format-style">
+    <link href="http://localhost:1313/css/auto-complete/auto-complete.min.css?1748144253" rel="stylesheet">
+    <script src="http://localhost:1313/js/auto-complete/auto-complete.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.stemmer.support.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.multi.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.pt.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/search.js?1748144253" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/blog\/bigo\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['pt'];
+      window.relearn.index_js_url="http://localhost:1313/searchindex.pt.js?1748144253";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar para a área de transferência`;
+      window.T_Copied_to_clipboard = `Copiado para a área de transferência!`;
+      window.T_Copy_link_to_clipboard = `Link de cópia para a área de transferência`;
+      window.T_Link_copied_to_clipboard = `Link copiado para a área de transferência!`;
+      window.T_Reset_view = `Repor vista`;
+      window.T_View_reset = `Ver reposição!`;
+      window.T_No_results_found = `Nenhum resultado encontrado para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="http://localhost:1313/blog/bigo/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Índice (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-por-que-bigo-importa">1. Por que Big‑O importa?</a></li>
+    <li><a href="#2-trindade-assintótica">2. Trindade Assintótica</a></li>
+    <li><a href="#3-casos-de-complexidade">3. Casos de Complexidade</a></li>
+    <li><a href="#4-como-calcular-bigo-passoapasso">4. Como calcular Big‑O passo a passo</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#5-tabela-de-complexidade-de-estruturas">5. Tabela de Complexidade de Estruturas</a>
+      <ul>
+        <li><a href="#notas">Notas</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-complexidade-por-gráfico">6. Complexidade por Gráfico</a></li>
+    <li><a href="#7-exemplos-comentados">7. Exemplos Comentados</a>
+      <ul>
+        <li><a href="#71-linear-time--on">7.1 Linear Time — <strong>O(n)</strong></a></li>
+        <li><a href="#72-logarithmic-time--ologn">7.2 Logarithmic Time — <strong>O(log n)</strong></a></li>
+        <li><a href="#73-quadratic-time--onnested-loops">7.3 Quadratic Time — <strong>O(n²)</strong> <em>(Nested Loops)</em></a></li>
+        <li><a href="#74-cúbica--on">7.4 Cúbica — <strong>O(n³)</strong></a></li>
+        <li><a href="#75-exponencial--o2ⁿ">7.5 Exponencial — <strong>O(2ⁿ)</strong></a></li>
+        <li><a href="#76-fatorial--on">7.6 Fatorial — <strong>O(n!)</strong></a></li>
+        <li><a href="#77-master-theorem-express">7.7 Master Theorem <em>Express</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#8-espaço-versus-tempo">8. Espaço versus Tempo</a></li>
+    <li><a href="#9-armadilhas-frequentes">9. Armadilhas Frequentes</a></li>
+    <li><a href="#10-guia-de-primeiros-passos-roadmap-para-iniciantes">10. Guia de Primeiros Passos (Roadmap Para Iniciantes)</a></li>
+    <li><a href="#11-exercício-guiado">11. Exercício Guiado</a>
+      <ul>
+        <li><a href="#passo1--código-inicial">Passo 1 — Código inicial</a></li>
+        <li><a href="#passo2--diagnóstico">Passo 2 — Diagnóstico</a></li>
+        <li><a href="#passo3--otimização-com-hash">Passo 3 — Otimização com Hash</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-minifaq">12. Mini‑FAQ</a></li>
+    <li><a href="#13-glossário-rápido">13. Glossário Rápido</a></li>
+    <li><a href="#14-checklist-de-entrevista">14. Checklist de Entrevista</a></li>
+    <li><a href="#15-conclusão">15. Conclusão</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/index.html"><span itemprop="name">Desenvolvimento de Software e Carreira Tech</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/blog/index.html"><span itemprop="name">Artigos e Notícias</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/dionisioedu/dionisioedu.github.io/edit/main/blog/bigo.md" rel="external" target="_blank" title="Editar (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/blog/python-bibliotecas/index.html" title="Principais Bibliotecas do Python — guia completo (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/blog/sre/index.html" title="O Que é SRE? (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mais"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable blog" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Etiquetas" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="http://localhost:1313/tags/algoritmos/index.html">Algoritmos</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/big-o/index.html">Big-O</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/complexidade/index.html">Complexidade</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/dsa/index.html">Dsa</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="anatomia-da-notação-bigo-entenda-a-complexidade-de-algoritmos">Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos</h1>
+
+<blockquote>
+<p><strong>Visão Rápida</strong> — A notação Big‑O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. Dominar Big‑O é saber identificar padrões de custo para tomar decisões informadas.</p>
+</blockquote>
+<hr>
+<h2 id="1-por-que-bigo-importa">1. Por que Big‑O importa?</h2>
+<ul>
+<li><strong>Escalabilidade previsível</strong> — evita surpresas quando <code>n</code> passa de 1 k para 10 M.</li>
+<li><strong>Linguagem comum</strong> — candidatos e entrevistadores discutem soluções usando Big‑O.</li>
+<li><strong>Comparação objetiva</strong> — decide rapidamente qual implementação vale manter e otimizar.</li>
+</ul>
+<hr>
+<h2 id="2-trindade-assintótica">2. Trindade Assintótica</h2>
+<table>
+<thead>
+<tr>
+<th>Notação</th>
+<th>Significado</th>
+<th>Caso analisado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ω (Big Omega)</strong></td>
+<td>Limite <strong>inferior</strong></td>
+<td>Melhor caso</td>
+</tr>
+<tr>
+<td><strong>Θ (Big Theta)</strong></td>
+<td>Limite <strong>inferior e superior</strong></td>
+<td>Caso médio</td>
+</tr>
+<tr>
+<td><strong>O (Big O)</strong></td>
+<td>Limite <strong>superior</strong></td>
+<td>Pior caso</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Regra de ouro:</strong> use Big‑O para garantir que seu algoritmo <strong>nunca</strong> excede determinado custo.</p>
+</blockquote>
+<hr>
+<h2 id="3-casos-de-complexidade">3. Casos de Complexidade</h2>
+<ul>
+<li><strong>Pior caso (Big O)</strong> — entrada que provoca <em>máximo</em> de trabalho.</li>
+<li><strong>Caso médio (Θ)</strong> — desempenho típico para entradas aleatórias.</li>
+<li><strong>Melhor caso (Ω)</strong> — raramente decisivo, mas serve de garantia mínima.</li>
+</ul>
+<hr>
+<h2 id="4-como-calcular-bigo-passoapasso">4. Como calcular Big‑O passo a passo</h2>
+<ol>
+<li>
+<p><strong>Mapeie as variáveis de entrada</strong><br>
+Identifique tudo o que pode crescer: <code>n</code> (tamanho do vetor), <code>m</code> (número de arestas), <code>k</code> (profundidade da árvore) – elas vão aparecer nas contas.</p>
+</li>
+<li>
+<p><strong>Marque as operações‑chave</strong><br>
+Conte <strong>comparações</strong>, <strong>atribuções</strong>, <strong>leituras</strong> de memória e <strong>chamadas de função</strong> que realmente impactam desempenho. Comentários e variáveis auxiliares sem custo assintótico podem ser ignorados.</p>
+</li>
+<li>
+<p><strong>Avalie blocos lineares</strong><br>
+Se dois trechos rodam um após o outro, <strong>soma‑se</strong> o custo:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">O</span>(n)   <span style="color:#75715e">// loop A
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">O</span>(n<span style="color:#f92672">^</span><span style="color:#ae81ff">2</span>) <span style="color:#75715e">// loop B
+</span></span></span></code></pre></div>
+<p>Resultado → <strong>O(n²)</strong> porque o termo mais alto domina a soma.</p>
+</li>
+<li>
+<p><strong>Inclua condicionais no pior caso</strong><br>
+Para <code>if / else</code>, some apenas o caminho <strong>mais caro</strong>:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> found:          <span style="color:#75715e"># O(1)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:              <span style="color:#75715e"># O(n)</span>
+</span></span><span style="display:flex;"><span>    linear_search()</span></span></code></pre></div>
+<p>Big‑O = <strong>O(n)</strong>.</p>
+</li>
+<li>
+<p><strong>Multiplique loops aninhados</strong><br>
+Cada loop interno se multiplica pelo externo:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)        <span style="color:#75715e">// n
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">m</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>)    <span style="color:#75715e">// m
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">op</span>();                  <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// → O(n · m)
+</span></span></span></code></pre></div>
+<p><em>Loops dependentes</em> (‑até <code>j &lt; i</code>) geram progressão aritmética → <code>O(n²/2) = O(n²)</code>.</p>
+</li>
+<li>
+<p><strong>Trate recursão como recorrência</strong><br>
+<em>Escreva a equação</em> e resolva via:</p>
+<ul>
+<li><strong>Árvore de recursão</strong> – visualize níveis e conte nós.</li>
+<li><strong>Teorema Mestre</strong> – para <code>T(n) = a T(n/b) + f(n)</code>.</li>
+<li><strong>Substituição</strong> – chute a solução e prove por indução.</li>
+</ul>
+</li>
+<li>
+<p><strong>Normalização &amp; descarte de detalhes</strong><br>
+<em>Remova constantes e termos menores</em>:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>3n + 7  → O(n)
+n/2     → O(n)
+log₂n   → O(log n)   // base muda por constante</code></pre></div>
+</li>
+<li>
+<p><strong>Documente complexidade de espaço</strong><br>
+Analise variáveis alocadas, pilha de recursão e buffers.<br>
+Ex.: Merge Sort usa <code>O(n)</code> extra; Quick Sort in‑place usa <code>O(log n)</code> de pilha.</p>
+</li>
+<li>
+<p><strong>Cheque gargalos de I/O</strong><br>
+Operações de disco/rede podem dominar o tempo de CPU – use Big‑O para CPU <strong>e</strong> para I/O quando necessário.</p>
+</li>
+<li>
+<p><strong>Valide com experimento rápido</strong><br>
+Use <code>time</code>, <code>perf</code> ou <code>cProfile</code> para confirmar que o comportamento real segue a análise assintótica.</p>
+</li>
+</ol>
+<hr>
+<h4 id="miniexemplo-completo">Mini‑exemplo completo</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(arr):
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(arr)              <span style="color:#75715e"># O(1)</span>
+</span></span><span style="display:flex;"><span>    total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>                 <span style="color:#75715e"># O(1)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Loop externo               =&gt; n</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>        total <span style="color:#f92672">+=</span> arr[i]        <span style="color:#75715e"># O(1)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Loop interno dependente =&gt; i</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i):     
+</span></span><span style="display:flex;"><span>            total <span style="color:#f92672">+=</span> arr[j]    <span style="color:#75715e"># O(1)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> total</span></span></code></pre></div>
+<p><em>Receita</em>:</p>
+<ol>
+<li><strong>Loops aninhados</strong> → soma de série 1 + 2 + … + (n‑1) = <code>n(n‑1)/2</code> → <code>O(n²)</code>.</li>
+<li>Constantes ignoradas → <strong>O(n²)</strong> tempo, <strong>O(1)</strong> espaço.</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>Dica prática:</strong> ao revisar código, escreva o Big‑O <strong>no comentário de cada bloco</strong>. Isso treina o olhar e facilita code‑review de colegas iniciantes.</p>
+</blockquote>
+<hr>
+<h2 id="5-tabela-de-complexidade-de-estruturas">5. Tabela de Complexidade de Estruturas</h2>
+<table>
+<thead>
+<tr>
+<th>Estrutura</th>
+<th>Inserção</th>
+<th>Remoção/Update</th>
+<th>Busca/Consulta</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Array estático</strong></td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>Remoção desloca elementos</td>
+</tr>
+<tr>
+<td><strong>Array dinâmico (vector, ArrayList)</strong></td>
+<td>Amort. <strong>O(1)</strong></td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>Realoca ao dobrar a capacidade</td>
+</tr>
+<tr>
+<td><strong>Lista ligada</strong></td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>Sem acesso aleatório</td>
+</tr>
+<tr>
+<td><strong>Pilha (Stack)</strong></td>
+<td>O(1) <em>push</em></td>
+<td>O(1) <em>pop</em></td>
+<td>O(n)</td>
+<td>Acesso ao topo é O(1)</td>
+</tr>
+<tr>
+<td><strong>Fila (Queue)</strong></td>
+<td>O(1) <em>enqueue</em></td>
+<td>O(1) <em>dequeue</em></td>
+<td>O(n)</td>
+<td>FIFO</td>
+</tr>
+<tr>
+<td><strong>Deque</strong></td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>Inserção/rem. em ambas extremidades</td>
+</tr>
+<tr>
+<td><strong>Hash table / Hash map</strong></td>
+<td>O(1)¹</td>
+<td>O(1)¹</td>
+<td>O(1)¹</td>
+<td>¹Média; colisões → O(n)</td>
+</tr>
+<tr>
+<td><strong>Árvore balanceada (AVL, RB‑Tree)</strong></td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>Altura ≈ log₂ n</td>
+</tr>
+<tr>
+<td><strong>B‑Tree (ordem <em>m</em>)</strong></td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>Otimizada para disco/SSD</td>
+</tr>
+<tr>
+<td><strong>Heap (min/max)</strong></td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(1) topo</td>
+<td>Implementa fila de prioridade</td>
+</tr>
+<tr>
+<td><strong>Skip List</strong></td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>Probabilística; implementação simples</td>
+</tr>
+<tr>
+<td><strong>Trie (Árvore de prefixos)</strong></td>
+<td>O(L)</td>
+<td>O(L)</td>
+<td>O(L)</td>
+<td><em>L</em> = tamanho da chave; busca por prefixo eficiente</td>
+</tr>
+<tr>
+<td><strong>Segment Tree</strong></td>
+<td>O(log n) <em>update</em></td>
+<td>O(log n) <em>update</em></td>
+<td>O(log n) intervalo</td>
+<td>Consulta/atualização de intervalos</td>
+</tr>
+<tr>
+<td><strong>Fenwick Tree (BIT)</strong></td>
+<td>O(log n) <em>update</em></td>
+<td>O(log n) <em>update</em></td>
+<td>O(log n) prefix sum</td>
+<td>Menos memória que Segment Tree</td>
+</tr>
+<tr>
+<td><strong>Bloom Filter</strong></td>
+<td>O(k)</td>
+<td>—</td>
+<td>O(k) teste</td>
+<td>Probabilístico: falsos‑positivos, sem remoção nativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="notas">Notas</h3>
+<ul>
+<li><strong>Amortizado</strong>: tempo médio por operação após muitas operações (caso do array dinâmico).</li>
+<li><strong>k</strong> em Bloom Filter indica o nº de funções hash usadas.</li>
+<li>Para tries, <code>O(L)</code> é proporcional ao comprimento da palavra, não ao nº de chaves.</li>
+</ul>
+<hr>
+<h2 id="6-complexidade-por-gráfico">6. Complexidade por Gráfico</h2>
+<p><a href="#R-image-6d9901042052d01789ee2a32965af1b6" class="lightbox-link"><img alt="Gráfico" class="lazy lightbox figure-image" loading="lazy" src="http://localhost:1313/assets/images/big-o-graph.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6d9901042052d01789ee2a32965af1b6"><img alt="Gráfico" class="lazy lightbox lightbox-image" loading="lazy" src="http://localhost:1313/assets/images/big-o-graph.png"></a></p>
+<p>Observe como <strong>O(n!)</strong> explode comparado a <strong>O(n log n)</strong> — fundamental para escolhas arquiteturais.</p>
+<hr>
+<h2 id="7-exemplos-comentados">7. Exemplos Comentados</h2>
+<blockquote>
+<p>Esta seção reúne trechos clássicos de código para ilustrar <strong>como cada classe de Big‑O se comporta na prática</strong>, tomando como base o artigo “Common Big‑O Notations” da GeeksforGeeks.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Complexidade</th>
+<th>Classe</th>
+<th>Exemplo resumido</th>
+<th>Ideia‑chave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>O(1)</strong></td>
+<td>Constante</td>
+<td>Acesso a <code>arr[i]</code></td>
+<td>Tempo indep. de <code>n</code></td>
+</tr>
+<tr>
+<td><strong>O(n)</strong></td>
+<td>Linear</td>
+<td>Procurar valor em array</td>
+<td>Percorre todos os elementos</td>
+</tr>
+<tr>
+<td><strong>O(log n)</strong></td>
+<td>Logarítmica</td>
+<td>Binary Search</td>
+<td>Divide a entrada pela metade</td>
+</tr>
+<tr>
+<td><strong>O(n log n)</strong></td>
+<td>Quasi‑linear</td>
+<td>Merge Sort</td>
+<td>Divide &amp; conquista + merge</td>
+</tr>
+<tr>
+<td><strong>O(n²)</strong></td>
+<td>Quadrática</td>
+<td>Bubble Sort, loops duplos</td>
+<td>Comparações par a par</td>
+</tr>
+<tr>
+<td><strong>O(n³)</strong></td>
+<td>Cúbica</td>
+<td>Multiplicação de matrizes (ingênua)</td>
+<td>Três loops aninhados</td>
+</tr>
+<tr>
+<td><strong>O(2ⁿ)</strong></td>
+<td>Exponencial</td>
+<td>Geração de subconjuntos</td>
+<td>Cresce dobrando a cada elemento</td>
+</tr>
+<tr>
+<td><strong>O(n!)</strong></td>
+<td>Fatorial</td>
+<td>Todas as permutações</td>
+<td>Número explode além do exponencial</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="71-linear-time--on">7.1 Linear Time — <strong>O(n)</strong></h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">findElement</span>(<span style="color:#66d9ef">int</span> arr[], <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> key) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (arr[i] <span style="color:#f92672">==</span> key) <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Executa <strong>uma</strong> comparação por elemento → cresce linearmente.</p>
+<hr>
+<h3 id="72-logarithmic-time--ologn">7.2 Logarithmic Time — <strong>O(log n)</strong></h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">binary_search</span>(arr, x):
+</span></span><span style="display:flex;"><span>    l, r <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, len(arr) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> l <span style="color:#f92672">&lt;=</span> r:
+</span></span><span style="display:flex;"><span>        mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> arr[mid] <span style="color:#f92672">==</span> x:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> mid
+</span></span><span style="display:flex;"><span>        l, r <span style="color:#f92672">=</span> (mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r) <span style="color:#66d9ef">if</span> arr[mid] <span style="color:#f92672">&lt;</span> x <span style="color:#66d9ef">else</span> (l, mid <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span></span></span></code></pre></div>
+<p>Cada passo descarta <strong>metade</strong> da entrada → curva logarítmica.</p>
+<hr>
+<h3 id="73-quadratic-time--onnested-loops">7.3 Quadratic Time — <strong>O(n²)</strong> <em>(Nested Loops)</em></h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>j)
+</span></span><span style="display:flex;"><span>        process(i, j);  <span style="color:#75715e">// n × n chamadas
+</span></span></span></code></pre></div>
+<p>Segundo loop roda <code>n</code> vezes para cada volta do primeiro → <code>n²</code>.</p>
+<hr>
+<h3 id="74-cúbica--on">7.4 Cúbica — <strong>O(n³)</strong></h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#66d9ef">int</span> A[][N], <span style="color:#66d9ef">int</span> B[][N], <span style="color:#66d9ef">int</span> C[][N]) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> N; <span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> N; <span style="color:#f92672">++</span>j) {
+</span></span><span style="display:flex;"><span>            C[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> N; <span style="color:#f92672">++</span>k)
+</span></span><span style="display:flex;"><span>                C[i][j] <span style="color:#f92672">+=</span> A[i][k] <span style="color:#f92672">*</span> B[k][j];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Três loops aninhados sobre <code>N</code> → <code>N³</code> operações.</p>
+<hr>
+<h3 id="75-exponencial--o2ⁿ">7.5 Exponencial — <strong>O(2ⁿ)</strong></h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateSubsets</span>(<span style="color:#66d9ef">int</span> arr[], <span style="color:#66d9ef">int</span> n) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; mask <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> n); <span style="color:#f92672">++</span>mask) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>j)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (mask <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> j)) cout <span style="color:#f92672">&lt;&lt;</span> arr[j] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39; &#39;</span>;
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Há <code>2ⁿ</code> máscaras possíveis, logo tempo dobra a cada incremento de <code>n</code>.</p>
+<hr>
+<h3 id="76-fatorial--on">7.6 Fatorial — <strong>O(n!)</strong></h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">permute</span>(<span style="color:#66d9ef">int</span> a[], <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">==</span> r) { print(a, r); <span style="color:#66d9ef">return</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> l; i <span style="color:#f92672">&lt;=</span> r; <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>        swap(a[l], a[i]);
+</span></span><span style="display:flex;"><span>        permute(a, l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r);   <span style="color:#75715e">// n! permutações
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        swap(a[l], a[i]);       <span style="color:#75715e">// backtrack
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Número de permutações de <code>n</code> itens é <code>n!</code>, logo tempo explode rapidamente.</p>
+<hr>
+<h3 id="77-master-theorem-express">7.7 Master Theorem <em>Express</em></h3>
+<p>Para recursões da forma <code>T(n) = a T(n/b) + f(n)</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Relação <code>f(n)</code> vs. <code>n^{log_b a}</code></th>
+<th>Complexidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>f(n)</code> assintoticamente <strong>menor</strong></td>
+<td><code>Θ(n^{log_b a})</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>f(n)</code> <strong>igual</strong></td>
+<td><code>Θ(n^{log_b a} · log n)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>f(n)</code> <strong>maior</strong></td>
+<td><code>Θ(f(n))</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><strong>Takeaway:</strong> Algoritmos acima de <code>O(n log n)</code> já podem se tornar gargalos em escala. Use esta lista como checklist mental na hora de propor soluções ou revisar PRs.</p>
+</blockquote>
+<hr>
+<h2 id="8-espaço-versus-tempo">8. Espaço versus Tempo</h2>
+<p>Big‑O também mede <strong>memória</strong>.<br>
+<em>Merge Sort</em>: <code>O(n log n)</code> tempo, <code>O(n)</code> espaço.<br>
+<em>Heap Sort</em>: <code>O(n log n)</code> tempo, <strong>O(1)</strong> espaço — troca mais comparação por menos RAM.</p>
+<hr>
+<h2 id="9-armadilhas-frequentes">9. Armadilhas Frequentes</h2>
+<table>
+<thead>
+<tr>
+<th>Cenário</th>
+<th>Erro comum</th>
+<th>Solução</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fibonacci recursivo</td>
+<td><code>O(2ⁿ)</code></td>
+<td>Memorizar → <code>O(n)</code></td>
+</tr>
+<tr>
+<td><code>std::vector::insert</code></td>
+<td>Achar que é O(1)</td>
+<td>Desloca elementos → <code>O(n)</code></td>
+</tr>
+<tr>
+<td>Hash sem tratamento</td>
+<td>Supor O(1) sempre</td>
+<td>Use <em>chaining</em> ou <em>open addressing</em></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="10-guia-de-primeiros-passos-roadmap-para-iniciantes">10. Guia de Primeiros Passos (Roadmap Para Iniciantes)</h2>
+<ol>
+<li><strong>Domine uma linguagem</strong> (Python/Repl.it é ótimo para feedback rápido).</li>
+<li><strong>Assista 2 vídeos curtos</strong> sobre notação Big‑O (GfG &amp; Computerphile).</li>
+<li><strong>Analise 5 trechos de código</strong> do seu dia‐a‐dia — escreva a complexidade em um caderno.</li>
+<li><strong>Implemente buscas &amp; sorts</strong> do zero (Linear, Binária, Bubble, Merge).</li>
+<li><strong>Use plataformas gamificadas</strong> (HackerRank “Time Complexity” warm‑up).</li>
+<li><strong>Participe de um contest curto</strong> (Codeforces <em>Div. 4</em>) — força você a otimizar rápido.</li>
+</ol>
+<hr>
+<h2 id="11-exercício-guiado">11. Exercício Guiado</h2>
+<blockquote>
+<p><strong>Objetivo:</strong> converter um algoritmo ingênuo <code>O(n²)</code> em <code>O(n)</code>.</p>
+</blockquote>
+<h3 id="passo1--código-inicial">Passo 1 — Código inicial</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">count_pairs</span>(arr):
+</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(arr)):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, len(arr)):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> arr[i] <span style="color:#f92672">==</span> arr[j]:
+</span></span><span style="display:flex;"><span>                count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> count</span></span></code></pre></div>
+<h3 id="passo2--diagnóstico">Passo 2 — Diagnóstico</h3>
+<p>Dois loops aninhados → quadrático.</p>
+<h3 id="passo3--otimização-com-hash">Passo 3 — Otimização com Hash</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> Counter
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">count_pairs</span>(arr):
+</span></span><span style="display:flex;"><span>    freq <span style="color:#f92672">=</span> Counter(arr)  <span style="color:#75715e"># O(n)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum(c <span style="color:#f92672">*</span> (c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> freq<span style="color:#f92672">.</span>values())  <span style="color:#75715e"># O(k)</span></span></span></code></pre></div>
+<p>Agora o algoritmo roda em <strong>O(n)</strong> tempo e <strong>O(k)</strong> espaço.</p>
+<hr>
+<h2 id="12-minifaq">12. Mini‑FAQ</h2>
+<p><strong>Q:</strong> Por que ignoramos constantes?<br>
+<strong>A:</strong> Porque em escala grande, fatores proporcionais são irrelevantes frente ao crescimento assintótico.</p>
+<p><strong>Q:</strong> Big‑O mede tempo de <em>qual</em> operação?<br>
+<strong>A:</strong> Qualquer métrica de custo: CPU, memória, I/O. Especifique qual está analisando.</p>
+<p><strong>Q:</strong> Preciso decorar todas as classes?<br>
+<strong>A:</strong> Não. Entenda o <em>estilo de curva</em>: constante, log, linear, quadrática, exponencial.</p>
+<hr>
+<h2 id="13-glossário-rápido">13. Glossário Rápido</h2>
+<ul>
+<li><strong>Entrada (n)</strong> — quantidade de dados processados.</li>
+<li><strong>Dominante</strong> — parte do código que mais contribui para o custo.</li>
+<li><strong>Assintótico</strong> — tendência quando <code>n → ∞</code>.</li>
+<li><strong>Overhead</strong> — custo extra além da lógica principal (ex.: alocação).</li>
+</ul>
+<hr>
+<h2 id="14-checklist-de-entrevista">14. Checklist de Entrevista</h2>
+<ol>
+<li>Qual o <strong>pior caso</strong>?</li>
+<li>Há estimativa realista do <strong>caso médio</strong>?</li>
+<li>Complexidade de <strong>espaço</strong>?</li>
+<li>Estrutura de dados alternativa?</li>
+<li>Pode paralelizar?</li>
+<li>Trade‑off tempo × memória aceitável?</li>
+</ol>
+<hr>
+<h2 id="15-conclusão">15. Conclusão</h2>
+<p>A notação Big‑O é a régua que ajuda a identificar gargalos antes que eles explodam em produção. Com um olhar crítico e prática constante, você passará a reconhecer padrões complexos à primeira vista — e otimizar à segunda.</p>
+<blockquote>
+<p><strong>Desafio Final:</strong> Pegue um script seu de ontem, estime Big‑O, depois meça com <code>time</code>. Quanto as estimativas batem com a realidade?</p>
+</blockquote>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> 5 de mai. de 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="http://localhost:1313/index.html">
+            <div class="logo-title">Dionisio Software</div>
+          </a>
+        </div>
+        <search><form action="http://localhost:1313/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Procurar (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Procurar</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Procurar...">
+            <button class="search-clear" type="button" data-search-clear="" title="Limpar pesquisa"><i class="fas fa-times" title="Limpar pesquisa"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="http://localhost:1313/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/blog/index.html"><input type="checkbox" id="R-section-c061e150208a7ab43c1b0b723b79816b" aria-controls="R-subsections-c061e150208a7ab43c1b0b723b79816b" checked><label for="R-section-c061e150208a7ab43c1b0b723b79816b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Artigos e Notícias</span></label><a class="padding" href="http://localhost:1313/blog/index.html">Artigos e Notícias<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c061e150208a7ab43c1b0b723b79816b" class="collapsible-menu">
+            <li class="" data-nav-id="/blog/tudo-sobre-linux/index.html"><a class="padding" href="http://localhost:1313/blog/tudo-sobre-linux/index.html">Tudo o que você precisa para começar com Linux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/python-bibliotecas/index.html"><a class="padding" href="http://localhost:1313/blog/python-bibliotecas/index.html">Principais Bibliotecas do Python — guia completo<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/blog/bigo/index.html"><a class="padding" href="http://localhost:1313/blog/bigo/index.html">Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/sre/index.html"><a class="padding" href="http://localhost:1313/blog/sre/index.html">O Que é SRE?<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/clean-code-resumo/index.html"><a class="padding" href="http://localhost:1313/blog/clean-code-resumo/index.html">Resumo do Clean Code Para Quem Está Com Pressa<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/apps/index.html"><a class="padding" href="http://localhost:1313/apps/index.html">Testes e aplicativos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/projects/index.html"><a class="padding" href="http://localhost:1313/projects/index.html">Projetos e Portfólio<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/dsa/index.html"><a class="padding" href="http://localhost:1313/dsa/index.html">Estruturas de Dados e Algoritmos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="alwaysopen " data-nav-id="/cpp/index.html"><input type="checkbox" id="R-section-f4994d3cd4490e74daed2725deb83947" aria-controls="R-subsections-f4994d3cd4490e74daed2725deb83947" checked><label for="R-section-f4994d3cd4490e74daed2725deb83947"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu C&#43;&#43;</span></label><a class="padding" href="http://localhost:1313/cpp/index.html">C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f4994d3cd4490e74daed2725deb83947" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/cpp/stl/index.html"><input type="checkbox" id="R-section-bc01129ceb8f7c419c926b8b56963fee" aria-controls="R-subsections-bc01129ceb8f7c419c926b8b56963fee" checked><label for="R-section-bc01129ceb8f7c419c926b8b56963fee"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Standard Template Library (STL)</span></label><a class="padding" href="http://localhost:1313/cpp/stl/index.html">Standard Template Library (STL)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bc01129ceb8f7c419c926b8b56963fee" class="collapsible-menu">
+            <li class="" data-nav-id="/cpp/stl/algorithm/find/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/find/index.html">std::find<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/for_each/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/for_each/index.html">std::for_each<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/sort/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/sort/index.html">std::sort<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ebooks/index.html"><input type="checkbox" id="R-section-dda6cc94e995b4ab5bdfdaee672cd5ad" aria-controls="R-subsections-dda6cc94e995b4ab5bdfdaee672cd5ad" checked><label for="R-section-dda6cc94e995b4ab5bdfdaee672cd5ad"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu eBooks</span></label><a class="padding" href="http://localhost:1313/ebooks/index.html">eBooks<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dda6cc94e995b4ab5bdfdaee672cd5ad" class="collapsible-menu">
+            <li class="" data-nav-id="/ebooks/guia/index.html"><a class="padding" href="http://localhost:1313/ebooks/guia/index.html">O Guia do Dev Iniciante<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Limpar Histórico</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="http://localhost:1313/js/clipboard/clipboard.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/perfect-scrollbar/perfect-scrollbar.min.js?1748144253" defer></script>
+    <script src="http://localhost:1313/js/theme.js?1748144253" defer></script>
+  </body>
+</html>
