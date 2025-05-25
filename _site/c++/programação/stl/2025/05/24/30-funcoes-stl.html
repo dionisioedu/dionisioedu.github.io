@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>As 30 Principais Funções da STL para Profissionais C++ | Dionisio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Content‑Security‑Policy -->
+  <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src
+          'self'
+          https://www.googletagmanager.com
+          https://pagead2.googlesyndication.com
+          https://fundingchoicesmessages.google.com
+          https://ep1.adtrafficquality.google
+          https://ep2.adtrafficquality.google
+          'sha256-2hhfvpGg/vP7kTYDS7XGua28XNgpVp20L8IkYrVpE5Y=';
+        frame-src
+          'self'
+          https://googleads.g.doubleclick.net
+          https://fundingchoicesmessages.google.com
+          https://ep2.adtrafficquality.google
+          https://www.google.com
+          https://pagead2.googlesyndication.com;
+        fenced-frame-src
+          'self'
+          about:
+          https://googleads.g.doubleclick.net
+          https://fundingchoicesmessages.google.com
+          https://ep2.adtrafficquality.google
+          https://www.google.com
+          https://pagead2.googlesyndication.com;
+        connect-src
+          'self'
+          https://www.googletagmanager.com
+          https://pagead2.googlesyndication.com
+          https://ep1.adtrafficquality.google
+          https://ep2.adtrafficquality.google
+          https://www.google-analytics.com
+          https://script.google.com;
+          https://fundingchoicesmessages.google.com;
+        style-src
+          'self'
+          'unsafe-inline'
+          https://fonts.googleapis.com;
+        font-src
+          'self'
+          https://fonts.gstatic.com;
+        img-src
+          'self'
+          https://pagead2.googlesyndication.com
+          https://ep1.adtrafficquality.google
+          https://www.google-analytics.com
+          data:;
+      ">
+
+  <!-- Google AdSense verification -->
+  <meta name="google-adsense-account" content="ca-pub-6858130394830057">
+
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-7BZ62SG9QF');</script>
+
+  <!-- Google AdSense -->
+  <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057"
+          crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header">
+	<a href="http://localhost:4000//" class="logo"><strong>Dionisio</strong> <span>Software</span></a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+        
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000//">Início</a></li>
+	    	
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/about.html">Sobre</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/all_posts.html">Artigos e Notícias</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/apps/aptitude-quiz.html">Teste de Aptidão</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/books.html">eBooks</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/dsa.html">Estruturas de Dados e Algoritmos</a></li>
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/projects.html">Projetos</a></li>
+		    
+		
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/trainning.html">Treinamento</a></li>
+		    
+		
+		    
+		        <li><a href="http://localhost:4000/tutorials.html">Tutoriais</a></li>
+		    
+		
+	</ul>
+	<ul class="actions vertical">
+		<li><a href="#" class="button special fit">Início</a></li>
+		<li><a href="#" class="button fit">Log In</a></li>
+	</ul>
+</nav>
+ 
+    
+    
+<!-- Main -->
+<div id="main" class="alt">
+
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<a href="/all_posts" class="button">Voltar</a>
+		<header class="major">
+			<h1>As 30 Principais Funções da STL para Profissionais C++</h1>
+		</header>
+		
+		<p>A <strong>Standard Template Library (STL)</strong> é um pilar fundamental da programação em C++, oferecendo ferramentas poderosas para manipulação de dados, algoritmos e estruturas eficientes. Neste artigo, apresentamos as 30 funções mais relevantes da STL para profissionais C++, com explicações detalhadas, exemplos práticos e informações sobre a versão do C++ em que cada função está disponível. As funções são organizadas por categorias (algoritmos, contêineres, utilitários, etc.) para facilitar a compreensão.</p>
+
+<hr />
+
+<h2 id="1-algoritmos-gerais">1. Algoritmos Gerais</h2>
+
+<h3 id="stdsort"><strong>std::sort</strong></h3>
+<p>Ordena os elementos no intervalo (first, last) usando o operador &lt; ou uma função de comparação personalizada. Utiliza introsort, uma combinação de quicksort, heapsort e insertion sort para garantir eficiência.</p>
+<ul>
+  <li><strong>Cabeçalho</strong>: <code class="language-plaintext highlighter-rouge">&lt;algorithm&gt;</code></li>
+  <li><strong>Assinatura</strong>:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sort(RandomIt first, RandomIt last);
+sort(RandomIt first, RandomIt last, Compare comp);
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Parâmetros</strong>:
+    <ul>
+      <li><strong>first</strong>, <strong>last</strong> - Um par de iteradores que definem o range que vai ser ordenado.</li>
+      <li><strong>comp</strong> - Função de comparação que retorna <strong>true</strong> se o primeiro elemento for <em>menor</em> do que o segundo.</li>
+    </ul>
+  </li>
+  <li><strong>Retorno</strong>: Nenhum (<code class="language-plaintext highlighter-rouge">void</code>).</li>
+  <li><strong>Exceções</strong>: Pode lançar exceções de cópia, movimentação ou da função de comparação.</li>
+  <li><strong>Versão</strong>: C++ 98</li>
+  <li><strong>Performance</strong>: O(N log N)</li>
+  <li><strong>Exemplo</strong>:
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">// Ordena: {1, 2, 5, 5, 9}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// Com comparação personalizada</span>
+  <span class="k">auto</span> <span class="n">comp</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">comp</span><span class="p">);</span> <span class="c1">// ordem decrescente</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <hr />
+    <h3 id="stdfind"><strong>std::find</strong></h3>
+    <p>Busca o primeiro elemento igual a um valor específico em um intervalo [first, last).</p>
+  </li>
+  <li><strong>Cabeçalho</strong>: <code class="language-plaintext highlighter-rouge">&lt;algorithm&gt;</code></li>
+  <li><strong>Assinatura</strong>:
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">find</span><span class="p">(</span><span class="n">InputIt</span> <span class="n">first</span><span class="p">,</span> <span class="n">InputIt</span> <span class="n">last</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Parâmetros</strong>:
+    <ul>
+      <li><strong>first</strong>, <strong>last</strong> - Iteradores que definem o intervalo de busca.</li>
+      <li><strong>value</strong> - Valor a ser procurado.</li>
+    </ul>
+  </li>
+  <li><strong>Retorno</strong>: Iterador para o primeiro elemento igual a value ou last se não encontrado.</li>
+  <li><strong>Exceções</strong>: Nenhuma, a menos que operações de iteração lancem.</li>
+  <li><strong>Versão</strong>: C++98</li>
+  <li><strong>Performance</strong>: O(N)</li>
+  <li><strong>Exemplo</strong>:
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+  <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// Aponta para 3</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span> <span class="c1">// Imprime: 3</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+		<i style="margin: 0;">24/05/2025</i> - <i>Edu Dionisio</i>
+	</div>
+</section>
+
+</div>
+
+    <!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section>
+			<form action="https://formspree.io/f/xnnjzodw" method="POST">
+				<div class="field half first">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+				<div class="field">
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Enviar Mensagem" class="special" /></li>
+					<li><input type="reset" value="Limpar" /></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:dionisiosoftware@gmail.com">dionisiosoftware@gmail.com</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+					<h3>WhatsApp</h3>
+					<a href="tel:+55 11 996643485">+55 11 996643485</a>
+				</div>
+			</section>
+			<!--section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Address</h3>
+					<span>
+					
+					
+					
+					
+					
+					</span>
+				</div>
+			</section-->
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				
+					
+						<li>
+							<a href="https://github.com/dionisioedu" class="icon alt fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.linkedin.com/in/dionisiodev" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://twitter.com/dionisiodev" class="icon alt fa-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+					
+				
+					
+						<li>
+							<a href="https://www.youtube.com/@dionisiodev" class="icon alt fa-youtube" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+								<span class="label">Youtube</span>
+							</a>
+						</li>
+					
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Dionisio Software</li>
+				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+				<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank">Andrew Banchich</a></li> -->
+
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+	<script src="http://localhost:4000/assets/js/jquery.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrolly.min.js"></script>
+	<script src="http://localhost:4000/assets/js/jquery.scrollex.min.js"></script>
+	<script src="http://localhost:4000/assets/js/skel.min.js"></script>
+	<script src="http://localhost:4000/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="http://localhost:4000/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="http://localhost:4000/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
