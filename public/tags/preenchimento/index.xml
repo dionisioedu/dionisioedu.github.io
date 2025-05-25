@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Preenchimento | Etiqueta | Dionisio Software</title>
+    <link>http://localhost:1313/tags/preenchimento/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 25 May 2025 01:26:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/preenchimento/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>std::fill</title>
+      <link>http://localhost:1313/cpp/stl/algorithm/fill/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:26:00 -0300</pubDate>
+      <guid>http://localhost:1313/cpp/stl/algorithm/fill/index.html</guid>
+      <description>Detalhes sobre a função std::fill da STL.</description>
+    </item>
+  </channel>
+</rss>

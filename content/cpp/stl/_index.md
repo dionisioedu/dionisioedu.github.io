@@ -62,73 +62,73 @@ Este cabeçalho contém algoritmos genéricos para manipulação de intervalos, 
 
 Este cabeçalho fornece algoritmos numéricos para cálculos em intervalos.
 
-- [**std::accumulate**](/stl/numeric/accumulate/) - Acumula valores de um intervalo.
-- [**std::iota**](/stl/numeric/iota/) - Preenche um intervalo com valores incrementais.
-- [**std::inner_product**](/stl/numeric/inner_product/) - Calcula o produto interno de dois intervalos.
-- [**std::adjacent_difference**](/stl/numeric/adjacent_difference/) - Calcula diferenças entre elementos adjacentes.
+- [**std::accumulate**](/cpp/stl/numeric/accumulate/) - Acumula valores de um intervalo.
+- [**std::iota**](/cpp/stl/numeric/iota/) - Preenche um intervalo com valores incrementais.
+- [**std::inner_product**](/cpp/stl/numeric/inner_product/) - Calcula o produto interno de dois intervalos.
+- [**std::adjacent_difference**](/cpp/stl/numeric/adjacent_difference/) - Calcula diferenças entre elementos adjacentes.
 
 ### `<vector>`
 
 Contém funções para manipulação de vetores dinâmicos.
 
-- [**std::vector::push_back**](/stl/vector/push_back/) - Adiciona um elemento ao final do vetor.
-- [**std::vector::emplace_back**](/stl/vector/emplace_back/) - Constrói um elemento diretamente no final do vetor.
+- [**std::vector::push_back**](/cpp/stl/vector/push_back/) - Adiciona um elemento ao final do vetor.
+- [**std::vector::emplace_back**](/cpp/stl/vector/emplace_back/) - Constrói um elemento diretamente no final do vetor.
 
 ### `<list>`
 
 Contém funções para manipulação de listas duplamente encadeadas.
 
-- [**std::list::splice**](/stl/list/splice/) - Transfere elementos de uma lista para outra.
+- [**std::list::splice**](/cpp/stl/list/splice/) - Transfere elementos de uma lista para outra.
 
 ### `<map>`
 
 Contém funções para manipulação de mapas associativos ordenados.
 
-- [**std::map::insert**](/stl/map/insert/) - Insere um par chave-valor em um mapa.
+- [**std::map::insert**](/cpp/stl/map/insert/) - Insere um par chave-valor em um mapa.
 
 ### `<unordered_map>`
 
 Contém funções para manipulação de mapas associativos não ordenados.
 
-- [**std::unordered_map::find**](/stl/unordered_map/find/) - Busca um elemento pela chave.
+- [**std::unordered_map::find**](/cpp/stl/unordered_map/find/) - Busca um elemento pela chave.
 
 ### `<deque>`
 
 Contém funções para manipulação de deques (filas de duas extremidades).
 
-- [**std::deque::push_front**](/stl/deque/push_front/) - Adiciona um elemento ao início de uma deque.
+- [**std::deque::push_front**](/cpp/stl/deque/push_front/) - Adiciona um elemento ao início de uma deque.
 
 ### `<set>`
 
 Contém funções para manipulação de conjuntos ordenados.
 
-- [**std::set::erase**](/stl/set/erase/) - Remove elementos de um conjunto.
+- [**std::set::erase**](/cpp/stl/set/erase/) - Remove elementos de um conjunto.
 
 ### `<utility>`
 
 Contém funções utilitárias para manipulação de pares e movimentação.
 
-- [**std::make_pair**](/stl/utility/make_pair/) - Cria um `std::pair` a partir de dois valores.
-- [**std::move**](/stl/utility/move/) - Converte um objeto em uma referência rvalue.
-- [**std::swap**](/stl/utility/swap/) - Troca os valores de dois objetos.
-- [**std::tie**](/stl/tuple/tie/) - Cria uma tupla de referências para desempacotar valores.
+- [**std::make_pair**](/cpp/stl/utility/make_pair/) - Cria um `std::pair` a partir de dois valores.
+- [**std::move**](/cpp/stl/utility/move/) - Converte um objeto em uma referência rvalue.
+- [**std::swap**](/cpp/stl/utility/swap/) - Troca os valores de dois objetos.
+- [**std::tie**](/cpp/stl/tuple/tie/) - Cria uma tupla de referências para desempacotar valores.
 
 ### `<memory>`
 
 Contém funções para gerenciamento de memória dinâmica.
 
-- [**std::unique_ptr**](/stl/memory/unique_ptr/) - Gerencia a posse exclusiva de um ponteiro.
-- [**std::make_unique**](/stl/memory/make_unique/) - Cria um `std::unique_ptr` com um objeto construído.
-- [**std::shared_ptr**](/stl/memory/shared_ptr/) - Gerencia a posse compartilhada de um ponteiro.
-- [**std::make_shared**](/stl/memory/make_shared/) - Cria um `std::shared_ptr` com um objeto construído.
+- [**std::unique_ptr**](/cpp/stl/memory/unique_ptr/) - Gerencia a posse exclusiva de um ponteiro.
+- [**std::make_unique**](/cpp/stl/memory/make_unique/) - Cria um `std::unique_ptr` com um objeto construído.
+- [**std::shared_ptr**](/cpp/stl/memory/shared_ptr/) - Gerencia a posse compartilhada de um ponteiro.
+- [**std::make_shared**](/cpp/stl/memory/make_shared/) - Cria um `std::shared_ptr` com um objeto construído.
 
 ### `<string>`
 
 Contém funções para manipulação de strings.
 
-- [**std::to_string**](/stl/string/to_string/) - Converte um valor numérico em uma string.
-- [**std::string::starts_with**](/stl/string/starts_with/) - Verifica se uma string começa com um prefixo.
-- [**std::string::ends_with**](/stl/string/ends_with/) - Verifica se uma string termina com um sufixo.
+- [**std::to_string**](/cpp/stl/string/to_string/) - Converte um valor numérico em uma string.
+- [**std::string::starts_with**](/cpp/stl/string/starts_with/) - Verifica se uma string começa com um prefixo.
+- [**std::string::ends_with**](/cpp/stl/string/ends_with/) - Verifica se uma string termina com um sufixo.
 
 ## Próximos Passos
 

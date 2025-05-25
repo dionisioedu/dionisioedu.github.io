@@ -1,41 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Standard Template Library (STL) | Dionisio Software</title>
-    <link>http://localhost:1313/cpp/stl/index.html</link>
-    <description>Uma introdução à Standard Template Library (STL) do C++, sua história e uma lista de funções agrupadas por cabeçalho.</description>
+    <title></title>
+    <link>http://localhost:1313/cpp/stl/algorithm/index.html</link>
+    <description></description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 25 May 2025 01:38:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/cpp/stl/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>std::adjacent_difference</title>
-      <link>http://localhost:1313/cpp/stl/numeric/adjacent_difference/index.html</link>
-      <pubDate>Sun, 25 May 2025 01:38:00 -0300</pubDate>
-      <guid>http://localhost:1313/cpp/stl/numeric/adjacent_difference/index.html</guid>
-      <description>Detalhes sobre a função std::adjacent_difference da STL.</description>
-    </item>
-    <item>
-      <title>std::inner_product</title>
-      <link>http://localhost:1313/cpp/stl/numeric/inner_product/index.html</link>
-      <pubDate>Sun, 25 May 2025 01:37:00 -0300</pubDate>
-      <guid>http://localhost:1313/cpp/stl/numeric/inner_product/index.html</guid>
-      <description>Detalhes sobre a função std::inner_product da STL.</description>
-    </item>
-    <item>
-      <title>std::iota</title>
-      <link>http://localhost:1313/cpp/stl/numeric/iota/index.html</link>
-      <pubDate>Sun, 25 May 2025 01:36:00 -0300</pubDate>
-      <guid>http://localhost:1313/cpp/stl/numeric/iota/index.html</guid>
-      <description>Detalhes sobre a função std::iota da STL.</description>
-    </item>
-    <item>
-      <title>std::accumulate</title>
-      <link>http://localhost:1313/cpp/stl/numeric/accumulate/index.html</link>
-      <pubDate>Sun, 25 May 2025 01:35:00 -0300</pubDate>
-      <guid>http://localhost:1313/cpp/stl/numeric/accumulate/index.html</guid>
-      <description>Detalhes sobre a função std::accumulate da STL.</description>
-    </item>
+    <lastBuildDate>Sun, 25 May 2025 01:29:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/cpp/stl/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>std::stable_partition</title>
       <link>http://localhost:1313/cpp/stl/algorithm/stable_partition/index.html</link>
