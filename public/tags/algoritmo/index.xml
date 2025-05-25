@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Standard Template Library (STL) | Dionisio Software</title>
-    <link>http://localhost:1313/cpp/stl/index.html</link>
-    <description>Uma introdução à Standard Template Library (STL) do C++, sua história e uma lista de funções agrupadas por cabeçalho.</description>
+    <title>Algoritmo | Etiqueta | Dionisio Software</title>
+    <link>http://localhost:1313/tags/algoritmo/index.html</link>
+    <description></description>
     <generator>Hugo</generator>
     <language>pt-br</language>
     <lastBuildDate>Sat, 24 May 2025 23:04:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/cpp/stl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/algoritmo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>std::find</title>
       <link>http://localhost:1313/cpp/stl/algorithm/find/index.html</link>

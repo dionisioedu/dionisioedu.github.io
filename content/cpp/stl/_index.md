@@ -39,8 +39,8 @@ Abaixo está uma lista das principais funções da STL, organizadas por cabeçal
 
 Este cabeçalho contém algoritmos genéricos para manipulação de intervalos, incluindo ordenação, busca e modificação.
 
-- [**std::sort**](/stl/algorithm/sort/) - Ordena elementos em um intervalo.
-- [**std::find**](/stl/algorithm/find/) - Busca um valor específico em um intervalo.
+- [**std::sort**](/cpp/stl/algorithm/sort/) - Ordena elementos em um intervalo.
+- [**std::find**](/cpp/stl/algorithm/find/) - Busca um valor específico em um intervalo.
 - [**std::for_each**](/stl/algorithm/for_each/) - Aplica uma função a cada elemento de um intervalo.
 - [**std::transform**](/stl/algorithm/transform/) - Aplica uma operação a elementos e armazena os resultados.
 - [**std::binary_search**](/stl/algorithm/binary_search/) - Verifica se um valor existe em um intervalo ordenado.

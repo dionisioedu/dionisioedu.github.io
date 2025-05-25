@@ -1,7 +1,7 @@
 var relearn_searchindex = [
   {
     "breadcrumb": "",
-    "content": "",
+    "content": "O site está de cara nova, e está em desenvolvimento (tenha paciência hehe). Mas você ainda pode comprar o eBook O Guia do Dev Iniciante.\nAcompanhe as novidades sobre o mundo da técnologia no nosso Blog.",
     "description": "Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira",
     "tags": [],
     "title": "Desenvolvimento de Software e Carreira Tech",
@@ -49,14 +49,6 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "C++ e STL",
-    "uri": "/cstl/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
     "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nDominando a STL em C++ Arquitetura para Devs Iniciantes 10 Estratégias para Evoluir na Carreira Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
     "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nDominando a STL em C++ Arquitetura para Devs Iniciantes 10 Estratégias para Evoluir na Carreira Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
     "tags": [],
@@ -68,8 +60,24 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | Algoritmo",
+    "uri": "/tags/algoritmo/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Algoritmos",
     "uri": "/tags/algoritmos/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Busca",
+    "uri": "/tags/busca/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -92,6 +100,14 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | Ordenação",
+    "uri": "/tags/ordena%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Programação",
     "uri": "/tags/programa%C3%A7%C3%A3o/index.html"
   },
@@ -108,6 +124,32 @@ var relearn_searchindex = [
     ],
     "title": "Standard Template Library (STL)",
     "uri": "/cpp/stl/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Busca o primeiro elemento igual a um valor específico em um intervalo [first, last).\nCabeçalho: \u003calgorithm\u003e Assinatura: find(InputIt first, InputIt last, const T\u0026 value); Parâmetros: first, last - Iteradores que definem o intervalo de busca. value - Valor a ser procurado. Retorno: Iterador para o primeiro elemento igual a value ou last se não encontrado. Exceções: Nenhuma, a menos que operações de iteração lancem. Versão: C++98 Performance: O(N) Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 3, 4}; auto it = std::find(vec.begin(), vec.end(), 3); // Aponta para 3 if (it != vec.end()) std::cout \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 3 return 0; }",
+    "description": "Detalhes sobre a função std::find da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Busca"
+    ],
+    "title": "std::find",
+    "uri": "/cpp/stl/algorithm/find/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Ordena os elementos no intervalo [first, last) usando o operador \u003c ou uma função de comparação personalizada. Utiliza introsort, uma combinação de quicksort, heapsort e insertion sort para garantir eficiência.\nCabeçalho: \u003calgorithm\u003e Assinatura: sort(RandomIt first, RandomIt last); sort(RandomIt first, RandomIt last, Compare comp); Parâmetros: first, last - Iteradores que definem o intervalo a ser ordenado. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo. Retorno: Nenhum (void). Exceções: Pode lançar exceções de cópia, movimentação ou da função de comparação. Versão: C++98 Performance: O(N log N) Exemplo: #include \u003cvector\u003e #include \u003calgorithm\u003e int main() { std::vector\u003cint\u003e vec = {5, 2, 9, 1, 5}; std::sort(vec.begin(), vec.end()); // Ordena: {1, 2, 5, 5, 9} auto comp = [](int a, int b) { return a \u003e b; }; std::sort(vec.begin(), vec.end(), comp); // Ordem decrescente: {9, 5, 5, 2, 1} return 0; }",
+    "description": "Detalhes sobre a função std::sort da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Ordenação"
+    ],
+    "title": "std::sort",
+    "uri": "/cpp/stl/algorithm/sort/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
