@@ -68,6 +68,122 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | C++",
+    "uri": "/tags/c\u0026#43;\u0026#43;/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Diferença",
+    "uri": "/tags/diferen%C3%A7a/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Numérico",
+    "uri": "/tags/num%C3%A9rico/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Calcula a diferença entre elementos adjacentes em um intervalo [first, last) e armazena os resultados em um intervalo de saída começando em result.\nCabeçalho: \u003cnumeric\u003e Assinatura: adjacent_difference(InputIt first, InputIt last, OutputIt result); adjacent_difference(InputIt first, InputIt last, OutputIt result, BinaryOperation op); Parâmetros: first, last - Iteradores que definem o intervalo [first, last) de entrada. result - Iterador para o início do intervalo de saída. op - Operação binária para calcular a diferença (padrão: subtração). Retorno: Iterador para o fim do intervalo de saída. Exceções: Depende da operação op; a função em si não lança, a menos que op o faça. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003cnumeric\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 4, 6, 8}; std::vector\u003cint\u003e result(4); auto it = std::adjacent_difference(vec.begin(), vec.end(), result.begin()); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 1 3 2 2 return 0; }",
+    "description": "Detalhes sobre a função std::adjacent_difference da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Numérico",
+      "Diferença"
+    ],
+    "title": "std::adjacent_difference",
+    "uri": "/cpp/stl/numeric/adjacent_difference/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | STL",
+    "uri": "/tags/stl/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiquetas",
+    "uri": "/tags/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Produto Interno",
+    "uri": "/tags/produto-interno/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Calcula o produto interno de dois intervalos [first1, last1) e [first2, first2 + (last1 - first1)), com operações binárias personalizáveis, acumulando a partir de um valor inicial.\nCabeçalho: \u003cnumeric\u003e Assinatura: inner_product(InputIt1 first1, InputIt1 last1, InputIt2 first2, T init); inner_product(InputIt1 first1, InputIt1 last1, InputIt2 first2, T init, BinaryOp1 op1, BinaryOp2 op2); Parâmetros: first1, last1 - Iteradores que definem o primeiro intervalo [first1, last1) de entrada. first2 - Iterador para o início do segundo intervalo. init - Valor inicial da acumulação. op1 - Operação binária para acumulação (padrão: std::plus). op2 - Operação binária para multiplicação (padrão: std::multiplies). Retorno: Resultado do produto interno. Exceções: Depende das operações op1 e op2; a função em si não lança, a menos que op1 ou op2 o façam. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003cnumeric\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e v1 = {1, 2, 3}; std::vector\u003cint\u003e v2 = {4, 5, 6}; int result = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0); // 1*4 + 2*5 + 3*6 std::cout \u003c\u003c result \u003c\u003c '\\n'; // Imprime: 32 return 0; }",
+    "description": "Detalhes sobre a função std::inner_product da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Numérico",
+      "Produto Interno"
+    ],
+    "title": "std::inner_product",
+    "uri": "/cpp/stl/numeric/inner_product/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Preenchimento",
+    "uri": "/tags/preenchimento/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Preenche um intervalo [first, last) com valores incrementais a partir de um valor inicial, usando o operador ++.\nCabeçalho: \u003cnumeric\u003e Assinatura: iota(ForwardIt first, ForwardIt last, T value); Parâmetros: first, last - Iteradores que definem o intervalo [first, last) a ser preenchido. value - Valor inicial a ser atribuído ao primeiro elemento. Retorno: Nenhum (void). Exceções: Nenhuma, a menos que operações de atribuição ou incremento lancem. Versão: C++11 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003cnumeric\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec(5); std::iota(vec.begin(), vec.end(), 1); // Preenche com 1, 2, 3, 4, 5 for (int x : vec) std::cout \u003c\u003c x \u003c\u003c \" \"; // Imprime: 1 2 3 4 5 return 0; }",
+    "description": "Detalhes sobre a função std::iota da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Numérico",
+      "Preenchimento"
+    ],
+    "title": "std::iota",
+    "uri": "/cpp/stl/numeric/iota/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Acumulação",
+    "uri": "/tags/acumula%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Acumula os valores de um intervalo [first, last) a partir de um valor inicial, aplicando uma operação binária.\nCabeçalho: \u003cnumeric\u003e Assinatura: accumulate(InputIt first, InputIt last, T init); accumulate(InputIt first, InputIt last, T init, BinaryOperation op); Parâmetros: first, last - Iteradores que definem o intervalo [first, last) de entrada. init - Valor inicial da acumulação. op - Operação binária a ser aplicada (padrão: std::plus). Retorno: Resultado da acumulação. Exceções: Depende da operação op; a função em si não lança, a menos que op o faça. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003cnumeric\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 3, 4}; int sum = std::accumulate(vec.begin(), vec.end(), 0); // Soma: 0 + 1 + 2 + 3 + 4 std::cout \u003c\u003c sum \u003c\u003c '\\n'; // Imprime: 10 int product = std::accumulate(vec.begin(), vec.end(), 1, std::multiplies\u003cint\u003e{}); // Produto: 1 * 1 * 2 * 3 * 4 std::cout \u003c\u003c product \u003c\u003c '\\n'; // Imprime: 24 return 0; }",
+    "description": "Detalhes sobre a função std::accumulate da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Numérico",
+      "Acumulação"
+    ],
+    "title": "std::accumulate",
+    "uri": "/cpp/stl/numeric/accumulate/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Algoritmo",
     "uri": "/tags/algoritmo/index.html"
   },
@@ -76,8 +192,157 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
-    "title": "Etiqueta | C++",
-    "uri": "/tags/c\u0026#43;\u0026#43;/index.html"
+    "title": "Etiqueta | Particionamento",
+    "uri": "/tags/particionamento/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Particiona um intervalo [first, last) de modo que os elementos que satisfazem um predicado fiquem antes dos que não satisfazem, mantendo a ordem relativa dentro de cada partição.\nCabeçalho: \u003calgorithm\u003e Assinatura: stable_partition(BidirectionalIt first, BidirectionalIt last, UnaryPredicate pred); Parâmetros: first, last - Iteradores que definem o intervalo. pred - Predicado unário que retorna true para elementos que devem ficar na primeira partição. Retorno: Iterador para o início da segunda partição (os elementos que não satisfazem o predicado). Exceções: Depende do predicado pred; a função em si não lança, a menos que pred o faça. Versão: C++98 Performance: O(N log N) com memória extra, O(N) sem memória extra, onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 3, 4, 5}; auto it = std::stable_partition(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; }); for (int x : vec) std::cout \u003c\u003c x \u003c\u003c \" \"; // Imprime: 2 4 1 3 5 std::cout \u003c\u003c \"\\nPonto de partição: \" \u003c\u003c *it \u003c\u003c '\\n'; // Imprime: 1 return 0; }",
+    "description": "Detalhes sobre a função std::stable_partition da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Particionamento"
+    ],
+    "title": "std::stable_partition",
+    "uri": "/cpp/stl/algorithm/stable_partition/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Particiona um intervalo [first, last) de modo que os elementos que satisfazem um predicado fiquem antes dos que não satisfazem.\nCabeçalho: \u003calgorithm\u003e Assinatura: partition(BidirectionalIt first, BidirectionalIt last, UnaryPredicate pred); Parâmetros: first, last - Iteradores que definem o intervalo. pred - Predicado unário que retorna true para elementos que devem ficar na primeira partição. Retorno: Iterador para o início da segunda partição (os elementos que não satisfazem o predicado). Exceções: Depende do predicado pred; a função em si não lança, a menos que pred o faça. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 3, 4, 5}; auto it = std::partition(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; }); for (int x : vec) std::cout \u003c\u003c x \u003c\u003c \" \"; // Exemplo de saída: 2 4 3 1 5 std::cout \u003c\u003c \"\\nPonto de partição: \" \u003c\u003c *it \u003c\u003c '\\n'; // Pode imprimir: 3 return 0; }",
+    "description": "Detalhes sobre a função std::partition da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Particionamento"
+    ],
+    "title": "std::partition",
+    "uri": "/cpp/stl/algorithm/partition/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Substitui todos os elementos iguais a um valor específico por outro valor em um intervalo [first, last).\nCabeçalho: \u003calgorithm\u003e Assinatura: replace(ForwardIt first, ForwardIt last, const T\u0026 old_value, const T\u0026 new_value); Parâmetros: first, last - Iteradores que definem o intervalo. old_value - Valor a ser substituído. new_value - Valor a ser atribuído no lugar. Retorno: Nenhum (void). Exceções: Nenhuma, a menos que operações de atribuição lancem. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 2, 3, 2}; std::replace(vec.begin(), vec.end(), 2, 5); for (int x : vec) std::cout \u003c\u003c x \u003c\u003c \" \"; // Imprime: 1 5 5 3 5 return 0; }",
+    "description": "Detalhes sobre a função std::replace da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Substituição"
+    ],
+    "title": "std::replace",
+    "uri": "/cpp/stl/algorithm/replace/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Substituição",
+    "uri": "/tags/substitui%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Preenche um intervalo [first, last) com um valor específico.\nCabeçalho: \u003calgorithm\u003e Assinatura: fill(ForwardIt first, ForwardIt last, const T\u0026 value); Parâmetros: first, last - Iteradores que definem o intervalo a ser preenchido. value - Valor a ser atribuído aos elementos. Retorno: Nenhum (void). Exceções: Nenhuma, a menos que operações de atribuição lancem. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec(5); std::fill(vec.begin(), vec.end(), 42); for (int x : vec) std::cout \u003c\u003c x \u003c\u003c \" \"; // Imprime: 42 42 42 42 42 return 0; }",
+    "description": "Detalhes sobre a função std::fill da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Preenchimento"
+    ],
+    "title": "std::fill",
+    "uri": "/cpp/stl/algorithm/fill/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Movimentação",
+    "uri": "/tags/movimenta%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Move elementos de um intervalo [first, last) para outro intervalo começando em result, transferindo a posse dos elementos.\nCabeçalho: \u003calgorithm\u003e Assinatura: move(InputIt first, InputIt last, OutputIt result); Parâmetros: first, last - Iteradores que definem o intervalo de entrada. result - Iterador para o início do intervalo de saída. Retorno: Iterador para o fim do intervalo de saída. Exceções: Nenhuma, a menos que operações de movimentação lancem. Versão: C++11 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003cstring\u003e #include \u003ciostream\u003e int main() { std::vector\u003cstd::string\u003e src = {\"a\", \"b\", \"c\"}; std::vector\u003cstd::string\u003e dst(3); auto it = std::move(src.begin(), src.end(), dst.begin()); for (auto i = dst.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: a b c // src agora está em estado válido, mas indefinido return 0; }",
+    "description": "Detalhes sobre a função std::move (algoritmo) da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Movimentação"
+    ],
+    "title": "std::move (algoritmo)",
+    "uri": "/cpp/stl/algorithm/move/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Cópia",
+    "uri": "/tags/c%C3%B3pia/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Copia elementos de um intervalo [first, last) para outro intervalo começando em result.\nCabeçalho: \u003calgorithm\u003e Assinatura: copy(InputIt first, InputIt last, OutputIt result); Parâmetros: first, last - Iteradores que definem o intervalo de entrada. result - Iterador para o início do intervalo de saída. Retorno: Iterador para o fim do intervalo de saída. Exceções: Nenhuma, a menos que operações de cópia lancem. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e src = {1, 2, 3}; std::vector\u003cint\u003e dst(3); auto it = std::copy(src.begin(), src.end(), dst.begin()); for (auto i = dst.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 1 2 3 return 0; }",
+    "description": "Detalhes sobre a função std::copy da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Cópia"
+    ],
+    "title": "std::copy",
+    "uri": "/cpp/stl/algorithm/copy/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Conjuntos",
+    "uri": "/tags/conjuntos/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Gera a diferença de dois intervalos ordenados [first1, last1) e [first2, last2) em um intervalo de saída, contendo apenas os elementos presentes no primeiro intervalo, mas não no segundo.\nCabeçalho: \u003calgorithm\u003e Assinatura: set_difference(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt result); set_difference(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt result, Compare comp); Parâmetros: first1, last1 - Iteradores que definem o primeiro intervalo ordenado. first2, last2 - Iteradores que definem o segundo intervalo ordenado. result - Iterador para o início do intervalo de saída. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo (padrão: std::less). Retorno: Iterador para o fim do intervalo de saída. Exceções: Nenhuma, a menos que operações de cópia ou a função de comparação comp lancem. Versão: C++98 Performance: O(N1 + N2), onde N1 e N2 são os tamanhos dos intervalos de entrada. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e v1 = {1, 2, 3, 4}; std::vector\u003cint\u003e v2 = {2, 3, 5}; std::vector\u003cint\u003e result(4); // Tamanho suficiente para a diferença auto it = std::set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(), result.begin()); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 1 4 // Com comparação personalizada auto comp = [](int a, int b) { return a \u003e b; }; std::vector\u003cint\u003e v1_desc = {4, 3, 2, 1}, v2_desc = {5, 3, 2}; it = std::set_difference(v1_desc.begin(), v1_desc.end(), v2_desc.begin(), v2_desc.end(), result.begin(), comp); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 4 1 return 0; }",
+    "description": "Detalhes sobre a função std::set_difference da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Conjuntos"
+    ],
+    "title": "std::set_difference",
+    "uri": "/cpp/stl/algorithm/set_difference/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Combina dois intervalos ordenados [first1, last1) e [first2, last2) em um intervalo de saída contendo a união dos elementos, sem duplicatas.\nCabeçalho: \u003calgorithm\u003e Assinatura: set_union(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt result); set_union(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt result, Compare comp); Parâmetros: first1, last1 - Iteradores que definem o primeiro intervalo ordenado. first2, last2 - Iteradores que definem o segundo intervalo ordenado. result - Iterador para o início do intervalo de saída. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo (padrão: std::less). Retorno: Iterador para o fim do intervalo de saída. Exceções: Nenhuma, a menos que operações de cópia ou a função de comparação comp lancem. Versão: C++98 Performance: O(N1 + N2), onde N1 e N2 são os tamanhos dos intervalos de entrada. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e v1 = {1, 3, 5}; std::vector\u003cint\u003e v2 = {2, 3, 4}; std::vector\u003cint\u003e result(6); // Tamanho suficiente para a união auto it = std::set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), result.begin()); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 1 2 3 4 5 // Com comparação personalizada auto comp = [](int a, int b) { return a \u003e b; }; std::vector\u003cint\u003e v1_desc = {5, 3, 1}, v2_desc = {4, 3, 2}; it = std::set_union(v1_desc.begin(), v1_desc.end(), v2_desc.begin(), v2_desc.end(), result.begin(), comp); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 5 4 3 2 1 return 0; }",
+    "description": "Detalhes sobre a função std::set_union da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Conjuntos"
+    ],
+    "title": "std::set_union",
+    "uri": "/cpp/stl/algorithm/set_union/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Gera a interseção de dois intervalos ordenados [first1, last1) e [first2, last2) em um intervalo de saída, contendo apenas os elementos presentes em ambos os intervalos.\nCabeçalho: \u003calgorithm\u003e Assinatura: set_intersection(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt result); set_intersection(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt result, Compare comp); Parâmetros: first1, last1 - Iteradores que definem o primeiro intervalo ordenado. first2, last2 - Iteradores que definem o segundo intervalo ordenado. result - Iterador para o início do intervalo de saída. comp - Função de comparação que retorna true se o primeiro elemento for menor que o segundo (padrão: std::less). Retorno: Iterador para o fim do intervalo de saída. Exceções: Nenhuma, a menos que operações de cópia ou a função de comparação comp lancem. Versão: C++98 Performance: O(N1 + N2), onde N1 e N2 são os tamanhos dos intervalos de entrada. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e v1 = {1, 2, 3, 4}; std::vector\u003cint\u003e v2 = {2, 3, 5}; std::vector\u003cint\u003e result(3); // Tamanho suficiente para a interseção auto it = std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), result.begin()); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 2 3 // Com comparação personalizada auto comp = [](int a, int b) { return a \u003e b; }; std::vector\u003cint\u003e v1_desc = {4, 3, 2, 1}, v2_desc = {5, 3, 2}; it = std::set_intersection(v1_desc.begin(), v1_desc.end(), v2_desc.begin(), v2_desc.end(), result.begin(), comp); for (auto i = result.begin(); i != it; ++i) std::cout \u003c\u003c *i \u003c\u003c \" \"; // Imprime: 3 2 return 0; }",
+    "description": "Detalhes sobre a função std::set_intersection da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Conjuntos"
+    ],
+    "title": "std::set_intersection",
+    "uri": "/cpp/stl/algorithm/set_intersection/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -99,22 +364,6 @@ var relearn_searchindex = [
     ],
     "title": "std::count",
     "uri": "/cpp/stl/algorithm/count/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiqueta | STL",
-    "uri": "/tags/stl/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiquetas",
-    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
