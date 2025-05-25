@@ -15,5 +15,19 @@
       <guid>http://localhost:1313/cpp/stl/index.html</guid>
       <description>Uma introdução à Standard Template Library (STL) do C++, sua história e uma lista de funções agrupadas por cabeçalho.</description>
     </item>
+    <item>
+      <title>std::find</title>
+      <link>http://localhost:1313/cpp/stl/algorithm/find/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/cpp/stl/algorithm/find/index.html</guid>
+      <description>Detalhes sobre a função std::find da STL.</description>
+    </item>
+    <item>
+      <title>std::sort</title>
+      <link>http://localhost:1313/cpp/stl/algorithm/sort/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/cpp/stl/algorithm/sort/index.html</guid>
+      <description>Detalhes sobre a função std::sort da STL.</description>
+    </item>
   </channel>
 </rss>

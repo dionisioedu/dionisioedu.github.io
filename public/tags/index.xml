@@ -9,10 +9,24 @@
     <lastBuildDate>Sat, 24 May 2025 23:04:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Etiqueta | Algoritmo</title>
+      <link>http://localhost:1313/tags/algoritmo/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/algoritmo/index.html</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Etiqueta | Algoritmos</title>
       <link>http://localhost:1313/tags/algoritmos/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/algoritmos/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Busca</title>
+      <link>http://localhost:1313/tags/busca/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/busca/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -27,6 +41,13 @@
       <link>http://localhost:1313/tags/cont%C3%AAineres/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/cont%C3%AAineres/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Ordenação</title>
+      <link>http://localhost:1313/tags/ordena%C3%A7%C3%A3o/index.html</link>
+      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/ordena%C3%A7%C3%A3o/index.html</guid>
       <description></description>
     </item>
     <item>

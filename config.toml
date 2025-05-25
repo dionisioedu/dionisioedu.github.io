@@ -23,6 +23,7 @@ home = ["HTML", "RSS", "JSON"]
   disableSearch = false
   disableBreadcrumb = false
   showVisitedLinks = true
+  disableInlineHeader = true
 
 [params.author]
   name = "Edu Dionisio"

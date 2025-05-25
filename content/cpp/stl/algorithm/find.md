@@ -4,6 +4,7 @@ date: 2025-05-24T23:04:00-03:00
 lastmod: 2025-05-24T23:04:00-03:00
 description: "Detalhes sobre a função std::find da STL."
 draft: false
+hide_title: true
 type: "docs"
 menu:
   docs:

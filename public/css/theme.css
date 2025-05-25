@@ -1243,7 +1243,6 @@ h1 {
   overflow-x: hidden;
   text-align: center;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
 }
 
 #R-body-inner > .flex-block-wrapper article.narrow h1 {

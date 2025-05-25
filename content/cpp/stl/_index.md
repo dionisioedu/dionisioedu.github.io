@@ -41,22 +41,22 @@ Este cabeçalho contém algoritmos genéricos para manipulação de intervalos, 
 
 - [**std::sort**](/cpp/stl/algorithm/sort/) - Ordena elementos em um intervalo.
 - [**std::find**](/cpp/stl/algorithm/find/) - Busca um valor específico em um intervalo.
-- [**std::for_each**](/stl/algorithm/for_each/) - Aplica uma função a cada elemento de um intervalo.
-- [**std::transform**](/stl/algorithm/transform/) - Aplica uma operação a elementos e armazena os resultados.
-- [**std::binary_search**](/stl/algorithm/binary_search/) - Verifica se um valor existe em um intervalo ordenado.
-- [**std::lower_bound**](/stl/algorithm/lower_bound/) - Encontra o primeiro elemento não menor que um valor.
-- [**std::upper_bound**](/stl/algorithm/upper_bound/) - Encontra o primeiro elemento maior que um valor.
-- [**std::find_if**](/stl/algorithm/find_if/) - Busca o primeiro elemento que satisfaz um predicado.
-- [**std::count**](/stl/algorithm/count/) - Conta elementos iguais a um valor.
-- [**std::set_union**](/stl/algorithm/set_union/) - Combina dois intervalos ordenados em uma união.
-- [**std::set_intersection**](/stl/algorithm/set_intersection/) - Gera a interseção de dois intervalos ordenados.
-- [**std::set_difference**](/stl/algorithm/set_difference/) - Gera a diferença de dois intervalos ordenados.
-- [**std::copy**](/stl/algorithm/copy/) - Copia elementos de um intervalo para outro.
-- [**std::move**](/stl/algorithm/move/) - Move elementos de um intervalo para outro.
-- [**std::fill**](/stl/algorithm/fill/) - Preenche um intervalo com um valor específico.
-- [**std::replace**](/stl/algorithm/replace/) - Substitui elementos iguais a um valor por outro.
-- [**std::partition**](/stl/algorithm/partition/) - Particiona um intervalo com base em um predicado.
-- [**std::stable_partition**](/stl/algorithm/stable_partition/) - Particiona um intervalo mantendo a ordem relativa.
+- [**std::for_each**](/cpp/stl/algorithm/for_each/) - Aplica uma função a cada elemento de um intervalo.
+- [**std::transform**](/cpp/stl/algorithm/transform/) - Aplica uma operação a elementos e armazena os resultados.
+- [**std::binary_search**](/cpp/stl/algorithm/binary_search/) - Verifica se um valor existe em um intervalo ordenado.
+- [**std::lower_bound**](/cpp/stl/algorithm/lower_bound/) - Encontra o primeiro elemento não menor que um valor.
+- [**std::upper_bound**](/cpp/stl/algorithm/upper_bound/) - Encontra o primeiro elemento maior que um valor.
+- [**std::find_if**](/cpp/stl/algorithm/find_if/) - Busca o primeiro elemento que satisfaz um predicado.
+- [**std::count**](/cpp/stl/algorithm/count/) - Conta elementos iguais a um valor.
+- [**std::set_union**](/cpp/stl/algorithm/set_union/) - Combina dois intervalos ordenados em uma união.
+- [**std::set_intersection**](/cpp/stl/algorithm/set_intersection/) - Gera a interseção de dois intervalos ordenados.
+- [**std::set_difference**](/cpp/stl/algorithm/set_difference/) - Gera a diferença de dois intervalos ordenados.
+- [**std::copy**](/cpp/stl/algorithm/copy/) - Copia elementos de um intervalo para outro.
+- [**std::move**](/cpp/stl/algorithm/move/) - Move elementos de um intervalo para outro.
+- [**std::fill**](/cpp/stl/algorithm/fill/) - Preenche um intervalo com um valor específico.
+- [**std::replace**](/cpp/stl/algorithm/replace/) - Substitui elementos iguais a um valor por outro.
+- [**std::partition**](/cpp/stl/algorithm/partition/) - Particiona um intervalo com base em um predicado.
+- [**std::stable_partition**](/cpp/stl/algorithm/stable_partition/) - Particiona um intervalo mantendo a ordem relativa.
 
 ### `<numeric>`
 

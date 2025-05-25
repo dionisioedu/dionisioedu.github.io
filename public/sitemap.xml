@@ -24,7 +24,15 @@
     <loc>http://localhost:1313/ebooks/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/algoritmo/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/algoritmos/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/busca/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
@@ -36,11 +44,23 @@
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/ordena%C3%A7%C3%A3o/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/programa%C3%A7%C3%A3o/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/cpp/stl/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/find/index.html</loc>
+    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/sort/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
