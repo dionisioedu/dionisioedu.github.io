@@ -1,0 +1,33 @@
+baseURL = "https://dionisio.dev/"
+title = "Dionisio Software"
+theme = "relearn"
+defaultContentLanguage = "pt"
+languageCode = "pt-br"
+hasCJKLanguage = false
+enableRobotsTXT = true
+canonifyURLs = true
+paginate = 10
+
+ignoreFiles = ["^themes/relearn/content/"]
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+  themeVariant = "zen-dark"
+  alwaysopen = true
+  collapsibleMenu = true
+  titleSeparator = "|"
+  editURL = "https://github.com/dionisioedu/dionisioedu.github.io/edit/main/"
+  disableInlineCopyToClipboard = false
+  disableSearch = false
+  disableBreadcrumb = false
+  showVisitedLinks = true
+
+[params.author]
+  name = "Edu Dionisio"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
