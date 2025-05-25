@@ -141,5 +141,47 @@
       <guid>http://localhost:1313/tags/dsa/index.html</guid>
       <description></description>
     </item>
+    <item>
+      <title>Etiqueta | Carreira</title>
+      <link>http://localhost:1313/tags/carreira/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/carreira/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Clean Code</title>
+      <link>http://localhost:1313/tags/clean-code/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/clean-code/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Código Limpo</title>
+      <link>http://localhost:1313/tags/c%C3%B3digo-limpo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/c%C3%B3digo-limpo/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Livros</title>
+      <link>http://localhost:1313/tags/livros/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/livros/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Reliability</title>
+      <link>http://localhost:1313/tags/reliability/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/reliability/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Sre</title>
+      <link>http://localhost:1313/tags/sre/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sre/index.html</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

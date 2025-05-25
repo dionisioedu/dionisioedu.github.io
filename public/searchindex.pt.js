@@ -57,8 +57,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nDominando a STL em C++ Arquitetura para Devs Iniciantes 10 Estratégias para Evoluir na Carreira Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
-    "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nDominando a STL em C++ Arquitetura para Devs Iniciantes 10 Estratégias para Evoluir na Carreira Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
+    "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
+    "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
     "tags": [],
     "title": "eBooks",
     "uri": "/ebooks/index.html"
@@ -315,11 +315,83 @@ var relearn_searchindex = [
     "uri": "/tags/dsa/index.html"
   },
   {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Carreira",
+    "uri": "/tags/carreira/index.html"
+  },
+  {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
     "content": "",
     "description": "",
     "tags": [],
     "title": "Categorias",
     "uri": "/categories/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Clean Code",
+    "uri": "/tags/clean-code/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Código Limpo",
+    "uri": "/tags/c%C3%B3digo-limpo/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Livros",
+    "uri": "/tags/livros/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Artigos e Notícias",
+    "content": "Se você é dev e nunca ouviu falar de Site Reliability Engineering, ou já ouviu mas acha que é só mais um termo da moda, chegou a hora de entender o que está por trás dessa sigla que virou um pilar das grandes empresas de tecnologia.\nImagine isso: Você trabalha em uma fintech que lida com bilhões de reais por dia. Tudo parece bem… até que, de repente, a API de pagamentos cai. O time de Dev está dormindo, o de Ops está apagando incêndios às cegas, e o CEO está gritando no Slack. Quem entra em cena?\nO SRE.\nO que é SRE? Site Reliability Engineering (SRE) é uma disciplina de engenharia de software aplicada à infraestrutura e operações. Criado pelo Google nos anos 2000, o objetivo do SRE é aumentar a confiabilidade de sistemas complexos usando automação, métricas, engenharia de software e pensamento sistêmico.\nSRE é a ponte entre desenvolvimento e operação. Mas não é “DevOps”. DevOps é a filosofia. SRE é a implementação prática.\nPor que SRE é tão importante? Porque sistemas grandes falham. E falham de maneiras que você nem imagina.\nO SRE nasce da premissa de que falhas são inevitáveis, mas o caos não precisa ser. Se o seu sistema é crítico, global, e está crescendo, você precisa tratar confiabilidade como uma feature.\n“Hope is not a strategy.” – dita famosa no SRE handbook do Google.\nOs Fundamentos de SRE Vamos direto aos conceitos que você precisa dominar:\n1. SLI (Service Level Indicator) É uma métrica real que mede a performance de um serviço. Exemplo: porcentagem de requisições HTTP 200 nos últimos 30 dias.\nSLI = requests OK / total requests 2. SLO (Service Level Objective) É o alvo que você quer atingir com o SLI. Exemplo: 99.9% das requisições devem ser bem-sucedidas.\nIsso define o que é “bom o suficiente”. E o que não for, vira dívida de confiabilidade.\n3. SLA (Service Level Agreement) É o que você promete para o cliente, com possíveis penalidades. SLA = contrato, SLO = objetivo interno, SLI = métrica real.\n4. Error Budget Essa é a parte mais linda do SRE. Se seu SLO é 99.9%, então 0.1% de falhas é aceitável. Esse 0.1% é seu orçamento de erro. Você pode usá-lo para inovar, lançar features arriscadas, fazer deploys ousados. Mas se o erro estoura o budget, os lançamentos são congelados. Simples. Rígido. Justo.\nAs Práticas do SRE Aqui começa a engenharia de verdade. O SRE vive em três mundos ao mesmo tempo:\n🛠️ 1. Engenharia de Software Automatização de tarefas (scripts, bots, ferramentas) Desenvolvimento de pipelines de CI/CD Integração com observabilidade (Prometheus, Grafana, ELK) Resiliência por design (circuit breakers, retries, backoff) 🔥 2. Gerenciamento de Incidentes Detecção (alertas, logs, health checks) Resposta rápida (playbooks, escalonamento) Post-mortems sem culpados (blameless) Correções com foco na causa raiz 📊 3. Observabilidade Métricas: para saber “quanto” Logs: para saber “o que” Traces: para saber “onde” Dashboards: para ver “como está agora” Exemplos Práticos de Atuação SRE ☁️ No Cloud Definir a arquitetura de alta disponibilidade Monitorar instâncias com auto-scaling e failover Otimizar custos via right-sizing e spot instances 🧪 Em Testes Testes de carga e estresse Chaos Engineering (Netflix: Chaos Monkey) Testes automatizados de rollback e deploys canary 🔐 Em Segurança Monitorar tráfego anômalo Automatizar regras de firewall Implementar rate limits e circuit breakers Como ser um bom SRE? Você precisa:\nPensar como engenheiro e agir como bombeiro Automatizar tudo que for manual Ler logs como quem lê poesia Não entrar em pânico (mesmo com o CEO no telefone) E claro: “Ser SRE é ser a última linha de defesa entre o caos e o sistema funcionando.”\nFerramentas Comuns Prometheus + Grafana – métricas e dashboards ELK (Elasticsearch, Logstash, Kibana) – logs estruturados PagerDuty, OpsGenie – gerenciamento de incidentes Terraform, Ansible, Helm – IaC (Infrastructure as Code) Kubernetes – orquestração moderna (com seus próprios dragões) Sentry, Datadog, New Relic – APMs e monitoramento profundo Conclusão: SRE é o novo DevOps? Não. É a evolução. DevOps uniu Dev e Ops com uma filosofia de colaboração. SRE entrega isso na prática com engenharia, métrica e automação. Se você está cansado de apagar incêndio sem saber a causa… Se sua aplicação quebra e ninguém entende por quê… Se você quer escalar sem perder noites de sono… \\\nVocê precisa de um SRE. Ou virar um.\nSe curtiu esse artigo, compartilha. Se discordou, me chama pra conversar. E se quer aprender mais: cola aqui.",
+    "description": "A Arte de Manter Sistemas em Pé Quando Tudo Quer Cair",
+    "tags": [
+      "Sre",
+      "Reliability",
+      "Carreira"
+    ],
+    "title": "O Que é SRE?",
+    "uri": "/blog/sre/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Reliability",
+    "uri": "/tags/reliability/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Artigos e Notícias",
+    "content": "Eu considero o Clean Code um dos maiores clássicos do mundo do desenvolvimento de software. Tem os que gostam e tem os que criticam, mas, com certeza, todo mundo conhece alguns conceitos que vieram desse livro.\nCapítulo 1 : Código Limpo O livro começa explicando o que significa Código Limpo, ressaltando que o código é lido MUITO mais vezes do que escrito. Então uma das principais preocupações de um bom programador é a qualidade do código que ele está escrevendo, ou seja, ele tem que ser fácil de entender, de modificar e de estender. Pense que seu código pode durar por vários anos e até décadas!\nCapítulo 2 : Nomes Significativos O tio Bob (o autor do livro), ressalta a importância de escolher bem nomes para suas variáveis, métodos e classes. Nomes com significado economizam muito tempo e espaço, já que torna os comentários praticamente desnecessários e ajudam o programador, que não vai precisar analisar várias linhas de código para entender o que cada objeto significa ou o que cada método realiza.\nCapítulo 3 : Funções Funções devem ser pequenas e ter uma única função. Elas devem ter nomes claros que indicam exatamente o que elas fazem. Se uma função está crescendo demais, ela provavelmente está errada. Ele fala sobre o Princípio da Responsabilidade Única, o S do SOLID.\nCapítulo 4 : Comentários Comentários devem ser evitados ao máximo, e quando utilizados, devem explicar o “porquê” de algo, e não o “como” o código funciona.\nPrefira sempre código claro e autoexplicativo, e mantenha os comentários atualizados.\nCapítulo 5 : Formatação Um código profissional de qualidade deve ser fácil de ler.\nDeve seguir uma formatação constante em todo o projeto. Seguindo regras de formatação que geralmente são definidas por cada empresa, ou então seguindo o padrão que está sendo utilizado no mercado.\nUm código mal formatado fica difícil de ler, e pode esconder erros com mais facilidade do que um código limpo e organizado.\nCapítulo 6 : Objetos e Estruturas de Dados Fala sobre a diferença entre objetos e estruturas de dados. E aprofunda nos conceitos de Orientação à Objetos, enfatizando a importância da separação de responsabilidades.\nObjetos são entidades que encapsulam tanto dados quanto comportamentos. Estruturas de dados são apenas coleções de dados. Capítulo 7 : Tratamento de Erros Implementar um tratamento de erros claro e robusto é super importante para ter um software confiável.\nErros vão acontecer, e seu código deve estar preparado para lidar com eles. Criando um fluxo seguro para que o programa continue funcionando bem independente das excecões que possam ocorrer.\nCapítulo 8 : Limites Ressalta a importância de definir bem e com clareza as suas interfaces, ou seja, o que cada classe ou API vai expor para o restante do sistema.\nO código deve sempre depender de uma abstração, para se proteger de mudanças externas.\nCapítulo 9 : Testes Unitários Testes unitários são muito valiosos para manter a qualidade do código, e ele deve ser tratado como código de produção.\nUma boa cobertura de testes permite que o código seja refatorado sem riscos de quebrar.\nCapítulo 10 : Classes Aprofunda na questão da responsabilidade única. Classes devem ser pequenas e ter uma única responsabilidade.\nCapítulo 11 : Sistemas Os sistemas devem ser divididos em partes que podem ser gerenciadas de forma independente. A comunicação e coordenação entre essas partes deve ser simples e clara.\nCapítulo 12 : Emergência Ele descreve 4 regras para facilitar a criação de um bom projeto:\nEfetuar todos os testes Sem código duplicado Expressar o propósito do programador Minimizar o número de classes e métodos. Nessa ordem.\nCapítulo 13 : Concorrência Programação multithread exige simplicidade e clareza para facilitar a manutenção. Mantenha o código nas áreas de concorrência o mais simples possível e evite data races.\nCapítulo 14 : Refinamento Sucessivo Código não envelhece, mas precisa estar em constante refatoração e evolução para se manter atualizado.\nEstudo de Caso e Conclusões (Parte II) Estudo de Caso: Uma seção prática onde o autor aplica os princípios do Clean Code para refatorar um sistema legado, demonstrando as técnicas discutidas.\nConclusões: Código limpo é uma filosofia que transforma a maneira como escrevemos e mantemos software. A adoção desses princípios resulta em software mais sustentável, confiável e fácil de evoluir. Esse foi um resumo bem rápido só pra você relembrar ou descobrir o que tem nesse livro tão conhecido na nossa área.\nEle fala da importância de escrever um código que tenha valor além do programa que ele gera, mas que seja tratado como um ativo de valor da empresa.\nRecomento demais a leitura, pois ele trás muito mais valor e conteúdo do que o que pudemos colocar aqui.\nEu sou do time que gosta muito do Clean Code, e você, tem uma opinião formada? Comenta aqui!!!",
+    "description": "Eu considero o Clean Code um dos maiores clássicos do mundo do desenvolvimento de software. Tem os que gostam e tem os que criticam, mas, com certeza, todo mundo conhece alguns conceitos que vieram desse livro.\nCapítulo 1 : Código Limpo O livro começa explicando o que significa Código Limpo, ressaltando que o código é lido MUITO mais vezes do que escrito. Então uma das principais preocupações de um bom programador é a qualidade do código que ele está escrevendo, ou seja, ele tem que ser fácil de entender, de modificar e de estender.",
+    "tags": [
+      "Clean Code",
+      "Código Limpo",
+      "Livros"
+    ],
+    "title": "Resumo do Clean Code Para Quem Está Com Pressa",
+    "uri": "/blog/clean-code-resumo/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Sre",
+    "uri": "/tags/sre/index.html"
   }
 ]

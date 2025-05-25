@@ -29,5 +29,19 @@
       <guid>http://localhost:1313/blog/bigo/index.html</guid>
       <description>Visão Rápida — A notação Big‑O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. Dominar Big‑O é saber identificar padrões de custo para tomar decisões informadas.&#xA;1. Por que Big‑O importa? Escalabilidade previsível — evita surpresas quando n passa de 1 k para 10 M. Linguagem comum — candidatos e entrevistadores discutem soluções usando Big‑O. Comparação objetiva — decide rapidamente qual implementação vale manter e otimizar.</description>
     </item>
+    <item>
+      <title>O Que é SRE?</title>
+      <link>http://localhost:1313/blog/sre/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sre/index.html</guid>
+      <description>A Arte de Manter Sistemas em Pé Quando Tudo Quer Cair</description>
+    </item>
+    <item>
+      <title>Resumo do Clean Code Para Quem Está Com Pressa</title>
+      <link>http://localhost:1313/blog/clean-code-resumo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/clean-code-resumo/index.html</guid>
+      <description>Eu considero o Clean Code um dos maiores clássicos do mundo do desenvolvimento de software. Tem os que gostam e tem os que criticam, mas, com certeza, todo mundo conhece alguns conceitos que vieram desse livro.&#xA;Capítulo 1 : Código Limpo O livro começa explicando o que significa Código Limpo, ressaltando que o código é lido MUITO mais vezes do que escrito. Então uma das principais preocupações de um bom programador é a qualidade do código que ele está escrevendo, ou seja, ele tem que ser fácil de entender, de modificar e de estender.</description>
+    </item>
   </channel>
 </rss>
