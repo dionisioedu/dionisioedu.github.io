@@ -100,6 +100,14 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | Iteração",
+    "uri": "/tags/itera%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Ordenação",
     "uri": "/tags/ordena%C3%A7%C3%A3o/index.html"
   },
@@ -137,6 +145,19 @@ var relearn_searchindex = [
     ],
     "title": "std::find",
     "uri": "/cpp/stl/algorithm/find/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
+    "content": "Aplica uma função a cada elemento em um intervalo [first, last).\nCabeçalho: \u003calgorithm\u003e Assinatura: for_each(InputIt first, InputIt last, Function fn); Parâmetros: first, last - Iteradores que definem o intervalo de elementos a serem processados. fn - Função unária a ser aplicada a cada elemento do intervalo. Retorno: A função fn (a partir de C++20) ou void (antes de C++20). Exceções: Depende da função fn fornecida; a própria for_each não lança exceções, a menos que fn o faça. Versão: C++98 Performance: O(N), onde N é o número de elementos no intervalo. Exemplo: #include \u003calgorithm\u003e #include \u003cvector\u003e #include \u003ciostream\u003e int main() { std::vector\u003cint\u003e vec = {1, 2, 3, 4}; std::for_each(vec.begin(), vec.end(), [](int x) { std::cout \u003c\u003c x \u003c\u003c \" \"; }); // Imprime: 1 2 3 4 return 0; }",
+    "description": "Detalhes sobre a função std::for_each da STL.",
+    "tags": [
+      "C++",
+      "STL",
+      "Algoritmo",
+      "Iteração"
+    ],
+    "title": "std::for_each",
+    "uri": "/cpp/stl/algorithm/for_each/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  C++ \u003e  Standard Template Library (STL)",
