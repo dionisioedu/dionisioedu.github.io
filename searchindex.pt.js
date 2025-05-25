@@ -17,6 +17,14 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  eBooks",
+    "content": "📘 Guia Avançado para Desenvolvedores C++ Como se Tornar um Quant Developer em Trading Systems Você é um desenvolvedor C++ experiente que quer entrar no mundo dos sistemas de trading automatizados?\nEste eBook foi feito sob medida para você.\nNeste guia técnico aprofundado, você vai aprender:\n✅ Como funcionam os sistemas de trading de alta frequência\n✅ Arquiteturas modernas para baixa latência com C++\n✅ Técnicas avançadas de otimização e concorrência\n✅ Conceitos fundamentais de finanças quantitativas\n✅ Como se preparar para entrevistas técnicas nas maiores empresas do mercado financeiro\n✅ Boas práticas, ética e conformidade com regulações internacionais\n✅ Ferramentas essenciais como QuantLib, Boost.Asio e o protocolo FIX\n“Mais do que um livro técnico — um mapa para sua transição de dev sênior para Quant Developer.”\n🎯 Para quem é este eBook? Desenvolvedores C++ que querem migrar para o setor financeiro Profissionais que visam atuar com HFT, algoritmos de trading e bancos de investimento Candidatos que estão se preparando para entrevistas técnicas de alto nível Pessoas que querem dominar sistemas de baixa latência e arquitetura de produção 🚀 Transforme sua carreira hoje Você pode continuar estudando de forma fragmentada…\nOu pode investir no conteúdo certo, com profundidade, foco e linguagem direta — de dev para dev.\n👉 Garanta agora sua cópia por apenas R$ 14,90 e dê o próximo passo rumo ao topo do mercado financeiro. 🧠 Conhecimento técnico real.\n💼 Preparação profissional.\n💥 A vantagem competitiva que você estava procurando.",
+    "description": "Domine o desenvolvimento de sistemas de trading de alta performance com C++ e conquiste sua vaga no mercado financeiro.",
+    "tags": [],
+    "title": "Guia Avançado para Desenvolvedores C++: Como se Tornar um Quant Developer",
+    "uri": "/ebooks/trading-systems/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  eBooks",
     "content": "📘 Guia do Dev Iniciante Quer entrar no mercado de tecnologia, mas não sabe por onde começar? O Guia do Dev Iniciante é o eBook que te ensina tudo o que você precisa saber para conquistar sua primeira vaga como desenvolvedor.\nNeste guia prático e direto ao ponto, você vai aprender os conhecimentos essenciais, como linguagens de programação, lógica, GitHub, APIs, bancos de dados e metodologias ágeis.\nAlém disso, te mostramos como criar um portfólio poderoso, montar um currículo vencedor e se destacar em entrevistas técnicas.\nSe você quer acelerar sua jornada e conquistar sua vaga na área tech o mais rápido possível, este eBook foi feito para você! 🚀\n💰 De R$47,90 por apenas R$27,90! 🎉 👉 COMPRAR AGORA POR R$ 27,90{ .button }",
     "description": "📘 Guia do Dev Iniciante Quer entrar no mercado de tecnologia, mas não sabe por onde começar? O Guia do Dev Iniciante é o eBook que te ensina tudo o que você precisa saber para conquistar sua primeira vaga como desenvolvedor.\nNeste guia prático e direto ao ponto, você vai aprender os conhecimentos essenciais, como linguagens de programação, lógica, GitHub, APIs, bancos de dados e metodologias ágeis.\nAlém disso, te mostramos como criar um portfólio poderoso, montar um currículo vencedor e se destacar em entrevistas técnicas.",
     "tags": [],
@@ -33,11 +41,11 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
+    "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
+    "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
     "tags": [],
-    "title": "Projetos e Portfólio",
-    "uri": "/projects/index.html"
+    "title": "eBooks",
+    "uri": "/ebooks/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
@@ -57,11 +65,11 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
-    "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
+    "content": "",
+    "description": "",
     "tags": [],
-    "title": "eBooks",
-    "uri": "/ebooks/index.html"
+    "title": "Projetos e Portfólio",
+    "uri": "/projects/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
