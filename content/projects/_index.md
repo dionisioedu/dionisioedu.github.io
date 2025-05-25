@@ -1,5 +1,5 @@
 +++
 title = "Projetos e Portfólio"
-weight = 3
+weight = 6
 +++
 

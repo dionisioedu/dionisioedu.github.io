@@ -6,13 +6,118 @@
     <description></description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 24 May 2025 23:04:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 25 May 2025 01:38:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Etiqueta | C&#43;&#43;</title>
+      <link>http://localhost:1313/tags/c&#43;&#43;/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:38:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/c&#43;&#43;/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Diferença</title>
+      <link>http://localhost:1313/tags/diferen%C3%A7a/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:38:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/diferen%C3%A7a/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Numérico</title>
+      <link>http://localhost:1313/tags/num%C3%A9rico/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:38:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/num%C3%A9rico/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | STL</title>
+      <link>http://localhost:1313/tags/stl/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:38:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/stl/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Produto Interno</title>
+      <link>http://localhost:1313/tags/produto-interno/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:37:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/produto-interno/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Preenchimento</title>
+      <link>http://localhost:1313/tags/preenchimento/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:36:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/preenchimento/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Acumulação</title>
+      <link>http://localhost:1313/tags/acumula%C3%A7%C3%A3o/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:35:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/acumula%C3%A7%C3%A3o/index.html</guid>
+      <description></description>
+    </item>
     <item>
       <title>Etiqueta | Algoritmo</title>
       <link>http://localhost:1313/tags/algoritmo/index.html</link>
-      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <pubDate>Sun, 25 May 2025 01:29:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/algoritmo/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Particionamento</title>
+      <link>http://localhost:1313/tags/particionamento/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:29:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/particionamento/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Substituição</title>
+      <link>http://localhost:1313/tags/substitui%C3%A7%C3%A3o/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:27:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/substitui%C3%A7%C3%A3o/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Movimentação</title>
+      <link>http://localhost:1313/tags/movimenta%C3%A7%C3%A3o/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:25:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/movimenta%C3%A7%C3%A3o/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Cópia</title>
+      <link>http://localhost:1313/tags/c%C3%B3pia/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:24:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/c%C3%B3pia/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Conjuntos</title>
+      <link>http://localhost:1313/tags/conjuntos/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:22:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/conjuntos/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Contagem</title>
+      <link>http://localhost:1313/tags/contagem/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:11:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/contagem/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Busca</title>
+      <link>http://localhost:1313/tags/busca/index.html</link>
+      <pubDate>Sun, 25 May 2025 01:07:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/busca/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Transformação</title>
+      <link>http://localhost:1313/tags/transforma%C3%A7%C3%A3o/index.html</link>
+      <pubDate>Sun, 25 May 2025 00:48:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/transforma%C3%A7%C3%A3o/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -20,20 +125,6 @@
       <link>http://localhost:1313/tags/algoritmos/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/algoritmos/index.html</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Etiqueta | Busca</title>
-      <link>http://localhost:1313/tags/busca/index.html</link>
-      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/busca/index.html</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Etiqueta | C&#43;&#43;</title>
-      <link>http://localhost:1313/tags/c&#43;&#43;/index.html</link>
-      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/c&#43;&#43;/index.html</guid>
       <description></description>
     </item>
     <item>
@@ -62,13 +153,6 @@
       <link>http://localhost:1313/tags/programa%C3%A7%C3%A3o/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/programa%C3%A7%C3%A3o/index.html</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Etiqueta | STL</title>
-      <link>http://localhost:1313/tags/stl/index.html</link>
-      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/stl/index.html</guid>
       <description></description>
     </item>
     <item>

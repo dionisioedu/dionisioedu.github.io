@@ -6,7 +6,7 @@
     <description>Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 24 May 2025 23:04:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 25 May 2025 01:38:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artigos e Notícias</title>
@@ -23,11 +23,11 @@
       <description></description>
     </item>
     <item>
-      <title>Projetos e Portfólio</title>
-      <link>http://localhost:1313/projects/index.html</link>
+      <title>eBooks</title>
+      <link>http://localhost:1313/ebooks/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/index.html</guid>
-      <description></description>
+      <guid>http://localhost:1313/ebooks/index.html</guid>
+      <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;O Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
     </item>
     <item>
       <title>Estruturas de Dados e Algoritmos</title>
@@ -39,16 +39,16 @@
     <item>
       <title>C&#43;&#43;</title>
       <link>http://localhost:1313/cpp/index.html</link>
-      <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
+      <pubDate>Sun, 25 May 2025 01:38:00 -0300</pubDate>
       <guid>http://localhost:1313/cpp/index.html</guid>
       <description></description>
     </item>
     <item>
-      <title>eBooks</title>
-      <link>http://localhost:1313/ebooks/index.html</link>
+      <title>Projetos e Portfólio</title>
+      <link>http://localhost:1313/projects/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ebooks/index.html</guid>
-      <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;O Guia do Dev Iniciante Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
+      <guid>http://localhost:1313/projects/index.html</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -15,7 +15,7 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
   themeVariant = "zen-dark"
-  alwaysopen = true
+  alwaysopen = false
   collapsibleMenu = true
   titleSeparator = "|"
   editURL = "https://github.com/dionisioedu/dionisioedu.github.io/edit/main/"

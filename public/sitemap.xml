@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/blog/index.html</loc>
     <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/ebooks/trading-systems/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ebooks/guia/index.html</loc>
@@ -22,25 +25,157 @@
   </url>
   <url>
     <loc>http://localhost:1313/cpp/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/ebooks/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/algoritmo/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+    <loc>http://localhost:1313/tags/c&#43;&#43;/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/algoritmos/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+    <loc>http://localhost:1313/tags/diferen%C3%A7a/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/num%C3%A9rico/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/numeric/adjacent_difference/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/stl/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/produto-interno/index.html</loc>
+    <lastmod>2025-05-25T01:37:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/numeric/inner_product/index.html</loc>
+    <lastmod>2025-05-25T01:37:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/preenchimento/index.html</loc>
+    <lastmod>2025-05-25T01:36:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/numeric/iota/index.html</loc>
+    <lastmod>2025-05-25T01:36:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/acumula%C3%A7%C3%A3o/index.html</loc>
+    <lastmod>2025-05-25T01:35:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/numeric/accumulate/index.html</loc>
+    <lastmod>2025-05-25T01:35:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/algoritmo/index.html</loc>
+    <lastmod>2025-05-25T01:29:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/particionamento/index.html</loc>
+    <lastmod>2025-05-25T01:29:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/stable_partition/index.html</loc>
+    <lastmod>2025-05-25T01:29:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/partition/index.html</loc>
+    <lastmod>2025-05-25T01:28:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/replace/index.html</loc>
+    <lastmod>2025-05-25T01:27:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/substitui%C3%A7%C3%A3o/index.html</loc>
+    <lastmod>2025-05-25T01:27:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/fill/index.html</loc>
+    <lastmod>2025-05-25T01:26:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/movimenta%C3%A7%C3%A3o/index.html</loc>
+    <lastmod>2025-05-25T01:25:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/move/index.html</loc>
+    <lastmod>2025-05-25T01:25:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/c%C3%B3pia/index.html</loc>
+    <lastmod>2025-05-25T01:24:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/copy/index.html</loc>
+    <lastmod>2025-05-25T01:24:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/conjuntos/index.html</loc>
+    <lastmod>2025-05-25T01:22:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/set_difference/index.html</loc>
+    <lastmod>2025-05-25T01:22:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/set_union/index.html</loc>
+    <lastmod>2025-05-25T01:18:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/set_intersection/index.html</loc>
+    <lastmod>2025-05-25T01:17:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/contagem/index.html</loc>
+    <lastmod>2025-05-25T01:11:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/count/index.html</loc>
+    <lastmod>2025-05-25T01:11:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/tags/busca/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
+    <lastmod>2025-05-25T01:07:00-03:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/c&#43;&#43;/index.html</loc>
+    <loc>http://localhost:1313/cpp/stl/algorithm/find_if/index.html</loc>
+    <lastmod>2025-05-25T01:07:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/upper_bound/index.html</loc>
+    <lastmod>2025-05-25T01:03:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/lower_bound/index.html</loc>
+    <lastmod>2025-05-25T01:01:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/binary_search/index.html</loc>
+    <lastmod>2025-05-25T00:53:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cpp/stl/algorithm/transform/index.html</loc>
+    <lastmod>2025-05-25T00:48:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/transforma%C3%A7%C3%A3o/index.html</loc>
+    <lastmod>2025-05-25T00:48:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/algoritmos/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
@@ -73,14 +208,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/cpp/stl/algorithm/sort/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/stl/index.html</loc>
-    <lastmod>2025-05-24T23:04:00-03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
