@@ -15,26 +15,29 @@
     <meta property="og:title" content="Singleton | Dionisio Software">
     <meta property="og:description" content="Entenda o padrão Singleton com exemplos modernos em C&#43;&#43; e aplique esse conhecimento na sua jornada como desenvolvedor.">
     <meta property="og:locale" content="pt_br">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Padrões de Projeto">
+    <meta property="article:tag" content="Design Patterns">
+    <meta property="article:tag" content="Singleton">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="Padrões Criacionais">
+    <meta property="article:tag" content="Padrões De Projeto">
     <meta itemprop="name" content="Singleton | Dionisio Software">
     <meta itemprop="description" content="Entenda o padrão Singleton com exemplos modernos em C&#43;&#43; e aplique esse conhecimento na sua jornada como desenvolvedor.">
-    <meta itemprop="datePublished" content="2025-05-28T00:00:00+00:00">
-    <meta itemprop="dateModified" content="2025-05-28T00:00:00+00:00">
-    <meta itemprop="wordCount" content="297">
-    <meta itemprop="keywords" content="Design Patterns,Singleton,C&#43;&#43;,Carreira,Padrões De Projeto">
+    <meta itemprop="wordCount" content="385">
+    <meta itemprop="keywords" content="Design Patterns,Singleton,C&#43;&#43;,Padrões Criacionais,Padrões De Projeto">
     <title>Singleton | Dionisio Software</title>
-    <link href="http://localhost:1313/design-patterns/singleton/index.xml" rel="alternate" type="application/rss+xml" title="Singleton | Dionisio Software">
-    <link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748406204" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748406204" rel="stylesheet"></noscript>
-    <link href="http://localhost:1313/css/perfect-scrollbar/perfect-scrollbar.min.css?1748406204" rel="stylesheet">
-    <link href="http://localhost:1313/css/theme.css?1748406204" rel="stylesheet">
-    <link href="http://localhost:1313/css/format-html.css?1748406204" rel="stylesheet" id="R-format-style">
-    <link href="http://localhost:1313/css/auto-complete/auto-complete.min.css?1748406204" rel="stylesheet">
-    <script src="http://localhost:1313/js/auto-complete/auto-complete.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.stemmer.support.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.multi.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.pt.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/search.js?1748406204" defer></script>
+    <link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748444482" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748444482" rel="stylesheet"></noscript>
+    <link href="http://localhost:1313/css/perfect-scrollbar/perfect-scrollbar.min.css?1748444482" rel="stylesheet">
+    <link href="http://localhost:1313/css/theme.css?1748444482" rel="stylesheet">
+    <link href="http://localhost:1313/css/format-html.css?1748444482" rel="stylesheet" id="R-format-style">
+    <link href="http://localhost:1313/css/auto-complete/auto-complete.min.css?1748444482" rel="stylesheet">
+    <script src="http://localhost:1313/js/auto-complete/auto-complete.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.stemmer.support.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.multi.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.pt.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/search.js?1748444482" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -44,7 +47,7 @@
       window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['pt'];
-      window.relearn.index_js_url="http://localhost:1313/searchindex.pt.js?1748406204";
+      window.relearn.index_js_url="http://localhost:1313/searchindex.pt.js?1748444482";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -105,6 +108,7 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
+    <li><a href="#o-que-são-design-patterns">O que são Design Patterns?</a></li>
     <li><a href="#descrição">Descrição</a>
       <ul>
         <li><a href="#quando-usar">Quando usar:</a></li>
@@ -128,15 +132,15 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/index.html"><span itemprop="name">Desenvolvimento de Software e Carreira Tech</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/design-patterns/index.html"><span itemprop="name">Padrões de Projetos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/design-patterns/index.html"><span itemprop="name">Padrões de Projeto</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Singleton</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/dionisioedu/dionisioedu.github.io/edit/main/design-patterns/singleton/_index.md" rel="external" target="_blank" title="Editar (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/dionisioedu/dionisioedu.github.io/edit/main/design-patterns/singleton.md" rel="external" target="_blank" title="Editar (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/design-patterns/index.html" title="Padrões de Projetos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/design-patterns/builder/index.html" title="Builder (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/cpp/index.html" title="C++ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/design-patterns/observer/index.html" title="Observer (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mais"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -157,8 +161,8 @@
 <div class="R-taxonomy taxonomy-tags cstyle tags" title="Etiquetas" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
   <ul>
     <li><a class="term-link" href="http://localhost:1313/tags/c&amp;#43;&amp;#43;/index.html">C&#43;&#43;</a></li>
-    <li><a class="term-link" href="http://localhost:1313/tags/carreira/index.html">Carreira</a></li>
     <li><a class="term-link" href="http://localhost:1313/tags/design-patterns/index.html">Design Patterns</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/padr%C3%B5es-criacionais/index.html">Padrões Criacionais</a></li>
     <li><a class="term-link" href="http://localhost:1313/tags/padr%C3%B5es-de-projeto/index.html">Padrões De Projeto</a></li>
     <li><a class="term-link" href="http://localhost:1313/tags/singleton/index.html">Singleton</a></li>
   </ul>
@@ -168,6 +172,11 @@
 <h1 id="singleton">Singleton</h1>
 
 <hr>
+<p><code>Criação de objetos</code></p>
+<h2 id="o-que-são-design-patterns">O que são Design Patterns?</h2>
+<p>Design Patterns (ou Padrões de Projeto) são soluções reutilizáveis para problemas comuns no desenvolvimento de software. Eles não são frameworks ou bibliotecas, mas sim orientações arquiteturais que ajudam a organizar melhor seu código.</p>
+<p>Foi no livro &ldquo;Design Patterns: Elements of Reusable Object-Oriented Software&rdquo; (conhecido como Gang of Four), que esses padrões se popularizaram.</p>
+<p>Aprender Design Patterns muda a forma como você pensa soluções, colabora com outros devs, entende bases de código legadas e até como você se destaca em entrevistas.</p>
 <h2 id="descrição">Descrição</h2>
 <p>O padrão Singleton garante que <strong>uma classe tenha apenas uma instância</strong> e fornece um ponto global de acesso a ela.</p>
 <h3 id="quando-usar">Quando usar:</h3>
@@ -233,13 +242,12 @@
 <h2 id="assista-ao-vídeo">Assista ao vídeo</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tgSXCEz8XuM?si=1S2ezROoRDGdEzTl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h2 id="-conclusão">🔚 Conclusão</h2>
-<p>O Singleton é simples de entender, mas poderoso quando bem aplicado. É um ótimo ponto de partida para estudar outros padrões como <a href="http://localhost:1313/design-patterns/factory"><strong>Factory</strong></a>, <a href="http://localhost:1313/design-patterns/observer"><strong>Observer</strong></a> e <a href="http://localhost:1313/design-patterns/strategy"><strong>Strategy</strong></a>.</p>
+<p>O Singleton é simples de entender, mas poderoso quando bem aplicado. É um ótimo ponto de partida para estudar outros padrões como <a href="http://localhost:1313/design-patterns/factory"><strong>Factory</strong></a>, <a href="http://localhost:1313/design-patterns/observer/index.html"><strong>Observer</strong></a> e <a href="http://localhost:1313/design-patterns/strategy"><strong>Strategy</strong></a>.</p>
 <p>Dominar esses padrões pode ser a diferença entre um programador mediano e um arquiteto de soluções respeitado no time.</p>
 <p>Continue estudando, implementando e refatorando — porque é assim que se constrói uma carreira sólida na tecnologia. 💪</p>
 <p>Se quiser, me avise que posso te mostrar os próximos padrões para aprender!</p>
 
   <footer class="footline">
-              <i class='fa-fw fas fa-calendar'></i> 28 de mai. de 2025
   </footer>
 </article>
         </div>
@@ -296,8 +304,11 @@
             <li class="" data-nav-id="/ebooks/trading-systems/index.html"><a class="padding" href="http://localhost:1313/ebooks/trading-systems/index.html">Guia Avançado para Desenvolvedores C&#43;&#43;: Como se Tornar um Quant Developer<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/ebooks/guia/index.html"><a class="padding" href="http://localhost:1313/ebooks/guia/index.html">O Guia do Dev Iniciante<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/dsa/index.html"><a class="padding" href="http://localhost:1313/dsa/index.html">Estruturas de Dados e Algoritmos<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="parent " data-nav-id="/design-patterns/index.html"><input type="checkbox" id="R-section-68aba5a52323f3eb81a5510402f0b4c8" aria-controls="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" checked><label for="R-section-68aba5a52323f3eb81a5510402f0b4c8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Padrões de Projetos</span></label><a class="padding" href="http://localhost:1313/design-patterns/index.html">Padrões de Projetos<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" class="collapsible-menu">
-            <li class="active " data-nav-id="/design-patterns/singleton/index.html"><a class="padding" href="http://localhost:1313/design-patterns/singleton/index.html">Singleton<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/design-patterns/index.html"><input type="checkbox" id="R-section-68aba5a52323f3eb81a5510402f0b4c8" aria-controls="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" checked><label for="R-section-68aba5a52323f3eb81a5510402f0b4c8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Padrões de Projeto</span></label><a class="padding" href="http://localhost:1313/design-patterns/index.html">Padrões de Projeto<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" class="collapsible-menu">
+            <li class="" data-nav-id="/design-patterns/abstract-factory/index.html"><a class="padding" href="http://localhost:1313/design-patterns/abstract-factory/index.html">Abstract Factory<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/design-patterns/builder/index.html"><a class="padding" href="http://localhost:1313/design-patterns/builder/index.html">Builder<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/design-patterns/singleton/index.html"><a class="padding" href="http://localhost:1313/design-patterns/singleton/index.html">Singleton<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/design-patterns/observer/index.html"><a class="padding" href="http://localhost:1313/design-patterns/observer/index.html">Observer<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/cpp/index.html"><input type="checkbox" id="R-section-f4994d3cd4490e74daed2725deb83947" aria-controls="R-subsections-f4994d3cd4490e74daed2725deb83947"><label for="R-section-f4994d3cd4490e74daed2725deb83947"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu C&#43;&#43;</span></label><a class="padding" href="http://localhost:1313/cpp/index.html">C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f4994d3cd4490e74daed2725deb83947" class="collapsible-menu">
             <li class="" data-nav-id="/cpp/stl/index.html"><input type="checkbox" id="R-section-bc01129ceb8f7c419c926b8b56963fee" aria-controls="R-subsections-bc01129ceb8f7c419c926b8b56963fee"><label for="R-section-bc01129ceb8f7c419c926b8b56963fee"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Standard Template Library (STL)</span></label><a class="padding" href="http://localhost:1313/cpp/stl/index.html">Standard Template Library (STL)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bc01129ceb8f7c419c926b8b56963fee" class="collapsible-menu">
             <li class="" data-nav-id="/cpp/stl/numeric/adjacent_difference/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/numeric/adjacent_difference/index.html">std::adjacent_difference<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -350,8 +361,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="http://localhost:1313/js/clipboard/clipboard.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/perfect-scrollbar/perfect-scrollbar.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/theme.js?1748406204" defer></script>
+    <script src="http://localhost:1313/js/clipboard/clipboard.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/perfect-scrollbar/perfect-scrollbar.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/theme.js?1748444482" defer></script>
   </body>
 </html>

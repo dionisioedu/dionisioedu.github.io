@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/blog/index.html</loc>
@@ -24,6 +24,10 @@
     <loc>http://localhost:1313/dsa/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/design-patterns/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/cpp/index.html</loc>
     <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
@@ -32,7 +36,31 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/c&#43;&#43;/index.html</loc>
-    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/carreira/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/design-patterns/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/padr%C3%B5es-de-projeto/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/singleton/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/design-patterns/singleton/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/tags/diferen%C3%A7a/index.html</loc>
@@ -48,10 +76,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/stl/index.html</loc>
-    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
     <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
@@ -261,9 +285,6 @@
   <url>
     <loc>http://localhost:1313/tags/dsa/index.html</loc>
     <lastmod>2025-05-05T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/carreira/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>

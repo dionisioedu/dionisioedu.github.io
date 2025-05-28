@@ -16,6 +16,20 @@ var relearn_searchindex = [
     "uri": "/blog/index.html"
   },
   {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projeto",
+    "content": "Criação de objetos\nO que é o Abstract Factory? O padrão Abstract Factory permite criar famílias de objetos relacionados sem especificar suas classes concretas.\nPense em um sistema que pode ter interface em estilo claro ou escuro. Cada tema tem seus próprios botões, menus e barras de rolagem. O Abstract Factory permite que você crie todos os componentes certos sem depender diretamente das classes concretas.\nQuando Usar Quando o sistema precisa ser independente de como seus objetos são criados. Quando deseja trabalhar com múltiplas variantes de produtos. Quando quer isolar o código cliente de implementações específicas. 🧱 Estrutura AbstractFactory – define a interface para criação de produtos. ConcreteFactory – implementa a criação de objetos específicos. AbstractProduct – interface dos objetos criados. ConcreteProduct – implementações reais. Client – usa apenas interfaces abstratas. 🧪 Exemplo em C++ Moderno Tema gráfico: Light vs Dark UI #include \u003ciostream\u003e #include \u003cmemory\u003e // Produtos abstratos class Button { public: virtual void render() = 0; virtual ~Button() {} }; class ScrollBar { public: virtual void scroll() = 0; virtual ~ScrollBar() {} }; // Fábrica abstrata class GUIFactory { public: virtual std::unique_ptr\u003cButton\u003e createButton() = 0; virtual std::unique_ptr\u003cScrollBar\u003e createScrollBar() = 0; virtual ~GUIFactory() {} }; // Produtos concretos: Light class LightButton : public Button { public: void render() override { std::cout \u003c\u003c \"Botão claro renderizado.\\n\"; } }; class LightScrollBar : public ScrollBar { public: void scroll() override { std::cout \u003c\u003c \"ScrollBar clara ativada.\\n\"; } }; // Produtos concretos: Dark class DarkButton : public Button { public: void render() override { std::cout \u003c\u003c \"Botão escuro renderizado.\\n\"; } }; class DarkScrollBar : public ScrollBar { public: void scroll() override { std::cout \u003c\u003c \"ScrollBar escura ativada.\\n\"; } }; // Fábricas concretas class LightFactory : public GUIFactory { public: std::unique_ptr\u003cButton\u003e createButton() override { return std::make_unique\u003cLightButton\u003e(); } std::unique_ptr\u003cScrollBar\u003e createScrollBar() override { return std::make_unique\u003cLightScrollBar\u003e(); } }; class DarkFactory : public GUIFactory { public: std::unique_ptr\u003cButton\u003e createButton() override { return std::make_unique\u003cDarkButton\u003e(); } std::unique_ptr\u003cScrollBar\u003e createScrollBar() override { return std::make_unique\u003cDarkScrollBar\u003e(); } }; // Cliente void renderUI(std::unique_ptr\u003cGUIFactory\u003e factory) { auto button = factory-\u003ecreateButton(); auto scrollbar = factory-\u003ecreateScrollBar(); button-\u003erender(); scrollbar-\u003escroll(); } int main() { std::unique_ptr\u003cGUIFactory\u003e factory; std::string theme = \"dark\"; if (theme == \"light\") { factory = std::make_unique\u003cLightFactory\u003e(); } else { factory = std::make_unique\u003cDarkFactory\u003e(); } renderUI(std::move(factory)); return 0; } ✅ Benefícios Alta escalabilidade: fácil adicionar novas famílias de produtos. Promove a inversão de dependência. Encapsula as variações de implementação. ❌ Cuidados Pode criar complexidade desnecessária para casos simples. Muitas interfaces podem parecer verbosas para sistemas pequenos. Dica Profissional Combine Abstract Factory com Dependency Injection e você terá um sistema altamente testável e configurável. Em projetos grandes, isso reduz acoplamento e facilita manutenções futuras.\nConclusão Abstract Factory é um padrão poderoso para arquiteturas que exigem flexibilidade e consistência. Se você domina esse padrão, seu código vai parecer de outro nível — e os recrutadores vão perceber.\nContinue praticando, testando variações e criando seus próprios exemplos. Essa é a base de um desenvolvedor que progride com confiança.",
+    "description": "Descubra como o padrão Abstract Factory pode te ajudar a criar sistemas flexíveis e escaláveis em C++.",
+    "tags": [
+      "Design Patterns",
+      "Abstract Factory",
+      "C++",
+      "Padrões De Projeto",
+      "Padrões De Criação"
+    ],
+    "title": "Abstract Factory",
+    "uri": "/design-patterns/abstract-factory/index.html"
+  },
+  {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  eBooks",
     "content": "📘 Guia Avançado para Desenvolvedores C++ Como se Tornar um Quant Developer em Trading Systems Você é um desenvolvedor C++ experiente que quer entrar no mundo dos sistemas de trading automatizados?\nEste eBook foi feito sob medida para você.\nNeste guia técnico aprofundado, você vai aprender:\n✅ Como funcionam os sistemas de trading de alta frequência\n✅ Arquiteturas modernas para baixa latência com C++\n✅ Técnicas avançadas de otimização e concorrência\n✅ Conceitos fundamentais de finanças quantitativas\n✅ Como se preparar para entrevistas técnicas nas maiores empresas do mercado financeiro\n✅ Boas práticas, ética e conformidade com regulações internacionais\n✅ Ferramentas essenciais como QuantLib, Boost.Asio e o protocolo FIX\n“Mais do que um livro técnico — um mapa para sua transição de dev sênior para Quant Developer.”\n🎯 Para quem é este eBook? Desenvolvedores C++ que querem migrar para o setor financeiro Profissionais que visam atuar com HFT, algoritmos de trading e bancos de investimento Candidatos que estão se preparando para entrevistas técnicas de alto nível Pessoas que querem dominar sistemas de baixa latência e arquitetura de produção 🚀 Transforme sua carreira hoje Você pode continuar estudando de forma fragmentada…\nOu pode investir no conteúdo certo, com profundidade, foco e linguagem direta — de dev para dev.\n👉 Garanta agora sua cópia por apenas R$ 14,90 e dê o próximo passo rumo ao topo do mercado financeiro. 🧠 Conhecimento técnico real.\n💼 Preparação profissional.\n💥 A vantagem competitiva que você estava procurando.",
     "description": "Domine o desenvolvimento de sistemas de trading de alta performance com C++ e conquiste sua vaga no mercado financeiro.",
@@ -30,6 +44,20 @@ var relearn_searchindex = [
     "tags": [],
     "title": "O Guia do Dev Iniciante",
     "uri": "/ebooks/guia/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projeto",
+    "content": "Criação de objetos\nO que é o Builder Pattern? O padrão Builder permite criar objetos complexos passo a passo, oferecendo controle total sobre o processo de construção — sem ter que lidar com construtores gigantes e difíceis de manter.\nEm vez de instanciar um objeto com todos os atributos de uma vez, o Builder permite que você vá montando esse objeto parte por parte, como num passo a passo lógico.\nQuando usar Quando um objeto precisa de muitos parâmetros. Quando há várias combinações possíveis de configuração. Quando você quer separar a lógica de construção da lógica de uso. 💡 Exemplo prático em C++ Moderno Vamos criar um Person com vários campos opcionais:\n#include \u003ciostream\u003e #include \u003cstring\u003e #include \u003cmemory\u003e class Person { public: std::string name; int age = 0; std::string city; std::string occupation; void print() const { std::cout \u003c\u003c name \u003c\u003c \", \" \u003c\u003c age \u003c\u003c \" anos, \" \u003c\u003c occupation \u003c\u003c \" em \" \u003c\u003c city \u003c\u003c std::endl; } }; class PersonBuilder { private: std::unique_ptr\u003cPerson\u003e person; public: PersonBuilder() : person(std::make_unique\u003cPerson\u003e()) {} PersonBuilder\u0026 setName(const std::string\u0026 name) { person-\u003ename = name; return *this; } PersonBuilder\u0026 setAge(int age) { person-\u003eage = age; return *this; } PersonBuilder\u0026 setCity(const std::string\u0026 city) { person-\u003ecity = city; return *this; } PersonBuilder\u0026 setOccupation(const std::string\u0026 occupation) { person-\u003eoccupation = occupation; return *this; } std::unique_ptr\u003cPerson\u003e build() { return std::move(person); } }; int main() { auto person = PersonBuilder() .setName(\"Ana Souza\") .setAge(28) .setOccupation(\"Engenheira de Software\") .setCity(\"São Paulo\") .build(); person-\u003eprint(); return 0; } ✅ Vantagens Código mais legível e organizado Evita construtores longos com parâmetros confusos Fácil de manter e estender Suporte a validações passo a passo ❌ Desvantagens Um pouco mais de código boilerplate Pode parecer exagero para objetos simples Dica Profissional Combine o padrão Builder com Method Chaining (como fizemos acima) para criar APIs fluídas e intuitivas. Isso ajuda tanto na usabilidade quanto na documentação do seu código.\nE lembre-se: usar padrões como Builder mostra maturidade na escrita de software — e te destaca em entrevistas e revisões de código.\nConclusão O Builder Pattern é um aliado poderoso para criar objetos flexíveis e bem definidos. Dominar padrões como esse te coloca em outro nível como desenvolvedor. Continue estudando e praticando!\n👉 Quer ver como esse padrão se conecta com outros? Explore também os padrões Abstract Factory, Prototype e Factory Method.",
+    "description": "Aprenda o padrão Builder com exemplos modernos em C++ e entenda como aplicá-lo para construir objetos complexos de forma controlada.",
+    "tags": [
+      "Design Patterns",
+      "Builder",
+      "C++",
+      "Padrões De Projeto",
+      "Padrões Criacionais"
+    ],
+    "title": "Builder",
+    "uri": "/design-patterns/builder/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
@@ -57,11 +85,29 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Padrões de Projetos",
+    "content": "O que são e por que aprender Você já sentiu que estava resolvendo o mesmo problema de novo e de novo? Que existia uma forma mais elegante e madura de estruturar seu código, mas ainda não sabia como?\nÉ aí que entram os Padrões de Projeto (Design Patterns).\nEsses padrões são soluções reutilizáveis para problemas comuns de design em software orientado a objetos. Eles nasceram da observação prática de arquiteturas reais e foram popularizados pelo clássico livro:\nDesign Patterns: Elements of Reusable Object-Oriented Software (1994) Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides — conhecidos como Gang of Four (GoF).\nDesde então, entender Design Patterns se tornou um marco de maturidade técnica. Profissionais que dominam esses conceitos:\nEscrevem códigos mais limpos, flexíveis e reutilizáveis Tomam decisões arquiteturais melhores Se destacam em entrevistas técnicas e lideranças técnicas 🧩 Categorias de Padrões de Projeto A Gang of Four categorizou os padrões em três grandes grupos. Abaixo, listamos os principais, com links para suas respectivas páginas:\n🏗️ Criacionais Estes padrões tratam da criação de objetos de forma controlada e flexível.\nSingleton Factory Method Abstract Factory Builder Prototype 🔁 Estruturais Ajudam a compor classes e objetos para formar estruturas maiores e mais robustas.\nAdapter Bridge Composite Decorator Facade Flyweight Proxy 🧠 Comportamentais Focam na comunicação e interação entre objetos de forma desacoplada e flexível.\nObserver Strategy Command Chain of Responsibility State Template Method Visitor Mediator Interpreter Memento 🚀 Como estudar Cada padrão terá uma página dedicada com:\nDefinição clara e acessível Quando usar (e quando evitar) Exemplo prático em C++ moderno Dicas para entrevistas técnicas e aplicação no mundo real Siga os links acima e comece agora sua jornada rumo à maestria em arquitetura de software. 💼",
+    "description": "Explore os principais padrões de projeto utilizados em C++, com explicações acessíveis, exemplos modernos e aplicações práticas.",
+    "tags": [
+      "Design Patterns",
+      "Padrões De Projeto",
+      "Arquitetura De Software"
+    ],
+    "title": "Padrões de Projeto",
     "uri": "/design-patterns/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projeto",
+    "content": "Criação de objetos\nO que são Design Patterns? Design Patterns (ou Padrões de Projeto) são soluções reutilizáveis para problemas comuns no desenvolvimento de software. Eles não são frameworks ou bibliotecas, mas sim orientações arquiteturais que ajudam a organizar melhor seu código.\nFoi no livro “Design Patterns: Elements of Reusable Object-Oriented Software” (conhecido como Gang of Four), que esses padrões se popularizaram.\nAprender Design Patterns muda a forma como você pensa soluções, colabora com outros devs, entende bases de código legadas e até como você se destaca em entrevistas.\nDescrição O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.\nQuando usar: Logger global Gerenciador de configuração Acesso a um banco de dados ou serviço centralizado ✅ Benefícios Controle de instância única Redução de overhead (principalmente com recursos caros) Fácil acesso global (sem precisar passar como parâmetro) ❌ Desvantagens Pode introduzir acoplamento global Dificulta testes unitários (mockar singletons é mais complicado) Pode esconder dependências reais do sistema Exemplo de Singleton em C++ Moderno (thread-safe) #include \u003ciostream\u003e #include \u003cmutex\u003e class Logger { public: // Proíbe cópia e atribuição Logger(const Logger\u0026) = delete; Logger\u0026 operator=(const Logger\u0026) = delete; static Logger\u0026 getInstance() { static Logger instance; return instance; } void log(const std::string\u0026 message) { std::lock_guard\u003cstd::mutex\u003e lock(mutex_); std::cout \u003c\u003c \"[LOG]: \" \u003c\u003c message \u003c\u003c std::endl; } private: Logger() {} // Construtor privado std::mutex mutex_; }; int main() { Logger::getInstance().log(\"Iniciando aplicação...\"); Logger::getInstance().log(\"Carregando recursos...\"); return 0; } ✨ Por que esse código é bom? static local garante lazy initialization e thread-safety desde C++11. O mutex protege chamadas simultâneas à função log. Proíbe cópia e atribuição — essencial para garantir instância única. Dica Profissional Mesmo sendo útil, evite usar Singleton em todas as situações. Se você precisar compartilhar estado, avalie se um padrão como Dependency Injection ou Service Locator não seria melhor.\nAssista ao vídeo 🔚 Conclusão O Singleton é simples de entender, mas poderoso quando bem aplicado. É um ótimo ponto de partida para estudar outros padrões como Factory, Observer e Strategy.\nDominar esses padrões pode ser a diferença entre um programador mediano e um arquiteto de soluções respeitado no time.\nContinue estudando, implementando e refatorando — porque é assim que se constrói uma carreira sólida na tecnologia. 💪\nSe quiser, me avise que posso te mostrar os próximos padrões para aprender!",
+    "description": "Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.",
+    "tags": [
+      "Design Patterns",
+      "Singleton",
+      "C++",
+      "Padrões Criacionais",
+      "Padrões De Projeto"
+    ],
+    "title": "Singleton",
+    "uri": "/design-patterns/singleton/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
@@ -80,30 +126,17 @@ var relearn_searchindex = [
     "uri": "/projects/index.html"
   },
   {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiqueta | \\[\"Design Patterns\", \"Singleton\", \"C++\", \"Carreira\", \"Padrões De Projeto\"]",
-    "uri": "/tags/%5Cdesign-patterns-singleton-c\u0026#43;\u0026#43;-carreira-padr%C3%B5es-de-projeto/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projetos",
-    "content": "🧠 Entendendo o Design Pattern Singleton em C++ Moderno Se você é um programador iniciante em C++ ou alguém que quer se destacar na carreira dominando fundamentos sólidos de arquitetura de software, você precisa entender os Design Patterns.\nE o Singleton é um dos mais famosos.\n🔍 O que são Design Patterns? Design Patterns (ou Padrões de Projeto) são soluções reutilizáveis para problemas comuns no desenvolvimento de software. Eles não são frameworks ou bibliotecas, mas sim orientações arquiteturais que ajudam a organizar melhor seu código.\nFoi no livro “Design Patterns: Elements of Reusable Object-Oriented Software” (conhecido como Gang of Four), que esses padrões se popularizaram.\nAprender Design Patterns muda a forma como você pensa soluções, colabora com outros devs, entende bases de código legadas e até como você se destaca em entrevistas.\n🧱 O que é o Singleton? O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.\nQuando usar: Logger global Gerenciador de configuração Acesso a um banco de dados ou serviço centralizado ✅ Benefícios Controle de instância única Redução de overhead (principalmente com recursos caros) Fácil acesso global (sem precisar passar como parâmetro) ❌ Desvantagens Pode introduzir acoplamento global Dificulta testes unitários (mockar singletons é mais complicado) Pode esconder dependências reais do sistema 💡 Exemplo de Singleton em C++ Moderno (thread-safe) #include \u003ciostream\u003e #include \u003cmutex\u003e class Logger { public: // Proíbe cópia e atribuição Logger(const Logger\u0026) = delete; Logger\u0026 operator=(const Logger\u0026) = delete; static Logger\u0026 getInstance() { static Logger instance; return instance; } void log(const std::string\u0026 message) { std::lock_guard\u003cstd::mutex\u003e lock(mutex_); std::cout \u003c\u003c \"[LOG]: \" \u003c\u003c message \u003c\u003c std::endl; } private: Logger() {} // Construtor privado std::mutex mutex_; }; int main() { Logger::getInstance().log(\"Iniciando aplicação...\"); Logger::getInstance().log(\"Carregando recursos...\"); return 0; } ✨ Por que esse código é bom? static local garante lazy initialization e thread-safety desde C++11. O mutex protege chamadas simultâneas à função log. Proíbe cópia e atribuição — essencial para garantir instância única. 🚀 Dica Profissional Mesmo sendo útil, evite usar Singleton em todas as situações. Se você precisar compartilhar estado, avalie se um padrão como Dependency Injection ou Service Locator não seria melhor.\n🔚 Conclusão O Singleton é simples de entender, mas poderoso quando bem aplicado. É um ótimo ponto de partida para estudar outros padrões como Factory, Observer e Strategy.\nDominar esses padrões pode ser a diferença entre um programador mediano e um arquiteto de soluções respeitado no time.\nContinue estudando, implementando e refatorando — porque é assim que se constrói uma carreira sólida na tecnologia. 💪\nSe quiser, me avise que posso te mostrar os próximos padrões para aprender!",
-    "description": "Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.",
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projeto",
+    "content": "Comportamento de objetos\nO que são Design Patterns? Design Patterns (ou Padrões de Projeto) são soluções reutilizáveis para problemas recorrentes de design de software. Eles ajudam a tornar seu código mais flexível, modular, reutilizável e fácil de manter. Surgiram a partir de observações práticas sobre como bons desenvolvedores resolviam problemas comuns de estrutura e comportamento no desenvolvimento de sistemas.\nSe você está começando na programação ou já trabalha na área e quer avançar de nível, estudar os padrões é um atalho para escrever software mais maduro e arquiteturalmente sólido.\nHoje vamos falar de um dos mais importantes: o Observer.\nO que é o Observer? O padrão Observer define uma dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados automaticamente.\nÉ muito utilizado em sistemas reativos, interfaces gráficas, event-driven programming, e implementações de sistemas de mensagens.\nImagine que você tem uma classe Subject (sujeito) que mantém uma lista de Observers (observadores). Toda vez que o estado do Subject muda, ele avisa os Observers inscritos. Isso evita acoplamento direto e torna o sistema extensível e dinâmico.\n🛠 Exemplo Prático em C++ Moderno Componentes principais Observer: interface que define o método de notificação. ConcreteObserver: implementação do Observer. Subject: interface que gerencia os observers. ConcreteSubject: implementação do Subject que notifica os observers. #include \u003ciostream\u003e #include \u003cvector\u003e #include \u003cmemory\u003e #include \u003calgorithm\u003e // Interface Observer class Observer { public: virtual void update(int value) = 0; virtual ~Observer() = default; }; // Interface Subject class Subject { public: virtual void attach(std::shared_ptr\u003cObserver\u003e obs) = 0; virtual void detach(std::shared_ptr\u003cObserver\u003e obs) = 0; virtual void notify() = 0; virtual ~Subject() = default; }; // ConcreteSubject class TemperatureSensor : public Subject { private: int temperature = 0; std::vector\u003cstd::shared_ptr\u003cObserver\u003e\u003e observers; public: void setTemperature(int temp) { temperature = temp; notify(); } void attach(std::shared_ptr\u003cObserver\u003e obs) override { observers.push_back(obs); } void detach(std::shared_ptr\u003cObserver\u003e obs) override { observers.erase(std::remove(observers.begin(), observers.end(), obs), observers.end()); } void notify() override { for (auto\u0026 obs : observers) { obs-\u003eupdate(temperature); } } }; // ConcreteObserver class TemperatureDisplay : public Observer { private: std::string name; public: TemperatureDisplay(const std::string\u0026 id) : name(id) {} void update(int value) override { std::cout \u003c\u003c \"[\" \u003c\u003c name \u003c\u003c \"] Temperatura atual: \" \u003c\u003c value \u003c\u003c \"°C\\n\"; } }; int main() { auto sensor = std::make_shared\u003cTemperatureSensor\u003e(); auto display1 = std::make_shared\u003cTemperatureDisplay\u003e(\"Sala\"); auto display2 = std::make_shared\u003cTemperatureDisplay\u003e(\"Quarto\"); sensor-\u003eattach(display1); sensor-\u003eattach(display2); sensor-\u003esetTemperature(25); sensor-\u003esetTemperature(30); sensor-\u003edetach(display2); sensor-\u003esetTemperature(28); return 0; } 💡 Por que usar o Observer? Desacoplamento: o sujeito não precisa saber quem são os observadores. Flexibilidade: adiciona/remova observadores em tempo de execução. Escalabilidade: ideal para sistemas baseados em eventos ou múltiplas saídas. 🚀 Dicas para ir além Combine com Smart Pointers (shared_ptr, weak_ptr) para evitar leaks. Use std::function e std::bind para notificações mais dinâmicas. Para cenários com alta frequência, considere otimizações com event queue. Explore bibliotecas como Boost.Signals2, RxCpp ou Qt Signals \u0026 Slots. 📘 Conclusão O Observer é um padrão poderoso, presente em muitos frameworks modernos. Dominá-lo vai te ajudar a escrever aplicações mais reativas e modulares, com menor acoplamento entre componentes.\nQuer se destacar nas entrevistas e projetos? Implemente pequenos exemplos como esse e compartilhe no GitHub. É um diferencial e tanto para quem está começando na carreira tech!\nSe curtiu o conteúdo, compartilhe com outros devs iniciantes. E não se esqueça: código limpo é código legível — e design patterns são aliados nessa missão. 💻✨",
+    "description": "Entenda o padrão de projeto Observer com exemplos práticos em C++ moderno e aplique esse conceito para construir sistemas reativos e desacoplados.",
     "tags": [
-      "\\[\"Design Patterns\", \"Singleton\", \"C++\", \"Carreira\", \"Padrões De Projeto\"]"
+      "Design Patterns",
+      "C++",
+      "Observer",
+      "Padrões Comportamentais"
     ],
-    "title": "Design Pattern Singleton em C++ Moderno",
-    "uri": "/design-patterns/singleton/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiquetas",
-    "uri": "/tags/index.html"
+    "title": "Observer",
+    "uri": "/design-patterns/observer/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -149,6 +182,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Etiqueta | STL",
     "uri": "/tags/stl/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiquetas",
+    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -696,6 +737,46 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | \\[\"Design Patterns\", \"Abstract Factory\", \"C++\", \"Padrões De Projeto\", \"Arquitetura\"]",
+    "uri": "/tags/%5Cdesign-patterns-abstract-factory-c\u0026#43;\u0026#43;-padr%C3%B5es-de-projeto-arquitetura/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Abstract Factory",
+    "uri": "/tags/abstract-factory/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Arquitetura",
+    "uri": "/tags/arquitetura/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Arquitetura De Software",
+    "uri": "/tags/arquitetura-de-software/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Builder",
+    "uri": "/tags/builder/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Carreira",
     "uri": "/tags/carreira/index.html"
   },
@@ -728,6 +809,14 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | Design Patterns",
+    "uri": "/tags/design-patterns/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Livros",
     "uri": "/tags/livros/index.html"
   },
@@ -748,6 +837,46 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Etiqueta | Observer",
+    "uri": "/tags/observer/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Padrões Comportamentais",
+    "uri": "/tags/padr%C3%B5es-comportamentais/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Padrões Criacionais",
+    "uri": "/tags/padr%C3%B5es-criacionais/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Padrões De Criação",
+    "uri": "/tags/padr%C3%B5es-de-cria%C3%A7%C3%A3o/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Padrões De Projeto",
+    "uri": "/tags/padr%C3%B5es-de-projeto/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "Etiqueta | Reliability",
     "uri": "/tags/reliability/index.html"
   },
@@ -762,6 +891,14 @@ var relearn_searchindex = [
     ],
     "title": "Resumo do Clean Code Para Quem Está Com Pressa",
     "uri": "/blog/clean-code-resumo/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Singleton",
+    "uri": "/tags/singleton/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",

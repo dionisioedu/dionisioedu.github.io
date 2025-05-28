@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Padrões Criacionais | Etiqueta | Dionisio Software</title>
+    <link>http://localhost:1313/tags/padr%C3%B5es-criacionais/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/padr%C3%B5es-criacionais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Singleton</title>
+      <link>http://localhost:1313/design-patterns/singleton/index.html</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/design-patterns/singleton/index.html</guid>
+      <description>Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.</description>
+    </item>
+  </channel>
+</rss>

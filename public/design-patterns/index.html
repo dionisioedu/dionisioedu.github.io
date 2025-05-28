@@ -5,31 +5,34 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.127.0">
     <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
-    <meta name="description" content="">
+    <meta name="description" content="Explore os principais padrões de projeto utilizados em C&#43;&#43;, com explicações acessíveis, exemplos modernos e aplicações práticas.">
     <meta name="author" content="Edu Dionisio">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Padrões de Projetos | Dionisio Software">
+    <meta name="twitter:title" content="Padrões de Projeto | Dionisio Software">
+    <meta name="twitter:description" content="Explore os principais padrões de projeto utilizados em C&#43;&#43;, com explicações acessíveis, exemplos modernos e aplicações práticas.">
     <meta property="og:url" content="http://localhost:1313/design-patterns/index.html">
     <meta property="og:site_name" content="Dionisio Software">
-    <meta property="og:title" content="Padrões de Projetos | Dionisio Software">
+    <meta property="og:title" content="Padrões de Projeto | Dionisio Software">
+    <meta property="og:description" content="Explore os principais padrões de projeto utilizados em C&#43;&#43;, com explicações acessíveis, exemplos modernos e aplicações práticas.">
     <meta property="og:locale" content="pt_br">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Padrões de Projetos | Dionisio Software">
-    <meta itemprop="datePublished" content="2025-05-28T00:00:00+00:00">
-    <meta itemprop="dateModified" content="2025-05-28T00:00:00+00:00">
-    <title>Padrões de Projetos | Dionisio Software</title>
-    <link href="http://localhost:1313/design-patterns/index.xml" rel="alternate" type="application/rss+xml" title="Padrões de Projetos | Dionisio Software">
-    <link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748406204" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748406204" rel="stylesheet"></noscript>
-    <link href="http://localhost:1313/css/perfect-scrollbar/perfect-scrollbar.min.css?1748406204" rel="stylesheet">
-    <link href="http://localhost:1313/css/theme.css?1748406204" rel="stylesheet">
-    <link href="http://localhost:1313/css/format-html.css?1748406204" rel="stylesheet" id="R-format-style">
-    <link href="http://localhost:1313/css/auto-complete/auto-complete.min.css?1748406204" rel="stylesheet">
-    <script src="http://localhost:1313/js/auto-complete/auto-complete.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.stemmer.support.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.multi.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/lunr/lunr.pt.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/search.js?1748406204" defer></script>
+    <meta itemprop="name" content="Padrões de Projeto | Dionisio Software">
+    <meta itemprop="description" content="Explore os principais padrões de projeto utilizados em C&#43;&#43;, com explicações acessíveis, exemplos modernos e aplicações práticas.">
+    <meta itemprop="wordCount" content="284">
+    <meta itemprop="keywords" content="Design Patterns,Padrões De Projeto,Arquitetura De Software">
+    <title>Padrões de Projeto | Dionisio Software</title>
+    <link href="http://localhost:1313/design-patterns/index.xml" rel="alternate" type="application/rss+xml" title="Padrões de Projeto | Dionisio Software">
+    <link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748444482" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748444482" rel="stylesheet"></noscript>
+    <link href="http://localhost:1313/css/perfect-scrollbar/perfect-scrollbar.min.css?1748444482" rel="stylesheet">
+    <link href="http://localhost:1313/css/theme.css?1748444482" rel="stylesheet">
+    <link href="http://localhost:1313/css/format-html.css?1748444482" rel="stylesheet" id="R-format-style">
+    <link href="http://localhost:1313/css/auto-complete/auto-complete.min.css?1748444482" rel="stylesheet">
+    <script src="http://localhost:1313/js/auto-complete/auto-complete.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.stemmer.support.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.multi.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.pt.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/search.js?1748444482" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -39,7 +42,7 @@
       window.relearn.relBaseUri='..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['pt'];
-      window.relearn.index_js_url="http://localhost:1313/searchindex.pt.js?1748406204";
+      window.relearn.index_js_url="http://localhost:1313/searchindex.pt.js?1748444482";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -97,21 +100,28 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Índice (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#-criacionais">🏗️ Criacionais</a></li>
+    <li><a href="#-estruturais">🔁 Estruturais</a></li>
+    <li><a href="#-comportamentais">🧠 Comportamentais</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/index.html"><span itemprop="name">Desenvolvimento de Software e Carreira Tech</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Padrões de Projetos</span><meta itemprop="position" content="2"></li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Padrões de Projeto</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/dionisioedu/dionisioedu.github.io/edit/main/design-patterns/_index.md" rel="external" target="_blank" title="Editar (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
             </div>
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/dsa/index.html" title="Estruturas de Dados e Algoritmos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/design-patterns/singleton/index.html" title="Singleton (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/design-patterns/abstract-factory/index.html" title="Abstract Factory (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mais"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -129,13 +139,81 @@
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Etiquetas" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="http://localhost:1313/tags/arquitetura-de-software/index.html">Arquitetura De Software</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/design-patterns/index.html">Design Patterns</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/padr%C3%B5es-de-projeto/index.html">Padrões De Projeto</a></li>
+  </ul>
+</div>
   </header>
 
-<h1 id="padrões-de-projetos">Padrões de Projetos</h1>
+<h1 id="padrões-de-projeto">Padrões de Projeto</h1>
 
+<hr>
+<h1 id="o-que-são-e-por-que-aprender">O que são e por que aprender</h1>
+<p>Você já sentiu que estava resolvendo o mesmo problema de novo e de novo? Que existia uma forma mais elegante e madura de estruturar seu código, mas ainda não sabia como?</p>
+<p>É aí que entram os <strong>Padrões de Projeto (Design Patterns)</strong>.</p>
+<p>Esses padrões são soluções reutilizáveis para problemas comuns de design em software orientado a objetos. Eles nasceram da observação prática de arquiteturas reais e foram popularizados pelo clássico livro:</p>
+<blockquote>
+<p><strong>Design Patterns: Elements of Reusable Object-Oriented Software</strong> (1994)
+<em>Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides</em> — conhecidos como <em>Gang of Four (GoF)</em>.</p>
+</blockquote>
+<p>Desde então, entender Design Patterns se tornou um <strong>marco de maturidade técnica</strong>. Profissionais que dominam esses conceitos:</p>
+<ul>
+<li>Escrevem códigos mais limpos, flexíveis e reutilizáveis</li>
+<li>Tomam decisões arquiteturais melhores</li>
+<li>Se destacam em entrevistas técnicas e lideranças técnicas</li>
+</ul>
+<hr>
+<h1 id="-categorias-de-padrões-de-projeto">🧩 Categorias de Padrões de Projeto</h1>
+<p>A Gang of Four categorizou os padrões em <strong>três grandes grupos</strong>. Abaixo, listamos os principais, com links para suas respectivas páginas:</p>
+<h2 id="-criacionais">🏗️ Criacionais</h2>
+<p>Estes padrões tratam da criação de objetos de forma controlada e flexível.</p>
+<ul>
+<li><a href="http://localhost:1313/design-patterns/singleton/index.html">Singleton</a></li>
+<li><a href="http://localhost:1313/design-patterns/factory-method">Factory Method</a></li>
+<li><a href="http://localhost:1313/design-patterns/abstract-factory/index.html">Abstract Factory</a></li>
+<li><a href="http://localhost:1313/design-patterns/builder/index.html">Builder</a></li>
+<li><a href="http://localhost:1313/design-patterns/prototype">Prototype</a></li>
+</ul>
+<h2 id="-estruturais">🔁 Estruturais</h2>
+<p>Ajudam a compor classes e objetos para formar estruturas maiores e mais robustas.</p>
+<ul>
+<li><a href="http://localhost:1313/design-patterns/adapter">Adapter</a></li>
+<li><a href="http://localhost:1313/design-patterns/bridge">Bridge</a></li>
+<li><a href="http://localhost:1313/design-patterns/composite">Composite</a></li>
+<li><a href="http://localhost:1313/design-patterns/decorator">Decorator</a></li>
+<li><a href="http://localhost:1313/design-patterns/facade">Facade</a></li>
+<li><a href="http://localhost:1313/design-patterns/flyweight">Flyweight</a></li>
+<li><a href="http://localhost:1313/design-patterns/proxy">Proxy</a></li>
+</ul>
+<h2 id="-comportamentais">🧠 Comportamentais</h2>
+<p>Focam na comunicação e interação entre objetos de forma desacoplada e flexível.</p>
+<ul>
+<li><a href="http://localhost:1313/design-patterns/observer/index.html">Observer</a></li>
+<li><a href="http://localhost:1313/design-patterns/strategy">Strategy</a></li>
+<li><a href="http://localhost:1313/design-patterns/command">Command</a></li>
+<li><a href="http://localhost:1313/design-patterns/chain-of-responsibility">Chain of Responsibility</a></li>
+<li><a href="http://localhost:1313/design-patterns/state">State</a></li>
+<li><a href="http://localhost:1313/design-patterns/template-method">Template Method</a></li>
+<li><a href="http://localhost:1313/design-patterns/visitor">Visitor</a></li>
+<li><a href="http://localhost:1313/design-patterns/mediator">Mediator</a></li>
+<li><a href="http://localhost:1313/design-patterns/interpreter">Interpreter</a></li>
+<li><a href="http://localhost:1313/design-patterns/memento">Memento</a></li>
+</ul>
+<hr>
+<h1 id="-como-estudar">🚀 Como estudar</h1>
+<p>Cada padrão terá uma página dedicada com:</p>
+<ul>
+<li>Definição clara e acessível</li>
+<li>Quando usar (e quando evitar)</li>
+<li>Exemplo prático em <strong>C++ moderno</strong></li>
+<li>Dicas para entrevistas técnicas e aplicação no mundo real</li>
+</ul>
+<p>Siga os links acima e comece agora sua jornada rumo à maestria em arquitetura de software. 💼</p>
 
   <footer class="footline">
-              <i class='fa-fw fas fa-calendar'></i> 28 de mai. de 2025
   </footer>
 </article>
         </div>
@@ -192,8 +270,11 @@
             <li class="" data-nav-id="/ebooks/trading-systems/index.html"><a class="padding" href="http://localhost:1313/ebooks/trading-systems/index.html">Guia Avançado para Desenvolvedores C&#43;&#43;: Como se Tornar um Quant Developer<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/ebooks/guia/index.html"><a class="padding" href="http://localhost:1313/ebooks/guia/index.html">O Guia do Dev Iniciante<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/dsa/index.html"><a class="padding" href="http://localhost:1313/dsa/index.html">Estruturas de Dados e Algoritmos<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active parent " data-nav-id="/design-patterns/index.html"><input type="checkbox" id="R-section-68aba5a52323f3eb81a5510402f0b4c8" aria-controls="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" checked><label for="R-section-68aba5a52323f3eb81a5510402f0b4c8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Padrões de Projetos</span></label><a class="padding" href="http://localhost:1313/design-patterns/index.html">Padrões de Projetos<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" class="collapsible-menu">
-            <li class="" data-nav-id="/design-patterns/singleton/index.html"><a class="padding" href="http://localhost:1313/design-patterns/singleton/index.html">Singleton<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active parent " data-nav-id="/design-patterns/index.html"><input type="checkbox" id="R-section-68aba5a52323f3eb81a5510402f0b4c8" aria-controls="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" checked><label for="R-section-68aba5a52323f3eb81a5510402f0b4c8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Padrões de Projeto</span></label><a class="padding" href="http://localhost:1313/design-patterns/index.html">Padrões de Projeto<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" class="collapsible-menu">
+            <li class="" data-nav-id="/design-patterns/abstract-factory/index.html"><a class="padding" href="http://localhost:1313/design-patterns/abstract-factory/index.html">Abstract Factory<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/design-patterns/builder/index.html"><a class="padding" href="http://localhost:1313/design-patterns/builder/index.html">Builder<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/design-patterns/singleton/index.html"><a class="padding" href="http://localhost:1313/design-patterns/singleton/index.html">Singleton<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/design-patterns/observer/index.html"><a class="padding" href="http://localhost:1313/design-patterns/observer/index.html">Observer<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/cpp/index.html"><input type="checkbox" id="R-section-f4994d3cd4490e74daed2725deb83947" aria-controls="R-subsections-f4994d3cd4490e74daed2725deb83947"><label for="R-section-f4994d3cd4490e74daed2725deb83947"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu C&#43;&#43;</span></label><a class="padding" href="http://localhost:1313/cpp/index.html">C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f4994d3cd4490e74daed2725deb83947" class="collapsible-menu">
             <li class="" data-nav-id="/cpp/stl/index.html"><input type="checkbox" id="R-section-bc01129ceb8f7c419c926b8b56963fee" aria-controls="R-subsections-bc01129ceb8f7c419c926b8b56963fee"><label for="R-section-bc01129ceb8f7c419c926b8b56963fee"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Standard Template Library (STL)</span></label><a class="padding" href="http://localhost:1313/cpp/stl/index.html">Standard Template Library (STL)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bc01129ceb8f7c419c926b8b56963fee" class="collapsible-menu">
             <li class="" data-nav-id="/cpp/stl/numeric/adjacent_difference/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/numeric/adjacent_difference/index.html">std::adjacent_difference<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -246,8 +327,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="http://localhost:1313/js/clipboard/clipboard.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/perfect-scrollbar/perfect-scrollbar.min.js?1748406204" defer></script>
-    <script src="http://localhost:1313/js/theme.js?1748406204" defer></script>
+    <script src="http://localhost:1313/js/clipboard/clipboard.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/perfect-scrollbar/perfect-scrollbar.min.js?1748444482" defer></script>
+    <script src="http://localhost:1313/js/theme.js?1748444482" defer></script>
   </body>
 </html>

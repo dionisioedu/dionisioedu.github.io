@@ -1,10 +1,17 @@
 ---
-
 title: "Singleton"
-date: 2025-05-28
+weight: 5
 description: "Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor."
-tags: ["design patterns", "singleton", "c++", "carreira", "padrões de projeto"]
+tags: ["design patterns", "singleton", "c++", "padrões criacionais", "padrões de projeto"]
 --------------------------------------------------------------------------------
+`Criação de objetos`
+## O que são Design Patterns?
+
+Design Patterns (ou Padrões de Projeto) são soluções reutilizáveis para problemas comuns no desenvolvimento de software. Eles não são frameworks ou bibliotecas, mas sim orientações arquiteturais que ajudam a organizar melhor seu código.
+
+Foi no livro "Design Patterns: Elements of Reusable Object-Oriented Software" (conhecido como Gang of Four), que esses padrões se popularizaram.
+
+Aprender Design Patterns muda a forma como você pensa soluções, colabora com outros devs, entende bases de código legadas e até como você se destaca em entrevistas.
 
 ## Descrição
 

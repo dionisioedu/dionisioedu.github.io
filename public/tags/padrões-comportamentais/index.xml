@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Padrões Comportamentais | Etiqueta | Dionisio Software</title>
+    <link>http://localhost:1313/tags/padr%C3%B5es-comportamentais/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/padr%C3%B5es-comportamentais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design Pattern Observer em C&#43;&#43; Moderno</title>
+      <link>http://localhost:1313/design-patterns/observer/index.html</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/design-patterns/observer/index.html</guid>
+      <description>Entenda o padrão de projeto Observer com exemplos práticos em C++ moderno e aplique esse conceito para construir sistemas reativos e desacoplados.</description>
+    </item>
+  </channel>
+</rss>
