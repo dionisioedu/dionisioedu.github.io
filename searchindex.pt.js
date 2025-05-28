@@ -60,6 +60,14 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Padrões de Projetos",
+    "uri": "/design-patterns/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "C++",
     "uri": "/cpp/index.html"
   },
@@ -78,6 +86,60 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Etiqueta | C++",
     "uri": "/tags/c\u0026#43;\u0026#43;/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Carreira",
+    "uri": "/tags/carreira/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Design Patterns",
+    "uri": "/tags/design-patterns/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Padrões De Projeto",
+    "uri": "/tags/padr%C3%B5es-de-projeto/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | Singleton",
+    "uri": "/tags/singleton/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projetos",
+    "content": "Descrição O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.\nQuando usar: Logger global Gerenciador de configuração Acesso a um banco de dados ou serviço centralizado ✅ Benefícios Controle de instância única Redução de overhead (principalmente com recursos caros) Fácil acesso global (sem precisar passar como parâmetro) ❌ Desvantagens Pode introduzir acoplamento global Dificulta testes unitários (mockar singletons é mais complicado) Pode esconder dependências reais do sistema Exemplo de Singleton em C++ Moderno (thread-safe) #include \u003ciostream\u003e #include \u003cmutex\u003e class Logger { public: // Proíbe cópia e atribuição Logger(const Logger\u0026) = delete; Logger\u0026 operator=(const Logger\u0026) = delete; static Logger\u0026 getInstance() { static Logger instance; return instance; } void log(const std::string\u0026 message) { std::lock_guard\u003cstd::mutex\u003e lock(mutex_); std::cout \u003c\u003c \"[LOG]: \" \u003c\u003c message \u003c\u003c std::endl; } private: Logger() {} // Construtor privado std::mutex mutex_; }; int main() { Logger::getInstance().log(\"Iniciando aplicação...\"); Logger::getInstance().log(\"Carregando recursos...\"); return 0; } ✨ Por que esse código é bom? static local garante lazy initialization e thread-safety desde C++11. O mutex protege chamadas simultâneas à função log. Proíbe cópia e atribuição — essencial para garantir instância única. Dica Profissional Mesmo sendo útil, evite usar Singleton em todas as situações. Se você precisar compartilhar estado, avalie se um padrão como Dependency Injection ou Service Locator não seria melhor.\nAssista ao vídeo 🔚 Conclusão O Singleton é simples de entender, mas poderoso quando bem aplicado. É um ótimo ponto de partida para estudar outros padrões como Factory, Observer e Strategy.\nDominar esses padrões pode ser a diferença entre um programador mediano e um arquiteto de soluções respeitado no time.\nContinue estudando, implementando e refatorando — porque é assim que se constrói uma carreira sólida na tecnologia. 💪\nSe quiser, me avise que posso te mostrar os próximos padrões para aprender!",
+    "description": "Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.",
+    "tags": [
+      "Design Patterns",
+      "Singleton",
+      "C++",
+      "Carreira",
+      "Padrões De Projeto"
+    ],
+    "title": "Singleton",
+    "uri": "/design-patterns/singleton/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiquetas",
+    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -115,14 +177,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Etiqueta | STL",
     "uri": "/tags/stl/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiquetas",
-    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -281,7 +335,7 @@ var relearn_searchindex = [
       "Algoritmo",
       "Movimentação"
     ],
-    "title": "std::move (algoritmo)",
+    "title": "std::move",
     "uri": "/cpp/stl/algorithm/move/index.html"
   },
   {
@@ -664,14 +718,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Etiqueta | Dsa",
     "uri": "/tags/dsa/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiqueta | Carreira",
-    "uri": "/tags/carreira/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
