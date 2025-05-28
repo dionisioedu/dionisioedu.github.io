@@ -50,7 +50,7 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
-    "title": "Qual área seguir",
+    "title": "Teste de Aptidão",
     "uri": "/apps/aptitude/index.html"
   },
   {
