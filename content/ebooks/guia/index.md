@@ -19,4 +19,4 @@ Se você quer acelerar sua jornada e conquistar sua vaga na área tech o mais r�
 
 ### 💰 De ~~R$47,90~~ por apenas **R$27,90**! 🎉
 
-[👉 COMPRAR AGORA POR R$ 27,90](https://pay.hotmart.com/F98094178H?off=fqzq49bv){ .button }
+[👉 COMPRAR AGORA POR R$ 27,90](https://pay.hotmart.com/F98094178H?off=fqzq49bv)
