@@ -41,11 +41,11 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
+    "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
+    "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
     "tags": [],
-    "title": "Projetos e Portfólio",
-    "uri": "/projects/index.html"
+    "title": "eBooks",
+    "uri": "/ebooks/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
@@ -60,16 +60,50 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
+    "title": "Padrões de Projetos",
+    "uri": "/design-patterns/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
     "title": "C++",
     "uri": "/cpp/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
-    "description": "📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.\nO Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!",
+    "content": "",
+    "description": "",
     "tags": [],
-    "title": "eBooks",
-    "uri": "/ebooks/index.html"
+    "title": "Projetos e Portfólio",
+    "uri": "/projects/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiqueta | \\[\"Design Patterns\", \"Singleton\", \"C++\", \"Carreira\", \"Padrões De Projeto\"]",
+    "uri": "/tags/%5Cdesign-patterns-singleton-c\u0026#43;\u0026#43;-carreira-padr%C3%B5es-de-projeto/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Padrões de Projetos",
+    "content": "🧠 Entendendo o Design Pattern Singleton em C++ Moderno Se você é um programador iniciante em C++ ou alguém que quer se destacar na carreira dominando fundamentos sólidos de arquitetura de software, você precisa entender os Design Patterns.\nE o Singleton é um dos mais famosos.\n🔍 O que são Design Patterns? Design Patterns (ou Padrões de Projeto) são soluções reutilizáveis para problemas comuns no desenvolvimento de software. Eles não são frameworks ou bibliotecas, mas sim orientações arquiteturais que ajudam a organizar melhor seu código.\nFoi no livro “Design Patterns: Elements of Reusable Object-Oriented Software” (conhecido como Gang of Four), que esses padrões se popularizaram.\nAprender Design Patterns muda a forma como você pensa soluções, colabora com outros devs, entende bases de código legadas e até como você se destaca em entrevistas.\n🧱 O que é o Singleton? O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.\nQuando usar: Logger global Gerenciador de configuração Acesso a um banco de dados ou serviço centralizado ✅ Benefícios Controle de instância única Redução de overhead (principalmente com recursos caros) Fácil acesso global (sem precisar passar como parâmetro) ❌ Desvantagens Pode introduzir acoplamento global Dificulta testes unitários (mockar singletons é mais complicado) Pode esconder dependências reais do sistema 💡 Exemplo de Singleton em C++ Moderno (thread-safe) #include \u003ciostream\u003e #include \u003cmutex\u003e class Logger { public: // Proíbe cópia e atribuição Logger(const Logger\u0026) = delete; Logger\u0026 operator=(const Logger\u0026) = delete; static Logger\u0026 getInstance() { static Logger instance; return instance; } void log(const std::string\u0026 message) { std::lock_guard\u003cstd::mutex\u003e lock(mutex_); std::cout \u003c\u003c \"[LOG]: \" \u003c\u003c message \u003c\u003c std::endl; } private: Logger() {} // Construtor privado std::mutex mutex_; }; int main() { Logger::getInstance().log(\"Iniciando aplicação...\"); Logger::getInstance().log(\"Carregando recursos...\"); return 0; } ✨ Por que esse código é bom? static local garante lazy initialization e thread-safety desde C++11. O mutex protege chamadas simultâneas à função log. Proíbe cópia e atribuição — essencial para garantir instância única. 🚀 Dica Profissional Mesmo sendo útil, evite usar Singleton em todas as situações. Se você precisar compartilhar estado, avalie se um padrão como Dependency Injection ou Service Locator não seria melhor.\n🔚 Conclusão O Singleton é simples de entender, mas poderoso quando bem aplicado. É um ótimo ponto de partida para estudar outros padrões como Factory, Observer e Strategy.\nDominar esses padrões pode ser a diferença entre um programador mediano e um arquiteto de soluções respeitado no time.\nContinue estudando, implementando e refatorando — porque é assim que se constrói uma carreira sólida na tecnologia. 💪\nSe quiser, me avise que posso te mostrar os próximos padrões para aprender!",
+    "description": "Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.",
+    "tags": [
+      "\\[\"Design Patterns\", \"Singleton\", \"C++\", \"Carreira\", \"Padrões De Projeto\"]"
+    ],
+    "title": "Design Pattern Singleton em C++ Moderno",
+    "uri": "/design-patterns/singleton/index.html"
+  },
+  {
+    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Etiquetas",
+    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -115,14 +149,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Etiqueta | STL",
     "uri": "/tags/stl/index.html"
-  },
-  {
-    "breadcrumb": "Desenvolvimento de Software e Carreira Tech",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Etiquetas",
-    "uri": "/tags/index.html"
   },
   {
     "breadcrumb": "Desenvolvimento de Software e Carreira Tech \u003e  Etiquetas",
@@ -281,7 +307,7 @@ var relearn_searchindex = [
       "Algoritmo",
       "Movimentação"
     ],
-    "title": "std::move (algoritmo)",
+    "title": "std::move",
     "uri": "/cpp/stl/algorithm/move/index.html"
   },
   {

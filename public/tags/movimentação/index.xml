@@ -9,7 +9,7 @@
     <lastBuildDate>Sun, 25 May 2025 01:25:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/movimenta%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>std::move (algoritmo)</title>
+      <title>std::move</title>
       <link>http://localhost:1313/cpp/stl/algorithm/move/index.html</link>
       <pubDate>Sun, 25 May 2025 01:25:00 -0300</pubDate>
       <guid>http://localhost:1313/cpp/stl/algorithm/move/index.html</guid>

@@ -65,7 +65,7 @@
       <description>Detalhes sobre a função std::fill da STL.</description>
     </item>
     <item>
-      <title>std::move (algoritmo)</title>
+      <title>std::move</title>
       <link>http://localhost:1313/cpp/stl/algorithm/move/index.html</link>
       <pubDate>Sun, 25 May 2025 01:25:00 -0300</pubDate>
       <guid>http://localhost:1313/cpp/stl/algorithm/move/index.html</guid>

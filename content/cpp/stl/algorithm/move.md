@@ -1,5 +1,5 @@
 ---
-title: "std::move (algoritmo)"
+title: "std::move"
 date: 2025-05-25T01:25:00-03:00
 lastmod: 2025-05-25T01:25:00-03:00
 description: "Detalhes sobre a função std::move (algoritmo) da STL."
