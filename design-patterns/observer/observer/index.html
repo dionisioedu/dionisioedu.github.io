@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="description" content="Entenda o padrão de projeto Observer com exemplos práticos em C&#43;&#43; moderno e aplique esse conceito para construir sistemas reativos e desacoplados.">
+    <meta name="author" content="Edu Dionisio">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Observer | Dionisio Software">
+    <meta name="twitter:description" content="Entenda o padrão de projeto Observer com exemplos práticos em C&#43;&#43; moderno e aplique esse conceito para construir sistemas reativos e desacoplados.">
+    <meta property="og:url" content="http://localhost:1313/design-patterns/observer/observer/index.html">
+    <meta property="og:site_name" content="Dionisio Software">
+    <meta property="og:title" content="Observer | Dionisio Software">
+    <meta property="og:description" content="Entenda o padrão de projeto Observer com exemplos práticos em C&#43;&#43; moderno e aplique esse conceito para construir sistemas reativos e desacoplados.">
+    <meta property="og:locale" content="pt_br">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Padrões de Projetos">
+    <meta property="article:tag" content="Design Patterns">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="Observer">
+    <meta property="article:tag" content="Padrões Comportamentais">
+    <meta itemprop="name" content="Observer | Dionisio Software">
+    <meta itemprop="description" content="Entenda o padrão de projeto Observer com exemplos práticos em C&#43;&#43; moderno e aplique esse conceito para construir sistemas reativos e desacoplados.">
+    <meta itemprop="wordCount" content="551">
+    <meta itemprop="keywords" content="Design Patterns,C&#43;&#43;,Observer,Padrões Comportamentais">
+    <title>Observer | Dionisio Software</title>
+    <link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748443695" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="http://localhost:1313/fonts/fontawesome/css/fontawesome-all.min.css?1748443695" rel="stylesheet"></noscript>
+    <link href="http://localhost:1313/css/perfect-scrollbar/perfect-scrollbar.min.css?1748443695" rel="stylesheet">
+    <link href="http://localhost:1313/css/theme.css?1748443695" rel="stylesheet">
+    <link href="http://localhost:1313/css/format-html.css?1748443695" rel="stylesheet" id="R-format-style">
+    <link href="http://localhost:1313/css/auto-complete/auto-complete.min.css?1748443695" rel="stylesheet">
+    <script src="http://localhost:1313/js/auto-complete/auto-complete.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.stemmer.support.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.multi.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/lunr/lunr.pt.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/search.js?1748443695" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/design-patterns\/observer\/observer\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['pt'];
+      window.relearn.index_js_url="http://localhost:1313/searchindex.pt.js?1748443695";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar para a área de transferência`;
+      window.T_Copied_to_clipboard = `Copiado para a área de transferência!`;
+      window.T_Copy_link_to_clipboard = `Link de cópia para a área de transferência`;
+      window.T_Link_copied_to_clipboard = `Link copiado para a área de transferência!`;
+      window.T_Reset_view = `Repor vista`;
+      window.T_View_reset = `Ver reposição!`;
+      window.T_No_results_found = `Nenhum resultado encontrado para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="http://localhost:1313/design-patterns/observer/observer/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Índice (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#o-que-são-design-patterns">O que são Design Patterns?</a></li>
+    <li><a href="#o-que-é-o-observer">O que é o Observer?</a></li>
+    <li><a href="#-exemplo-prático-em-c-moderno">🛠 Exemplo Prático em C++ Moderno</a>
+      <ul>
+        <li><a href="#componentes-principais">Componentes principais</a></li>
+      </ul>
+    </li>
+    <li><a href="#-por-que-usar-o-observer">💡 Por que usar o Observer?</a></li>
+    <li><a href="#-dicas-para-ir-além">🚀 Dicas para ir além</a></li>
+    <li><a href="#-conclusão">📘 Conclusão</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/index.html"><span itemprop="name">Desenvolvimento de Software e Carreira Tech</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="http://localhost:1313/design-patterns/index.html"><span itemprop="name">Padrões de Projetos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Observer</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/dionisioedu/dionisioedu.github.io/edit/main/design-patterns/observer/observer.md" rel="external" target="_blank" title="Editar (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/design-patterns/abstract-factory/index.html" title="Abstract Factory (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="http://localhost:1313/cpp/index.html" title="C++ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Mais"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable design-patterns" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+<div class="R-taxonomy taxonomy-tags cstyle tags" title="Etiquetas" style="--VARIABLE-TAGS-BG-color: var(--INTERNAL-TAG-BG-color);">
+  <ul>
+    <li><a class="term-link" href="http://localhost:1313/tags/c&amp;#43;&amp;#43;/index.html">C&#43;&#43;</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/design-patterns/index.html">Design Patterns</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/observer/index.html">Observer</a></li>
+    <li><a class="term-link" href="http://localhost:1313/tags/padr%C3%B5es-comportamentais/index.html">Padrões Comportamentais</a></li>
+  </ul>
+</div>
+  </header>
+
+<h1 id="observer">Observer</h1>
+
+<hr>
+<p><code>Comportamento de objetos</code></p>
+<h2 id="o-que-são-design-patterns">O que são Design Patterns?</h2>
+<p>Design Patterns (ou Padrões de Projeto) são <strong>soluções reutilizáveis para problemas recorrentes de design de software</strong>. Eles ajudam a tornar seu código mais <strong>flexível, modular, reutilizável e fácil de manter</strong>. Surgiram a partir de observações práticas sobre como bons desenvolvedores resolviam problemas comuns de estrutura e comportamento no desenvolvimento de sistemas.</p>
+<p>Se você está começando na programação ou já trabalha na área e quer avançar de nível, estudar os padrões é um <strong>atalho para escrever software mais maduro e arquiteturalmente sólido</strong>.</p>
+<p>Hoje vamos falar de um dos mais importantes: o <strong>Observer</strong>.</p>
+<hr>
+<h2 id="o-que-é-o-observer">O que é o Observer?</h2>
+<p>O padrão <strong>Observer</strong> define uma <strong>dependência um-para-muitos</strong> entre objetos, de forma que quando <strong>um objeto muda de estado, todos os seus dependentes são notificados automaticamente</strong>.</p>
+<p>É muito utilizado em sistemas <strong>reativos</strong>, <strong>interfaces gráficas</strong>, <strong>event-driven programming</strong>, e <strong>implementações de sistemas de mensagens</strong>.</p>
+<p>Imagine que você tem uma classe <code>Subject</code> (sujeito) que mantém uma lista de <code>Observers</code> (observadores). Toda vez que o estado do <code>Subject</code> muda, ele avisa os <code>Observers</code> inscritos. Isso evita acoplamento direto e torna o sistema extensível e dinâmico.</p>
+<hr>
+<h2 id="-exemplo-prático-em-c-moderno">🛠 Exemplo Prático em C++ Moderno</h2>
+<h3 id="componentes-principais">Componentes principais</h3>
+<ul>
+<li><code>Observer</code>: interface que define o método de notificação.</li>
+<li><code>ConcreteObserver</code>: implementação do Observer.</li>
+<li><code>Subject</code>: interface que gerencia os observers.</li>
+<li><code>ConcreteSubject</code>: implementação do Subject que notifica os observers.</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;memory&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Interface Observer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Observer</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> update(<span style="color:#66d9ef">int</span> value) <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Observer() <span style="color:#f92672">=</span> <span style="color:#66d9ef">default</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Interface Subject
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subject</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> attach(std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>Observer<span style="color:#f92672">&gt;</span> obs) <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">detach</span>(std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>Observer<span style="color:#f92672">&gt;</span> obs) <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">notify</span>() <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>Subject() <span style="color:#f92672">=</span> <span style="color:#66d9ef">default</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ConcreteSubject
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TemperatureSensor</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> Subject {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> temperature <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>Observer<span style="color:#f92672">&gt;&gt;</span> observers;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> setTemperature(<span style="color:#66d9ef">int</span> temp) {
+</span></span><span style="display:flex;"><span>        temperature <span style="color:#f92672">=</span> temp;
+</span></span><span style="display:flex;"><span>        notify();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">attach</span>(std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>Observer<span style="color:#f92672">&gt;</span> obs) <span style="color:#66d9ef">override</span> {
+</span></span><span style="display:flex;"><span>        observers.push_back(obs);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">detach</span>(std<span style="color:#f92672">::</span>shared_ptr<span style="color:#f92672">&lt;</span>Observer<span style="color:#f92672">&gt;</span> obs) <span style="color:#66d9ef">override</span> {
+</span></span><span style="display:flex;"><span>        observers.erase(std<span style="color:#f92672">::</span>remove(observers.begin(), observers.end(), obs), observers.end());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">notify</span>() <span style="color:#66d9ef">override</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> obs : observers) {
+</span></span><span style="display:flex;"><span>            obs<span style="color:#f92672">-&gt;</span>update(temperature);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ConcreteObserver
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TemperatureDisplay</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> Observer {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>string name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    TemperatureDisplay(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>string<span style="color:#f92672">&amp;</span> id) <span style="color:#f92672">:</span> name(id) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span>(<span style="color:#66d9ef">int</span> value) <span style="color:#66d9ef">override</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;[&#34;</span> <span style="color:#f92672">&lt;&lt;</span> name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;] Temperatura atual: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> value <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;°C</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> sensor <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>TemperatureSensor<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> display1 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>TemperatureDisplay<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;Sala&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> display2 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>make_shared<span style="color:#f92672">&lt;</span>TemperatureDisplay<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;Quarto&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#f92672">-&gt;</span>attach(display1);
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#f92672">-&gt;</span>attach(display2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#f92672">-&gt;</span>setTemperature(<span style="color:#ae81ff">25</span>);
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#f92672">-&gt;</span>setTemperature(<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#f92672">-&gt;</span>detach(display2);
+</span></span><span style="display:flex;"><span>    sensor<span style="color:#f92672">-&gt;</span>setTemperature(<span style="color:#ae81ff">28</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="-por-que-usar-o-observer">💡 Por que usar o Observer?</h2>
+<ul>
+<li><strong>Desacoplamento</strong>: o sujeito não precisa saber quem são os observadores.</li>
+<li><strong>Flexibilidade</strong>: adiciona/remova observadores em tempo de execução.</li>
+<li><strong>Escalabilidade</strong>: ideal para sistemas baseados em eventos ou múltiplas saídas.</li>
+</ul>
+<hr>
+<h2 id="-dicas-para-ir-além">🚀 Dicas para ir além</h2>
+<ul>
+<li>Combine com <strong>Smart Pointers</strong> (<code>shared_ptr</code>, <code>weak_ptr</code>) para evitar leaks.</li>
+<li>Use <code>std::function</code> e <code>std::bind</code> para notificações mais dinâmicas.</li>
+<li>Para cenários com alta frequência, considere otimizações com <code>event queue</code>.</li>
+<li>Explore bibliotecas como <strong>Boost.Signals2</strong>, <strong>RxCpp</strong> ou <strong>Qt Signals &amp; Slots</strong>.</li>
+</ul>
+<hr>
+<h2 id="-conclusão">📘 Conclusão</h2>
+<p>O Observer é um padrão poderoso, presente em muitos frameworks modernos. Dominá-lo vai te ajudar a escrever aplicações mais reativas e modulares, com menor acoplamento entre componentes.</p>
+<p>Quer se destacar nas entrevistas e projetos? <strong>Implemente pequenos exemplos como esse e compartilhe no GitHub</strong>. É um diferencial e tanto para quem está começando na carreira tech!</p>
+<p>Se curtiu o conteúdo, compartilhe com outros devs iniciantes. E não se esqueça: código limpo é código legível — e design patterns são aliados nessa missão. 💻✨</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="http://localhost:1313/index.html">
+            <div class="logo-title">Dionisio Software</div>
+          </a>
+        </div>
+        <search><form action="http://localhost:1313/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Procurar (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Procurar</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Procurar...">
+            <button class="search-clear" type="button" data-search-clear="" title="Limpar pesquisa"><i class="fas fa-times" title="Limpar pesquisa"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="http://localhost:1313/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/blog/index.html"><input type="checkbox" id="R-section-c061e150208a7ab43c1b0b723b79816b" aria-controls="R-subsections-c061e150208a7ab43c1b0b723b79816b"><label for="R-section-c061e150208a7ab43c1b0b723b79816b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Artigos e Notícias</span></label><a class="padding" href="http://localhost:1313/blog/index.html">Artigos e Notícias<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-c061e150208a7ab43c1b0b723b79816b" class="collapsible-menu">
+            <li class="" data-nav-id="/blog/tudo-sobre-linux/index.html"><a class="padding" href="http://localhost:1313/blog/tudo-sobre-linux/index.html">Tudo o que você precisa para começar com Linux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/python-bibliotecas/index.html"><a class="padding" href="http://localhost:1313/blog/python-bibliotecas/index.html">Principais Bibliotecas do Python — guia completo<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/bigo/index.html"><a class="padding" href="http://localhost:1313/blog/bigo/index.html">Anatomia da Notação Big‑O: Entenda a Complexidade de Algoritmos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/sre/index.html"><a class="padding" href="http://localhost:1313/blog/sre/index.html">O Que é SRE?<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/blog/clean-code-resumo/index.html"><a class="padding" href="http://localhost:1313/blog/clean-code-resumo/index.html">Resumo do Clean Code Para Quem Está Com Pressa<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/apps/index.html"><a class="padding" href="http://localhost:1313/apps/index.html">Testes e aplicativos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/ebooks/index.html"><input type="checkbox" id="R-section-dda6cc94e995b4ab5bdfdaee672cd5ad" aria-controls="R-subsections-dda6cc94e995b4ab5bdfdaee672cd5ad"><label for="R-section-dda6cc94e995b4ab5bdfdaee672cd5ad"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu eBooks</span></label><a class="padding" href="http://localhost:1313/ebooks/index.html">eBooks<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dda6cc94e995b4ab5bdfdaee672cd5ad" class="collapsible-menu">
+            <li class="" data-nav-id="/ebooks/trading-systems/index.html"><a class="padding" href="http://localhost:1313/ebooks/trading-systems/index.html">Guia Avançado para Desenvolvedores C&#43;&#43;: Como se Tornar um Quant Developer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/ebooks/guia/index.html"><a class="padding" href="http://localhost:1313/ebooks/guia/index.html">O Guia do Dev Iniciante<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/dsa/index.html"><a class="padding" href="http://localhost:1313/dsa/index.html">Estruturas de Dados e Algoritmos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/design-patterns/index.html"><input type="checkbox" id="R-section-68aba5a52323f3eb81a5510402f0b4c8" aria-controls="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" checked><label for="R-section-68aba5a52323f3eb81a5510402f0b4c8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Padrões de Projetos</span></label><a class="padding" href="http://localhost:1313/design-patterns/index.html">Padrões de Projetos<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-68aba5a52323f3eb81a5510402f0b4c8" class="collapsible-menu">
+            <li class="" data-nav-id="/design-patterns/abstract-factory/index.html"><a class="padding" href="http://localhost:1313/design-patterns/abstract-factory/index.html">Abstract Factory<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/design-patterns/observer/observer/index.html"><a class="padding" href="http://localhost:1313/design-patterns/observer/observer/index.html">Observer<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/cpp/index.html"><input type="checkbox" id="R-section-f4994d3cd4490e74daed2725deb83947" aria-controls="R-subsections-f4994d3cd4490e74daed2725deb83947"><label for="R-section-f4994d3cd4490e74daed2725deb83947"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu C&#43;&#43;</span></label><a class="padding" href="http://localhost:1313/cpp/index.html">C&#43;&#43;<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f4994d3cd4490e74daed2725deb83947" class="collapsible-menu">
+            <li class="" data-nav-id="/cpp/stl/index.html"><input type="checkbox" id="R-section-bc01129ceb8f7c419c926b8b56963fee" aria-controls="R-subsections-bc01129ceb8f7c419c926b8b56963fee"><label for="R-section-bc01129ceb8f7c419c926b8b56963fee"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Standard Template Library (STL)</span></label><a class="padding" href="http://localhost:1313/cpp/stl/index.html">Standard Template Library (STL)<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bc01129ceb8f7c419c926b8b56963fee" class="collapsible-menu">
+            <li class="" data-nav-id="/cpp/stl/numeric/adjacent_difference/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/numeric/adjacent_difference/index.html">std::adjacent_difference<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/numeric/inner_product/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/numeric/inner_product/index.html">std::inner_product<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/numeric/iota/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/numeric/iota/index.html">std::iota<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/numeric/accumulate/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/numeric/accumulate/index.html">std::accumulate<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/stable_partition/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/stable_partition/index.html">std::stable_partition<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/partition/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/partition/index.html">std::partition<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/replace/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/replace/index.html">std::replace<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/fill/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/fill/index.html">std::fill<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/move/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/move/index.html">std::move<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/copy/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/copy/index.html">std::copy<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/set_difference/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/set_difference/index.html">std::set_difference<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/set_union/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/set_union/index.html">std::set_union<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/set_intersection/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/set_intersection/index.html">std::set_intersection<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/count/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/count/index.html">std::count<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/find_if/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/find_if/index.html">std::find_if<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/upper_bound/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/upper_bound/index.html">std::upper_bound<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/lower_bound/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/lower_bound/index.html">std::lower_bound<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/binary_search/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/binary_search/index.html">std::binary_search<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/transform/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/transform/index.html">std::transform<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/find/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/find/index.html">std::find<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/for_each/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/for_each/index.html">std::for_each<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/cpp/stl/algorithm/sort/index.html"><a class="padding" href="http://localhost:1313/cpp/stl/algorithm/sort/index.html">std::sort<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/projects/index.html"><a class="padding" href="http://localhost:1313/projects/index.html">Projetos e Portfólio<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Limpar Histórico</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="http://localhost:1313/js/clipboard/clipboard.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/perfect-scrollbar/perfect-scrollbar.min.js?1748443695" defer></script>
+    <script src="http://localhost:1313/js/theme.js?1748443695" defer></script>
+  </body>
+</html>

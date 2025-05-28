@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Singleton | Dionisio Software</title><link>https://dionisio.dev/design-patterns/singleton/index.html</link><description>Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.</description><generator>Hugo</generator><language>pt-br</language><lastBuildDate/><atom:link href="https://dionisio.dev/design-patterns/singleton/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Singleton | Dionisio Software</title>
+    <link>http://localhost:1313/design-patterns/singleton/index.html</link>
+    <description>Entenda o padrão Singleton com exemplos modernos em C++ e aplique esse conhecimento na sua jornada como desenvolvedor.</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <atom:link href="http://localhost:1313/design-patterns/singleton/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
