@@ -2,17 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/blog/index.html</loc>
     <lastmod>2025-05-07T00:00:00+00:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/design-patterns/abstract-factory/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ebooks/trading-systems/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ebooks/guia/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/apps/aptitude/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/design-patterns/builder/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/apps/index.html</loc>
@@ -25,7 +34,9 @@
   </url>
   <url>
     <loc>http://localhost:1313/design-patterns/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/design-patterns/singleton/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/cpp/index.html</loc>
@@ -35,32 +46,11 @@
     <loc>http://localhost:1313/projects/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/design-patterns/observer/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/c&#43;&#43;/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/carreira/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/design-patterns/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/padr%C3%B5es-de-projeto/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/singleton/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/design-patterns/singleton/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/tags/diferen%C3%A7a/index.html</loc>
@@ -76,6 +66,10 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/stl/index.html</loc>
+    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
     <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
@@ -287,6 +281,18 @@
     <lastmod>2025-05-05T00:00:00+00:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/abstract-factory/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/arquitetura-de-software/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/builder/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/carreira/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/categories/index.html</loc>
   </url>
   <url>
@@ -296,16 +302,37 @@
     <loc>http://localhost:1313/tags/c%C3%B3digo-limpo/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/design-patterns/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/livros/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/blog/sre/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/observer/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/padr%C3%B5es-comportamentais/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/padr%C3%B5es-criacionais/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/padr%C3%B5es-de-cria%C3%A7%C3%A3o/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/padr%C3%B5es-de-projeto/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/reliability/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/blog/clean-code-resumo/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/singleton/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/sre/index.html</loc>
