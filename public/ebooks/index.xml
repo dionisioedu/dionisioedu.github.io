@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>eBooks | Dionisio Software</title>
+    <title>eBooks | Dionisio Developer</title>
     <link>http://localhost:1313/ebooks/index.html</link>
     <description>📚 Aqui você encontra os eBooks produzidos por mim sobre desenvolvimento de software, C/C++, produtividade e carreira técnica.&#xA;O Guia do Dev Iniciante Guia Avançado para Desenvolvedores C++: Tornando-se um Quant Developer em Trading Systems Em breve, você poderá baixar e receber notificações por email de novos lançamentos!</description>
     <generator>Hugo</generator>

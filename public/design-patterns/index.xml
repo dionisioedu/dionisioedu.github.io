@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Padrões de Projeto | Dionisio Software</title>
+    <title>Padrões de Projeto | Dionisio Developer</title>
     <link>http://localhost:1313/design-patterns/index.html</link>
     <description>Explore os principais padrões de projeto utilizados em C++, com explicações acessíveis, exemplos modernos e aplicações práticas.</description>
     <generator>Hugo</generator>

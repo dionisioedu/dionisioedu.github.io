@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Estruturas de Dados e Algoritmos | Dionisio Software</title>
+    <title>Estruturas de Dados e Algoritmos | Dionisio Developer</title>
     <link>http://localhost:1313/dsa/index.html</link>
     <description>Entenda os principais conceitos de estruturas de dados e algoritmos, com explicações acessíveis e links para aprofundar seu conhecimento. Uma referência completa para estudantes e profissionais em evolução.</description>
     <generator>Hugo</generator>
