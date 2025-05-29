@@ -3,7 +3,7 @@
   <channel>
     <title>Estruturas de Dados e Algoritmos | Dionisio Software</title>
     <link>http://localhost:1313/dsa/index.html</link>
-    <description></description>
+    <description>Entenda os principais conceitos de estruturas de dados e algoritmos, com explicações acessíveis e links para aprofundar seu conhecimento. Uma referência completa para estudantes e profissionais em evolução.</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
     <atom:link href="http://localhost:1313/dsa/index.xml" rel="self" type="application/rss+xml" />
