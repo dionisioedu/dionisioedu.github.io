@@ -9,8 +9,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Início",
-    "content": "Artigos e notícias",
-    "description": "Artigos e notícias",
+    "content": "Artigos e notícias sobre tecnologia.",
+    "description": "Artigos e notícias sobre tecnologia.",
     "tags": [],
     "title": "Artigos e Notícias",
     "uri": "/blog/index.html"

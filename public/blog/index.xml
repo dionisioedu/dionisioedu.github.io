@@ -3,7 +3,7 @@
   <channel>
     <title>Artigos e Notícias | Dionisio Developer</title>
     <link>http://localhost:1313/blog/index.html</link>
-    <description>Artigos e notícias</description>
+    <description>Artigos e notícias sobre tecnologia.</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
     <lastBuildDate>Wed, 07 May 2025 00:00:00 +0000</lastBuildDate>

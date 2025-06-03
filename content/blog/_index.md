@@ -3,4 +3,4 @@ title = "Artigos e Notícias"
 weight = 1
 +++
 
-Artigos e notícias
+Artigos e notícias sobre tecnologia.
