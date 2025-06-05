@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/blog/index.html</loc>
@@ -21,10 +21,15 @@
     <loc>http://localhost:1313/apps/aptitude/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/design-patterns/builder/index.html</loc>
+    <loc>http://localhost:1313/apps/design-patterns-quiz/index.html</loc>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/apps/index.html</loc>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/design-patterns/builder/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/ebooks/index.html</loc>
@@ -49,6 +54,22 @@
     <loc>http://localhost:1313/design-patterns/observer/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/design-patterns/index.html</loc>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/gof/index.html</loc>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/quiz/index.html</loc>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/c&#43;&#43;/index.html</loc>
     <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
@@ -66,10 +87,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/stl/index.html</loc>
-    <lastmod>2025-05-25T01:38:00-03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
     <lastmod>2025-05-25T01:38:00-03:00</lastmod>
   </url>
   <url>
@@ -303,9 +320,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/c%C3%B3digo-limpo/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/design-patterns/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/livros/index.html</loc>

@@ -6,19 +6,19 @@
     <description>Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 25 May 2025 01:38:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jun 2025 12:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artigos e Notícias</title>
       <link>http://localhost:1313/blog/index.html</link>
       <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/index.html</guid>
-      <description>Artigos e notícias sobre tecnologia.</description>
+      <description>Artigos e notícias sobre tecnologia. Sua fonte de informações!</description>
     </item>
     <item>
       <title>Testes e aplicativos</title>
       <link>http://localhost:1313/apps/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Jun 2025 12:00:00 -0300</pubDate>
       <guid>http://localhost:1313/apps/index.html</guid>
       <description></description>
     </item>
