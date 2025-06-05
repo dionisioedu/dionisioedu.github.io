@@ -9,8 +9,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Início",
-    "content": "Artigos e notícias sobre tecnologia.",
-    "description": "Artigos e notícias sobre tecnologia.",
+    "content": "Artigos e notícias sobre tecnologia. Sua fonte de informações!",
+    "description": "Artigos e notícias sobre tecnologia. Sua fonte de informações!",
     "tags": [],
     "title": "Artigos e Notícias",
     "uri": "/blog/index.html"
@@ -66,6 +66,14 @@ var relearn_searchindex = [
     ],
     "title": "Builder",
     "uri": "/design-patterns/builder/index.html"
+  },
+  {
+    "breadcrumb": "Início \u003e  Testes e aplicativos",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Padrões de Projetos - Quiz",
+    "uri": "/apps/design-patters/index.html"
   },
   {
     "breadcrumb": "Início",
