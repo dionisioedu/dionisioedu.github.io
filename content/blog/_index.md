@@ -4,3 +4,4 @@ weight = 1
 +++
 
 Artigos e notícias sobre tecnologia.
+Sua fonte de informações!
