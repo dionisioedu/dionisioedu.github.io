@@ -9,7 +9,7 @@
     <lastBuildDate>Thu, 05 Jun 2025 12:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/gof/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quiz sobre Padrões de Projeto (GoF)</title>
+      <title>Quiz sobre Padrões de Projeto</title>
       <link>http://localhost:1313/apps/design-patterns-quiz/index.html</link>
       <pubDate>Thu, 05 Jun 2025 12:00:00 -0300</pubDate>
       <guid>http://localhost:1313/apps/design-patterns-quiz/index.html</guid>

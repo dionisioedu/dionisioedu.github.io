@@ -6,8 +6,43 @@
     <description></description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 05 Jun 2025 12:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jul 2025 11:06:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Etiqueta | Agilidade</title>
+      <link>http://localhost:1313/tags/agilidade/index.html</link>
+      <pubDate>Tue, 08 Jul 2025 11:06:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/agilidade/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Desenvolvimento</title>
+      <link>http://localhost:1313/tags/desenvolvimento/index.html</link>
+      <pubDate>Tue, 08 Jul 2025 11:06:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/desenvolvimento/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Gestão De Projetos</title>
+      <link>http://localhost:1313/tags/gest%C3%A3o-de-projetos/index.html</link>
+      <pubDate>Tue, 08 Jul 2025 11:06:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/gest%C3%A3o-de-projetos/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Kanban</title>
+      <link>http://localhost:1313/tags/kanban/index.html</link>
+      <pubDate>Tue, 08 Jul 2025 11:06:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/kanban/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Etiqueta | Scrum</title>
+      <link>http://localhost:1313/tags/scrum/index.html</link>
+      <pubDate>Tue, 08 Jul 2025 11:06:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/scrum/index.html</guid>
+      <description></description>
+    </item>
     <item>
       <title>Etiqueta | Design Patterns</title>
       <link>http://localhost:1313/tags/design-patterns/index.html</link>
@@ -174,13 +209,6 @@
       <link>http://localhost:1313/tags/programa%C3%A7%C3%A3o/index.html</link>
       <pubDate>Sat, 24 May 2025 23:04:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/programa%C3%A7%C3%A3o/index.html</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Etiqueta | Desenvolvimento</title>
-      <link>http://localhost:1313/tags/desenvolvimento/index.html</link>
-      <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/desenvolvimento/index.html</guid>
       <description></description>
     </item>
     <item>

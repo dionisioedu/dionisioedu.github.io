@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
+    <loc>http://localhost:1313/blog/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/index.html</loc>
-    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/design-patterns/abstract-factory/index.html</loc>
@@ -54,6 +54,46 @@
     <loc>http://localhost:1313/design-patterns/observer/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/tags/agilidade/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/carreira/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/desenvolvimento/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/blog/agile/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/gest%C3%A3o-de-projetos/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/kanban/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/metodologias-%C3%A1geis/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/scrum/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+    <lastmod>2025-07-08T11:06:00-03:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/tags/design-patterns/index.html</loc>
     <lastmod>2025-06-05T12:00:00-03:00</lastmod>
   </url>
@@ -63,10 +103,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/quiz/index.html</loc>
-    <lastmod>2025-06-05T12:00:00-03:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/tags/index.html</loc>
     <lastmod>2025-06-05T12:00:00-03:00</lastmod>
   </url>
   <url>
@@ -246,10 +282,6 @@
     <lastmod>2025-05-24T23:04:00-03:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/tags/desenvolvimento/index.html</loc>
-    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
-  </url>
-  <url>
     <loc>http://localhost:1313/tags/iniciantes/index.html</loc>
     <lastmod>2025-05-07T00:00:00+00:00</lastmod>
   </url>
@@ -311,9 +343,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/tags/carreira/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/categories/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/tags/clean-code/index.html</loc>
