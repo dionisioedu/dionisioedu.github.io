@@ -1,19 +1,19 @@
 var relearn_searchindex = [
   {
-    "breadcrumb": "Início",
-    "content": "Artigos e notícias sobre tecnologia. Sua fonte de informações!",
-    "description": "Artigos e notícias sobre tecnologia. Sua fonte de informações!",
-    "tags": [],
-    "title": "Artigos e Notícias",
-    "uri": "/blog/index.html"
-  },
-  {
     "breadcrumb": "",
     "content": "👋 Bem-vindo ao dionisio.dev Um espaço para quem respira tecnologia e quer crescer na carreira Você já se sentiu perdido com tanta informação espalhada pela internet sobre programação, carreira tech e desenvolvimento de software? Aqui no dionisio.dev você vai encontrar exatamente o que precisa — e no seu ritmo.\n📚 eBooks para quem quer ir além dos tutoriais Se você está começando na programação ou buscando uma transição de carreira, nossos eBooks foram feitos sob medida pra você.\nQuer conquistar sua primeira vaga como dev? 👉 Conheça O Guia do Dev Iniciante — um manual prático para dominar os fundamentos, montar um portfólio matador e brilhar nas entrevistas.\nSonha em trabalhar com Finanças Quantitativas usando C++? 👉 Então o Guia Avançado para Desenvolvedores C++ vai te mostrar o caminho para se tornar um Quant Developer.\nE isso é só o começo. Estamos preparando mais materiais sobre estrutura de dados, algoritmos, carreira, entrevistas técnicas e até produtividade para devs.\n✍️ Artigos para todos os níveis Aqui no site você encontra artigos pensados tanto para quem está começando quanto para quem já está no mercado, mas sente que poderia estar indo mais longe.\n📌 Alguns temas que já abordamos:\nC++ moderno e STL Design Patterns com exemplos práticos Python, Linux, Git e outras ferramentas essenciais Resumos de livros técnicos (como Clean Code) Conceitos fundamentais de algoritmos e estruturas de dados SRE, boas práticas de engenharia e arquitetura de software 🧠 E ainda vem muita coisa por aí… Estamos organizando tudo em seções fáceis de navegar, como:\nDesign Patterns C++ e STL Algoritmos e Estruturas de Dados Projetos e Portfólio Blog com dicas e novidades Além disso, estamos criando uma Wiki técnica completa, onde cada função da STL, padrão de projeto e conceito importante terá uma página dedicada, com explicações, exemplos práticos e links cruzados.\n🚀 Prepare-se para evoluir Este site é mais que um blog. É um ponto de partida para você se tornar um profissional mais completo, competitivo e valorizado no mercado.\nMarque nos favoritos, compartilhe com amigos e volte sempre.\nAh, e se quiser ser avisado quando novos conteúdos ou eBooks forem lançados, é só se inscrever na newsletter que estamos preparando. 😉",
     "description": "Artigos, Notícias, Livros e Mentoria para alavancar sua Carreira",
     "tags": [],
     "title": "Início",
     "uri": "/index.html"
+  },
+  {
+    "breadcrumb": "Início",
+    "content": "Artigos e notícias sobre tecnologia. Sua fonte de informações!",
+    "description": "Artigos e notícias sobre tecnologia. Sua fonte de informações!",
+    "tags": [],
+    "title": "Artigos e Notícias",
+    "uri": "/blog/index.html"
   },
   {
     "breadcrumb": "Início \u003e  Padrões de Projeto",
@@ -54,6 +54,14 @@ var relearn_searchindex = [
     "uri": "/apps/aptitude/index.html"
   },
   {
+    "breadcrumb": "Início",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Testes e aplicativos",
+    "uri": "/apps/index.html"
+  },
+  {
     "breadcrumb": "Início \u003e  Testes e aplicativos",
     "content": "Dica: se errar uma questão, anote o padrão correspondente e revise nosso guia completo.",
     "description": "Teste on-line com 10 questões aleatórias entre 300 para avaliar seu domínio dos 23 Design Patterns da GoF. Receba feedback imediato e descubra seu nível.",
@@ -64,14 +72,6 @@ var relearn_searchindex = [
     ],
     "title": "Quiz sobre Padrões de Projeto",
     "uri": "/apps/design-patterns-quiz/index.html"
-  },
-  {
-    "breadcrumb": "Início",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Testes e aplicativos",
-    "uri": "/apps/index.html"
   },
   {
     "breadcrumb": "Início \u003e  Padrões de Projeto",
