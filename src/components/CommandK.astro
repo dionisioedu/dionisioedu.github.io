@@ -1,0 +1,13 @@
+<script>
+  window.addEventListener('keydown', (e) => {
+    const isMac = navigator.platform.toLowerCase().includes('mac');
+    const mod = isMac ? e.metaKey : e.ctrlKey;
+    if (mod && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      const btn = document.querySelector('button[aria-label="Search"]');
+      if (btn) btn.click();
+      const input = document.querySelector('input[type="search"]');
+      if (input) input.focus();
+    }
+  });
+</script>
