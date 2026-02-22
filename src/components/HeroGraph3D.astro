@@ -4,7 +4,7 @@
  *
  * A premium Three.js hero section for Starlight.
  * - Vanilla Three.js (no React)
- * - Client-only via a bundled Astro <script> (so npm "three" resolves)
+ * - Client-only via a bundled Astro <script> (so npm three resolves)
  * - No reliance on document.currentScript (Astro hoists scripts)
  *
  * Props
@@ -137,11 +137,15 @@ const label = Astro.props.label ?? "Interactive 3D graph";
     50% { opacity: 0.62; transform: translate3d(0,-2px,0) scale(1.01); }
   }
 
+  /* Ensure canvas sits below overlays but above background */
   .c {
-    /* Ensure canvas always obeys the frame size */
-    width: 100%;
-    height: 100%;
-    display: block;
+    position: relative;
+    z-index: 0;
+  }
+
+  @keyframes heroSheen {
+    0%, 100% { opacity: 0.45; transform: translate3d(0,0,0) scale(1); }
+    50% { opacity: 0.62; transform: translate3d(0,-2px,0) scale(1.01); }
   }
 
   .glass {
