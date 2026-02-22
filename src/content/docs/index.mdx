@@ -1,8 +1,137 @@
 ---
 title: Home
-description: Welcome to my docs.
+description: Your engineering portal — docs, decisions, standards, and projects in one place.
+hero:
+  title: Dionisio Dev Hub
+  tagline: Ship faster with clarity — playbooks, patterns, and project knowledge that don’t rot.
+  image:
+    html: |
+      <svg viewBox="0 0 480 220" role="img" aria-label="Portal illustration" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="currentColor" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
+          </linearGradient>
+          <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="black" flood-opacity="0.18"/>
+          </filter>
+        </defs>
+        <rect x="22" y="22" width="436" height="176" rx="22" fill="url(#g)" filter="url(#s)"/>
+        <rect x="56" y="58" width="210" height="16" rx="8" fill="currentColor" fill-opacity="0.28"/>
+        <rect x="56" y="88" width="300" height="12" rx="6" fill="currentColor" fill-opacity="0.18"/>
+        <rect x="56" y="112" width="270" height="12" rx="6" fill="currentColor" fill-opacity="0.14"/>
+        <rect x="56" y="142" width="120" height="34" rx="14" fill="currentColor" fill-opacity="0.22"/>
+        <path d="M338 70c32 0 58 26 58 58s-26 58-58 58-58-26-58-58 26-58 58-58Z" fill="currentColor" fill-opacity="0.10"/>
+        <path d="M338 88c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40Z" fill="currentColor" fill-opacity="0.16"/>
+        <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
+      </svg>
+  actions:
+    - text: Start here
+      link: /guides/getting-started/
+    - text: Projects
+      link: /projects/
 ---
 
-# Welcome
+import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
 
-This is my documentation site powered by Astro + Starlight.
+<CardGrid>
+  <LinkCard
+    title="Getting started"
+    href="/guides/getting-started/"
+    description="How this hub is organized, how to add docs, and the rules that keep it clean."
+  />
+  <LinkCard
+    title="Projects"
+    href="/projects/"
+    description="Architecture, setup, roadmap, and decisions — per project, always current."
+  />
+  <LinkCard
+    title="Engineering standards"
+    href="/reference/standards/"
+    description="Clean code rules, refactoring playbooks, testing strategy, and PR expectations."
+  />
+  <LinkCard
+    title="Architecture notes"
+    href="/reference/architecture/"
+    description="Patterns, trade-offs, and why we chose what we chose."
+  />
+</CardGrid>
+
+---
+
+## What this hub is
+
+This is a living engineering portal: a single place for **how things work**, **why decisions were made**, and **how to ship fast without chaos**.
+
+Use it when you want:
+
+- **One source of truth** for project setup and maintenance
+- **Decision logs** that explain trade-offs (so future-you doesn’t redo debates)
+- **Playbooks** you can apply today (copy/paste, checklists, commands)
+- **Standards** that keep velocity high and quality consistent
+
+<Aside type="note" title="Principle">
+If a future-me could lose **30 minutes** on something again, it deserves a doc.
+</Aside>
+
+---
+
+## Where to go next
+
+<Steps>
+  <ol>
+    <li>
+      <strong>Read the “Getting started” guide</strong> to understand structure, naming, and conventions.
+    </li>
+    <li>
+      <strong>Pick a project</strong> and follow its setup doc end-to-end. Fix any missing steps immediately.
+    </li>
+    <li>
+      <strong>Adopt one playbook</strong> this week (refactoring, testing, CI/CD) and iterate.
+    </li>
+  </ol>
+</Steps>
+
+---
+
+## Quick signals
+
+<CardGrid>
+  <LinkCard
+    title="Docs that matter"
+    href="/reference/standards/#documentation"
+    description="What should be documented, what shouldn’t, and how to keep docs from rotting."
+  />
+  <LinkCard
+    title="How I write decisions"
+    href="/reference/architecture/#decisions"
+    description="A lightweight ADR format: context → options → decision → consequences."
+  />
+  <LinkCard
+    title="Testing mindset"
+    href="/reference/standards/#testing"
+    description="Fast feedback, stable tests, and the minimum suite that prevents regressions."
+  />
+  <LinkCard
+    title="Release & deploy"
+    href="/reference/standards/#release"
+    description="CI/CD expectations, environments, and the checklist before shipping."
+  />
+</CardGrid>
+
+---
+
+## Status (lightweight)
+
+- <Badge text="Stable" variant="success" /> Standards & playbooks
+- <Badge text="Evolving" variant="caution" /> Project docs & roadmaps
+- <Badge text="Experimental" variant="note" /> New patterns & tooling
+
+---
+
+## How I keep this portal useful
+
+- I keep pages **short and practical**
+- I prefer **checklists** over essays
+- I document **decisions with trade-offs**
+- I keep a visible **“Next actions”** section in project pages
