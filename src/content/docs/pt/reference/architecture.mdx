@@ -1,0 +1,41 @@
+---
+title: Architecture notes
+description: Patterns and decisions used across projects.
+---
+
+## Approach
+
+I build systems with:
+
+- explicit boundaries (modules with clear inputs/outputs)
+- minimal shared mutable state
+- practical interfaces (only when they reduce coupling)
+
+## Patterns I reuse
+
+### 1) “State machine” for UI tools
+Useful for tools like network analyzers:
+
+- Idle → Running → Finished / Error / Cancelled
+- real-time incremental updates while Running
+- freeze graph on finish
+- reset when starting a new test or leaving the screen
+
+### 2) “One thing at a time”
+When a tool can’t run concurrently, enforce it explicitly:
+
+- single active run
+- cancel behavior defined
+- tab navigation resets selection/state appropriately
+
+### 3) Data contracts first
+Define payloads and examples before UI polish.
+
+## ADRs (Architecture Decision Records)
+
+When a decision matters, add a short ADR:
+
+- Context
+- Decision
+- Alternatives
+- Consequences

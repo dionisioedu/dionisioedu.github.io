@@ -4,7 +4,7 @@
  *
  * A premium Three.js hero section for Starlight.
  * - Vanilla Three.js (no React)
- * - Client-only via a bundled Astro <script> (so npm three resolves)
+ * - Client-only via a bundled Astro script so npm three resolves
  * - No reliance on document.currentScript (Astro hoists scripts)
  *
  * Props
@@ -35,22 +35,50 @@ const label = Astro.props.label ?? "Interactive 3D graph";
 </section>
 
 <script>
-  /**
-   * IMPORTANT:
-   * This script is bundled by Astro/Vite, so imports work (including "three").
-   * Astro may hoist the script to <head>, so we cannot use document.currentScript.
-   * We mount by querying all [data-hero3d] blocks and guarding per-canvas.
-   */
-  import { mountHeroGraph3D } from "./heroGraph3D.client.js";
-
-  function mountAll() {
-    const roots = document.querySelectorAll("section[data-hero3d]");
-    for (const root of roots) mountHeroGraph3D(root);
+  // Lazy-load the heavy Three.js bundle only when the hero is visible or the
+  // browser is idle. This keeps the main client bundle small.
+  async function ensureModule() {
+    if (window.__hero3dModule) return window.__hero3dModule;
+    window.__hero3dModule = await import('./heroGraph3D.client.js');
+    return window.__hero3dModule;
   }
 
-  // Run now, and again after Astro page swaps (if you ever add view transitions).
-  mountAll();
-  document.addEventListener("astro:page-load", mountAll);
+  function onIdle(cb) {
+    if ('requestIdleCallback' in window) return requestIdleCallback(cb);
+    return setTimeout(cb, 300);
+  }
+
+  async function mountWhenVisible(root) {
+    const observer = new IntersectionObserver(async (entries, obs) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        obs.disconnect();
+        const mod = await ensureModule();
+        mod.mountHeroGraph3D(root);
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(root);
+  }
+
+  function mountAllLazy() {
+    const roots = document.querySelectorAll('section[data-hero3d]');
+    for (const root of roots) {
+      // If the user has reduced motion or prefers no auto-loading, load on idle instead.
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        onIdle(async () => {
+          const mod = await ensureModule();
+          mod.mountHeroGraph3D(root);
+        });
+      } else {
+        mountWhenVisible(root);
+      }
+    }
+  }
+
+  // Mount after initial paint and on Astro page swaps.
+  onIdle(() => mountAllLazy());
+  document.addEventListener('astro:page-load', () => onIdle(() => mountAllLazy()));
 </script>
 
 <style>

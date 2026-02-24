@@ -7,8 +7,42 @@ export default defineConfig({
   output: 'static',
   integrations: [
     starlight({
-      title: 'Dionisio Dev Hub',
-      description: 'A reference hub for developers: wiki, tools, and tech radar.'
+      title: 'Dev Hub',
+      description: 'A reference hub for developers: wiki, tools, and tech radar.',
+
+      // i18n — automatically infer from src/content/docs structure
+      locales: {
+        pt: { label: 'Português', lang: 'pt-BR' },
+        en: { label: 'English', lang: 'en' },
+      },
+      defaultLocale: 'pt',
+      
+      sidebar: [
+        {
+          label: 'Home',
+          slug: 'index',
+        },
+        {
+          label: 'Guides',
+          items: [
+            { label: 'Getting started', slug: 'guides/getting-started' },
+            { label: 'How to write great docs (example)', slug: 'guides/example' },
+          ],
+        },
+        {
+          label: 'Reference',
+          items: [
+            { label: 'Architecture notes', slug: 'reference/architecture' },
+            { label: 'Engineering standards', slug: 'reference/standards' },
+          ],
+        },
+        {
+          label: 'Tutorials',
+          items: [
+            { label: 'Hello World in C++', slug: 'tutorials/hello-world-cpp' },
+          ],
+        },
+      ],
     }),
   ],
 });

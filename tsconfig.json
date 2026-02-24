@@ -1,5 +1,9 @@
 {
   "extends": "astro/tsconfigs/base",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": ["src", "content", ".astro/types.d.ts"],
+  "exclude": ["dist", "node_modules", "**/node_modules/**"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "types": ["astro/client"]
+  }
 }
