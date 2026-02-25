@@ -9,6 +9,16 @@ export default defineConfig({
     starlight({
       title: 'Dev Hub',
       description: 'A reference hub for developers: wiki, tools, and tech radar.',
+      head: [
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: '/favicon.ico',
+          },
+        },
+      ],
 
       // i18n — automatically infer from src/content/docs structure
       locales: {
