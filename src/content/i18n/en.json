@@ -1,4 +1,16 @@
 {
   "language": "English",
-  "locale": "en-US"
+  "locale": "en-US",
+  "sidebar.label.Home": "Home",
+  "sidebar.label.Guides": "Guides",
+  "sidebar.label.Reference": "Reference",
+  "sidebar.label.Tutorials": "Tutorials",
+  "sidebar.label.Projects": "Projects",
+  "sidebar.label.Getting started": "Getting started",
+  "sidebar.label.How to write great docs (example)": "How to write great docs (example)",
+  "sidebar.label.eBooks": "eBooks",
+  "sidebar.label.Architecture notes": "Architecture notes",
+  "sidebar.label.Engineering standards": "Engineering standards",
+  "sidebar.label.Data Structures & Algorithms": "Data Structures & Algorithms",
+  "sidebar.label.Hello World in C++": "Hello World in C++"
 }

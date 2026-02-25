@@ -27,6 +27,8 @@ export default defineConfig({
           items: [
             { label: 'Getting started', slug: 'guides/getting-started' },
             { label: 'How to write great docs (example)', slug: 'guides/example' },
+            { label: 'eBooks', slug: 'guides/books' },
+            { label: 'Shop', slug: 'guides/shop' },
           ],
         },
         {
