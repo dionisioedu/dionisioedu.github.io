@@ -23,8 +23,8 @@ export default defineConfig({
       },
       defaultLocale: 'pt',
       sidebar: [
-        { label: 'EBooks', slug: 'guides/books' },
-        { label: 'Loja', slug: 'guides/shop' },
+        { label: 'eBooks', slug: 'books' },
+        { label: 'Loja', slug: 'shop' },
         {
           label: 'Referência',
           items: [
