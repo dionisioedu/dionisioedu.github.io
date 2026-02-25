@@ -1,9 +1,9 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy Astro site to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write
@@ -15,21 +15,21 @@ jobs:
     steps:
       - name: Checkout do código
         uses: actions/checkout@v3
-        with:
-          submodules: true
-          fetch-depth: 0
 
-      - name: Instalação do Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          hugo-version: '0.127.0'
-          extended: true
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalação de dependências
+        run: npm install
 
       - name: Build do site
-        run: hugo --minify
+        run: npm run build
 
       - name: Deploy para a branch gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./dist
