@@ -26,10 +26,10 @@ hero:
         <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
       </svg>
   actions:
-    - text: Start here
-      link: /en/guides/getting-started/
-    - text: Projects
-      link: /projects/
+    - text: View eBooks
+      link: /en/books/
+    - text: Visit the Shop
+      link: /en/shop/
 ---
 
 import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
@@ -39,24 +39,24 @@ import HeroGraph3D from '../../../components/HeroGraph3D.astro';
 
 <CardGrid>
   <LinkCard
-    title="Getting started"
-    href="/guides/getting-started/"
-    description="How this hub is organized, how to add docs, and the rules that keep it clean."
+    title="eBooks"
+    href="/en/books/"
+    description="Practical guides to accelerate your career and ship with confidence."
+  />
+  <LinkCard
+    title="Shop"
+    href="/en/shop/"
+    description="All products, courses, and resources in one place."
   />
   <LinkCard
     title="Projects"
-    href="/projects/"
+    href="/en/projects/"
     description="Architecture, setup, roadmap, and decisions — per project, always current."
   />
   <LinkCard
-    title="Engineering standards"
-    href="/reference/standards/"
+    title="Engineering Standards"
+    href="/en/reference/standards/"
     description="Clean code rules, refactoring playbooks, testing strategy, and PR expectations."
-  />
-  <LinkCard
-    title="Architecture notes"
-    href="/reference/architecture/"
-    description="Patterns, trade-offs, and why we chose what we chose."
   />
 </CardGrid>
 
@@ -84,16 +84,33 @@ If a future-me could lose **30 minutes** on something again, it deserves a doc.
 <Steps>
   <ol>
     <li>
-      <strong>Read the “Getting started” guide</strong> to understand structure, naming, and conventions.
+      <strong>Start with the eBooks</strong> and choose the right material for your current level.
     </li>
     <li>
-      <strong>Pick a project</strong> and follow its setup doc end-to-end. Fix any missing steps immediately.
+      <strong>Visit the Shop</strong> to see all products, courses, and resources available.
     </li>
     <li>
-      <strong>Adopt one playbook</strong> this week (refactoring, testing, CI/CD) and iterate.
+      <strong>Explore a project</strong> and follow the setup from start to finish.
     </li>
   </ol>
 </Steps>
+
+---
+
+## Articles & Blog
+
+<CardGrid>
+  <LinkCard
+    title="Blog"
+    href="/en/blog/"
+    description="News, notes, and behind-the-scenes insights from the studio."
+  />
+  <LinkCard
+    title="Technical Articles"
+    href="/en/artigos-tecnicos/clean-code/"
+    description="Deep dives on C++, architecture, performance, and engineering practice."
+  />
+</CardGrid>
 
 ---
 
@@ -102,22 +119,22 @@ If a future-me could lose **30 minutes** on something again, it deserves a doc.
 <CardGrid>
   <LinkCard
     title="Docs that matter"
-    href="/reference/standards/#documentation"
+    href="/en/reference/standards/#documentation"
     description="What should be documented, what shouldn’t, and how to keep docs from rotting."
   />
   <LinkCard
     title="How I write decisions"
-    href="/reference/architecture/#decisions"
+    href="/en/reference/architecture/#decisions"
     description="A lightweight ADR format: context → options → decision → consequences."
   />
   <LinkCard
     title="Testing mindset"
-    href="/reference/standards/#testing"
+    href="/en/reference/standards/#testing"
     description="Fast feedback, stable tests, and the minimum suite that prevents regressions."
   />
   <LinkCard
     title="Release & deploy"
-    href="/reference/standards/#release"
+    href="/en/reference/standards/#release"
     description="CI/CD expectations, environments, and the checklist before shipping."
   />
 </CardGrid>
