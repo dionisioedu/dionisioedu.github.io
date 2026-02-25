@@ -1,15 +1,15 @@
 ---
-title: eBooks & Cursos
+title: eBooks
 description: 'Invista em seu desenvolvimento profissional. Preços especiais para comunidade.'
 ---
 
-# 📚 eBooks & Cursos
+# 📚 eBooks
 
 Invista em seu desenvolvimento profissional. Cursos e eBooks especializados criados por especialistas da indústria para acelerar sua carreira em tecnologia.
 
 ## Guia do Dev Iniciante
 
-![Guia do Dev Iniciante](/assets/images/books-1.webp)
+![Guia do Dev Iniciante](/src/assets/images/books/books-1.webp)
 
 Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 
@@ -29,7 +29,7 @@ Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 
 ## Guia Avançado C++: Desenvolvedor Quant
 
-![Guia Avançado C++](/assets/images/books-2.webp)
+![Guia Avançado C++](/src/assets/images/books/books-2.webp)
 
 Domine C++ em nível profissional e entre no mercado de trading quantitativo.
 
@@ -51,8 +51,8 @@ Domine C++ em nível profissional e entre no mercado de trading quantitativo.
 
 ✓ Garantia de satisfação ou seu dinheiro de volta em 7 dias  
 ✓ Acesso imediato ao conteúdo após o pagamento  
-✓ 5.000+ desenvolvedores já matriculados  
-✓ Suporte exclusivo via Discord
+✓ 200+ desenvolvedores já adquiriram
+✓ Suporte exclusivo via Telegram
 
 ---
 
@@ -65,7 +65,7 @@ Você recebe acesso imediato ao seu email registrado na Hotmart. Um link de down
 Oferecemos 7 dias de garantia incondicional. Se não estiver satisfeito, devolvemos 100% do seu investimento.
 
 **Os eBooks possuem suporte?**  
-Sim! Ao adquirir você terá acesso a um grupo exclusivo no Discord com suporte direto aos autores e à comunidade.
+Sim! Ao adquirir você terá acesso a um grupo exclusivo no Telegram com suporte direto aos autores e à comunidade.
 
 **Posso compartilhar com outras pessoas?**  
 Não. Os eBooks são licenciados para uso individual. Compartilhar viola os termos de serviço.
