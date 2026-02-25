@@ -1,0 +1,362 @@
+---
+/**
+ * KnowledgeGraph3D.astro
+ * 
+ * Interactive 3D Knowledge Graph component
+ * Shows the organizational structure of learning content
+ * 
+ * Props:
+ * - height: number (px) - fixed hero height
+ * - accent: string - CSS color
+ * - label: string - aria-label
+ */
+
+const height = Astro.props.height ?? 500;
+const accent = Astro.props.accent ?? "currentColor";
+const label = Astro.props.label ?? "Knowledge Graph - Learning Topics";
+---
+
+<section
+  class="knowledge-graph-3d"
+  data-graph3d="knowledge"
+  aria-label={label}
+  style={`--h:${height}px; --accent:${accent};`}
+>
+  <div class="graph-frame" data-graph3d-frame>
+    <canvas class="graph-canvas" data-graph3d-canvas></canvas>
+    
+    <div class="graph-legend">
+      <div class="legend-title">Domínios</div>
+      <div class="legend-items">
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #3b82f6;"></div>
+          <span>Algoritmos & Estruturas</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #8b5cf6;"></div>
+          <span>Engenharia de Software</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #f59e0b;"></div>
+          <span>Artigos Técnicos</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #10b981;"></div>
+          <span>Código & Tutoriais</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #ef4444;"></div>
+          <span>Arquitetura & Design</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="graph-info">
+      <div class="info-label">INTERACTIVE</div>
+      <div class="info-title">Knowledge Graph</div>
+      <div class="info-subtitle">
+        Arraste para girar • Scroll para zoom • Clique nos nós
+      </div>
+    </div>
+
+    <div class="graph-tooltip" data-graph3d-tooltip></div>
+  </div>
+</section>
+
+<script>
+  /**
+   * Load the Knowledge Graph Three.js module
+   */
+  async function loadKnowledgeGraphModule() {
+    if (window.__knowledgeGraphModule) {
+      return window.__knowledgeGraphModule;
+    }
+    window.__knowledgeGraphModule = await import(
+      './KnowledgeGraph3D.client.js'
+    );
+    return window.__knowledgeGraphModule;
+  }
+
+  /**
+   * Initialize graph when visible or idle
+   */
+  function initWhenReady(rootEl) {
+    if (!rootEl) return;
+
+    const observer = new IntersectionObserver(async (entries) => {
+      if (entries[0].isIntersecting) {
+        observer.disconnect();
+
+        const mod = await loadKnowledgeGraphModule();
+        mod.mountKnowledgeGraph3D(rootEl);
+      }
+    });
+
+    observer.observe(rootEl);
+  }
+
+  // Initialize on current document
+  document.querySelectorAll('[data-graph3d="knowledge"]').forEach((el) => {
+    initWhenReady(el);
+  });
+
+  // Handle navigation (SPA)
+  document.addEventListener('astro:after-swap', () => {
+    document.querySelectorAll('[data-graph3d="knowledge"]').forEach((el) => {
+      initWhenReady(el);
+    });
+  });
+</script>
+
+<style>
+  .knowledge-graph-3d {
+    --h: 500px;
+    --accent: currentColor;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: var(--h);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .graph-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(30, 41, 59, 0.95) 100%
+    );
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .graph-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Legend overlay - top right */
+  .graph-legend {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    z-index: 10;
+    max-width: 280px;
+  }
+
+  .legend-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+
+  .legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Info overlay - bottom left */
+  .graph-info {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px 24px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.8;
+    margin-bottom: 4px;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .info-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.4;
+  }
+
+  /* Tooltip for node labels */
+  .graph-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    max-width: 280px;
+    font-weight: 500;
+    border: 1px solid var(--accent);
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .tooltip-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .tooltip-description {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .tooltip-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .knowledge-graph-3d {
+      --h: 350px;
+    }
+
+    .graph-legend {
+      top: 16px;
+      right: 16px;
+      padding: 12px;
+      max-width: 240px;
+    }
+
+    .legend-title {
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+    }
+
+    .legend-items {
+      gap: 6px;
+    }
+
+    .legend-item {
+      font-size: 0.75rem;
+    }
+
+    .graph-info {
+      bottom: 16px;
+      left: 16px;
+      padding: 16px 20px;
+    }
+
+    .info-title {
+      font-size: 1.25rem;
+    }
+
+    .info-subtitle {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .knowledge-graph-3d {
+      --h: 280px;
+    }
+
+    .graph-legend {
+      top: 12px;
+      right: 12px;
+      padding: 10px;
+      max-width: 200px;
+    }
+
+    .legend-title {
+      font-size: 0.65rem;
+      margin-bottom: 6px;
+    }
+
+    .legend-item {
+      font-size: 0.7rem;
+      gap: 6px;
+    }
+
+    .legend-color {
+      width: 10px;
+      height: 10px;
+    }
+
+    .graph-info {
+      bottom: 12px;
+      left: 12px;
+      padding: 12px 16px;
+    }
+
+    .info-label {
+      font-size: 0.65rem;
+    }
+
+    .info-title {
+      font-size: 1.1rem;
+    }
+
+    .info-subtitle {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .graph-info {
+      backdrop-filter: none;
+    }
+  }
+</style>

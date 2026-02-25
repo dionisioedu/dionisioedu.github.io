@@ -187,4 +187,4 @@ Clean Code fala da importância de escrever um código que tenha valor além do 
 
 Recomendo demais a leitura do livro completo — ele traz muito mais valor e conteúdo do que consegui resumir aqui.
 
-**E você, tem uma opinião formada sobre Clean Code? Concorda ou discorda? Comenta aí!**
+**E você, tem uma opinião formada sobre Clean Code?**
