@@ -34,6 +34,7 @@ export default defineConfig({
           items: [
             { label: 'Architecture notes', slug: 'reference/architecture' },
             { label: 'Engineering standards', slug: 'reference/standards' },
+            { label: 'Data Structures & Algorithms', slug: 'reference/dsa' },
           ],
         },
         {

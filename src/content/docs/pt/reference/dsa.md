@@ -1,11 +1,6 @@
 ---
 title: Estruturas de Dados e Algoritmos
-layout: page
 description: 'Índice abrangente, com profundidade e exemplos, para dominar DSA do zero ao avançado.'
-image: assets/images/dsa-1.png
-nav-menu: true
-show_tile: true
-tags: [dsa, data structures, algorithms]
 ---
 
 > **Por que guardar este link?**  
@@ -18,7 +13,7 @@ tags: [dsa, data structures, algorithms]
 2. [Estruturas de Dados — Visão Detalhada](#estruturas-de-dados)  
 3. [Algoritmos Essenciais — Visão Detalhada](#algoritmos-essenciais)  
 4. [Mapas Mentais & Analogias](#mapas-mentais)  
-5. [Caminho de Aprendizado de 12 Semanas](#plano-12-semanas)  
+5. [Caminho de Aprendizado de 12 Semanas](#plano-12-semanas)  
 6. [Padrões de Entrevista](#padrões-de-entrevista)  
 7. [Estudos de Caso Reais](#cases)  
 8. [Ferramentas & Bibliografia](#recursos)  
@@ -35,7 +30,7 @@ O universo de DSA pode ser dividido em **4 eixos**:
 | **Estrutura de Dados** | _Como armazeno a informação?_ | Hash → chave→valor rápido |
 | **Algoritmo** | _Como transformo a informação?_ | Dijkstra → menor caminho |
 | **Paradigma** | _Qual estratégia geral?_ | Dividir & Conquistar, DP |
-| **Complexidade** | _Quanto custa a operação?_ | ver [Big O](/2025/05/05/bigo.html) |
+| **Complexidade** | _Quanto custa a operação?_ | O(n), O(n log n), etc |
 
 
 ## <a name="estruturas-de-dados"></a>2 · Estruturas de Dados — Visão Detalhada
@@ -44,9 +39,9 @@ O universo de DSA pode ser dividido em **4 eixos**:
 
 | Estrutura | Operações principais | Quando NÃO usar |
 |-----------|---------------------|-----------------|
-| **[Array](#)** | Acesso aleatório **O(1)** | Inserir no meio frequentemente |
-| **[Vector/ArrayList](#)** | Inserção amortizada **O(1)** | Tamanho explode além da RAM |
-| **[Lista Ligada](#)** | Inserção O(1) na cabeça | Precisa de busca aleatória |
+| **Array** | Acesso aleatório **O(1)** | Inserir no meio frequentemente |
+| **Vector/ArrayList** | Inserção amortizada **O(1)** | Tamanho explode além da RAM |
+| **Lista Ligada** | Inserção O(1) na cabeça | Precisa de busca aleatória |
 
 #### Dica prática  
 > Arrays aproveitam cache de CPU muito melhor que listas ligadas — para **loops intensos**, escolha array mesmo que inserções sejam um pouco mais caras.
@@ -55,19 +50,19 @@ O universo de DSA pode ser dividido em **4 eixos**:
 
 | Estrutura | Conceito | Uso moderno |
 |-----------|----------|-------------|
-| **[Stack](#)** | LIFO | Desfazer Ctrl+Z, parsing de expressões |
-| **[Queue](#)** | FIFO | Fila de tarefas, BFS |
-| **[Deque](#)** | Fila dupla | Algoritmo de janela máxima |
+| **Stack** | LIFO | Desfazer Ctrl+Z, parsing de expressões |
+| **Queue** | FIFO | Fila de tarefas, BFS |
+| **Deque** | Fila dupla | Algoritmo de janela máxima |
 
 ### 2.3 Árvores & Derivados
 
 | Estrutura | Altura | Vantagem distintiva |
 |-----------|--------|---------------------|
-| **[AVL](#)** | balanceada | Rotinas de insert/delete determinísticas |
-| **[Red‑Black](#)** | balanceada | Implementação simples na STL/Java | 
-| **[B‑Tree](#)** | baixa (ordem m) | Índices de disco, bancos de dados |
-| **[Segment Tree](#)** | log n | Range queries com updates |
-| **[Fenwick (BIT)](#)** | log n | Implementação concisa de prefix sum |
+| **AVL** | balanceada | Rotinas de insert/delete determinísticas |
+| **Red‑Black** | balanceada | Implementação simples na STL/Java | 
+| **B‑Tree** | baixa (ordem m) | Índices de disco, bancos de dados |
+| **Segment Tree** | log n | Range queries com updates |
+| **Fenwick (BIT)** | log n | Implementação concisa de prefix sum |
 
 ### 2.4 Estruturas de Grafos
 
@@ -78,8 +73,8 @@ O universo de DSA pode ser dividido em **4 eixos**:
 
 | Estrutura | Tamanho | Falso positivo | Aplicação |
 |-----------|---------|----------------|-----------|
-| **[Bloom Filter](#)** | muito pequeno | sim | Filtro de cache, anti‑spam |
-| **[Count‑Min Sketch](#)** | pequeno | aproximação | Detector de trending topics |
+| **Bloom Filter** | muito pequeno | sim | Filtro de cache, anti‑spam |
+| **Count‑Min Sketch** | pequeno | aproximação | Detector de trending topics |
 
 
 ## <a name="algoritmos-essenciais"></a>3 · Algoritmos Essenciais — Visão Detalhada
@@ -88,43 +83,43 @@ O universo de DSA pode ser dividido em **4 eixos**:
 
 | Algoritmo | Estável? | Pior caso | Espaço |
 |-----------|----------|-----------|--------|
-| **[Merge](#)** | Sim | O(n log n) | O(n) |
-| **[Quick](#)** | Não | O(n²) | O(log n) |
-| **[Heap](#)** | Não | O(n log n) | O(1) |
-| **[Counting/Radix](#)** | Sim | O(n+k) | O(n+k) |
+| **Merge** | Sim | O(n log n) | O(n) |
+| **Quick** | Não | O(n²) | O(log n) |
+| **Heap** | Não | O(n log n) | O(1) |
+| **Counting/Radix** | Sim | O(n+k) | O(n+k) |
 
 ### 3.2 Pesquisa & Seleção
 
 | Algoritmo | Caso de uso | Complexidade |
 |-----------|-------------|--------------|
-| **[Binary Search](#)** | Procurar valor em array ordenado | O(log n) |
-| **[QuickSelect](#)** | k‑ésimo menor | O(n) médio |
+| **Binary Search** | Procurar valor em array ordenado | O(log n) |
+| **QuickSelect** | k‑ésimo menor | O(n) médio |
 
 ### 3.3 Grafos
 
 | Algoritmo | Tipo de grafo | Nota |
 |-----------|---------------|------|
-| **[BFS](#)** | não ponderado | Caminho mínimo em níveis |
-| **[DFS](#)** | geral | Detectar ciclos, topologia |
-| **[Dijkstra](#)** | pesos positivos | Fila de prioridade |
-| **[A*](#)** | heurístico | Jogos 2D/3D |
-| **[Kruskal](#)** | MST | Union‑Find |
+| **BFS** | não ponderado | Caminho mínimo em níveis |
+| **DFS** | geral | Detectar ciclos, topologia |
+| **Dijkstra** | pesos positivos | Fila de prioridade |
+| **A*** | heurístico | Jogos 2D/3D |
+| **Kruskal** | MST | Union‑Find |
 
 ### 3.4 Programação Dinâmica
 
 | Problema | Abordagem | Complexidade |
 |----------|-----------|--------------|
-| **[Knapsack](#)** | Tabela DP | O(n W) espaço otimizado p/ O(W) |
-| **[Longest Common Subsequence](#)** | Matriz DP | O(n m) |
-| **[Edit Distance](#)** | DP | O(n m) |
+| **Knapsack** | Tabela DP | O(n W) espaço otimizado p/ O(W) |
+| **Longest Common Subsequence** | Matriz DP | O(n m) |
+| **Edit Distance** | DP | O(n m) |
 
 ### 3.5 Strings
 
 | Algoritmo | O quê faz | Complexidade |
 |-----------|-----------|--------------|
-| **[KMP](#)** | Busca substring | O(n+m) |
-| **[Trie](#)** | Busca prefixo | O(L) |
-| **[Suffix Array + LCP](#)** | Múltiplas consultas | O(n log n) build |
+| **KMP** | Busca substring | O(n+m) |
+| **Trie** | Busca prefixo | O(L) |
+| **Suffix Array + LCP** | Múltiplas consultas | O(n log n) build |
 
 
 ## <a name="mapas-mentais"></a>4 · Mapas Mentais & Analogias
@@ -138,17 +133,17 @@ O universo de DSA pode ser dividido em **4 eixos**:
 Experimente desenhar essas analogias para fixar!
 
 
-## <a name="plano-12-semanas"></a>5 · Caminho de Aprendizado (12 Semanas)
+## <a name="plano-12-semanas"></a>5 · Caminho de Aprendizado (12 Semanas)
 
-| Semana | Tema | Entregável | Problema “Boss” |
+| Semana | Tema | Entregável | Problema "Boss" |
 |--------|------|-----------|-----------------|
-| 1‑2 | Arrays & Hashes | CRUD simples | “Two Sum” |
-| 3‑4 | Stack, Queue, Deque | LRU Cache | “Sliding Window Max” |
-| 5‑6 | Árvores BST & Heap | Priority Queue | “Kth Largest in Stream” |
-| 7‑8 | Grafos | BFS/DFS | “Course Schedule” |
-| 9‑10 | DP | Tabulação vs memo | “Word Break” |
-| 11 | Strings | KMP, Trie | “Implement Trie” |
-| 12 | Revisão & Contest | Codeforces Div 4 | 2 h simuladas |
+| 1‑2 | Arrays & Hashes | CRUD simples | "Two Sum" |
+| 3‑4 | Stack, Queue, Deque | LRU Cache | "Sliding Window Max" |
+| 5‑6 | Árvores BST & Heap | Priority Queue | "Kth Largest in Stream" |
+| 7‑8 | Grafos | BFS/DFS | "Course Schedule" |
+| 9‑10 | DP | Tabulação vs memo | "Word Break" |
+| 11 | Strings | KMP, Trie | "Implement Trie" |
+| 12 | Revisão & Contest | Codeforces Div 4 | 2 h simuladas |
 
 
 ## <a name="padrões-de-entrevista"></a>6 · Padrões de Entrevista
@@ -186,10 +181,5 @@ Experimente desenhar essas analogias para fixar!
 |----------|----------------|
 | Preciso decorar todos os algoritmos? | Não, aprenda **padrões**. |
 | Qual linguagem usar em entrevistas? | A que você digita sem pensar — Python é aceito na maioria. |
-| Quanto tempo para dominar DSA? | Com 1 h/dia, 3‑6 meses para ficar confortável. |
+| Quanto tempo para dominar DSA? | Com 1 h/dia, 3‑6 meses para ficar confortável. |
 | Big‑O é tudo? | Importante, mas **cache, paralelismo, I/O** também contam em produção. |
-
-
-### Compartilhe!
-
-Se achou útil, envie para colegas. Cada clique ajuda a comunidade a crescer 📚🚀
