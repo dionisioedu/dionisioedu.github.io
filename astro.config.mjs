@@ -7,7 +7,7 @@ export default defineConfig({
   output: 'static',
   integrations: [
     starlight({
-      title: 'Dev Hub',
+      title: 'Developers Hub',
       description: 'A reference hub for developers: wiki, tools, and tech radar.',
       head: [
         {
@@ -34,7 +34,7 @@ export default defineConfig({
       defaultLocale: 'pt',
       sidebar: [
         { label: 'eBooks', slug: 'books' },
-        { label: 'Loja', slug: 'shop' },
+        { label: 'Shop', slug: 'shop' },
         { label: 'Blog', slug: 'blog' },
         {
           label: 'Artigos Técnicos',

@@ -11,7 +11,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'Dev Hub',
+      title: 'Developers Hub',
       description: 'A reference hub for developers: wiki, tools, and tech radar.',
     }),
   ],
