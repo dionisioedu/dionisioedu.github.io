@@ -355,7 +355,7 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
     </div>
     <div class="product-content">
       <span class="product-category">eBook</span>
-      <h3>Guia Avançado C++: Quant Developer</h3>
+      <h3>Guia Avançado C++: Desenvolvedor Quant</h3>
       <p class="product-description">Domine C++ profissional e entre no mercado de trading algorítmico. Exemplos reais incluídos.</p>
       <div class="product-rating">
         <span class="stars">★★★★★</span>
@@ -445,8 +445,8 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
     </div>
     <div class="product-content">
       <span class="product-category">Guia</span>
-      <h3>Roadmap Completo: Dev Jr → Senior</h3>
-      <p class="product-description">Plano estruturado de 3 anos para evoluir sua carreira técnica com milestones e recursos.</p>
+      <h3>Roteiro Completo: Dev Jr → Sênior</h3>
+      <p class="product-description">Plano estruturado de 3 anos para evoluir sua carreira técnica com marcos e recursos.</p>
       <div class="product-rating">
         <span class="stars">★★★★★</span>
         <span>(0 avaliações)</span>

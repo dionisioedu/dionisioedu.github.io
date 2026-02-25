@@ -1,41 +1,41 @@
 ---
-title: Engineering standards
-description: Conventions I follow to keep code clean and scalable.
+title: Padrões de engenharia
+description: Convenções que sigo para manter o código limpo e escalável.
 ---
 
-## Core principles
+## Princípios centrais
 
-- **Clarity beats cleverness**
-- **Small functions** with single responsibility
-- **Prefer pure functions** (receive values, return values) over pointer-heavy mutation
-- **Refactor continuously** (don’t “batch” correctness)
+- **Clareza vence esperteza**
+- **Funções pequenas** com responsabilidade única
+- **Prefira funções puras** (recebem valores, retornam valores) a mutações pesadas de ponteiros
+- **Refatore continuamente** (não "lote" a correção)
 
-## Naming
+## Nomenclatura
 
-- Name by intent, not by type
-- Prefer verbs for actions: `buildX`, `fetchY`, `renderZ`
-- Avoid abbreviations unless domain-standard
+- Nomeie por intenção, não por tipo
+- Prefira verbos para ações: `buildX`, `fetchY`, `renderZ`
+- Evite abreviações, a menos que sejam padrão do domínio
 
-## Testing
+## Testes
 
-- Write tests for:
+- Escreva testes para:
   - parsing
-  - boundaries
-  - error handling
-  - regression bugs
+  - limites
+  - tratamento de erro
+  - bugs de regressão
 
-## Logging
+## Logs
 
-- Logs must answer:
-  - What happened?
-  - Where?
-  - With what input?
-  - What’s the next action?
+- Logs precisam responder:
+  - O que aconteceu?
+  - Onde?
+  - Com qual entrada?
+  - Qual é a próxima ação?
 
-## Documentation
+## Documentação
 
-Every module should have:
+Todo módulo deve ter:
 
-- what it does
-- how to run it
-- common failure modes
+- o que ele faz
+- como executar
+- falhas comuns

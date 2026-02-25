@@ -27,16 +27,16 @@ Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 
 ---
 
-## Guia Avançado C++: Quant Developer
+## Guia Avançado C++: Desenvolvedor Quant
 
 ![Guia Avançado C++](/assets/images/books-2.webp)
 
-Domine C++ em nível profissional e entre no mercado de Quant Trading.
+Domine C++ em nível profissional e entre no mercado de trading quantitativo.
 
 **O que você vai aprender:**
 - C++ Avançado e Otimização
 - Sistemas de Trading Algorítmico
-- Desenvolvimento de Quant Systems
+- Desenvolvimento de sistemas quantitativos
 - Performance e Low-Latency
 - Padrões de Design Profissionais
 - Estudos de Caso Reais

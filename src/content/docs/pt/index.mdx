@@ -1,9 +1,9 @@
 ---
-title: Home
+title: Início
 description: Seu portal de engenharia de software — artigos, projetos, tutoriais, exemplos, livros, tudo em um só lugar.
 hero:
   title: Dev Hub
-  tagline: Ship faster with clarity — playbooks, patterns, and project knowledge that don’t rot.
+  tagline: Entregue mais rápido com clareza — guias, padrões e conhecimento de projeto que não envelhecem.
   image:
     html: |
       <svg viewBox="0 0 480 220" role="img" aria-label="Portal illustration" xmlns="http://www.w3.org/2000/svg">
@@ -26,10 +26,10 @@ hero:
         <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
       </svg>
   actions:
-    - text: Start here
-      link: /en/guides/getting-started/
-    - text: Projects
-      link: /projects/
+    - text: Ver eBooks
+      link: /guides/books/
+    - text: Ir para a Loja
+      link: /guides/shop/
 ---
 
 import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
@@ -39,102 +39,102 @@ import HeroGraph3D from '../../../components/HeroGraph3D.astro';
 
 <CardGrid>
   <LinkCard
-    title="Getting started"
-    href="/guides/getting-started/"
-    description="How this hub is organized, how to add docs, and the rules that keep it clean."
+    title="eBooks"
+    href="/guides/books/"
+    description="Guias práticos e diretos para acelerar sua carreira e vender melhor seu trabalho."
   />
   <LinkCard
-    title="Projects"
+    title="Loja"
+    href="/guides/shop/"
+    description="Catálogo completo com produtos, cursos e recursos para desenvolvedores."
+  />
+  <LinkCard
+    title="Projetos"
     href="/projects/"
-    description="Architecture, setup, roadmap, and decisions — per project, always current."
+    description="Arquitetura, configuração, roteiro e decisões de cada projeto, sempre atualizados."
   />
   <LinkCard
-    title="Engineering standards"
+    title="Padrões de engenharia"
     href="/reference/standards/"
-    description="Clean code rules, refactoring playbooks, testing strategy, and PR expectations."
-  />
-  <LinkCard
-    title="Architecture notes"
-    href="/reference/architecture/"
-    description="Patterns, trade-offs, and why we chose what we chose."
+    description="Regras de código limpo, refatoração, estratégia de testes e padrões de PR."
   />
 </CardGrid>
 
 ---
 
-## What this hub is
+## O que é este portal
 
-This is a living engineering portal: a single place for **how things work**, **why decisions were made**, and **how to ship fast without chaos**.
+Este é um portal vivo de engenharia: um lugar único para **como as coisas funcionam**, **por que decisões foram tomadas** e **como entregar rápido sem caos**.
 
-Use it when you want:
+Use quando precisar:
 
-- **One source of truth** for project setup and maintenance
-- **Decision logs** that explain trade-offs (so future-you doesn’t redo debates)
-- **Playbooks** you can apply today (copy/paste, checklists, commands)
-- **Standards** that keep velocity high and quality consistent
+- **Uma fonte de verdade** para configuração e manutenção de projetos
+- **Registros de decisão** que explicam compensações (para você não reabrir debates)
+- **Guias** que você aplica hoje (checklists, comandos, copiar/colar)
+- **Padrões** que mantêm velocidade alta e qualidade consistente
 
-<Aside type="note" title="Principle">
-If a future-me could lose **30 minutes** on something again, it deserves a doc.
+<Aside type="note" title="Princípio">
+Se um eu do futuro pode perder **30 minutos** com algo de novo, isso merece documentação.
 </Aside>
 
 ---
 
-## Where to go next
+## Para onde ir agora
 
 <Steps>
   <ol>
     <li>
-      <strong>Read the “Getting started” guide</strong> to understand structure, naming, and conventions.
+      <strong>Comece pelos eBooks</strong> e escolha o material certo para sua fase atual.
     </li>
     <li>
-      <strong>Pick a project</strong> and follow its setup doc end-to-end. Fix any missing steps immediately.
+      <strong>Visite a Loja</strong> para ver todos os produtos, cursos e recursos disponíveis.
     </li>
     <li>
-      <strong>Adopt one playbook</strong> this week (refactoring, testing, CI/CD) and iterate.
+      <strong>Explore um projeto</strong> e siga a configuração do início ao fim.
     </li>
   </ol>
 </Steps>
 
 ---
 
-## Quick signals
+## Sinais rápidos
 
 <CardGrid>
   <LinkCard
-    title="Docs that matter"
+    title="Documentação que importa"
     href="/reference/standards/#documentation"
-    description="What should be documented, what shouldn’t, and how to keep docs from rotting."
+    description="O que documentar, o que evitar e como manter a documentação útil no tempo."
   />
   <LinkCard
-    title="How I write decisions"
-    href="/reference/architecture/#decisions"
-    description="A lightweight ADR format: context → options → decision → consequences."
+    title="Como registro decisoes"
+    href="/reference/architecture/#decisoes"
+    description="Formato leve de ADR: contexto → opções → decisão → consequências."
   />
   <LinkCard
-    title="Testing mindset"
+    title="Mentalidade de testes"
     href="/reference/standards/#testing"
-    description="Fast feedback, stable tests, and the minimum suite that prevents regressions."
+    description="Feedback rápido, testes estáveis e o mínimo que evita regressões."
   />
   <LinkCard
-    title="Release & deploy"
+    title="Lançamento e deploy"
     href="/reference/standards/#release"
-    description="CI/CD expectations, environments, and the checklist before shipping."
+    description="CI/CD, ambientes e checklist antes de colocar em produção."
   />
 </CardGrid>
 
 ---
 
-## Status (lightweight)
+## Status (leve)
 
-- <Badge text="Stable" variant="success" /> Standards & playbooks
-- <Badge text="Evolving" variant="caution" /> Project docs & roadmaps
-- <Badge text="Experimental" variant="note" /> New patterns & tooling
+- <Badge text="Estável" variant="success" /> Padrões e guias
+- <Badge text="Em evolução" variant="caution" /> Documentação e roteiros
+- <Badge text="Experimental" variant="note" /> Novos padrões e ferramentas
 
 ---
 
-## How I keep this portal useful
+## Como mantenho este portal útil
 
-- I keep pages **short and practical**
-- I prefer **checklists** over essays
-- I document **decisions with trade-offs**
-- I keep a visible **“Next actions”** section in project pages
+- Mantenho páginas **curtas e práticas**
+- Prefiro **checklists** a textos longos
+- Documento **decisões com compensações**
+- Deixo visível uma seção de **"Próximas ações"** nas páginas de projeto

@@ -12,38 +12,34 @@ export default defineConfig({
 
       // i18n — automatically infer from src/content/docs structure
       locales: {
-        pt: { label: 'Português', lang: 'pt-BR' },
-        en: { label: 'English', lang: 'en' },
+        pt: {
+          label: 'Português',
+          lang: 'pt-BR',
+        },
+        en: {
+          label: 'English',
+          lang: 'en',
+        },
       },
       defaultLocale: 'pt',
-      
       sidebar: [
+        { label: 'EBooks', slug: 'guides/books' },
+        { label: 'Loja', slug: 'guides/shop' },
         {
-          label: 'eBooks',
-          slug: 'guides/books',
-        },
-        {
-          label: 'Shop',
-          slug: 'guides/shop',
-        },
-        {
-          label: 'Reference',
+          label: 'Referência',
           items: [
-            { label: 'Architecture notes', slug: 'reference/architecture' },
-            { label: 'Engineering standards', slug: 'reference/standards' },
-            { label: 'Data Structures & Algorithms', slug: 'reference/dsa' },
+            { label: 'Notas de Arquitetura', slug: 'reference/architecture' },
+            { label: 'Padrões de Engenharia', slug: 'reference/standards' },
+            { label: 'Estruturas de Dados e Algoritmos', slug: 'reference/dsa' },
           ],
         },
         {
-          label: 'Tutorials',
+          label: 'Tutoriais',
           items: [
-            { label: 'Hello World in C++', slug: 'tutorials/hello-world-cpp' },
+            { label: 'Hello World no C++', slug: 'tutorials/hello-world-cpp' },
           ],
         },
-        {
-          label: 'Projects',
-          slug: 'projects',
-        },
+        { label: 'Projetos', slug: 'projects' },
       ],
     }),
   ],
