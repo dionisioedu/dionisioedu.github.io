@@ -42,6 +42,10 @@ export default defineConfig({
             { label: 'Hello World in C++', slug: 'tutorials/hello-world-cpp' },
           ],
         },
+        {
+          label: 'Projects',
+          slug: 'projects',
+        },
       ],
     }),
   ],

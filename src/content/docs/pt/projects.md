@@ -1,30 +1,16 @@
 ---
 title: Projetos
-layout: landing
 description: 'Projetos desenvolvidos pela Dionisio Software. O seu projeto pode ser o próximo!'
-image: assets/images/projects-1.webp
-nav-menu: true
-show_tile: true
 ---
 
 <!-- Main -->
 <div id="main">
 
-<!-- One -->
-<!--section id="one">
-	<div class="inner">
-		<header class="major">
-			<h2>Sed amet aliquam</h2>
-		</header>
-		<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
-	</div>
-</section-->
-
 <!-- Two -->
 <section id="two" class="spotlights">
 	<section>
 		<a href="https://sportpulse.today" class="image">
-			<img src="{% link assets/images/sportpulse.png %}" alt="" data-position="25% 25%" />
+			<img src="/assets/images/sportpulse.png" alt="" data-position="25% 25%" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -40,7 +26,7 @@ show_tile: true
 	</section>
 	<section>
 		<a href="http://www.amorfy.com.br" class="image">
-			<img src="{% link assets/images/amorfy.png %}" alt="" data-position="center center" />
+			<img src="/assets/images/amorfy.png" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -59,7 +45,7 @@ show_tile: true
 	</section>
 	<section>
 		<a href="http://wheeloflist.com" class="image">
-			<img src="{% link assets/images/wheel-of-list.png %}" alt="" data-position="top center" />
+			<img src="/assets/images/wheel-of-list.png" alt="" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -81,7 +67,7 @@ show_tile: true
 		<header class="major">
 			<h2>Treinamento</h2>
 		</header>
-		<p><span class="image left" style="width: 10em;"><img src="{% link assets/images/welcome-2.webp %}" alt="" /></span>
+		<span class="image left" style="width: 10em;"><img src="/assets/images/welcome-2.webp" alt="" /></span>
 		<strong>Você quer <i>aprender</i> ou <i>reaprender</i> os conceitos básicos da <b>programação</b> para detonar nas entrevistas de emprego ou até mesmo conseguir uma <i>promoção</i> no seu emprego atual?</strong><br>
 		<p>Dá uma olhada em <b>tudo</b> o que você pode aprender aqui!</p></p>
 		<ul class="actions">
