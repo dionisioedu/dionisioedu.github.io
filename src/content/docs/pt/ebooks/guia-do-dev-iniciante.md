@@ -1,14 +1,6 @@
 ---
-title: eBooks
-description: 'Invista em seu desenvolvimento profissional. Preços especiais para comunidade.'
+title: Guia do Dev Iniciante
 ---
-
-# 📚 eBooks
-
-Invista em seu desenvolvimento profissional. Cursos e eBooks especializados criados por especialistas da indústria para acelerar sua carreira em tecnologia.
-
-## Guia do Dev Iniciante
-
 ![Guia do Dev Iniciante](/assets/images/books-1.webp)
 
 Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
@@ -21,29 +13,9 @@ Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 - Destaque em Entrevistas Técnicas
 - Metodologias Ágeis
 
-**De R$ 47,90 por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (847 avaliações)
+**De R$ 47,90 por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (+100 avaliações)
 
 [**COMPRAR AGORA**](https://pay.hotmart.com/F98094178H?off=fqzq49bv)
-
----
-
-## Guia Avançado C++: Desenvolvedor Quant
-
-![Guia Avançado C++](/assets/images/books-2.webp)
-
-Domine C++ em nível profissional e entre no mercado de trading quantitativo.
-
-**O que você vai aprender:**
-- C++ Avançado e Otimização
-- Sistemas de Trading Algorítmico
-- Desenvolvimento de sistemas quantitativos
-- Performance e Low-Latency
-- Padrões de Design Profissionais
-- Estudos de Caso Reais
-
-**De R$ 67,90 por apenas R$ 37,90** ⭐⭐⭐⭐⭐ (324 avaliações)
-
-[**COMPRAR AGORA**](https://pay.hotmart.com/M99932004R)
 
 ---
 

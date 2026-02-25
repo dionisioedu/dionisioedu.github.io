@@ -1,34 +1,6 @@
 ---
-title: eBooks
-description: 'Invista em seu desenvolvimento profissional. Preços especiais para comunidade.'
+title: Guia Avançado C++
 ---
-
-# 📚 eBooks
-
-Invista em seu desenvolvimento profissional. Cursos e eBooks especializados criados por especialistas da indústria para acelerar sua carreira em tecnologia.
-
-## Guia do Dev Iniciante
-
-![Guia do Dev Iniciante](/assets/images/books-1.webp)
-
-Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
-
-**O que você vai aprender:**
-- Linguagens e Lógica de Programação
-- GitHub, APIs e Bancos de Dados  
-- Como criar um Portfólio Poderoso
-- Currículo Vencedor
-- Destaque em Entrevistas Técnicas
-- Metodologias Ágeis
-
-**De R$ 47,90 por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (847 avaliações)
-
-[**COMPRAR AGORA**](https://pay.hotmart.com/F98094178H?off=fqzq49bv)
-
----
-
-## Guia Avançado C++: Desenvolvedor Quant
-
 ![Guia Avançado C++](/assets/images/books-2.webp)
 
 Domine C++ em nível profissional e entre no mercado de trading quantitativo.

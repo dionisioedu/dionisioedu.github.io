@@ -33,7 +33,13 @@ export default defineConfig({
       },
       defaultLocale: 'pt',
       sidebar: [
-        { label: 'eBooks', slug: 'books' },
+        {
+          label: 'eBooks',
+          items: [
+            { label: 'Guia do Dev Iniciante', slug: 'ebooks/guia-do-dev-iniciante' },
+            { label: 'Guia Avançado C++', slug: 'ebooks/guia-avancado-cpp' }
+          ],
+        },
         { label: 'Shop', slug: 'shop' },
         { label: 'Blog', slug: 'blog' },
         {
