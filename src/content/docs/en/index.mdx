@@ -1,0 +1,157 @@
+---
+title: Home
+description: Your engineering portal — docs, decisions, standards, and projects in one place.
+hero:
+  title: Dev Hub
+  tagline: Ship faster with clarity — playbooks, patterns, and project knowledge that don’t rot.
+  image:
+    html: |
+      <svg viewBox="0 0 480 220" role="img" aria-label="Portal illustration" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="currentColor" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
+          </linearGradient>
+          <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="black" flood-opacity="0.18"/>
+          </filter>
+        </defs>
+        <rect x="22" y="22" width="436" height="176" rx="22" fill="url(#g)" filter="url(#s)"/>
+        <rect x="56" y="58" width="210" height="16" rx="8" fill="currentColor" fill-opacity="0.28"/>
+        <rect x="56" y="88" width="300" height="12" rx="6" fill="currentColor" fill-opacity="0.18"/>
+        <rect x="56" y="112" width="270" height="12" rx="6" fill="currentColor" fill-opacity="0.14"/>
+        <rect x="56" y="142" width="120" height="34" rx="14" fill="currentColor" fill-opacity="0.22"/>
+        <path d="M338 70c32 0 58 26 58 58s-26 58-58 58-58-26-58-58 26-58 58-58Z" fill="currentColor" fill-opacity="0.10"/>
+        <path d="M338 88c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40Z" fill="currentColor" fill-opacity="0.16"/>
+        <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
+      </svg>
+  actions:
+    - text: View eBooks
+      link: /en/books/
+    - text: Visit the Shop
+      link: /en/shop/
+---
+
+import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
+import HeroGraph3D from '../../../components/HeroGraph3D.astro';
+
+<HeroGraph3D height={360} />
+
+<CardGrid>
+  <LinkCard
+    title="eBooks"
+    href="/en/books/"
+    description="Practical guides to accelerate your career and ship with confidence."
+  />
+  <LinkCard
+    title="Shop"
+    href="/en/shop/"
+    description="All products, courses, and resources in one place."
+  />
+  <LinkCard
+    title="Projects"
+    href="/en/projects/"
+    description="Architecture, setup, roadmap, and decisions — per project, always current."
+  />
+  <LinkCard
+    title="Engineering Standards"
+    href="/en/reference/standards/"
+    description="Clean code rules, refactoring playbooks, testing strategy, and PR expectations."
+  />
+</CardGrid>
+
+---
+
+## What this hub is
+
+This is a living engineering portal: a single place for **how things work**, **why decisions were made**, and **how to ship fast without chaos**.
+
+Use it when you want:
+
+- **One source of truth** for project setup and maintenance
+- **Decision logs** that explain trade-offs (so future-you doesn’t redo debates)
+- **Playbooks** you can apply today (copy/paste, checklists, commands)
+- **Standards** that keep velocity high and quality consistent
+
+<Aside type="note" title="Principle">
+If a future-me could lose **30 minutes** on something again, it deserves a doc.
+</Aside>
+
+---
+
+## Where to go next
+
+<Steps>
+  <ol>
+    <li>
+      <strong>Start with the eBooks</strong> and choose the right material for your current level.
+    </li>
+    <li>
+      <strong>Visit the Shop</strong> to see all products, courses, and resources available.
+    </li>
+    <li>
+      <strong>Explore a project</strong> and follow the setup from start to finish.
+    </li>
+  </ol>
+</Steps>
+
+---
+
+## Articles & Blog
+
+<CardGrid>
+  <LinkCard
+    title="Blog"
+    href="/en/blog/"
+    description="News, notes, and behind-the-scenes insights from the studio."
+  />
+  <LinkCard
+    title="Technical Articles"
+    href="/en/artigos-tecnicos/clean-code/"
+    description="Deep dives on C++, architecture, performance, and engineering practice."
+  />
+</CardGrid>
+
+---
+
+## Quick signals
+
+<CardGrid>
+  <LinkCard
+    title="Docs that matter"
+    href="/en/reference/standards/#documentation"
+    description="What should be documented, what shouldn’t, and how to keep docs from rotting."
+  />
+  <LinkCard
+    title="How I write decisions"
+    href="/en/reference/architecture/#decisions"
+    description="A lightweight ADR format: context → options → decision → consequences."
+  />
+  <LinkCard
+    title="Testing mindset"
+    href="/en/reference/standards/#testing"
+    description="Fast feedback, stable tests, and the minimum suite that prevents regressions."
+  />
+  <LinkCard
+    title="Release & deploy"
+    href="/en/reference/standards/#release"
+    description="CI/CD expectations, environments, and the checklist before shipping."
+  />
+</CardGrid>
+
+---
+
+## Status (lightweight)
+
+- <Badge text="Stable" variant="success" /> Standards & playbooks
+- <Badge text="Evolving" variant="caution" /> Project docs & roadmaps
+- <Badge text="Experimental" variant="note" /> New patterns & tooling
+
+---
+
+## How I keep this portal useful
+
+- I keep pages **short and practical**
+- I prefer **checklists** over essays
+- I document **decisions with trade-offs**
+- I keep a visible **“Next actions”** section in project pages

@@ -1,0 +1,60 @@
+---
+/**
+ * src/pages/index.astro
+ *
+ * Auto-redirect "/" -> "/pt/" or "/en/" based on browser language.
+ *
+ * - Runs in <head> to avoid any "waiting for user action" UI.
+ * - Uses <noscript> meta-refresh fallback (defaults to /en/).
+ * - Optionally honors localStorage "preferredLocale" if you set it elsewhere.
+ */
+const BASE = import.meta.env.BASE_URL ?? "/";
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dionisio Dev Hub</title>
+    <meta name="robots" content="noindex" />
+
+    <!-- If JS is disabled, redirect to English (change to pt if you prefer). -->
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=en/" />
+    </noscript>
+
+    <style>
+      /* Render nothing (no flash). */
+      html, body { height: 100%; }
+      body { margin: 0; background: transparent; }
+    </style>
+
+    <script is:inline>
+      (function () {
+        try {
+          const saved = localStorage.getItem('preferredLocale');
+          if (saved === 'pt' || saved === 'en') {
+            window.location.replace('/' + saved + '/');
+            return;
+          }
+        } catch (e) {}
+
+        const langs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || 'en'];
+
+        const wantsPT = langs.some(l => String(l).toLowerCase().startsWith('pt'));
+        const locale = wantsPT ? 'pt' : 'en';
+
+        // Compute base path for sites served from a subpath (GitHub Pages).
+        let base = location.pathname.replace(/index\.html$/, '');
+        if (!base.endsWith('/')) base = base + '/';
+        window.location.replace(base + locale + '/');
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>

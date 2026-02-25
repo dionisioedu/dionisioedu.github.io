@@ -1,0 +1,79 @@
+---
+title: Projetos
+description: 'Projetos desenvolvidos pela Dionisio Software. O seu projeto pode ser o próximo!'
+---
+
+<!-- Main -->
+<div id="main">
+
+<!-- Two -->
+<section id="two" class="spotlights">
+	<section>
+		<a href="https://sportpulse.today" class="image">
+			<img src="/assets/images/sportpulse.png" alt="" data-position="25% 25%" />
+		</a>
+		<div class="content">
+			<div class="inner">
+				<header class="major">
+					<h3><a href="/projects/sportpulse">SportPulse – Plataforma de Agregação de Dados Esportivos em Tempo Real</a></h3>
+				</header>
+				<p><b>SportPulse</b> é uma aplicação de backend em C++ desenvolvida com foco em alta performance, modularidade e integração com serviços externos. O projeto centraliza, busca e expõe dados esportivos por meio de uma API REST moderna.</p>
+				<ul class="actions">
+					<li><a href="/projects/sportpulse" class="button">VER MAIS</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section>
+		<a href="http://www.amorfy.com.br" class="image">
+			<img src="/assets/images/amorfy.png" alt="" data-position="center center" />
+		</a>
+		<div class="content">
+			<div class="inner">
+				<header class="major">
+					<h3><a href="http://www.amorfy.com.br">Amorfy - Teste de Afinidades do Casal</a></h3>
+				</header>
+				<p><b>Amorfy</b> é um site interativo que utiliza conceitos de <b>psicologia</b> e <b>psicanálise</b> para ajudar
+				 você a compreender melhor sua vida amorosa. Através de um questionário dinâmico de 10 níveis,
+				 ele avalia sua personalidade, emoções e padrões de relacionamento, fornecendo um insight
+				 personalizado e místico no final.</p>
+				<ul class="actions">
+					<li><a href="http://www.amorfy.com.br" class="button">Visite o Site</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section>
+		<a href="http://wheeloflist.com" class="image">
+			<img src="/assets/images/wheel-of-list.png" alt="" data-position="top center" />
+		</a>
+		<div class="content">
+			<div class="inner">
+				<header class="major">
+					<h3><a href="http://wheeloflist.com">Wheel Of List</a></h3>
+				</header>
+				<p>Um site simples de roleta de nomes. Serve para fazer sorteios, ele salva um placar com a lista dos nomes sorteados em ordem.</p>
+				<ul class="actions">
+					<li><a href="http://wheeloflist.com" class="button">VISITAR SITE</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</section>
+
+<!-- Three -->
+<section id="three">
+	<div class="inner">
+		<header class="major">
+			<h2>Treinamento</h2>
+		</header>
+		<span class="image left" style="width: 10em;"><img src="/assets/images/welcome-2.webp" alt="" /></span>
+		<strong>Você quer <i>aprender</i> ou <i>reaprender</i> os conceitos básicos da <b>programação</b> para detonar nas entrevistas de emprego ou até mesmo conseguir uma <i>promoção</i> no seu emprego atual?</strong><br>
+		<p>Dá uma olhada em <b>tudo</b> o que você pode aprender aqui!</p></p>
+		<ul class="actions">
+			<li><a href="/trainning" class="button next">COMECE AGORA</a></li>
+		</ul>
+	</div>
+</section>
+
+</div>

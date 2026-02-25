@@ -1,0 +1,41 @@
+---
+title: Padrões de engenharia
+description: Convenções que sigo para manter o código limpo e escalável.
+---
+
+## Princípios centrais
+
+- **Clareza vence esperteza**
+- **Funções pequenas** com responsabilidade única
+- **Prefira funções puras** (recebem valores, retornam valores) a mutações pesadas de ponteiros
+- **Refatore continuamente** (não "lote" a correção)
+
+## Nomenclatura
+
+- Nomeie por intenção, não por tipo
+- Prefira verbos para ações: `buildX`, `fetchY`, `renderZ`
+- Evite abreviações, a menos que sejam padrão do domínio
+
+## Testes
+
+- Escreva testes para:
+  - parsing
+  - limites
+  - tratamento de erro
+  - bugs de regressão
+
+## Logs
+
+- Logs precisam responder:
+  - O que aconteceu?
+  - Onde?
+  - Com qual entrada?
+  - Qual é a próxima ação?
+
+## Documentação
+
+Todo módulo deve ter:
+
+- o que ele faz
+- como executar
+- falhas comuns

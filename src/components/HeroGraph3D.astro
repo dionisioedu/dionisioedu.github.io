@@ -1,0 +1,216 @@
+---
+/**
+ * HeroGraph3D.astro
+ *
+ * A premium Three.js hero section for Starlight.
+ * - Vanilla Three.js (no React)
+ * - Client-only via a bundled Astro script so npm three resolves
+ * - No reliance on document.currentScript (Astro hoists scripts)
+ *
+ * Props
+ * - height: number (px)   -> fixed hero height to avoid ResizeObserver feedback loops
+ * - accent: string        -> CSS color, default "currentColor"
+ * - label: string         -> aria-label
+ */
+const height = Astro.props.height ?? 360;
+const accent = Astro.props.accent ?? "currentColor";
+const label = Astro.props.label ?? "Interactive 3D graph";
+---
+
+<section
+  class="hero3d"
+  data-hero3d
+  aria-label={label}
+  style={`--h:${height}px; --accent:${accent};`}
+>
+  <div class="frame" data-hero3d-frame>
+    <canvas class="c" data-hero3d-canvas></canvas>
+
+    <div class="glass">
+      <div class="kicker">Interactive</div>
+      <div class="title">Knowledge Graph</div>
+      <div class="sub">Drag to orbit • Scroll to zoom • Hover nodes</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Lazy-load the heavy Three.js bundle only when the hero is visible or the
+  // browser is idle. This keeps the main client bundle small.
+  async function ensureModule() {
+    if (window.__hero3dModule) return window.__hero3dModule;
+    window.__hero3dModule = await import('./heroGraph3D.client.js');
+    return window.__hero3dModule;
+  }
+
+  function onIdle(cb) {
+    if ('requestIdleCallback' in window) return requestIdleCallback(cb);
+    return setTimeout(cb, 300);
+  }
+
+  async function mountWhenVisible(root) {
+    const observer = new IntersectionObserver(async (entries, obs) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        obs.disconnect();
+        const mod = await ensureModule();
+        mod.mountHeroGraph3D(root);
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(root);
+  }
+
+  function mountAllLazy() {
+    const roots = document.querySelectorAll('section[data-hero3d]');
+    for (const root of roots) {
+      // If the user has reduced motion or prefers no auto-loading, load on idle instead.
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        onIdle(async () => {
+          const mod = await ensureModule();
+          mod.mountHeroGraph3D(root);
+        });
+      } else {
+        mountWhenVisible(root);
+      }
+    }
+  }
+
+  // Mount after initial paint and on Astro page swaps.
+  onIdle(() => mountAllLazy());
+  document.addEventListener('astro:page-load', () => onIdle(() => mountAllLazy()));
+</script>
+
+<style>
+  /**
+   * Layout notes:
+   * - Starlight renders MD/MDX inside `.sl-markdown-content`, which applies
+   *   markdown spacing rules. We want this component to behave like a "hero block",
+   *   with stable box metrics and no margin-collapsing surprises.
+   */
+
+  .hero3d {
+    /* Prevent margin-collapsing with markdown content flow */
+    display: flow-root;
+
+    /* Visual spacing from the Starlight hero section above */
+    margin: 1.25rem 0 1.75rem;
+  }
+
+  .frame {
+    position: relative;
+    height: var(--h);
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: grab;
+
+    /* Premium layered background */
+    background:
+      radial-gradient(1200px 360px at 10% 20%, color-mix(in oklab, var(--accent) 18%, transparent) 0%, transparent 60%),
+      radial-gradient(900px 420px at 90% 80%, color-mix(in oklab, var(--accent) 14%, transparent) 0%, transparent 55%),
+      linear-gradient(to bottom, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow:
+      0 18px 55px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+
+    /* Keeps the effect clean in Starlight */
+    isolation: isolate;
+  }
+
+  /* Soft animated sheen */
+  .frame::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    pointer-events: none;
+    z-index: 1;
+
+    background:
+      radial-gradient(700px 220px at 20% 15%,
+        rgba(255,255,255,0.18),
+        transparent 60%),
+      radial-gradient(900px 300px at 80% 85%,
+        color-mix(in oklab, var(--accent) 22%, transparent),
+        transparent 65%);
+    mix-blend-mode: screen;
+    opacity: 0.55;
+    filter: blur(0.2px);
+    transform: translate3d(0,0,0);
+    animation: heroSheen 6.5s ease-in-out infinite;
+  }
+
+  /* Subtle noise for “expensive” texture */
+  .frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+  }
+
+  /* Ensure canvas sits below overlays but above background */
+  .c {
+    position: relative;
+    z-index: 0;
+  }
+
+  @keyframes heroSheen {
+    0%, 100% { opacity: 0.45; transform: translate3d(0,0,0) scale(1); }
+    50% { opacity: 0.62; transform: translate3d(0,-2px,0) scale(1.01); }
+  }
+
+  /* Ensure canvas sits below overlays but above background */
+  .c {
+    position: relative;
+    z-index: 0;
+  }
+
+  @keyframes heroSheen {
+    0%, 100% { opacity: 0.45; transform: translate3d(0,0,0) scale(1); }
+    50% { opacity: 0.62; transform: translate3d(0,-2px,0) scale(1.01); }
+  }
+
+  .glass {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    max-width: min(520px, calc(100% - 32px));
+    background: rgba(0,0,0,0.32);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-top: 2px;
+    font-weight: 650;
+  }
+
+  .sub {
+    margin-top: 2px;
+    font-size: 13px;
+    opacity: 0.78;
+  }
+
+  @media (max-width: 520px) {
+    .hero3d { margin: 1rem 0 1.25rem; }
+    .frame { border-radius: 16px; height: 300px; }
+    .glass { left: 12px; bottom: 12px; }
+    .title { font-size: 16px; }
+  }
+</style>

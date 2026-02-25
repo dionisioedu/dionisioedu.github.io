@@ -1,0 +1,157 @@
+---
+title: Início
+description: Seu portal de engenharia de software — artigos, projetos, tutoriais, exemplos, livros, tudo em um só lugar.
+hero:
+  title: Dev Hub
+  tagline: Entregue mais rápido com clareza — guias, padrões e conhecimento de projeto que não envelhecem.
+  image:
+    html: |
+      <svg viewBox="0 0 480 220" role="img" aria-label="Portal illustration" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="currentColor" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
+          </linearGradient>
+          <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="black" flood-opacity="0.18"/>
+          </filter>
+        </defs>
+        <rect x="22" y="22" width="436" height="176" rx="22" fill="url(#g)" filter="url(#s)"/>
+        <rect x="56" y="58" width="210" height="16" rx="8" fill="currentColor" fill-opacity="0.28"/>
+        <rect x="56" y="88" width="300" height="12" rx="6" fill="currentColor" fill-opacity="0.18"/>
+        <rect x="56" y="112" width="270" height="12" rx="6" fill="currentColor" fill-opacity="0.14"/>
+        <rect x="56" y="142" width="120" height="34" rx="14" fill="currentColor" fill-opacity="0.22"/>
+        <path d="M338 70c32 0 58 26 58 58s-26 58-58 58-58-26-58-58 26-58 58-58Z" fill="currentColor" fill-opacity="0.10"/>
+        <path d="M338 88c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40Z" fill="currentColor" fill-opacity="0.16"/>
+        <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
+      </svg>
+  actions:
+    - text: Ver eBooks
+      link: /pt/books/
+    - text: Ir para a Loja
+      link: /pt/shop/
+---
+
+import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
+import HeroGraph3D from '../../../components/HeroGraph3D.astro';
+
+<HeroGraph3D height={360} />
+
+<CardGrid>
+  <LinkCard
+    title="eBooks"
+    href="/pt/books/"
+    description="Guias práticos e diretos para acelerar sua carreira e vender melhor seu trabalho."
+  />
+  <LinkCard
+    title="Loja"
+    href="/pt/shop/"
+    description="Catálogo completo com produtos, cursos e recursos para desenvolvedores."
+  />
+  <LinkCard
+    title="Projetos"
+    href="/pt/projects/"
+    description="Arquitetura, configuração, roteiro e decisões de cada projeto, sempre atualizados."
+  />
+  <LinkCard
+    title="Padrões de engenharia"
+    href="/pt/reference/standards/"
+    description="Regras de código limpo, refatoração, estratégia de testes e padrões de PR."
+  />
+</CardGrid>
+
+---
+
+## O que é este portal
+
+Este é um portal vivo de engenharia: um lugar único para **como as coisas funcionam**, **por que decisões foram tomadas** e **como entregar rápido sem caos**.
+
+Use quando precisar:
+
+- **Uma fonte de verdade** para configuração e manutenção de projetos
+- **Registros de decisão** que explicam compensações (para você não reabrir debates)
+- **Guias** que você aplica hoje (checklists, comandos, copiar/colar)
+- **Padrões** que mantêm velocidade alta e qualidade consistente
+
+<Aside type="note" title="Princípio">
+Se um eu do futuro pode perder **30 minutos** com algo de novo, isso merece documentação.
+</Aside>
+
+---
+
+## Para onde ir agora
+
+<Steps>
+  <ol>
+    <li>
+      <strong>Comece pelos eBooks</strong> e escolha o material certo para sua fase atual.
+    </li>
+    <li>
+      <strong>Visite a Loja</strong> para ver todos os produtos, cursos e recursos disponíveis.
+    </li>
+    <li>
+      <strong>Explore um projeto</strong> e siga a configuração do início ao fim.
+    </li>
+  </ol>
+</Steps>
+
+---
+
+## Artigos e Blog
+
+<CardGrid>
+  <LinkCard
+    title="Blog"
+    href="/pt/blog/"
+    description="Novidades, bastidores e dicas de carreira para quem vive tecnologia."
+  />
+  <LinkCard
+    title="Artigos Tecnicos"
+    href="/pt/artigos-tecnicos/clean-code/"
+    description="Conteudo aprofundado em C++, arquitetura, performance e engenharia."
+  />
+</CardGrid>
+
+---
+
+## Sinais rápidos
+
+<CardGrid>
+  <LinkCard
+    title="Documentação que importa"
+    href="/pt/reference/standards/#documentation"
+    description="O que documentar, o que evitar e como manter a documentação útil no tempo."
+  />
+  <LinkCard
+    title="Como registro decisoes"
+    href="/pt/reference/architecture/#decisoes"
+    description="Formato leve de ADR: contexto → opções → decisão → consequências."
+  />
+  <LinkCard
+    title="Mentalidade de testes"
+    href="/pt/reference/standards/#testing"
+    description="Feedback rápido, testes estáveis e o mínimo que evita regressões."
+  />
+  <LinkCard
+    title="Lançamento e deploy"
+    href="/pt/reference/standards/#release"
+    description="CI/CD, ambientes e checklist antes de colocar em produção."
+  />
+</CardGrid>
+
+---
+
+## Status (leve)
+
+- <Badge text="Estável" variant="success" /> Padrões e guias
+- <Badge text="Em evolução" variant="caution" /> Documentação e roteiros
+- <Badge text="Experimental" variant="note" /> Novos padrões e ferramentas
+
+---
+
+## Como mantenho este portal útil
+
+- Mantenho páginas **curtas e práticas**
+- Prefiro **checklists** a textos longos
+- Documento **decisões com compensações**
+- Deixo visível uma seção de **"Próximas ações"** nas páginas de projeto

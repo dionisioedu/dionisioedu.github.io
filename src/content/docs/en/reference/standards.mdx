@@ -1,0 +1,41 @@
+---
+title: Engineering standards
+description: Conventions I follow to keep code clean and scalable.
+---
+
+## Core principles
+
+- **Clarity beats cleverness**
+- **Small functions** with single responsibility
+- **Prefer pure functions** (receive values, return values) over pointer-heavy mutation
+- **Refactor continuously** (don’t “batch” correctness)
+
+## Naming
+
+- Name by intent, not by type
+- Prefer verbs for actions: `buildX`, `fetchY`, `renderZ`
+- Avoid abbreviations unless domain-standard
+
+## Testing
+
+- Write tests for:
+  - parsing
+  - boundaries
+  - error handling
+  - regression bugs
+
+## Logging
+
+- Logs must answer:
+  - What happened?
+  - Where?
+  - With what input?
+  - What’s the next action?
+
+## Documentation
+
+Every module should have:
+
+- what it does
+- how to run it
+- common failure modes
