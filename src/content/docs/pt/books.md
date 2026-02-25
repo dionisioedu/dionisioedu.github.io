@@ -9,7 +9,7 @@ Invista em seu desenvolvimento profissional. Cursos e eBooks especializados cria
 
 ## Guia do Dev Iniciante
 
-![Guia do Dev Iniciante](/src/assets/images/books/books-1.webp)
+![Guia do Dev Iniciante](/assets/images/books-1.webp)
 
 Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 
@@ -29,7 +29,7 @@ Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 
 ## Guia Avançado C++: Desenvolvedor Quant
 
-![Guia Avançado C++](/src/assets/images/books/books-2.webp)
+![Guia Avançado C++](/assets/images/books-2.webp)
 
 Domine C++ em nível profissional e entre no mercado de trading quantitativo.
 
