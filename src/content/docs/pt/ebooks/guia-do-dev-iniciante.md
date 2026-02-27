@@ -13,7 +13,7 @@ Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 - Destaque em Entrevistas Técnicas
 - Metodologias Ágeis
 
-**De R$ 47,90 por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (+100 avaliações)
+**De R$ ~~47,90~~ por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (+100 avaliações)
 
 [**COMPRAR AGORA**](https://pay.hotmart.com/F98094178H?off=fqzq49bv)
 

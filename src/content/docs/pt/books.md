@@ -21,7 +21,7 @@ Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor.
 - Destaque em Entrevistas Técnicas
 - Metodologias Ágeis
 
-**De R$ 47,90 por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (847 avaliações)
+**De R$ ~~47,90~~ por apenas R$ 27,90** ⭐⭐⭐⭐⭐ (847 avaliações)
 
 [**COMPRAR AGORA**](https://pay.hotmart.com/F98094178H?off=fqzq49bv)
 
@@ -41,7 +41,7 @@ Domine C++ em nível profissional e entre no mercado de trading quantitativo.
 - Padrões de Design Profissionais
 - Estudos de Caso Reais
 
-**De R$ 67,90 por apenas R$ 37,90** ⭐⭐⭐⭐⭐ (324 avaliações)
+**De R$ ~~37,90~~ por apenas R$ 14,90** ⭐⭐⭐⭐⭐ (324 avaliações)
 
 [**COMPRAR AGORA**](https://pay.hotmart.com/M99932004R)
 

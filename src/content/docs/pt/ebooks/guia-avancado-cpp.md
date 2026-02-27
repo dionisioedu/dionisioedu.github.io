@@ -13,7 +13,7 @@ Domine C++ em nível profissional e entre no mercado de trading quantitativo.
 - Padrões de Design Profissionais
 - Estudos de Caso Reais
 
-**De R$ 67,90 por apenas R$ 37,90** ⭐⭐⭐⭐⭐ (324 avaliações)
+**De R$ ~~37,90~~ por apenas R$ 14,90** ⭐⭐⭐⭐⭐ (324 avaliações)
 
 [**COMPRAR AGORA**](https://pay.hotmart.com/M99932004R)
 
