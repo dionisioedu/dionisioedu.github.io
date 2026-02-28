@@ -1,362 +1,263 @@
 ---
-/**
- * KnowledgeGraph3D.astro
- * 
- * Interactive 3D Knowledge Graph component
- * Shows the organizational structure of learning content
- * 
- * Props:
- * - height: number (px) - fixed hero height
- * - accent: string - CSS color
- * - label: string - aria-label
- */
-
-const height = Astro.props.height ?? 500;
+const height = Astro.props.height ?? 520;
 const accent = Astro.props.accent ?? "currentColor";
-const label = Astro.props.label ?? "Knowledge Graph - Learning Topics";
+const label = Astro.props.label ?? "3D Knowledge Navigator";
 ---
 
 <section
-  class="knowledge-graph-3d"
+  class="knowledge-nav-3d"
   data-graph3d="knowledge"
   aria-label={label}
   style={`--h:${height}px; --accent:${accent};`}
 >
-  <div class="graph-frame" data-graph3d-frame>
-    <canvas class="graph-canvas" data-graph3d-canvas></canvas>
-    
-    <div class="graph-legend">
-      <div class="legend-title">Domínios</div>
-      <div class="legend-items">
-        <div class="legend-item">
-          <div class="legend-color" style="background-color: #3b82f6;"></div>
-          <span>Algoritmos & Estruturas</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background-color: #8b5cf6;"></div>
-          <span>Engenharia de Software</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background-color: #f59e0b;"></div>
-          <span>Artigos Técnicos</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background-color: #10b981;"></div>
-          <span>Código & Tutoriais</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background-color: #ef4444;"></div>
-          <span>Arquitetura & Design</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="graph-info">
-      <div class="info-label">INTERACTIVE</div>
-      <div class="info-title">Knowledge Graph</div>
-      <div class="info-subtitle">
-        Arraste para girar • Scroll para zoom • Clique nos nós
-      </div>
-    </div>
+  <div class="nav3d-frame" data-graph3d-frame>
+    <canvas class="nav3d-canvas" data-graph3d-canvas></canvas>
 
-    <div class="graph-tooltip" data-graph3d-tooltip></div>
+    <div class="nav3d-gradient" aria-hidden="true"></div>
+
+    <aside class="nav3d-panel" data-graph3d-panel>
+      <div class="panel-kicker" data-graph3d-kicker>Knowledge Navigator</div>
+      <h3 class="panel-title" data-graph3d-title>Explore by area</h3>
+
+      <div class="panel-actions">
+        <a class="primary-btn" data-graph3d-open href="#">Open area</a>
+        <a class="secondary-btn" data-graph3d-index href="#">Docs</a>
+      </div>
+
+      <div class="panel-list" data-graph3d-list></div>
+    </aside>
   </div>
 </section>
 
 <script>
-  /**
-   * Load the Knowledge Graph Three.js module
-   */
   async function loadKnowledgeGraphModule() {
-    if (window.__knowledgeGraphModule) {
-      return window.__knowledgeGraphModule;
+    if (window.__knowledgeNavigatorModule) {
+      return window.__knowledgeNavigatorModule;
     }
-    window.__knowledgeGraphModule = await import(
-      './KnowledgeGraph3D.client.js'
-    );
-    return window.__knowledgeGraphModule;
+    window.__knowledgeNavigatorModule = await import('./KnowledgeGraph3D.client.js');
+    return window.__knowledgeNavigatorModule;
   }
 
-  /**
-   * Initialize graph when visible or idle
-   */
-  function initWhenReady(rootEl) {
+  async function mountFor(rootEl) {
+    if (!rootEl) return;
+
+    if (rootEl.__graphCleanup) {
+      rootEl.__graphCleanup();
+      rootEl.__graphCleanup = null;
+    }
+
+    const mod = await loadKnowledgeGraphModule();
+    rootEl.__graphCleanup = mod.mountKnowledgeGraph3D(rootEl);
+  }
+
+  function initWhenVisible(rootEl) {
     if (!rootEl) return;
 
     const observer = new IntersectionObserver(async (entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0]?.isIntersecting) {
         observer.disconnect();
-
-        const mod = await loadKnowledgeGraphModule();
-        mod.mountKnowledgeGraph3D(rootEl);
+        await mountFor(rootEl);
       }
-    });
+    }, { rootMargin: '120px' });
 
     observer.observe(rootEl);
   }
 
-  // Initialize on current document
   document.querySelectorAll('[data-graph3d="knowledge"]').forEach((el) => {
-    initWhenReady(el);
+    initWhenVisible(el);
   });
 
-  // Handle navigation (SPA)
+  document.addEventListener('astro:before-swap', () => {
+    document.querySelectorAll('[data-graph3d="knowledge"]').forEach((el) => {
+      if (el.__graphCleanup) {
+        el.__graphCleanup();
+        el.__graphCleanup = null;
+      }
+    });
+  });
+
   document.addEventListener('astro:after-swap', () => {
     document.querySelectorAll('[data-graph3d="knowledge"]').forEach((el) => {
-      initWhenReady(el);
+      initWhenVisible(el);
     });
   });
 </script>
 
 <style>
-  .knowledge-graph-3d {
-    --h: 500px;
+  .knowledge-nav-3d {
+    --h: 520px;
     --accent: currentColor;
-
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: var(--h);
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: relative;
   }
 
-  .graph-frame {
+  .nav3d-frame {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
     background: linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.95) 0%,
-      rgba(30, 41, 59, 0.95) 100%
+      145deg,
+      color-mix(in srgb, var(--accent) 8%, #0b1020) 0%,
+      #0b1020 38%,
+      #111a2e 100%
     );
-    border-radius: 12px;
-    overflow: hidden;
   }
 
-  .graph-canvas {
-    display: block;
+  .nav3d-canvas {
     width: 100%;
     height: 100%;
+    display: block;
   }
 
-  /* Legend overlay - top right */
-  .graph-legend {
+  .nav3d-gradient {
     position: absolute;
-    top: 24px;
-    right: 24px;
-    backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 16px;
-    z-index: 10;
-    max-width: 280px;
+    inset: 0;
+    background:
+      radial-gradient(circle at 72% 30%, color-mix(in srgb, var(--accent) 35%, transparent) 0%, transparent 50%),
+      radial-gradient(circle at 32% 88%, rgba(255, 255, 255, 0.06) 0%, transparent 48%);
+    pointer-events: none;
   }
 
-  .legend-title {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+  .nav3d-panel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: min(180px, calc(100% - 20px));
+    padding: 8px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: color-mix(in srgb, #0a1222 74%, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 6px;
+  }
+
+  .panel-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: currentColor;
-    opacity: 0.8;
-    margin-bottom: 12px;
+    color: color-mix(in srgb, var(--accent) 70%, white);
+    font-weight: 700;
   }
 
-  .legend-items {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  .panel-title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 0.86rem;
+    color: #fff;
   }
 
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.75);
+  .panel-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
 
-  .legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    flex-shrink: 0;
+  .primary-btn,
+  .secondary-btn,
+  .area-btn {
+    text-decoration: none;
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
   }
 
-  /* Info overlay - bottom left */
-  .graph-info {
-    position: absolute;
-    bottom: 32px;
-    left: 32px;
-    backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .primary-btn,
+  .secondary-btn {
+    padding: 5px 6px;
+    text-align: center;
+    font-size: 0.64rem;
+    font-weight: 650;
+  }
+
+  .primary-btn {
+    color: #0b1120;
+    background: color-mix(in srgb, var(--accent) 75%, white);
+    border-color: transparent;
+  }
+
+  .secondary-btn {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .primary-btn:hover,
+  .secondary-btn:hover,
+  .area-btn:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 45%, rgba(255, 255, 255, 0.4));
+  }
+
+  .panel-list {
+    display: grid;
+    gap: 4px;
+    align-content: start;
+    overflow: auto;
+    max-height: 116px;
+  }
+
+  .area-btn {
+    display: block;
+    padding: 4px 6px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
-    padding: 20px 24px;
-    z-index: 10;
-    pointer-events: none;
   }
 
-  .info-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.8;
-    margin-bottom: 4px;
+  .area-btn strong {
+    display: block;
+    font-size: 0.66rem;
+    line-height: 1.2;
   }
 
-  .info-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 6px;
-    letter-spacing: -0.02em;
+  .area-btn span {
+    display: none;
   }
 
-  .info-subtitle {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.4;
+  .area-btn.is-active {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255, 255, 255, 0.35));
+    background: color-mix(in srgb, var(--accent) 24%, rgba(255, 255, 255, 0.05));
   }
 
-  /* Tooltip for node labels */
-  .graph-tooltip {
-    position: fixed;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(8px);
-    color: white;
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    max-width: 280px;
-    font-weight: 500;
-    border: 1px solid var(--accent);
-    opacity: 0;
-    transition: opacity 0.15s ease-out;
-    z-index: 100;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-
-  .tooltip-title {
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
-  }
-
-  .tooltip-description {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 1.4;
-    margin-bottom: 6px;
-  }
-
-  .tooltip-hint {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    margin-top: 4px;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .knowledge-graph-3d {
-      --h: 350px;
+  @media (max-width: 920px) {
+    .knowledge-nav-3d {
+      --h: 640px;
     }
 
-    .graph-legend {
-      top: 16px;
-      right: 16px;
-      padding: 12px;
-      max-width: 240px;
-    }
-
-    .legend-title {
-      font-size: 0.7rem;
-      margin-bottom: 8px;
-    }
-
-    .legend-items {
-      gap: 6px;
-    }
-
-    .legend-item {
-      font-size: 0.75rem;
-    }
-
-    .graph-info {
-      bottom: 16px;
-      left: 16px;
-      padding: 16px 20px;
-    }
-
-    .info-title {
-      font-size: 1.25rem;
-    }
-
-    .info-subtitle {
-      font-size: 0.8rem;
+    .nav3d-panel {
+      width: min(168px, calc(100% - 20px));
     }
   }
 
-  @media (max-width: 480px) {
-    .knowledge-graph-3d {
-      --h: 280px;
+  @media (max-width: 640px) {
+    .knowledge-nav-3d {
+      --h: 720px;
     }
 
-    .graph-legend {
-      top: 12px;
-      right: 12px;
-      padding: 10px;
-      max-width: 200px;
+    .nav3d-panel {
+      width: min(154px, calc(100% - 20px));
+      padding: 7px;
     }
 
-    .legend-title {
-      font-size: 0.65rem;
-      margin-bottom: 6px;
-    }
-
-    .legend-item {
-      font-size: 0.7rem;
-      gap: 6px;
-    }
-
-    .legend-color {
-      width: 10px;
-      height: 10px;
-    }
-
-    .graph-info {
-      bottom: 12px;
-      left: 12px;
-      padding: 12px 16px;
-    }
-
-    .info-label {
-      font-size: 0.65rem;
-    }
-
-    .info-title {
-      font-size: 1.1rem;
-    }
-
-    .info-subtitle {
-      font-size: 0.75rem;
+    .panel-list {
+      max-height: 95px;
     }
   }
 
-  /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
-    .graph-info {
+    .nav3d-panel {
       backdrop-filter: none;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .area-btn {
+      transition: none;
     }
   }
 </style>
