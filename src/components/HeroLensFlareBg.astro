@@ -1,0 +1,85 @@
+<div data-hero-lensflare-anchor hidden></div>
+
+<script>
+  async function ensureModule() {
+    if (window.__heroLensflareModule) return window.__heroLensflareModule;
+    window.__heroLensflareModule = await import('./heroLensflareBg.client.js');
+    return window.__heroLensflareModule;
+  }
+
+  async function mountLensflare() {
+    if (window.__heroLensflareCleanup) {
+      window.__heroLensflareCleanup();
+      window.__heroLensflareCleanup = null;
+    }
+
+    const mod = await ensureModule();
+    window.__heroLensflareCleanup = mod.mountHeroLensflareBackground();
+  }
+
+  mountLensflare();
+
+  document.addEventListener('astro:before-swap', () => {
+    if (window.__heroLensflareCleanup) {
+      window.__heroLensflareCleanup();
+      window.__heroLensflareCleanup = null;
+    }
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    mountLensflare();
+  });
+</script>
+
+<style>
+  :global(.hero-lensflare-host) {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 16px;
+  }
+
+  :global(.hero-lensflare-host > :not(.hero-lensflare-bg)) {
+    position: relative;
+    z-index: 1;
+  }
+
+  :global(.hero-lensflare-bg) {
+    position: absolute;
+    inset: -1px;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.08), transparent 42%),
+      radial-gradient(circle at 85% 78%, rgba(98, 169, 255, 0.14), transparent 48%),
+      linear-gradient(145deg, rgba(5, 10, 22, 0.82), rgba(9, 16, 34, 0.68));
+  }
+
+  :global(.hero-lensflare-canvas) {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.95;
+  }
+
+  :global(.hero-lensflare-host[data-lens-theme='light'] .hero-lensflare-canvas) {
+    opacity: 0.62;
+  }
+
+  :global(.hero-lensflare-host.is-lensflare-off .hero-lensflare-canvas) {
+    opacity: 0;
+  }
+
+  :global(.hero-lensflare-host[data-lens-theme='light'] .hero-lensflare-bg) {
+    background:
+      radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.1), transparent 42%),
+      radial-gradient(circle at 85% 78%, rgba(98, 169, 255, 0.08), transparent 48%),
+      linear-gradient(145deg, rgba(160, 194, 238, 0.16), rgba(92, 138, 200, 0.08));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(.hero-lensflare-canvas) {
+      opacity: 0.7;
+    }
+  }
+</style>
