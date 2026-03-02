@@ -18,6 +18,56 @@ export default defineConfig({
             href: '/favicon.ico',
           },
         },
+        {
+          tag: 'script',
+          attrs: {
+            async: true,
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057',
+            crossorigin: 'anonymous',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:type',
+            content: 'website',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: 'https://dionisio.dev/assets/images/banner.jpg',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image:width',
+            content: '1440',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image:height',
+            content: '900',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image',
+            content: 'https://dionisio.dev/assets/images/banner.jpg',
+          },
+        },
       ],
 
       // i18n — automatically infer from src/content/docs structure
