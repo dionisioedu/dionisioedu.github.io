@@ -383,7 +383,7 @@ description: 'Catalog with all our available products and services.'
       <p class="product-description">Learn professional design patterns. 10 modules with practical exercises. Lifetime access.</p>
       <div class="product-rating">
         <span class="stars">★★★★★</span>
-        <span>(521 reviews)</span>
+        <span>(0 reviews)</span>
       </div>
       <div class="product-footer">
         <div>
@@ -406,7 +406,7 @@ description: 'Catalog with all our available products and services.'
       <p class="product-description">5 ready-to-use templates for starting projects. C++, TypeScript, Python. Clean and documented code.</p>
       <div class="product-rating">
         <span class="stars">★★★★☆</span>
-        <span>(412 reviews)</span>
+        <span>(0 reviews)</span>
       </div>
       <div class="product-footer">
         <div>

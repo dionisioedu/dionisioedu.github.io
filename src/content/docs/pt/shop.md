@@ -385,7 +385,7 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       <p class="product-description">Aprenda padrões de design profissionais. 10 módulos com exercícios práticos. Acesso vitalício.</p>
       <div class="product-rating">
         <span class="stars">★★★★★</span>
-        <span>(521 avaliações)</span>
+        <span>(0 avaliações)</span>
       </div>
       <div class="product-footer">
         <div>
@@ -408,7 +408,7 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       <p class="product-description">5 templates prontos para iniciar projetos. C++, TypeScript, Python. Código limpo e documentado.</p>
       <div class="product-rating">
         <span class="stars">★★★★☆</span>
-        <span>(412 avaliações)</span>
+        <span>(0 avaliações)</span>
       </div>
       <div class="product-footer">
         <div>
