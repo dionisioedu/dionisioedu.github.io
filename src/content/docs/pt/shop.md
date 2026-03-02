@@ -282,12 +282,12 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
 
 <!-- Hero Section -->
 <div class="shop-hero">
-  <h2>🛍️ Loja de Produtos & Serviços</h2>
-  <p>Descubra nossa seleção cuidada de eBooks, cursos e ferramentas para desenvolvedores.</p>
+  <h2>🛍️ Shop</h2>
+  <p>Descubra nossa seleção cuidadosa de eBooks, cursos e ferramentas para desenvolvedores.</p>
 </div>
 
 <!-- Categories Section -->
-<div class="categories-section">
+<!--div class="categories-section">
   <h3 style="text-align: center; margin-bottom: 30px;">Navegue por Categoria</h3>
   <div class="categories-grid">
     <div class="category-card">
@@ -311,15 +311,15 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       <p>Sessões e consultorias</p>
     </div>
   </div>
-</div>
+</div-->
 
 <!-- Filter Buttons -->
-<div class="filters">
+<!--div class="filters">
   <button class="filter-btn active">Todos</button>
   <button class="filter-btn">eBooks</button>
   <button class="filter-btn">Cursos</button>
   <button class="filter-btn">Promoções</button>
-</div>
+</div-->
 
 <!-- Products Grid -->
 <div class="products-grid">
@@ -340,9 +340,10 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       <div class="product-footer">
         <div>
           <span class="product-old-price">R$ 47,90</span>
+          <br>
           <span class="product-price">R$ 27,90</span>
         </div>
-        <button class="btn-add-cart">COMPRAR</button>
+        <button class="btn-add-cart" onclick="window.location.href='https://pay.hotmart.com/F98094178H?off=fqzq49bv'">COMPRAR</button>
       </div>
     </div>
   </div>
@@ -364,9 +365,10 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       <div class="product-footer">
         <div>
           <span class="product-old-price">R$ 67,90</span>
+          <br>
           <span class="product-price">R$ 37,90</span>
         </div>
-        <button class="btn-add-cart">COMPRAR</button>
+        <button class="btn-add-cart" onclick="window.location.href='https://pay.hotmart.com/M99932004R'">COMPRAR</button>
       </div>
     </div>
   </div>
@@ -375,6 +377,7 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
   <div class="product-card">
     <div class="product-image">
       🎓
+      <span class="product-badge">EM BREVE</span>
     </div>
     <div class="product-content">
       <span class="product-category">Curso Online</span>
@@ -386,9 +389,9 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       </div>
       <div class="product-footer">
         <div>
-          <span class="product-price">R$ 99,90</span>
+          <span class="product-price">Em breve</span>
         </div>
-        <button class="btn-add-cart">COMPRAR</button>
+        <button class="btn-add-cart" disabled style="opacity: 0.6;">COMPRAR</button>
       </div>
     </div>
   </div>
@@ -397,6 +400,7 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
   <div class="product-card">
     <div class="product-image">
       🛠️
+      <span class="product-badge">EM BREVE</span>
     </div>
     <div class="product-content">
       <span class="product-category">Ferramenta</span>
@@ -408,9 +412,9 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       </div>
       <div class="product-footer">
         <div>
-          <span class="product-price">R$ 49,90</span>
+          <span class="product-price">Em breve</span>
         </div>
-        <button class="btn-add-cart">COMPRAR</button>
+        <button class="btn-add-cart" disabled style="opacity: 0.6;">COMPRAR</button>
       </div>
     </div>
   </div>
@@ -419,6 +423,7 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
   <div class="product-card">
     <div class="product-image">
       🎯
+      <span class="product-badge">EM BREVE</span>
     </div>
     <div class="product-content">
       <span class="product-category">Consultoria</span>
@@ -426,13 +431,13 @@ description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
       <p class="product-description">60 minutos direto com especialista. Tire dúvidas, revise código, planeje sua carreira.</p>
       <div class="product-rating">
         <span class="stars">★★★★★</span>
-        <span>(189 avaliações)</span>
+        <span>(0 avaliações)</span>
       </div>
       <div class="product-footer">
         <div>
-          <span class="product-price">R$ 150,00</span>
+          <span class="product-price">Em breve</span>
         </div>
-        <button class="btn-add-cart">AGENDAR</button>
+        <button class="btn-add-cart" disabled style="opacity: 0.6;">AGENDAR</button>
       </div>
     </div>
   </div>

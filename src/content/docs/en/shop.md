@@ -282,12 +282,12 @@ description: 'Catalog with all our available products and services.'
 
 <!-- Hero Section -->
 <div class="shop-hero">
-  <h2>🛍️ Shop - Products & Services</h2>
+  <h2>🛍️ Shop</h2>
   <p>Discover our carefully selected collection of eBooks, courses and tools for developers.</p>
 </div>
 
 <!-- Categories Section -->
-<div class="categories-section">
+<!--div class="categories-section">
   <h3 style="text-align: center; margin-bottom: 30px;">Browse by Category</h3>
   <div class="categories-grid">
     <div class="category-card">
@@ -311,15 +311,15 @@ description: 'Catalog with all our available products and services.'
       <p>Sessions and consultancies</p>
     </div>
   </div>
-</div>
+</div-->
 
 <!-- Filter Buttons -->
-<div class="filters">
+<!--div class="filters">
   <button class="filter-btn active">All</button>
   <button class="filter-btn">eBooks</button>
   <button class="filter-btn">Courses</button>
   <button class="filter-btn">Promotions</button>
-</div>
+</div-->
 
 <!-- Products Grid -->
 <div class="products-grid">
@@ -342,7 +342,7 @@ description: 'Catalog with all our available products and services.'
           <span class="product-old-price">$9.99</span>
           <span class="product-price">$5.99</span>
         </div>
-        <button class="btn-add-cart">BUY</button>
+        <button class="btn-add-cart" onclick="window.location.href='https://pay.hotmart.com/F98094178H?off=fqzq49bv'">BUY</button>
       </div>
     </div>
   </div>
@@ -366,7 +366,7 @@ description: 'Catalog with all our available products and services.'
           <span class="product-old-price">$14.99</span>
           <span class="product-price">$7.99</span>
         </div>
-        <button class="btn-add-cart">BUY</button>
+        <button class="btn-add-cart" onclick="window.location.href='https://pay.hotmart.com/M99932004R'">BUY</button>
       </div>
     </div>
   </div>
@@ -375,6 +375,7 @@ description: 'Catalog with all our available products and services.'
   <div class="product-card">
     <div class="product-image">
       🎓
+      <span class="product-badge">COMING SOON</span>
     </div>
     <div class="product-content">
       <span class="product-category">Online Course</span>
@@ -386,9 +387,9 @@ description: 'Catalog with all our available products and services.'
       </div>
       <div class="product-footer">
         <div>
-          <span class="product-price">$19.99</span>
+          <span class="product-price">Coming soon</span>
         </div>
-        <button class="btn-add-cart">BUY</button>
+        <button class="btn-add-cart" disabled style="opacity: 0.6;">BUY</button>
       </div>
     </div>
   </div>
@@ -397,6 +398,7 @@ description: 'Catalog with all our available products and services.'
   <div class="product-card">
     <div class="product-image">
       🛠️
+      <span class="product-badge">COMING SOON</span>
     </div>
     <div class="product-content">
       <span class="product-category">Tool</span>
@@ -408,9 +410,9 @@ description: 'Catalog with all our available products and services.'
       </div>
       <div class="product-footer">
         <div>
-          <span class="product-price">$9.99</span>
+          <span class="product-price">Coming soon</span>
         </div>
-        <button class="btn-add-cart">BUY</button>
+        <button class="btn-add-cart" disabled style="opacity: 0.6;">BUY</button>
       </div>
     </div>
   </div>
@@ -419,6 +421,7 @@ description: 'Catalog with all our available products and services.'
   <div class="product-card">
     <div class="product-image">
       🎯
+      <span class="product-badge">COMING SOON</span>
     </div>
     <div class="product-content">
       <span class="product-category">Consultancy</span>
@@ -426,13 +429,13 @@ description: 'Catalog with all our available products and services.'
       <p class="product-description">60 minutes with a specialist. Ask questions, review code, plan your career.</p>
       <div class="product-rating">
         <span class="stars">★★★★★</span>
-        <span>(189 reviews)</span>
+        <span>(0 reviews)</span>
       </div>
       <div class="product-footer">
         <div>
-          <span class="product-price">$30.00</span>
+          <span class="product-price">Coming soon</span>
         </div>
-        <button class="btn-add-cart">BOOK</button>
+        <button class="btn-add-cart" disabled style="opacity: 0.6;">BOOK</button>
       </div>
     </div>
   </div>
