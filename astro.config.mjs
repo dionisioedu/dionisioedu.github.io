@@ -56,6 +56,7 @@ export default defineConfig({
                 { label: 'Programming Logic', slug: 'reference/logica-de-programacao' },
                 { label: 'Algorithms', slug: 'reference/algoritmos' },
                 { label: 'Data Structures & Algorithms', slug: 'reference/dsa' },
+                { label: 'Resume That Stands Out', slug: 'reference/curriculo-que-se-destaca' },
               ],
             },
             {
@@ -96,6 +97,7 @@ export default defineConfig({
             { label: 'Lógica de Programação', slug: 'reference/logica-de-programacao' },
             { label: 'Algoritmos', slug: 'reference/algoritmos' },
             { label: 'Estruturas de Dados e Algoritmos', slug: 'reference/dsa' },
+            { label: 'Currículo Que Se Destaca', slug: 'reference/curriculo-que-se-destaca' },
           ],
         },
         {
