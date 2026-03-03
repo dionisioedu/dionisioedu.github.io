@@ -53,8 +53,8 @@ description: 'Catalog with all our available products and services.'
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
   margin-bottom: 60px;
 }
 
@@ -75,7 +75,7 @@ description: 'Catalog with all our available products and services.'
 
 .product-image {
   width: 100%;
-  height: 220px;
+  height: 190px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   align-items: center;
@@ -99,7 +99,7 @@ description: 'Catalog with all our available products and services.'
 }
 
 .product-content {
-  padding: 25px;
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -115,7 +115,7 @@ description: 'Catalog with all our available products and services.'
 
 .product-card h3 {
   margin: 0 0 10px 0;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #333;
 }
 
@@ -175,6 +175,95 @@ description: 'Catalog with all our available products and services.'
 .btn-add-cart:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.recommended-section {
+  margin-bottom: 60px;
+}
+
+.recommended-section h3 {
+  margin-bottom: 8px;
+}
+
+.recommended-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.recommended-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ececec;
+  min-height: 360px;
+}
+
+.recommended-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: #f7f7f9;
+  padding: 8px;
+}
+
+.recommended-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.recommended-content h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1em;
+  line-height: 1.25;
+}
+
+.recommended-description {
+  margin: 0;
+  color: #666;
+  font-size: 0.82em;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.recommended-price {
+  margin: 0;
+  color: #667eea;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+.btn-affiliate {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.82em;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.btn-affiliate:hover {
+  transform: scale(1.02);
 }
 
 .categories-section {
@@ -267,7 +356,11 @@ description: 'Catalog with all our available products and services.'
 
 @media (max-width: 768px) {
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  }
+
+  .recommended-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
   
   .shop-hero h2 {
@@ -287,7 +380,7 @@ description: 'Catalog with all our available products and services.'
 </div>
 
 <!-- Categories Section -->
-<!--div class="categories-section">
+<!-- <div class="categories-section">
   <h3 style="text-align: center; margin-bottom: 30px;">Browse by Category</h3>
   <div class="categories-grid">
     <div class="category-card">
@@ -311,15 +404,15 @@ description: 'Catalog with all our available products and services.'
       <p>Sessions and consultancies</p>
     </div>
   </div>
-</div-->
+</div> -->
 
 <!-- Filter Buttons -->
-<!--div class="filters">
+<!-- <div class="filters">
   <button class="filter-btn active">All</button>
   <button class="filter-btn">eBooks</button>
   <button class="filter-btn">Courses</button>
   <button class="filter-btn">Promotions</button>
-</div-->
+</div> -->
 
 <!-- Products Grid -->
 <div class="products-grid">
@@ -462,6 +555,41 @@ description: 'Catalog with all our available products and services.'
       </div>
     </div>
   </div>
+</div>
+
+<!-- Recommended Affiliate Offers -->
+<div class="recommended-section">
+<h3>🛒 Recommended Offers</h3>
+<p>Affiliate recommendations from Mercado Livre with products we use and suggest for developers.</p>
+<div class="recommended-grid">
+<div class="recommended-card">
+<img src="https://http2.mlstatic.com/D_Q_NP_952038-MLA99371736922_112025-B.webp" alt="Logitech MK250 wireless keyboard and mouse combo in graphite" />
+<div class="recommended-content">
+<h4>Logitech MK250 Wireless Keyboard and Mouse Combo (Graphite)</h4>
+<p class="recommended-description">Wireless combo with stable connection, comfortable typing, and strong value for coding, studying, and daily work.</p>
+<p class="recommended-price">R$ 169,90</p>
+<a class="btn-affiliate" href="https://meli.la/26oB1pL" target="_blank" rel="noopener noreferrer sponsored">BUY</a>
+</div>
+</div>
+<div class="recommended-card">
+<img src="https://http2.mlstatic.com/D_NQ_NP_633479-MLA82144434230_022025-F.webp" alt="Lenovo ThinkPad T14 notebook" />
+<div class="recommended-content">
+<h4>Lenovo ThinkPad T14 G2 Notebook (i5 11th, 16GB, 512GB SSD)</h4>
+<p class="recommended-description">Business notebook with solid performance for coding, meetings, and productive remote work routines.</p>
+<p class="recommended-price">R$ 3409,00</p>
+<a class="btn-affiliate" href="https://meli.la/27MNQe8" target="_blank" rel="noopener noreferrer sponsored">BUY</a>
+</div>
+</div>
+<div class="recommended-card">
+<img src="https://http2.mlstatic.com/D_Q_NP_669691-MLA106901751604_022026-B.webp" alt="Relaxmedic digital body scale with Bluetooth and bioimpedance" />
+<div class="recommended-content">
+<h4>Relaxmedic Digital Body Scale (Bioimpedance + Bluetooth App)</h4>
+<p class="recommended-description">Smart scale with app sync, BMI and body composition metrics, with support for up to 24 user profiles.</p>
+<p class="recommended-price">R$ 127,95</p>
+<a class="btn-affiliate" href="https://meli.la/2hRCzvo" target="_blank" rel="noopener noreferrer sponsored">BUY</a>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Newsletter Section -->
