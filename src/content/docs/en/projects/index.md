@@ -1,37 +1,117 @@
 ---
 title: Projects
-description: 'Real projects to study architecture, product thinking, experience design, and implementation choices.'
+description: 'Case studies from the Dionisio ecosystem to analyze product thinking, architecture, UX, implementation choices, and practical engineering follow-up.'
 ---
 
 # Projects
 
-This section gathers real projects from the Dionisio ecosystem. The goal is not only to show the final product, but also to highlight what each case teaches developers.
+This section exists for one simple reason:
+
+turn real projects into useful study material for developers.
+
+It is not only a showcase.
+
+It is a case-study hub.
+
+Each project page tries to answer:
+
+- what problem the product solves
+- what a developer can learn from it
+- which technical and product decisions deserve attention
+- how to turn observation into practice
+
+## How to use this section the right way
+
+Do not browse only like an end user.
+
+Browse like a developer.
+
+That means:
+
+1. understand the product problem
+2. observe the main flow
+3. identify interface or backend states
+4. think about the data structures and algorithms behind it
+5. note which trade-offs you would keep or change
+
+That is the kind of reading that actually helps you grow.
 
 ## Featured projects
 
 ### [SportPulse.today](/en/projects/sportpulse/)
 
-Real-time sports search and news generation with a C++ backend.
+A backend-leaning project with performance pressure and real-time data product thinking.
 
-- What to study here: performance, modularity, backend design, and external integrations.
-- Live project: [sportpulse.today](https://sportpulse.today)
+![SportPulse.today preview](/assets/images/sportpulse.png)
+
+What you can study here:
+
+- information aggregation
+- response clarity for fast consumption
+- continuous-update pressure
+- practical modular backend thinking
 
 ### [Amorfy](/en/projects/amorfy/)
 
-An interactive product with guided questionnaire flow and profile-based experience.
+A strong case for guided flow, multi-step questionnaires, and value perception through results.
 
-- What to study here: product flow, guided UI, user experience, and result communication.
-- Live project: [www.amorfy.com.br](http://www.amorfy.com.br)
+![Amorfy preview](/assets/images/amorfy.png)
+
+What you can study here:
+
+- long-form UX
+- step progression
+- interface copy
+- turning answers into perceived product value
 
 ### [Wheel Of List](/en/projects/wheel-of-list/)
 
-A frontend application for random draws with a spinning wheel, animation, and helper tools.
+A lean tool with immediate usefulness, readable visual feedback, and clear micro-interactions.
 
-- What to study here: immediate utility, micro-interactions, visual feedback, and simple tool UX.
-- Live project: [wheeloflist.com](http://wheeloflist.com)
+![Wheel Of List preview](/assets/images/wheel-of-list.png)
 
-## Best way to use this section
+What you can study here:
 
-1. Open the project detail page.
-2. Understand the problem and implementation choices.
-3. Use the next-step section to turn the page into active study.
+- frictionless primary action
+- visual feedback
+- tool state management
+- expanding a simple utility into a broader feature set
+
+## Which project should you open first?
+
+### If you like backend and performance
+
+Start with [SportPulse.today](/en/projects/sportpulse/).
+
+### If you want to study guided UX and product flow
+
+Start with [Amorfy](/en/projects/amorfy/).
+
+### If you want to study a simple but well-resolved utility
+
+Start with [Wheel Of List](/en/projects/wheel-of-list/).
+
+## What to compare across them
+
+A strong way to use these cases is to compare:
+
+- guided flow versus direct utility
+- data-oriented backend versus interaction-oriented product
+- tight scope versus continuous update pressure
+- emotional experience versus utility-first experience
+
+That is where architecture and product start looking like the same conversation.
+
+## Strong questions to ask while browsing
+
+- What is the primary action of the product?
+- Where is the biggest technical risk?
+- What seems harder: modeling data, modeling flow, or modeling interface?
+- Where does performance probably matter most?
+- Where does UX clarity matter more than technical complexity?
+
+## Next actions
+
+- Open one project and read the detailed page with a technical mindset
+- Reinforce the matching foundation in [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
+- Then return to [Technical Articles](/en/artigos-tecnicos/) to connect engineering perspective and practice

@@ -109,7 +109,15 @@ export default defineConfig({
                 { label: 'Hello World in C++', link: 'tutorials/hello-world-cpp/' },
               ],
             },
-            { label: 'Projects', link: 'projects/' },
+            {
+              label: 'Projects',
+              items: [
+                { label: 'Overview', link: 'projects/' },
+                { label: 'SportPulse.today', link: 'projects/sportpulse/' },
+                { label: 'Amorfy', link: 'projects/amorfy/' },
+                { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
+              ],
+            },
             { label: 'Blog', link: 'blog/' },
             {
               label: 'eBooks',
@@ -153,7 +161,15 @@ export default defineConfig({
             { label: 'Hello World no C++', link: 'tutorials/hello-world-cpp/' },
           ],
         },
-        { label: 'Projetos', link: 'projects/' },
+        {
+          label: 'Projetos',
+          items: [
+            { label: 'Visão geral', link: 'projects/' },
+            { label: 'SportPulse.today', link: 'projects/sportpulse/' },
+            { label: 'Amorfy', link: 'projects/amorfy/' },
+            { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
+          ],
+        },
         { label: 'Blog', link: 'blog/' },
         {
           label: 'eBooks',

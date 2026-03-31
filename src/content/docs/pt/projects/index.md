@@ -1,37 +1,117 @@
 ---
 title: Projetos
-description: 'Projetos reais para estudar arquitetura, produto, experiência e decisões de implementação.'
+description: 'Estudos de caso do ecossistema Dionisio para analisar produto, arquitetura, UX, decisões técnicas e próximos passos de engenharia.'
 ---
 
 # Projetos
 
-Esta seção reúne projetos reais do ecossistema Dionisio. O foco aqui não é só mostrar o produto final, mas destacar o que cada projeto ensina para quem desenvolve.
+Esta seção existe para uma coisa simples:
+
+transformar projeto real em material de estudo útil para dev.
+
+Não é só vitrine.
+
+É estudo de caso.
+
+Cada página de projeto tenta responder:
+
+- que problema esse produto resolve
+- o que dá para aprender com ele
+- quais decisões técnicas e de produto merecem atenção
+- como transformar observação em prática
+
+## Como usar esta seção do jeito certo
+
+Não navega só como usuário final.
+
+Navega como desenvolvedor.
+
+Ou seja:
+
+1. entenda o problema do produto
+2. observe o fluxo principal
+3. identifique os estados da interface ou do backend
+4. pense nas estruturas e algoritmos por trás
+5. anote quais trade-offs você faria igual ou diferente
+
+Esse é o tipo de leitura que realmente te faz crescer.
 
 ## Projetos em destaque
 
 ### [SportPulse.today](/pt/projects/sportpulse/)
 
-Buscador e gerador de notícias esportivas em tempo real com backend em C++.
+Projeto com pegada de backend, performance e produto orientado a dado em tempo real.
 
-- O que estudar aqui: performance, modularidade, backend e integração com serviços externos.
-- Link do projeto: [sportpulse.today](https://sportpulse.today)
+![Preview do SportPulse.today](/assets/images/sportpulse.png)
+
+Você vai estudar aqui:
+
+- agregação de informação
+- clareza de resposta para consumo rápido
+- pressão de atualização contínua
+- modularidade em backend com foco prático
 
 ### [Amorfy](/pt/projects/amorfy/)
 
-Produto interativo com questionário guiado e experiência orientada por perfil.
+Case forte de fluxo guiado, questionário em múltiplas etapas e percepção de valor via resultado.
 
-- O que estudar aqui: fluxo de produto, interface guiada, experiência do usuário e comunicação de resultado.
-- Link do projeto: [www.amorfy.com.br](http://www.amorfy.com.br)
+![Preview do Amorfy](/assets/images/amorfy.png)
+
+Você vai estudar aqui:
+
+- UX de formulário longo
+- progressão de etapas
+- copy de interface
+- transformação de respostas em resultado percebido
 
 ### [Wheel Of List](/pt/projects/wheel-of-list/)
 
-Aplicação frontend para sorteio com roleta, animação e ferramentas auxiliares.
+Ferramenta enxuta com utilidade imediata, boa leitura visual e microinterações claras.
 
-- O que estudar aqui: utilidade imediata, microinterações, feedback visual e UX de ferramenta simples.
-- Link do projeto: [wheeloflist.com](http://wheeloflist.com)
+![Preview do Wheel Of List](/assets/images/wheel-of-list.png)
 
-## Como aproveitar melhor esta seção
+Você vai estudar aqui:
 
-1. Abra a página detalhada do projeto.
-2. Entenda o problema e as escolhas de implementação.
-3. Use a seção de próximos passos para transformar isso em estudo ativo.
+- ação principal sem atrito
+- feedback visual
+- estado de ferramenta
+- expansão de utilitário simples para suíte de recursos
+
+## Qual projeto abrir primeiro?
+
+### Se você curte backend e performance
+
+Comece por [SportPulse.today](/pt/projects/sportpulse/).
+
+### Se você quer estudar UX guiada e produto
+
+Comece por [Amorfy](/pt/projects/amorfy/).
+
+### Se você quer estudar ferramenta simples, mas bem resolvida
+
+Comece por [Wheel Of List](/pt/projects/wheel-of-list/).
+
+## O que comparar entre eles
+
+Uma forma muito boa de usar esses cases é comparar:
+
+- fluxo guiado versus ferramenta direta
+- backend orientado a dado versus produto orientado a interação
+- escopo enxuto versus pressão de atualização contínua
+- experiência emocional versus experiência utilitária
+
+É nessa comparação que você começa a enxergar arquitetura e produto como partes da mesma conversa.
+
+## Perguntas fortes para fazer enquanto navega
+
+- Qual é a ação principal do produto?
+- Onde mora o maior risco técnico?
+- O que parece ser mais difícil: modelar dados, modelar fluxo ou modelar interface?
+- Onde a performance provavelmente importa mais?
+- Onde a clareza da UX faz mais diferença que a complexidade técnica?
+
+## Próximas ações
+
+- Abra um projeto e leia a página detalhada com olhar técnico
+- Reforce a base correspondente em [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e [Algoritmos](/pt/reference/algoritmos/)
+- Depois volte para [Artigos Técnicos](/pt/artigos-tecnicos/) para conectar visão de engenharia e prática
