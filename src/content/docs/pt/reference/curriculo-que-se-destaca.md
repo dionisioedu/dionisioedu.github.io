@@ -1,211 +1,293 @@
 ---
 title: Como escrever um currículo que se destaca
-description: Guia prático para criar um currículo forte em tecnologia, com exemplos para níveis iniciante, intermediário e avançado.
+description: Guia direto para montar um currículo técnico forte, com prova de trabalho, clareza e impacto real.
 sidebar:
   label: Currículo que se destaca
 ---
 
-Seu currículo não precisa ser “bonito”. Ele precisa ser **claro, específico e confiável**.
+Seu currículo não precisa ser bonito.
 
-No mercado de tecnologia, recrutadores e líderes técnicos normalmente procuram três sinais:
+Precisa ser claro.
 
-1. Você resolve problemas reais.
-2. Você comunica impacto com objetividade.
-3. Você evolui com consistência.
+Precisa ser específico.
 
-Se o seu currículo mostrar isso, suas chances de entrevista sobem.
+E precisa passar uma mensagem simples:
 
-## O que o mercado realmente avalia (2026)
+**essa pessoa sabe entregar.**
 
-Mesmo com IA, testes online e triagens automatizadas, a lógica base continua a mesma:
+Se o currículo não passa isso em poucos segundos, você perde espaço mesmo sendo bom.
 
-- **Aderência à vaga:** stack, domínio e nível de senioridade compatíveis.
-- **Evidência de entrega:** o que você construiu, melhorou, corrigiu ou acelerou.
-- **Capacidade de colaboração:** trabalho com produto, design, QA e negócio.
-- **Maturidade técnica:** decisões, trade-offs e qualidade de execução.
+## O que recrutador e líder técnico querem ver
 
-Recrutadores querem reduzir risco de contratação. Seu currículo deve provar que o risco é baixo.
+Na prática, quase todo currículo em tecnologia é lido com a mesma lógica:
 
-## Como recrutadores leem seu currículo
+1. esse perfil encaixa na vaga?
+2. essa pessoa já entregou algo real?
+3. ela entende o que fez ou só participou?
+4. existe indício de maturidade e evolução?
 
-Na primeira triagem, a leitura costuma levar segundos, não minutos.
+Seu currículo precisa responder isso rápido.
 
-Eles geralmente seguem esta ordem:
+## O erro mais comum
 
-1. Título e resumo profissional.
-2. Experiência mais recente.
-3. Tecnologias-chave.
-4. Projetos e portfólio.
-5. Formação e certificações (quando relevante).
+O erro clássico é transformar currículo em lista de tecnologia:
 
-Se as informações importantes estiverem escondidas, você perde oportunidade mesmo sendo bom.
+- JavaScript
+- React
+- Node
+- Docker
+- AWS
+- SQL
+- Git
 
-## Estrutura simples e eficiente
+Isso sozinho diz quase nada.
 
-Para a maioria das pessoas em tecnologia:
+Tecnologia sem contexto não vira evidência.
 
-- até 5 anos de experiência: **1 página**;
-- acima disso: **1 a 2 páginas**, apenas se houver conteúdo forte.
+O que pesa de verdade é:
 
-Ordem recomendada:
+- problema resolvido
+- ação executada
+- resultado gerado
 
-1. Nome + cargo alvo + cidade/país.
-2. Contatos: email, LinkedIn, GitHub, portfólio.
-3. Resumo profissional (4 a 6 linhas).
-4. Tecnologias principais.
-5. Experiência (com métricas).
-6. Projetos relevantes.
-7. Formação e certificações.
+## Regra prática: currículo bom é prova de trabalho
 
-## O que destacar por nível
+Toda linha importante do seu currículo deveria puxar pelo menos uma destas ideias:
+
+- o que você construiu
+- o que você melhorou
+- o que você acelerou
+- o que você reduziu
+- o que você evitou quebrar
+
+Se tudo estiver escrito como tarefa genérica, o documento perde força.
+
+## Estrutura que funciona
+
+Para a maioria das vagas de tecnologia, essa ordem funciona muito bem:
+
+1. nome e cargo alvo
+2. contatos
+3. resumo profissional
+4. stack principal
+5. experiência
+6. projetos
+7. formação e certificações
+
+Se você tem até 5 anos de experiência, normalmente 1 página basta.
+
+Se passou disso, 1 a 2 páginas pode fazer sentido, desde que o conteúdo esteja forte.
+
+## Como escrever um resumo profissional que não pareça enfeite
+
+Resumo bom não é frase bonita. É posicionamento claro.
+
+Ele precisa responder:
+
+- quem você é hoje
+- qual stack domina
+- que tipo de problema resolve
+- qual impacto já gerou
+
+### Exemplo ruim
+
+> Profissional dedicado, proativo e apaixonado por tecnologia, sempre em busca de desafios.
+
+Isso é genérico demais. Não comunica nível, stack, contexto nem resultado.
+
+### Exemplo melhor para iniciante
+
+> Desenvolvedor em início de carreira com foco em backend com Node.js e SQL. Construí projetos com autenticação, integração com API e deploy em nuvem. Busco vaga júnior para contribuir com entregas reais e crescer com base forte de engenharia.
+
+### Exemplo melhor para intermediário
+
+> Desenvolvedor full stack com 4 anos de experiência em produtos SaaS. Atuei com React, Node.js e PostgreSQL em entregas que reduziram latência de API e melhoraram conversão. Tenho foco em simplicidade, qualidade e impacto real de produto.
+
+### Exemplo melhor para avançado
+
+> Engenheiro de software sênior com experiência em sistemas de alta escala, arquitetura de serviços e liderança técnica. Atuei na redução de incidentes, melhoria de performance e evolução de times com foco em qualidade e eficiência operacional.
+
+## Como escrever experiência sem parecer descrição de cargo
+
+Você não quer listar só responsabilidade.
+
+Você quer mostrar:
+
+- contexto
+- ação
+- resultado
+
+### Estrutura de bullet forte
+
+- qual problema existia
+- o que você fez
+- o que mudou depois
+
+### Fraco
+
+- Responsável por API em Node.js.
+
+### Forte
+
+- Refatorei API em Node.js com cache e paginação, reduzindo a latência média de 820ms para 430ms.
+
+### Fraco
+
+- Trabalhei no frontend.
+
+### Forte
+
+- Implementei fluxo de checkout em React e reduzi abandono em 9% após validação com A/B test.
+
+### Fraco
+
+- Participei da migração para AWS.
+
+### Forte
+
+- Conduzi migração de 14 serviços para AWS com zero downtime e redução de 22% no custo mensal.
+
+## O que destacar em cada nível
 
 ### Iniciante
 
-Foco principal: potencial de execução.
+Seu foco não é senioridade. É sinal de execução.
 
-- projetos completos (não só curso);
-- fundamentos sólidos (lógica, estruturas, testes básicos);
-- consistência de estudo e publicação.
+Mostre:
 
-Exemplo de resumo:
+- projetos completos
+- base sólida
+- consistência de estudo
+- vontade de entregar de verdade
 
-> Desenvolvedor em início de carreira com foco em backend com Node.js e SQL. Construí 3 projetos completos com autenticação, testes e deploy em nuvem. Busco vaga júnior para contribuir com entregas de produto e crescer em engenharia de software.
+O que ajuda muito:
+
+- GitHub organizado
+- README decente
+- projeto com deploy
+- poucos projetos, mas bem explicados
 
 ### Intermediário
 
-Foco principal: autonomia e impacto.
+Seu foco é autonomia e impacto.
 
-- entregas ponta a ponta;
-- melhorias de performance, custo ou qualidade;
-- colaboração com outras áreas.
+Mostre:
 
-Exemplo de resumo:
-
-> Desenvolvedor full stack com 4 anos de experiência em produtos SaaS. Liderei entregas em React e Node.js que reduziram o tempo de resposta da API em 38% e aumentaram conversão em 12%. Atuo com foco em arquitetura simples, qualidade e resultado de negócio.
+- entrega ponta a ponta
+- melhoria mensurável
+- colaboração com produto, design, QA ou negócio
+- decisão técnica com justificativa
 
 ### Avançado
 
-Foco principal: escala, liderança e decisão técnica.
+Seu foco é escala, direção e influência.
 
-- desenho de sistemas;
-- mentoria e influência técnica;
-- impacto organizacional.
+Mostre:
 
-Exemplo de resumo:
+- arquitetura
+- confiabilidade
+- mentoria
+- decisões com trade-off
+- impacto em time ou plataforma
 
-> Engenheiro de software sênior com 9+ anos em plataformas de alta escala. Defini arquitetura de serviços críticos, reduzi incidentes em produção em 45% e mentorei 12 desenvolvedores. Experiência em decisões de arquitetura, governança técnica e eficiência operacional.
+## Projetos que realmente ajudam o currículo
 
-## Como escrever experiência de forma forte
+Projeto bom para currículo não é o mais “bonito”.
 
-Evite descrever apenas tarefas. Mostre contexto, ação e resultado.
+É o que mostra raciocínio.
 
-Modelo:
+Um projeto forte responde:
 
-- **Contexto:** qual problema existia.
-- **Ação:** o que você fez tecnicamente.
-- **Resultado:** qual foi o impacto mensurável.
-
-Exemplos fraco vs forte:
-
-- Fraco: “Responsável por API em Node.js.”
-- Forte: “Refatorei API em Node.js com cache e paginação, reduzindo latência média de 820ms para 430ms.”
-
-- Fraco: “Trabalhei no frontend.”
-- Forte: “Implementei fluxo de checkout em React, aumentando conversão em 9% após A/B test.”
-
-- Fraco: “Participei de migração para nuvem.”
-- Forte: “Conduzi migração de 14 serviços para AWS com zero downtime e redução de 22% no custo mensal.”
-
-## Tecnologias e palavras-chave (ATS)
-
-Sistemas ATS filtram por termos. Não tente enganar; use termos reais da sua experiência.
-
-Boas práticas:
-
-- alinhe nomenclatura com a vaga (ex.: “TypeScript”, não apenas “JS”);
-- separe “Tecnologias principais” de “familiaridade”;
-- inclua ferramentas de rotina (CI/CD, Docker, testes, observabilidade).
-
-## Projetos que chamam atenção
-
-Projeto bom para currículo precisa responder:
-
-1. Qual problema real resolve?
-2. Qual arquitetura você escolheu e por quê?
-3. Qual evidência de qualidade existe?
+1. que problema ele resolve?
+2. como foi estruturado?
+3. qual prova de qualidade existe?
 
 Inclua, quando possível:
 
-- link de demo;
-- repositório com README claro;
-- testes;
-- instruções de execução;
-- decisões técnicas e trade-offs.
+- link de demo
+- repositório
+- README claro
+- stack
+- testes
+- decisões técnicas
+- próximos passos
 
-## Erros que reprovam rápido
+## ATS: como passar no filtro sem virar robô
 
-- currículo genérico para toda vaga;
-- lista longa de tecnologias sem profundidade;
-- ausência de resultados mensuráveis;
-- texto grande demais e sem escaneabilidade;
-- links quebrados (GitHub, LinkedIn, portfólio);
-- erros de português e inconsistência de datas.
+Sistemas ATS leem palavras-chave.
 
-## Template objetivo (pode copiar)
+Então sim, você precisa usar os termos certos.
 
-### Resumo profissional
+Mas sem mentira.
 
-3–6 linhas com:
+Boas práticas:
 
-- anos de experiência;
-- stack principal;
-- tipo de problema que resolve;
-- 1 ou 2 impactos mensuráveis.
+- use o nome real da tecnologia
+- alinhe termos com a vaga
+- separe “domino” de “tenho contato”
+- inclua ferramentas do dia a dia quando forem reais
 
-### Experiência
+Exemplo:
 
-Para cada posição:
+- TypeScript
+- React
+- Node.js
+- PostgreSQL
+- Docker
+- CI/CD
+- testes automatizados
+- observabilidade
 
-- Empresa | Cargo | Período
-- 3 a 5 bullets com contexto + ação + resultado
-- Tecnologias usadas
+## Erros que queimam candidatura rápido
 
-### Projetos
+- currículo genérico para toda vaga
+- bullets sem resultado
+- exagero de tecnologia sem profundidade
+- texto grande e difícil de escanear
+- datas confusas
+- links quebrados
+- português ou inglês mal revisado
 
-- Nome do projeto + link
-- Problema resolvido
-- Stack
-- Resultado ou aprendizado técnico relevante
+## Checklist antes de enviar
 
-## Checklist final antes de enviar
-
-- Está adaptado para a vaga específica?
-- Os 3 primeiros blocos estão fortes (resumo, experiência, stack)?
-- Existem métricas reais nas experiências?
-- O documento está curto e fácil de escanear?
+- O título está alinhado com a vaga?
+- O resumo comunica stack, contexto e impacto?
+- As experiências têm resultado mensurável?
+- O currículo está curto e fácil de ler?
 - LinkedIn, GitHub e portfólio estão atualizados?
-- Ortografia e datas conferidas?
+- Você removeu informação que não ajuda?
 
-:::tip
-A melhor estratégia não é “enfeitar” o currículo. É mostrar prova de trabalho real com contexto e resultado.
-:::
-
-## Regra prática: adaptação em 10 minutos
+## Regra prática de adaptação em 10 minutos
 
 Antes de cada candidatura:
 
-1. Leia a vaga e destaque 5 palavras-chave.
-2. Reordene seus bullets para priorizar o que a vaga pede.
-3. Ajuste o resumo para refletir exatamente aquele contexto.
-4. Remova informação irrelevante.
+1. leia a vaga e destaque 5 palavras-chave
+2. reorganize seus bullets para priorizar isso
+3. ajuste o resumo para refletir o contexto da vaga
+4. remova o que não soma
 
-Esse ajuste simples já diferencia seu currículo da maioria.
+Esse ajuste simples já coloca seu currículo na frente de muita gente.
+
+## Um modelo mental melhor
+
+Pensa no currículo assim:
+
+- não é autobiografia
+- não é inventário de ferramenta
+- não é palestra motivacional
+
+Currículo é documento de venda técnica.
+
+Mas uma venda limpa, com prova.
 
 ## Conclusão
 
-Um currículo que se destaca em tecnologia é aquele que transforma experiência em evidência.
+Currículo forte em tecnologia é currículo que transforma experiência em evidência.
 
-Menos adjetivo, mais resultado.
-Menos lista de ferramenta, mais impacto real.
+Menos adjetivo.
+Mais entrega.
 
-Se você aplicar esse padrão de forma consistente, suas entrevistas tendem a aumentar com o tempo.
+Menos lista solta de stack.
+Mais contexto, ação e resultado.
+
+Se você seguir esse padrão, suas chances de entrevista tendem a subir com o tempo.

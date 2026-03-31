@@ -1,211 +1,293 @@
 ---
 title: How to Write a Resume That Stands Out
-description: Practical guide to building a strong tech resume, with examples for beginner, intermediate, and advanced developers.
+description: Direct guide to building a strong technical resume with proof of work, clarity, and real impact.
 sidebar:
   label: Resume that stands out
 ---
 
-Your resume does not need to be “pretty”. It needs to be **clear, specific, and credible**.
+Your resume does not need to look pretty.
 
-In the tech market, recruiters and hiring managers usually look for three signals:
+It needs to be clear.
 
-1. You solve real problems.
-2. You communicate impact objectively.
-3. You improve consistently.
+It needs to be specific.
 
-If your resume shows these signals, your interview rate tends to increase.
+And it needs to send one simple message:
 
-## What the market actually evaluates (2026)
+**this person can deliver.**
 
-Even with AI tools, online assessments, and automated screening, the core logic is still the same:
+If your resume does not communicate that in a few seconds, you lose ground even when you are good.
 
-- **Role fit:** stack, domain, and seniority alignment.
-- **Proof of delivery:** what you built, improved, fixed, or accelerated.
-- **Collaboration ability:** work with product, design, QA, and business.
-- **Technical maturity:** decisions, trade-offs, and execution quality.
+## What recruiters and hiring managers want to see
 
-Recruiters want to reduce hiring risk. Your resume should show that risk is low.
+In practice, almost every tech resume is read with the same logic:
 
-## How recruiters read your resume
+1. does this profile fit the role?
+2. has this person delivered real work?
+3. do they understand what they did or did they just participate?
+4. is there evidence of maturity and growth?
 
-In first-pass screening, review time is usually seconds, not minutes.
+Your resume needs to answer that fast.
 
-Typical reading order:
+## The most common mistake
 
-1. Title and professional summary.
-2. Most recent experience.
-3. Key technologies.
-4. Projects and portfolio.
-5. Education and certifications (when relevant).
+The classic mistake is turning the resume into a technology list:
 
-If critical information is hidden, you may be rejected even when you are qualified.
+- JavaScript
+- React
+- Node
+- Docker
+- AWS
+- SQL
+- Git
 
-## Simple and effective structure
+That alone says almost nothing.
 
-For most people in tech:
+Technology without context does not become evidence.
 
-- up to 5 years of experience: **1 page**;
-- above that: **1 to 2 pages**, only with strong content.
+What actually carries weight is:
 
-Recommended order:
+- problem solved
+- action taken
+- result generated
 
-1. Name + target role + location.
-2. Contact: email, LinkedIn, GitHub, portfolio.
-3. Professional summary (4 to 6 lines).
-4. Core technologies.
-5. Experience (with metrics).
-6. Relevant projects.
-7. Education and certifications.
+## Practical rule: a good resume is proof of work
 
-## What to highlight by level
+Every important line in your resume should pull at least one of these ideas:
+
+- what you built
+- what you improved
+- what you accelerated
+- what you reduced
+- what you helped keep from breaking
+
+If everything is written like a generic task list, the document loses power.
+
+## A structure that works
+
+For most tech roles, this order works really well:
+
+1. name and target role
+2. contact information
+3. professional summary
+4. main stack
+5. experience
+6. projects
+7. education and certifications
+
+If you have up to 5 years of experience, one page is usually enough.
+
+If you are beyond that, 1 to 2 pages can make sense, as long as the content is strong.
+
+## How to write a professional summary that does not sound like decoration
+
+A good summary is not a pretty sentence. It is clear positioning.
+
+It needs to answer:
+
+- who you are today
+- which stack you know best
+- what kind of problems you solve
+- what impact you have already created
+
+### Bad example
+
+> Dedicated and proactive professional who is passionate about technology and always looking for challenges.
+
+That is too generic. It does not communicate level, stack, context, or result.
+
+### Better example for a beginner
+
+> Early-career developer focused on backend with Node.js and SQL. I built projects with authentication, API integration, and cloud deployment. I am looking for a junior role where I can contribute to real delivery and grow on top of strong engineering fundamentals.
+
+### Better example for an intermediate developer
+
+> Full stack developer with 4 years of experience in SaaS products. I worked with React, Node.js, and PostgreSQL on deliveries that reduced API latency and improved conversion. I focus on simplicity, quality, and real product impact.
+
+### Better example for an advanced developer
+
+> Senior software engineer with experience in high-scale systems, service architecture, and technical leadership. I have worked on incident reduction, performance improvements, and team evolution with a focus on quality and operational efficiency.
+
+## How to write experience without sounding like a job description
+
+You do not want to list only responsibilities.
+
+You want to show:
+
+- context
+- action
+- result
+
+### Strong bullet structure
+
+- what problem existed
+- what you did
+- what changed afterward
+
+### Weak
+
+- Responsible for Node.js API.
+
+### Strong
+
+- Refactored a Node.js API with caching and pagination, reducing average latency from 820ms to 430ms.
+
+### Weak
+
+- Worked on frontend.
+
+### Strong
+
+- Implemented a React checkout flow and reduced abandonment by 9% after validation through A/B testing.
+
+### Weak
+
+- Participated in the AWS migration.
+
+### Strong
+
+- Led the migration of 14 services to AWS with zero downtime and a 22% reduction in monthly cost.
+
+## What to highlight at each level
 
 ### Beginner
 
-Main focus: execution potential.
+Your focus is not seniority. It is execution signal.
 
-- complete projects (not only courses);
-- solid fundamentals (logic, data structures, basic tests);
-- consistent learning and public work.
+Show:
 
-Summary example:
+- complete projects
+- solid fundamentals
+- consistent learning
+- willingness to ship real work
 
-> Early-career developer focused on backend with Node.js and SQL. Built 3 complete projects with authentication, testing, and cloud deployment. Looking for a junior role to contribute to product delivery and grow in software engineering.
+Things that help a lot:
+
+- organized GitHub
+- decent README files
+- deployed projects
+- fewer projects, but explained well
 
 ### Intermediate
 
-Main focus: autonomy and impact.
+Your focus is autonomy and impact.
 
-- end-to-end delivery;
-- performance, cost, or quality improvements;
-- cross-functional collaboration.
+Show:
 
-Summary example:
-
-> Full stack developer with 4 years of SaaS product experience. Led React and Node.js deliveries that reduced API response time by 38% and increased conversion by 12%. I focus on simple architecture, quality, and business outcomes.
+- end-to-end delivery
+- measurable improvement
+- collaboration with product, design, QA, or business
+- technical decisions with justification
 
 ### Advanced
 
-Main focus: scale, leadership, and technical decision-making.
+Your focus is scale, direction, and influence.
 
-- system design;
-- mentoring and technical influence;
-- organizational impact.
+Show:
 
-Summary example:
+- architecture
+- reliability
+- mentoring
+- trade-off-driven decisions
+- team or platform impact
 
-> Senior software engineer with 9+ years in high-scale platforms. Defined architecture for critical services, reduced production incidents by 45%, and mentored 12 developers. Experienced in architecture decisions, technical governance, and operational efficiency.
+## Projects that really help your resume
 
-## How to write strong experience bullets
+A good resume project is not the prettiest one.
 
-Avoid listing only tasks. Show context, action, and result.
+It is the one that shows reasoning.
 
-Framework:
+A strong project answers:
 
-- **Context:** what problem existed.
-- **Action:** what you did technically.
-- **Result:** what measurable impact was achieved.
-
-Weak vs strong examples:
-
-- Weak: “Responsible for Node.js API.”
-- Strong: “Refactored Node.js API with caching and pagination, reducing average latency from 820ms to 430ms.”
-
-- Weak: “Worked on frontend.”
-- Strong: “Implemented React checkout flow that increased conversion by 9% after A/B testing.”
-
-- Weak: “Participated in cloud migration.”
-- Strong: “Led migration of 14 services to AWS with zero downtime and a 22% monthly cost reduction.”
-
-## Technologies and ATS keywords
-
-ATS systems filter by terms. Do not game the system; use real terms from actual experience.
-
-Best practices:
-
-- align wording with the job post (e.g., “TypeScript”, not only “JS”);
-- separate “core technologies” from “familiar with”;
-- include day-to-day tools (CI/CD, Docker, testing, observability).
-
-## Projects that get attention
-
-A strong resume project should answer:
-
-1. What real problem does it solve?
-2. What architecture did you choose and why?
-3. What quality evidence exists?
+1. what problem does it solve?
+2. how was it structured?
+3. what evidence of quality exists?
 
 Include, whenever possible:
 
-- demo link;
-- repository with clear README;
-- tests;
-- run instructions;
-- technical decisions and trade-offs.
+- demo link
+- repository
+- clear README
+- stack
+- tests
+- technical decisions
+- next steps
 
-## Fast rejection mistakes
+## ATS: how to pass the filter without sounding robotic
 
-- generic resume for every job;
-- long technology list without depth;
-- no measurable outcomes;
-- too much text with poor scanability;
-- broken links (GitHub, LinkedIn, portfolio);
-- grammar errors and inconsistent dates.
+ATS systems do read keywords.
 
-## Practical template (copy this)
+So yes, you do need the right terms.
 
-### Professional summary
+But without lying.
 
-3–6 lines including:
+Good practices:
 
-- years of experience;
-- primary stack;
-- type of problems solved;
-- 1 or 2 measurable impacts.
+- use the real technology name
+- align wording with the role
+- separate “I know well” from “I have exposure to”
+- include day-to-day tools when they are real
 
-### Experience
+Examples:
 
-For each role:
+- TypeScript
+- React
+- Node.js
+- PostgreSQL
+- Docker
+- CI/CD
+- automated testing
+- observability
 
-- Company | Role | Period
-- 3 to 5 bullets with context + action + result
-- Technologies used
+## Mistakes that burn a candidacy fast
 
-### Projects
+- generic resume for every role
+- bullets with no results
+- too much technology and too little depth
+- too much text and poor scanability
+- confusing dates
+- broken links
+- sloppy language review
 
-- Project name + link
-- Problem solved
-- Stack
-- Relevant outcome or technical learning
+## Checklist before sending
 
-## Final checklist before applying
-
-- Is it tailored to this specific role?
-- Are the top 3 sections strong (summary, experience, stack)?
-- Do experience bullets include real metrics?
-- Is the document short and easy to scan?
+- Is the title aligned with the role?
+- Does the summary communicate stack, context, and impact?
+- Do the experience bullets include measurable outcomes?
+- Is the resume short and easy to scan?
 - Are LinkedIn, GitHub, and portfolio updated?
-- Did you review grammar and dates?
+- Did you remove information that does not help?
 
-:::tip
-The best strategy is not to decorate your resume. It is to show proof of real work with context and results.
-:::
-
-## 10-minute adaptation rule
+## The 10-minute adaptation rule
 
 Before each application:
 
-1. Read the job post and extract 5 keywords.
-2. Reorder your bullets to prioritize those requirements.
-3. Adjust your summary to reflect that exact context.
-4. Remove irrelevant information.
+1. read the job post and extract 5 keywords
+2. reorder your bullets to prioritize them
+3. adjust the summary to match that role context
+4. remove what does not add value
 
-This simple adjustment already separates your resume from most candidates.
+That simple adjustment already puts your resume ahead of a lot of people.
+
+## A better mental model
+
+Think about the resume like this:
+
+- it is not an autobiography
+- it is not a tool inventory
+- it is not a motivational speech
+
+A resume is a technical sales document.
+
+But a clean one, backed by proof.
 
 ## Conclusion
 
-A resume that stands out in tech is one that turns experience into evidence.
+A strong tech resume is one that turns experience into evidence.
 
-Less adjective, more outcomes.
-Less tool listing, more real impact.
+Less adjective.
+More delivery.
 
-If you apply this consistently, your interview volume tends to grow over time.
+Less loose stack listing.
+More context, action, and result.
+
+If you follow this pattern, your interview rate tends to improve over time.

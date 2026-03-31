@@ -1,87 +1,215 @@
 ---
 title: Data Types
-description: Learn how to represent data correctly to write safer, clearer, and more efficient code.
+description: Understand how to represent information correctly so your code stays safer, clearer, and less fragile.
 ---
 
-Data types are the foundation of programming. They tell the computer **what kind of information** you are storing, how that information should be interpreted, and which operations are valid.
+Data type is not a detail. Data type is meaning.
 
-If you get this wrong, everything else becomes bug fixing and patching.
+If you choose the wrong type, the software may still run. It just runs crooked.
 
-## What data types are
+This is where many classic bugs begin:
+
+- price stored with the wrong precision
+- age treated as text
+- confusing status fields
+- broken comparisons
+- inconsistent validation
+
+## What a data type really is
 
 A data type defines:
 
-- the **set of possible values**;
-- the **valid operations**;
-- the **memory representation**.
+- which values make sense
+- which operations are valid
+- how the value is interpreted
+- which kinds of errors are likely
 
 Simple examples:
 
-- integer: `-2`, `0`, `42`
-- decimal: `3.14`, `0.5`
-- string: `"Hello"`
-- boolean: `true` or `false`
+- `42` may be an integer
+- `"42"` is text
+- `42.0` may be decimal
+- `true` is a logical state
 
-## Primitive types you should master first
+Looks simple. But many business rules break exactly because systems mix these ideas.
 
-### Integers
+## What you should master first
 
-Use when there is no fractional part: number of users, age, retry count.
+### Integer
 
-### Floating point / decimals
+Use when there is no fractional part.
 
-Use when fractions are needed: prices, distances, temperatures.
+Examples:
+
+- number of users
+- retry count
+- age
+- rank position
+
+### Decimal
+
+Use when fractions matter.
+
+Examples:
+
+- weight
+- temperature
+- distance
+
+But careful: not every decimal choice is good for money.
 
 ### String
 
-Use for names, messages, textual IDs, emails.
+Use for textual information.
+
+Examples:
+
+- name
+- email
+- masked document ID
+- alphanumeric identifier
 
 ### Boolean
 
-Use for binary states: active/inactive, logged-in/logged-out, valid/invalid.
+Use for binary states.
 
-## Type conversion (casting)
+Examples:
 
-Converting between types is common, but dangerous without validation.
+- active or inactive
+- paid or unpaid
+- valid or invalid
 
-Common mistakes:
+### Null / absence of value
 
-- parsing invalid text into numbers;
-- losing precision converting decimals to integers;
-- comparing incompatible types without normalization.
+You also need to understand when the system is saying:
 
-Practical rule: **validate first, convert second**.
+- “I do not know yet”
+- “it was not informed”
+- “it does not exist”
 
-## Weak vs strong typing
+Many beginners treat absence as empty string, zero, or `false`. That is where the mess starts.
 
-- Strong typing: fewer runtime surprises, earlier feedback.
-- Weak typing: more flexibility, but higher discipline required.
+## Classic mistake: “it looks like a number, so it is a number”
 
-Neither style removes bugs by itself. Good engineering comes from:
+This matters a lot:
 
-- good modeling;
-- input validation;
-- tests.
+- `"10"` is not `10`
+- `"true"` is not `true`
+- `"3.14"` is not `3.14`
 
-## Practical habits that improve fast
+When data comes from forms, APIs, or storage, validation and conversion are almost always required.
 
-- Use clear variable names: `userAge` communicates more than `x`.
-- Do not store numbers as strings without reason.
-- Centralize validation in utility functions.
-- Prefer explicit types for critical business fields (money, permissions, IDs).
+Practical rule:
 
-## Practice tasks
+**validate first, convert second**
 
-1. Build a simple form with name, age, and email.
-2. Validate age as a positive integer.
-3. Convert text input into the correct internal types.
-4. Return clear error messages when type validation fails.
+## Money deserves special care
+
+If you store prices as a generic floating-point value and just keep calculating, precision issues will eventually bite you.
+
+In real systems, common approaches are:
+
+- a proper decimal type
+- integer cents
+
+Mental model:
+
+- `$10.99` can be stored as `1099` cents
+
+That alone avoids many financial bugs.
+
+## Date and time are traps too
+
+Date is not “just a nice string.”
+
+If you save everything as loose text, later you suffer when trying to:
+
+- sort
+- filter
+- compare
+- deal with timezone
+
+Use a proper date/time type whenever possible. If serialization is needed, choose a consistent format.
+
+## ID is not necessarily a number
+
+This is an important mindset shift:
+
+- phone number is not a mathematical number
+- ZIP code is not a mathematical number
+- document identifier is not a mathematical number
+- order code may look numeric, but still be an identifier
+
+If you are not going to calculate with it, it may not belong in a numeric type.
+
+## How to choose the right type
+
+Before creating a variable, field, or database column, ask:
+
+1. Is this quantity, state, text, date, or identity?
+2. Will I calculate with it or only store and display it?
+3. Can it be absent?
+4. Does precision matter?
+5. Does exact comparison matter?
+
+Those questions already improve most type choices.
+
+## Practical modeling examples
+
+### User
+
+- `name`: string
+- `age`: integer
+- `email`: string
+- `active`: boolean
+
+### Order
+
+- `orderId`: string or integer, depending on domain rules
+- `totalAmount`: proper decimal or cents
+- `paid`: boolean
+- `createdAt`: date/time
+
+### Product
+
+- `sku`: string
+- `stock`: integer
+- `price`: proper decimal
+
+## Common beginner mistakes
+
+- using strings for everything
+- comparing number and text
+- converting without validation
+- using `0` to mean “not informed”
+- using `false` to hide missing data
+- ignoring precision in money calculations
+
+## Signs your modeling is weak
+
+- you keep converting the same field again and again
+- business rules are full of weird conditionals
+- the same value changes format in different layers
+- bugs keep showing up in forms, filters, and ordering
+
+## High-value exercises
+
+1. Model a user registration with name, age, email, and active state.
+2. Model an order with amount, date, and payment status.
+3. Receive data as text and convert it safely.
+4. Reject invalid input without crashing the flow.
 
 ## Quick checklist
 
 - Do you know when to use integer vs decimal?
-- Do you validate before casting?
-- Do you avoid comparing incompatible types?
-- Do your chosen types reflect business intent?
+- Do you understand that IDs are not always numbers?
+- Do you treat absence of value carefully?
+- Do you know money needs serious modeling?
+- Do you validate before conversion?
 
-If yes, your foundation is already stronger than most beginners.
+If yes, your base is already much stronger than the average beginner’s.
+
+## Next actions
+
+- Continue to [Data Structures](/en/reference/estruturas-de-dados/)
+- Then consolidate with [Programming Logic](/en/reference/logica-de-programacao/)

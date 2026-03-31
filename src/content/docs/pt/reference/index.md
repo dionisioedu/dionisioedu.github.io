@@ -1,24 +1,151 @@
 ---
 title: Referência
-description: 'Índice das páginas de consulta e fundamentos do portal para desenvolvedores.'
+description: 'Hub de referência com trilhas, fundamentos e atalhos práticos para estudar melhor e consultar mais rápido.'
 ---
 
 # Referência
 
-Esta seção concentra o material de base e consulta rápida do portal.
+Se você quer usar este portal como base de estudo e consulta rápida, é aqui que a coisa começa de verdade.
 
-## Páginas principais
+Esta seção existe para resolver três problemas muito comuns:
 
-- [Por Onde Começar?](/pt/reference/getting-started/): ordem de estudo para sair da confusão.
-- [Tipos de Dados](/pt/reference/tipos-de-dados/): escolha correta de representação e modelagem.
-- [Estruturas de Dados](/pt/reference/estruturas-de-dados/): organização e desempenho.
-- [Lógica de Programação](/pt/reference/logica-de-programacao/): decomposição de problemas e raciocínio.
-- [Algoritmos](/pt/reference/algoritmos/): eficiência e solução de problemas.
-- [Estruturas de Dados e Algoritmos](/pt/reference/dsa/): visão consolidada para estudos mais profundos.
-- [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/): direção prática para carreira.
+- estudar sem ordem
+- consultar assunto picado sem entender o contexto
+- avançar de tecnologia sem base firme
 
-## Como usar
+Então a lógica aqui é simples: menos bagunça, mais clareza.
 
-1. Comece por [Por Onde Começar?](/pt/reference/getting-started/) se estiver definindo uma trilha.
-2. Use as páginas de referência como consulta rápida durante o estudo e a prática.
-3. Complete com um [Projeto](/pt/projects/) ou [Artigo Técnico](/pt/artigos-tecnicos/) para aplicar.
+## Se você está perdido, segue esta ordem
+
+1. [Por Onde Começar?](/pt/reference/getting-started/)
+2. [Tipos de Dados](/pt/reference/tipos-de-dados/)
+3. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
+4. [Lógica de Programação](/pt/reference/logica-de-programacao/)
+5. [Algoritmos](/pt/reference/algoritmos/)
+6. [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+
+Essa sequência resolve a maior parte da confusão mental de quem está no começo ou tentando fechar lacunas.
+
+## O que cada página resolve
+
+### [Por Onde Começar?](/pt/reference/getting-started/)
+
+Pra quem está travado sem saber o que estudar primeiro.
+
+Você vai encontrar:
+
+- ordem prática de estudo
+- o que aprender em cada etapa
+- o que fazer em paralelo sem bagunçar a base
+
+### [Tipos de Dados](/pt/reference/tipos-de-dados/)
+
+Pra quem ainda trata dado como se tudo fosse string e depois sofre com bug bobo.
+
+Você vai encontrar:
+
+- como modelar informação direito
+- quando usar inteiro, decimal, texto, booleano e null
+- erros clássicos com dinheiro, datas e identificadores
+
+### [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
+
+Pra quem quer parar de guardar tudo “de qualquer jeito”.
+
+Você vai encontrar:
+
+- quando usar lista, mapa, fila, pilha e set
+- como escolher pela necessidade do problema
+- intuição de desempenho sem virar refém de teoria
+
+### [Lógica de Programação](/pt/reference/logica-de-programacao/)
+
+Pra quem entende sintaxe, mas trava na hora de resolver.
+
+Você vai encontrar:
+
+- como quebrar problema em partes
+- como pensar em entrada, transformação e saída
+- como destravar antes de abrir o teclado
+
+### [Algoritmos](/pt/reference/algoritmos/)
+
+Pra quem quer sair do “funciona de algum jeito” e começar a pensar melhor.
+
+Você vai encontrar:
+
+- como montar solução correta
+- quando performance começa a importar
+- como reconhecer padrões de resolução
+
+### [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+
+Pra quem quer consolidar repertório de engenharia e entrevistas.
+
+Você vai encontrar:
+
+- mapa mental mais amplo de DSA
+- estruturas, algoritmos e padrões mais comuns
+- plano de estudo para sair do zero e ganhar consistência
+
+### [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/)
+
+Pra quem já está estudando e quer transformar esforço em oportunidade.
+
+Você vai encontrar:
+
+- como estruturar currículo técnico
+- como mostrar impacto real
+- o que tira candidatura do jogo rápido
+
+## Como usar esta seção sem perder tempo
+
+### Consulta rápida
+
+Use quando você já está praticando e quer revisar um conceito específico.
+
+Exemplos:
+
+- “quando eu uso map em vez de list?”
+- “dinheiro deve ser string, float ou inteiro em centavos?”
+- “por que meu algoritmo ficou lento?”
+
+### Trilha de estudo
+
+Use quando você quer seguir sequência e parar de estudar no improviso.
+
+Regra prática:
+
+- base primeiro
+- projeto depois
+- profundidade por cima da base, não no lugar dela
+
+### Revisão para entrevista
+
+Se a dor for entrevista, priorize:
+
+1. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
+2. [Algoritmos](/pt/reference/algoritmos/)
+3. [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+4. [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/)
+
+## Erro que mais atrasa dev
+
+Querer estudar tudo ao mesmo tempo:
+
+- framework
+- cloud
+- IA
+- microserviços
+- system design
+- entrevistas
+
+Sem base, isso vira só sensação de movimento.
+
+Com base, isso vira progresso de verdade.
+
+## Próximas ações
+
+- Se você está começando, abra [Por Onde Começar?](/pt/reference/getting-started/)
+- Se você quer reforçar engenharia, vá para [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+- Se você quer aplicar o que estudou, siga para [Projetos](/pt/projects/)

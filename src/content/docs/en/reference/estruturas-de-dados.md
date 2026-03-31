@@ -1,86 +1,192 @@
 ---
 title: Data Structures
-description: Learn how to organize data correctly to reduce complexity and improve performance.
+description: Learn how to organize data the right way so your code becomes clearer, faster, and much easier to maintain.
 ---
 
-A data structure is the **shape** you choose to store and manipulate information.
+A data structure is the way you organize information so the program can work with it.
 
-The same business rule can be elegant or painful depending on this choice.
+And yes, that changes the whole result.
 
-## Why this matters
+The same business rule can become:
 
-Wrong structure choices often create:
+- clean and fast code
+- or a mess full of slow lookups, duplication, and patches
 
-- slow lookups;
-- hard-to-read code;
-- duplicated logic;
-- bugs from confusing updates.
+## The most common beginner mistake
 
-Right choices give clarity and speed.
+Using lists for everything.
 
-## Core structures to study first
+Lists solve many things? Absolutely.
+
+Do they solve everything well? Not even close.
+
+When the structure is wrong, you start seeing symptoms like:
+
+- linear search everywhere
+- repeated logic
+- too many conditionals compensating for bad modeling
+- performance dropping with no obvious reason
+
+## What you need to understand first
 
 ### Array / List
 
-Great for ordered collections, index access, and simple iteration.
+Good when:
+
+- order matters
+- you iterate often
+- index access makes sense
+
+Bad when:
+
+- you need constant key-based lookup
+- you insert/remove in the middle all the time
 
 ### Stack
 
-LIFO model (last in, first out). Useful for undo, navigation history, parsing.
+LIFO model: last in, first out.
+
+Use when the flow looks like:
+
+- undo actions
+- navigation history
+- parsing
+- nested calls
 
 ### Queue
 
-FIFO model (first in, first out). Useful for async jobs and task processing.
+FIFO model: first in, first out.
+
+Use when the flow looks like:
+
+- processing queue
+- pending jobs
+- messages
+- async handling
 
 ### Map / Dictionary / HashMap
 
-Key-based access. Excellent for fast lookup (`id -> object`).
+Use when you want:
+
+- fast lookup by ID
+- key → value relationships
+- to stop scanning a list over and over
+
+Example:
+
+- `userId -> userObject`
 
 ### Set
 
-Collection with unique values only. Great for uniqueness and membership checks.
+Use when the core requirement is:
 
-## How to pick the right one
+- uniqueness
+- fast “already exists?” checks
 
-Ask these questions:
+Examples:
 
-1. Is the primary access by index, key, order, or priority?
-2. Do I need insertion order?
-3. Is this read-heavy, write-heavy, or balanced?
-4. Do values need to be unique?
+- unique emails
+- tags without repetition
+- already-processed IDs
 
-The answers usually point to the correct structure.
+## How to choose without overthinking
 
-## Common beginner mistakes
+Answer these:
 
-- using lists for everything;
-- ignoring linear search cost;
-- duplicating the same data in many places without sync strategy;
-- exposing raw structure operations instead of clear domain functions.
+1. Is the main access by index, key, order, or priority?
+2. Will I search more than I iterate?
+3. Do I need uniqueness?
+4. Does order matter?
+5. Will I process sequentially?
 
-## Practical mental model
+That already solves most decisions.
 
-In an orders system:
+## Fast mental map
 
-- `Queue` for pending order processing;
-- `Map` for fast ID lookup;
-- `Set` to prevent duplicate processing;
-- `Array` for ordered UI rendering.
+- want ordered iteration? list
+- want key-based lookup? map
+- want uniqueness? set
+- want queued processing? queue
+- want undo / backtracking? stack
 
-Each structure solves a different problem in the same workflow.
+That is the core instinct.
 
-## Practice tasks
+## Real example: order system
 
-1. Build a task manager with priorities.
-2. Use a `Map` for task lookup by ID.
-3. Use a `Set` to prevent duplicate tags.
-4. Add a queue for pending execution.
+Inside the same system, you may use:
+
+- `Array` to render orders in the UI
+- `Map` to fetch order by ID quickly
+- `Queue` to process pending orders
+- `Set` to prevent duplicate event handling
+
+Important point:
+
+serious systems often use multiple structures at once.
+
+## Complexity: what you must at least feel
+
+You do not need to memorize every number right now.
+
+But you must feel the difference between:
+
+- scanning a list item by item
+- going straight to a key
+
+As the data grows, that changes:
+
+- response time
+- processing cost
+- code clarity
+
+## Signs the structure is wrong
+
+- you keep doing `find`, `filter`, or `some` on the same collection
+- every function has to search for the same thing again
+- you create parallel lists to compensate
+- you need too many comments to explain data relationships
+
+## Common mistakes
+
+- using a list for ID lookup
+- duplicating state across many structures without a strategy
+- hiding business rules inside raw structure manipulation
+- exposing structure operations instead of domain behavior
+
+## Encapsulation is the real upgrade
+
+Choosing a structure is not enough.
+
+You also need to avoid spreading direct manipulation across the whole project.
+
+Better:
+
+- `addOrder(order)`
+- `findOrderById(id)`
+- `markOrderAsProcessed(id)`
+
+Worse:
+
+- every file touching the same list, map, and set directly
+
+## High-value exercises
+
+1. Build a task manager with list and priority handling.
+2. Use a `Map` for lookup by ID.
+3. Use a `Set` for unique tags.
+4. Use a `Queue` for pending execution.
+5. Explain out loud why each structure was chosen.
 
 ## Quick checklist
 
 - Do you understand list vs stack vs queue?
-- Do you know when to use map over list?
-- Do you account for lookup/update cost?
-- Does your structure match real business behavior?
+- Do you know when map beats list?
+- Do you see how set prevents bugs?
+- Can you justify your structure choices?
 
-If yes, you are already thinking like an engineer, not just writing code.
+If yes, you are already thinking more like an engineer and less like someone just making things run.
+
+## Next actions
+
+- Move to [Programming Logic](/en/reference/logica-de-programacao/)
+- Then connect everything in [Algorithms](/en/reference/algoritmos/)

@@ -1,76 +1,164 @@
 ---
 title: Lógica de Programação
-description: Desenvolva a habilidade de quebrar problemas em passos claros e transformar ideias em código.
+description: Aprenda a quebrar problemas em passos claros, parar de travar e começar a resolver com método.
 ---
 
-Lógica de programação é a capacidade de transformar um problema em uma sequência de passos executáveis.
+Lógica de programação é a capacidade de pegar um problema e transformar em passos executáveis.
 
-Linguagem importa, mas lógica importa muito mais no início.
+Parece simples falando assim. Na prática, é o ponto onde mais iniciante trava.
 
-## O que você precisa dominar
+E normalmente trava por um motivo bem específico:
+
+quer codar antes de pensar.
+
+## O que lógica realmente é
+
+Lógica não é decorar `if`, `for` e `while`.
+
+Isso é sintaxe.
+
+Lógica é conseguir responder:
+
+- qual é a entrada?
+- o que precisa acontecer com ela?
+- qual saída eu quero?
+- como eu sei que ficou certo?
+
+Se você responde isso antes de escrever código, metade da dificuldade some.
+
+## Os 4 blocos que você precisa dominar
 
 ### Sequência
 
-Executar instruções na ordem correta.
+Executar na ordem certa.
+
+Se a ordem estiver errada, o resultado quebra mesmo que cada linha “isoladamente” faça sentido.
 
 ### Decisão
 
-Fazer o programa escolher caminhos com base em condições (`if`, `else`, `switch`).
+Fazer o programa escolher caminhos.
+
+Exemplos:
+
+- se senha estiver errada
+- se estoque for zero
+- se nota for maior que média
 
 ### Repetição
 
-Repetir ações com controle (`for`, `while`) sem criar loop infinito.
+Repetir sem virar bagunça.
+
+Você precisa saber:
+
+- quando usar `for`
+- quando usar `while`
+- como evitar loop infinito
 
 ### Decomposição
 
-Quebrar problema grande em partes menores (funções).
+Quebrar problema grande em partes menores.
 
-## Modelo mental prático
+Essa é uma das habilidades mais importantes do começo.
 
-Sempre pense em 4 perguntas:
+## O modelo mental que mais ajuda
 
-1. Qual é a entrada?
-2. Qual transformação precisa acontecer?
-3. Qual é a saída esperada?
-4. Como validar que o resultado está correto?
+Antes de programar, faz esse mini-roteiro:
 
-Se você responde isso antes de codar, sua chance de errar cai drasticamente.
+1. escreva o problema em português simples
+2. anote entrada
+3. anote saída
+4. quebre em passos
+5. só depois transforme em código
 
-## Fluxo recomendado antes de programar
+Se você pular esse processo, a chance de travar aumenta muito.
 
-1. Escreva a regra em português simples.
-2. Quebre em passos numerados.
-3. Crie exemplos de entrada e saída.
-4. Só então codifique.
+## Exemplo direto
 
-Esse processo economiza tempo e evita retrabalho.
+Problema:
 
-## Erros comuns
+“Receber uma lista de notas e dizer se o aluno foi aprovado.”
 
-- codar sem entender o problema;
-- misturar várias responsabilidades na mesma função;
-- não testar casos de borda;
-- depender de tentativa e erro sem raciocínio.
+Pensando direito:
+
+- entrada: lista de notas
+- transformação: calcular média
+- decisão: comparar média com regra
+- saída: aprovado ou reprovado
+
+Viu? Antes de programar, a lógica já estava praticamente pronta.
+
+## Pseudocódigo: seu melhor amigo no começo
+
+Pseudocódigo não é frescura. É ponte entre ideia e implementação.
+
+Exemplo:
+
+1. receber notas
+2. somar notas
+3. dividir pela quantidade
+4. se média >= 7, aprovado
+5. senão, reprovado
+
+Agora sim faz sentido codar.
+
+## Por que tanta gente sente que “não tem lógica”
+
+Na real, muitas vezes a pessoa:
+
+- tenta problema acima do nível atual
+- não escreve a regra antes
+- ignora exemplo manual
+- fica pulando de vídeo em vídeo sem praticar
+
+Não é falta de cérebro.
+É falta de processo.
+
+## Erros mais comuns
+
+- começar a digitar sem entender o problema
+- misturar várias responsabilidades na mesma função
+- não pensar em caso de borda
+- depender só de tentativa e erro
+- confundir “rodou uma vez” com “está certo”
+
+## Como destravar quando bater branco
+
+Se você travar, faz isso:
+
+1. reduz o problema
+2. resolve manualmente com 2 ou 3 exemplos
+3. escreve os passos
+4. só então volta pro código
+
+Esse método salva demais.
 
 ## Exercícios de alto valor
 
-1. Verificar se um número é par ou ímpar.
-2. Calcular média de uma lista de notas.
-3. Validar senha com regras mínimas.
-4. Encontrar maior e menor valor de uma coleção.
-5. Simular menu interativo com opções.
+- par ou ímpar
+- maior número de uma lista
+- média de notas
+- validação de senha
+- menu simples com opções
+- contador de frequência de palavras
 
-Faça cada exercício em 3 etapas:
+Para cada exercício:
 
-- pseudocódigo;
-- implementação;
-- revisão de clareza.
+1. resolva manualmente
+2. escreva pseudocódigo
+3. implemente
+4. revise clareza
 
-## Como saber se você evoluiu
+## Como saber se você está evoluindo
 
-- Você consegue explicar seu código em voz alta sem travar.
-- Você escreve funções menores e mais legíveis.
-- Você resolve problemas parecidos cada vez mais rápido.
-- Você deixa de “decorar” e começa a “entender”.
+- você consegue explicar seu raciocínio em voz alta
+- você trava menos no “por onde começo?”
+- suas funções ficam menores
+- você erra menos por distração estrutural
+- você começa a reaproveitar padrões mentais
 
-Esse é o ponto de virada de todo bom programador iniciante.
+Esse é o ponto onde o estudo para de ser decorado e começa a virar habilidade.
+
+## Próximas ações
+
+- Vá para [Algoritmos](/pt/reference/algoritmos/)
+- Depois consolide com [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)

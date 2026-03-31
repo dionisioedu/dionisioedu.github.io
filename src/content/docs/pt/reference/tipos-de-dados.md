@@ -1,87 +1,215 @@
 ---
 title: Tipos de Dados
-description: Entenda como representar informação de forma correta para escrever código mais seguro, legível e eficiente.
+description: Entenda como representar informação corretamente para escrever código mais seguro, legível e sem bug idiota.
 ---
 
-Tipos de dados são a base de tudo em programação. Eles dizem ao computador **que tipo de informação** você quer armazenar, como essa informação deve ser interpretada e quais operações fazem sentido nela.
+Tipo de dado não é detalhe. Tipo de dado é significado.
 
-Se você erra aqui, o resto do código vira uma sequência de correções e exceções.
+Se você escolhe o tipo errado, o software até roda. Mas roda torto.
 
-## O que são tipos de dados
+É aqui que começam vários bugs clássicos:
+
+- preço salvo com precisão ruim
+- idade tratada como texto
+- status confuso
+- comparação quebrada
+- validação inconsistente
+
+## O que é tipo de dado, na prática
 
 Um tipo de dado define:
 
-- o **conjunto de valores** possíveis;
-- as **operações válidas**;
-- a **forma de armazenamento** em memória.
+- quais valores fazem sentido
+- quais operações são válidas
+- como o dado é interpretado
+- que tipo de erro pode aparecer
 
-Exemplo simples:
+Exemplo direto:
 
-- inteiro: `-2`, `0`, `42`
-- decimal: `3.14`, `0.5`
-- texto: `"Olá"`
-- lógico: `true` ou `false`
+- `42` pode ser inteiro
+- `"42"` é texto
+- `42.0` pode ser decimal
+- `true` é estado lógico
 
-## Tipos primitivos que você deve dominar
+Parece simples. Mas muita regra de negócio quebra justamente porque o sistema mistura essas coisas.
 
-### Números inteiros
+## O que você deve dominar primeiro
 
-Use quando não existe parte fracionária: quantidade de usuários, idade, número de tentativas.
+### Inteiro
 
-### Números decimais
+Use quando não existe fração.
 
-Use quando existe fração: preço, distância, temperatura.
+Exemplos:
 
-### Texto (string)
+- quantidade de usuários
+- número de tentativas
+- idade
+- posição no ranking
 
-Use para nomes, mensagens, IDs textuais, emails.
+### Decimal
+
+Use quando existe fração.
+
+Exemplos:
+
+- peso
+- temperatura
+- distância
+
+Mas cuidado: nem todo decimal serve para dinheiro.
+
+### String
+
+Use para informação textual.
+
+Exemplos:
+
+- nome
+- e-mail
+- CPF mascarado
+- identificador alfanumérico
 
 ### Booleano
 
-Use para estados binários: ativo/inativo, logado/deslogado, válido/inválido.
+Use para estados binários.
 
-## Conversão de tipos (casting)
+Exemplos:
 
-Converter de um tipo para outro é normal, mas perigoso se feito sem cuidado.
+- ativo ou inativo
+- pago ou não pago
+- válido ou inválido
 
-Erros comuns:
+### Null / ausência de valor
 
-- converter texto inválido para número;
-- perder precisão ao converter decimal para inteiro;
-- comparar tipos diferentes sem normalizar antes.
+Você também precisa entender quando o sistema está dizendo:
 
-Regra prática: **valide primeiro, converta depois**.
+- “não sei ainda”
+- “não foi informado”
+- “não existe”
 
-## Tipagem fraca vs tipagem forte
+Muita gente trata ausência de valor como string vazia, zero ou `false`. Aí começa o caos.
 
-- Tipagem forte: menos surpresas em runtime, erros aparecem mais cedo.
-- Tipagem fraca: mais flexibilidade, mas exige mais disciplina.
+## Erro clássico: achar que “parece número” já basta
 
-Nenhuma abordagem elimina bugs sozinha. O que elimina é combinação de:
+Olha isso:
 
-- modelagem correta;
-- validação de entrada;
-- testes.
+- `"10"` não é `10`
+- `"true"` não é `true`
+- `"3.14"` não é `3.14`
 
-## Boas práticas que aceleram seu aprendizado
+Se você recebe dado de formulário, API ou banco, quase sempre vai precisar validar e converter.
 
-- Dê nome claro às variáveis: `idadeUsuario` comunica mais que `x`.
-- Evite armazenar número como texto sem necessidade.
-- Centralize validações em funções utilitárias.
-- Prefira tipos explícitos em dados críticos (preço, saldo, permissões).
+Regra prática:
 
-## Exercícios práticos
+**valida primeiro, converte depois**
 
-1. Crie um cadastro simples com nome, idade e email.
-2. Valide se idade é número inteiro e maior que zero.
-3. Converta entradas textuais para os tipos corretos.
-4. Exiba mensagens de erro claras quando o tipo não for válido.
+## Dinheiro merece atenção especial
+
+Se você guardar preço como tipo decimal qualquer e sair fazendo conta sem cuidado, pode criar erro de precisão.
+
+Em sistema real, o comum é usar:
+
+- tipo decimal apropriado da linguagem
+- inteiro em centavos
+
+Exemplo mental:
+
+- `R$ 10,99` pode virar `1099` centavos
+
+Isso evita várias surpresas em cálculo financeiro.
+
+## Data e hora também são armadilha
+
+Data não é string “bonitinha”.
+
+Se você salva tudo como texto sem padrão, depois sofre para:
+
+- ordenar
+- filtrar
+- comparar
+- lidar com timezone
+
+Use tipo de data quando existir. Se precisar serializar, use formato consistente.
+
+## ID não é número só porque tem dígito
+
+Isso aqui é importante:
+
+- telefone não é número de cálculo
+- CPF não é número matemático
+- CEP não é número matemático
+- código de pedido pode parecer número, mas é identificador
+
+Se você não vai somar, dividir ou comparar como quantidade, talvez aquilo nem devesse ser tratado como número.
+
+## Como escolher o tipo certo
+
+Antes de criar variável, campo ou coluna, responde:
+
+1. Esse dado representa quantidade, estado, texto, data ou identidade?
+2. Eu vou calcular com ele ou só armazenar e exibir?
+3. Existe possibilidade de ausência?
+4. Precisão importa?
+5. Comparação exata importa?
+
+Se você responde isso, a escolha melhora muito.
+
+## Exemplos práticos de modelagem
+
+### Usuário
+
+- `nome`: string
+- `idade`: inteiro
+- `email`: string
+- `ativo`: booleano
+
+### Pedido
+
+- `idPedido`: string ou inteiro, dependendo do domínio
+- `valorTotal`: decimal apropriado ou centavos
+- `pago`: booleano
+- `criadoEm`: data/hora
+
+### Produto
+
+- `sku`: string
+- `estoque`: inteiro
+- `preco`: decimal apropriado
+
+## Erros comuns de iniciante
+
+- usar string para tudo
+- comparar número com texto
+- converter sem validar
+- usar `0` para significar “não informado”
+- usar `false` para esconder ausência de valor
+- ignorar precisão em dinheiro
+
+## Sinais de que sua modelagem está ruim
+
+- você precisa converter o mesmo campo toda hora
+- a regra de negócio está cheia de `if` estranho
+- o mesmo dado muda de formato em partes diferentes do sistema
+- bugs aparecem em cadastro, filtro e ordenação
+
+## Exercícios que valem de verdade
+
+1. Modele um cadastro de usuário com nome, idade, e-mail e ativo.
+2. Modele um pedido com valor, data e status de pagamento.
+3. Receba dados como texto e converta corretamente.
+4. Valide entradas inválidas sem quebrar a aplicação.
 
 ## Checklist rápido
 
 - Você sabe quando usar inteiro vs decimal?
+- Você entende que ID nem sempre é número?
+- Você trata ausência de valor com cuidado?
+- Você sabe que dinheiro merece modelagem séria?
 - Você valida antes de converter?
-- Você evita comparar tipos incompatíveis?
-- Você entende o impacto do tipo na regra de negócio?
 
-Se a resposta for “sim” para esses pontos, sua base já está muito melhor que a média de quem está começando.
+Se você fechar esses pontos, já sai muito na frente de quem programa “no improviso”.
+
+## Próximas ações
+
+- Vá para [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
+- Depois consolide com [Lógica de Programação](/pt/reference/logica-de-programacao/)
