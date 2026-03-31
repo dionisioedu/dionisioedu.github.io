@@ -71,12 +71,12 @@ function buildLocaleConfig(locale) {
           href: "/en/reference/algoritmos/",
         },
         {
-          id: "dsa",
-          title: "Data Structures & Algorithms",
-          short: "Core toolkit",
+          id: "ascii-table",
+          title: "ASCII Table",
+          short: "Text and bytes",
           description:
-            "A practical summary of classic DS&A concepts used in interviews and production.",
-          href: "/en/reference/dsa/",
+            "Understand how characters map to numbers and strengthen your mental model of text representation.",
+          href: "/en/reference/tabela-ascii/",
         },
         {
           id: "articles",
@@ -151,12 +151,12 @@ function buildLocaleConfig(locale) {
         href: "/pt/reference/algoritmos/",
       },
       {
-        id: "dsa",
-        title: "Estruturas e Algoritmos",
-        short: "Kit essencial",
+        id: "ascii-table",
+        title: "Tabela ASCII",
+        short: "Texto e bytes",
         description:
-          "Resumo prático dos conceitos clássicos usados em entrevistas e no dia a dia de engenharia.",
-        href: "/pt/reference/dsa/",
+          "Entenda como caracteres viram números e melhore sua base de representação textual.",
+        href: "/pt/reference/tabela-ascii/",
       },
       {
         id: "articles",

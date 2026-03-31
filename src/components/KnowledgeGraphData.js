@@ -16,12 +16,12 @@ export const graphData = {
   // Primary domains (Level 1)
   domains: [
     {
-      id: "Algorithms & Data Structures",
+      id: "Developer Foundations",
       level: 1,
       radius: 0.18,
-      url: "/pt/reference/dsa/",
+      url: "/pt/reference/",
       color: 0x3b82f6, // blue
-      description: "Análise de complexidade, estruturas de dados e algoritmos fundamentais",
+      description: "Tipos de dados, estruturas, logica e algoritmos fundamentais",
       icon: "∑",
     },
     {
@@ -64,22 +64,22 @@ export const graphData = {
 
   // Specific topics (Level 2)
   topics: [
-    // Under DSA
+    // Under Developer Foundations
     {
       id: "Complexity Analysis",
       level: 2,
-      parent: "Algorithms & Data Structures",
+      parent: "Developer Foundations",
       radius: 0.12,
       url: "/pt/artigos-tecnicos/bigo/",
       description: "Notação Big-O, análise assintótica e medida de desempenho",
     },
     {
-      id: "Algorithm Design",
+      id: "Data Structures",
       level: 2,
-      parent: "Algorithms & Data Structures",
+      parent: "Developer Foundations",
       radius: 0.12,
-      url: "/pt/reference/dsa/",
-      description: "Estratégias de design, paradigmas e implementações",
+      url: "/pt/reference/estruturas-de-dados/",
+      description: "Arrays, listas ligadas, pilhas, filas, mapas, heaps, arvores e grafos",
     },
 
     // Under Software Engineering
@@ -150,15 +150,15 @@ export const graphData = {
   // Edges connecting nodes
   edges: [
     // Root to primary domains
-    ["Learning Hub", "Algorithms & Data Structures"],
+    ["Learning Hub", "Developer Foundations"],
     ["Learning Hub", "Software Engineering"],
     ["Learning Hub", "Technical Articles"],
     ["Learning Hub", "Code & Tutorials"],
     ["Learning Hub", "Architecture & Design"],
 
     // Domains to topics
-    ["Algorithms & Data Structures", "Complexity Analysis"],
-    ["Algorithms & Data Structures", "Algorithm Design"],
+    ["Developer Foundations", "Complexity Analysis"],
+    ["Developer Foundations", "Data Structures"],
     ["Software Engineering", "Code Quality"],
     ["Software Engineering", "Reliability Engineering"],
     ["Software Engineering", "Best Practices"],
@@ -168,7 +168,7 @@ export const graphData = {
     ["Technical Articles", "Learning Resources"],
 
     // Cross-domain connections (interesting relationships)
-    ["Complexity Analysis", "Algorithm Design"],
+    ["Complexity Analysis", "Data Structures"],
     ["Code Quality", "Best Practices"],
     ["Design Patterns", "System Design"],
     ["Reliability Engineering", "Best Practices"],

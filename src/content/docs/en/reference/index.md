@@ -23,7 +23,7 @@ So the idea here is simple: less chaos, more clarity.
 4. [Data Structures](/en/reference/estruturas-de-dados/)
 5. [Programming Logic](/en/reference/logica-de-programacao/)
 6. [Algorithms](/en/reference/algoritmos/)
-7. [Data Structures & Algorithms](/en/reference/dsa/)
+7. review the patterns in [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
 
 That sequence fixes most of the mental mess beginners deal with.
 
@@ -66,8 +66,8 @@ For the developer who wants to stop storing everything “however works.”
 
 You will find:
 
-- when to use lists, maps, queues, stacks, and sets
-- how to choose based on the problem
+- when to use arrays, linked lists, stacks, queues, deques, maps, sets, heaps, trees, and graphs
+- diagrams, implementations, and operation comparisons
 - performance intuition without turning everything into theory
 
 ### [Programming Logic](/en/reference/logica-de-programacao/)
@@ -89,16 +89,6 @@ You will find:
 - how to build correct solutions
 - when performance starts to matter
 - how to recognize solution patterns
-
-### [Data Structures & Algorithms](/en/reference/dsa/)
-
-For the developer who wants to consolidate engineering and interview repertoire.
-
-You will find:
-
-- a broader mental map of DS&A
-- the most common structures, algorithms, and patterns
-- a study plan to go from zero to consistent
 
 ### [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/)
 
@@ -138,8 +128,7 @@ If the pain point is interviews, prioritize:
 
 1. [Data Structures](/en/reference/estruturas-de-dados/)
 2. [Algorithms](/en/reference/algoritmos/)
-3. [Data Structures & Algorithms](/en/reference/dsa/)
-4. [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/)
+3. [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/)
 
 ## The mistake that slows developers down most
 
@@ -160,5 +149,5 @@ With fundamentals, it becomes real progress.
 
 - If you are starting, open [Where to Start?](/en/reference/getting-started/)
 - If you want to understand text, bytes, and representation, read the [ASCII Table](/en/reference/tabela-ascii/)
-- If you want stronger engineering fundamentals, go to [Data Structures & Algorithms](/en/reference/dsa/)
+- If you want stronger engineering fundamentals, go to [Data Structures](/en/reference/estruturas-de-dados/) and then [Algorithms](/en/reference/algoritmos/)
 - If you want to apply what you learned, continue to [Projects](/en/projects/)

@@ -17,7 +17,7 @@ This is the deep-dive index of the portal. These pieces focus on engineering con
 ## Recommended next steps
 
 - [Where to Start?](/en/reference/getting-started/)
-- [Data Structures & Algorithms](/en/reference/dsa/)
+- [Data Structures](/en/reference/estruturas-de-dados/)
 - [Projects](/en/projects/)
 
 > If you want a more guided editorial path, use the [Blog](/en/blog/) hub too.

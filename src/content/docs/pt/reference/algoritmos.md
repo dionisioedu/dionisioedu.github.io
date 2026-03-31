@@ -201,5 +201,5 @@ Se sim, seu raciocínio algorítmico já está ficando forte de verdade.
 
 ## Próximas ações
 
-- Consolide com [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+- Consolide com [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 - Depois aplique esse raciocínio em [Projetos](/pt/projects/)

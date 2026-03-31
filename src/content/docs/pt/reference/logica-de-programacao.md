@@ -1575,7 +1575,7 @@ Ela melhora muito quando você combina com:
 - [Tipos de Dados](/pt/reference/tipos-de-dados/)
 - [Algoritmos](/pt/reference/algoritmos/)
 - [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
-- [DSA](/pt/reference/dsa/)
+- [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 
 Porque toda decisão lógica depende do tipo certo de dado e da estrutura certa de processamento.
 
@@ -1677,4 +1677,4 @@ Esse é o momento em que programação deixa de parecer mágica e começa a vira
 
 - Reforce a base em [Tipos de Dados](/pt/reference/tipos-de-dados/)
 - Continue em [Algoritmos](/pt/reference/algoritmos/)
-- Depois consolide com [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+- Depois consolide com [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e [Algoritmos](/pt/reference/algoritmos/)

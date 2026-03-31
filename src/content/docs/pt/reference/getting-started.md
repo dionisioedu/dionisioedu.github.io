@@ -33,7 +33,7 @@ Se você quer pensar como dev de verdade, a ordem certa começa aqui:
 2. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 3. [Lógica de Programação](/pt/reference/logica-de-programacao/)
 4. [Algoritmos](/pt/reference/algoritmos/)
-5. [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+5. consolidar padrões com [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e [Algoritmos](/pt/reference/algoritmos/)
 
 :::note
 Pra se destacar nessa área, você vai estudar muito, ler muito e quebrar muita cabeça. Isso não é defeito da profissão. Isso é a profissão.
@@ -97,7 +97,7 @@ Meta dessa etapa:
 - entender custo
 - melhorar sem complicar à toa
 
-### 5. DSA consolidado
+### 5. Consolidação de estruturas e algoritmos
 
 Depois da base, você junta estrutura + algoritmo + padrão de problema.
 

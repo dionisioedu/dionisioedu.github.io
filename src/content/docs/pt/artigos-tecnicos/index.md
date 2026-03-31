@@ -17,7 +17,7 @@ Este é o índice dos textos de aprofundamento do portal. Aqui entram conteúdos
 ## Próximos saltos recomendados
 
 - [Por Onde Começar?](/pt/reference/getting-started/)
-- [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+- [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 - [Projetos](/pt/projects/)
 
 > Se você quer um caminho mais editorial e guiado, use também o [Blog](/pt/blog/).

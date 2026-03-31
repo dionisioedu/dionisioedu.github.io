@@ -38,7 +38,7 @@ If you want to think like a real developer, the right order starts here:
 2. [Data Structures](/en/reference/estruturas-de-dados/)
 3. [Programming Logic](/en/reference/logica-de-programacao/)
 4. [Algorithms](/en/reference/algoritmos/)
-5. [Data Structures & Algorithms](/en/reference/dsa/)
+5. consolidate patterns with [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
 
 :::note
 To stand out in this field, you will study a lot, read a lot, and struggle through a lot of hard problems. That is not a flaw in the profession. That is the profession.
@@ -102,7 +102,7 @@ Goal of this stage:
 - understand cost
 - improve without overcomplicating
 
-### 5. Consolidated DSA
+### 5. Consolidating data structures and algorithms
 
 After the foundation, you combine structure + algorithm + pattern recognition.
 

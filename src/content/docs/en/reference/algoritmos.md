@@ -201,5 +201,5 @@ If yes, your algorithmic thinking is getting genuinely stronger.
 
 ## Next actions
 
-- Consolidate with [Data Structures & Algorithms](/en/reference/dsa/)
+- Consolidate with [Data Structures](/en/reference/estruturas-de-dados/)
 - Then apply the thinking in [Projects](/en/projects/)

@@ -1574,7 +1574,7 @@ It gets much stronger when combined with:
 - [Data Types](/en/reference/tipos-de-dados/)
 - [Algorithms](/en/reference/algoritmos/)
 - [Data Structures](/en/reference/estruturas-de-dados/)
-- [DSA](/en/reference/dsa/)
+- [Data Structures](/en/reference/estruturas-de-dados/)
 
 Because every logical decision depends on the right data representation and the right processing structure.
 
@@ -1676,4 +1676,4 @@ That is the moment programming stops looking like magic and starts turning into 
 
 - Strengthen the foundation in [Data Types](/en/reference/tipos-de-dados/)
 - Continue to [Algorithms](/en/reference/algoritmos/)
-- Then consolidate with [Data Structures & Algorithms](/en/reference/dsa/)
+- Then consolidate with [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)

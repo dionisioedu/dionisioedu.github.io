@@ -17,7 +17,7 @@ This page is the editorial hub of the portal: the place to discover what is wort
 ## Good companion reads
 
 - [Where to Start?](/en/reference/getting-started/): the best entry point if you are structuring your studies.
-- [Data Structures & Algorithms](/en/reference/dsa/): strong reinforcement for interviews and real engineering work.
+- [Data Structures](/en/reference/estruturas-de-dados/): a stronger reference for interviews, modeling, and day-to-day performance work.
 - [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/): material for clearer positioning and communication.
 
 ## Projects to study alongside the writing

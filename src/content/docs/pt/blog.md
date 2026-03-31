@@ -17,7 +17,7 @@ Esta página funciona como o hub editorial do portal: o lugar para descobrir o q
 ## Leituras que combinam bem
 
 - [Por Onde Começar?](/pt/reference/getting-started/): melhor ponto de entrada para quem está estruturando os estudos.
-- [Estruturas de Dados e Algoritmos](/pt/reference/dsa/): reforço importante para entrevistas e engenharia do dia a dia.
+- [Estruturas de Dados](/pt/reference/estruturas-de-dados/): referência forte para entrevistas, modelagem e performance no dia a dia.
 - [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/): material para posicionamento profissional.
 
 ## Projetos para estudar junto com os textos
