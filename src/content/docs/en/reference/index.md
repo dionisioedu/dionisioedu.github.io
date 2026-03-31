@@ -19,10 +19,11 @@ So the idea here is simple: less chaos, more clarity.
 
 1. [Where to Start?](/en/reference/getting-started/)
 2. [Data Types](/en/reference/tipos-de-dados/)
-3. [Data Structures](/en/reference/estruturas-de-dados/)
-4. [Programming Logic](/en/reference/logica-de-programacao/)
-5. [Algorithms](/en/reference/algoritmos/)
-6. [Data Structures & Algorithms](/en/reference/dsa/)
+3. [ASCII Table](/en/reference/tabela-ascii/)
+4. [Data Structures](/en/reference/estruturas-de-dados/)
+5. [Programming Logic](/en/reference/logica-de-programacao/)
+6. [Algorithms](/en/reference/algoritmos/)
+7. [Data Structures & Algorithms](/en/reference/dsa/)
 
 That sequence fixes most of the mental mess beginners deal with.
 
@@ -47,6 +48,17 @@ You will find:
 - how to model information properly
 - when to use integers, decimals, text, booleans, and null
 - common mistakes with money, dates, and identifiers
+- bits, casting, characters, memory representation, and binary basics
+
+### [ASCII Table](/en/reference/tabela-ascii/)
+
+For the developer who wants to fully understand why a character is also a number.
+
+You will find:
+
+- the complete ASCII table
+- decimal, hexadecimal, and binary side by side
+- historical and practical grounding for parsing, text, and bytes
 
 ### [Data Structures](/en/reference/estruturas-de-dados/)
 
@@ -147,5 +159,6 @@ With fundamentals, it becomes real progress.
 ## Next actions
 
 - If you are starting, open [Where to Start?](/en/reference/getting-started/)
+- If you want to understand text, bytes, and representation, read the [ASCII Table](/en/reference/tabela-ascii/)
 - If you want stronger engineering fundamentals, go to [Data Structures & Algorithms](/en/reference/dsa/)
 - If you want to apply what you learned, continue to [Projects](/en/projects/)

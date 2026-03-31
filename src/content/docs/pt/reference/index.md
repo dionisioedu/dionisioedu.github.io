@@ -19,10 +19,11 @@ Então a lógica aqui é simples: menos bagunça, mais clareza.
 
 1. [Por Onde Começar?](/pt/reference/getting-started/)
 2. [Tipos de Dados](/pt/reference/tipos-de-dados/)
-3. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
-4. [Lógica de Programação](/pt/reference/logica-de-programacao/)
-5. [Algoritmos](/pt/reference/algoritmos/)
-6. [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
+3. [Tabela ASCII](/pt/reference/tabela-ascii/)
+4. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
+5. [Lógica de Programação](/pt/reference/logica-de-programacao/)
+6. [Algoritmos](/pt/reference/algoritmos/)
+7. [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
 
 Essa sequência resolve a maior parte da confusão mental de quem está no começo ou tentando fechar lacunas.
 
@@ -47,6 +48,17 @@ Você vai encontrar:
 - como modelar informação direito
 - quando usar inteiro, decimal, texto, booleano e null
 - erros clássicos com dinheiro, datas e identificadores
+- bits, casting, caracteres, representação na memória e base binária
+
+### [Tabela ASCII](/pt/reference/tabela-ascii/)
+
+Pra quem quer entender de vez por que caractere também é número.
+
+Você vai encontrar:
+
+- tabela ASCII completa
+- decimal, hexadecimal e binário lado a lado
+- base histórica e prática para parsing, texto e bytes
 
 ### [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 
@@ -147,5 +159,6 @@ Com base, isso vira progresso de verdade.
 ## Próximas ações
 
 - Se você está começando, abra [Por Onde Começar?](/pt/reference/getting-started/)
+- Se você quer entender texto, bytes e representação, leia [Tabela ASCII](/pt/reference/tabela-ascii/)
 - Se você quer reforçar engenharia, vá para [Estruturas de Dados e Algoritmos](/pt/reference/dsa/)
 - Se você quer aplicar o que estudou, siga para [Projetos](/pt/projects/)
