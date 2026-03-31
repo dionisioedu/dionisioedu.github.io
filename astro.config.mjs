@@ -37,21 +37,21 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             property: 'og:image',
-            content: 'https://dionisio.dev/assets/images/banner.jpg',
+            content: 'https://dionisio.dev/assets/images/social-card.png',
           },
         },
         {
           tag: 'meta',
           attrs: {
             property: 'og:image:width',
-            content: '1440',
+            content: '1200',
           },
         },
         {
           tag: 'meta',
           attrs: {
             property: 'og:image:height',
-            content: '900',
+            content: '630',
           },
         },
         {
@@ -65,7 +65,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             name: 'twitter:image',
-            content: 'https://dionisio.dev/assets/images/banner.jpg',
+            content: 'https://dionisio.dev/assets/images/social-card.png',
           },
         },
       ],
