@@ -3,7 +3,7 @@ title: 'IA Vai Acabar com os Devs? Para o Iniciante Desanimado: NÃO PARA DE EST
 description: 'IA Vai Acabar com os Devs? Para o Iniciante Desanimado: NÃO PARA DE ESTUDAR, MANO – O Mercado Vai Criar MUITO Mais Vagas do que Perder'
 ---
 
-E aí, galera da bolhaDev? Todo dia eu vejo no X: iniciante postando “vou desistir de programar, IA vai substituir todo mundo”, intermediário falando “layoffs em tech, 2026 vai ser o caos”. Eu entendo o desânimo. Eu sou C/C++/Java dev há anos e hoje trabalho como AI Engineer. Já passei por hype, por medo, por “vaga júnior sumiu”. Mas te falo com a mão no peito e dados na mesa: a IA NÃO vai acabar com os empregos em tech. Ela vai multiplicar eles – e o cenário continua MUITO favorável pra quem estuda.
+E aí, galera da bolhaDev? Todo dia eu vejo no X: iniciante postando “vou desistir de programar, IA vai substituir todo mundo”, intermediário falando “layoffs em tech, 2026 vai ser o caos”. Eu entendo o desânimo. Eu sou C/C++/Java dev há anos e estou me preparando para transacionar para Engenheiro de IA. Já passei por hype, por medo, por “vaga júnior sumiu”. Mas te falo com a mão no peito e dados na mesa: a IA NÃO vai acabar com os empregos em tech. Ela vai multiplicar eles – e o cenário continua MUITO favorável pra quem estuda.
 
 Olha os números frios do WEF Future of Jobs 2025: até 2030 a IA e as tecnologias vão criar 170 milhões de novos empregos no mundo… e deslocar só 92 milhões. Saldo positivo de 78 milhões de vagas. No Brasil o papo é ainda mais quente: Engenheiro de IA/ML é o cargo que mais cresce pelo terceiro ano seguido (LinkedIn). Vagas de automação com IA explodiram quase 1000% em pouco tempo. Tem mais de 530 mil vagas de TI abertas sem gente qualificada pra preencher. Mercado de TI aqui deve crescer 18% em 2026 só por causa da digitalização + IA.
 
@@ -35,7 +35,7 @@ Iniciante: não desiste. Começa pequeno, usa IA pra aprender mais rápido, mas 
 
 Intermediário/Avançado: evolui. Transforma seu conhecimento em “IA + seu domínio”.
 
-Tracke suas skills (eu criei o MyGaps exatamente pra isso – mapeia +1400 skills em dev, cyber, game dev e IA com gráficos e recomendações pra você saber o que estudar agora).
+Tracke suas skills (eu criei o [MyGaps](https://mygaps.app) exatamente pra isso – mapeia +1400 skills em dev, cyber, game dev e IA com gráficos e recomendações pra você saber o que estudar agora).
 
 E aí, qual é o seu nível? Iniciante que tá pensando em parar? Ou já tá se preparando pra implementar IA? Comenta aqui embaixo: qual o primeiro setor que você quer atacar com IA? Saúde? Agro? Finanças?
 

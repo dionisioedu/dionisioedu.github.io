@@ -3,7 +3,7 @@ title: 'Will AI End Developer Jobs? For the Discouraged Beginner: DO NOT STOP ST
 description: 'Will AI End Developer Jobs? For the Discouraged Beginner: DO NOT STOP STUDYING, MAN - The Market Will Create WAY More Jobs Than It Loses'
 ---
 
-Hey, bolhaDev crowd. Every day I see it on X: beginners posting “I’m going to quit programming, AI will replace everyone,” intermediates saying “tech layoffs, 2026 is going to be chaos.” I understand the discouragement. I’ve been a C/C++/Java dev for years and today I work as an AI Engineer. I’ve already gone through hype cycles, fear, and “junior roles disappeared.” But I’m telling you from the heart, with data on the table: AI is NOT going to end jobs in tech. It’s going to multiply them, and the scenario remains VERY favorable for those who keep studying.
+Hey, dev Twitter crowd. Every day I see it on X: beginners posting “I’m going to quit programming, AI will replace everyone,” intermediates saying “tech layoffs, 2026 is going to be chaos.” I understand the discouragement. I’ve been a C/C++/Java dev for years and I’m preparing to transition into an AI Engineer role. I’ve already gone through hype cycles, fear, and “junior roles disappeared.” But I’m telling you from the heart, with data on the table: AI is NOT going to end jobs in tech. It’s going to multiply them, and the scenario remains VERY favorable for those who keep studying.
 
 Look at the cold numbers from the WEF Future of Jobs 2025: by 2030, AI and related technologies will create 170 million new jobs worldwide and displace only 92 million. That is a positive balance of 78 million jobs. In Brazil the story is even hotter: AI/ML Engineer is the fastest-growing role for the third year in a row (LinkedIn). AI automation job openings exploded by nearly 1000% in a short period. There are more than 530 thousand open IT jobs here without enough qualified people to fill them. The IT market in Brazil is expected to grow 18% in 2026 because of digitalization plus AI.
 
@@ -35,7 +35,7 @@ Beginner: do not give up. Start small, use AI to learn faster, but write the cod
 
 Intermediate/Advanced: evolve. Turn your knowledge into “AI + your domain.”
 
-Track your skills (I created MyGaps exactly for this - it maps 1400+ skills across dev, cyber, game dev, and AI with charts and recommendations so you know what to study now).
+Track your skills (I created [MyGaps](https://mygaps.app) exactly for this - it maps 1400+ skills across dev, cyber, game dev, and AI with charts and recommendations so you know what to study now).
 
 So, what is your level? A beginner thinking about quitting? Or are you already preparing to implement AI? Comment below: what is the first sector you want to attack with AI? Healthcare? Agribusiness? Finance?
 
