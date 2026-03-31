@@ -3,7 +3,7 @@ title: 'IA Vai Acabar com os Devs? Para o Iniciante Desanimado: NÃO PARA DE EST
 description: 'IA Vai Acabar com os Devs? Para o Iniciante Desanimado: NÃO PARA DE ESTUDAR, MANO – O Mercado Vai Criar MUITO Mais Vagas do que Perder'
 ---
 
-E aí, galera da bolhaDev? Todo dia eu vejo no X: iniciante postando “vou desistir de programar, IA vai substituir todo mundo”, intermediário falando “layoffs em tech, 2026 vai ser o caos”. Eu entendo o desânimo. Eu sou C/C++/Java dev há anos e estou me preparando para transacionar para Engenheiro de IA. Já passei por hype, por medo, por “vaga júnior sumiu”. Mas te falo com a mão no peito e dados na mesa: a IA NÃO vai acabar com os empregos em tech. Ela vai multiplicar eles – e o cenário continua MUITO favorável pra quem estuda.
+E aí, galera da bolhaDev? Todo dia eu vejo no X: iniciante postando “vou desistir de programar, IA vai substituir todo mundo”, intermediário falando “layoffs em tech, 2026 vai ser o caos”. Eu entendo o desânimo. Eu sou C/C++/Java dev há anos e estou me preparando para transicionar para Engenheiro de IA. Já passei por hype, por medo, por “vaga júnior sumiu”. Mas te falo com a mão no peito e dados na mesa: a IA NÃO vai acabar com os empregos em tech. Ela vai multiplicar eles – e o cenário continua MUITO favorável pra quem estuda.
 
 Olha os números frios do WEF Future of Jobs 2025: até 2030 a IA e as tecnologias vão criar 170 milhões de novos empregos no mundo… e deslocar só 92 milhões. Saldo positivo de 78 milhões de vagas. No Brasil o papo é ainda mais quente: Engenheiro de IA/ML é o cargo que mais cresce pelo terceiro ano seguido (LinkedIn). Vagas de automação com IA explodiram quase 1000% em pouco tempo. Tem mais de 530 mil vagas de TI abertas sem gente qualificada pra preencher. Mercado de TI aqui deve crescer 18% em 2026 só por causa da digitalização + IA.
 
@@ -21,7 +21,7 @@ A IA aumenta produtividade pra caralho. Empresa que antes precisava de 10 devs a
 
 Pra você que tá começando agora e tá desanimado:
 
-Para de rolar o feed e voltar pro VS Code. O iniciante que estudar hoje vai entrar no mercado quando a demanda por quem sabe implementar IA estiver explodindo. A IA não substitui quem pensa, arquiteta e resolve problema real. Ela substitui tarefa repetitiva. Quem souber codar + usar IA como ferramenta vai estar na frente.
+Para de rolar o feed e volta pro VS Code. O iniciante que estudar hoje vai entrar no mercado quando a demanda por quem sabe implementar IA estiver explodindo. A IA não substitui quem pensa, arquiteta e resolve problema real. Ela substitui tarefa repetitiva. Quem souber codar + usar IA como ferramenta vai estar na frente.
 
 Pra intermediário e avançado:
 

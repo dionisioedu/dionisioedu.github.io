@@ -1,23 +1,35 @@
 ---
 title: Blog
-description: 'News, behind-the-scenes notes, and insights on tech and career.'
+description: 'Editorial hub with recent highlights, recommended reading, and practical follow-up paths.'
 ---
 
 # Blog
 
-Short updates, reflections, and behind-the-scenes notes about career, productivity, and building software.
-
-## What you will find here
-
-- Weekly learnings and highlights
-- Career and market insights
-- Project notes and architecture decisions
-- Announcements and releases from dionisio.dev
+This page is the editorial hub of the portal: the place to discover what is worth reading now and where to go next.
 
 ## Recent highlights
 
-- How I choose the next topics for the site
-- What I learned while structuring my first ebook
-- A simple checklist to organize technical studies
+- [Will AI End Developer Jobs?](/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/): market momentum, positioning, and why studying still matters.
+- [Clean Code Summary](/en/artigos-tecnicos/clean-code/): classic principles turned into a fast, practical read.
+- [What is SRE?](/en/artigos-tecnicos/sre/): reliability, incidents, and operations engineering.
+- [Understanding Big-O Notation](/en/artigos-tecnicos/bigo/): complexity and performance with concrete examples.
 
-> Want updates? Newsletter is coming soon.
+## Good companion reads
+
+- [Where to Start?](/en/reference/getting-started/): the best entry point if you are structuring your studies.
+- [Data Structures & Algorithms](/en/reference/dsa/): strong reinforcement for interviews and real engineering work.
+- [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/): material for clearer positioning and communication.
+
+## Projects to study alongside the writing
+
+- [SportPulse.today](/en/projects/sportpulse/): backend, performance, and external integrations.
+- [Amorfy](/en/projects/amorfy/): an interactive product with questionnaire flow and guided UX.
+- [Wheel Of List](/en/projects/wheel-of-list/): a lean app to study utility, animation, and user feedback.
+
+## How to use this hub
+
+1. Pick one featured article.
+2. Follow it with a related reference page to strengthen the foundation.
+3. Finish with a real project to connect theory and delivery.
+
+> Want the full list? Open the [Technical Articles](/en/artigos-tecnicos/) index.

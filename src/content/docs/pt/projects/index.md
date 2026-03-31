@@ -1,72 +1,37 @@
 ---
 title: Projetos
-description: 'Projetos desenvolvidos pela Dionisio Software. O seu projeto pode ser o próximo!'
+description: 'Projetos reais para estudar arquitetura, produto, experiência e decisões de implementação.'
 ---
 
-<!-- Main -->
-<div id="main">
+# Projetos
 
-<!-- Two -->
-<section id="two" class="spotlights">
-	<section>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3><a href="/projects/sportpulse">SportPulse.today</a></h3>
-                    <h5>Buscador e gerador de notícias em tempo real</h5>
-				</header>
-                <br>
-                <a href="https://sportpulse.today" class="image">
-                    <img src="/assets/images/sportpulse.png" alt="" data-position="25% 25%" />
-                </a>
-                <br>
-				<p><b>SportPulse</b> é uma aplicação de backend em C++ desenvolvida com foco em alta performance, modularidade e integração com serviços externos.
-                O projeto centraliza, busca e expõe dados esportivos por meio de uma API REST moderna.</p>
-				<a href="https://sportpulse.today" class="button">Visitar</a>
-			</div>
-		</div>
-	</section>
-    <hr style="border: none; height: 1px; background: rgba(255,255,255,0.1); margin: 40px 0;">
-	<section>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3><a href="http://www.amorfy.com.br">Amorfy</a></h3>
-                    <h5>Teste de Afinidades do Casal</h5>
-				</header>
-                <br>
-           		<a href="http://www.amorfy.com.br" class="image">
-                    <img src="/assets/images/amorfy.png" alt="" data-position="center center" />
-                </a>
-                <br>
-				<p><b>Amorfy</b> é um site interativo que utiliza conceitos de <b>psicologia</b> e <b>psicanálise</b> para ajudar
-				 você a compreender melhor sua vida amorosa. Através de um questionário dinâmico de 10 níveis,
-				 ele avalia sua personalidade, emoções e padrões de relacionamento, fornecendo um insight
-				 personalizado e místico no final.</p>
-				<a href="http://www.amorfy.com.br" class="button">Visitar</a>
-			</div>
-		</div>
-	</section>
-    <hr style="border: none; height: 1px; background: rgba(255,255,255,0.1); margin: 40px 0;">
-	<section>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3><a href="http://wheeloflist.com">Wheel Of List</a></h3>
-                    <h5>Roleta de Nomes</h5>
-				</header>
-                <br>
-           	    <a href="http://wheeloflist.com" class="image">
-                    <img src="/assets/images/wheel-of-list.png" alt="" data-position="top center" />
-                </a>
-                <br>
-				<p>Uma aplicação web para sorteio de nomes de uma lista na forma de uma roleta.
-                Totalmente frontend, com sons e animação.
-                Além disso o site possui mais duas ferramentas para sorteio de números aleatórios e jogo de dados.</p>
-				<a href="http://wheeloflist.com" class="button">Visitar</a>
-			</div>
-		</div>
-	</section>
-</section>
+Esta seção reúne projetos reais do ecossistema Dionisio. O foco aqui não é só mostrar o produto final, mas destacar o que cada projeto ensina para quem desenvolve.
 
-</div>
+## Projetos em destaque
+
+### [SportPulse.today](/pt/projects/sportpulse/)
+
+Buscador e gerador de notícias esportivas em tempo real com backend em C++.
+
+- O que estudar aqui: performance, modularidade, backend e integração com serviços externos.
+- Link do projeto: [sportpulse.today](https://sportpulse.today)
+
+### [Amorfy](/pt/projects/amorfy/)
+
+Produto interativo com questionário guiado e experiência orientada por perfil.
+
+- O que estudar aqui: fluxo de produto, interface guiada, experiência do usuário e comunicação de resultado.
+- Link do projeto: [www.amorfy.com.br](http://www.amorfy.com.br)
+
+### [Wheel Of List](/pt/projects/wheel-of-list/)
+
+Aplicação frontend para sorteio com roleta, animação e ferramentas auxiliares.
+
+- O que estudar aqui: utilidade imediata, microinterações, feedback visual e UX de ferramenta simples.
+- Link do projeto: [wheeloflist.com](http://wheeloflist.com)
+
+## Como aproveitar melhor esta seção
+
+1. Abra a página detalhada do projeto.
+2. Entenda o problema e as escolhas de implementação.
+3. Use a seção de próximos passos para transformar isso em estudo ativo.

@@ -31,10 +31,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Instalação de dependências
-        run: npm install
+        run: npm ci
 
-      - name: Build do site
-        run: npm run build
+      - name: Verificação do portal
+        run: npm run verify
 
       - name: Upload do artefato
         uses: actions/upload-pages-artifact@v3

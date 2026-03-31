@@ -1,187 +1,154 @@
 ---
 title: Home
-description: Your engineering portal — docs, decisions, standards, and projects in one place.
+description: A developer portal with practical references, technical articles, real projects, and clear learning paths.
 hero:
-  title: Dev Hub
-  tagline: Ship faster with clarity — playbooks, patterns, and project knowledge that don’t rot.
-  image:
-    html: |
-      <svg viewBox="0 0 480 220" role="img" aria-label="Portal illustration" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="currentColor" stop-opacity="0.18"/>
-            <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
-          </linearGradient>
-          <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="black" flood-opacity="0.18"/>
-          </filter>
-        </defs>
-        <rect x="22" y="22" width="436" height="176" rx="22" fill="url(#g)" filter="url(#s)"/>
-        <rect x="56" y="58" width="210" height="16" rx="8" fill="currentColor" fill-opacity="0.28"/>
-        <rect x="56" y="88" width="300" height="12" rx="6" fill="currentColor" fill-opacity="0.18"/>
-        <rect x="56" y="112" width="270" height="12" rx="6" fill="currentColor" fill-opacity="0.14"/>
-        <rect x="56" y="142" width="120" height="34" rx="14" fill="currentColor" fill-opacity="0.22"/>
-        <path d="M338 70c32 0 58 26 58 58s-26 58-58 58-58-26-58-58 26-58 58-58Z" fill="currentColor" fill-opacity="0.10"/>
-        <path d="M338 88c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40Z" fill="currentColor" fill-opacity="0.16"/>
-        <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
-      </svg>
+  title: Developer Portal
+  tagline: Learn the fundamentals, look things up fast, explore real projects, and always know the next step.
   actions:
-    - text: View eBooks
-      link: /en/books/
-    - text: Visit the Shop
-      link: /en/shop/
+    - text: Start with the Fundamentals
+      link: /en/reference/getting-started/
+    - text: Explore Articles
+      link: /en/artigos-tecnicos/
 ---
 
 import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
-import KnowledgeGraph3D from '../../../components/KnowledgeGraph3D.astro';
-import HeroLensFlareBg from '../../../components/HeroLensFlareBg.astro';
 
-<HeroLensFlareBg />
+## What you will find here
 
-<KnowledgeGraph3D height={500} />
+This portal is designed to support real developer work:
+
+- **reliable foundations** you can study without jumping between random resources
+- **technical articles** with opinion, context, and practical application
+- **real projects** with decisions, trade-offs, and next actions
+- **career shortcuts** for resumes, study direction, and professional growth
+
+<Aside type="note" title="Portal goal">
+The goal is not just to publish content. It is to help you decide **what to study, what to reference, and where to grow next**.
+</Aside>
+
+## Start by objective
 
 <CardGrid>
   <LinkCard
-    title="eBooks"
-    href="/en/books/"
-    description="Practical guides to accelerate your career and ship with confidence."
-  />
-  <LinkCard
-    title="Shop"
-    href="/en/shop/"
-    description="All products, courses, and resources in one place."
-  />
-  <LinkCard
-    title="Projects"
-    href="/en/projects/"
-    description="Architecture, setup, roadmap, and decisions — per project, always current."
-  />
-  <LinkCard
-    title="Where to Start"
+    title="I want to start the right way"
     href="/en/reference/getting-started/"
-    description="A practical roadmap of the core foundations you need to progress with direction."
+    description="Study order, core foundations, and what to prioritize first."
+  />
+  <LinkCard
+    title="I want quick reference"
+    href="/en/reference/"
+    description="Data types, structures, logic, algorithms, and DS&A in one place."
+  />
+  <LinkCard
+    title="I want applied engineering"
+    href="/en/projects/"
+    description="Projects with context, stack, architecture, decisions, and next steps."
+  />
+  <LinkCard
+    title="I want fresh content"
+    href="/en/blog/"
+    description="Editorial entries, recent highlights, and recommended reading."
   />
 </CardGrid>
 
 ---
 
-## What this hub is
+## Most useful paths right now
 
-This is a living engineering portal: a single place for **how things work**, **why decisions were made**, and **how to ship fast without chaos**.
-
-Use it when you want:
-
-- **One source of truth** for project setup and maintenance
-- **Decision logs** that explain trade-offs (so future-you doesn’t redo debates)
-- **Playbooks** you can apply today (copy/paste, checklists, commands)
-- **Standards** that keep velocity high and quality consistent
-
-<Aside type="note" title="Principle">
-If a future-me could lose **30 minutes** on something again, it deserves a doc.
-</Aside>
+<CardGrid>
+  <LinkCard
+    title="Foundations"
+    href="/en/reference/getting-started/"
+    description="The best entry point for beginners and for developers closing gaps."
+  />
+  <LinkCard
+    title="Technical Articles"
+    href="/en/artigos-tecnicos/"
+    description="Deep dives on clean code, SRE, algorithms, and the job market."
+  />
+  <LinkCard
+    title="Projects"
+    href="/en/projects/"
+    description="Real cases to study product, backend, architecture, and delivery."
+  />
+  <LinkCard
+    title="Resume & Career"
+    href="/en/reference/curriculo-que-se-destaca/"
+    description="Material to sharpen positioning and communicate your value better."
+  />
+</CardGrid>
 
 ---
 
-## Where to go next
+## Featured reading
+
+<CardGrid>
+  <LinkCard
+    title="Will AI End Developer Jobs?"
+    href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/"
+    description="Market positioning, momentum, and why studying is still the best move."
+  />
+  <LinkCard
+    title="Where to Start?"
+    href="/en/reference/getting-started/"
+    description="The most important page if you want a clear and efficient learning order."
+  />
+  <LinkCard
+    title="Data Structures & Algorithms"
+    href="/en/reference/dsa/"
+    description="A strong practical summary to move beyond beginner-level problem solving."
+  />
+  <LinkCard
+    title="Clean Code Summary"
+    href="/en/artigos-tecnicos/clean-code/"
+    description="Classic principles translated into a fast and practical read."
+  />
+</CardGrid>
+
+---
+
+## Projects that teach
+
+<CardGrid>
+  <LinkCard
+    title="SportPulse.today"
+    href="/en/projects/sportpulse/"
+    description="A C++ backend focused on performance, modularity, and external integrations."
+  />
+  <LinkCard
+    title="Amorfy"
+    href="/en/projects/amorfy/"
+    description="An interactive product with questionnaire flow, scoring, and guided UX."
+  />
+  <LinkCard
+    title="Wheel Of List"
+    href="/en/projects/wheel-of-list/"
+    description="A lean frontend project to study utility, animation, and user feedback."
+  />
+</CardGrid>
+
+---
+
+## Best way to navigate
 
 <Steps>
   <ol>
     <li>
-      <strong>Start with the eBooks</strong> and choose the right material for your current level.
+      <strong>Open the foundations path</strong> if you are building or rebuilding your base.
     </li>
     <li>
-      <strong>Visit the Shop</strong> to see all products, courses, and resources available.
+      <strong>Use the technical articles hub</strong> when you want depth and perspective.
     </li>
     <li>
-      <strong>Explore a project</strong> and follow the setup from start to finish.
+      <strong>Study a real project</strong> to connect theory with delivery.
     </li>
   </ol>
 </Steps>
 
 ---
 
-## Core foundations to start right
+## Portal status
 
-<CardGrid>
-  <LinkCard
-    title="Data Types"
-    href="/en/reference/tipos-de-dados/"
-    description="How to represent information correctly to avoid errors and reduce rework."
-  />
-  <LinkCard
-    title="Data Structures"
-    href="/en/reference/estruturas-de-dados/"
-    description="How to choose the right structure for clarity, speed, and maintainability."
-  />
-  <LinkCard
-    title="Programming Logic"
-    href="/en/reference/logica-de-programacao/"
-    description="How to break problems into clear steps and build consistent solutions."
-  />
-  <LinkCard
-    title="Algorithms"
-    href="/en/reference/algoritmos/"
-    description="How to solve problems efficiently and write code that scales with confidence."
-  />
-</CardGrid>
-
----
-
-## Articles & Blog
-
-<CardGrid>
-  <LinkCard
-    title="Blog"
-    href="/en/blog/"
-    description="News, notes, and behind-the-scenes insights from the studio."
-  />
-  <LinkCard
-    title="Technical Articles"
-    href="/en/artigos-tecnicos/clean-code/"
-    description="Deep dives on C++, architecture, performance, and engineering practice."
-  />
-</CardGrid>
-
----
-
-## Quick signals
-
-<CardGrid>
-  <LinkCard
-    title="Understanding types"
-    href="/en/reference/tipos-de-dados/"
-    description="Choose the right data types early to reduce bugs and simplify maintenance."
-  />
-  <LinkCard
-    title="Modeling structures"
-    href="/en/reference/estruturas-de-dados/"
-    description="Learn how to organize data for better clarity, speed, and long-term scalability."
-  />
-  <LinkCard
-    title="Thinking with logic"
-    href="/en/reference/logica-de-programacao/"
-    description="Break complex problems into clear steps and build more reliable solutions."
-  />
-  <LinkCard
-    title="Growing with algorithms"
-    href="/en/reference/algoritmos/"
-    description="Understand efficiency and solution quality to move beyond beginner-level coding."
-  />
-</CardGrid>
-
----
-
-## Status (lightweight)
-
-- <Badge text="Stable" variant="success" /> Standards & playbooks
-- <Badge text="Evolving" variant="caution" /> Project docs & roadmaps
-- <Badge text="Experimental" variant="note" /> New patterns & tooling
-
----
-
-## How I keep this portal useful
-
-- I keep pages **short and practical**
-- I prefer **checklists** over essays
-- I document **decisions with trade-offs**
-- I keep a visible **“Next actions”** section in project pages
+- <Badge text="Strong" variant="success" /> Foundations and reference content
+- <Badge text="Evolving" variant="caution" /> Editorial hubs and content organization
+- <Badge text="Practical" variant="note" /> Projects and application guides

@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "check": "astro check",
     "build": "astro build",
+    "check:links": "node scripts/check-dist-links.mjs",
+    "verify": "npm run check && npm run build && npm run check:links",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,6 +19,7 @@
     "three": "^0.183.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.8",
     "@types/three": "^0.183.1",
     "astro": "^5.17.3",
     "typescript": "^5.9.3"

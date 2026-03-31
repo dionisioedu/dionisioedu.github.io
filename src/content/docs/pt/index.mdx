@@ -1,189 +1,154 @@
 ---
 title: Início
-description: Seu portal de engenharia de software — artigos, projetos, tutoriais, exemplos, livros, tudo em um só lugar.
+description: Portal para desenvolvedores com referências práticas, artigos, projetos reais e trilhas claras de estudo.
 hero:
-  title: Portal do Programador
-  tagline: Artigos técnicos, tutoriais, eBooks, vídeos, testes, APIs e muito mais!
-  image:
-    html: |
-      <svg viewBox="0 0 480 220" role="img" aria-label="Portal illustration" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="currentColor" stop-opacity="0.18"/>
-            <stop offset="1" stop-color="currentColor" stop-opacity="0.05"/>
-          </linearGradient>
-          <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="black" flood-opacity="0.18"/>
-          </filter>
-        </defs>
-        <rect x="22" y="22" width="436" height="176" rx="22" fill="url(#g)" filter="url(#s)"/>
-        <rect x="56" y="58" width="210" height="16" rx="8" fill="currentColor" fill-opacity="0.28"/>
-        <rect x="56" y="88" width="300" height="12" rx="6" fill="currentColor" fill-opacity="0.18"/>
-        <rect x="56" y="112" width="270" height="12" rx="6" fill="currentColor" fill-opacity="0.14"/>
-        <rect x="56" y="142" width="120" height="34" rx="14" fill="currentColor" fill-opacity="0.22"/>
-        <path d="M338 70c32 0 58 26 58 58s-26 58-58 58-58-26-58-58 26-58 58-58Z" fill="currentColor" fill-opacity="0.10"/>
-        <path d="M338 88c22 0 40 18 40 40s-18 40-40 40-40-18-40-40 18-40 40-40Z" fill="currentColor" fill-opacity="0.16"/>
-        <path d="M338 108c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z" fill="currentColor" fill-opacity="0.26"/>
-      </svg>
+  title: Portal para Desenvolvedores
+  tagline: Aprenda a base, consulte rápido, explore projetos reais e encontre o próximo passo sem perder tempo.
   actions:
-    - text: Ver eBooks
-      link: /pt/books/
-    - text: Ir para a Loja
-      link: /pt/shop/
+    - text: Começar pela Base
+      link: /pt/reference/getting-started/
+    - text: Explorar Artigos
+      link: /pt/artigos-tecnicos/
 ---
 
 import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
-import KnowledgeGraph3D from '../../../components/KnowledgeGraph3D.astro';
-import HeroLensFlareBg from '../../../components/HeroLensFlareBg.astro';
 
-<HeroLensFlareBg />
+## O que você encontra aqui
 
-<KnowledgeGraph3D height={500} />
+Este portal foi reorganizado para servir o dia a dia de quem desenvolve software:
+
+- **base técnica confiável** para estudar sem ficar pulando de recurso em recurso
+- **artigos técnicos** com contexto, opinião e aplicação prática
+- **projetos reais** com decisões, trade-offs e próximos passos
+- **atalhos de carreira** para currículo, estudo e direção profissional
+
+<Aside type="note" title="Foco do portal">
+O objetivo não é só publicar conteúdo. É ajudar você a decidir **o que estudar, o que consultar e para onde evoluir**.
+</Aside>
+
+## Comece por objetivo
 
 <CardGrid>
   <LinkCard
-    title="eBooks"
-    href="/pt/books/"
-    description="Guias práticos e diretos para acelerar sua carreira e vender melhor seu trabalho."
-  />
-  <LinkCard
-    title="Loja"
-    href="/pt/shop/"
-    description="Catálogo completo com produtos, cursos e recursos para desenvolvedores."
-  />
-  <LinkCard
-    title="Projetos"
-    href="/pt/projects/"
-    description="Arquitetura, configuração, roteiro e decisões de cada projeto, sempre atualizados."
-  />
-  <LinkCard
-    title="Por onde começar"
+    title="Quero começar do jeito certo"
     href="/pt/reference/getting-started/"
-    description="Roteiro prático da base que você precisa dominar para evoluir rápido e com direção."
+    description="Ordem de estudo, fundamentos e o que priorizar para sair da confusão."
+  />
+  <LinkCard
+    title="Quero consultar rapidamente"
+    href="/pt/reference/"
+    description="Tipos de dados, estruturas, lógica, algoritmos e DSA em um lugar só."
+  />
+  <LinkCard
+    title="Quero ver engenharia aplicada"
+    href="/pt/projects/"
+    description="Projetos com contexto, stack, arquitetura, decisões e próximos passos."
+  />
+  <LinkCard
+    title="Quero acompanhar conteúdo novo"
+    href="/pt/blog/"
+    description="Entradas editoriais, destaques recentes e leituras recomendadas."
   />
 </CardGrid>
 
 ---
 
-## O que é este portal?
+## Trilhas mais úteis agora
 
-Este é um repositório de referências técnicas para programadores iniciantes e profissionais.
-Aqui você vai encontrar os melhores repositórios do Github, as melhores APIs e tudo o que você precisa para aprender e se especializar
-no mundo do desenvolvimento de software.
-
-Use quando quiser:
-
-- Se atualizar sobre as novidades da nossa área.
-- Buscar referências de repositórios interessantes e APIs públicas.
-- Se informar sobre os melhores livros da nossa área.
-- Comprar produtos que programadores adoram.
-
-<Aside type="note" title="Dica">
-A melhor maneira para se destacar em uma área, é estando cercado de informações sobre ela.
-</Aside>
+<CardGrid>
+  <LinkCard
+    title="Fundamentos"
+    href="/pt/reference/getting-started/"
+    description="Base para iniciante e para quem quer fechar lacunas sem reinventar tudo."
+  />
+  <LinkCard
+    title="Artigos Técnicos"
+    href="/pt/artigos-tecnicos/"
+    description="Leituras aprofundadas sobre código limpo, SRE, algoritmos e mercado."
+  />
+  <LinkCard
+    title="Projetos"
+    href="/pt/projects/"
+    description="Casos reais para estudar produto, arquitetura, backend e experiência."
+  />
+  <LinkCard
+    title="Currículo e Carreira"
+    href="/pt/reference/curriculo-que-se-destaca/"
+    description="Material para melhorar posicionamento profissional e clareza de trajetória."
+  />
+</CardGrid>
 
 ---
 
-## Para onde ir agora
+## Leituras em destaque
+
+<CardGrid>
+  <LinkCard
+    title="IA Vai Acabar com os Devs?"
+    href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/"
+    description="Mercado, posicionamento e por que estudar continua sendo a melhor aposta."
+  />
+  <LinkCard
+    title="Por Onde Começar?"
+    href="/pt/reference/getting-started/"
+    description="A página mais importante para quem quer construir base com sequência."
+  />
+  <LinkCard
+    title="Estruturas de Dados e Algoritmos"
+    href="/pt/reference/dsa/"
+    description="Resumo forte para sair do básico e ganhar repertório de engenharia."
+  />
+  <LinkCard
+    title="Resumo do Clean Code"
+    href="/pt/artigos-tecnicos/clean-code/"
+    description="Princípios clássicos traduzidos para leitura rápida e aplicação prática."
+  />
+</CardGrid>
+
+---
+
+## Projetos que ensinam
+
+<CardGrid>
+  <LinkCard
+    title="SportPulse.today"
+    href="/pt/projects/sportpulse/"
+    description="Backend em C++ com foco em performance, modularidade e integração externa."
+  />
+  <LinkCard
+    title="Amorfy"
+    href="/pt/projects/amorfy/"
+    description="Produto interativo que mostra fluxo, questionário e experiência guiada."
+  />
+  <LinkCard
+    title="Wheel Of List"
+    href="/pt/projects/wheel-of-list/"
+    description="Projeto frontend enxuto para estudar UX, animação e utilidade imediata."
+  />
+</CardGrid>
+
+---
+
+## Como navegar melhor
 
 <Steps>
   <ol>
     <li>
-      <strong>Comece pelos eBooks</strong> e escolha o material certo para sua fase atual.
+      <strong>Abra a trilha de fundamentos</strong> se você está consolidando base.
     </li>
     <li>
-      <strong>Visite a Loja</strong> para ver todos os produtos, cursos e recursos disponíveis.
+      <strong>Entre nos artigos técnicos</strong> quando quiser aprofundar visão e repertório.
     </li>
     <li>
-      <strong>Explore um projeto</strong> e siga a configuração do início ao fim.
+      <strong>Estude um projeto real</strong> para conectar teoria com entrega.
     </li>
   </ol>
 </Steps>
 
 ---
 
-## Fundamentos para começar certo
+## Estado do portal
 
-<CardGrid>
-  <LinkCard
-    title="Tipos de Dados"
-    href="/pt/reference/tipos-de-dados/"
-    description="Como representar informação corretamente para evitar erros e reduzir retrabalho."
-  />
-  <LinkCard
-    title="Estruturas de Dados"
-    href="/pt/reference/estruturas-de-dados/"
-    description="Como escolher a estrutura certa para ganhar clareza, velocidade e organização."
-  />
-  <LinkCard
-    title="Lógica de Programação"
-    href="/pt/reference/logica-de-programacao/"
-    description="Como quebrar problemas em etapas simples e escrever soluções mais consistentes."
-  />
-  <LinkCard
-    title="Algoritmos"
-    href="/pt/reference/algoritmos/"
-    description="Como resolver problemas com eficiência e construir código que escala com confiança."
-  />
-</CardGrid>
-
----
-
-## Artigos e Blog
-
-<CardGrid>
-  <LinkCard
-    title="Blog"
-    href="/pt/blog/"
-    description="Novidades, bastidores e dicas de carreira para quem vive tecnologia."
-  />
-  <LinkCard
-    title="Artigos Tecnicos"
-    href="/pt/artigos-tecnicos/clean-code/"
-    description="Conteudo aprofundado em C++, arquitetura, performance e engenharia."
-  />
-</CardGrid>
-
----
-
-## Sinais rápidos
-
-<CardGrid>
-  <LinkCard
-    title="Entendendo tipos"
-    href="/pt/reference/tipos-de-dados/"
-    description="Escolha tipos corretos para reduzir bugs e facilitar manutenção desde o início."
-  />
-  <LinkCard
-    title="Modelando estruturas"
-    href="/pt/reference/estruturas-de-dados/"
-    description="Aprenda a organizar dados de forma eficiente para ganhar clareza e desempenho."
-  />
-  <LinkCard
-    title="Pensando com lógica"
-    href="/pt/reference/logica-de-programacao/"
-    description="Quebre problemas complexos em etapas simples para criar soluções confiáveis."
-  />
-  <LinkCard
-    title="Evoluindo em algoritmos"
-    href="/pt/reference/algoritmos/"
-    description="Entenda eficiência e qualidade de solução para sair do básico com consistência."
-  />
-</CardGrid>
-
----
-
-## Status (leve)
-
-- <Badge text="Estável" variant="success" /> Padrões e guias
-- <Badge text="Em evolução" variant="caution" /> Documentação e roteiros
-- <Badge text="Experimental" variant="note" /> Novos padrões e ferramentas
-
----
-
-## Como mantenho este portal útil
-
-- Mantenho páginas **curtas e práticas**
-- Prefiro **checklists** a textos longos
-- Documento **decisões com compensações**
-- Deixo visível uma seção de **"Próximas ações"** nas páginas de projeto
+- <Badge text="Forte" variant="success" /> Referência e fundamentos
+- <Badge text="Evoluindo" variant="caution" /> Hubs editoriais e organização do acervo
+- <Badge text="Prático" variant="note" /> Projetos e guias de aplicação
