@@ -92,6 +92,7 @@ export default defineConfig({
             {
               label: 'Technical Articles',
               items: [
+                { label: 'IA Vai Acabar com os Devs?', slug: 'artigos-tecnicos/ia-vai-acabar-com-os-devs' },
                 { label: 'Clean Code', slug: 'artigos-tecnicos/clean-code' },
                 { label: 'SRE', slug: 'artigos-tecnicos/sre' },
                 { label: 'Big-O', slug: 'artigos-tecnicos/bigo' },
@@ -133,6 +134,7 @@ export default defineConfig({
         {
           label: 'Artigos Técnicos',
           items: [
+            { label: 'IA Vai Acabar com os Devs?', slug: 'artigos-tecnicos/ia-vai-acabar-com-os-devs' },
             { label: 'Clean Code', slug: 'artigos-tecnicos/clean-code' },
             { label: 'SRE', slug: 'artigos-tecnicos/sre' },
             { label: 'Big-O', slug: 'artigos-tecnicos/bigo' },
