@@ -13,12 +13,18 @@ declare module '@astrojs/starlight/integrations/*' {
   export default content;
 }
 
+declare module 'prismjs' {
+  const Prism: any;
+  export default Prism;
+}
+
 declare global {
   interface Window {
     __hero3dModule?: any;
     __heroLensflareModule?: any;
     __heroLensflareCleanup?: (() => void) | null;
     __knowledgeNavigatorModule?: any;
+    webkitAudioContext?: typeof AudioContext;
   }
 
   interface Element {

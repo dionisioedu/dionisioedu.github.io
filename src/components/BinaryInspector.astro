@@ -1,0 +1,368 @@
+---
+const locale = Astro.props.locale === 'pt' ? 'pt' : 'en';
+
+const t = locale === 'pt'
+  ? {
+      title: 'Bits, bytes e ASCII na prática',
+      description:
+        'Digite um número e veja como ele aparece em byte, hexadecimal, binário e memória. É aqui que "A = 65 = 0x41 = 01000001" fica claro de verdade.',
+      decimal: 'Valor decimal',
+      character: 'Caractere ASCII',
+      unsignedByte: 'Byte sem sinal',
+      signedByte: 'Byte com sinal',
+      hexadecimal: 'Hexadecimal',
+      printable: 'Caractere',
+      bits8: '8 bits',
+      bits16: '16 bits',
+      bits32: '32 bits',
+      memory: 'Memória em 4 bytes',
+      conversion: 'Conversão decimal -> binário',
+      asciiHintPrefix: 'Para consultar tudo, abra a',
+      asciiHintLink: 'Tabela ASCII',
+    }
+  : {
+      title: 'Bits, bytes, and ASCII in practice',
+      description:
+        'Type a number and see how it appears as a byte, hexadecimal, binary, and memory. This is where "A = 65 = 0x41 = 01000001" becomes clear for real.',
+      decimal: 'Decimal value',
+      character: 'ASCII character',
+      unsignedByte: 'Unsigned byte',
+      signedByte: 'Signed byte',
+      hexadecimal: 'Hexadecimal',
+      printable: 'Character',
+      bits8: '8 bits',
+      bits16: '16 bits',
+      bits32: '32 bits',
+      memory: 'Memory in 4 bytes',
+      conversion: 'Decimal -> binary conversion',
+      asciiHintPrefix: 'For the full reference, open the',
+      asciiHintLink: 'ASCII Table',
+    };
+---
+
+<section class="binary-inspector not-content" data-binary-inspector>
+  <div class="bi-copy">
+    <h3>{t.title}</h3>
+    <p>{t.description}</p>
+  </div>
+
+  <div class="bi-block">
+    <div class="bi-block-title">I/O</div>
+    <div class="bi-matrix bi-matrix-2">
+      <label class="bi-cell">
+        <span class="bi-label">{t.decimal}</span>
+        <input type="number" value="65" data-decimal-input />
+      </label>
+      <label class="bi-cell">
+        <span class="bi-label">{t.character}</span>
+        <input type="text" maxlength="1" value="A" data-char-input />
+      </label>
+    </div>
+  </div>
+
+  <div class="bi-block">
+    <div class="bi-block-title">View</div>
+    <div class="bi-matrix bi-matrix-4">
+      <div class="bi-cell">
+        <span class="bi-label">{t.unsignedByte}</span>
+        <strong data-unsigned-byte>65</strong>
+      </div>
+      <div class="bi-cell">
+        <span class="bi-label">{t.signedByte}</span>
+        <strong data-signed-byte>65</strong>
+      </div>
+      <div class="bi-cell">
+        <span class="bi-label">{t.hexadecimal}</span>
+        <strong data-hex-value>0x41</strong>
+      </div>
+      <div class="bi-cell">
+        <span class="bi-label">{t.printable}</span>
+        <strong data-char-value>A</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-block">
+    <div class="bi-block-title">Binary</div>
+    <table class="bi-table">
+      <tbody>
+        <tr>
+          <th>{t.bits8}</th>
+          <td><code data-binary-8>01000001</code></td>
+        </tr>
+        <tr>
+          <th>{t.bits16}</th>
+          <td><code data-binary-16>00000000 01000001</code></td>
+        </tr>
+        <tr>
+          <th>{t.bits32}</th>
+          <td><code data-binary-32>00000000 00000000 00000000 01000001</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bi-block">
+    <div class="bi-block-title">{t.memory}</div>
+    <div class="bi-matrix bi-matrix-4" data-memory-bytes></div>
+  </div>
+
+  <div class="bi-block">
+    <div class="bi-block-title">{t.conversion}</div>
+    <div class="bi-conversion">
+      <ol data-conversion-steps></ol>
+    </div>
+  </div>
+
+  <p class="bi-hint">
+    {t.asciiHintPrefix} <a href={locale === 'pt' ? '/pt/reference/tabela-ascii/' : '/en/reference/tabela-ascii/'}>{t.asciiHintLink}</a>.
+  </p>
+</section>
+
+<script>
+  async function loadBinaryInspectorModule() {
+    return import('./binaryInspector.client.js');
+  }
+
+  async function mountBinaryInspector(root: Element) {
+    const host = root as HTMLElement & { __binaryCleanup?: (() => void) | null };
+    if (!host) return;
+    if (host.__binaryCleanup) host.__binaryCleanup();
+    const mod = await loadBinaryInspectorModule();
+    host.__binaryCleanup = mod.mountBinaryInspector(host);
+  }
+
+  document.querySelectorAll('[data-binary-inspector]').forEach((el) => mountBinaryInspector(el));
+
+  document.addEventListener('astro:before-swap', () => {
+    document.querySelectorAll('[data-binary-inspector]').forEach((el) => {
+      const host = el as HTMLElement & { __binaryCleanup?: (() => void) | null };
+      if (host.__binaryCleanup) {
+        host.__binaryCleanup();
+        host.__binaryCleanup = null;
+      }
+    });
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    document.querySelectorAll('[data-binary-inspector]').forEach((el) => mountBinaryInspector(el));
+  });
+</script>
+
+<style>
+  .sl-markdown-content .binary-inspector,
+  .sl-markdown-content .binary-inspector * {
+    margin-top: 0;
+  }
+
+  .binary-inspector {
+    display: grid;
+    gap: 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 18%, var(--sl-color-gray-5));
+    border-radius: 12px;
+    padding: 0.8rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 28%, transparent);
+  }
+
+  .bi-copy,
+  .bi-block {
+    display: grid;
+    gap: 0.32rem;
+  }
+
+  .bi-copy h3,
+  .bi-copy p,
+  .bi-hint {
+    margin: 0;
+  }
+
+  .bi-copy h3 {
+    font-size: 1rem;
+    line-height: 1.15;
+  }
+
+  .bi-copy p {
+    color: var(--sl-color-gray-3);
+    font-size: 0.94rem;
+  }
+
+  .bi-block-title,
+  .bi-label,
+  .bi-table th {
+    font-size: 0.7rem;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--sl-color-gray-3);
+  }
+
+  .bi-matrix {
+    display: grid;
+    gap: 0.4rem;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+  }
+
+  .bi-matrix-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bi-matrix-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .bi-cell,
+  .bi-conversion,
+  .bi-table {
+    min-width: 0;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 75%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 62%, transparent);
+  }
+
+  .bi-cell {
+    height: 100%;
+    display: grid;
+    gap: 0.26rem;
+    padding: 0.52rem 0.58rem;
+    align-content: start;
+  }
+
+  .bi-cell input {
+    width: 100%;
+    min-height: 2.2rem;
+    margin: 0;
+    padding: 0.4rem 0.58rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 70%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--sl-color-black) 10%, var(--sl-color-bg));
+    color: var(--sl-color-text);
+    font: inherit;
+    line-height: 1.2;
+    appearance: none;
+    box-sizing: border-box;
+  }
+
+  .bi-cell input::-webkit-outer-spin-button,
+  .bi-cell input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .bi-cell strong,
+  .bi-table code,
+  .bi-matrix :global(.memory-byte strong),
+  .bi-conversion li {
+    font-family: 'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  .bi-cell strong {
+    font-size: 1.04rem;
+    line-height: 1.2;
+    color: var(--sl-color-white);
+  }
+
+  .bi-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .bi-table th,
+  .bi-table td {
+    padding: 0.5rem 0.58rem;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .bi-table th {
+    width: 8rem;
+    border-right: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 75%, transparent);
+  }
+
+  .bi-table tr + tr th,
+  .bi-table tr + tr td {
+    border-top: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 75%, transparent);
+  }
+
+  .bi-table code {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.89rem;
+    line-height: 1.35;
+    color: var(--sl-color-white);
+  }
+
+  .bi-matrix :global(.memory-byte) {
+    min-width: 0;
+    height: 100%;
+    display: grid;
+    gap: 0.12rem;
+    padding: 0.52rem 0.58rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 75%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 62%, transparent);
+    align-content: start;
+  }
+
+  .bi-matrix :global(.memory-byte span) {
+    font-size: 0.68rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--sl-color-gray-3);
+  }
+
+  .bi-matrix :global(.memory-byte strong) {
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--sl-color-white);
+  }
+
+  .bi-conversion {
+    padding: 0.52rem 0.58rem;
+  }
+
+  .bi-conversion ol {
+    margin: 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  .bi-conversion li {
+    font-size: 0.88rem;
+    color: var(--sl-color-gray-2);
+  }
+
+  .bi-hint {
+    color: var(--sl-color-text-accent);
+    font-size: 0.88rem;
+  }
+
+  @media (max-width: 900px) {
+    .bi-matrix-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .bi-matrix-2,
+    .bi-matrix-4 {
+      grid-template-columns: 1fr;
+    }
+
+    .bi-table th,
+    .bi-table td {
+      display: block;
+      width: 100%;
+      border-right: 0;
+    }
+
+    .bi-table td {
+      padding-top: 0;
+    }
+  }
+</style>

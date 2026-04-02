@@ -20,10 +20,11 @@ So the idea here is simple: less chaos, more clarity.
 1. [Where to Start?](/en/reference/getting-started/)
 2. [Data Types](/en/reference/tipos-de-dados/)
 3. [ASCII Table](/en/reference/tabela-ascii/)
-4. [Data Structures](/en/reference/estruturas-de-dados/)
-5. [Programming Logic](/en/reference/logica-de-programacao/)
-6. [Algorithms](/en/reference/algoritmos/)
-7. review the patterns in [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
+4. [Code Lab](/en/reference/code-lab/)
+5. [Data Structures](/en/reference/estruturas-de-dados/)
+6. [Programming Logic](/en/reference/logica-de-programacao/)
+7. [Algorithms](/en/reference/algoritmos/)
+8. review the patterns in [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
 
 That sequence fixes most of the mental mess beginners deal with.
 
@@ -59,6 +60,16 @@ You will find:
 - the complete ASCII table
 - decimal, hexadecimal, and binary side by side
 - historical and practical grounding for parsing, text, and bytes
+
+### [Code Lab](/en/reference/code-lab/)
+
+For the developer who wants to stop just reading and start testing concepts in the browser.
+
+You will find:
+
+- a JavaScript and Python playground
+- visual representation of bits, bytes, ASCII, and memory
+- search, sorting, BFS, DFS, and Dijkstra animations
 
 ### [Data Structures](/en/reference/estruturas-de-dados/)
 
@@ -149,5 +160,6 @@ With fundamentals, it becomes real progress.
 
 - If you are starting, open [Where to Start?](/en/reference/getting-started/)
 - If you want to understand text, bytes, and representation, read the [ASCII Table](/en/reference/tabela-ascii/)
+- If you want to practice without leaving the portal, open the [Code Lab](/en/reference/code-lab/)
 - If you want stronger engineering fundamentals, go to [Data Structures](/en/reference/estruturas-de-dados/) and then [Algorithms](/en/reference/algoritmos/)
 - If you want to apply what you learned, continue to [Projects](/en/projects/)

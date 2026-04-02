@@ -20,10 +20,11 @@ Então a lógica aqui é simples: menos bagunça, mais clareza.
 1. [Por Onde Começar?](/pt/reference/getting-started/)
 2. [Tipos de Dados](/pt/reference/tipos-de-dados/)
 3. [Tabela ASCII](/pt/reference/tabela-ascii/)
-4. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
-5. [Lógica de Programação](/pt/reference/logica-de-programacao/)
-6. [Algoritmos](/pt/reference/algoritmos/)
-7. revisar os padrões em [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e [Algoritmos](/pt/reference/algoritmos/)
+4. [Code Lab](/pt/reference/code-lab/)
+5. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
+6. [Lógica de Programação](/pt/reference/logica-de-programacao/)
+7. [Algoritmos](/pt/reference/algoritmos/)
+8. revisar os padrões em [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e [Algoritmos](/pt/reference/algoritmos/)
 
 Essa sequência resolve a maior parte da confusão mental de quem está no começo ou tentando fechar lacunas.
 
@@ -59,6 +60,16 @@ Você vai encontrar:
 - tabela ASCII completa
 - decimal, hexadecimal e binário lado a lado
 - base histórica e prática para parsing, texto e bytes
+
+### [Code Lab](/pt/reference/code-lab/)
+
+Pra quem quer parar de só ler e começar a testar conceito no navegador.
+
+Você vai encontrar:
+
+- playground para JavaScript e Python
+- representação visual de bits, bytes, ASCII e memória
+- animações de busca, ordenação, BFS, DFS e Dijkstra
 
 ### [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 
@@ -149,5 +160,6 @@ Com base, isso vira progresso de verdade.
 
 - Se você está começando, abra [Por Onde Começar?](/pt/reference/getting-started/)
 - Se você quer entender texto, bytes e representação, leia [Tabela ASCII](/pt/reference/tabela-ascii/)
+- Se você quer praticar sem sair do portal, abra o [Code Lab](/pt/reference/code-lab/)
 - Se você quer reforçar engenharia, vá para [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e depois [Algoritmos](/pt/reference/algoritmos/)
 - Se você quer aplicar o que estudou, siga para [Projetos](/pt/projects/)

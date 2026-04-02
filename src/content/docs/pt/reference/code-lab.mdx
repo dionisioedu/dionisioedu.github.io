@@ -1,0 +1,88 @@
+---
+title: Code Lab
+description: Ambiente prático do portal para devs testarem lógica, dados e algoritmos direto no navegador.
+---
+
+import { Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import CodeRunner from '../../../../components/CodeRunner.astro';
+import BinaryInspector from '../../../../components/BinaryInspector.astro';
+import AlgorithmStudio from '../../../../components/AlgorithmStudio.astro';
+
+Se você está estudando base, fechando lacuna ou revisando para entrevista, esta é a área prática do portal.
+
+Menos teoria solta, mais teste real: você escreve código, roda no navegador e enxerga o comportamento de estruturas, representação de dados e algoritmos sem sair da trilha.
+
+## 1. Playground para testar ideia rápido
+
+Use esta parte quando você quiser:
+
+- validar um raciocínio antes de levar para um projeto real
+- brincar com arrays, loops, funções e estruturas pequenas
+- comparar um exemplo em JavaScript com um exemplo em Python
+- revisar sintaxe sem sair do portal
+
+<CodeRunner locale="pt" />
+
+<Aside type="note" title="Como isso funciona no GitHub Pages">
+Este laboratório foi feito para o modelo atual do site: tudo estático. JavaScript roda no browser, Python roda com Pyodide e os visualizadores são client-side. Sem backend, sem judge, sem complicação desnecessária.
+</Aside>
+
+## 2. Representação dos dados sem fumaça
+
+Muita gente trava em algoritmo porque ainda não enxergou direito o dado por baixo:
+
+- byte com e sem sinal
+- caractere como número
+- hexadecimal
+- decimal virando binário
+- memória organizada em blocos
+
+É aqui que você vê, por exemplo, que `"A"` tem código `65`, ou `0x41`, ou `01000001`.
+
+<BinaryInspector locale="pt" />
+
+## 3. Algoritmos com movimento, não só nome decorado
+
+Na teoria parece simples. Na prática, o que faz a diferença é ver:
+
+- quem compara com quem
+- quando acontece troca
+- quando o espaço de busca diminui
+- como BFS, DFS e Dijkstra caminham de forma diferente
+
+<AlgorithmStudio locale="pt" />
+
+## Como usar isso para estudar de verdade
+
+<CardGrid>
+  <LinkCard
+    title="Tipos de Dados"
+    href="/pt/reference/tipos-de-dados/"
+    description="Use junto com a parte de bits, bytes, ASCII e representação."
+  />
+  <LinkCard
+    title="Lógica de Programação"
+    href="/pt/reference/logica-de-programacao/"
+    description="Ótima sequência para reforçar decisão, repetição e decomposição."
+  />
+  <LinkCard
+    title="Estruturas de Dados"
+    href="/pt/reference/estruturas-de-dados/"
+    description="Combine com filas, pilhas, arrays e grafos para fechar a base."
+  />
+  <LinkCard
+    title="Algoritmos"
+    href="/pt/reference/algoritmos/"
+    description="Depois do visual, volta para a referência e aprofunda complexidade e implementação."
+  />
+</CardGrid>
+
+## Maneira inteligente de usar o laboratório
+
+1. leia a referência primeiro
+2. teste um caso pequeno aqui
+3. mude os valores de entrada
+4. force erro, caso de borda e caso feliz
+5. só depois leve isso para projeto ou exercício maior
+
+É assim que a base deixa de ser “conteúdo visto” e vira conhecimento utilizável mesmo.

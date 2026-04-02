@@ -1,0 +1,459 @@
+---
+const locale = Astro.props.locale === 'pt' ? 'pt' : 'en';
+
+const t = locale === 'pt'
+  ? {
+      arraysTitle: 'Busca e ordenação passo a passo',
+      arraysDescription:
+        'Escolha um algoritmo, use um array pequeno e veja o movimento acontecendo. Isso ajuda muito a entender comparação, troca, deslocamento e redução do espaço de busca.',
+      arrayLabel: 'Array',
+      quantityLabel: 'Quantidade',
+      targetLabel: 'Alvo',
+      algorithmLabel: 'Algoritmo',
+      speedLabel: 'Velocidade',
+      run: 'Animar',
+      randomize: 'Gerar array',
+      reset: 'Resetar',
+      stepTitle: 'Leitura do passo',
+      graphTitle: 'BFS, DFS e Dijkstra visualizados',
+      graphDescription:
+        'Mesmo num grafo pequeno já dá para sentir a diferença entre visitar por camadas, aprofundar um caminho e calcular o menor caminho.',
+      startNode: 'Nó inicial',
+      traversalOrder: 'Ordem de visita',
+      distances: 'Distâncias atuais',
+      linear: 'Busca linear',
+      binary: 'Busca binária',
+      bubble: 'Bubble sort',
+      insertion: 'Insertion sort',
+      selection: 'Selection sort',
+    }
+  : {
+      arraysTitle: 'Search and sorting step by step',
+      arraysDescription:
+        'Pick an algorithm, use a small array, and watch the movement happen. This makes comparison, swaps, shifting, and search-space reduction much easier to feel.',
+      arrayLabel: 'Array',
+      quantityLabel: 'Count',
+      targetLabel: 'Target',
+      algorithmLabel: 'Algorithm',
+      speedLabel: 'Speed',
+      run: 'Animate',
+      randomize: 'Generate array',
+      reset: 'Reset',
+      stepTitle: 'Step explanation',
+      graphTitle: 'BFS, DFS, and Dijkstra visualized',
+      graphDescription:
+        'Even in a small graph, you can already feel the difference between layered traversal, going deep on one branch, and computing the shortest path.',
+      startNode: 'Start node',
+      traversalOrder: 'Visit order',
+      distances: 'Current distances',
+      linear: 'Linear search',
+      binary: 'Binary search',
+      bubble: 'Bubble sort',
+      insertion: 'Insertion sort',
+      selection: 'Selection sort',
+    };
+---
+
+<section class="algorithm-studio" data-algorithm-studio data-locale={locale}>
+  <div class="studio-block">
+    <div class="studio-copy">
+      <h3>{t.arraysTitle}</h3>
+      <p>{t.arraysDescription}</p>
+    </div>
+
+    <div class="studio-controls">
+      <label class="studio-field field-wide">
+        <span>{t.arrayLabel}</span>
+        <input type="text" value="12, 5, 8, 99, 31, 42" data-array-input />
+      </label>
+
+      <label class="studio-field">
+        <span>{t.quantityLabel}</span>
+        <input type="number" min="4" max="16" step="1" value="8" data-array-count />
+      </label>
+
+      <label class="studio-field">
+        <span>{t.targetLabel}</span>
+        <input type="number" value="31" data-target-input />
+      </label>
+
+      <label class="studio-field">
+        <span>{t.algorithmLabel}</span>
+        <select data-array-algorithm>
+          <option value="linear_search">{t.linear}</option>
+          <option value="binary_search">{t.binary}</option>
+          <option value="bubble_sort">{t.bubble}</option>
+          <option value="insertion_sort">{t.insertion}</option>
+          <option value="selection_sort">{t.selection}</option>
+        </select>
+      </label>
+
+      <label class="studio-field">
+        <span>{t.speedLabel}</span>
+        <input type="range" min="80" max="900" step="20" value="260" data-array-speed />
+      </label>
+    </div>
+
+    <div class="studio-actions">
+      <button type="button" class="primary-action" data-array-run>{t.run}</button>
+      <button type="button" class="secondary-action" data-array-randomize>{t.randomize}</button>
+      <button type="button" class="secondary-action" data-array-reset>{t.reset}</button>
+    </div>
+
+    <p class="studio-summary" data-array-summary></p>
+    <div class="array-stage" data-array-stage></div>
+
+    <div class="explanation-box">
+      <strong>{t.stepTitle}</strong>
+      <p data-array-explanation></p>
+    </div>
+  </div>
+
+  <div class="studio-block">
+    <div class="studio-copy">
+      <h3>{t.graphTitle}</h3>
+      <p>{t.graphDescription}</p>
+    </div>
+
+    <div class="studio-controls">
+      <label class="studio-field">
+        <span>{t.algorithmLabel}</span>
+        <select data-graph-algorithm>
+          <option value="bfs">BFS</option>
+          <option value="dfs">DFS</option>
+          <option value="dijkstra">Dijkstra</option>
+        </select>
+      </label>
+
+      <label class="studio-field">
+        <span>{t.startNode}</span>
+        <select data-graph-start>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="H">H</option>
+          <option value="I">I</option>
+        </select>
+      </label>
+
+      <label class="studio-field">
+        <span>{t.speedLabel}</span>
+        <input type="range" min="150" max="1200" step="50" value="420" data-graph-speed />
+      </label>
+    </div>
+
+    <div class="studio-actions">
+      <button type="button" class="primary-action" data-graph-run>{t.run}</button>
+      <button type="button" class="secondary-action" data-graph-reset>{t.reset}</button>
+    </div>
+
+    <p class="studio-summary" data-graph-summary></p>
+
+    <div class="graph-stage">
+      <svg viewBox="0 0 1040 380" class="graph-svg" data-graph-svg aria-label={t.graphTitle}></svg>
+
+      <div class="graph-meta">
+        <div class="explanation-box">
+          <strong>{t.traversalOrder}</strong>
+          <p data-graph-order></p>
+        </div>
+
+        <div class="distance-card">
+          <strong>{t.distances}</strong>
+          <div data-distance-table></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  async function loadAlgorithmStudioModule() {
+    return import('./algorithmStudio.client.js');
+  }
+
+  async function mountAlgorithmStudio(root: Element) {
+    const host = root as HTMLElement & { __algorithmCleanup?: (() => void) | null };
+    if (!host) return;
+    if (host.__algorithmCleanup) host.__algorithmCleanup();
+    const mod = await loadAlgorithmStudioModule();
+    host.__algorithmCleanup = mod.mountAlgorithmStudio(host);
+  }
+
+  document.querySelectorAll('[data-algorithm-studio]').forEach((el) => mountAlgorithmStudio(el));
+
+  document.addEventListener('astro:before-swap', () => {
+    document.querySelectorAll('[data-algorithm-studio]').forEach((el) => {
+      const host = el as HTMLElement & { __algorithmCleanup?: (() => void) | null };
+      if (host.__algorithmCleanup) {
+        host.__algorithmCleanup();
+        host.__algorithmCleanup = null;
+      }
+    });
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    document.querySelectorAll('[data-algorithm-studio]').forEach((el) => mountAlgorithmStudio(el));
+  });
+</script>
+
+<style>
+  .algorithm-studio {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .studio-block {
+    display: grid;
+    gap: 0.7rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 18%, var(--sl-color-gray-5));
+    border-radius: 14px;
+    padding: 0.9rem;
+    background:
+      radial-gradient(circle at top right, color-mix(in srgb, var(--sl-color-accent-high) 10%, transparent), transparent 38%),
+      linear-gradient(180deg, color-mix(in srgb, var(--sl-color-black) 8%, transparent), transparent);
+  }
+
+  .studio-copy h3,
+  .studio-copy p,
+  .studio-summary {
+    margin: 0;
+  }
+
+  .studio-copy h3 {
+    font-size: 1.02rem;
+    line-height: 1.2;
+  }
+
+  .studio-controls,
+  .studio-actions {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .studio-controls {
+    grid-template-columns: minmax(220px, 1.75fr) repeat(4, minmax(108px, 0.9fr));
+    align-items: end;
+  }
+
+  .studio-actions {
+    grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+    justify-content: start;
+  }
+
+  .studio-field {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .field-wide {
+    flex-basis: 260px;
+  }
+
+  .studio-field span {
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--sl-color-gray-3);
+    letter-spacing: 0.02em;
+  }
+
+  .studio-field input,
+  .studio-field select {
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 70%, transparent);
+    border-radius: 10px;
+    padding: 0.5rem 0.65rem;
+    background: color-mix(in srgb, var(--sl-color-black) 10%, var(--sl-color-bg));
+    color: var(--sl-color-text);
+    font: inherit;
+  }
+
+  .primary-action,
+  .secondary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    font: inherit;
+    line-height: 1;
+    min-height: 1.95rem;
+    padding: 0.42rem 0.8rem;
+    transition: transform 120ms ease, background 120ms ease;
+  }
+
+  .primary-action {
+    background: var(--sl-color-accent-high);
+    color: var(--sl-color-black);
+    font-weight: 700;
+  }
+
+  .secondary-action {
+    background: color-mix(in srgb, var(--sl-color-gray-6) 78%, transparent);
+    color: var(--sl-color-text);
+  }
+
+  .array-stage {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+    align-items: end;
+    min-height: 190px;
+    overflow: hidden;
+  }
+
+  .graph-stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .graph-svg,
+  .explanation-box,
+  .distance-card {
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 80%, transparent);
+    border-radius: 12px;
+    padding: 0.75rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 72%, transparent);
+  }
+
+  .graph-svg {
+    width: 100%;
+    min-height: 360px;
+    padding: 0.75rem;
+  }
+
+  .graph-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  :global(.array-bar) {
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 76%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 62%, transparent);
+    padding: 0.3rem 0.25rem 0.35rem;
+    display: grid;
+    gap: 0.24rem;
+    justify-items: center;
+  }
+
+  :global(.array-bar span) {
+    font-size: 0.86rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  :global(.array-bar i) {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--sl-color-accent-high), color-mix(in srgb, var(--sl-color-accent-high) 25%, #0d3b66));
+  }
+
+  :global(.array-bar.is-active) {
+    transform: translateY(-2px);
+    border-color: var(--sl-color-accent-high);
+  }
+
+  :global(.array-bar.is-found i) {
+    background: linear-gradient(180deg, #4ade80, #166534);
+  }
+
+  :global(.array-bar.is-sorted i) {
+    background: linear-gradient(180deg, #fbbf24, #92400e);
+  }
+
+  :global(.array-bar.is-mid) {
+    box-shadow: 0 0 0 2px color-mix(in srgb, #60a5fa 65%, transparent);
+  }
+
+  :global(.array-bar.is-low),
+  :global(.array-bar.is-high) {
+    border-style: dashed;
+  }
+
+  :global(.graph-edge) {
+    stroke: color-mix(in srgb, var(--sl-color-gray-3) 50%, transparent);
+    stroke-width: 2.5;
+  }
+
+  :global(.graph-weight) {
+    fill: var(--sl-color-text-accent);
+    font-size: 0.78rem;
+    text-anchor: middle;
+  }
+
+  :global(.graph-node) {
+    fill: color-mix(in srgb, var(--sl-color-gray-6) 82%, transparent);
+    stroke: color-mix(in srgb, var(--sl-color-gray-3) 60%, transparent);
+    stroke-width: 2.5;
+  }
+
+  :global(.graph-node.is-visited) {
+    fill: color-mix(in srgb, #fbbf24 28%, var(--sl-color-gray-6));
+    stroke: #f59e0b;
+  }
+
+  :global(.graph-node.is-current) {
+    fill: color-mix(in srgb, var(--sl-color-accent-high) 30%, var(--sl-color-gray-6));
+    stroke: var(--sl-color-accent-high);
+  }
+
+  :global(.graph-node-label) {
+    fill: var(--sl-color-text);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  :global(.distance-row) {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 60%, transparent);
+  }
+
+  .studio-summary {
+    color: var(--sl-color-gray-3);
+    font-size: 0.92rem;
+  }
+
+  :global(.distance-row:last-child) {
+    border-bottom: 0;
+  }
+
+  @media (max-width: 900px) {
+    .studio-controls {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .studio-controls,
+    .studio-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .array-stage {
+      gap: 0.28rem;
+      min-height: 170px;
+    }
+
+    .graph-meta {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,307 @@
+---
+const locale = Astro.props.locale === 'pt' ? 'pt' : 'en';
+
+const t = locale === 'pt'
+  ? {
+      title: 'Playground de código',
+      description:
+        'Escreva, rode e veja o resultado na hora. JavaScript roda localmente. Python usa Pyodide e pode levar alguns segundos na primeira vez.',
+      language: 'Linguagem',
+      example: 'Exemplo',
+      run: 'Rodar',
+      reset: 'Restaurar exemplo',
+      clear: 'Limpar saída',
+      output: 'Saída',
+      ready: 'Pronto para executar.',
+      tip: 'Dica: use console.log() no JavaScript e print() no Python.',
+      javascript: 'JavaScript',
+      python: 'Python',
+    }
+  : {
+      title: 'Code playground',
+      description:
+        'Write, run, and see the result instantly. JavaScript runs locally. Python uses Pyodide and may take a few seconds on the first load.',
+      language: 'Language',
+      example: 'Example',
+      run: 'Run',
+      reset: 'Restore example',
+      clear: 'Clear output',
+      output: 'Output',
+      ready: 'Ready to run.',
+      tip: 'Tip: use console.log() in JavaScript and print() in Python.',
+      javascript: 'JavaScript',
+      python: 'Python',
+    };
+---
+
+<section class="code-runner" data-code-runner data-locale={locale}>
+  <div class="runner-copy">
+    <h3>{t.title}</h3>
+    <p>{t.description}</p>
+  </div>
+
+  <div class="runner-topbar">
+    <label class="runner-field">
+      <span>{t.language}</span>
+      <select data-language-select>
+        <option value="javascript">{t.javascript}</option>
+        <option value="python">{t.python}</option>
+      </select>
+    </label>
+
+    <label class="runner-field">
+      <span>{t.example}</span>
+      <select data-runner-example></select>
+    </label>
+  </div>
+
+  <div class="runner-editor-shell">
+    <pre class="runner-editor language-javascript" data-runner-editor spellcheck="false" contenteditable="plaintext-only"></pre>
+  </div>
+
+  <div class="runner-actions">
+    <button type="button" class="primary-action" data-runner-run>{t.run}</button>
+    <button type="button" class="secondary-action" data-runner-reset>{t.reset}</button>
+    <button type="button" class="secondary-action" data-runner-clear>{t.clear}</button>
+  </div>
+
+  <div class="runner-output-wrap">
+    <div class="output-header">
+      <strong>{t.output}</strong>
+      <span data-runner-status>{t.ready}</span>
+    </div>
+    <pre class="runner-output" data-runner-output></pre>
+    <p class="runner-tip">{t.tip}</p>
+  </div>
+</section>
+
+<script>
+  async function loadCodeRunnerModule() {
+    return import('./codeRunner.client.js');
+  }
+
+  async function mountCodeRunner(root: Element) {
+    const host = root as HTMLElement & { __runnerCleanup?: (() => void) | null };
+    if (!host) return;
+    if (host.__runnerCleanup) host.__runnerCleanup();
+    const mod = await loadCodeRunnerModule();
+    host.__runnerCleanup = mod.mountCodeRunner(host);
+  }
+
+  document.querySelectorAll('[data-code-runner]').forEach((el) => mountCodeRunner(el));
+
+  document.addEventListener('astro:before-swap', () => {
+    document.querySelectorAll('[data-code-runner]').forEach((el) => {
+      const host = el as HTMLElement & { __runnerCleanup?: (() => void) | null };
+      if (host.__runnerCleanup) {
+        host.__runnerCleanup();
+        host.__runnerCleanup = null;
+      }
+    });
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    document.querySelectorAll('[data-code-runner]').forEach((el) => mountCodeRunner(el));
+  });
+</script>
+
+<style>
+  .code-runner {
+    display: grid;
+    gap: 0.7rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 22%, var(--sl-color-gray-5));
+    border-radius: 14px;
+    padding: 0.9rem;
+    background:
+      radial-gradient(circle at top right, color-mix(in srgb, var(--sl-color-accent-high) 10%, transparent), transparent 38%),
+      linear-gradient(180deg, color-mix(in srgb, var(--sl-color-black) 8%, transparent), transparent);
+  }
+
+  .runner-copy h3,
+  .runner-copy p {
+    margin: 0;
+  }
+
+  .runner-copy h3 {
+    font-size: 1.02rem;
+    line-height: 1.2;
+  }
+
+  .runner-topbar,
+  .runner-actions {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .runner-topbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+  }
+
+  .runner-actions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, max-content));
+    justify-content: start;
+  }
+
+  .runner-field {
+    display: grid;
+    gap: 0.32rem;
+    min-width: 0;
+  }
+
+  .runner-field span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--sl-color-gray-3);
+    letter-spacing: 0.02em;
+  }
+
+  .primary-action,
+  .secondary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font: inherit;
+    line-height: 1;
+    transition: transform 120ms ease, background 120ms ease;
+  }
+
+  .runner-field select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 70%, transparent);
+    border-radius: 12px;
+    min-height: 2.25rem;
+    padding: 0.5rem 0.72rem;
+    line-height: 1.2;
+    background: color-mix(in srgb, var(--sl-color-black) 10%, var(--sl-color-bg));
+    color: var(--sl-color-text);
+    font: inherit;
+  }
+
+  .runner-editor-shell {
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 70%, transparent);
+    border-radius: 12px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--sl-color-black) 10%, var(--sl-color-bg)),
+      color-mix(in srgb, var(--sl-color-black) 6%, var(--sl-color-bg))
+    );
+    overflow: hidden;
+  }
+
+  .runner-editor {
+    min-height: 260px;
+    margin: 0;
+    padding: 0.75rem 0.8rem;
+    font-family: 'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    word-break: break-word;
+    outline: none;
+    caret-color: var(--sl-color-accent-high);
+    tab-size: 2;
+  }
+
+  .primary-action,
+  .secondary-action {
+    min-height: 1.95rem;
+    padding: 0.42rem 0.8rem;
+  }
+
+  .primary-action {
+    background: var(--sl-color-accent-high);
+    color: var(--sl-color-black);
+    font-weight: 700;
+  }
+
+  .secondary-action {
+    background: color-mix(in srgb, var(--sl-color-gray-6) 78%, transparent);
+    color: var(--sl-color-text);
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 85%, transparent);
+  }
+
+  .runner-output-wrap {
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-5) 80%, transparent);
+    border-radius: 12px;
+    padding: 0.75rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 78%, transparent);
+  }
+
+  .output-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .output-header span,
+  .runner-tip {
+    margin: 0;
+    color: var(--sl-color-text-accent);
+  }
+
+  .runner-output {
+    min-height: 150px;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: 'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  @media (max-width: 820px) {
+    .runner-topbar {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .runner-editor-shell :global(.token.comment),
+  .runner-editor-shell :global(.token.prolog),
+  .runner-editor-shell :global(.token.doctype),
+  .runner-editor-shell :global(.token.cdata) {
+    color: #7f8ea3;
+  }
+
+  .runner-editor-shell :global(.token.keyword),
+  .runner-editor-shell :global(.token.selector),
+  .runner-editor-shell :global(.token.atrule) {
+    color: #f4b266;
+  }
+
+  .runner-editor-shell :global(.token.function),
+  .runner-editor-shell :global(.token.class-name) {
+    color: #79c0ff;
+  }
+
+  .runner-editor-shell :global(.token.string),
+  .runner-editor-shell :global(.token.char),
+  .runner-editor-shell :global(.token.attr-value) {
+    color: #8ddf8a;
+  }
+
+  .runner-editor-shell :global(.token.number),
+  .runner-editor-shell :global(.token.boolean),
+  .runner-editor-shell :global(.token.constant) {
+    color: #f38ba8;
+  }
+
+  .runner-editor-shell :global(.token.operator),
+  .runner-editor-shell :global(.token.punctuation) {
+    color: #d8dee9;
+  }
+
+  .runner-editor-shell :global(.token.builtin),
+  .runner-editor-shell :global(.token.symbol) {
+    color: #cba6f7;
+  }
+</style>

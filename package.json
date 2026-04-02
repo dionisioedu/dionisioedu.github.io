@@ -16,6 +16,8 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/starlight": "^0.37.6",
+    "codejar": "^4.3.0",
+    "prismjs": "^1.30.0",
     "three": "^0.183.1"
   },
   "devDependencies": {
