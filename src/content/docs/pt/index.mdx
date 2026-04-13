@@ -1,164 +1,154 @@
 ---
-title: Início
-description: Portal para desenvolvedores com referências práticas, artigos, projetos reais e trilhas claras de estudo.
+title: AI Engineering
+description: Blog de tecnologia sobre IA aplicada, engenharia de software, guias práticos, labs e estudos de caso.
 hero:
-  title: Portal para Desenvolvedores
-  tagline: Aprenda a base, consulte rápido, explore projetos reais e encontre o próximo passo sem perder tempo.
+  title: AI Engineering
+  tagline: Blog de tecnologia para quem quer acompanhar IA aplicada, engenharia de software, guias práticos e projetos reais sem perder o fio da meada.
   actions:
-    - text: Começar pela Base
+    - text: Ler o Blog
+      link: /pt/blog/
+    - text: Abrir Guias
       link: /pt/reference/getting-started/
-    - text: Explorar Artigos
-      link: /pt/artigos-tecnicos/
+    - text: Explorar Labs
+      link: /pt/reference/code-lab/
 ---
 
-import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard, Badge, Aside } from '@astrojs/starlight/components';
 
-## O que você encontra aqui
+<p class="ae-section-kicker">Front page</p>
+<p class="ae-section-lede">
+  O portal agora abre como um blog editorial. A leitura vem primeiro, mas continua grudada
+  em guias, laboratórios e estudos de caso para transformar atenção em prática.
+</p>
 
-Este portal foi reorganizado para servir o dia a dia de quem desenvolve software:
+<section class="ae-editorial-grid">
+  <a class="ae-story-card ae-story-card--feature" href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">
+    <img src="/assets/images/chatgpt-1.webp" alt="Ilustração de IA aplicada" loading="lazy" />
+    <p class="eyebrow">Cover story</p>
+    <h3>IA aplicada, mercado e o tipo de engenharia que vale estudar agora</h3>
+    <p>
+      Um texto com cara de abertura editorial para posicionar a marca do blog em IA, software
+      engineering e carreira técnica.
+    </p>
+    <div class="ae-meta">
+      <span>IA</span>
+      <span>Mercado</span>
+      <span>Carreira</span>
+    </div>
+  </a>
+  <div class="ae-story-card ae-story-card--stack">
+    <a class="ae-story-card" href="/pt/artigos-tecnicos/clean-code/">
+      <img src="/assets/images/clean-code.jpg" alt="Livro sobre clean code" loading="lazy" />
+      <p class="eyebrow">Leitura rápida</p>
+      <h4>Clean Code sem misticismo</h4>
+      <p>Opinião prática para quem quer escrever melhor sem virar refém de slogan.</p>
+    </a>
+    <a class="ae-story-card" href="/pt/artigos-tecnicos/sre/">
+      <img src="/assets/images/sre.png" alt="Diagrama sobre SRE" loading="lazy" />
+      <p class="eyebrow">Operação moderna</p>
+      <h4>SRE, confiabilidade e maturidade de engenharia</h4>
+      <p>Um bom eixo para ampliar o escopo do blog além de IA e frontend.</p>
+    </a>
+  </div>
+</section>
 
-- **base técnica confiável** para estudar sem ficar pulando de recurso em recurso
-- **artigos técnicos** com contexto, opinião e aplicação prática
-- **projetos reais** com decisões, trade-offs e próximos passos
-- **atalhos de carreira** para currículo, estudo e direção profissional
-
-<Aside type="note" title="Foco do portal">
-O objetivo não é só publicar conteúdo. É ajudar você a decidir **o que estudar, o que consultar e para onde evoluir**.
+<Aside type="note" title="Como essa versão funciona">
+O blog virou a porta principal. Guias, labs e case studies continuam vivos como camadas de aprofundamento, não como caminhos concorrentes.
 </Aside>
 
-## Comece por objetivo
+## Navegue por formato
 
-<CardGrid>
+<CardGrid stagger>
   <LinkCard
-    title="Quero começar do jeito certo"
-    href="/pt/reference/getting-started/"
-    description="Ordem de estudo, fundamentos e o que priorizar para sair da confusão."
-  />
-  <LinkCard
-    title="Quero consultar rapidamente"
-    href="/pt/reference/"
-    description="Tipos de dados, estruturas, lógica e algoritmos em um lugar só."
-  />
-  <LinkCard
-    title="Quero praticar agora"
-    href="/pt/reference/code-lab/"
-    description="Rodar código no browser e visualizar algoritmos sem sair do portal."
-  />
-  <LinkCard
-    title="Quero ver engenharia aplicada"
-    href="/pt/projects/"
-    description="Projetos com contexto, stack, arquitetura, decisões e próximos passos."
-  />
-  <LinkCard
-    title="Quero acompanhar conteúdo novo"
+    title="Artigos"
     href="/pt/blog/"
-    description="Entradas editoriais, destaques recentes e leituras recomendadas."
-  />
-</CardGrid>
-
----
-
-## Trilhas mais úteis agora
-
-<CardGrid>
-  <LinkCard
-    title="Fundamentos"
-    href="/pt/reference/getting-started/"
-    description="Base para iniciante e para quem quer fechar lacunas sem reinventar tudo."
+    description="Acompanhe textos sobre IA, software engineering, carreira, arquitetura e opinião técnica."
   />
   <LinkCard
-    title="Artigos Técnicos"
-    href="/pt/artigos-tecnicos/"
-    description="Leituras aprofundadas sobre código limpo, SRE, algoritmos e mercado."
+    title="Guias"
+    href="/pt/reference/"
+    description="Base, referência e material de apoio para consolidar fundamentos e fechar lacunas."
   />
   <LinkCard
-    title="Projetos"
-    href="/pt/projects/"
-    description="Casos reais para estudar produto, arquitetura, backend e experiência."
-  />
-  <LinkCard
-    title="Currículo e Carreira"
-    href="/pt/reference/curriculo-que-se-destaca/"
-    description="Material para melhorar posicionamento profissional e clareza de trajetória."
-  />
-  <LinkCard
-    title="Code Lab"
+    title="Labs"
     href="/pt/reference/code-lab/"
-    description="Playground e visualizadores para testar conceitos de forma prática."
+    description="Playgrounds e visualizações para testar código, bits, bytes e algoritmos no navegador."
+  />
+  <LinkCard
+    title="Case Studies"
+    href="/pt/projects/"
+    description="Projetos reais usados como material de estudo de produto, arquitetura e decisão técnica."
   />
 </CardGrid>
 
 ---
 
-## Leituras em destaque
+## Em alta agora
+
+<section class="ae-compact-grid">
+  <a class="ae-story-card" href="/pt/reference/getting-started/">
+    <img src="/assets/images/desktop-1.webp" alt="Captura de tela com ambiente de desenvolvimento" loading="lazy" />
+    <p class="eyebrow">Guide</p>
+    <h4>Por onde começar sem entrar em espiral de conteúdo</h4>
+    <p>Organiza a base para novos leitores que chegarem pelo blog.</p>
+  </a>
+  <a class="ae-story-card" href="/pt/reference/code-lab/">
+    <img src="/assets/images/data-types-table.webp" alt="Tabela de tipos de dados" loading="lazy" />
+    <p class="eyebrow">Lab</p>
+    <h4>Code Lab para tirar a teoria da cabeça e colocar na mão</h4>
+    <p>Uma ponte forte entre leitura editorial e prática imediata.</p>
+  </a>
+  <a class="ae-story-card" href="/pt/projects/sportpulse/">
+    <img src="/assets/images/sportpulse.png" alt="Preview do projeto SportPulse" loading="lazy" />
+    <p class="eyebrow">Case study</p>
+    <h4>Projeto real para estudar backend, dados e decisão de produto</h4>
+    <p>Ajuda a marcar o blog como lugar de leitura com consequência prática.</p>
+  </a>
+</section>
+
+---
+
+## Rotas para aprofundar
 
 <CardGrid>
   <LinkCard
-    title="IA Vai Acabar com os Devs?"
+    title="IA aplicada e carreira"
     href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/"
-    description="Mercado, posicionamento e por que estudar continua sendo a melhor aposta."
+    description="Um bom começo para leitores que chegam pelo tema mais quente do momento."
   />
   <LinkCard
-    title="Por Onde Começar?"
+    title="Fundamentos que sustentam o blog"
     href="/pt/reference/getting-started/"
-    description="A página mais importante para quem quer construir base com sequência."
+    description="A entrada para organizar estudo, repertório e sequência."
   />
   <LinkCard
-    title="Estruturas de Dados"
-    href="/pt/reference/estruturas-de-dados/"
-    description="Guia forte com diagramas, implementações e critérios reais para escolher estrutura."
+    title="Sistemas, confiabilidade e arquitetura"
+    href="/pt/artigos-tecnicos/sre/"
+    description="Abre uma trilha mais madura de engenharia para além do hype de IA."
   />
   <LinkCard
-    title="Resumo do Clean Code"
-    href="/pt/artigos-tecnicos/clean-code/"
-    description="Princípios clássicos traduzidos para leitura rápida e aplicação prática."
-  />
-</CardGrid>
-
----
-
-## Projetos que ensinam
-
-<CardGrid>
-  <LinkCard
-    title="SportPulse.today"
-    href="/pt/projects/sportpulse/"
-    description="Backend em C++ com foco em performance, modularidade e integração externa."
-  />
-  <LinkCard
-    title="Amorfy"
+    title="Produto real para observar trade-offs"
     href="/pt/projects/amorfy/"
-    description="Produto interativo que mostra fluxo, questionário e experiência guiada."
-  />
-  <LinkCard
-    title="Wheel Of List"
-    href="/pt/projects/wheel-of-list/"
-    description="Projeto frontend enxuto para estudar UX, animação e utilidade imediata."
+    description="Mostra como o blog pode conectar software, UX e entrega."
   />
 </CardGrid>
 
 ---
 
-## Como navegar melhor
+## O que sustenta a proposta editorial
 
-<Steps>
-  <ol>
-    <li>
-      <strong>Abra a trilha de fundamentos</strong> se você está consolidando base.
-    </li>
-    <li>
-      <strong>Entre nos artigos técnicos</strong> quando quiser aprofundar visão e repertório.
-    </li>
-    <li>
-      <strong>Estude um projeto real</strong> para conectar teoria com entrega.
-    </li>
-  </ol>
-</Steps>
+<div class="ae-inline-list">
+  Esta versão tenta fazer três coisas ao mesmo tempo sem poluir a experiência:
+
+  - dar cara de blog de tecnologia logo na primeira dobra
+  - preservar guias e laboratórios como diferenciais do produto
+  - manter leitura, prática e estudo aplicado dentro do mesmo fluxo
+</div>
 
 ---
 
 ## Estado do portal
 
-- <Badge text="Forte" variant="success" /> Referência e fundamentos
-- <Badge text="Evoluindo" variant="caution" /> Hubs editoriais e organização do acervo
-- <Badge text="Prático" variant="note" /> Projetos e guias de aplicação
+- <Badge text="Novo eixo" variant="success" /> Blog editorial na frente
+- <Badge text="Preservado" variant="note" /> AdSense, guias, labs e acervo existente
+- <Badge text="Próximo passo" variant="caution" /> Refinar taxonomia e expandir novos artigos de IA

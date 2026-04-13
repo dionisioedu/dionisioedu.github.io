@@ -3,16 +3,18 @@ const options = [
   {
     locale: 'pt',
     title: 'Português',
-    description: 'Portal para desenvolvedores com referências, artigos técnicos, projetos reais e trilhas de estudo.',
+    description: 'Artigos, guias, labs e estudos de caso para quem quer acompanhar IA e engenharia de software com clareza.',
     href: '/pt/',
     cta: 'Entrar em Português',
+    image: '/assets/images/chatgpt-1.webp',
   },
   {
     locale: 'en',
     title: 'English',
-    description: 'A developer portal with references, technical articles, real projects, and practical learning paths.',
+    description: 'Editorial technology coverage for software engineering, applied AI, practical guides, and case studies.',
     href: '/en/',
     cta: 'Enter in English',
+    image: '/assets/images/desktop-3.webp',
   },
 ];
 ---
@@ -22,10 +24,10 @@ const options = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Dionisio Developer Portal</title>
+    <title>AI Engineering</title>
     <meta
       name="description"
-      content="Developer portal with technical references, articles, real projects, and curated learning paths in Portuguese and English."
+      content="AI Engineering is a technology blog about software engineering, applied AI, practical guides, labs, and case studies in Portuguese and English."
     />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -34,25 +36,26 @@ const options = [
     <style>
       :root {
         color-scheme: dark;
-        --bg: #07111f;
-        --bg-soft: #0c1a2d;
-        --border: rgba(148, 193, 255, 0.18);
-        --text: #f2f7ff;
-        --muted: #b8c6df;
-        --accent: #7dd3fc;
-        --accent-2: #93c5fd;
+        --bg: #050916;
+        --panel: rgba(10, 18, 31, 0.88);
+        --border: rgba(98, 206, 224, 0.16);
+        --text: #f4fbff;
+        --muted: #b4c3d3;
+        --accent: #66d5e4;
+        --accent-2: #8de6d2;
       }
 
       * { box-sizing: border-box; }
+
       body {
         margin: 0;
         min-height: 100vh;
         font-family: "Segoe UI", "Inter", system-ui, sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(125, 211, 252, 0.14), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(147, 197, 253, 0.12), transparent 24%),
-          linear-gradient(160deg, var(--bg) 0%, #091423 55%, #10213a 100%);
+          radial-gradient(circle at top left, rgba(102, 213, 228, 0.16), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(141, 230, 210, 0.14), transparent 22%),
+          linear-gradient(160deg, var(--bg) 0%, #08111c 52%, #102032 100%);
       }
 
       main {
@@ -64,16 +67,17 @@ const options = [
       .eyebrow {
         margin: 0 0 12px;
         font-size: 0.86rem;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--accent);
+        font-weight: 700;
       }
 
       h1 {
         margin: 0;
         font-size: clamp(2.4rem, 5vw, 4.8rem);
         line-height: 0.95;
-        max-width: 10ch;
+        max-width: 11ch;
       }
 
       .lede {
@@ -84,6 +88,25 @@ const options = [
         color: var(--muted);
       }
 
+      .hero-panel {
+        margin-top: 28px;
+        padding: 22px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at top left, rgba(102, 213, 228, 0.12), transparent 34%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+          var(--panel);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+      }
+
+      .hero-panel p {
+        margin: 0;
+        max-width: 68ch;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
       .grid {
         margin-top: 40px;
         display: grid;
@@ -92,11 +115,22 @@ const options = [
       }
 
       .card {
-        padding: 24px;
+        overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: 20px;
+        border-radius: 8px;
         background: linear-gradient(180deg, rgba(12, 26, 45, 0.92), rgba(9, 19, 34, 0.86));
         box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .card-copy {
+        padding: 20px 22px 22px;
       }
 
       .card h2 {
@@ -116,7 +150,7 @@ const options = [
         justify-content: center;
         min-height: 44px;
         padding: 0 16px;
-        border-radius: 999px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 700;
         color: #03111f;
@@ -126,13 +160,13 @@ const options = [
       .highlights {
         margin-top: 30px;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 14px;
       }
 
       .pill {
         padding: 14px 16px;
-        border-radius: 16px;
+        border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.08);
         background: rgba(255, 255, 255, 0.04);
         color: var(--muted);
@@ -154,26 +188,37 @@ const options = [
   <body>
     <main>
       <p class="eyebrow">Dionisio.dev</p>
-      <h1>Developer portal, with a clear entry point.</h1>
+      <h1>AI Engineering</h1>
       <p class="lede">
-        Choose your language and enter a hub built to help developers study fundamentals,
-        explore technical articles, inspect real projects, and move forward with more clarity.
+        A technology blog for software engineering, applied AI, practical guides, labs,
+        and case studies. Choose your language and enter the editorial front door.
       </p>
+      <section class="hero-panel" aria-label="Editorial positioning">
+        <p>
+          This version shifts the project from a generic developer portal to an editorial
+          product. Articles lead the experience, while guides, labs, and case studies stay
+          close enough to turn reading into learning and shipping.
+        </p>
+      </section>
 
       <section class="grid" aria-label="Language options">
         {options.map((option) => (
           <article class="card">
-            <h2>{option.title}</h2>
-            <p>{option.description}</p>
-            <a href={option.href} data-locale-link={option.locale}>{option.cta}</a>
+            <img src={option.image} alt={option.title} loading="lazy" />
+            <div class="card-copy">
+              <h2>{option.title}</h2>
+              <p>{option.description}</p>
+              <a href={option.href} data-locale-link={option.locale}>{option.cta}</a>
+            </div>
           </article>
         ))}
       </section>
 
       <section class="highlights" aria-label="Portal highlights">
-        <div class="pill">Reference pages for quick lookup and structured study</div>
-        <div class="pill">Technical articles with context, trade-offs, and market perspective</div>
-        <div class="pill">Real projects with architecture, decisions, and next-step guidance</div>
+        <div class="pill">Articles first, with a cleaner editorial hierarchy</div>
+        <div class="pill">Guides for fundamentals, reference, and career direction</div>
+        <div class="pill">Labs for hands-on learning directly in the browser</div>
+        <div class="pill">Case studies that connect architecture, product, and delivery</div>
       </section>
     </main>
 
