@@ -1,8 +1,4 @@
 ---
-import EditLink from 'virtual:starlight/components/EditLink';
-import LastUpdated from 'virtual:starlight/components/LastUpdated';
-import Pagination from 'virtual:starlight/components/Pagination';
-
 const isPt = Astro.url.pathname.startsWith('/pt');
 const year = new Date().getFullYear();
 
@@ -78,14 +74,6 @@ const copy = isPt
 ---
 
 <footer class="ae-site-footer">
-  <div class="ae-footer-utility">
-    <div class="ae-footer-meta sl-flex">
-      <EditLink />
-      <LastUpdated />
-    </div>
-    <Pagination />
-  </div>
-
   <section class="ae-footer-shell" aria-label={copy.kicker}>
     <div class="ae-footer-intro">
       <p class="ae-kicker">{copy.kicker}</p>
