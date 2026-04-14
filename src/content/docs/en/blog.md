@@ -1,84 +1,109 @@
 ---
 title: Blog
-description: 'The AI Engineering editorial hub with featured reading, essential follow-up paths, and practical context.'
+description: 'A minimal editorial hub with one lead story, recent highlights, and quick access to the wider archive.'
 ---
 
-<p class="ae-section-kicker">Editorial hub</p>
-<p class="ae-section-lede">
-  This page now behaves like the front page of the blog. The goal is to make it obvious
-  what to read first, where to go deeper, and how to move from attention into practice.
+<p class="ae-kicker">Blog</p>
+<p class="ae-lede">
+  Start with the lead read, move through the support coverage, and use the wider archive when
+  you want to turn the idea into foundations, practice, or applied study.
 </p>
 
-# Blog
-
-<section class="ae-editorial-grid">
-  <a class="ae-story-card ae-story-card--feature" href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">
-    <img src="/assets/images/chatgpt-1.webp" alt="AI illustration" loading="lazy" />
-    <p class="eyebrow">Main topic</p>
-    <h3>AI, work, and the kind of engineering profile the market is starting to reward</h3>
-    <p>A stronger editorial opener that ties a hot topic back to study, execution, and technical positioning.</p>
-    <div class="ae-meta">
-      <span>AI</span>
-      <span>Market</span>
-      <span>Entry read</span>
+<section class="ae-home-grid">
+  <article class="ae-feature">
+    <img src="/assets/images/desktop-2.webp" alt="Technology workstation" loading="lazy" />
+    <div class="ae-feature-copy">
+      <p class="ae-kicker">Lead story</p>
+      <h2>AI, jobs, and technical adaptation without doom-scroll panic</h2>
+      <p>
+        A piece for separating noise from real change and thinking more clearly about study,
+        tooling, productivity, and the value of engineers who can deliver with context.
+      </p>
+      <div class="ae-meta">
+        <span>Market</span>
+        <span>AI</span>
+        <span>Positioning</span>
+      </div>
+      <p><a class="ae-cta" href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">Read lead story</a></p>
     </div>
-  </a>
-  <div class="ae-story-card ae-story-card--stack">
-    <a class="ae-story-card" href="/en/artigos-tecnicos/clean-code/">
-      <img src="/assets/images/clean-code.jpg" alt="Clean code book cover" loading="lazy" />
-      <p class="eyebrow">Code</p>
-      <h4>Clean Code with a practical filter</h4>
-      <p>Useful for keeping the blog grounded in day-to-day engineering choices.</p>
-    </a>
-    <a class="ae-story-card" href="/en/artigos-tecnicos/bigo/">
-      <img src="/assets/images/big-o-graph.png" alt="Big-O complexity graph" loading="lazy" />
-      <p class="eyebrow">Foundations</p>
-      <h4>Big-O for sharper technical decisions</h4>
-      <p>A strong route for connecting editorial reading to real foundational depth.</p>
-    </a>
-  </div>
+  </article>
+
+  <aside class="ae-stack">
+    <section class="ae-panel">
+      <p class="ae-kicker">Most read</p>
+      <h3>Continue here</h3>
+      <ul>
+        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code Summary</a></li>
+        <li><a href="/en/artigos-tecnicos/sre/">What is SRE?</a></li>
+        <li><a href="/en/artigos-tecnicos/bigo/">Understanding Big-O</a></li>
+      </ul>
+    </section>
+    <section class="ae-panel">
+      <p class="ae-kicker">Read by goal</p>
+      <h3>Pick the best next step</h3>
+      <ul>
+        <li><a href="/en/reference/getting-started/">Close a fundamentals gap</a></li>
+        <li><a href="/en/reference/code-lab/">Test ideas in practice</a></li>
+        <li><a href="/en/projects/">Observe systems and product through real cases</a></li>
+      </ul>
+    </section>
+  </aside>
 </section>
 
-## Read now
+## Recent highlights
 
-- [Will AI End Developer Jobs?](/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/): market momentum, positioning, and why studying still matters.
-- [Clean Code Summary](/en/artigos-tecnicos/clean-code/): classic principles turned into a fast, practical read.
-- [What is SRE?](/en/artigos-tecnicos/sre/): reliability, incidents, and operations engineering.
-- [Understanding Big-O Notation](/en/artigos-tecnicos/bigo/): complexity and performance with concrete examples.
-
-## What comes with the blog
-
-<section class="ae-compact-grid">
-  <a class="ae-story-card" href="/en/reference/getting-started/">
-    <img src="/assets/images/desktop-4.webp" alt="Developer workstation" loading="lazy" />
-    <p class="eyebrow">Guide</p>
-    <h4>Where to start</h4>
-    <p>A clean path for turning curiosity into a study sequence.</p>
-  </a>
-  <a class="ae-story-card" href="/en/reference/code-lab/">
-    <img src="/assets/images/data-types.webp" alt="Data types illustration" loading="lazy" />
-    <p class="eyebrow">Lab</p>
-    <h4>Code Lab</h4>
-    <p>Reading paired with browser-based practice.</p>
-  </a>
-  <a class="ae-story-card" href="/en/projects/">
-    <img src="/assets/images/amorfy.png" alt="Amorfy project preview" loading="lazy" />
-    <p class="eyebrow">Case study</p>
-    <h4>Projects worth dissecting</h4>
-    <p>Real cases for observing product, architecture, and trade-offs.</p>
-  </a>
+<section class="ae-feed">
+  <article class="ae-mini-card">
+    <img src="/assets/images/clean-code.jpg" alt="Clean code book" loading="lazy" />
+    <p class="ae-kicker">Code</p>
+    <h3>Clean Code with less sermonizing</h3>
+    <p>A quick read on readability and what actually helps without collapsing into empty rules.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/clean-code/">Read story</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/sre.png" alt="SRE graphic" loading="lazy" />
+    <p class="ae-kicker">Reliability</p>
+    <h3>SRE to widen the conversation</h3>
+    <p>A strong entry point for thinking about incidents, error budgets, and operational maturity.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/sre/">Read story</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/big-o-graph.png" alt="Big-O graph" loading="lazy" />
+    <p class="ae-kicker">Foundations</p>
+    <h3>Big-O as a decision-making tool</h3>
+    <p>Return to fundamentals when performance and scale begin to affect the shape of your choices.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/bigo/">Read story</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/hacker-2.webp" alt="Abstract engineering setup" loading="lazy" />
+    <p class="ae-kicker">Archive</p>
+    <h3>More context for the next study session</h3>
+    <p>Open the index when you want to browse the archive directly and build your own sequence.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/">View index</a></p>
+  </article>
 </section>
 
-## Companion reads
+## Beyond the blog
 
-- [Where to Start?](/en/reference/getting-started/): the best entry point if you are structuring your studies.
-- [Data Structures](/en/reference/estruturas-de-dados/): a stronger reference for interviews, modeling, and day-to-day performance work.
-- [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/): material for clearer positioning and communication.
-
-## How to use this editorial front page
-
-1. Pick one featured article.
-2. Follow it with a related guide or lab to strengthen the foundation.
-3. Finish with a case study to connect theory and delivery.
-
-> Want the full list? Open the [Technical Articles](/en/artigos-tecnicos/) index.
+<CardGrid>
+  <LinkCard
+    title="Guides"
+    href="/en/reference/getting-started/"
+    description="Use the guides when editorial reading surfaces a gap that should become deliberate study."
+  />
+  <LinkCard
+    title="Labs"
+    href="/en/reference/code-lab/"
+    description="Take ideas straight into the browser without leaving the same environment."
+  />
+  <LinkCard
+    title="Case Studies"
+    href="/en/projects/"
+    description="Connect writing and delivery by observing product, architecture, and trade-offs."
+  />
+  <LinkCard
+    title="Full archive"
+    href="/en/artigos-tecnicos/"
+    description="Open the index when you want the full content list without editorial mediation."
+  />
+</CardGrid>

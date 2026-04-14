@@ -9,6 +9,9 @@ export default defineConfig({
     starlight({
       title: 'AI Engineering',
       description: 'Technology blog for software engineering, applied AI, practical guides, labs, and case studies.',
+      components: {
+        Footer: './src/components/DocsFooter.astro',
+      },
       customCss: ['./src/styles/global.css'],
       head: [
         {

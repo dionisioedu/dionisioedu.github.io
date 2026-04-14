@@ -1,154 +1,164 @@
 ---
-title: AI Engineering
-description: Blog de tecnologia sobre IA aplicada, engenharia de software, guias práticos, labs e estudos de caso.
-hero:
-  title: AI Engineering
-  tagline: Blog de tecnologia para quem quer acompanhar IA aplicada, engenharia de software, guias práticos e projetos reais sem perder o fio da meada.
-  actions:
-    - text: Ler o Blog
-      link: /pt/blog/
-    - text: Abrir Guias
-      link: /pt/reference/getting-started/
-    - text: Explorar Labs
-      link: /pt/reference/code-lab/
+title: Tecnologia para quem constrói
+description: Leituras sobre IA aplicada, engenharia de software, confiabilidade, fundamentos e decisões técnicas no trabalho real.
 ---
 
-import { CardGrid, LinkCard, Badge, Aside } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
 
-<p class="ae-section-kicker">Front page</p>
-<p class="ae-section-lede">
-  O portal agora abre como um blog editorial. A leitura vem primeiro, mas continua grudada
-  em guias, laboratórios e estudos de caso para transformar atenção em prática.
-</p>
-
-<section class="ae-editorial-grid">
-  <a class="ae-story-card ae-story-card--feature" href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">
-    <img src="/assets/images/chatgpt-1.webp" alt="Ilustração de IA aplicada" loading="lazy" />
-    <p class="eyebrow">Cover story</p>
-    <h3>IA aplicada, mercado e o tipo de engenharia que vale estudar agora</h3>
+<section class="ae-hero-shell">
+  <div class="ae-hero-main">
+    <p class="ae-kicker">Em destaque</p>
+    <h2>IA aplicada, sistemas confiáveis e fundamentos que continuam úteis</h2>
     <p>
-      Um texto com cara de abertura editorial para posicionar a marca do blog em IA, software
-      engineering e carreira técnica.
+      Leituras para separar sinal de ruído em arquitetura, ferramentas, operação e prática de
+      engenharia, com foco em decisões que fazem diferença no trabalho real.
     </p>
-    <div class="ae-meta">
-      <span>IA</span>
-      <span>Mercado</span>
-      <span>Carreira</span>
+    <div class="ae-hero-actions">
+      <a class="ae-cta" href="/pt/blog/">Ler o Blog</a>
+      <a class="ae-cta" href="/pt/reference/getting-started/">Começar pelos Guias</a>
     </div>
-  </a>
-  <div class="ae-story-card ae-story-card--stack">
-    <a class="ae-story-card" href="/pt/artigos-tecnicos/clean-code/">
-      <img src="/assets/images/clean-code.jpg" alt="Livro sobre clean code" loading="lazy" />
-      <p class="eyebrow">Leitura rápida</p>
-      <h4>Clean Code sem misticismo</h4>
-      <p>Opinião prática para quem quer escrever melhor sem virar refém de slogan.</p>
-    </a>
-    <a class="ae-story-card" href="/pt/artigos-tecnicos/sre/">
-      <img src="/assets/images/sre.png" alt="Diagrama sobre SRE" loading="lazy" />
-      <p class="eyebrow">Operação moderna</p>
-      <h4>SRE, confiabilidade e maturidade de engenharia</h4>
-      <p>Um bom eixo para ampliar o escopo do blog além de IA e frontend.</p>
-    </a>
+    <section class="ae-hero-strip" aria-label="Cobertura editorial">
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">IA</p>
+        <p>Uso prático, contexto técnico e impacto no trabalho diário.</p>
+      </article>
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">Sistemas</p>
+        <p>Confiabilidade, operação, arquitetura e decisões de longo prazo.</p>
+      </article>
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">Fundamentos</p>
+        <p>Base suficiente para escolher melhor sob pressão e com clareza.</p>
+      </article>
+    </section>
   </div>
+  <aside class="ae-hero-side">
+    <section class="ae-hero-note">
+      <p class="ae-kicker">Em foco</p>
+      <h3>Leituras para esta semana</h3>
+      <ul>
+        <li>IA aplicada ao trabalho real, além do hype</li>
+        <li>Confiabilidade e operação em sistemas que importam</li>
+        <li>Fundamentos para decidir melhor sob pressão</li>
+      </ul>
+    </section>
+    <section class="ae-hero-note">
+      <p class="ae-kicker">Use junto</p>
+      <h3>Melhor sequência</h3>
+      <p>Comece com uma análise, consolide a base em um guia e feche o ciclo em labs ou case studies.</p>
+    </section>
+  </aside>
 </section>
 
-<Aside type="note" title="Como essa versão funciona">
-O blog virou a porta principal. Guias, labs e case studies continuam vivos como camadas de aprofundamento, não como caminhos concorrentes.
-</Aside>
+<p class="ae-kicker">Destaque</p>
+<p class="ae-lede">
+  Acompanhe os temas que mais pressionam a rotina de quem constrói software: IA aplicada,
+  confiabilidade, clareza de código e base técnica suficiente para tomar decisão melhor.
+</p>
 
-## Navegue por formato
+<section class="ae-home-grid">
+  <article class="ae-feature">
+    <img src="/assets/images/chatgpt-1.webp" alt="Visão abstrata de IA e interface" loading="lazy" />
+    <div class="ae-feature-copy">
+      <p class="ae-kicker">Matéria principal</p>
+      <h2>IA aplicada, mercado e o tipo de engenharia que continua valendo a pena aprender</h2>
+      <p>
+        Entenda por que produtividade com IA não elimina a necessidade de base forte,
+        contexto técnico e capacidade de integrar sistemas no mundo real.
+      </p>
+      <div class="ae-meta">
+        <span>IA</span>
+        <span>Carreira</span>
+        <span>Leitura de entrada</span>
+      </div>
+      <p><a class="ae-cta" href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">Ler matéria</a></p>
+    </div>
+  </article>
 
-<CardGrid stagger>
+  <aside class="ae-stack">
+    <section class="ae-panel">
+      <p class="ae-kicker">Leituras essenciais</p>
+      <h3>Abra em seguida</h3>
+      <ul>
+        <li><a href="/pt/artigos-tecnicos/clean-code/">Clean Code com filtro prático</a></li>
+        <li><a href="/pt/artigos-tecnicos/sre/">SRE para ampliar repertório de engenharia</a></li>
+        <li><a href="/pt/artigos-tecnicos/bigo/">Big-O para reforçar decisão técnica</a></li>
+      </ul>
+    </section>
+    <section class="ae-panel">
+      <p class="ae-kicker">Próximo passo</p>
+      <h3>Aprofunde por formato</h3>
+      <ul>
+        <li><a href="/pt/reference/">Guias</a> para consolidar base e referência</li>
+        <li><a href="/pt/reference/code-lab/">Labs</a> para testar conceitos no browser</li>
+        <li><a href="/pt/projects/">Case studies</a> para observar arquitetura e trade-offs</li>
+      </ul>
+    </section>
+  </aside>
+</section>
+
+## Destaques da edição
+
+<section class="ae-feed">
+  <article class="ae-mini-card">
+    <img src="/assets/images/clean-code.jpg" alt="Livro sobre clean code" loading="lazy" />
+    <p class="ae-kicker">Código</p>
+    <h3>Clean Code sem dogma</h3>
+    <p>Uma leitura rápida sobre legibilidade, manutenção e o que realmente compensa no código de produção.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/clean-code/">Abrir artigo</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/sre.png" alt="Diagrama de confiabilidade SRE" loading="lazy" />
+    <p class="ae-kicker">Sistemas</p>
+    <h3>SRE, operação e confiabilidade</h3>
+    <p>Uma boa trilha para quem quer sair do aplicativo isolado e pensar serviço, incidente e resiliência.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/sre/">Abrir artigo</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/big-o-graph.png" alt="Gráfico de complexidade Big-O" loading="lazy" />
+    <p class="ae-kicker">Fundamentos</p>
+    <h3>Big-O sem enrolação</h3>
+    <p>Relembre complexidade com contexto suficiente para escolher estruturas e algoritmos com mais segurança.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/bigo/">Abrir artigo</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/python-libs.png" alt="Bibliotecas Python em destaque" loading="lazy" />
+    <p class="ae-kicker">Ferramentas</p>
+    <h3>Ferramentas, libs e repertório técnico</h3>
+    <p>Use o acervo de referência para avançar mais rápido quando a leitura levantar uma dúvida específica.</p>
+    <p><a class="ae-cta" href="/pt/reference/">Abrir acervo</a></p>
+  </article>
+</section>
+
+## Além do feed
+
+<CardGrid>
   <LinkCard
-    title="Artigos"
-    href="/pt/blog/"
-    description="Acompanhe textos sobre IA, software engineering, carreira, arquitetura e opinião técnica."
-  />
-  <LinkCard
-    title="Guias"
-    href="/pt/reference/"
-    description="Base, referência e material de apoio para consolidar fundamentos e fechar lacunas."
+    title="Guides"
+    href="/pt/reference/getting-started/"
+    description="Comece pelo material de base para transformar curiosidade em direção de estudo."
   />
   <LinkCard
     title="Labs"
     href="/pt/reference/code-lab/"
-    description="Playgrounds e visualizações para testar código, bits, bytes e algoritmos no navegador."
+    description="Use o laboratório para levar teoria, bits, bytes e algoritmos para a prática."
   />
   <LinkCard
     title="Case Studies"
     href="/pt/projects/"
-    description="Projetos reais usados como material de estudo de produto, arquitetura e decisão técnica."
+    description="Abra projetos reais para estudar produto, arquitetura e decisões de entrega."
+  />
+  <LinkCard
+    title="Currículo e carreira"
+    href="/pt/reference/curriculo-que-se-destaca/"
+    description="Material útil para comunicar melhor valor técnico, trajetória e clareza profissional."
   />
 </CardGrid>
 
----
-
-## Em alta agora
-
-<section class="ae-compact-grid">
-  <a class="ae-story-card" href="/pt/reference/getting-started/">
-    <img src="/assets/images/desktop-1.webp" alt="Captura de tela com ambiente de desenvolvimento" loading="lazy" />
-    <p class="eyebrow">Guide</p>
-    <h4>Por onde começar sem entrar em espiral de conteúdo</h4>
-    <p>Organiza a base para novos leitores que chegarem pelo blog.</p>
-  </a>
-  <a class="ae-story-card" href="/pt/reference/code-lab/">
-    <img src="/assets/images/data-types-table.webp" alt="Tabela de tipos de dados" loading="lazy" />
-    <p class="eyebrow">Lab</p>
-    <h4>Code Lab para tirar a teoria da cabeça e colocar na mão</h4>
-    <p>Uma ponte forte entre leitura editorial e prática imediata.</p>
-  </a>
-  <a class="ae-story-card" href="/pt/projects/sportpulse/">
-    <img src="/assets/images/sportpulse.png" alt="Preview do projeto SportPulse" loading="lazy" />
-    <p class="eyebrow">Case study</p>
-    <h4>Projeto real para estudar backend, dados e decisão de produto</h4>
-    <p>Ajuda a marcar o blog como lugar de leitura com consequência prática.</p>
-  </a>
-</section>
-
----
-
-## Rotas para aprofundar
-
-<CardGrid>
-  <LinkCard
-    title="IA aplicada e carreira"
-    href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/"
-    description="Um bom começo para leitores que chegam pelo tema mais quente do momento."
-  />
-  <LinkCard
-    title="Fundamentos que sustentam o blog"
-    href="/pt/reference/getting-started/"
-    description="A entrada para organizar estudo, repertório e sequência."
-  />
-  <LinkCard
-    title="Sistemas, confiabilidade e arquitetura"
-    href="/pt/artigos-tecnicos/sre/"
-    description="Abre uma trilha mais madura de engenharia para além do hype de IA."
-  />
-  <LinkCard
-    title="Produto real para observar trade-offs"
-    href="/pt/projects/amorfy/"
-    description="Mostra como o blog pode conectar software, UX e entrega."
-  />
-</CardGrid>
-
----
-
-## O que sustenta a proposta editorial
-
-<div class="ae-inline-list">
-  Esta versão tenta fazer três coisas ao mesmo tempo sem poluir a experiência:
-
-  - dar cara de blog de tecnologia logo na primeira dobra
-  - preservar guias e laboratórios como diferenciais do produto
-  - manter leitura, prática e estudo aplicado dentro do mesmo fluxo
+<div class="ae-inline-note">
+  Leia a matéria principal para ganhar contexto, use os guias para fechar lacunas e termine em um case study quando quiser conectar teoria com entrega.
 </div>
 
----
-
-## Estado do portal
-
-- <Badge text="Novo eixo" variant="success" /> Blog editorial na frente
-- <Badge text="Preservado" variant="note" /> AdSense, guias, labs e acervo existente
-- <Badge text="Próximo passo" variant="caution" /> Refinar taxonomia e expandir novos artigos de IA
+<Aside type="note" title="Para estudar melhor">
+Quando um texto abrir uma pergunta concreta, vá para a referência correspondente no mesmo momento. Essa ida e volta entre leitura e consulta fixa muito mais do que seguir só no feed.
+</Aside>

@@ -1,84 +1,109 @@
 ---
 title: Blog
-description: 'Hub editorial do AI Engineering com destaques, leituras essenciais e caminhos de aprofundamento.'
+description: 'Hub editorial minimalista com matéria principal, destaques recentes e acesso rápido ao restante do acervo.'
 ---
 
-<p class="ae-section-kicker">Editorial hub</p>
-<p class="ae-section-lede">
-  Esta página agora funciona como capa do blog. O objetivo é deixar claro o que ler primeiro,
-  onde aprofundar e como sair do consumo para a prática.
+<p class="ae-kicker">Blog</p>
+<p class="ae-lede">
+  Comece pela leitura principal, avance pelos textos de apoio e use o restante do acervo quando
+  quiser levar a ideia para fundamentos, prática ou estudo aplicado.
 </p>
 
-# Blog
-
-<section class="ae-editorial-grid">
-  <a class="ae-story-card ae-story-card--feature" href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">
-    <img src="/assets/images/chatgpt-1.webp" alt="Ilustração sobre IA" loading="lazy" />
-    <p class="eyebrow">Tema principal</p>
-    <h3>IA, trabalho e o novo perfil de engenharia que o mercado está puxando</h3>
-    <p>Abre o blog com um assunto quente, mas ancora a conversa em estudo, execução e posicionamento técnico.</p>
-    <div class="ae-meta">
-      <span>IA</span>
-      <span>Mercado</span>
-      <span>Leitura de entrada</span>
+<section class="ae-home-grid">
+  <article class="ae-feature">
+    <img src="/assets/images/desktop-6.webp" alt="Mesa de trabalho com interface tecnológica" loading="lazy" />
+    <div class="ae-feature-copy">
+      <p class="ae-kicker">Lead story</p>
+      <h2>IA, empregos e adaptação técnica sem pânico de feed</h2>
+      <p>
+        Um texto para separar ruído de tendência real e pensar com mais clareza sobre estudo,
+        ferramenta, produtividade e o valor de quem consegue entregar com contexto.
+      </p>
+      <div class="ae-meta">
+        <span>Mercado</span>
+        <span>IA</span>
+        <span>Posicionamento</span>
+      </div>
+      <p><a class="ae-cta" href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">Ler artigo principal</a></p>
     </div>
-  </a>
-  <div class="ae-story-card ae-story-card--stack">
-    <a class="ae-story-card" href="/pt/artigos-tecnicos/clean-code/">
-      <img src="/assets/images/clean-code.jpg" alt="Capa de livro clean code" loading="lazy" />
-      <p class="eyebrow">Código</p>
-      <h4>Clean Code com filtro crítico</h4>
-      <p>Bom para equilibrar o blog entre opinião, prática e engenharia cotidiana.</p>
-    </a>
-    <a class="ae-story-card" href="/pt/artigos-tecnicos/bigo/">
-      <img src="/assets/images/big-o-graph.png" alt="Gráfico de complexidade Big-O" loading="lazy" />
-      <p class="eyebrow">Fundamentos</p>
-      <h4>Big-O para quem quer tomar decisão melhor</h4>
-      <p>Uma trilha forte para conectar leitura editorial com base técnica de verdade.</p>
-    </a>
-  </div>
+  </article>
+
+  <aside class="ae-stack">
+    <section class="ae-panel">
+      <p class="ae-kicker">Mais lidos</p>
+      <h3>Continue por aqui</h3>
+      <ul>
+        <li><a href="/pt/artigos-tecnicos/clean-code/">Resumo do Clean Code</a></li>
+        <li><a href="/pt/artigos-tecnicos/sre/">O que é SRE?</a></li>
+        <li><a href="/pt/artigos-tecnicos/bigo/">Anatomia da Notação Big-O</a></li>
+      </ul>
+    </section>
+    <section class="ae-panel">
+      <p class="ae-kicker">Leitura por objetivo</p>
+      <h3>Escolha o melhor próximo passo</h3>
+      <ul>
+        <li><a href="/pt/reference/getting-started/">Fechar lacunas de base</a></li>
+        <li><a href="/pt/reference/code-lab/">Testar conceitos na prática</a></li>
+        <li><a href="/pt/projects/">Observar sistemas e produto em casos reais</a></li>
+      </ul>
+    </section>
+  </aside>
 </section>
 
-## Leia agora
+## Recentes
 
-- [IA Vai Acabar com os Devs?](/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/): mercado, posicionamento e por que continuar estudando.
-- [Resumo do Clean Code](/pt/artigos-tecnicos/clean-code/): princípios clássicos traduzidos para leitura rápida e prática.
-- [O Que É SRE?](/pt/artigos-tecnicos/sre/): confiabilidade, incidentes e engenharia de operações.
-- [Anatomia da Notação Big-O](/pt/artigos-tecnicos/bigo/): performance e complexidade com exemplos.
-
-## O que vem junto com o blog
-
-<section class="ae-compact-grid">
-  <a class="ae-story-card" href="/pt/reference/getting-started/">
-    <img src="/assets/images/desktop-4.webp" alt="Estação de trabalho para desenvolvimento" loading="lazy" />
-    <p class="eyebrow">Guide</p>
-    <h4>Por onde começar</h4>
-    <p>Ideal para transformar curiosidade em ordem de estudo.</p>
-  </a>
-  <a class="ae-story-card" href="/pt/reference/code-lab/">
-    <img src="/assets/images/data-types.webp" alt="Tipagem de dados" loading="lazy" />
-    <p class="eyebrow">Lab</p>
-    <h4>Code Lab</h4>
-    <p>Leitura acompanhada de prática no browser.</p>
-  </a>
-  <a class="ae-story-card" href="/pt/projects/">
-    <img src="/assets/images/amorfy.png" alt="Preview do projeto Amorfy" loading="lazy" />
-    <p class="eyebrow">Case study</p>
-    <h4>Projetos para dissecar</h4>
-    <p>Casos reais para observar produto, arquitetura e trade-offs.</p>
-  </a>
+<section class="ae-feed">
+  <article class="ae-mini-card">
+    <img src="/assets/images/clean-code.jpg" alt="Livro de clean code" loading="lazy" />
+    <p class="ae-kicker">Código</p>
+    <h3>Clean Code com menos liturgia</h3>
+    <p>Uma leitura rápida para revisar o que melhora legibilidade sem cair em fórmula vazia.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/clean-code/">Ler texto</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/sre.png" alt="Imagem sobre SRE" loading="lazy" />
+    <p class="ae-kicker">Confiabilidade</p>
+    <h3>SRE para ampliar a conversa</h3>
+    <p>Ótimo ponto de entrada para pensar incidentes, error budgets e maturidade operacional.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/sre/">Ler texto</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/bigo.jpg" alt="Ilustração de algoritmo Big-O" loading="lazy" />
+    <p class="ae-kicker">Base</p>
+    <h3>Big-O como critério de decisão</h3>
+    <p>Volte ao fundamento para escolher melhor quando performance e escala começarem a importar.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/bigo/">Ler texto</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/hacker-1.webp" alt="Ambiente tecnológico abstrato" loading="lazy" />
+    <p class="ae-kicker">Arquivo</p>
+    <h3>Mais contexto para continuar estudando</h3>
+    <p>Abra o índice quando quiser navegar o acervo por conta própria e montar sua própria trilha.</p>
+    <p><a class="ae-cta" href="/pt/artigos-tecnicos/">Ver índice</a></p>
+  </article>
 </section>
 
-## Leituras que combinam bem
+## Além do blog
 
-- [Por Onde Começar?](/pt/reference/getting-started/): melhor ponto de entrada para quem está estruturando os estudos.
-- [Estruturas de Dados](/pt/reference/estruturas-de-dados/): referência forte para entrevistas, modelagem e performance no dia a dia.
-- [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/): material para posicionamento profissional.
-
-## Como usar esta capa editorial
-
-1. Escolha um artigo em destaque.
-2. Vá para um guia ou lab relacionado para consolidar a base.
-3. Feche com um case study para conectar teoria e entrega.
-
-> Quer ver tudo de uma vez? Abra o índice de [Artigos Técnicos](/pt/artigos-tecnicos/).
+<CardGrid>
+  <LinkCard
+    title="Guides"
+    href="/pt/reference/getting-started/"
+    description="Use os guias quando a leitura editorial despertar uma lacuna que precisa virar estudo."
+  />
+  <LinkCard
+    title="Labs"
+    href="/pt/reference/code-lab/"
+    description="Leve conceitos direto para o browser sem sair do mesmo ambiente."
+  />
+  <LinkCard
+    title="Case Studies"
+    href="/pt/projects/"
+    description="Conecte texto e entrega observando produto, arquitetura e trade-offs."
+  />
+  <LinkCard
+    title="Arquivo completo"
+    href="/pt/artigos-tecnicos/"
+    description="Abra o índice quando quiser navegar o acervo sem mediação editorial."
+  />
+</CardGrid>

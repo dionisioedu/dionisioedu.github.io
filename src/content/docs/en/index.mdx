@@ -1,154 +1,164 @@
 ---
-title: AI Engineering
-description: Technology blog about applied AI, software engineering, practical guides, labs, and case studies.
-hero:
-  title: AI Engineering
-  tagline: A technology blog for people who want applied AI, software engineering, practical guides, and real projects in one coherent flow.
-  actions:
-    - text: Read the Blog
-      link: /en/blog/
-    - text: Open Guides
-      link: /en/reference/getting-started/
-    - text: Explore Labs
-      link: /en/reference/code-lab/
+title: Technology for Builders
+description: Writing on applied AI, software engineering, reliability, foundations, and technical decisions that matter in real work.
 ---
 
-import { CardGrid, LinkCard, Badge, Aside } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
 
-<p class="ae-section-kicker">Front page</p>
-<p class="ae-section-lede">
-  The project now opens like an editorial product. Articles lead, while guides, labs,
-  and case studies stay close enough to turn reading into practical follow-through.
-</p>
-
-<section class="ae-editorial-grid">
-  <a class="ae-story-card ae-story-card--feature" href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">
-    <img src="/assets/images/chatgpt-1.webp" alt="Applied AI illustration" loading="lazy" />
-    <p class="eyebrow">Cover story</p>
-    <h3>Applied AI, hiring momentum, and the engineering work worth learning now</h3>
+<section class="ae-hero-shell">
+  <div class="ae-hero-main">
+    <p class="ae-kicker">Featured</p>
+    <h2>Applied AI, reliable systems, and technical foundations that still matter</h2>
     <p>
-      A stronger editorial opener that positions the site around AI, software engineering,
-      and practical technical direction.
+      Writing that helps separate signal from noise across architecture, tooling, operations, and
+      engineering practice for people who ship software.
     </p>
-    <div class="ae-meta">
-      <span>AI</span>
-      <span>Engineering</span>
-      <span>Career</span>
+    <div class="ae-hero-actions">
+      <a class="ae-cta" href="/en/blog/">Read the Blog</a>
+      <a class="ae-cta" href="/en/reference/getting-started/">Start with Guides</a>
     </div>
-  </a>
-  <div class="ae-story-card ae-story-card--stack">
-    <a class="ae-story-card" href="/en/artigos-tecnicos/clean-code/">
-      <img src="/assets/images/clean-code.jpg" alt="Book about clean code" loading="lazy" />
-      <p class="eyebrow">Quick read</p>
-      <h4>Clean Code without the sermon</h4>
-      <p>A practical opinionated piece for developers who want better code, not slogans.</p>
-    </a>
-    <a class="ae-story-card" href="/en/artigos-tecnicos/sre/">
-      <img src="/assets/images/sre.png" alt="SRE diagram" loading="lazy" />
-      <p class="eyebrow">Operations</p>
-      <h4>SRE, reliability, and a more mature engineering angle</h4>
-      <p>A useful counterweight so the blog feels broader than AI commentary alone.</p>
-    </a>
+    <section class="ae-hero-strip" aria-label="Editorial coverage">
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">AI</p>
+        <p>Practical use, technical context, and impact on day-to-day work.</p>
+      </article>
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">Systems</p>
+        <p>Reliability, operations, architecture, and long-horizon decisions.</p>
+      </article>
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">Foundations</p>
+        <p>Enough grounding to choose better under pressure and with clarity.</p>
+      </article>
+    </section>
   </div>
+  <aside class="ae-hero-side">
+    <section class="ae-hero-note">
+      <p class="ae-kicker">In focus</p>
+      <h3>Reads for this week</h3>
+      <ul>
+        <li>Applied AI beyond the hype cycle</li>
+        <li>Reliability and operations in systems that matter</li>
+        <li>Foundations for making better decisions under pressure</li>
+      </ul>
+    </section>
+    <section class="ae-hero-note">
+      <p class="ae-kicker">Use together</p>
+      <h3>Best sequence</h3>
+      <p>Start with an analysis, firm up the basics in a guide, and close the loop in labs or case studies.</p>
+    </section>
+  </aside>
 </section>
 
-<Aside type="note" title="How this version is organized">
-The blog is the front door now. Guides, labs, and case studies remain part of the same product instead of competing with the editorial layer.
-</Aside>
+<p class="ae-kicker">Featured</p>
+<p class="ae-lede">
+  Follow the themes shaping day-to-day software work: applied AI, reliability, code clarity,
+  and enough technical grounding to make stronger decisions under pressure.
+</p>
 
-## Browse by format
+<section class="ae-home-grid">
+  <article class="ae-feature">
+    <img src="/assets/images/news-2.webp" alt="Abstract technology news illustration" loading="lazy" />
+    <div class="ae-feature-copy">
+      <p class="ae-kicker">Main story</p>
+      <h2>Applied AI, hiring momentum, and the kind of engineering still worth learning deeply</h2>
+      <p>
+        Understand why AI-driven productivity does not remove the need for strong foundations,
+        technical context, and the ability to integrate real systems under real constraints.
+      </p>
+      <div class="ae-meta">
+        <span>AI</span>
+        <span>Career</span>
+        <span>Entry read</span>
+      </div>
+      <p><a class="ae-cta" href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">Read feature</a></p>
+    </div>
+  </article>
 
-<CardGrid stagger>
-  <LinkCard
-    title="Articles"
-    href="/en/blog/"
-    description="Editorial coverage on AI, software engineering, architecture, career, and technical opinion."
-  />
+  <aside class="ae-stack">
+    <section class="ae-panel">
+      <p class="ae-kicker">Essential reads</p>
+      <h3>Open next</h3>
+      <ul>
+        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code with a practical filter</a></li>
+        <li><a href="/en/artigos-tecnicos/sre/">SRE to widen your engineering range</a></li>
+        <li><a href="/en/artigos-tecnicos/bigo/">Big-O for sharper technical judgment</a></li>
+      </ul>
+    </section>
+    <section class="ae-panel">
+      <p class="ae-kicker">Next step</p>
+      <h3>Go deeper by format</h3>
+      <ul>
+        <li><a href="/en/reference/">Guides</a> for foundations and fast reference</li>
+        <li><a href="/en/reference/code-lab/">Labs</a> for browser-based practice</li>
+        <li><a href="/en/projects/">Case studies</a> for architecture and trade-offs</li>
+      </ul>
+    </section>
+  </aside>
+</section>
+
+## Highlights from this edition
+
+<section class="ae-feed">
+  <article class="ae-mini-card">
+    <img src="/assets/images/clean-code.jpg" alt="Book about clean code" loading="lazy" />
+    <p class="ae-kicker">Code</p>
+    <h3>Clean Code without dogma</h3>
+    <p>A short read on readability, maintainability, and what actually pays off in production code.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/clean-code/">Open article</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/sre.png" alt="SRE reliability diagram" loading="lazy" />
+    <p class="ae-kicker">Systems</p>
+    <h3>SRE, operations, and reliability</h3>
+    <p>A useful path if you want to think beyond the isolated app and into incidents, services, and resilience.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/sre/">Open article</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/big-o.png" alt="Big-O visual chart" loading="lazy" />
+    <p class="ae-kicker">Foundations</p>
+    <h3>Big-O without the fog</h3>
+    <p>Refresh complexity with enough context to choose data structures and algorithms more confidently.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/bigo/">Open article</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/projects-1.webp" alt="Technology project preview" loading="lazy" />
+    <p class="ae-kicker">Tooling</p>
+    <h3>Tools, libraries, and technical range</h3>
+    <p>Use the reference archive when a story surfaces a specific question you want answered fast.</p>
+    <p><a class="ae-cta" href="/en/reference/">Open archive</a></p>
+  </article>
+</section>
+
+## Beyond the feed
+
+<CardGrid>
   <LinkCard
     title="Guides"
-    href="/en/reference/"
-    description="Foundations, reference pages, and support material to close gaps without friction."
+    href="/en/reference/getting-started/"
+    description="Start with the foundational material to turn curiosity into a study direction."
   />
   <LinkCard
     title="Labs"
     href="/en/reference/code-lab/"
-    description="Playgrounds and visualizers for code, bits, bytes, and algorithm behavior."
+    description="Use the lab to turn theory, bits, bytes, and algorithms into real experimentation."
   />
   <LinkCard
     title="Case Studies"
     href="/en/projects/"
-    description="Real projects used as study material for product, architecture, and delivery choices."
+    description="Open real projects to study product, architecture, and delivery decisions."
+  />
+  <LinkCard
+    title="Resume and career"
+    href="/en/reference/curriculo-que-se-destaca/"
+    description="Useful material for communicating technical value, trajectory, and professional clarity."
   />
 </CardGrid>
 
----
-
-## What is hot right now
-
-<section class="ae-compact-grid">
-  <a class="ae-story-card" href="/en/reference/getting-started/">
-    <img src="/assets/images/desktop-1.webp" alt="Developer workstation" loading="lazy" />
-    <p class="eyebrow">Guide</p>
-    <h4>Where to start without getting trapped in content drift</h4>
-    <p>A strong follow-up path for readers who arrive through the blog.</p>
-  </a>
-  <a class="ae-story-card" href="/en/reference/code-lab/">
-    <img src="/assets/images/data-types-table.webp" alt="Data types table" loading="lazy" />
-    <p class="eyebrow">Lab</p>
-    <h4>Code Lab for turning concepts into muscle memory</h4>
-    <p>A practical bridge between editorial reading and real experimentation.</p>
-  </a>
-  <a class="ae-story-card" href="/en/projects/sportpulse/">
-    <img src="/assets/images/sportpulse.png" alt="SportPulse project preview" loading="lazy" />
-    <p class="eyebrow">Case study</p>
-    <h4>A real project to study backend decisions, data flow, and delivery</h4>
-    <p>Helps the blog feel actionable instead of purely observational.</p>
-  </a>
-</section>
-
----
-
-## Follow-up paths
-
-<CardGrid>
-  <LinkCard
-    title="Applied AI and career"
-    href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/"
-    description="A strong opening thread for readers arriving through the hottest topic on the site."
-  />
-  <LinkCard
-    title="Foundations behind the writing"
-    href="/en/reference/getting-started/"
-    description="The page that turns editorial attention into a practical study sequence."
-  />
-  <LinkCard
-    title="Systems, reliability, and architecture"
-    href="/en/artigos-tecnicos/sre/"
-    description="A broader engineering path beyond AI hype and short-term trend chasing."
-  />
-  <LinkCard
-    title="A product case worth dissecting"
-    href="/en/projects/amorfy/"
-    description="Shows how the blog can connect software, UX, and product execution."
-  />
-</CardGrid>
-
----
-
-## What holds the editorial model together
-
-<div class="ae-inline-list">
-  This version is trying to hold three ideas together without making the interface noisy:
-
-  - look like a real technology blog from the first screen
-  - preserve guides and labs as a product advantage
-  - keep reading, practice, and applied study in the same loop
+<div class="ae-inline-note">
+  Read the lead story for context, use the guides to close a gap, and finish in a case study when you want to connect theory with delivery.
 </div>
 
----
-
-## Portal status
-
-- <Badge text="New axis" variant="success" /> Editorial blog front door
-- <Badge text="Preserved" variant="note" /> AdSense, guides, labs, and existing archive
-- <Badge text="Next" variant="caution" /> Tighten taxonomy and publish more AI-native articles
+<Aside type="note" title="To study better">
+When a story raises a concrete question, jump to the matching reference page right away. That back-and-forth between reading and lookup sticks far better than passively scrolling.
+</Aside>
