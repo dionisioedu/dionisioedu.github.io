@@ -1,164 +1,164 @@
 ---
-title: Home
-description: A developer portal with practical references, technical articles, real projects, and clear learning paths.
-hero:
-  title: Developer Portal
-  tagline: Learn the fundamentals, look things up fast, explore real projects, and always know the next step.
-  actions:
-    - text: Start with the Fundamentals
-      link: /en/reference/getting-started/
-    - text: Explore Articles
-      link: /en/artigos-tecnicos/
+title: Technology for Builders
+description: Writing on applied AI, software engineering, reliability, foundations, and technical decisions that matter in real work.
 ---
 
-import { CardGrid, LinkCard, Badge, Aside, Steps } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
 
-## What you will find here
+<section class="ae-hero-shell">
+  <div class="ae-hero-main">
+    <p class="ae-kicker">Featured</p>
+    <h2>Applied AI, reliable systems, and technical foundations that still matter</h2>
+    <p>
+      Writing that helps separate signal from noise across architecture, tooling, operations, and
+      engineering practice for people who ship software.
+    </p>
+    <div class="ae-hero-actions">
+      <a class="ae-cta" href="/en/blog/">Read the Blog</a>
+      <a class="ae-cta" href="/en/reference/getting-started/">Start with Guides</a>
+    </div>
+    <section class="ae-hero-strip" aria-label="Editorial coverage">
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">AI</p>
+        <p>Practical use, technical context, and impact on day-to-day work.</p>
+      </article>
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">Systems</p>
+        <p>Reliability, operations, architecture, and long-horizon decisions.</p>
+      </article>
+      <article class="ae-hero-chip">
+        <p class="ae-kicker">Foundations</p>
+        <p>Enough grounding to choose better under pressure and with clarity.</p>
+      </article>
+    </section>
+  </div>
+  <aside class="ae-hero-side">
+    <section class="ae-hero-note">
+      <p class="ae-kicker">In focus</p>
+      <h3>Reads for this week</h3>
+      <ul>
+        <li>Applied AI beyond the hype cycle</li>
+        <li>Reliability and operations in systems that matter</li>
+        <li>Foundations for making better decisions under pressure</li>
+      </ul>
+    </section>
+    <section class="ae-hero-note">
+      <p class="ae-kicker">Use together</p>
+      <h3>Best sequence</h3>
+      <p>Start with an analysis, firm up the basics in a guide, and close the loop in labs or case studies.</p>
+    </section>
+  </aside>
+</section>
 
-This portal is designed to support real developer work:
+<p class="ae-kicker">Featured</p>
+<p class="ae-lede">
+  Follow the themes shaping day-to-day software work: applied AI, reliability, code clarity,
+  and enough technical grounding to make stronger decisions under pressure.
+</p>
 
-- **reliable foundations** you can study without jumping between random resources
-- **technical articles** with opinion, context, and practical application
-- **real projects** with decisions, trade-offs, and next actions
-- **career shortcuts** for resumes, study direction, and professional growth
+<section class="ae-home-grid">
+  <article class="ae-feature">
+    <img src="/assets/images/news-2.webp" alt="Abstract technology news illustration" loading="lazy" />
+    <div class="ae-feature-copy">
+      <p class="ae-kicker">Main story</p>
+      <h2>Applied AI, hiring momentum, and the kind of engineering still worth learning deeply</h2>
+      <p>
+        Understand why AI-driven productivity does not remove the need for strong foundations,
+        technical context, and the ability to integrate real systems under real constraints.
+      </p>
+      <div class="ae-meta">
+        <span>AI</span>
+        <span>Career</span>
+        <span>Entry read</span>
+      </div>
+      <p><a class="ae-cta" href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">Read feature</a></p>
+    </div>
+  </article>
 
-<Aside type="note" title="Portal goal">
-The goal is not just to publish content. It is to help you decide **what to study, what to reference, and where to grow next**.
-</Aside>
+  <aside class="ae-stack">
+    <section class="ae-panel">
+      <p class="ae-kicker">Essential reads</p>
+      <h3>Open next</h3>
+      <ul>
+        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code with a practical filter</a></li>
+        <li><a href="/en/artigos-tecnicos/sre/">SRE to widen your engineering range</a></li>
+        <li><a href="/en/artigos-tecnicos/bigo/">Big-O for sharper technical judgment</a></li>
+      </ul>
+    </section>
+    <section class="ae-panel">
+      <p class="ae-kicker">Next step</p>
+      <h3>Go deeper by format</h3>
+      <ul>
+        <li><a href="/en/reference/">Guides</a> for foundations and fast reference</li>
+        <li><a href="/en/reference/code-lab/">Labs</a> for browser-based practice</li>
+        <li><a href="/en/projects/">Case studies</a> for architecture and trade-offs</li>
+      </ul>
+    </section>
+  </aside>
+</section>
 
-## Start by objective
+## Highlights from this edition
+
+<section class="ae-feed">
+  <article class="ae-mini-card">
+    <img src="/assets/images/clean-code.jpg" alt="Book about clean code" loading="lazy" />
+    <p class="ae-kicker">Code</p>
+    <h3>Clean Code without dogma</h3>
+    <p>A short read on readability, maintainability, and what actually pays off in production code.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/clean-code/">Open article</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/sre.png" alt="SRE reliability diagram" loading="lazy" />
+    <p class="ae-kicker">Systems</p>
+    <h3>SRE, operations, and reliability</h3>
+    <p>A useful path if you want to think beyond the isolated app and into incidents, services, and resilience.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/sre/">Open article</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/big-o.png" alt="Big-O visual chart" loading="lazy" />
+    <p class="ae-kicker">Foundations</p>
+    <h3>Big-O without the fog</h3>
+    <p>Refresh complexity with enough context to choose data structures and algorithms more confidently.</p>
+    <p><a class="ae-cta" href="/en/artigos-tecnicos/bigo/">Open article</a></p>
+  </article>
+  <article class="ae-mini-card">
+    <img src="/assets/images/projects-1.webp" alt="Technology project preview" loading="lazy" />
+    <p class="ae-kicker">Tooling</p>
+    <h3>Tools, libraries, and technical range</h3>
+    <p>Use the reference archive when a story surfaces a specific question you want answered fast.</p>
+    <p><a class="ae-cta" href="/en/reference/">Open archive</a></p>
+  </article>
+</section>
+
+## Beyond the feed
 
 <CardGrid>
   <LinkCard
-    title="I want to start the right way"
+    title="Guides"
     href="/en/reference/getting-started/"
-    description="Study order, core foundations, and what to prioritize first."
+    description="Start with the foundational material to turn curiosity into a study direction."
   />
   <LinkCard
-    title="I want quick reference"
-    href="/en/reference/"
-    description="Data types, structures, logic, and algorithms in one place."
-  />
-  <LinkCard
-    title="I want hands-on practice"
+    title="Labs"
     href="/en/reference/code-lab/"
-    description="Run code in the browser and visualize algorithms without leaving the portal."
+    description="Use the lab to turn theory, bits, bytes, and algorithms into real experimentation."
   />
   <LinkCard
-    title="I want applied engineering"
+    title="Case Studies"
     href="/en/projects/"
-    description="Projects with context, stack, architecture, decisions, and next steps."
+    description="Open real projects to study product, architecture, and delivery decisions."
   />
   <LinkCard
-    title="I want fresh content"
-    href="/en/blog/"
-    description="Editorial entries, recent highlights, and recommended reading."
-  />
-</CardGrid>
-
----
-
-## Most useful paths right now
-
-<CardGrid>
-  <LinkCard
-    title="Foundations"
-    href="/en/reference/getting-started/"
-    description="The best entry point for beginners and for developers closing gaps."
-  />
-  <LinkCard
-    title="Technical Articles"
-    href="/en/artigos-tecnicos/"
-    description="Deep dives on clean code, SRE, algorithms, and the job market."
-  />
-  <LinkCard
-    title="Projects"
-    href="/en/projects/"
-    description="Real cases to study product, backend, architecture, and delivery."
-  />
-  <LinkCard
-    title="Resume & Career"
+    title="Resume and career"
     href="/en/reference/curriculo-que-se-destaca/"
-    description="Material to sharpen positioning and communicate your value better."
-  />
-  <LinkCard
-    title="Code Lab"
-    href="/en/reference/code-lab/"
-    description="Playground and visualizers to test concepts in a practical way."
+    description="Useful material for communicating technical value, trajectory, and professional clarity."
   />
 </CardGrid>
 
----
+<div class="ae-inline-note">
+  Read the lead story for context, use the guides to close a gap, and finish in a case study when you want to connect theory with delivery.
+</div>
 
-## Featured reading
-
-<CardGrid>
-  <LinkCard
-    title="Will AI End Developer Jobs?"
-    href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/"
-    description="Market positioning, momentum, and why studying is still the best move."
-  />
-  <LinkCard
-    title="Where to Start?"
-    href="/en/reference/getting-started/"
-    description="The most important page if you want a clear and efficient learning order."
-  />
-  <LinkCard
-    title="Data Structures"
-    href="/en/reference/estruturas-de-dados/"
-    description="A stronger guide with diagrams, implementations, and real criteria for choosing structures."
-  />
-  <LinkCard
-    title="Clean Code Summary"
-    href="/en/artigos-tecnicos/clean-code/"
-    description="Classic principles translated into a fast and practical read."
-  />
-</CardGrid>
-
----
-
-## Projects that teach
-
-<CardGrid>
-  <LinkCard
-    title="SportPulse.today"
-    href="/en/projects/sportpulse/"
-    description="A C++ backend focused on performance, modularity, and external integrations."
-  />
-  <LinkCard
-    title="Amorfy"
-    href="/en/projects/amorfy/"
-    description="An interactive product with questionnaire flow, scoring, and guided UX."
-  />
-  <LinkCard
-    title="Wheel Of List"
-    href="/en/projects/wheel-of-list/"
-    description="A lean frontend project to study utility, animation, and user feedback."
-  />
-</CardGrid>
-
----
-
-## Best way to navigate
-
-<Steps>
-  <ol>
-    <li>
-      <strong>Open the foundations path</strong> if you are building or rebuilding your base.
-    </li>
-    <li>
-      <strong>Use the technical articles hub</strong> when you want depth and perspective.
-    </li>
-    <li>
-      <strong>Study a real project</strong> to connect theory with delivery.
-    </li>
-  </ol>
-</Steps>
-
----
-
-## Portal status
-
-- <Badge text="Strong" variant="success" /> Foundations and reference content
-- <Badge text="Evolving" variant="caution" /> Editorial hubs and content organization
-- <Badge text="Practical" variant="note" /> Projects and application guides
+<Aside type="note" title="To study better">
+When a story raises a concrete question, jump to the matching reference page right away. That back-and-forth between reading and lookup sticks far better than passively scrolling.
+</Aside>

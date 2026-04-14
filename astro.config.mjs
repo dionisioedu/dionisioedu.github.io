@@ -7,8 +7,12 @@ export default defineConfig({
   output: 'static',
   integrations: [
     starlight({
-      title: 'Developers Hub',
-      description: 'A reference hub for developers: wiki, tools, and tech radar.',
+      title: 'AI Engineering',
+      description: 'Technology blog for software engineering, applied AI, practical guides, labs, and case studies.',
+      components: {
+        Footer: './src/components/DocsFooter.astro',
+      },
+      customCss: ['./src/styles/global.css'],
       head: [
         {
           tag: 'link',
@@ -69,8 +73,6 @@ export default defineConfig({
           },
         },
       ],
-
-      // i18n - automatically infer from src/content/docs structure
       locales: {
         pt: {
           label: 'Português',
@@ -81,22 +83,9 @@ export default defineConfig({
           lang: 'en',
           sidebar: [
             {
-              label: 'Reference',
+              label: 'Articles',
               items: [
-                { label: 'Overview', link: 'reference/' },
-                { label: 'Where to Start?', link: 'reference/getting-started/' },
-                { label: 'Data Types', link: 'reference/tipos-de-dados/' },
-                { label: 'ASCII Table', link: 'reference/tabela-ascii/' },
-                { label: 'Code Lab', link: 'reference/code-lab/' },
-                { label: 'Data Structures', link: 'reference/estruturas-de-dados/' },
-                { label: 'Programming Logic', link: 'reference/logica-de-programacao/' },
-                { label: 'Algorithms', link: 'reference/algoritmos/' },
-                { label: 'Resume That Stands Out', link: 'reference/curriculo-que-se-destaca/' },
-              ],
-            },
-            {
-              label: 'Technical Articles',
-              items: [
+                { label: 'Editorial Hub', link: 'blog/' },
                 { label: 'Overview', link: 'artigos-tecnicos/' },
                 { label: 'Will AI End Developer Jobs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
                 { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
@@ -105,13 +94,24 @@ export default defineConfig({
               ],
             },
             {
-              label: 'Tutorials',
+              label: 'Guides',
               items: [
-                { label: 'Hello World in C++', link: 'tutorials/hello-world-cpp/' },
+                { label: 'Overview', link: 'reference/' },
+                { label: 'Where to Start?', link: 'reference/getting-started/' },
+                { label: 'Programming Logic', link: 'reference/logica-de-programacao/' },
+                { label: 'Data Types', link: 'reference/tipos-de-dados/' },
+                { label: 'Data Structures', link: 'reference/estruturas-de-dados/' },
+                { label: 'Algorithms', link: 'reference/algoritmos/' },
+                { label: 'ASCII Table', link: 'reference/tabela-ascii/' },
+                { label: 'Resume That Stands Out', link: 'reference/curriculo-que-se-destaca/' },
               ],
             },
             {
-              label: 'Projects',
+              label: 'Labs',
+              items: [{ label: 'Code Lab', link: 'reference/code-lab/' }],
+            },
+            {
+              label: 'Case Studies',
               items: [
                 { label: 'Overview', link: 'projects/' },
                 { label: 'SportPulse.today', link: 'projects/sportpulse/' },
@@ -119,7 +119,10 @@ export default defineConfig({
                 { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
               ],
             },
-            { label: 'Blog', link: 'blog/' },
+            {
+              label: 'Tutorials',
+              items: [{ label: 'Hello World in C++', link: 'tutorials/hello-world-cpp/' }],
+            },
             {
               label: 'eBooks',
               items: [
@@ -134,22 +137,9 @@ export default defineConfig({
       defaultLocale: 'pt',
       sidebar: [
         {
-          label: 'Referência',
+          label: 'Artigos',
           items: [
-            { label: 'Visão geral', link: 'reference/' },
-            { label: 'Por Onde Começar?', link: 'reference/getting-started/' },
-            { label: 'Tipos de Dados', link: 'reference/tipos-de-dados/' },
-            { label: 'Tabela ASCII', link: 'reference/tabela-ascii/' },
-            { label: 'Code Lab', link: 'reference/code-lab/' },
-            { label: 'Estruturas de Dados', link: 'reference/estruturas-de-dados/' },
-            { label: 'Lógica de Programação', link: 'reference/logica-de-programacao/' },
-            { label: 'Algoritmos', link: 'reference/algoritmos/' },
-            { label: 'Currículo Que Se Destaca', link: 'reference/curriculo-que-se-destaca/' },
-          ],
-        },
-        {
-          label: 'Artigos Técnicos',
-          items: [
+            { label: 'Hub editorial', link: 'blog/' },
             { label: 'Visão geral', link: 'artigos-tecnicos/' },
             { label: 'IA Vai Acabar com os Devs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
             { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
@@ -158,13 +148,24 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Tutoriais',
+          label: 'Guias',
           items: [
-            { label: 'Hello World no C++', link: 'tutorials/hello-world-cpp/' },
+            { label: 'Visão geral', link: 'reference/' },
+            { label: 'Por Onde Começar?', link: 'reference/getting-started/' },
+            { label: 'Lógica de Programação', link: 'reference/logica-de-programacao/' },
+            { label: 'Tipos de Dados', link: 'reference/tipos-de-dados/' },
+            { label: 'Estruturas de Dados', link: 'reference/estruturas-de-dados/' },
+            { label: 'Algoritmos', link: 'reference/algoritmos/' },
+            { label: 'Tabela ASCII', link: 'reference/tabela-ascii/' },
+            { label: 'Currículo Que Se Destaca', link: 'reference/curriculo-que-se-destaca/' },
           ],
         },
         {
-          label: 'Projetos',
+          label: 'Labs',
+          items: [{ label: 'Code Lab', link: 'reference/code-lab/' }],
+        },
+        {
+          label: 'Case Studies',
           items: [
             { label: 'Visão geral', link: 'projects/' },
             { label: 'SportPulse.today', link: 'projects/sportpulse/' },
@@ -172,7 +173,10 @@ export default defineConfig({
             { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
           ],
         },
-        { label: 'Blog', link: 'blog/' },
+        {
+          label: 'Tutoriais',
+          items: [{ label: 'Hello World no C++', link: 'tutorials/hello-world-cpp/' }],
+        },
         {
           label: 'eBooks',
           items: [

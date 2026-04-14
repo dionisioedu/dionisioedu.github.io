@@ -3,16 +3,18 @@ const options = [
   {
     locale: 'pt',
     title: 'Português',
-    description: 'Portal para desenvolvedores com referências, artigos técnicos, projetos reais e trilhas de estudo.',
+    description: 'Leituras sobre IA aplicada, engenharia de software, fundamentos, laboratórios e estudos de caso para continuar aprendendo com direção.',
     href: '/pt/',
-    cta: 'Entrar em Português',
+    cta: 'Abrir edição em português',
+    image: '/assets/images/desktop-5.webp',
   },
   {
     locale: 'en',
     title: 'English',
-    description: 'A developer portal with references, technical articles, real projects, and practical learning paths.',
+    description: 'Editorial coverage of software engineering, applied AI, practical guides, labs, and case studies for builders who want signal over noise.',
     href: '/en/',
-    cta: 'Enter in English',
+    cta: 'Open English edition',
+    image: '/assets/images/news-1.webp',
   },
 ];
 ---
@@ -22,10 +24,10 @@ const options = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Dionisio Developer Portal</title>
+    <title>AI Engineering</title>
     <meta
       name="description"
-      content="Developer portal with technical references, articles, real projects, and curated learning paths in Portuguese and English."
+      content="AI Engineering is a technology blog about software engineering, applied AI, practical guides, labs, and case studies in Portuguese and English."
     />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -33,81 +35,114 @@ const options = [
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
       :root {
-        color-scheme: dark;
-        --bg: #07111f;
-        --bg-soft: #0c1a2d;
-        --border: rgba(148, 193, 255, 0.18);
-        --text: #f2f7ff;
-        --muted: #b8c6df;
-        --accent: #7dd3fc;
-        --accent-2: #93c5fd;
+        color-scheme: light;
+        --bg: #f4f8fa;
+        --surface: #ffffff;
+        --surface-soft: #eef4f6;
+        --border: rgba(20, 44, 58, 0.1);
+        --text: #13232c;
+        --muted: #4b5d66;
+        --accent: #117f81;
       }
 
       * { box-sizing: border-box; }
+
       body {
         margin: 0;
         min-height: 100vh;
         font-family: "Segoe UI", "Inter", system-ui, sans-serif;
         color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(125, 211, 252, 0.14), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(147, 197, 253, 0.12), transparent 24%),
-          linear-gradient(160deg, var(--bg) 0%, #091423 55%, #10213a 100%);
+        background: linear-gradient(180deg, #f7fafb 0%, var(--bg) 100%);
       }
 
       main {
-        width: min(1120px, calc(100% - 32px));
+        width: min(1100px, calc(100% - 32px));
         margin: 0 auto;
         padding: 56px 0 72px;
       }
 
       .eyebrow {
-        margin: 0 0 12px;
-        font-size: 0.86rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        margin: 0 0 10px;
         color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        gap: 20px;
+        padding: 26px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 18px 48px rgba(20, 44, 58, 0.08);
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(2.4rem, 5vw, 4.8rem);
-        line-height: 0.95;
         max-width: 10ch;
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        line-height: 0.96;
       }
 
       .lede {
-        margin: 18px 0 0;
-        max-width: 62ch;
-        font-size: 1.05rem;
+        margin: 0;
+        max-width: 60ch;
+        color: var(--muted);
         line-height: 1.7;
+        font-size: 1.04rem;
+      }
+
+      .manifesto {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .manifesto div {
+        padding: 14px 16px;
+        border-radius: 8px;
+        background: var(--surface-soft);
         color: var(--muted);
       }
 
       .grid {
-        margin-top: 40px;
+        margin-top: 28px;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
       }
 
       .card {
-        padding: 24px;
+        overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: 20px;
-        background: linear-gradient(180deg, rgba(12, 26, 45, 0.92), rgba(9, 19, 34, 0.86));
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 16px 40px rgba(20, 44, 58, 0.06);
+      }
+
+      .card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .copy {
+        padding: 18px 20px 20px;
       }
 
       .card h2 {
         margin: 0 0 10px;
-        font-size: 1.5rem;
+        font-size: 1.45rem;
       }
 
       .card p {
-        margin: 0 0 18px;
-        line-height: 1.65;
+        margin: 0 0 16px;
         color: var(--muted);
+        line-height: 1.65;
       }
 
       .card a {
@@ -116,26 +151,20 @@ const options = [
         justify-content: center;
         min-height: 44px;
         padding: 0 16px;
-        border-radius: 999px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
         text-decoration: none;
         font-weight: 700;
-        color: #03111f;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
       }
 
-      .highlights {
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .pill {
-        padding: 14px 16px;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.04);
+      .footer-note {
+        margin-top: 24px;
+        padding: 16px 18px;
+        border-left: 3px solid var(--accent);
+        background: var(--surface-soft);
         color: var(--muted);
+        line-height: 1.7;
       }
 
       @media (max-width: 780px) {
@@ -145,7 +174,7 @@ const options = [
         }
 
         .grid,
-        .highlights {
+        .manifesto {
           grid-template-columns: 1fr;
         }
       }
@@ -153,28 +182,38 @@ const options = [
   </head>
   <body>
     <main>
-      <p class="eyebrow">Dionisio.dev</p>
-      <h1>Developer portal, with a clear entry point.</h1>
-      <p class="lede">
-        Choose your language and enter a hub built to help developers study fundamentals,
-        explore technical articles, inspect real projects, and move forward with more clarity.
-      </p>
+      <section class="hero" aria-label="AI Engineering intro">
+        <div>
+          <p class="eyebrow">AI Engineering</p>
+          <h1>Technology writing for people who build.</h1>
+        </div>
+        <p class="lede">
+          Leituras sobre IA aplicada, sistemas, ferramentas, arquitetura e fundamentos técnicos
+          para quem quer contexto suficiente para estudar melhor e decidir com mais clareza.
+        </p>
+        <div class="manifesto">
+          <div>Software engineering com menos ruído e mais julgamento técnico.</div>
+          <div>IA aplicada colocada ao lado de arquitetura, confiabilidade e entrega real.</div>
+          <div>Guias, labs e estudos de caso para continuar depois da leitura.</div>
+        </div>
+      </section>
 
-      <section class="grid" aria-label="Language options">
+      <section class="grid" aria-label="Language editions">
         {options.map((option) => (
           <article class="card">
-            <h2>{option.title}</h2>
-            <p>{option.description}</p>
-            <a href={option.href} data-locale-link={option.locale}>{option.cta}</a>
+            <img src={option.image} alt={option.title} loading="lazy" />
+            <div class="copy">
+              <h2>{option.title}</h2>
+              <p>{option.description}</p>
+              <a href={option.href} data-locale-link={option.locale}>{option.cta}</a>
+            </div>
           </article>
         ))}
       </section>
 
-      <section class="highlights" aria-label="Portal highlights">
-        <div class="pill">Reference pages for quick lookup and structured study</div>
-        <div class="pill">Technical articles with context, trade-offs, and market perspective</div>
-        <div class="pill">Real projects with architecture, decisions, and next-step guidance</div>
-      </section>
+      <div class="footer-note">
+        Escolha um idioma, abra a matéria principal e use o restante do acervo para aprofundar o tema, praticar no browser ou observar decisões em projetos reais.
+      </div>
     </main>
 
     <script is:inline>
