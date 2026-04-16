@@ -322,7 +322,11 @@
     font-size: 0.84rem;
   }
 
-  .ae-cta {
+  .ae-cta,
+  .sl-markdown-content a.ae-cta:not(:where(.not-content *)),
+  .sl-markdown-content a.ae-cta:not(:where(.not-content *)):visited,
+  .sl-markdown-content a.ae-cta:not(:where(.not-content *)):hover,
+  .sl-markdown-content a.ae-cta:not(:where(.not-content *)):focus-visible {
     display: inline-flex;
     align-items: center;
     justify-content: center;
