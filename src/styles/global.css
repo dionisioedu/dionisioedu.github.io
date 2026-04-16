@@ -201,6 +201,14 @@
     gap: 0.75rem;
   }
 
+  [data-theme='light'] .sl-markdown-content .ae-hero-actions .ae-cta,
+  [data-theme='light'] .sl-markdown-content .ae-hero-actions .ae-cta:visited,
+  [data-theme='light'] .sl-markdown-content .ae-hero-actions .ae-cta:hover,
+  [data-theme='light'] .sl-markdown-content .ae-hero-actions .ae-cta:focus-visible {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff;
+  }
+
   .ae-hero-strip {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
