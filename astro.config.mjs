@@ -7,8 +7,9 @@ export default defineConfig({
   output: 'static',
   integrations: [
     starlight({
-      title: 'AI Engineering',
-      description: 'Technology blog for software engineering, applied AI, practical guides, labs, and case studies.',
+      title: 'Dionisio Developer',
+      description:
+        'Portfolio, blog, store, and technical reference by @dionisiodev on software engineering, applied AI, products, and career growth.',
       components: {
         Footer: './src/components/DocsFooter.astro',
       },
@@ -83,9 +84,9 @@ export default defineConfig({
           lang: 'en',
           sidebar: [
             {
-              label: 'Articles',
+              label: 'Blog',
               items: [
-                { label: 'Editorial Hub', link: 'blog/' },
+                { label: 'Blog Home', link: 'blog/' },
                 { label: 'Overview', link: 'artigos-tecnicos/' },
                 { label: 'Will AI End Developer Jobs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
                 { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
@@ -111,7 +112,7 @@ export default defineConfig({
               items: [{ label: 'Code Lab', link: 'reference/code-lab/' }],
             },
             {
-              label: 'Case Studies',
+              label: 'Portfolio',
               items: [
                 { label: 'Overview', link: 'projects/' },
                 { label: 'SportPulse.today', link: 'projects/sportpulse/' },
@@ -137,10 +138,11 @@ export default defineConfig({
       defaultLocale: 'pt',
       sidebar: [
         {
-          label: 'Artigos',
+          label: 'Blog',
           items: [
-            { label: 'Hub editorial', link: 'blog/' },
+            { label: 'Início do blog', link: 'blog/' },
             { label: 'Visão geral', link: 'artigos-tecnicos/' },
+            { label: 'n8n grátis na Oracle Cloud', link: 'artigos-tecnicos/n8n-gratis-oracle-cloud/' },
             { label: 'IA Vai Acabar com os Devs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
             { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
             { label: 'SRE', link: 'artigos-tecnicos/sre/' },
@@ -165,7 +167,7 @@ export default defineConfig({
           items: [{ label: 'Code Lab', link: 'reference/code-lab/' }],
         },
         {
-          label: 'Case Studies',
+          label: 'Portfólio',
           items: [
             { label: 'Visão geral', link: 'projects/' },
             { label: 'SportPulse.today', link: 'projects/sportpulse/' },
@@ -184,7 +186,7 @@ export default defineConfig({
             { label: 'Guia Avançado C++', link: 'ebooks/guia-avancado-cpp/' },
           ],
         },
-        { label: 'Shop', link: 'shop/' },
+        { label: 'Loja', link: 'shop/' },
       ],
     }),
   ],

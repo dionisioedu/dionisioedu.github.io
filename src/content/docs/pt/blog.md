@@ -1,50 +1,50 @@
 ---
 title: Blog
-description: 'Hub editorial minimalista com matéria principal, destaques recentes e acesso rápido ao restante do acervo.'
+description: 'Artigos, análises e trilhas de leitura de Dionisio Developer sobre software, IA aplicada, carreira e construção de produto.'
 ---
 
-<p class="ae-kicker">Blog</p>
+<p class="ae-kicker">Dionisio Developer</p>
 <p class="ae-lede">
-  Comece pela leitura principal, avance pelos textos de apoio e use o restante do acervo quando
-  quiser levar a ideia para fundamentos, prática ou estudo aplicado.
+  Textos para quem acompanha <strong>@dionisiodev</strong> e quer repertório útil em engenharia,
+  IA aplicada, produto e crescimento profissional, com menos hype e mais clareza prática.
 </p>
 
 <section class="ae-home-grid">
   <article class="ae-feature">
-    <img src="/assets/images/desktop-6.webp" alt="Mesa de trabalho com interface tecnológica" loading="lazy" />
+    <img src="/assets/images/n8n-oracle-cloud-hero.jpg" alt="Mesa minimalista com notebook aberto" loading="lazy" />
     <div class="ae-feature-copy">
-      <p class="ae-kicker">Lead story</p>
-      <h2>IA, empregos e adaptação técnica sem pânico de feed</h2>
+      <p class="ae-kicker">Leitura principal</p>
+      <h2>Como subir um n8n de graça na Oracle Cloud e deixar rodando 24/7</h2>
       <p>
-        Um texto para separar ruído de tendência real e pensar com mais clareza sobre estudo,
-        ferramenta, produtividade e o valor de quem consegue entregar com contexto.
+        Um guia direto, testado em abril de 2026, para quem quer automação própria na cloud sem
+        depender de plano pago logo no começo.
       </p>
       <div class="ae-meta">
-        <span>Mercado</span>
-        <span>IA</span>
-        <span>Posicionamento</span>
+        <span>n8n</span>
+        <span>Oracle Cloud</span>
+        <span>Docker</span>
       </div>
-      <p><a class="ae-cta" href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">Ler artigo principal</a></p>
+      <p><a class="ae-cta" href="/pt/artigos-tecnicos/n8n-gratis-oracle-cloud/">Ler artigo principal</a></p>
     </div>
   </article>
 
   <aside class="ae-stack">
     <section class="ae-panel">
-      <p class="ae-kicker">Mais lidos</p>
-      <h3>Continue por aqui</h3>
+      <p class="ae-kicker">Leia a seguir</p>
+      <h3>Assuntos que aprofundam</h3>
       <ul>
-        <li><a href="/pt/artigos-tecnicos/clean-code/">Resumo do Clean Code</a></li>
-        <li><a href="/pt/artigos-tecnicos/sre/">O que é SRE?</a></li>
-        <li><a href="/pt/artigos-tecnicos/bigo/">Anatomia da Notação Big-O</a></li>
+        <li><a href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">IA, mercado e posicionamento técnico</a></li>
+        <li><a href="/pt/artigos-tecnicos/clean-code/">Clean Code com critério prático</a></li>
+        <li><a href="/pt/artigos-tecnicos/sre/">SRE para ampliar repertório de engenharia</a></li>
       </ul>
     </section>
     <section class="ae-panel">
-      <p class="ae-kicker">Leitura por objetivo</p>
-      <h3>Escolha o melhor próximo passo</h3>
+      <p class="ae-kicker">Também vale abrir</p>
+      <h3>Conecte leitura com trabalho</h3>
       <ul>
-        <li><a href="/pt/reference/getting-started/">Fechar lacunas de base</a></li>
-        <li><a href="/pt/reference/code-lab/">Testar conceitos na prática</a></li>
-        <li><a href="/pt/projects/">Observar sistemas e produto em casos reais</a></li>
+        <li><a href="/pt/projects/">Portfólio</a> para ver produto e engenharia em casos reais</li>
+        <li><a href="/pt/reference/">Referência</a> para fechar lacunas enquanto lê</li>
+        <li><a href="/pt/shop/">Loja</a> para materiais e produtos complementares</li>
       </ul>
     </section>
   </aside>
@@ -56,30 +56,30 @@ description: 'Hub editorial minimalista com matéria principal, destaques recent
   <article class="ae-mini-card">
     <img src="/assets/images/clean-code.jpg" alt="Livro de clean code" loading="lazy" />
     <p class="ae-kicker">Código</p>
-    <h3>Clean Code com menos liturgia</h3>
-    <p>Uma leitura rápida para revisar o que melhora legibilidade sem cair em fórmula vazia.</p>
+    <h3>Clean Code sem fórmula vazia</h3>
+    <p>Uma revisão rápida sobre legibilidade, manutenção e o que realmente vale a pena no código de produção.</p>
     <p><a class="ae-cta" href="/pt/artigos-tecnicos/clean-code/">Ler texto</a></p>
   </article>
   <article class="ae-mini-card">
     <img src="/assets/images/sre.png" alt="Imagem sobre SRE" loading="lazy" />
     <p class="ae-kicker">Confiabilidade</p>
-    <h3>SRE para ampliar a conversa</h3>
-    <p>Ótimo ponto de entrada para pensar incidentes, error budgets e maturidade operacional.</p>
+    <h3>SRE para pensar além do app isolado</h3>
+    <p>Um bom ponto de entrada para incidentes, error budgets, operação e maturidade de sistemas.</p>
     <p><a class="ae-cta" href="/pt/artigos-tecnicos/sre/">Ler texto</a></p>
   </article>
   <article class="ae-mini-card">
-    <img src="/assets/images/bigo.jpg" alt="Ilustração de algoritmo Big-O" loading="lazy" />
+    <img src="/assets/images/big-o-graph.png" alt="Ilustração de complexidade Big-O" loading="lazy" />
     <p class="ae-kicker">Base</p>
-    <h3>Big-O como critério de decisão</h3>
-    <p>Volte ao fundamento para escolher melhor quando performance e escala começarem a importar.</p>
+    <h3>Big-O como apoio para decisão</h3>
+    <p>Volte ao fundamento quando performance, escala e escolha de estrutura começarem a pesar.</p>
     <p><a class="ae-cta" href="/pt/artigos-tecnicos/bigo/">Ler texto</a></p>
   </article>
   <article class="ae-mini-card">
-    <img src="/assets/images/hacker-1.webp" alt="Ambiente tecnológico abstrato" loading="lazy" />
-    <p class="ae-kicker">Arquivo</p>
-    <h3>Mais contexto para continuar estudando</h3>
-    <p>Abra o índice quando quiser navegar o acervo por conta própria e montar sua própria trilha.</p>
-    <p><a class="ae-cta" href="/pt/artigos-tecnicos/">Ver índice</a></p>
+    <img src="/assets/images/projects-1.webp" alt="Prévia de projetos de software" loading="lazy" />
+    <p class="ae-kicker">Contexto</p>
+    <h3>Quando artigo e portfólio se completam</h3>
+    <p>Leia, depois observe como os mesmos princípios aparecem em projetos e decisões de produto.</p>
+    <p><a class="ae-cta" href="/pt/projects/">Ver portfólio</a></p>
   </article>
 </section>
 
@@ -87,23 +87,23 @@ description: 'Hub editorial minimalista com matéria principal, destaques recent
 
 <CardGrid>
   <LinkCard
-    title="Guides"
-    href="/pt/reference/getting-started/"
-    description="Use os guias quando a leitura editorial despertar uma lacuna que precisa virar estudo."
-  />
-  <LinkCard
-    title="Labs"
-    href="/pt/reference/code-lab/"
-    description="Leve conceitos direto para o browser sem sair do mesmo ambiente."
-  />
-  <LinkCard
-    title="Case Studies"
+    title="Portfólio"
     href="/pt/projects/"
-    description="Conecte texto e entrega observando produto, arquitetura e trade-offs."
+    description="Abra projetos reais para conectar texto, arquitetura, UX e entrega."
   />
   <LinkCard
-    title="Arquivo completo"
-    href="/pt/artigos-tecnicos/"
-    description="Abra o índice quando quiser navegar o acervo sem mediação editorial."
+    title="Guias"
+    href="/pt/reference/getting-started/"
+    description="Use os guias quando o artigo levantar uma lacuna que precisa virar estudo."
+  />
+  <LinkCard
+    title="Currículo e posicionamento"
+    href="/pt/reference/curriculo-que-se-destaca/"
+    description="Melhore a forma de apresentar impacto, prova de trabalho e direção profissional."
+  />
+  <LinkCard
+    title="Loja"
+    href="/pt/shop/"
+    description="Encontre materiais e produtos para levar a próxima etapa da leitura para a prática."
   />
 </CardGrid>
