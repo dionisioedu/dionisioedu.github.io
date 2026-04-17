@@ -118,7 +118,7 @@ const normalizeTags = (tags: string[] | undefined) =>
 
 export const getLocalizedBlogPosts = (docs: CollectionEntry<'docs'>[], locale: BlogLocale) =>
   docs
-    .filter((entry) => isPostEntry(entry.slug ?? entry.id, locale))
+    .filter((entry) => isPostEntry(entry.id, locale))
     .map(
       (entry): BlogPostSummary => ({
         title: entry.data.title,
@@ -127,7 +127,7 @@ export const getLocalizedBlogPosts = (docs: CollectionEntry<'docs'>[], locale: B
         author: entry.data.author ?? 'Dionisio',
         cover: entry.data.cover,
         coverAlt: entry.data.coverAlt ?? entry.data.title,
-        href: toHref(entry.slug ?? entry.id),
+        href: toHref(entry.id),
         excerpt: extractExcerpt(entry.body, entry.data.description),
         tags: normalizeTags(entry.data.tags),
       })

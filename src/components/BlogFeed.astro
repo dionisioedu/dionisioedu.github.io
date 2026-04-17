@@ -156,28 +156,28 @@ const morePostsId = `${feedId}-more`;
   <p class="ae-empty-state" data-empty-state hidden>{labels.empty}</p>
 </section>
 
-<script define:vars={{ feedId }}>
+<script>
   const initBlogFeed = () => {
-    const feed = document.getElementById(feedId);
-    if (!feed || feed.dataset.bound === 'true') return;
+    const feed = document.querySelector('[data-blog-feed]');
+    if (!(feed instanceof HTMLElement) || feed.dataset.bound === 'true') return;
 
     feed.dataset.bound = 'true';
 
-    const posts = Array.from(feed.querySelectorAll('[data-post-kind]'));
-    const filterState = feed.querySelector('[data-filter-state]');
-    const emptyState = feed.querySelector('[data-empty-state]');
-    const morePosts = feed.querySelector('[data-more-posts]');
+    const posts = Array.from(feed.querySelectorAll<HTMLElement>('[data-post-kind]'));
+    const filterState = feed.querySelector<HTMLElement>('[data-filter-state]');
+    const emptyState = feed.querySelector<HTMLElement>('[data-empty-state]');
+    const morePosts = feed.querySelector<HTMLDetailsElement>('[data-more-posts]');
     const filterPrefix = feed.dataset.filterPrefix ?? '';
     const emptyLabel = feed.dataset.emptyLabel ?? '';
 
     const getActiveTag = () => new URLSearchParams(window.location.search).get('tag') ?? '';
 
-    const getTagLabel = (slug) => {
+    const getTagLabel = (slug: string) => {
       const activeLink = document.querySelector(`[data-blog-tag-link][data-tag="${slug}"]`);
-      return activeLink?.dataset.label ?? slug;
+      return activeLink instanceof HTMLElement ? (activeLink.dataset.label ?? slug) : slug;
     };
 
-    const matchesTag = (post, activeTag) => {
+    const matchesTag = (post: HTMLElement, activeTag: string) => {
       if (!activeTag) return true;
       const tags = (post.dataset.tags ?? '').split(/\s+/).filter(Boolean);
       return tags.includes(activeTag);

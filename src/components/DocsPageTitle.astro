@@ -1,13 +1,14 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
 
-const { entry, locale, slug } = Astro.locals.starlightRoute;
+const { entry, locale, id } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
 const { publishedAt, author } = entry.data;
 
 const isBlogPost =
-  /(^|\/)artigos-tecnicos\/[^/]+$/.test(slug) &&
-  !slug.endsWith('/artigos-tecnicos') &&
-  !slug.endsWith('/artigos-tecnicos/index');
+  /(^|\/)artigos-tecnicos\/[^/]+$/.test(id) &&
+  !id.endsWith('/artigos-tecnicos') &&
+  !id.endsWith('/artigos-tecnicos/index');
 
 const currentLocale = locale ?? 'pt';
 const dateLabel =

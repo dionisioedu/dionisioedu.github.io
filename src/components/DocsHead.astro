@@ -1,5 +1,7 @@
 ---
-const { head, entry } = Astro.locals.starlightRoute;
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+
+const { head, entry } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
 
 const siteUrl = Astro.site ?? new URL('https://dionisio.dev');
 const fallbackImage = new URL('/assets/images/social-card.png', siteUrl).href;

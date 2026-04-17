@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import MobileTableOfContents from 'virtual:starlight/components/MobileTableOfContents';
-import TableOfContents from 'virtual:starlight/components/TableOfContents';
+import MobileTableOfContents from '@astrojs/starlight/components/MobileTableOfContents.astro';
+import TableOfContents from '@astrojs/starlight/components/TableOfContents.astro';
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
 import { getBlogTagSummary, getLocalizedBlogPosts, isBlogListingPath } from '../utils/blog';
 
-const { locale, toc } = Astro.locals.starlightRoute;
+const { locale, toc } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
 const currentLocale = (locale ?? 'pt') as 'pt' | 'en';
 const currentPath = Astro.url.pathname;
 const isBlogListing = isBlogListingPath(currentPath);
@@ -104,6 +105,7 @@ if (isBlogListing) {
     const activeTag = new URLSearchParams(window.location.search).get('tag') ?? '';
 
     document.querySelectorAll('[data-blog-tag-link]').forEach((link) => {
+      if (!(link instanceof HTMLElement)) return;
       const isActive = (link.dataset.tag ?? '') === activeTag;
       link.classList.toggle('is-active', isActive);
       link.setAttribute('aria-current', isActive ? 'true' : 'false');

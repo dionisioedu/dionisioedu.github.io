@@ -1,6 +1,7 @@
 ---
 const isPt = Astro.url.pathname.startsWith('/pt');
 const year = new Date().getFullYear();
+type FooterLink = { label: string; href: string; external?: boolean };
 
 const copy = isPt
   ? {
@@ -92,7 +93,7 @@ const copy = isPt
         <section class="ae-footer-column">
           <h3>{group.title}</h3>
           <ul>
-            {group.links.map((link) => (
+            {group.links.map((link: FooterLink) => (
               <li>
                 <a
                   href={link.href}
