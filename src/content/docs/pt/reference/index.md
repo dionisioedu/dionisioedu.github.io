@@ -1,21 +1,21 @@
 ---
 title: Referência
-description: 'Hub de referência com trilhas, fundamentos e atalhos práticos para estudar melhor e consultar mais rápido.'
+description: 'Base de referência de Dionisio Developer com trilhas, fundamentos e atalhos práticos para estudar melhor e consultar mais rápido.'
 ---
 
 # Referência
 
-Se você quer usar este portal como base de estudo e consulta rápida, é aqui que a coisa começa de verdade.
+Esta é a biblioteca técnica de Dionisio Developer.
 
-Esta seção existe para resolver três problemas muito comuns:
+Ela existe para resolver três dores comuns:
 
 - estudar sem ordem
-- consultar assunto picado sem entender o contexto
-- avançar de tecnologia sem base firme
+- consultar assunto picado sem entender contexto
+- tentar avançar rápido demais sem base firme
 
-Então a lógica aqui é simples: menos bagunça, mais clareza.
+Por isso a lógica aqui é simples: menos bagunça, mais clareza.
 
-## Se você está perdido, segue esta ordem
+## Se você está perdido, siga esta ordem
 
 1. [Por Onde Começar?](/pt/reference/getting-started/)
 2. [Tipos de Dados](/pt/reference/tipos-de-dados/)
@@ -26,140 +26,58 @@ Então a lógica aqui é simples: menos bagunça, mais clareza.
 7. [Algoritmos](/pt/reference/algoritmos/)
 8. revisar os padrões em [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e [Algoritmos](/pt/reference/algoritmos/)
 
-Essa sequência resolve a maior parte da confusão mental de quem está no começo ou tentando fechar lacunas.
+Essa sequência costuma resolver a maior parte da confusão mental de quem está no começo ou fechando lacunas.
 
-## O que cada página resolve
+## O que cada página ajuda a resolver
 
 ### [Por Onde Começar?](/pt/reference/getting-started/)
 
-Pra quem está travado sem saber o que estudar primeiro.
-
-Você vai encontrar:
-
-- ordem prática de estudo
-- o que aprender em cada etapa
-- o que fazer em paralelo sem bagunçar a base
+Para quem precisa transformar curiosidade em ordem de estudo.
 
 ### [Tipos de Dados](/pt/reference/tipos-de-dados/)
 
-Pra quem ainda trata dado como se tudo fosse string e depois sofre com bug bobo.
-
-Você vai encontrar:
-
-- como modelar informação direito
-- quando usar inteiro, decimal, texto, booleano e null
-- erros clássicos com dinheiro, datas e identificadores
-- bits, casting, caracteres, representação na memória e base binária
+Para modelar informação direito e evitar bugs básicos que viram ruído no dia a dia.
 
 ### [Tabela ASCII](/pt/reference/tabela-ascii/)
 
-Pra quem quer entender de vez por que caractere também é número.
-
-Você vai encontrar:
-
-- tabela ASCII completa
-- decimal, hexadecimal e binário lado a lado
-- base histórica e prática para parsing, texto e bytes
+Para entender melhor texto, bytes, parsing e representação.
 
 ### [Code Lab](/pt/reference/code-lab/)
 
-Pra quem quer parar de só ler e começar a testar conceito no navegador.
-
-Você vai encontrar:
-
-- playground para JavaScript e Python
-- representação visual de bits, bytes, ASCII e memória
-- animações de busca, ordenação, BFS, DFS e Dijkstra
+Para testar conceito no navegador e sair da leitura passiva.
 
 ### [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
 
-Pra quem quer parar de guardar tudo “de qualquer jeito”.
-
-Você vai encontrar:
-
-- quando usar array, lista ligada, pilha, fila, deque, mapa, set, heap, árvore e grafo
-- diagramas, implementações e comparação de operações
-- intuição de desempenho sem virar refém de teoria
+Para escolher melhor como organizar informação e pensar desempenho com mais segurança.
 
 ### [Lógica de Programação](/pt/reference/logica-de-programacao/)
 
-Pra quem entende sintaxe, mas trava na hora de resolver.
-
-Você vai encontrar:
-
-- como quebrar problema em partes
-- como pensar em entrada, transformação e saída
-- como destravar antes de abrir o teclado
+Para destravar raciocínio antes de abrir o teclado.
 
 ### [Algoritmos](/pt/reference/algoritmos/)
 
-Pra quem quer sair do “funciona de algum jeito” e começar a pensar melhor.
-
-Você vai encontrar:
-
-- como montar solução correta
-- quando performance começa a importar
-- como reconhecer padrões de resolução
+Para sair do “funciona de algum jeito” e entrar em solução melhor pensada.
 
 ### [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/)
 
-Pra quem já está estudando e quer transformar esforço em oportunidade.
+Para transformar estudo, projeto e experiência em prova de valor profissional.
 
-Você vai encontrar:
-
-- como estruturar currículo técnico
-- como mostrar impacto real
-- o que tira candidatura do jogo rápido
-
-## Como usar esta seção sem perder tempo
+## Como usar sem perder tempo
 
 ### Consulta rápida
 
-Use quando você já está praticando e quer revisar um conceito específico.
-
-Exemplos:
-
-- “quando eu uso map em vez de list?”
-- “dinheiro deve ser string, float ou inteiro em centavos?”
-- “por que meu algoritmo ficou lento?”
+Quando a dúvida é pontual e você precisa responder algo enquanto trabalha ou estuda.
 
 ### Trilha de estudo
 
-Use quando você quer seguir sequência e parar de estudar no improviso.
-
-Regra prática:
-
-- base primeiro
-- projeto depois
-- profundidade por cima da base, não no lugar dela
+Quando o problema é falta de ordem.
 
 ### Revisão para entrevista
 
-Se a dor for entrevista, priorize:
+Quando a prioridade é reforçar base e comunicar melhor valor técnico.
 
-1. [Estruturas de Dados](/pt/reference/estruturas-de-dados/)
-2. [Algoritmos](/pt/reference/algoritmos/)
-3. [Currículo Que Se Destaca](/pt/reference/curriculo-que-se-destaca/)
-
-## Erro que mais atrasa dev
-
-Querer estudar tudo ao mesmo tempo:
-
-- framework
-- cloud
-- IA
-- microserviços
-- system design
-- entrevistas
-
-Sem base, isso vira só sensação de movimento.
-
-Com base, isso vira progresso de verdade.
-
-## Próximas ações
+## Próximos passos
 
 - Se você está começando, abra [Por Onde Começar?](/pt/reference/getting-started/)
-- Se você quer entender texto, bytes e representação, leia [Tabela ASCII](/pt/reference/tabela-ascii/)
-- Se você quer praticar sem sair do portal, abra o [Code Lab](/pt/reference/code-lab/)
-- Se você quer reforçar engenharia, vá para [Estruturas de Dados](/pt/reference/estruturas-de-dados/) e depois [Algoritmos](/pt/reference/algoritmos/)
-- Se você quer aplicar o que estudou, siga para [Projetos](/pt/projects/)
+- Se quer prática imediata, vá para o [Code Lab](/pt/reference/code-lab/)
+- Se quer ligar base com trabalho real, continue em [Portfólio](/pt/projects/) e [Blog](/pt/blog/)

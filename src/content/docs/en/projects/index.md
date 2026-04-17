@@ -1,117 +1,101 @@
 ---
-title: Projects
-description: 'Case studies from the Dionisio ecosystem to analyze product thinking, architecture, UX, implementation choices, and practical engineering follow-up.'
+title: Portfolio
+description: 'Dionisio Developer projects that show product thinking, architecture, UX choices, technical decisions, and real work in motion.'
 ---
 
-# Projects
+# Portfolio
 
-This section exists for one simple reason:
+This section turns Dionisio Developer work into more than a showcase.
 
-turn real projects into useful study material for developers.
-
-It is not only a showcase.
-
-It is a case-study hub.
-
-Each project page tries to answer:
+The goal here is to show projects with context:
 
 - what problem the product solves
-- what a developer can learn from it
-- which technical and product decisions deserve attention
-- how to turn observation into practice
+- how the experience is organized
+- which technical choices matter most
+- where the most interesting trade-offs live
 
-## How to use this section the right way
+It is a portfolio built for people who want to understand the work and learn from it at the same time.
 
-Do not browse only like an end user.
+## How to read it with a product and engineering lens
 
-Browse like a developer.
+Instead of looking only at interface or stack, pay attention to:
 
-That means:
+1. the core promise of the product
+2. where experience clarity matters most
+3. what kind of architecture likely supports the delivery
+4. which decisions seem driven by cost, speed, or simplicity
+5. what you would keep or change
 
-1. understand the product problem
-2. observe the main flow
-3. identify interface or backend states
-4. think about the data structures and algorithms behind it
-5. note which trade-offs you would keep or change
-
-That is the kind of reading that actually helps you grow.
+That kind of reading turns a portfolio into usable range.
 
 ## Featured projects
 
 ### [SportPulse.today](/en/projects/sportpulse/)
 
-A backend-leaning project with performance pressure and real-time data product thinking.
+A real-time data product with update pressure, fast consumption needs, and backend thinking at the center.
 
 ![SportPulse.today preview](/assets/images/sportpulse.png)
 
-What you can study here:
+What to observe:
 
-- information aggregation
-- response clarity for fast consumption
-- continuous-update pressure
-- practical modular backend thinking
+- information aggregation and organization
+- clarity for quick consumption
+- modular backend thinking with practical focus
+- the role of performance in a product that depends on freshness
 
 ### [Amorfy](/en/projects/amorfy/)
 
-A strong case for guided flow, multi-step questionnaires, and value perception through results.
+A strong case for guided flow, multi-step progression, and perceived value built through results.
 
 ![Amorfy preview](/assets/images/amorfy.png)
 
-What you can study here:
+What to observe:
 
-- long-form UX
 - step progression
+- long-form UX
 - interface copy
-- turning answers into perceived product value
+- turning answers into a strong sense of value
 
 ### [Wheel Of List](/en/projects/wheel-of-list/)
 
-A lean tool with immediate usefulness, readable visual feedback, and clear micro-interactions.
+A direct tool with a clear primary action, readable feedback, and product expansion potential.
 
 ![Wheel Of List preview](/assets/images/wheel-of-list.png)
 
-What you can study here:
+What to observe:
 
-- frictionless primary action
-- visual feedback
-- tool state management
-- expanding a simple utility into a broader feature set
+- frictionless entry
+- immediate visual feedback
+- state management
+- extending a lean utility into a broader product ecosystem
 
-## Which project should you open first?
+## What this portfolio says about the work
 
-### If you like backend and performance
+Taken together, these projects show a recognizable approach:
+
+- clear product usefulness
+- simple but intentional experience design
+- enough engineering depth to support real use
+- clarity before unnecessary complexity
+
+That combination also shapes the rest of the site.
+
+## Which project to open first
+
+### To see backend, updates, and data in context
 
 Start with [SportPulse.today](/en/projects/sportpulse/).
 
-### If you want to study guided UX and product flow
+### To study flow, forms, and value building
 
 Start with [Amorfy](/en/projects/amorfy/).
 
-### If you want to study a simple but well-resolved utility
+### To study utility, focus, and direct interaction
 
 Start with [Wheel Of List](/en/projects/wheel-of-list/).
 
-## What to compare across them
+## Useful next steps
 
-A strong way to use these cases is to compare:
-
-- guided flow versus direct utility
-- data-oriented backend versus interaction-oriented product
-- tight scope versus continuous update pressure
-- emotional experience versus utility-first experience
-
-That is where architecture and product start looking like the same conversation.
-
-## Strong questions to ask while browsing
-
-- What is the primary action of the product?
-- Where is the biggest technical risk?
-- What seems harder: modeling data, modeling flow, or modeling interface?
-- Where does performance probably matter most?
-- Where does UX clarity matter more than technical complexity?
-
-## Next actions
-
-- Open one project and read the detailed page with a technical mindset
-- Reinforce the matching foundation in [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
-- Then return to [Technical Articles](/en/artigos-tecnicos/) to connect engineering perspective and practice
+- Go back to the [Blog](/en/blog/) to connect the projects with technical perspective and positioning
+- Open the [Reference](/en/reference/) when you want stronger fundamentals for interpreting the decisions
+- Use the [Resume](/en/reference/curriculo-que-se-destaca/) material to turn work into proof of value

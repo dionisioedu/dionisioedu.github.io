@@ -1,0 +1,37 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const { entry, locale, slug } = Astro.locals.starlightRoute;
+const { publishedAt, author } = entry.data;
+
+const isBlogPost =
+  /(^|\/)artigos-tecnicos\/[^/]+$/.test(slug) &&
+  !slug.endsWith('/artigos-tecnicos') &&
+  !slug.endsWith('/artigos-tecnicos/index');
+
+const currentLocale = locale ?? 'pt';
+const dateLabel =
+  publishedAt instanceof Date
+    ? publishedAt.toLocaleDateString(currentLocale === 'pt' ? 'pt-BR' : 'en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        timeZone: 'UTC',
+      })
+    : undefined;
+const authorLabel = author ?? 'Dionisio';
+const byLabel = currentLocale === 'pt' ? 'por' : 'by';
+---
+
+<>
+  <Default />
+  {
+    isBlogPost && (dateLabel || authorLabel) && (
+      <p class="ae-doc-meta">
+        {dateLabel}
+        {dateLabel && authorLabel ? ' · ' : ''}
+        {authorLabel ? `${byLabel} ${authorLabel}` : ''}
+      </p>
+    )
+  }
+</>

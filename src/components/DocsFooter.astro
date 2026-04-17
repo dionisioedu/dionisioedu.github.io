@@ -4,72 +4,78 @@ const year = new Date().getFullYear();
 
 const copy = isPt
   ? {
-      kicker: 'AI Engineering',
-      title: 'Leitura técnica para quem constrói software no mundo real.',
+      kicker: 'Dionisio Developer',
+      title: 'Portfólio, blog, materiais e referência técnica em torno de @dionisiodev.',
       body:
-        'Arquitetura, IA aplicada, confiabilidade, fundamentos e ferramentas em um fluxo editorial pensado para consulta, estudo e tomada de decisão.',
+        'O ponto central para acompanhar projetos, textos, produtos e a forma como Dionisio pensa software, IA aplicada, carreira e construção de produto.',
       groups: [
+        {
+          title: 'Acompanhe',
+          links: [
+            { label: 'X', href: 'https://x.com/dionisiodev', external: true },
+            { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev', external: true },
+            { label: 'Medium', href: 'https://medium.com/@dionisiodev', external: true },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/', external: true },
+          ],
+        },
         {
           title: 'Explorar',
           links: [
-            { label: 'Hub editorial', href: '/pt/blog/' },
-            { label: 'Guias', href: '/pt/reference/' },
-            { label: 'Labs', href: '/pt/reference/code-lab/' },
+            { label: 'Portfólio', href: '/pt/projects/' },
+            { label: 'Blog', href: '/pt/blog/' },
+            { label: 'Loja', href: '/pt/shop/' },
+            { label: 'Referência', href: '/pt/reference/' },
           ],
         },
         {
-          title: 'Ler por tema',
+          title: 'Comece por aqui',
           links: [
-            { label: 'IA aplicada', href: '/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
-            { label: 'SRE e confiabilidade', href: '/pt/artigos-tecnicos/sre/' },
-            { label: 'Fundamentos', href: '/pt/artigos-tecnicos/bigo/' },
-          ],
-        },
-        {
-          title: 'Aprofundar',
-          links: [
-            { label: 'Case studies', href: '/pt/projects/' },
-            { label: 'Carreira', href: '/pt/reference/curriculo-que-se-destaca/' },
-            { label: 'Edição em inglês', href: '/en/' },
+            { label: 'Currículo que se destaca', href: '/pt/reference/curriculo-que-se-destaca/' },
+            { label: 'Por onde começar', href: '/pt/reference/getting-started/' },
+            { label: 'Code Lab', href: '/pt/reference/code-lab/' },
+            { label: 'eBooks', href: '/pt/books/' },
           ],
         },
       ],
-      bottomLeft: `© ${year} AI Engineering`,
-      bottomRight: 'Leitura editorial para engenharia de software, desenvolvimento e IA.',
+      bottomLeft: `© ${year} Dionisio Developer`,
+      bottomRight: '@dionisiodev no X, YouTube, Medium e LinkedIn.',
     }
   : {
-      kicker: 'AI Engineering',
-      title: 'Technical reading for people building software in the real world.',
+      kicker: 'Dionisio Developer',
+      title: 'Portfolio, writing, products, and technical reference around @dionisiodev.',
       body:
-        'Architecture, applied AI, reliability, foundations, and tooling in an editorial flow designed for study, reference, and better technical judgment.',
+        'The home base for following projects, articles, products, and the way Dionisio approaches software, applied AI, career growth, and product work.',
       groups: [
+        {
+          title: 'Follow',
+          links: [
+            { label: 'X', href: 'https://x.com/dionisiodev', external: true },
+            { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev', external: true },
+            { label: 'Medium', href: 'https://medium.com/@dionisiodev', external: true },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/', external: true },
+          ],
+        },
         {
           title: 'Explore',
           links: [
-            { label: 'Editorial hub', href: '/en/blog/' },
-            { label: 'Guides', href: '/en/reference/' },
-            { label: 'Labs', href: '/en/reference/code-lab/' },
+            { label: 'Portfolio', href: '/en/projects/' },
+            { label: 'Blog', href: '/en/blog/' },
+            { label: 'Shop', href: '/en/shop/' },
+            { label: 'Reference', href: '/en/reference/' },
           ],
         },
         {
-          title: 'Read by topic',
+          title: 'Start here',
           links: [
-            { label: 'Applied AI', href: '/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
-            { label: 'SRE and reliability', href: '/en/artigos-tecnicos/sre/' },
-            { label: 'Foundations', href: '/en/artigos-tecnicos/bigo/' },
-          ],
-        },
-        {
-          title: 'Go deeper',
-          links: [
-            { label: 'Case studies', href: '/en/projects/' },
-            { label: 'Career', href: '/en/reference/curriculo-que-se-destaca/' },
-            { label: 'Portuguese edition', href: '/pt/' },
+            { label: 'Resume that stands out', href: '/en/reference/curriculo-que-se-destaca/' },
+            { label: 'Where to start', href: '/en/reference/getting-started/' },
+            { label: 'Code Lab', href: '/en/reference/code-lab/' },
+            { label: 'eBooks', href: '/en/books/' },
           ],
         },
       ],
-      bottomLeft: `© ${year} AI Engineering`,
-      bottomRight: 'Editorial reading for software engineering, development, and AI.',
+      bottomLeft: `© ${year} Dionisio Developer`,
+      bottomRight: '@dionisiodev on X, YouTube, Medium, and LinkedIn.',
     };
 ---
 
@@ -87,7 +93,15 @@ const copy = isPt
           <h3>{group.title}</h3>
           <ul>
             {group.links.map((link) => (
-              <li><a href={link.href}>{link.label}</a></li>
+              <li>
+                <a
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
             ))}
           </ul>
         </section>

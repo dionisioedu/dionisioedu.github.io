@@ -1,7 +1,15 @@
 ---
 title: Understanding Big-O Notation - Learn Algorithm Complexity
 description: Complete guide to Big-O notation, algorithm complexity, and performance analysis
----
+publishedAt: 2026-02-25
+author: Dionisio
+tags:
+  - Algorithms
+  - Performance
+  - Data Structures
+cover: /assets/images/big-o-graph.png
+coverAlt: Chart illustrating algorithm complexity and Big-O notation
+--- 
 
 **Quick View:** — Big-O notation is a way to measure how much time and memory your code can consume as the input grows. **Mastering Big-O means identifying cost patterns to make informed decisions.**
 

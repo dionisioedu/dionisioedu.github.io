@@ -12,6 +12,8 @@ export default defineConfig({
         'Portfolio, blog, store, and technical reference by @dionisiodev on software engineering, applied AI, products, and career growth.',
       components: {
         Footer: './src/components/DocsFooter.astro',
+        PageTitle: './src/components/DocsPageTitle.astro',
+        PageSidebar: './src/components/PageSidebar.astro',
       },
       customCss: ['./src/styles/global.css'],
       head: [
@@ -86,8 +88,6 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
-                { label: 'Blog Home', link: 'blog/' },
-                { label: 'Overview', link: 'artigos-tecnicos/' },
                 { label: 'Will AI End Developer Jobs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
                 { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
                 { label: 'SRE', link: 'artigos-tecnicos/sre/' },
@@ -140,8 +140,6 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
-            { label: 'Início do blog', link: 'blog/' },
-            { label: 'Visão geral', link: 'artigos-tecnicos/' },
             { label: 'n8n grátis na Oracle Cloud', link: 'artigos-tecnicos/n8n-gratis-oracle-cloud/' },
             { label: 'IA Vai Acabar com os Devs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
             { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },

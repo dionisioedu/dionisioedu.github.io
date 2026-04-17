@@ -311,6 +311,11 @@
     padding: 1rem;
   }
 
+  .ae-feature-copy {
+    display: grid;
+    gap: 0.75rem;
+  }
+
   .ae-feature h2,
   .ae-mini-card h3,
   .ae-panel h3 {
@@ -339,6 +344,218 @@
     margin: 0.9rem 0 0;
     color: var(--sl-color-gray-3);
     font-size: 0.84rem;
+  }
+
+  .ae-blog-feed {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .ae-blog-intro {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .ae-blog-intro .ae-lede {
+    max-width: 68ch;
+    margin-bottom: 0;
+  }
+
+  .ae-blog-feature {
+    display: grid;
+  }
+
+  .ae-filter-state,
+  .ae-empty-state {
+    margin: 0;
+    color: var(--sl-color-gray-3);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .ae-post-meta-line,
+  .ae-doc-meta {
+    margin: 0;
+    color: var(--sl-color-gray-3);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .ae-doc-meta {
+    margin-top: 0.5rem;
+  }
+
+  .ae-feature-title a,
+  .ae-post-row h3 a {
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+
+  .ae-feature-title a:hover,
+  .ae-post-row h3 a:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .ae-feature-media,
+  .ae-post-row-media {
+    display: block;
+    text-decoration: none;
+  }
+
+  .ae-post-list {
+    display: grid;
+  }
+
+  .ae-post-row {
+    display: grid;
+    grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.35rem 0;
+    border-top: 1px solid var(--ae-border);
+    align-items: start;
+  }
+
+  .ae-post-row:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .ae-post-row-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .ae-post-row-copy {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .ae-post-row h3 {
+    margin: 0;
+    line-height: 1.14;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+  }
+
+  .ae-post-row p {
+    margin: 0;
+    color: var(--ae-muted);
+    line-height: 1.7;
+  }
+
+  .ae-post-link {
+    color: var(--sl-color-accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .ae-post-link:hover {
+    color: var(--sl-color-white);
+  }
+
+  .ae-blog-actions {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .ae-more-posts {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 0.2rem;
+  }
+
+  .ae-more-posts[open] {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .ae-more-posts-list {
+    display: grid;
+  }
+
+  .ae-load-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--ae-border-strong);
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+    color: var(--sl-color-white);
+    font: inherit;
+    font-weight: 700;
+    background: var(--ae-surface);
+    cursor: pointer;
+    transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+    list-style: none;
+    width: fit-content;
+  }
+
+  .ae-load-more:hover,
+  .ae-load-more:focus-visible {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-accent);
+    background: var(--ae-surface-soft);
+  }
+
+  .ae-load-more::-webkit-details-marker,
+  .ae-load-more::marker {
+    display: none;
+  }
+
+  .ae-blog-filter-mobile {
+    padding: 1rem var(--sl-sidebar-pad-x) 0;
+  }
+
+  .ae-blog-filter-nav {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .ae-blog-filter-nav h2 {
+    margin: 0;
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-h5);
+    line-height: var(--sl-line-height-headings);
+  }
+
+  .ae-tag-list {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .ae-tag-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--ae-border);
+    border-radius: 0.5rem;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    background: var(--ae-surface);
+    transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+  }
+
+  .ae-tag-link:hover,
+  .ae-tag-link:focus-visible,
+  .ae-tag-link.is-active {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+    background: var(--ae-surface-soft);
+  }
+
+  .ae-tag-link small {
+    color: var(--sl-color-gray-3);
+    font-size: 0.8rem;
+  }
+
+  .ae-tag-link.is-active small,
+  .ae-tag-link:hover small,
+  .ae-tag-link:focus-visible small {
+    color: var(--sl-color-accent-high);
   }
 
   .ae-route-grid {
@@ -568,6 +785,10 @@
     .ae-home-grid,
     .ae-feed,
     .ae-route-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ae-post-row {
       grid-template-columns: 1fr;
     }
 

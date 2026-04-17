@@ -1,6 +1,15 @@
 ---
 title: Como instalar um n8n de graça na Oracle Cloud e deixar rodando 24/7
 description: Passo a passo atualizado, testado em abril de 2026, para subir um n8n no Always Free da Oracle Cloud com Docker e acesso público.
+publishedAt: 2026-04-16
+author: Dionisio
+tags:
+  - Automacao
+  - n8n
+  - Oracle Cloud
+  - Docker
+cover: /assets/images/n8n-oracle-cloud-hero.jpg
+coverAlt: Notebook aberto em uma mesa minimalista para ilustrar um setup de n8n na Oracle Cloud
 sidebar:
   label: n8n grátis na Oracle
 ---

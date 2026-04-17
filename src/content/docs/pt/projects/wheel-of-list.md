@@ -161,7 +161,7 @@ Esse fluxo é simples, mas muito poderoso.
 
 ## Estruturas e lógica que combinam com este case
 
-O projeto conversa muito bem com fundamentos do portal.
+O projeto conversa muito bem com fundamentos da referência.
 
 ### Estruturas de dados
 

@@ -161,7 +161,7 @@ That flow is simple, but very powerful.
 
 ## Structures and logic that fit this case
 
-This project connects really well with the fundamentals in the portal.
+This project connects really well with the fundamentals in the reference library.
 
 ### Data structures
 

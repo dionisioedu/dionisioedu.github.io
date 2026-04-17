@@ -1,7 +1,15 @@
 ---
 title: Clean Code Summary For Those In a Hurry
 description: Essential Clean Code principles explained in a practical and accessible way
----
+publishedAt: 2026-02-25
+author: Dionisio
+tags:
+  - Clean Code
+  - Software Engineering
+  - Best Practices
+cover: /assets/images/clean-code.jpg
+coverAlt: Clean Code book used as the article cover
+--- 
 
 I consider Clean Code one of the greatest classics in the world of software development. Some like it, some criticize it, but everyone definitely knows some concepts that came from this book.
 

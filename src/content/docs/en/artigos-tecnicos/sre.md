@@ -1,7 +1,15 @@
 ---
 title: What is SRE? Site Reliability Engineering
 description: Understand Site Reliability Engineering and how to implement reliability in critical systems
----
+publishedAt: 2026-02-25
+author: Dionisio
+tags:
+  - SRE
+  - Reliability
+  - Infrastructure
+cover: /assets/images/sre.png
+coverAlt: Reliability diagram illustrating SRE concepts
+--- 
 
 If you're a developer and have never heard of **Site Reliability Engineering**, or heard of it but think it's just another buzzword, it's time to understand what lies behind this acronym that became a pillar of big tech companies.
 

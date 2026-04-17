@@ -1,9 +1,20 @@
-import { defineCollection } from 'astro:content';
+import { z, defineCollection } from 'astro:content';
 import { docsLoader, i18nLoader } from '@astrojs/starlight/loaders';
 import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 
 export const collections = {
-  docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
+  docs: defineCollection({
+    loader: docsLoader(),
+    schema: docsSchema({
+      extend: z.object({
+        publishedAt: z.coerce.date().optional(),
+        author: z.string().optional(),
+        cover: z.string().optional(),
+        coverAlt: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+      }),
+    }),
+  }),
 
   // Enables UI translations (optional but recommended for multilingual sites)
   i18n: defineCollection({ loader: i18nLoader(), schema: i18nSchema() }),

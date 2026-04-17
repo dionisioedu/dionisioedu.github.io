@@ -1,17 +1,17 @@
 ---
 title: Reference
-description: 'Reference hub with learning paths, practical fundamentals, and fast lookup pages for developers.'
+description: 'The Dionisio Developer reference library with learning paths, fundamentals, and practical shortcuts for better study and faster lookup.'
 ---
 
 # Reference
 
-If you want to use this portal as a real study base and quick lookup tool, this is where it starts.
+This is the technical library of Dionisio Developer.
 
-This section exists to solve three common problems:
+It exists to solve three common problems:
 
 - studying without order
-- looking things up in fragments without understanding the context
-- chasing advanced tech with weak fundamentals
+- looking things up without enough context
+- trying to move too fast without solid foundations
 
 So the idea here is simple: less chaos, more clarity.
 
@@ -26,140 +26,58 @@ So the idea here is simple: less chaos, more clarity.
 7. [Algorithms](/en/reference/algoritmos/)
 8. review the patterns in [Data Structures](/en/reference/estruturas-de-dados/) and [Algorithms](/en/reference/algoritmos/)
 
-That sequence fixes most of the mental mess beginners deal with.
+That sequence solves most of the mental noise people face when they are starting out or closing gaps.
 
-## What each page helps you solve
+## What each page helps solve
 
 ### [Where to Start?](/en/reference/getting-started/)
 
-For the person who is stuck and does not know what to learn first.
-
-You will find:
-
-- a practical study order
-- what to master at each stage
-- what can be learned in parallel without wrecking the foundation
+For turning curiosity into a study order.
 
 ### [Data Types](/en/reference/tipos-de-dados/)
 
-For the developer who still treats every value like a string and keeps hitting avoidable bugs.
-
-You will find:
-
-- how to model information properly
-- when to use integers, decimals, text, booleans, and null
-- common mistakes with money, dates, and identifiers
-- bits, casting, characters, memory representation, and binary basics
+For modeling information correctly and avoiding simple bugs that create avoidable friction.
 
 ### [ASCII Table](/en/reference/tabela-ascii/)
 
-For the developer who wants to fully understand why a character is also a number.
-
-You will find:
-
-- the complete ASCII table
-- decimal, hexadecimal, and binary side by side
-- historical and practical grounding for parsing, text, and bytes
+For understanding text, bytes, parsing, and representation more deeply.
 
 ### [Code Lab](/en/reference/code-lab/)
 
-For the developer who wants to stop just reading and start testing concepts in the browser.
-
-You will find:
-
-- a JavaScript and Python playground
-- visual representation of bits, bytes, ASCII, and memory
-- search, sorting, BFS, DFS, and Dijkstra animations
+For testing ideas in the browser and leaving passive reading behind.
 
 ### [Data Structures](/en/reference/estruturas-de-dados/)
 
-For the developer who wants to stop storing everything “however works.”
-
-You will find:
-
-- when to use arrays, linked lists, stacks, queues, deques, maps, sets, heaps, trees, and graphs
-- diagrams, implementations, and operation comparisons
-- performance intuition without turning everything into theory
+For making better decisions about organization and performance.
 
 ### [Programming Logic](/en/reference/logica-de-programacao/)
 
-For the person who understands syntax but freezes when solving problems.
-
-You will find:
-
-- how to break problems into parts
-- how to think in input, transformation, and output
-- how to unblock yourself before touching the keyboard
+For unblocking reasoning before touching the keyboard.
 
 ### [Algorithms](/en/reference/algoritmos/)
 
-For the developer who wants to move from “it works somehow” to “this is a good solution.”
-
-You will find:
-
-- how to build correct solutions
-- when performance starts to matter
-- how to recognize solution patterns
+For moving from “it works somehow” to solutions that are genuinely better thought through.
 
 ### [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/)
 
-For the developer who is already studying and wants to turn effort into real opportunities.
+For turning study, projects, and experience into professional proof of value.
 
-You will find:
-
-- how to structure a technical resume
-- how to communicate real impact
-- what gets candidates filtered out fast
-
-## How to use this section without wasting time
+## How to use it without wasting time
 
 ### Quick lookup
 
-Use it when you are already building and need to review one concept quickly.
-
-Examples:
-
-- “when should I use a map instead of a list?”
-- “should money be a string, a float, or integer cents?”
-- “why is this algorithm slow?”
+When the question is narrow and you need an answer while building or studying.
 
 ### Study path
 
-Use it when you want sequence instead of improvisation.
-
-Practical rule:
-
-- foundation first
-- projects after
-- depth on top of fundamentals, not instead of them
+When the problem is lack of sequence.
 
 ### Interview review
 
-If the pain point is interviews, prioritize:
+When the priority is stronger fundamentals and better communication of technical value.
 
-1. [Data Structures](/en/reference/estruturas-de-dados/)
-2. [Algorithms](/en/reference/algoritmos/)
-3. [Resume That Stands Out](/en/reference/curriculo-que-se-destaca/)
-
-## The mistake that slows developers down most
-
-Trying to study everything at once:
-
-- frameworks
-- cloud
-- AI
-- microservices
-- system design
-- interviews
-
-Without fundamentals, that is just the feeling of movement.
-
-With fundamentals, it becomes real progress.
-
-## Next actions
+## Next steps
 
 - If you are starting, open [Where to Start?](/en/reference/getting-started/)
-- If you want to understand text, bytes, and representation, read the [ASCII Table](/en/reference/tabela-ascii/)
-- If you want to practice without leaving the portal, open the [Code Lab](/en/reference/code-lab/)
-- If you want stronger engineering fundamentals, go to [Data Structures](/en/reference/estruturas-de-dados/) and then [Algorithms](/en/reference/algoritmos/)
-- If you want to apply what you learned, continue to [Projects](/en/projects/)
+- If you want immediate practice, go to the [Code Lab](/en/reference/code-lab/)
+- If you want to connect fundamentals with real work, continue to the [Portfolio](/en/projects/) and [Blog](/en/blog/)

@@ -221,7 +221,7 @@ Esse tipo de prática é forte porque mistura:
 
 Se você aprende a fazer essas perguntas, já está estudando produto como engenheiro.
 
-## Comparação útil com outros projetos do portal
+## Comparação útil com outros projetos do portfólio
 
 Compare este case com:
 

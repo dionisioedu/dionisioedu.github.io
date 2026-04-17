@@ -203,7 +203,7 @@ Exemplos:
 
 Se o projeto te faz trabalhar com entrada, validação, estrutura, condição e função, já está ótimo.
 
-## Regra prática do portal
+## Regra prática do site
 
 Se você estiver perdido, faz isso:
 

@@ -1,7 +1,16 @@
 ---
 title: 'IA Vai Acabar com os Devs? Para o Iniciante Desanimado: NÃO PARA DE ESTUDAR, MANO – O Mercado Vai Criar MUITO Mais Vagas do que Perder'
 description: 'IA Vai Acabar com os Devs? Para o Iniciante Desanimado: NÃO PARA DE ESTUDAR, MANO – O Mercado Vai Criar MUITO Mais Vagas do que Perder'
----
+publishedAt: 2026-03-31
+author: Dionisio
+tags:
+  - IA
+  - Carreira
+  - Mercado
+  - Estudo
+cover: /assets/images/desktop-2.webp
+coverAlt: Estação de trabalho com notebook e tela para ilustrar um artigo sobre IA e carreira
+--- 
 
 E aí, galera da bolhaDev? Todo dia eu vejo no X: iniciante postando “vou desistir de programar, IA vai substituir todo mundo”, intermediário falando “layoffs em tech, 2026 vai ser o caos”. Eu entendo o desânimo. Eu sou C/C++/Java dev há anos e estou me preparando para transicionar para Engenheiro de IA. Já passei por hype, por medo, por “vaga júnior sumiu”. Mas te falo com a mão no peito e dados na mesa: a IA NÃO vai acabar com os empregos em tech. Ela vai multiplicar eles – e o cenário continua MUITO favorável pra quem estuda.
 

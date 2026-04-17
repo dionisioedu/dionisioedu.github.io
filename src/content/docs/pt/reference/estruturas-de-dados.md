@@ -14,7 +14,7 @@ A mesma regra de negócio pode virar:
 - código simples e direto
 - ou um Frankenstein cheio de busca lenta, remendo e estado duplicado
 
-Se você quer parar de resolver tudo "do jeito que deu", esta página é uma das mais importantes do portal.
+Se você quer parar de resolver tudo "do jeito que deu", esta página é uma das mais importantes da referência.
 
 ## A pergunta certa não é "qual estrutura é melhor?"
 

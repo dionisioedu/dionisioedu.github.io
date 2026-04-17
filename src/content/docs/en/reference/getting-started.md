@@ -210,7 +210,7 @@ Examples:
 
 If a project makes you work with input, validation, structure, condition, and functions, it is already doing its job.
 
-## Practical portal rule
+## Practical site rule
 
 If you feel lost, do this:
 

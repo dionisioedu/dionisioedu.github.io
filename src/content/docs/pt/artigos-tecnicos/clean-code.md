@@ -1,7 +1,15 @@
 ---
 title: Resumo do Clean Code Para Quem Está Com Pressa
 description: Os princípios essenciais do Clean Code explicados de forma prática e acessível
----
+publishedAt: 2026-02-25
+author: Dionisio
+tags:
+  - Codigo Limpo
+  - Engenharia de Software
+  - Boas Praticas
+cover: /assets/images/clean-code.jpg
+coverAlt: Livro Clean Code usado como capa do artigo
+--- 
 
 Eu considero o Clean Code um dos maiores clássicos do mundo do desenvolvimento de software. Tem os que gostam e tem os que criticam, mas, com certeza, todo mundo conhece alguns conceitos que vieram desse livro.
 

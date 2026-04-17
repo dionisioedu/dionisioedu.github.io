@@ -1,7 +1,15 @@
 ---
 title: O Que é SRE? Site Reliability Engineering
 description: Entenda Site Reliability Engineering e como implementar confiabilidade em sistemas críticos
----
+publishedAt: 2026-02-25
+author: Dionisio
+tags:
+  - SRE
+  - Confiabilidade
+  - Infraestrutura
+cover: /assets/images/sre.png
+coverAlt: Diagrama visual sobre confiabilidade e SRE
+--- 
 
 Se você é desenvolvedor e nunca ouviu falar de **Site Reliability Engineering**, ou já ouviu mas acha que é só mais um termo da moda, chegou a hora de entender o que está por trás dessa sigla que virou um pilar das grandes empresas de tecnologia.
 

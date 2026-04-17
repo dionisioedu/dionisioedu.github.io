@@ -221,7 +221,7 @@ This is strong practice because it mixes:
 
 If you learn to ask those questions, you are already studying product like an engineer.
 
-## Useful comparison with other portal projects
+## Useful comparison with other portfolio projects
 
 Compare this case with:
 

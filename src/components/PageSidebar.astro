@@ -1,0 +1,161 @@
+---
+import { getCollection } from 'astro:content';
+import MobileTableOfContents from 'virtual:starlight/components/MobileTableOfContents';
+import TableOfContents from 'virtual:starlight/components/TableOfContents';
+import { getBlogTagSummary, getLocalizedBlogPosts, isBlogListingPath } from '../utils/blog';
+
+const { locale, toc } = Astro.locals.starlightRoute;
+const currentLocale = (locale ?? 'pt') as 'pt' | 'en';
+const currentPath = Astro.url.pathname;
+const isBlogListing = isBlogListingPath(currentPath);
+
+const copy = {
+  pt: {
+    title: 'Filtrar por tag',
+    mobileTitle: 'Tags do blog',
+    all: 'Todas as tags',
+  },
+  en: {
+    title: 'Filter by tag',
+    mobileTitle: 'Blog tags',
+    all: 'All tags',
+  },
+} as const;
+
+const labels = copy[currentLocale];
+
+let tags: ReturnType<typeof getBlogTagSummary> = [];
+
+if (isBlogListing) {
+  const docs = await getCollection('docs');
+  const posts = getLocalizedBlogPosts(docs, currentLocale);
+  tags = getBlogTagSummary(posts);
+}
+---
+
+{
+  isBlogListing ? (
+    <>
+      <div class="lg:sl-hidden ae-blog-filter-mobile">
+        <nav class="ae-blog-filter-nav" aria-labelledby="ae-blog-filters-mobile">
+          <h2 id="ae-blog-filters-mobile">{labels.mobileTitle}</h2>
+          <div class="ae-tag-list" data-blog-tag-sidebar>
+            <a href={currentPath} class="ae-tag-link" data-blog-tag-link data-tag="" data-label={labels.all}>
+              <span>{labels.all}</span>
+            </a>
+            {tags.map((tag) => (
+              <a
+                href={`${currentPath}?tag=${encodeURIComponent(tag.slug)}`}
+                class="ae-tag-link"
+                data-blog-tag-link
+                data-tag={tag.slug}
+                data-label={tag.label}
+              >
+                <span>{tag.label}</span>
+                <small>{tag.count}</small>
+              </a>
+            ))}
+          </div>
+        </nav>
+      </div>
+      <div class="right-sidebar-panel sl-hidden lg:sl-block">
+        <div class="sl-container">
+          <nav class="ae-blog-filter-nav" aria-labelledby="ae-blog-filters">
+            <h2 id="ae-blog-filters">{labels.title}</h2>
+            <div class="ae-tag-list" data-blog-tag-sidebar>
+              <a href={currentPath} class="ae-tag-link" data-blog-tag-link data-tag="" data-label={labels.all}>
+                <span>{labels.all}</span>
+              </a>
+              {tags.map((tag) => (
+                <a
+                  href={`${currentPath}?tag=${encodeURIComponent(tag.slug)}`}
+                  class="ae-tag-link"
+                  data-blog-tag-link
+                  data-tag={tag.slug}
+                  data-label={tag.label}
+                >
+                  <span>{tag.label}</span>
+                  <small>{tag.count}</small>
+                </a>
+              ))}
+            </div>
+          </nav>
+        </div>
+      </div>
+    </>
+  ) : (
+    toc && (
+      <>
+        <div class="lg:sl-hidden">
+          <MobileTableOfContents />
+        </div>
+        <div class="right-sidebar-panel sl-hidden lg:sl-block">
+          <div class="sl-container">
+            <TableOfContents />
+          </div>
+        </div>
+      </>
+    )
+  )
+}
+
+<script>
+  const syncActiveBlogTagLinks = () => {
+    const activeTag = new URLSearchParams(window.location.search).get('tag') ?? '';
+
+    document.querySelectorAll('[data-blog-tag-link]').forEach((link) => {
+      const isActive = (link.dataset.tag ?? '') === activeTag;
+      link.classList.toggle('is-active', isActive);
+      link.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  };
+
+  const initBlogTagSidebar = () => {
+    if (document.body.dataset.blogTagSidebarBound !== 'true') {
+      document.body.dataset.blogTagSidebarBound = 'true';
+
+      document.addEventListener('click', (event) => {
+        const link = event.target instanceof Element ? event.target.closest('[data-blog-tag-link]') : null;
+        if (!(link instanceof HTMLAnchorElement)) return;
+
+        const nextUrl = new URL(link.href, window.location.origin);
+        if (nextUrl.pathname !== window.location.pathname) return;
+
+        event.preventDefault();
+        history.pushState({}, '', `${nextUrl.pathname}${nextUrl.search}`);
+        syncActiveBlogTagLinks();
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      });
+
+      window.addEventListener('popstate', syncActiveBlogTagLinks);
+    }
+
+    syncActiveBlogTagLinks();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBlogTagSidebar, { once: true });
+  } else {
+    initBlogTagSidebar();
+  }
+
+  document.addEventListener('astro:page-load', initBlogTagSidebar);
+</script>
+
+<style>
+  @layer starlight.core {
+    .right-sidebar-panel {
+      padding: 1rem var(--sl-sidebar-pad-x);
+    }
+
+    .sl-container {
+      width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
+    }
+
+    @media (min-width: 72rem) {
+      .sl-container {
+        max-width: calc(((100vw - var(--sl-sidebar-width) - 2 * var(--sl-content-pad-x) - 2 * var(--sl-sidebar-pad-x)) * 0.25));
+      }
+    }
+  }
+</style>

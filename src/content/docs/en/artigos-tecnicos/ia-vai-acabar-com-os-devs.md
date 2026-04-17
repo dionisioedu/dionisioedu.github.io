@@ -1,7 +1,16 @@
 ---
 title: 'Will AI End Developer Jobs? For the Discouraged Beginner: DO NOT STOP STUDYING, MAN - The Market Will Create WAY More Jobs Than It Loses'
 description: 'Will AI End Developer Jobs? For the Discouraged Beginner: DO NOT STOP STUDYING, MAN - The Market Will Create WAY More Jobs Than It Loses'
----
+publishedAt: 2026-03-31
+author: Dionisio
+tags:
+  - AI
+  - Career
+  - Job Market
+  - Learning
+cover: /assets/images/desktop-2.webp
+coverAlt: Workstation with laptop and monitor illustrating an article about AI and developer careers
+--- 
 
 Hey, dev Twitter crowd. Every day I see it on X: beginners posting “I’m going to quit programming, AI will replace everyone,” intermediates saying “tech layoffs, 2026 is going to be chaos.” I understand the discouragement. I’ve been a C/C++/Java dev for years and I’m preparing to transition into an AI Engineer role. I’ve already gone through hype cycles, fear, and “junior roles disappeared.” But I’m telling you from the heart, with data on the table: AI is NOT going to end jobs in tech. It’s going to multiply them, and the scenario remains VERY favorable for those who keep studying.
 

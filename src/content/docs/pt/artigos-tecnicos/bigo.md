@@ -1,7 +1,15 @@
 ---
 title: Anatomia da Notação Big-O - Entenda Complexidade de Algoritmos
 description: Guia completo sobre Big-O notation, complexidade de algoritmos e análise de performance
----
+publishedAt: 2026-02-25
+author: Dionisio
+tags:
+  - Algoritmos
+  - Performance
+  - Estruturas de Dados
+cover: /assets/images/big-o-graph.png
+coverAlt: Gráfico usado para ilustrar complexidade de algoritmos e notação Big-O
+--- 
 
 **Visão Rápida:** — A notação Big-O é uma forma de medir quanto tempo e memória seu código pode consumir à medida que a entrada cresce. **Dominar Big-O é saber identificar padrões de custo para tomar decisões informadas.**
 

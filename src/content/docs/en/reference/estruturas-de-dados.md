@@ -14,7 +14,7 @@ The same business rule can become:
 - simple, direct code
 - or a Frankenstein full of slow lookups, patches, and duplicated state
 
-If you want to stop solving everything with "whatever works for now," this is one of the most important reference pages in the portal.
+If you want to stop solving everything with "whatever works for now," this is one of the most important pages in the reference library.
 
 ## The right question is not "which structure is best?"
 

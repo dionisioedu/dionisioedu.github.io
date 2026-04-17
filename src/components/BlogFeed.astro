@@ -1,0 +1,232 @@
+---
+import { getCollection } from 'astro:content';
+import { formatBlogDate, getLocalizedBlogPosts } from '../utils/blog';
+
+interface Props {
+  locale: 'pt' | 'en';
+}
+
+const { locale } = Astro.props;
+
+const copy = {
+  pt: {
+    kicker: 'Dionisio Developer',
+    lede:
+      'Textos sobre software, IA aplicada, produto e carreira, organizados em ordem de publicacao para leitura simples, direta e sem ruido.',
+    featuredLabel: 'Mais recente',
+    recentLabel: 'Posts recentes',
+    readMore: 'Ler mais',
+    by: 'por',
+    loadMore: 'Mais artigos',
+    filterPrefix: 'Filtrando por',
+    empty: 'Nenhum artigo encontrado com essa tag.',
+  },
+  en: {
+    kicker: 'Dionisio Developer',
+    lede:
+      'Writing on software, applied AI, product, and career growth, organized in publishing order for direct reading without noise.',
+    featuredLabel: 'Latest post',
+    recentLabel: 'Recent posts',
+    readMore: 'Read more',
+    by: 'by',
+    loadMore: 'More articles',
+    filterPrefix: 'Filtering by',
+    empty: 'No articles found for this tag.',
+  },
+} as const;
+
+const docs = await getCollection('docs');
+const posts = getLocalizedBlogPosts(docs, locale);
+
+const [featuredPost, ...recentPosts] = posts;
+const visibleRecentPosts = recentPosts.slice(0, 3);
+const olderPosts = recentPosts.slice(3);
+const labels = copy[locale];
+const feedId = `ae-blog-feed-${locale}`;
+const morePostsId = `${feedId}-more`;
+---
+
+<section
+  class="ae-blog-feed"
+  id={feedId}
+  data-blog-feed
+  data-filter-prefix={labels.filterPrefix}
+  data-empty-label={labels.empty}
+>
+  <header class="ae-blog-intro">
+    <p class="ae-kicker">{labels.kicker}</p>
+    <p class="ae-lede">{labels.lede}</p>
+    <p class="ae-filter-state" data-filter-state hidden></p>
+  </header>
+
+  {
+    featuredPost && (
+      <section class="ae-blog-feature" aria-label={labels.featuredLabel}>
+        <article
+          class="ae-feature js-blog-post"
+          data-post-kind="featured"
+          data-tags={featuredPost.tags.map((tag) => tag.slug).join(' ')}
+        >
+          {featuredPost.cover && (
+            <a href={featuredPost.href} class="ae-feature-media">
+              <img src={featuredPost.cover} alt={featuredPost.coverAlt} loading="eager" />
+            </a>
+          )}
+          <div class="ae-feature-copy">
+            <p class="ae-kicker">{labels.featuredLabel}</p>
+            <p class="ae-post-meta-line">
+              {formatBlogDate(featuredPost.publishedAt, locale)} · {labels.by} {featuredPost.author}
+            </p>
+            <h2 class="ae-feature-title">
+              <a href={featuredPost.href}>{featuredPost.title}</a>
+            </h2>
+            <p>{featuredPost.excerpt}</p>
+            <p><a class="ae-cta" href={featuredPost.href}>{labels.readMore}</a></p>
+          </div>
+        </article>
+      </section>
+    )
+  }
+
+  {
+    recentPosts.length > 0 && (
+      <section class="ae-post-list" aria-label={labels.recentLabel}>
+        {visibleRecentPosts.map((post) => (
+          <article
+            class="ae-post-row js-blog-post"
+            data-post-kind="recent"
+            data-tags={post.tags.map((tag) => tag.slug).join(' ')}
+          >
+            {post.cover && (
+              <a href={post.href} class="ae-post-row-media">
+                <img src={post.cover} alt={post.coverAlt} loading="lazy" />
+              </a>
+            )}
+            <div class="ae-post-row-copy">
+              <p class="ae-post-meta-line">
+                {formatBlogDate(post.publishedAt, locale)} · {labels.by} {post.author}
+              </p>
+              <h3>
+                <a href={post.href}>{post.title}</a>
+              </h3>
+              <p>{post.excerpt}</p>
+              <p><a class="ae-post-link" href={post.href}>{labels.readMore}</a></p>
+            </div>
+          </article>
+        ))}
+
+        {
+          olderPosts.length > 0 && (
+            <details class="ae-more-posts" data-more-posts>
+              <summary class="ae-load-more" aria-controls={morePostsId}>
+                {labels.loadMore}
+              </summary>
+              <div class="ae-more-posts-list" id={morePostsId}>
+                {olderPosts.map((post) => (
+                  <article
+                    class="ae-post-row js-blog-post"
+                    data-post-kind="recent"
+                    data-tags={post.tags.map((tag) => tag.slug).join(' ')}
+                  >
+                    {post.cover && (
+                      <a href={post.href} class="ae-post-row-media">
+                        <img src={post.cover} alt={post.coverAlt} loading="lazy" />
+                      </a>
+                    )}
+                    <div class="ae-post-row-copy">
+                      <p class="ae-post-meta-line">
+                        {formatBlogDate(post.publishedAt, locale)} · {labels.by} {post.author}
+                      </p>
+                      <h3>
+                        <a href={post.href}>{post.title}</a>
+                      </h3>
+                      <p>{post.excerpt}</p>
+                      <p><a class="ae-post-link" href={post.href}>{labels.readMore}</a></p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </details>
+          )
+        }
+      </section>
+    )
+  }
+
+  <p class="ae-empty-state" data-empty-state hidden>{labels.empty}</p>
+</section>
+
+<script define:vars={{ feedId }}>
+  const initBlogFeed = () => {
+    const feed = document.getElementById(feedId);
+    if (!feed || feed.dataset.bound === 'true') return;
+
+    feed.dataset.bound = 'true';
+
+    const posts = Array.from(feed.querySelectorAll('[data-post-kind]'));
+    const filterState = feed.querySelector('[data-filter-state]');
+    const emptyState = feed.querySelector('[data-empty-state]');
+    const morePosts = feed.querySelector('[data-more-posts]');
+    const filterPrefix = feed.dataset.filterPrefix ?? '';
+    const emptyLabel = feed.dataset.emptyLabel ?? '';
+
+    const getActiveTag = () => new URLSearchParams(window.location.search).get('tag') ?? '';
+
+    const getTagLabel = (slug) => {
+      const activeLink = document.querySelector(`[data-blog-tag-link][data-tag="${slug}"]`);
+      return activeLink?.dataset.label ?? slug;
+    };
+
+    const matchesTag = (post, activeTag) => {
+      if (!activeTag) return true;
+      const tags = (post.dataset.tags ?? '').split(/\s+/).filter(Boolean);
+      return tags.includes(activeTag);
+    };
+
+    const updateFeed = () => {
+      const activeTag = getActiveTag();
+      let visibleCount = 0;
+
+      posts.forEach((post) => {
+        const isVisible = matchesTag(post, activeTag);
+        post.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (filterState) {
+        if (activeTag) {
+          filterState.hidden = false;
+          filterState.textContent = `${filterPrefix}: ${getTagLabel(activeTag)}`;
+        } else {
+          filterState.hidden = true;
+          filterState.textContent = '';
+        }
+      }
+
+      if (emptyState) {
+        emptyState.hidden = visibleCount > 0;
+        if (visibleCount === 0) emptyState.textContent = emptyLabel;
+      }
+
+      if (morePosts instanceof HTMLDetailsElement) {
+        if (activeTag) {
+          morePosts.open = true;
+          morePosts.hidden = visibleCount === 0;
+        } else {
+          morePosts.hidden = false;
+        }
+      }
+    };
+
+    window.addEventListener('popstate', updateFeed);
+    updateFeed();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBlogFeed, { once: true });
+  } else {
+    initBlogFeed();
+  }
+
+  document.addEventListener('astro:page-load', initBlogFeed);
+</script>
