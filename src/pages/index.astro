@@ -3,19 +3,47 @@ const options = [
   {
     locale: 'pt',
     title: 'Português',
-    description: 'Leituras sobre IA aplicada, engenharia de software, fundamentos, laboratórios e estudos de caso para continuar aprendendo com direção.',
+    description:
+      'Portfólio, blog, loja e referência técnica para acompanhar o trabalho de @dionisiodev em software, IA aplicada e produto.',
     href: '/pt/',
-    cta: 'Abrir edição em português',
-    image: '/assets/images/desktop-5.webp',
+    cta: 'Entrar em português',
+    image: '/assets/images/projects-2.webp',
   },
   {
     locale: 'en',
     title: 'English',
-    description: 'Editorial coverage of software engineering, applied AI, practical guides, labs, and case studies for builders who want signal over noise.',
+    description:
+      'Portfolio, writing, products, and technical reference for people following @dionisiodev across software, applied AI, and product work.',
     href: '/en/',
-    cta: 'Open English edition',
-    image: '/assets/images/news-1.webp',
+    cta: 'Enter in English',
+    image: '/assets/images/desktop-5.webp',
   },
+];
+
+const pillars = [
+  {
+    title: 'Portfolio',
+    body: 'Real projects with product thinking, architecture, UX, and delivery decisions in context.',
+  },
+  {
+    title: 'Blog',
+    body: 'Writing on software engineering, applied AI, career growth, and practical technical judgment.',
+  },
+  {
+    title: 'Store',
+    body: 'eBooks, materials, and curated recommendations that support real developer routines.',
+  },
+  {
+    title: 'Reference',
+    body: 'Guides, labs, and fundamentals for studying better and returning faster to execution.',
+  },
+];
+
+const socials = [
+  { label: 'X', href: 'https://x.com/dionisiodev' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev' },
+  { label: 'Medium', href: 'https://medium.com/@dionisiodev' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
 ];
 ---
 
@@ -24,10 +52,10 @@ const options = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>AI Engineering</title>
+    <title>Dionisio Developer</title>
     <meta
       name="description"
-      content="AI Engineering is a technology blog about software engineering, applied AI, practical guides, labs, and case studies in Portuguese and English."
+      content="Dionisio Developer is the home base for @dionisiodev: portfolio, blog, store, and technical reference across software engineering, applied AI, and product work."
     />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -35,77 +63,193 @@ const options = [
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <style>
       :root {
-        color-scheme: light;
-        --bg: #f4f8fa;
-        --surface: #ffffff;
-        --surface-soft: #eef4f6;
-        --border: rgba(20, 44, 58, 0.1);
-        --text: #13232c;
-        --muted: #4b5d66;
-        --accent: #117f81;
+        color-scheme: dark;
+        --bg: #0d1418;
+        --surface: rgba(13, 23, 29, 0.96);
+        --surface-soft: rgba(210, 233, 236, 0.05);
+        --border: rgba(210, 233, 236, 0.12);
+        --border-strong: rgba(210, 233, 236, 0.22);
+        --text: #f3f8fa;
+        --muted: #afc3cb;
+        --accent: #38c6ca;
+        --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
       }
 
-      * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
       body {
         margin: 0;
         min-height: 100vh;
-        font-family: "Segoe UI", "Inter", system-ui, sans-serif;
+        font-family: Inter, "Segoe UI", system-ui, sans-serif;
         color: var(--text);
-        background: linear-gradient(180deg, #f7fafb 0%, var(--bg) 100%);
+        background:
+          radial-gradient(circle at top left, rgba(56, 198, 202, 0.12), transparent 30%),
+          linear-gradient(180deg, #121a20 0%, var(--bg) 100%);
       }
 
       main {
-        width: min(1100px, calc(100% - 32px));
+        width: min(1160px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 56px 0 72px;
-      }
-
-      .eyebrow {
-        margin: 0 0 10px;
-        color: var(--accent);
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        padding: 40px 0 64px;
       }
 
       .hero {
         display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.9fr);
         gap: 20px;
         padding: 26px;
         border: 1px solid var(--border);
         border-radius: 8px;
         background: var(--surface);
-        box-shadow: 0 18px 48px rgba(20, 44, 58, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.05;
       }
 
       h1 {
-        margin: 0;
         max-width: 10ch;
-        font-size: clamp(2.6rem, 5vw, 5rem);
-        line-height: 0.96;
+        font-size: clamp(2.8rem, 6vw, 5.6rem);
       }
 
       .lede {
-        margin: 0;
+        margin: 18px 0 0;
         max-width: 60ch;
         color: var(--muted);
-        line-height: 1.7;
-        font-size: 1.04rem;
+        font-size: 1.05rem;
+        line-height: 1.75;
       }
 
-      .manifesto {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .actions,
+      .socials {
+        display: flex;
+        flex-wrap: wrap;
         gap: 12px;
       }
 
-      .manifesto div {
-        padding: 14px 16px;
+      .actions {
+        margin-top: 22px;
+      }
+
+      .action,
+      .socials a,
+      .card a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+      }
+
+      .action,
+      .card a {
+        background: var(--accent);
+        color: #081115;
+        -webkit-text-fill-color: #081115;
+      }
+
+      .action.secondary {
+        background: transparent;
+        border: 1px solid var(--border-strong);
+        color: var(--text);
+        -webkit-text-fill-color: var(--text);
+      }
+
+      .socials a {
+        background: transparent;
+        border-color: var(--border-strong);
+        color: var(--text);
+        -webkit-text-fill-color: var(--text);
+      }
+
+      .action:hover,
+      .socials a:hover,
+      .card a:hover {
+        transform: translateY(-1px);
+      }
+
+      .action.secondary:hover,
+      .socials a:hover {
+        background: var(--surface-soft);
+      }
+
+      .side-panel,
+      .card,
+      .pillars article {
+        border: 1px solid var(--border);
         border-radius: 8px;
         background: var(--surface-soft);
+      }
+
+      .side-panel {
+        padding: 18px;
+        display: grid;
+        gap: 16px;
+        align-content: start;
+      }
+
+      .side-panel p,
+      .side-panel li,
+      .footer-note {
+        margin: 0;
         color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .side-panel ul {
+        margin: 0;
+        padding-left: 1rem;
+      }
+
+      .side-panel li + li {
+        margin-top: 0.5rem;
+      }
+
+      .side-panel a,
+      .footer-note a {
+        color: var(--text);
+      }
+
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .pillars article {
+        padding: 16px;
+      }
+
+      .pillars h2 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .pillars p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
       }
 
       .grid {
@@ -117,10 +261,8 @@ const options = [
 
       .card {
         overflow: hidden;
-        border: 1px solid var(--border);
-        border-radius: 8px;
         background: var(--surface);
-        box-shadow: 0 16px 40px rgba(20, 44, 58, 0.06);
+        box-shadow: var(--shadow);
       }
 
       .card img {
@@ -131,71 +273,88 @@ const options = [
       }
 
       .copy {
-        padding: 18px 20px 20px;
+        padding: 20px;
       }
 
-      .card h2 {
-        margin: 0 0 10px;
-        font-size: 1.45rem;
-      }
-
-      .card p {
-        margin: 0 0 16px;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .card a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        padding: 0 16px;
-        border-radius: 8px;
-        background: var(--accent);
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .footer-note {
-        margin-top: 24px;
-        padding: 16px 18px;
-        border-left: 3px solid var(--accent);
-        background: var(--surface-soft);
+      .copy p {
+        margin: 10px 0 18px;
         color: var(--muted);
         line-height: 1.7;
       }
 
-      @media (max-width: 780px) {
+      .footer-note {
+        margin-top: 24px;
+        padding: 18px 20px;
+        border-left: 3px solid var(--accent);
+        background: var(--surface-soft);
+      }
+
+      @media (max-width: 920px) {
+        .hero,
+        .grid,
+        .pillars {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
         main {
-          width: min(100% - 24px, 680px);
-          padding: 32px 0 48px;
+          width: min(100% - 24px, 720px);
+          padding: 24px 0 48px;
         }
 
-        .grid,
-        .manifesto {
-          grid-template-columns: 1fr;
+        .hero {
+          padding: 20px;
         }
       }
     </style>
   </head>
   <body>
     <main>
-      <section class="hero" aria-label="AI Engineering intro">
+      <section class="hero" aria-label="Dionisio Developer">
         <div>
-          <p class="eyebrow">AI Engineering</p>
-          <h1>Technology writing for people who build.</h1>
+          <p class="eyebrow">Dionisio Developer</p>
+          <h1>Dionisio Developer</h1>
+          <p class="lede">
+            Portfolio, writing, products, and technical reference by
+            <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a>
+            across software engineering, applied AI, product thinking, and developer growth.
+          </p>
+          <div class="actions">
+            <a class="action" href="/pt/">Entrar em português</a>
+            <a class="action secondary" href="/en/">Enter in English</a>
+          </div>
+          <section class="pillars" aria-label="Main areas">
+            {pillars.map((pillar) => (
+              <article>
+                <h2>{pillar.title}</h2>
+                <p>{pillar.body}</p>
+              </article>
+            ))}
+          </section>
         </div>
-        <p class="lede">
-          Leituras sobre IA aplicada, sistemas, ferramentas, arquitetura e fundamentos técnicos
-          para quem quer contexto suficiente para estudar melhor e decidir com mais clareza.
-        </p>
-        <div class="manifesto">
-          <div>Software engineering com menos ruído e mais julgamento técnico.</div>
-          <div>IA aplicada colocada ao lado de arquitetura, confiabilidade e entrega real.</div>
-          <div>Guias, labs e estudos de caso para continuar depois da leitura.</div>
-        </div>
+
+        <aside class="side-panel">
+          <div>
+            <p class="eyebrow">Across the web</p>
+            <h2><a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a></h2>
+          </div>
+          <div class="socials">
+            {socials.map((social) => (
+              <a href={social.href} target="_blank" rel="noopener noreferrer">
+                {social.label}
+              </a>
+            ))}
+          </div>
+          <div>
+            <p class="eyebrow">Start here</p>
+            <ul>
+              <li>Open the portfolio for real projects, product thinking, and engineering decisions.</li>
+              <li>Read the blog for technical perspective on software, AI, and career growth.</li>
+              <li>Use the store and reference library for practical materials you can apply fast.</li>
+            </ul>
+          </div>
+        </aside>
       </section>
 
       <section class="grid" aria-label="Language editions">
@@ -203,8 +362,9 @@ const options = [
           <article class="card">
             <img src={option.image} alt={option.title} loading="lazy" />
             <div class="copy">
-              <h2>{option.title}</h2>
-              <p>{option.description}</p>
+              <p class="eyebrow">{option.title}</p>
+              <h3>{option.description}</h3>
+              <p>Same work, same identity, one home base in the language that fits best.</p>
               <a href={option.href} data-locale-link={option.locale}>{option.cta}</a>
             </div>
           </article>
@@ -212,7 +372,8 @@ const options = [
       </section>
 
       <div class="footer-note">
-        Escolha um idioma, abra a matéria principal e use o restante do acervo para aprofundar o tema, praticar no browser ou observar decisões em projetos reais.
+        One place to understand who Dionisio is, what he builds, what he writes, and what people
+        can learn or buy from that work.
       </div>
     </main>
 

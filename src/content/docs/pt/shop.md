@@ -1,605 +1,415 @@
 ---
 title: Loja
-description: 'Catálogo com todos os nossos produtos e serviços disponíveis.'
+description: 'Materiais, eBooks e recomendações de Dionisio Developer para acelerar estudo, carreira e execução técnica.'
 ---
 
 <style>
-.shop-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 60px 20px;
-  text-align: center;
-  color: white;
-  border-radius: 10px;
-  margin-bottom: 60px;
-}
-
-.shop-hero h2 {
-  color: white;
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.shop-hero p {
-  color: rgba(255,255,255,0.95);
-  font-size: 1.2em;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.filters {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.filter-btn {
-  padding: 10px 20px;
-  border: 2px solid #667eea;
-  background: white;
-  color: #667eea;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.filter-btn:hover, .filter-btn.active {
-  background: #667eea;
-  color: white;
-}
-
-.products-grid {
+.dd-shop {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  margin-bottom: 60px;
+  gap: 2rem;
 }
 
-.product-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
+.dd-shop-hero,
+.dd-shop-section,
+.dd-shop-cta {
+  padding: 1.5rem;
+  border: 1px solid var(--ae-border);
+  border-radius: 0.5rem;
+  background: var(--ae-surface);
+  box-shadow: var(--sl-shadow-sm);
 }
 
-.product-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+.dd-shop-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.95fr);
+  gap: 1rem;
 }
 
-.product-image {
-  width: 100%;
-  height: 190px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3em;
-  position: relative;
-  overflow: hidden;
-}
-
-.product-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff6b6b;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
-.product-content {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.product-category {
-  color: #667eea;
-  font-size: 0.85em;
-  font-weight: bold;
+.dd-shop-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--sl-color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 8px;
 }
 
-.product-card h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.1em;
-  color: #333;
+.dd-shop-hero h2,
+.dd-shop-side h3,
+.dd-shop-card h3,
+.dd-affiliate-card h3,
+.dd-shop-section h2,
+.dd-shop-cta h2 {
+  margin: 0;
+  color: var(--sl-color-white);
+  line-height: 1.08;
 }
 
-.product-description {
-  color: #666;
-  font-size: 0.9em;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  flex-grow: 1;
+.dd-shop-hero h2 {
+  font-size: clamp(2rem, 2.8vw, 3rem);
 }
 
-.product-rating {
+.dd-shop-hero p,
+.dd-shop-side li,
+.dd-shop-card p,
+.dd-affiliate-card p,
+.dd-shop-cta p {
+  color: var(--ae-muted);
+  line-height: 1.7;
+}
+
+.dd-shop-actions,
+.dd-shop-links {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.dd-shop-actions {
+  margin-top: 1.25rem;
+}
+
+.dd-shop-btn,
+.dd-shop-link,
+.dd-shop-buy {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 15px;
-  font-size: 0.9em;
-}
-
-.stars {
-  color: #ffc107;
-}
-
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 15px;
-  border-top: 1px solid #f0f0f0;
-}
-
-.product-price {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #667eea;
-}
-
-.product-old-price {
-  font-size: 0.85em;
-  color: #999;
-  text-decoration: line-through;
-  margin-right: 8px;
-}
-
-.btn-add-cart {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  font-size: 0.9em;
-}
-
-.btn-add-cart:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-.recommended-section {
-  margin-bottom: 60px;
-}
-
-.recommended-section h3 {
-  margin-bottom: 8px;
-}
-
-.recommended-section p {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.recommended-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.recommended-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ececec;
-  min-height: 360px;
-}
-
-.recommended-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-  background: #f7f7f9;
-  padding: 8px;
-}
-
-.recommended-content {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-grow: 1;
-}
-
-.recommended-content h4 {
-  margin: 0;
-  color: #333;
-  font-size: 1em;
-  line-height: 1.25;
-}
-
-.recommended-description {
-  margin: 0;
-  color: #666;
-  font-size: 0.82em;
-  line-height: 1.35;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
-}
-
-.recommended-price {
-  margin: 0;
-  color: #667eea;
-  font-size: 0.95em;
-  font-weight: bold;
-}
-
-.btn-affiliate {
-  display: inline-block;
-  text-align: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
   text-decoration: none;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 0.82em;
-  font-weight: bold;
-  margin-top: auto;
 }
 
-.btn-affiliate:hover {
-  transform: scale(1.02);
+.dd-shop-btn,
+.dd-shop-buy {
+  background: var(--sl-color-accent);
+  color: var(--sl-color-text-invert);
 }
 
-.categories-section {
-  background: #f8f9fa;
-  padding: 40px;
-  border-radius: 12px;
-  margin-bottom: 60px;
+.dd-shop-btn.secondary,
+.dd-shop-link {
+  border: 1px solid var(--ae-border-strong);
+  color: var(--sl-color-white);
+  background: transparent;
 }
 
-.categories-grid {
+.dd-shop-side {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 1rem;
 }
 
-.category-card {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
+.dd-shop-side-card {
+  padding: 1rem;
+  border: 1px solid var(--ae-border);
+  border-radius: 0.5rem;
+  background: var(--ae-surface-soft);
 }
 
-.category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.dd-shop-side-card ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1rem;
 }
 
-.category-icon {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.dd-shop-side-card li + li {
+  margin-top: 0.5rem;
 }
 
-.category-card h3 {
-  margin: 0;
-  color: #333;
+.dd-shop-grid,
+.dd-affiliate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.category-card p {
-  margin: 8px 0 0 0;
-  color: #999;
-  font-size: 0.9em;
+.dd-shop-card,
+.dd-affiliate-card {
+  overflow: hidden;
+  border: 1px solid var(--ae-border);
+  border-radius: 0.5rem;
+  background: var(--ae-surface);
+  box-shadow: var(--sl-shadow-sm);
 }
 
-.newsletter-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 50px;
-  border-radius: 12px;
-  text-align: center;
-  color: white;
-  margin-top: 60px;
+.dd-shop-card img,
+.dd-affiliate-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.newsletter-section h3 {
-  color: white;
-  margin-bottom: 15px;
+.dd-shop-card-body,
+.dd-affiliate-card-body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
 }
 
-.newsletter-form {
+.dd-shop-meta,
+.dd-shop-price {
   display: flex;
-  gap: 10px;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.newsletter-form input {
-  flex: 1;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
+.dd-shop-meta span,
+.dd-shop-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0 0.65rem;
+  border-radius: 999px;
+  background: var(--ae-surface-soft);
+  color: var(--sl-color-accent-high);
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
-.newsletter-form button {
-  padding: 12px 30px;
-  background: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.dd-shop-badge {
+  width: fit-content;
 }
 
-.newsletter-form button:hover {
-  background: #ff5252;
-  transform: scale(1.05);
+.dd-price-old {
+  color: var(--sl-color-gray-3);
+  text-decoration: line-through;
 }
 
-@media (max-width: 768px) {
-  .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  }
+.dd-price-current {
+  color: var(--sl-color-white);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
 
-  .recommended-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-  
-  .shop-hero h2 {
-    font-size: 1.8em;
-  }
-  
-  .newsletter-form {
-    flex-direction: column;
+.dd-affiliate-card-body {
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+.dd-affiliate-card h3 {
+  font-size: 1.05rem;
+}
+
+.dd-affiliate-price {
+  color: var(--sl-color-white);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .dd-shop-hero,
+  .dd-shop-grid,
+  .dd-affiliate-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
 
-<!-- Hero Section -->
-<div class="shop-hero">
-  <h2>🛍️ Shop</h2>
-  <p>Descubra nossa seleção cuidadosa de eBooks, cursos e ferramentas para desenvolvedores.</p>
-</div>
-
-<!-- Categories Section -->
-<!-- <div class="categories-section">
-  <h3 style="text-align: center; margin-bottom: 30px;">Navegue por Categoria</h3>
-  <div class="categories-grid">
-    <div class="category-card">
-      <div class="category-icon">📚</div>
-      <h3>eBooks</h3>
-      <p>Guias práticos e aprofundados</p>
-    </div>
-    <div class="category-card">
-      <div class="category-icon">🎓</div>
-      <h3>Cursos</h3>
-      <p>Aprendizado estruturado</p>
-    </div>
-    <div class="category-card">
-      <div class="category-icon">🛠️</div>
-      <h3>Ferramentas</h3>
-      <p>Recursos úteis e templates</p>
-    </div>
-    <div class="category-card">
-      <div class="category-icon">🚀</div>
-      <h3>Mentoria</h3>
-      <p>Sessões e consultorias</p>
-    </div>
-  </div>
-</div> -->
-
-<!-- Filter Buttons -->
-<!-- <div class="filters">
-  <button class="filter-btn active">Todos</button>
-  <button class="filter-btn">eBooks</button>
-  <button class="filter-btn">Cursos</button>
-  <button class="filter-btn">Promoções</button>
-</div> -->
-
-<!-- Products Grid -->
-<div class="products-grid">
-  <!-- Product 1 -->
-  <div class="product-card">
-    <div class="product-image">
-      📖
-      <span class="product-badge">-40% OFF</span>
-    </div>
-    <div class="product-content">
-      <span class="product-category">eBook</span>
-      <h3>Guia do Dev Iniciante</h3>
-      <p class="product-description">Tudo que você precisa para conquistar sua primeira vaga como desenvolvedor. Guia prático com dicas reais.</p>
-      <div class="product-rating">
-        <span class="stars">★★★★★</span>
-        <span>(847 avaliações)</span>
+<section class="dd-shop">
+  <div class="dd-shop-hero">
+    <div>
+      <p class="dd-shop-kicker">Dionisio Developer</p>
+      <h2>Materiais e recomendações para acelerar estudo, carreira e execução técnica</h2>
+      <p>
+        A loja reúne produtos criados por Dionisio e sugestões úteis para quem quer aprender melhor,
+        construir com mais clareza e montar uma rotina de desenvolvimento mais consistente.
+      </p>
+      <div class="dd-shop-actions">
+        <a class="dd-shop-btn" href="#materiais">Ver materiais</a>
+        <a class="dd-shop-btn secondary" href="#recomendacoes">Ver recomendações</a>
       </div>
-      <div class="product-footer">
-        <div>
-          <span class="product-old-price">R$ 47,90</span>
-          <br>
-          <span class="product-price">R$ 27,90</span>
+    </div>
+
+    <aside class="dd-shop-side">
+      <section class="dd-shop-side-card">
+        <p class="dd-shop-kicker">Feito para</p>
+        <h3>Quem quer sair do improviso</h3>
+        <ul>
+          <li>Guias para entrar no mercado com base mais forte</li>
+          <li>Materiais para aprofundar stack e raciocínio técnico</li>
+          <li>Recomendações práticas para rotina real de dev</li>
+        </ul>
+      </section>
+      <section class="dd-shop-side-card">
+        <p class="dd-shop-kicker">Use junto</p>
+        <h3>Fluxo ideal</h3>
+        <ul>
+          <li><a href="/pt/blog/">Blog</a> para contexto e visão</li>
+          <li><a href="/pt/reference/">Referência</a> para base e prática</li>
+          <li><a href="/pt/projects/">Portfólio</a> para observar entrega e produto</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <section class="dd-shop-section" id="materiais">
+    <p class="dd-shop-kicker">Produtos</p>
+    <h2>Materiais de Dionisio Developer</h2>
+    <div class="dd-shop-grid">
+      <article class="dd-shop-card">
+        <img src="/assets/images/books-1.webp" alt="Capa ilustrativa do Guia do Dev Iniciante" loading="lazy" />
+        <div class="dd-shop-card-body">
+          <span class="dd-shop-badge">Disponível</span>
+          <h3>Guia do Dev Iniciante</h3>
+          <p>Material direto para conquistar a primeira vaga com projeto, posicionamento e estudo mais estratégico.</p>
+          <div class="dd-shop-meta">
+            <span>eBook</span>
+            <span>Carreira</span>
+            <span>Entrada no mercado</span>
+          </div>
+          <div class="dd-shop-price">
+            <span class="dd-price-old">R$ 47,90</span>
+            <span class="dd-price-current">R$ 27,90</span>
+          </div>
+          <a class="dd-shop-buy" href="https://pay.hotmart.com/F98094178H?off=fqzq49bv" target="_blank" rel="noopener noreferrer">Comprar</a>
         </div>
-        <button class="btn-add-cart" onclick="window.location.href='https://pay.hotmart.com/F98094178H?off=fqzq49bv'">COMPRAR</button>
-      </div>
-    </div>
-  </div>
+      </article>
 
-  <!-- Product 2 -->
-  <div class="product-card">
-    <div class="product-image">
-      ⚡
-      <span class="product-badge">-44% OFF</span>
-    </div>
-    <div class="product-content">
-      <span class="product-category">eBook</span>
-      <h3>Guia Avançado C++: Desenvolvedor Quant</h3>
-      <p class="product-description">Domine C++ profissional e entre no mercado de trading algorítmico. Exemplos reais incluídos.</p>
-      <div class="product-rating">
-        <span class="stars">★★★★★</span>
-        <span>(324 avaliações)</span>
-      </div>
-      <div class="product-footer">
-        <div>
-          <span class="product-old-price">R$ 67,90</span>
-          <br>
-          <span class="product-price">R$ 37,90</span>
+      <article class="dd-shop-card">
+        <img src="/assets/images/books-2.webp" alt="Capa ilustrativa do Guia Avançado C++" loading="lazy" />
+        <div class="dd-shop-card-body">
+          <span class="dd-shop-badge">Disponível</span>
+          <h3>Guia Avançado C++: Desenvolvedor Quant</h3>
+          <p>Leitura para aprofundar C++ profissional com foco em performance, mercado quant e exemplos reais.</p>
+          <div class="dd-shop-meta">
+            <span>eBook</span>
+            <span>C++</span>
+            <span>Mercado quant</span>
+          </div>
+          <div class="dd-shop-price">
+            <span class="dd-price-old">R$ 67,90</span>
+            <span class="dd-price-current">R$ 37,90</span>
+          </div>
+          <a class="dd-shop-buy" href="https://pay.hotmart.com/M99932004R" target="_blank" rel="noopener noreferrer">Comprar</a>
         </div>
-        <button class="btn-add-cart" onclick="window.location.href='https://pay.hotmart.com/M99932004R'">COMPRAR</button>
-      </div>
-    </div>
-  </div>
+      </article>
 
-  <!-- Product 3 -->
-  <div class="product-card">
-    <div class="product-image">
-      🎓
-      <span class="product-badge">EM BREVE</span>
-    </div>
-    <div class="product-content">
-      <span class="product-category">Curso Online</span>
-      <h3>Masterclass: Arquitetura de Software</h3>
-      <p class="product-description">Aprenda padrões de design profissionais. 10 módulos com exercícios práticos. Acesso vitalício.</p>
-      <div class="product-rating">
-        <span class="stars">★★★★★</span>
-        <span>(0 avaliações)</span>
-      </div>
-      <div class="product-footer">
-        <div>
-          <span class="product-price">Em breve</span>
+      <article class="dd-shop-card">
+        <img src="/assets/images/desktop-3.webp" alt="Ambiente de arquitetura de software" loading="lazy" />
+        <div class="dd-shop-card-body">
+          <span class="dd-shop-badge">Em breve</span>
+          <h3>Masterclass: Arquitetura de Software</h3>
+          <p>Uma próxima etapa para quem quer consolidar padrões, trade-offs e visão de arquitetura com aplicação prática.</p>
+          <div class="dd-shop-meta">
+            <span>Curso</span>
+            <span>Arquitetura</span>
+            <span>Execução</span>
+          </div>
+          <div class="dd-shop-price">
+            <span class="dd-price-current">Em breve</span>
+          </div>
+          <span class="dd-shop-link">Lançamento futuro</span>
         </div>
-        <button class="btn-add-cart" disabled style="opacity: 0.6;">COMPRAR</button>
-      </div>
-    </div>
-  </div>
+      </article>
 
-  <!-- Product 4 -->
-  <div class="product-card">
-    <div class="product-image">
-      🛠️
-      <span class="product-badge">EM BREVE</span>
-    </div>
-    <div class="product-content">
-      <span class="product-category">Ferramenta</span>
-      <h3>Pack de Templates & Boilerplates</h3>
-      <p class="product-description">5 templates prontos para iniciar projetos. C++, TypeScript, Python. Código limpo e documentado.</p>
-      <div class="product-rating">
-        <span class="stars">★★★★☆</span>
-        <span>(0 avaliações)</span>
-      </div>
-      <div class="product-footer">
-        <div>
-          <span class="product-price">Em breve</span>
+      <article class="dd-shop-card">
+        <img src="/assets/images/projects-1.webp" alt="Coleção de recursos para desenvolvimento" loading="lazy" />
+        <div class="dd-shop-card-body">
+          <span class="dd-shop-badge">Em breve</span>
+          <h3>Pack de Templates e Boilerplates</h3>
+          <p>Base pronta para tirar ideia do papel mais rápido com código limpo, estrutura útil e menos retrabalho inicial.</p>
+          <div class="dd-shop-meta">
+            <span>Templates</span>
+            <span>Boilerplates</span>
+            <span>Produtividade</span>
+          </div>
+          <div class="dd-shop-price">
+            <span class="dd-price-current">Em breve</span>
+          </div>
+          <span class="dd-shop-link">Lançamento futuro</span>
         </div>
-        <button class="btn-add-cart" disabled style="opacity: 0.6;">COMPRAR</button>
-      </div>
-    </div>
-  </div>
+      </article>
 
-  <!-- Product 5 -->
-  <div class="product-card">
-    <div class="product-image">
-      🎯
-      <span class="product-badge">EM BREVE</span>
-    </div>
-    <div class="product-content">
-      <span class="product-category">Consultoria</span>
-      <h3>Sessão de Mentoria (1:1)</h3>
-      <p class="product-description">60 minutos direto com especialista. Tire dúvidas, revise código, planeje sua carreira.</p>
-      <div class="product-rating">
-        <span class="stars">★★★★★</span>
-        <span>(0 avaliações)</span>
-      </div>
-      <div class="product-footer">
-        <div>
-          <span class="product-price">Em breve</span>
+      <article class="dd-shop-card">
+        <img src="/assets/images/office-1.webp" alt="Sessão de mentoria técnica" loading="lazy" />
+        <div class="dd-shop-card-body">
+          <span class="dd-shop-badge">Em breve</span>
+          <h3>Mentoria 1:1</h3>
+          <p>Uma proposta para revisar carreira, código, direção de estudo e próximos passos com contexto técnico.</p>
+          <div class="dd-shop-meta">
+            <span>Mentoria</span>
+            <span>Carreira</span>
+            <span>Direção</span>
+          </div>
+          <div class="dd-shop-price">
+            <span class="dd-price-current">Em breve</span>
+          </div>
+          <span class="dd-shop-link">Abertura futura</span>
         </div>
-        <button class="btn-add-cart" disabled style="opacity: 0.6;">AGENDAR</button>
-      </div>
-    </div>
-  </div>
+      </article>
 
-  <!-- Product 6 -->
-  <div class="product-card">
-    <div class="product-image">
-      📊
-      <span class="product-badge">EM BREVE</span>
-    </div>
-    <div class="product-content">
-      <span class="product-category">Guia</span>
-      <h3>Roteiro Completo: Dev Jr → Sênior</h3>
-      <p class="product-description">Plano estruturado de 3 anos para evoluir sua carreira técnica com marcos e recursos.</p>
-      <div class="product-rating">
-        <span class="stars">★★★★★</span>
-        <span>(0 avaliações)</span>
-      </div>
-      <div class="product-footer">
-        <div>
-          <span class="product-price">Em breve</span>
+      <article class="dd-shop-card">
+        <img src="/assets/images/trilha-de-aprendizado.webp" alt="Roteiro visual de evolução técnica" loading="lazy" />
+        <div class="dd-shop-card-body">
+          <span class="dd-shop-badge">Em breve</span>
+          <h3>Roteiro Completo: Dev Jr para Sênior</h3>
+          <p>Um plano mais estruturado para organizar evolução técnica, marcos de carreira e prioridades de estudo.</p>
+          <div class="dd-shop-meta">
+            <span>Guia</span>
+            <span>Carreira</span>
+            <span>Roadmap</span>
+          </div>
+          <div class="dd-shop-price">
+            <span class="dd-price-current">Em breve</span>
+          </div>
+          <span class="dd-shop-link">Abertura futura</span>
         </div>
-        <button class="btn-add-cart" disabled style="opacity: 0.6;">NOTIFICAR</button>
-      </div>
+      </article>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Ofertas Recomendadas (Afiliados) -->
-<div class="recommended-section">
-<h3>🛒 Ofertas Recomendadas</h3>
-<p>Recomendações de afiliados do Mercado Livre com produtos úteis para rotina de desenvolvimento.</p>
-<div class="recommended-grid">
-<div class="recommended-card">
-<img src="https://http2.mlstatic.com/D_Q_NP_952038-MLA99371736922_112025-B.webp" alt="Combo teclado e mouse sem fio Logitech MK250 grafite" />
-<div class="recommended-content">
-<h4>Combo Teclado e Mouse sem fio Logitech MK250 (Grafite)</h4>
-<p class="recommended-description">Conjunto sem fio com conexão estável, layout confortável e ótimo custo-benefício para estudar, programar e trabalhar no dia a dia.</p>
-<p class="recommended-price">R$ 169,90</p>
-<a class="btn-affiliate" href="https://meli.la/26oB1pL" target="_blank" rel="noopener noreferrer sponsored">COMPRAR</a>
-</div>
-</div>
-<div class="recommended-card">
-<img src="https://http2.mlstatic.com/D_NQ_NP_633479-MLA82144434230_022025-F.webp" alt="Notebook Lenovo ThinkPad T14" />
-<div class="recommended-content">
-<h4>Notebook Lenovo ThinkPad T14 G2 (i5 11ª, 16GB, 512GB SSD)</h4>
-<p class="recommended-description">Notebook corporativo com desempenho sólido para codar, estudar e trabalhar com produtividade no dia a dia.</p>
-<p class="recommended-price">R$ 3409,00</p>
-<a class="btn-affiliate" href="https://meli.la/27MNQe8" target="_blank" rel="noopener noreferrer sponsored">COMPRAR</a>
-</div>
-</div>
-<div class="recommended-card">
-<img src="https://http2.mlstatic.com/D_Q_NP_669691-MLA106901751604_022026-B.webp" alt="Balança digital corporal Relaxmedic com bioimpedância e Bluetooth" />
-<div class="recommended-content">
-<h4>Balança Digital Corporal Relaxmedic (Bioimpedância + App Bluetooth)</h4>
-<p class="recommended-description">Balança inteligente com sincronização via app, IMC e métricas de composição corporal para até 24 perfis.</p>
-<p class="recommended-price">R$ 127,95</p>
-<a class="btn-affiliate" href="https://meli.la/2hRCzvo" target="_blank" rel="noopener noreferrer sponsored">COMPRAR</a>
-</div>
-</div>
-</div>
-</div>
+  <section class="dd-shop-section" id="recomendacoes">
+    <p class="dd-shop-kicker">Recomendações</p>
+    <h2>Setup e itens úteis para rotina dev</h2>
+    <div class="dd-affiliate-grid">
+      <article class="dd-affiliate-card">
+        <img src="https://http2.mlstatic.com/D_Q_NP_952038-MLA99371736922_112025-B.webp" alt="Combo teclado e mouse sem fio Logitech MK250 grafite" loading="lazy" />
+        <div class="dd-affiliate-card-body">
+          <span class="dd-shop-badge">Afiliado</span>
+          <h3>Combo Logitech MK250</h3>
+          <p>Conjunto sem fio com conexão estável e boa ergonomia para estudar, programar e trabalhar por horas.</p>
+          <p class="dd-affiliate-price">R$ 169,90</p>
+          <a class="dd-shop-buy" href="https://meli.la/26oB1pL" target="_blank" rel="noopener noreferrer sponsored">Ver oferta</a>
+        </div>
+      </article>
 
-<!-- Newsletter Section -->
-<div class="newsletter-section">
-  <h3>📬 Fique por dentro das novidades</h3>
-  <p style="margin-bottom: 20px;">Receba atualizações sobre novos produtos, promoções exclusivas e conteúdo educativo direto na sua caixa de entrada.</p>
-  <div class="newsletter-form">
-    <input type="email" placeholder="seu email@exemplo.com" />
-    <button>Inscrever</button>
-  </div>
-</div>
+      <article class="dd-affiliate-card">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_633479-MLA82144434230_022025-F.webp" alt="Notebook Lenovo ThinkPad T14" loading="lazy" />
+        <div class="dd-affiliate-card-body">
+          <span class="dd-shop-badge">Afiliado</span>
+          <h3>Lenovo ThinkPad T14 G2</h3>
+          <p>Notebook sólido para codar, estudar e manter uma rotina de trabalho confiável no dia a dia.</p>
+          <p class="dd-affiliate-price">R$ 3409,00</p>
+          <a class="dd-shop-buy" href="https://meli.la/27MNQe8" target="_blank" rel="noopener noreferrer sponsored">Ver oferta</a>
+        </div>
+      </article>
+
+      <article class="dd-affiliate-card">
+        <img src="https://http2.mlstatic.com/D_Q_NP_669691-MLA106901751604_022026-B.webp" alt="Balança digital corporal Relaxmedic com Bluetooth" loading="lazy" />
+        <div class="dd-affiliate-card-body">
+          <span class="dd-shop-badge">Afiliado</span>
+          <h3>Balança Digital Relaxmedic</h3>
+          <p>Um item simples para quem quer cuidar melhor da rotina e da energia física no meio de dias longos de trabalho.</p>
+          <p class="dd-affiliate-price">R$ 127,95</p>
+          <a class="dd-shop-buy" href="https://meli.la/2hRCzvo" target="_blank" rel="noopener noreferrer sponsored">Ver oferta</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="dd-shop-cta">
+    <p class="dd-shop-kicker">Acompanhe lançamentos</p>
+    <h2>Novos materiais vão nascer a partir do que aparece no trabalho e no conteúdo</h2>
+    <p>
+      Para não perder atualizações, acompanhe <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a> no
+      <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">X</a>,
+      <a href="https://www.youtube.com/@dionisiodev" target="_blank" rel="noopener noreferrer">YouTube</a>,
+      <a href="https://medium.com/@dionisiodev" target="_blank" rel="noopener noreferrer">Medium</a> e
+      <a href="https://www.linkedin.com/in/dionisiodev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+    </p>
+    <div class="dd-shop-links">
+      <a class="dd-shop-btn" href="/pt/blog/">Ler o Blog</a>
+      <a class="dd-shop-link" href="/pt/projects/">Ver Portfólio</a>
+    </div>
+  </section>
+</section>

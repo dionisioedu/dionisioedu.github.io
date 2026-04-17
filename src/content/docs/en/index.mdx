@@ -16,7 +16,7 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
     </p>
     <div class="ae-hero-actions">
       <a class="ae-cta" href="/en/projects/">View Projects</a>
-      <a class="ae-cta" href="/en/blog/">Read Insights</a>
+      <a class="ae-cta" href="/en/blog/">Read the Blog</a>
       <a class="ae-cta" href="/en/shop/">Explore Resources</a>
     </div>
     <section class="ae-hero-strip" aria-label="Main areas">
@@ -29,8 +29,8 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
         <p>Writing on engineering, applied AI, career growth, and practical technical judgment.</p>
       </article>
       <article class="ae-hero-chip">
-        <p class="ae-kicker">Shop</p>
-        <p>eBooks, materials, and recommendations designed to support real developer routines.</p>
+        <p class="ae-kicker">Reference</p>
+        <p>Guides, labs, and foundations for learning better and returning faster to execution.</p>
       </article>
     </section>
   </div>
@@ -57,55 +57,101 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
   </aside>
 </section>
 
-<p class="ae-kicker">Overview</p>
+<p class="ae-kicker">Start here</p>
 <p class="ae-lede">
-  This site brings together the mix that matters most for a personal brand in tech: real work,
-  technical perspective, useful materials, and one clear place to return when you want to know who
-  Dionisio is and how he builds.
+  The home page now acts as a simple map: pick the path that matches what you want to solve today,
+  instead of guessing where the useful part starts.
 </p>
+
+<section class="ae-route-grid">
+  <article class="ae-route-card">
+    <p class="ae-kicker">Real work</p>
+    <h3>See projects with context</h3>
+    <p>
+      Use the portfolio when you want to understand how product, UX, architecture, and delivery
+      meet outside of theory.
+    </p>
+    <ul>
+      <li>cases shaped by product and interface thinking</li>
+      <li>technical choices explained by the actual problem</li>
+      <li>a portfolio built to be readable and useful fast</li>
+    </ul>
+    <a class="ae-cta" href="/en/projects/">Open portfolio</a>
+  </article>
+  <article class="ae-route-card">
+    <p class="ae-kicker">Perspective</p>
+    <h3>Read with a technical filter</h3>
+    <p>
+      Use the blog when you want clearer thinking around applied AI, engineering, career moves, and
+      technical judgment without hype.
+    </p>
+    <ul>
+      <li>practical articles with real work in mind</li>
+      <li>context for tools, market shifts, and growth</li>
+      <li>writing that helps you decide more clearly</li>
+    </ul>
+    <a class="ae-cta" href="/en/blog/">Read the blog</a>
+  </article>
+  <article class="ae-route-card">
+    <p class="ae-kicker">Study and practice</p>
+    <h3>Build stronger foundations</h3>
+    <p>
+      Use the reference library when you need to close gaps, test ideas in the browser, and turn
+      curiosity into execution.
+    </p>
+    <ul>
+      <li><a href="/en/reference/">reference</a> for fundamentals and fast lookup</li>
+      <li><a href="/en/reference/code-lab/">Code Lab</a> for immediate experimentation</li>
+      <li><a href="/en/shop/">shop</a> for materials and applied resources</li>
+    </ul>
+    <a class="ae-cta" href="/en/reference/">Open reference</a>
+  </article>
+</section>
+
+## Featured now
 
 <section class="ae-home-grid">
   <article class="ae-feature">
-    <img src="/assets/images/projects-2.webp" alt="Product and engineering project preview" loading="lazy" />
+    <img src="/assets/images/n8n-oracle-cloud-hero.jpg" alt="Minimal desk with an open laptop" loading="lazy" />
     <div class="ae-feature-copy">
-      <p class="ae-kicker">Featured portfolio</p>
-      <h2>Projects that show product thinking, UX decisions, and engineering in context</h2>
+      <p class="ae-kicker">New in the blog</p>
+      <h2>How to install n8n for free on Oracle Cloud and keep it running 24/7</h2>
       <p>
-        The portfolio turns real work into readable cases, making it easier to see how product
-        direction, interface clarity, architecture, and trade-offs fit together.
+        A direct walkthrough, tested in April 2026, for running your own automation environment on
+        Oracle's Always Free tier with Docker.
       </p>
       <div class="ae-meta">
-        <span>Product</span>
-        <span>Architecture</span>
-        <span>Delivery</span>
+        <span>n8n</span>
+        <span>Oracle Cloud</span>
+        <span>Automation</span>
       </div>
-      <p><a class="ae-cta" href="/en/projects/">Open portfolio</a></p>
+      <p><a class="ae-cta" href="/en/artigos-tecnicos/n8n-gratis-oracle-cloud/">Read article</a></p>
     </div>
   </article>
 
   <aside class="ae-stack">
     <section class="ae-panel">
-      <p class="ae-kicker">Where to begin</p>
-      <h3>Enter through the right topic</h3>
+      <p class="ae-kicker">Worth opening if you want</p>
+      <h3>Your own automation setup without fixed cost</h3>
       <ul>
-        <li><a href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">AI, the market, and technical positioning</a></li>
-        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code with a practical filter</a></li>
-        <li><a href="/en/reference/curriculo-que-se-destaca/">Resume and proof of work</a></li>
+        <li>webhooks, bots, GPT, and integrations running on your own machine</li>
+        <li>real workflow experiments without execution caps</li>
+        <li>a project that becomes both study material and proof of work</li>
       </ul>
     </section>
     <section class="ae-panel">
-      <p class="ae-kicker">Depth and practice</p>
-      <h3>Move beyond reading</h3>
+      <p class="ae-kicker">Continue from here</p>
+      <h3>Reads that fit well after it</h3>
       <ul>
-        <li><a href="/en/reference/">Reference</a> for stronger fundamentals and faster lookup</li>
-        <li><a href="/en/reference/code-lab/">Code Lab</a> for browser-based experimentation</li>
-        <li><a href="/en/shop/">Shop</a> for ready-to-use learning materials and products</li>
+        <li><a href="/en/artigos-tecnicos/ia-vai-acabar-com-os-devs/">AI, the market, and technical positioning</a></li>
+        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code with practical judgment</a></li>
+        <li><a href="/en/projects/">Portfolio</a> to connect study with delivery</li>
       </ul>
     </section>
   </aside>
 </section>
 
-## What you will find here
+## Explore by area
 
 <section class="ae-feed">
   <article class="ae-mini-card">

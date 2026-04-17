@@ -9,12 +9,14 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
   <div class="ae-hero-main">
     <p class="ae-kicker">Dionisio Developer</p>
     <h2>Software, sistemas inteligentes e construção digital com profundidade</h2>
-    Uma base para explorar tecnologia com critério técnico, visão de produto e curiosidade real.
-    Projetos, ideias e referências para quem quer entender melhor o que está por trás do software
-    que move o mundo.
+    <p>
+      Um espaço para explorar tecnologia com critério técnico, visão de produto e curiosidade real.
+      Projetos, ideias e referências para quem quer entender melhor o que está por trás do software
+      que move o mundo.
+    </p>
     <div class="ae-hero-actions">
       <a class="ae-cta" href="/pt/projects/">Ver Projetos</a>
-      <a class="ae-cta" href="/pt/blog/">Ler Conteúdos</a>
+      <a class="ae-cta" href="/pt/blog/">Ler o Blog</a>
       <a class="ae-cta" href="/pt/shop/">Explorar Recursos</a>
     </div>
     <section class="ae-hero-strip" aria-label="Áreas principais">
@@ -27,8 +29,8 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
         <p>Leituras sobre engenharia, IA aplicada, carreira e julgamento técnico no trabalho real.</p>
       </article>
       <article class="ae-hero-chip">
-        <p class="ae-kicker">Loja</p>
-        <p>eBooks, materiais e recomendações pensadas para rotina prática de desenvolvimento.</p>
+        <p class="ae-kicker">Referência</p>
+        <p>Guias, labs e fundamentos para estudar melhor e voltar mais rápido para a prática.</p>
       </article>
     </section>
   </div>
@@ -55,12 +57,55 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
   </aside>
 </section>
 
-<p class="ae-kicker">Visão geral</p>
-<div class="ae-lede">
-  Aqui você encontra a combinação que mais importa para uma marca pessoal de tecnologia:
-  trabalho real, pensamento técnico, materiais úteis e um lugar claro para voltar quando quiser
-  conhecer melhor quem eu sou e como eu construo.
-</div>
+<p class="ae-kicker">Comece por aqui</p>
+<p class="ae-lede">
+  A home agora funciona como um mapa simples: escolha o caminho que faz mais sentido para o que
+  você quer resolver hoje, sem precisar adivinhar por onde entrar.
+</p>
+
+<section class="ae-route-grid">
+  <article class="ae-route-card">
+    <p class="ae-kicker">Trabalho real</p>
+    <h3>Ver projetos com contexto</h3>
+    <p>
+      Para entender como produto, UX, arquitetura e entrega se encontram fora da teoria.
+    </p>
+    <ul>
+      <li>casos com raciocínio de produto e interface</li>
+      <li>decisões técnicas explicadas pelo problema</li>
+      <li>portfólio pensado para leitura rápida e útil</li>
+    </ul>
+    <a class="ae-cta" href="/pt/projects/">Abrir portfólio</a>
+  </article>
+  <article class="ae-route-card">
+    <p class="ae-kicker">Repertório</p>
+    <h3>Ler textos com filtro técnico</h3>
+    <p>
+      Para ganhar clareza sobre IA aplicada, engenharia, mercado e crescimento sem cair em hype.
+    </p>
+    <ul>
+      <li>artigos práticos e diretos</li>
+      <li>contexto para ferramentas, carreira e decisões</li>
+      <li>leituras que ajudam a pensar melhor no trabalho real</li>
+    </ul>
+    <a class="ae-cta" href="/pt/blog/">Ler o blog</a>
+  </article>
+  <article class="ae-route-card">
+    <p class="ae-kicker">Base e prática</p>
+    <h3>Estudar com direção</h3>
+    <p>
+      Para fechar lacunas, testar ideias no browser e encontrar materiais que aceleram a execução.
+    </p>
+    <ul>
+      <li><a href="/pt/reference/">referência</a> para fundamentos e consulta rápida</li>
+      <li><a href="/pt/reference/code-lab/">Code Lab</a> para prática imediata</li>
+      <li><a href="/pt/shop/">loja</a> para materiais e recursos aplicáveis</li>
+    </ul>
+    <a class="ae-cta" href="/pt/reference/">Abrir referência</a>
+  </article>
+</section>
+
+## Em destaque
 
 <section class="ae-home-grid">
   <article class="ae-feature">
@@ -68,8 +113,10 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
     <div class="ae-feature-copy">
       <p class="ae-kicker">Novo no blog</p>
       <h2>Como instalar um n8n de graça na Oracle Cloud e deixar rodando 24/7</h2>
-      Um passo a passo direto, testado em abril de 2026, para subir seu ambiente de automação com
-      Docker no plano Always Free da Oracle.
+      <p>
+        Um passo a passo direto, testado em abril de 2026, para subir seu ambiente de automação com
+        Docker no plano Always Free da Oracle.
+      </p>
       <div class="ae-meta">
         <span>n8n</span>
         <span>Oracle Cloud</span>
@@ -81,66 +128,27 @@ import { CardGrid, LinkCard, Aside } from '@astrojs/starlight/components';
 
   <aside class="ae-stack">
     <section class="ae-panel">
-      <p class="ae-kicker">Por que abrir agora</p>
-      <h3>O que você resolve com esse setup</h3>
+      <p class="ae-kicker">Vale abrir se você quer</p>
+      <h3>Automação própria sem custo fixo</h3>
       <ul>
-        <li>ambiente próprio para webhook, Telegram, GPT e Google Sheets</li>
-        <li>infra simples para testar automação sem custo mensal logo no começo</li>
-        <li>um projeto que vira estudo, portfólio e ferramenta ao mesmo tempo</li>
+        <li>subir webhook, bot, GPT e integrações em uma infra sua</li>
+        <li>testar workflows de verdade sem limite por execução</li>
+        <li>transformar estudo em ferramenta e portfólio ao mesmo tempo</li>
       </ul>
     </section>
     <section class="ae-panel">
-      <p class="ae-kicker">Depois dele</p>
-      <h3>Leituras que combinam bem</h3>
+      <p class="ae-kicker">Continue por aqui</p>
+      <h3>Leituras que combinam</h3>
       <ul>
         <li><a href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">IA, mercado e posicionamento técnico</a></li>
-        <li><a href="/pt/reference/getting-started/">Por onde começar</a> se você ainda está montando a base</li>
+        <li><a href="/pt/artigos-tecnicos/clean-code/">Clean Code com critério prático</a></li>
         <li><a href="/pt/projects/">Portfólio</a> para ligar estudo a entrega real</li>
       </ul>
     </section>
   </aside>
 </section>
 
-<section class="ae-home-grid">
-  <article class="ae-feature">
-    <img src="/assets/images/projects-2.webp" alt="Tela com projetos e interface de produto" loading="lazy" />
-    <div class="ae-feature-copy">
-      <p class="ae-kicker">Portfólio em destaque</p>
-      <h2>Projetos para estudar produto, UX e engenharia com contexto</h2>
-      O portfólio reúne casos reais para mostrar como penso fluxo, arquitetura, clareza de
-      interface, trade-offs e evolução de produto além do código isolado.
-      <div class="ae-meta">
-        <span>Produto</span>
-        <span>Arquitetura</span>
-        <span>Entrega</span>
-      </div>
-      <p><a class="ae-cta" href="/pt/projects/">Abrir portfólio</a></p>
-    </div>
-  </article>
-
-  <aside class="ae-stack">
-    <section class="ae-panel">
-      <p class="ae-kicker">Leituras para começar</p>
-      <h3>Entre pelo assunto certo</h3>
-      <ul>
-        <li><a href="/pt/artigos-tecnicos/n8n-gratis-oracle-cloud/">n8n na Oracle Cloud sem custo mensal</a></li>
-        <li><a href="/pt/artigos-tecnicos/ia-vai-acabar-com-os-devs/">IA, mercado e posicionamento técnico</a></li>
-        <li><a href="/pt/artigos-tecnicos/clean-code/">Clean Code com filtro prático</a></li>
-      </ul>
-    </section>
-    <section class="ae-panel">
-      <p class="ae-kicker">Base e prática</p>
-      <h3>Avance além da leitura</h3>
-      <ul>
-        <li><a href="/pt/reference/">Referência</a> para reforçar fundamentos com clareza</li>
-        <li><a href="/pt/reference/code-lab/">Code Lab</a> para testar conceitos no browser</li>
-        <li><a href="/pt/shop/">Loja</a> para materiais prontos para estudo e aplicação</li>
-      </ul>
-    </section>
-  </aside>
-</section>
-
-## O que encontrar aqui
+## Explore por área
 
 <section class="ae-feed">
   <article class="ae-mini-card">
