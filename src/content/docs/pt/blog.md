@@ -5,7 +5,7 @@ description: 'Artigos, análises e trilhas de leitura de Dionisio Developer sobr
 
 <p class="ae-kicker">Dionisio Developer</p>
 <p class="ae-lede">
-  Textos para quem acompanha <strong>@dionisiodev</strong> e quer repertório útil em engenharia,
+  Textos para quem acompanha <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a> e quer repertório útil em engenharia,
   IA aplicada, produto e crescimento profissional, com menos hype e mais clareza prática.
 </p>
 

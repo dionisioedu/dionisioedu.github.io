@@ -1,12 +1,13 @@
 ---
 title: Blog
-description: 'A minimal editorial hub with one lead story, recent highlights, and quick access to the wider archive.'
+description: 'Articles, analysis, and reading paths from Dionisio Developer on software, applied AI, career growth, and product work.'
 ---
 
-<p class="ae-kicker">Blog</p>
+<p class="ae-kicker">Dionisio Developer</p>
 <p class="ae-lede">
-  Start with the lead read, move through the support coverage, and use the wider archive when
-  you want to turn the idea into foundations, practice, or applied study.
+  Writing for people following <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a> and looking for useful perspective on
+  engineering, applied AI, product thinking, and career growth, with less hype and more practical
+  clarity.
 </p>
 
 <section class="ae-home-grid">
@@ -14,10 +15,10 @@ description: 'A minimal editorial hub with one lead story, recent highlights, an
     <img src="/assets/images/desktop-2.webp" alt="Technology workstation" loading="lazy" />
     <div class="ae-feature-copy">
       <p class="ae-kicker">Lead story</p>
-      <h2>AI, jobs, and technical adaptation without doom-scroll panic</h2>
+      <h2>AI, the market, and technical adaptation without feed-driven panic</h2>
       <p>
-        A piece for separating noise from real change and thinking more clearly about study,
-        tooling, productivity, and the value of engineers who can deliver with context.
+        A read for thinking more calmly about study, tools, productivity, and the value of people
+        who can build with context, fundamentals, and technical judgment.
       </p>
       <div class="ae-meta">
         <span>Market</span>
@@ -30,21 +31,21 @@ description: 'A minimal editorial hub with one lead story, recent highlights, an
 
   <aside class="ae-stack">
     <section class="ae-panel">
-      <p class="ae-kicker">Most read</p>
-      <h3>Continue here</h3>
+      <p class="ae-kicker">Read next</p>
+      <h3>Topics that deepen the picture</h3>
       <ul>
-        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code Summary</a></li>
-        <li><a href="/en/artigos-tecnicos/sre/">What is SRE?</a></li>
-        <li><a href="/en/artigos-tecnicos/bigo/">Understanding Big-O</a></li>
+        <li><a href="/en/artigos-tecnicos/clean-code/">Clean Code with practical judgment</a></li>
+        <li><a href="/en/artigos-tecnicos/sre/">SRE to widen your engineering range</a></li>
+        <li><a href="/en/artigos-tecnicos/bigo/">Big-O for sharper decision-making</a></li>
       </ul>
     </section>
     <section class="ae-panel">
-      <p class="ae-kicker">Read by goal</p>
-      <h3>Pick the best next step</h3>
+      <p class="ae-kicker">Also worth opening</p>
+      <h3>Connect reading with work</h3>
       <ul>
-        <li><a href="/en/reference/getting-started/">Close a fundamentals gap</a></li>
-        <li><a href="/en/reference/code-lab/">Test ideas in practice</a></li>
-        <li><a href="/en/projects/">Observe systems and product through real cases</a></li>
+        <li><a href="/en/projects/">Portfolio</a> for real product and engineering cases</li>
+        <li><a href="/en/reference/">Reference</a> to close gaps while you read</li>
+        <li><a href="/en/shop/">Shop</a> for supporting materials and products</li>
       </ul>
     </section>
   </aside>
@@ -56,30 +57,30 @@ description: 'A minimal editorial hub with one lead story, recent highlights, an
   <article class="ae-mini-card">
     <img src="/assets/images/clean-code.jpg" alt="Clean code book" loading="lazy" />
     <p class="ae-kicker">Code</p>
-    <h3>Clean Code with less sermonizing</h3>
-    <p>A quick read on readability and what actually helps without collapsing into empty rules.</p>
+    <h3>Clean Code without empty ritual</h3>
+    <p>A short review of readability, maintainability, and what actually earns its place in production work.</p>
     <p><a class="ae-cta" href="/en/artigos-tecnicos/clean-code/">Read story</a></p>
   </article>
   <article class="ae-mini-card">
-    <img src="/assets/images/sre.png" alt="SRE graphic" loading="lazy" />
+    <img src="/assets/images/sre.png" alt="SRE diagram" loading="lazy" />
     <p class="ae-kicker">Reliability</p>
-    <h3>SRE to widen the conversation</h3>
-    <p>A strong entry point for thinking about incidents, error budgets, and operational maturity.</p>
+    <h3>SRE for thinking beyond the isolated app</h3>
+    <p>A solid entry point for incidents, error budgets, operations, and system maturity.</p>
     <p><a class="ae-cta" href="/en/artigos-tecnicos/sre/">Read story</a></p>
   </article>
   <article class="ae-mini-card">
-    <img src="/assets/images/big-o-graph.png" alt="Big-O graph" loading="lazy" />
+    <img src="/assets/images/big-o-graph.png" alt="Big-O complexity chart" loading="lazy" />
     <p class="ae-kicker">Foundations</p>
-    <h3>Big-O as a decision-making tool</h3>
-    <p>Return to fundamentals when performance and scale begin to affect the shape of your choices.</p>
+    <h3>Big-O as decision support</h3>
+    <p>Return to fundamentals when performance, scale, and data structure choices begin to matter more.</p>
     <p><a class="ae-cta" href="/en/artigos-tecnicos/bigo/">Read story</a></p>
   </article>
   <article class="ae-mini-card">
-    <img src="/assets/images/hacker-2.webp" alt="Abstract engineering setup" loading="lazy" />
-    <p class="ae-kicker">Archive</p>
-    <h3>More context for the next study session</h3>
-    <p>Open the index when you want to browse the archive directly and build your own sequence.</p>
-    <p><a class="ae-cta" href="/en/artigos-tecnicos/">View index</a></p>
+    <img src="/assets/images/projects-1.webp" alt="Software project preview" loading="lazy" />
+    <p class="ae-kicker">Context</p>
+    <h3>When writing and portfolio work reinforce each other</h3>
+    <p>Read the argument, then watch the same principles surface in product choices and real projects.</p>
+    <p><a class="ae-cta" href="/en/projects/">View portfolio</a></p>
   </article>
 </section>
 
@@ -87,23 +88,23 @@ description: 'A minimal editorial hub with one lead story, recent highlights, an
 
 <CardGrid>
   <LinkCard
+    title="Portfolio"
+    href="/en/projects/"
+    description="Open real projects to connect writing, architecture, UX, and delivery."
+  />
+  <LinkCard
     title="Guides"
     href="/en/reference/getting-started/"
-    description="Use the guides when editorial reading surfaces a gap that should become deliberate study."
+    description="Use the guides when an article surfaces a gap that should become deliberate study."
   />
   <LinkCard
-    title="Labs"
-    href="/en/reference/code-lab/"
-    description="Take ideas straight into the browser without leaving the same environment."
+    title="Resume and positioning"
+    href="/en/reference/curriculo-que-se-destaca/"
+    description="Improve how you present impact, proof of work, and professional direction."
   />
   <LinkCard
-    title="Case Studies"
-    href="/en/projects/"
-    description="Connect writing and delivery by observing product, architecture, and trade-offs."
-  />
-  <LinkCard
-    title="Full archive"
-    href="/en/artigos-tecnicos/"
-    description="Open the index when you want the full content list without editorial mediation."
+    title="Shop"
+    href="/en/shop/"
+    description="Find materials and products that turn the next reading step into practice."
   />
 </CardGrid>
