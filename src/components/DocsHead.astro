@@ -1,0 +1,25 @@
+---
+const { head, entry } = Astro.locals.starlightRoute;
+
+const siteUrl = Astro.site ?? new URL('https://dionisio.dev');
+const fallbackImage = new URL('/assets/images/social-card.png', siteUrl).href;
+const socialImage = entry.data.cover ? new URL(entry.data.cover, siteUrl).href : fallbackImage;
+const socialImageAlt = entry.data.coverAlt ?? entry.data.title;
+
+const filteredHead = head.filter(({ tag, attrs }) => {
+  if (tag !== 'meta' || !attrs) return true;
+
+  return !(
+    attrs.property === 'og:image' ||
+    attrs.property === 'og:image:alt' ||
+    attrs.name === 'twitter:image' ||
+    attrs.name === 'twitter:image:alt'
+  );
+});
+---
+
+{filteredHead.map(({ tag: Tag, attrs, content }) => <Tag {...attrs} set:html={content} />)}
+<meta property="og:image" content={socialImage} />
+<meta property="og:image:alt" content={socialImageAlt} />
+<meta name="twitter:image" content={socialImage} />
+<meta name="twitter:image:alt" content={socialImageAlt} />
