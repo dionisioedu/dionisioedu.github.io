@@ -1,0 +1,596 @@
+---
+interface Props {
+  locale: 'pt' | 'en';
+}
+
+const { locale } = Astro.props;
+
+const copy = {
+  pt: {
+    heroTitle: 'Materiais e recomendações para acelerar estudo, carreira e execução técnica',
+    heroBody:
+      'A loja reúne produtos criados por Dionisio e sugestões úteis para quem quer aprender melhor, construir com mais clareza e montar uma rotina de desenvolvimento mais consistente.',
+    viewMaterials: 'Ver materiais',
+    viewRecommendations: 'Ver recomendações',
+    builtFor: 'Feito para',
+    builtForTitle: 'Quem quer sair do improviso',
+    builtForItems: [
+      'Guias para entrar no mercado com base mais forte',
+      'Materiais para aprofundar stack e raciocínio técnico',
+      'Recomendações práticas para rotina real de dev',
+    ],
+    useTogether: 'Use junto',
+    useTogetherTitle: 'Fluxo ideal',
+    useTogetherItems: [
+      { href: '/pt/blog/', label: 'Blog', suffix: ' para contexto e visão' },
+      { href: '/pt/reference/', label: 'Referência', suffix: ' para base e prática' },
+      { href: '/pt/projects/', label: 'Portfólio', suffix: ' para observar entrega e produto' },
+    ],
+    products: 'Produtos',
+    productsTitle: 'Materiais de Dionisio Developer',
+    available: 'Disponível',
+    comingSoon: 'Em breve',
+    futureRelease: 'Lançamento futuro',
+    futureOpening: 'Abertura futura',
+    buy: 'Comprar',
+    recommendations: 'Recomendações',
+    recommendationsTitle: 'Setup e itens úteis para rotina dev',
+    affiliate: 'Afiliado',
+    viewOffer: 'Ver oferta',
+    followLaunches: 'Acompanhe lançamentos',
+    ctaTitle: 'Novos materiais vão nascer a partir do que aparece no trabalho e no conteúdo',
+    ctaBodyPrefix: 'Para não perder atualizações, acompanhe ',
+    ctaBodyMiddle1: ' no ',
+    ctaBodyMiddle2: ', ',
+    ctaBodyMiddle3: ', ',
+    ctaBodyMiddle4: ' e ',
+    readBlog: 'Ler o Blog',
+    viewPortfolio: 'Ver Portfólio',
+    productsList: [
+      {
+        image: '/assets/images/books-1.webp',
+        alt: 'Capa ilustrativa do Guia do Dev Iniciante',
+        badge: 'Disponível',
+        title: 'Guia do Dev Iniciante',
+        body: 'Material direto para conquistar a primeira vaga com projeto, posicionamento e estudo mais estratégico.',
+        meta: ['eBook', 'Carreira', 'Entrada no mercado'],
+        oldPrice: 'R$ 47,90',
+        currentPrice: 'R$ 27,90',
+        href: 'https://pay.hotmart.com/F98094178H?off=fqzq49bv',
+        action: 'Comprar',
+      },
+      {
+        image: '/assets/images/books-2.webp',
+        alt: 'Capa ilustrativa do Guia Avançado C++',
+        badge: 'Disponível',
+        title: 'Guia Avançado C++: Desenvolvedor Quant',
+        body: 'Leitura para aprofundar C++ profissional com foco em performance, mercado quant e exemplos reais.',
+        meta: ['eBook', 'C++', 'Mercado quant'],
+        oldPrice: 'R$ 67,90',
+        currentPrice: 'R$ 37,90',
+        href: 'https://pay.hotmart.com/M99932004R',
+        action: 'Comprar',
+      },
+      {
+        image: '/assets/images/desktop-3.webp',
+        alt: 'Ambiente de arquitetura de software',
+        badge: 'Em breve',
+        title: 'Masterclass: Arquitetura de Software',
+        body: 'Uma próxima etapa para quem quer consolidar padrões, trade-offs e visão de arquitetura com aplicação prática.',
+        meta: ['Curso', 'Arquitetura', 'Execução'],
+        currentPrice: 'Em breve',
+        staticLabel: 'Lançamento futuro',
+      },
+      {
+        image: '/assets/images/projects-1.webp',
+        alt: 'Coleção de recursos para desenvolvimento',
+        badge: 'Em breve',
+        title: 'Pack de Templates e Boilerplates',
+        body: 'Base pronta para tirar ideia do papel mais rápido com código limpo, estrutura útil e menos retrabalho inicial.',
+        meta: ['Templates', 'Boilerplates', 'Produtividade'],
+        currentPrice: 'Em breve',
+        staticLabel: 'Lançamento futuro',
+      },
+      {
+        image: '/assets/images/office-1.webp',
+        alt: 'Sessão de mentoria técnica',
+        badge: 'Em breve',
+        title: 'Mentoria 1:1',
+        body: 'Uma proposta para revisar carreira, código, direção de estudo e próximos passos com contexto técnico.',
+        meta: ['Mentoria', 'Carreira', 'Direção'],
+        currentPrice: 'Em breve',
+        staticLabel: 'Abertura futura',
+      },
+      {
+        image: '/assets/images/trilha-de-aprendizado.webp',
+        alt: 'Roteiro visual de evolução técnica',
+        badge: 'Em breve',
+        title: 'Roteiro Completo: Dev Jr para Sênior',
+        body: 'Um plano mais estruturado para organizar evolução técnica, marcos de carreira e prioridades de estudo.',
+        meta: ['Guia', 'Carreira', 'Roadmap'],
+        currentPrice: 'Em breve',
+        staticLabel: 'Abertura futura',
+      },
+    ],
+    affiliateList: [
+      {
+        image: 'https://http2.mlstatic.com/D_Q_NP_952038-MLA99371736922_112025-B.webp',
+        alt: 'Combo teclado e mouse sem fio Logitech MK250 grafite',
+        title: 'Combo Logitech MK250',
+        body: 'Conjunto sem fio com conexão estável e boa ergonomia para estudar, programar e trabalhar por horas.',
+        price: 'R$ 169,90',
+        href: 'https://meli.la/26oB1pL',
+      },
+      {
+        image: 'https://http2.mlstatic.com/D_NQ_NP_633479-MLA82144434230_022025-F.webp',
+        alt: 'Notebook Lenovo ThinkPad T14',
+        title: 'Lenovo ThinkPad T14 G2',
+        body: 'Notebook sólido para codar, estudar e manter uma rotina de trabalho confiável no dia a dia.',
+        price: 'R$ 3409,00',
+        href: 'https://meli.la/27MNQe8',
+      },
+      {
+        image: 'https://http2.mlstatic.com/D_Q_NP_669691-MLA106901751604_022026-B.webp',
+        alt: 'Balança digital corporal Relaxmedic com Bluetooth',
+        title: 'Balança Digital Relaxmedic',
+        body: 'Um item simples para quem quer cuidar melhor da rotina e da energia física no meio de dias longos de trabalho.',
+        price: 'R$ 127,95',
+        href: 'https://meli.la/2hRCzvo',
+      },
+    ],
+  },
+  en: {
+    heroTitle: 'Materials and recommendations to accelerate study, career growth, and technical execution',
+    heroBody:
+      'The shop brings together products created by Dionisio and useful recommendations for people who want to learn better, build with more clarity, and create a steadier developer routine.',
+    viewMaterials: 'View materials',
+    viewRecommendations: 'View recommendations',
+    builtFor: 'Built for',
+    builtForTitle: 'People who want less improvisation',
+    builtForItems: [
+      'Guides for entering the market with stronger foundations',
+      'Materials for deepening stack knowledge and technical thinking',
+      'Practical recommendations for real developer routines',
+    ],
+    useTogether: 'Use together',
+    useTogetherTitle: 'Best flow',
+    useTogetherItems: [
+      { href: '/en/blog/', label: 'Blog', suffix: ' for context and perspective' },
+      { href: '/en/reference/', label: 'Reference', suffix: ' for fundamentals and practice' },
+      { href: '/en/projects/', label: 'Portfolio', suffix: ' for delivery and product cases' },
+    ],
+    products: 'Products',
+    productsTitle: 'Dionisio Developer materials',
+    available: 'Available',
+    comingSoon: 'Coming soon',
+    futureRelease: 'Future release',
+    futureOpening: 'Future opening',
+    buy: 'Buy now',
+    recommendations: 'Recommendations',
+    recommendationsTitle: 'Useful setup and routine picks for developers',
+    affiliate: 'Affiliate',
+    viewOffer: 'View offer',
+    followLaunches: 'Follow future launches',
+    ctaTitle: 'New materials will keep coming from the work, the writing, and the questions people bring',
+    ctaBodyPrefix: 'To keep up with updates, follow ',
+    ctaBodyMiddle1: ' on ',
+    ctaBodyMiddle2: ', ',
+    ctaBodyMiddle3: ', ',
+    ctaBodyMiddle4: ', and ',
+    readBlog: 'Read the Blog',
+    viewPortfolio: 'View Portfolio',
+    productsList: [
+      {
+        image: '/assets/images/books-1.webp',
+        alt: 'Beginner Developer Guide cover art',
+        badge: 'Available',
+        title: 'Beginner Developer Guide',
+        body: 'A direct resource for landing the first role with stronger projects, positioning, and study structure.',
+        meta: ['eBook', 'Career', 'First job'],
+        oldPrice: '$9.99',
+        currentPrice: '$5.99',
+        href: 'https://pay.hotmart.com/F98094178H?off=fqzq49bv',
+        action: 'Buy now',
+      },
+      {
+        image: '/assets/images/books-2.webp',
+        alt: 'Advanced C++ guide cover art',
+        badge: 'Available',
+        title: 'Advanced C++: Quant Developer',
+        body: 'A deeper read for professional C++, performance thinking, and the quant market with real examples.',
+        meta: ['eBook', 'C++', 'Quant'],
+        oldPrice: '$14.99',
+        currentPrice: '$7.99',
+        href: 'https://pay.hotmart.com/M99932004R',
+        action: 'Buy now',
+      },
+      {
+        image: '/assets/images/desktop-3.webp',
+        alt: 'Software architecture workspace',
+        badge: 'Coming soon',
+        title: 'Masterclass: Software Architecture',
+        body: 'A next step for people who want to firm up patterns, trade-offs, and architecture thinking with practical application.',
+        meta: ['Course', 'Architecture', 'Execution'],
+        currentPrice: 'Coming soon',
+        staticLabel: 'Future release',
+      },
+      {
+        image: '/assets/images/projects-1.webp',
+        alt: 'Developer resources collection',
+        badge: 'Coming soon',
+        title: 'Templates and Boilerplates Pack',
+        body: 'A faster starting point for turning ideas into working projects with cleaner structure and less early friction.',
+        meta: ['Templates', 'Boilerplates', 'Productivity'],
+        currentPrice: 'Coming soon',
+        staticLabel: 'Future release',
+      },
+      {
+        image: '/assets/images/office-1.webp',
+        alt: 'Technical mentoring session',
+        badge: 'Coming soon',
+        title: '1:1 Mentoring',
+        body: 'A future offer for reviewing career direction, code, study plans, and next technical moves with context.',
+        meta: ['Mentoring', 'Career', 'Direction'],
+        currentPrice: 'Coming soon',
+        staticLabel: 'Future opening',
+      },
+      {
+        image: '/assets/images/trilha-de-aprendizado.webp',
+        alt: 'Technical growth roadmap',
+        badge: 'Coming soon',
+        title: 'Complete Roadmap: Junior to Senior Developer',
+        body: 'A more structured plan for organizing technical growth, career milestones, and study priorities.',
+        meta: ['Guide', 'Career', 'Roadmap'],
+        currentPrice: 'Coming soon',
+        staticLabel: 'Future opening',
+      },
+    ],
+    affiliateList: [
+      {
+        image: 'https://http2.mlstatic.com/D_Q_NP_952038-MLA99371736922_112025-B.webp',
+        alt: 'Logitech MK250 wireless keyboard and mouse combo',
+        title: 'Logitech MK250 Combo',
+        body: 'A wireless setup with stable connection and good ergonomics for study, coding, and long work sessions.',
+        price: 'R$ 169,90',
+        href: 'https://meli.la/26oB1pL',
+      },
+      {
+        image: 'https://http2.mlstatic.com/D_NQ_NP_633479-MLA82144434230_022025-F.webp',
+        alt: 'Lenovo ThinkPad T14 notebook',
+        title: 'Lenovo ThinkPad T14 G2',
+        body: 'A dependable notebook for coding, studying, and maintaining a productive day-to-day remote setup.',
+        price: 'R$ 3409,00',
+        href: 'https://meli.la/27MNQe8',
+      },
+      {
+        image: 'https://http2.mlstatic.com/D_Q_NP_669691-MLA106901751604_022026-B.webp',
+        alt: 'Relaxmedic digital body scale with Bluetooth',
+        title: 'Relaxmedic Digital Scale',
+        body: 'A simple way to pay more attention to energy and routine health during long stretches of technical work.',
+        price: 'R$ 127,95',
+        href: 'https://meli.la/2hRCzvo',
+      },
+    ],
+  },
+} as const;
+
+const t = copy[locale];
+---
+
+<section class="dd-shop">
+  <div class="dd-shop-hero">
+    <div>
+      <p class="dd-shop-kicker">Dionisio Developer</p>
+      <h2>{t.heroTitle}</h2>
+      <p>{t.heroBody}</p>
+      <div class="dd-shop-actions">
+        <a class="dd-shop-btn" href={locale === 'pt' ? '#materiais' : '#materials'}>{t.viewMaterials}</a>
+        <a class="dd-shop-btn secondary" href={locale === 'pt' ? '#recomendacoes' : '#recommendations'}>
+          {t.viewRecommendations}
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="dd-shop-side"
+      role="complementary"
+      aria-label={locale === 'pt' ? 'Complementos da loja' : 'Shop supporting information'}
+    >
+      <section class="dd-shop-side-card">
+        <p class="dd-shop-kicker">{t.builtFor}</p>
+        <h3>{t.builtForTitle}</h3>
+        <ul>
+          {t.builtForItems.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="dd-shop-side-card">
+        <p class="dd-shop-kicker">{t.useTogether}</p>
+        <h3>{t.useTogetherTitle}</h3>
+        <ul>
+          {t.useTogetherItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+              {item.suffix}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="dd-shop-section" id={locale === 'pt' ? 'materiais' : 'materials'}>
+    <p class="dd-shop-kicker">{t.products}</p>
+    <h2>{t.productsTitle}</h2>
+    <div class="dd-shop-grid">
+      {t.productsList.map((product) => (
+        <article class="dd-shop-card">
+          <img src={product.image} alt={product.alt} loading="lazy" />
+          <div class="dd-shop-card-body">
+            <span class="dd-shop-badge">{product.badge}</span>
+            <h3>{product.title}</h3>
+            <p>{product.body}</p>
+            <div class="dd-shop-meta">
+              {product.meta.map((tag) => <span>{tag}</span>)}
+            </div>
+            <div class="dd-shop-price">
+              {product.oldPrice && <span class="dd-price-old">{product.oldPrice}</span>}
+              <span class="dd-price-current">{product.currentPrice}</span>
+            </div>
+            {product.href ? (
+              <a class="dd-shop-buy" href={product.href} target="_blank" rel="noopener noreferrer">
+                {product.action}
+              </a>
+            ) : (
+              <span class="dd-shop-link">{product.staticLabel}</span>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="dd-shop-section" id={locale === 'pt' ? 'recomendacoes' : 'recommendations'}>
+    <p class="dd-shop-kicker">{t.recommendations}</p>
+    <h2>{t.recommendationsTitle}</h2>
+    <div class="dd-affiliate-grid">
+      {t.affiliateList.map((item) => (
+        <article class="dd-affiliate-card">
+          <img src={item.image} alt={item.alt} loading="lazy" />
+          <div class="dd-affiliate-card-body">
+            <span class="dd-shop-badge">{t.affiliate}</span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <p class="dd-affiliate-price">{item.price}</p>
+            <a class="dd-shop-buy" href={item.href} target="_blank" rel="noopener noreferrer sponsored">
+              {t.viewOffer}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="dd-shop-cta">
+    <p class="dd-shop-kicker">{t.followLaunches}</p>
+    <h2>{t.ctaTitle}</h2>
+    <p>
+      {t.ctaBodyPrefix}
+      <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a>
+      {t.ctaBodyMiddle1}
+      <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">X</a>
+      {t.ctaBodyMiddle2}
+      <a href="https://www.youtube.com/@dionisiodev" target="_blank" rel="noopener noreferrer">YouTube</a>
+      {t.ctaBodyMiddle3}
+      <a href="https://medium.com/@dionisiodev" target="_blank" rel="noopener noreferrer">Medium</a>
+      {t.ctaBodyMiddle4}
+      <a href="https://www.linkedin.com/in/dionisiodev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+    </p>
+    <div class="dd-shop-links">
+      <a class="dd-shop-btn" href={locale === 'pt' ? '/pt/blog/' : '/en/blog/'}>{t.readBlog}</a>
+      <a class="dd-shop-link" href={locale === 'pt' ? '/pt/projects/' : '/en/projects/'}>{t.viewPortfolio}</a>
+    </div>
+  </section>
+</section>
+
+<style>
+  .dd-shop {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .dd-shop-hero,
+  .dd-shop-section,
+  .dd-shop-cta {
+    padding: 1.5rem;
+    border: 1px solid var(--ae-border);
+    border-radius: 0.5rem;
+    background: var(--ae-surface);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .dd-shop-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.95fr);
+    gap: 1rem;
+  }
+
+  .dd-shop-kicker {
+    margin: 0 0 0.75rem;
+    color: var(--sl-color-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dd-shop-hero h2,
+  .dd-shop-side h3,
+  .dd-shop-card h3,
+  .dd-affiliate-card h3,
+  .dd-shop-section h2,
+  .dd-shop-cta h2 {
+    margin: 0;
+    color: var(--sl-color-white);
+    line-height: 1.08;
+  }
+
+  .dd-shop-hero h2 {
+    font-size: clamp(2rem, 2.8vw, 3rem);
+  }
+
+  .dd-shop-hero p,
+  .dd-shop-side li,
+  .dd-shop-card p,
+  .dd-affiliate-card p,
+  .dd-shop-cta p {
+    color: var(--ae-muted);
+    line-height: 1.7;
+  }
+
+  .dd-shop-actions,
+  .dd-shop-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .dd-shop-actions {
+    margin-top: 1.25rem;
+  }
+
+  .dd-shop-btn,
+  .dd-shop-link,
+  .dd-shop-buy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .dd-shop-btn,
+  .dd-shop-buy {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-text-invert);
+  }
+
+  .dd-shop-btn.secondary,
+  .dd-shop-link {
+    border: 1px solid var(--ae-border-strong);
+    color: var(--sl-color-white);
+    background: transparent;
+  }
+
+  .dd-shop-side {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .dd-shop-side-card {
+    padding: 1rem;
+    border: 1px solid var(--ae-border);
+    border-radius: 0.5rem;
+    background: var(--ae-surface-soft);
+  }
+
+  .dd-shop-side-card ul {
+    margin: 0.85rem 0 0;
+    padding-left: 1rem;
+  }
+
+  .dd-shop-side-card li + li {
+    margin-top: 0.5rem;
+  }
+
+  .dd-shop-grid,
+  .dd-affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .dd-shop-card,
+  .dd-affiliate-card {
+    overflow: hidden;
+    border: 1px solid var(--ae-border);
+    border-radius: 0.5rem;
+    background: var(--ae-surface);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .dd-shop-card img,
+  .dd-affiliate-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .dd-shop-card-body,
+  .dd-affiliate-card-body {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .dd-shop-meta,
+  .dd-shop-price {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .dd-shop-meta span,
+  .dd-shop-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.7rem;
+    padding: 0 0.65rem;
+    border-radius: 999px;
+    background: var(--ae-surface-soft);
+    color: var(--sl-color-accent-high);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .dd-shop-badge {
+    width: fit-content;
+  }
+
+  .dd-price-old {
+    color: var(--sl-color-gray-3);
+    text-decoration: line-through;
+  }
+
+  .dd-price-current {
+    color: var(--sl-color-white);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .dd-affiliate-card-body {
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+
+  .dd-affiliate-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .dd-affiliate-price {
+    color: var(--sl-color-white);
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .dd-shop-hero,
+    .dd-shop-grid,
+    .dd-affiliate-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
