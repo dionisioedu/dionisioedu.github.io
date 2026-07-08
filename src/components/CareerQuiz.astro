@@ -1,0 +1,303 @@
+---
+/**
+ * CareerQuiz.astro
+ *
+ * 20-question MCQ to help newcomers find their best-fit tech area.
+ * Bilingual (pt / en). Detects locale from `lang` prop.
+ */
+const lang = Astro.props.lang ?? "pt";
+---
+
+<section class="career-quiz" data-career-quiz data-lang={lang}>
+  <!-- Intro screen -->
+  <div class="quiz-intro" data-quiz-intro>
+    <div class="quiz-icon">🧭</div>
+    <h2 data-i18n="introTitle">Descubra sua área na tecnologia</h2>
+    <p data-i18n="introText">
+      Responda 20 perguntas rápidas e descubra qual área de tecnologia mais combina com seu perfil.
+      Leva menos de 5 minutos.
+    </p>
+    <button class="quiz-btn quiz-btn--primary" data-quiz-start data-i18n="startBtn">
+      Começar teste
+    </button>
+  </div>
+
+  <!-- Question screen (hidden initially) -->
+  <div class="quiz-question" data-quiz-question hidden>
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar" data-quiz-progress-bar></div>
+      <span class="quiz-progress-text" data-quiz-progress-text>1/20</span>
+    </div>
+    <h3 class="quiz-question-text" data-quiz-question-text></h3>
+    <div class="quiz-options" data-quiz-options></div>
+  </div>
+
+  <!-- Results screen (hidden initially) -->
+  <div class="quiz-results" data-quiz-results hidden>
+    <div class="quiz-icon">🎯</div>
+    <h2 data-i18n="resultsTitle">Seu perfil tech</h2>
+    <p class="quiz-results-sub" data-i18n="resultsSub">
+      As áreas que mais combinam com você:
+    </p>
+    <div class="quiz-results-list" data-quiz-results-list></div>
+    <button class="quiz-btn quiz-btn--primary" data-quiz-restart data-i18n="restartBtn">
+      Refazer teste
+    </button>
+  </div>
+</section>
+
+<script>
+  import CareerQuiz from "./careerQuiz.client.js";
+
+  // Mount on load and after Astro page swaps
+  function mount() {
+    const root = document.querySelector("[data-career-quiz]");
+    if (root && !root.dataset.mounted) {
+      root.dataset.mounted = "1";
+      CareerQuiz.mount(root);
+    }
+  }
+
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(mount);
+  } else {
+    setTimeout(mount, 100);
+  }
+  document.addEventListener("astro:page-load", mount);
+</script>
+
+<style>
+  .career-quiz {
+    max-width: 720px;
+    margin: 2rem auto;
+    background: var(--sl-color-bg-nav, #fff);
+    border: 1px solid var(--sl-color-hairline, #e5e7eb);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .quiz-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .quiz-intro h2,
+  .quiz-results h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0 0 0.75rem;
+    color: var(--sl-color-text, #1a1a2e);
+  }
+
+  .quiz-intro p {
+    text-align: center;
+    color: var(--sl-color-text-muted, #666);
+    margin: 0 auto 2rem;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  /* Buttons */
+  .quiz-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .quiz-btn--primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+  }
+
+  .quiz-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+
+  /* Progress */
+  .quiz-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .quiz-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--sl-color-hairline, #e5e7eb);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .quiz-progress-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.35s ease;
+  }
+
+  .quiz-progress-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sl-color-text-muted, #888);
+    white-space: nowrap;
+  }
+
+  /* Question */
+  .quiz-question-text {
+    font-size: 1.2rem;
+    margin: 0 0 1.5rem;
+    color: var(--sl-color-text, #1a1a2e);
+    line-height: 1.5;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.9rem 1.2rem;
+    border: 2px solid var(--sl-color-hairline, #e5e7eb);
+    border-radius: 10px;
+    background: var(--sl-color-bg, #fff);
+    color: var(--sl-color-text, #1a1a2e);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .quiz-option:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.04);
+  }
+
+  .quiz-option:active {
+    transform: scale(0.985);
+  }
+
+  /* Results */
+  .quiz-results-sub {
+    text-align: center;
+    color: var(--sl-color-text-muted, #666);
+    margin-bottom: 1.5rem;
+  }
+
+  .quiz-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .quiz-result-card {
+    border: 2px solid var(--sl-color-hairline, #e5e7eb);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .quiz-result-card--top {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.04) 100%);
+  }
+
+  .quiz-result-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-result-icon {
+    font-size: 1.5rem;
+  }
+
+  .quiz-result-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--sl-color-text, #1a1a2e);
+  }
+
+  .quiz-result-score {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: rgba(102, 126, 234, 0.12);
+    color: #667eea;
+  }
+
+  .quiz-result-desc {
+    color: var(--sl-color-text-muted, #555);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-result-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .quiz-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: rgba(102, 126, 234, 0.08);
+    color: #667eea;
+    font-weight: 500;
+  }
+
+  @media (max-width: 520px) {
+    .career-quiz {
+      padding: 1.5rem 1.25rem;
+      border-radius: 12px;
+    }
+    .quiz-question-text {
+      font-size: 1.05rem;
+    }
+  }
+
+  /* Dark mode support */
+  :root[data-theme="dark"] .career-quiz,
+  html.dark .career-quiz {
+    background: var(--sl-color-bg-nav, #111);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  :root[data-theme="dark"] .quiz-option,
+  html.dark .quiz-option {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--sl-color-text, #eee);
+  }
+
+  :root[data-theme="dark"] .quiz-option:hover,
+  html.dark .quiz-option:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.08);
+  }
+</style>
