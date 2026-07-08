@@ -1,0 +1,27 @@
+---
+title: Aplicações
+description: Ferramentas interativas para acelerar sua jornada em tecnologia.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import CareerQuiz from '../../../components/CareerQuiz.astro';
+
+# 🧪 Labs · Aplicações
+
+Ferramentas interativas para ajudar você a tomar decisões melhores na carreira.
+
+<CardGrid>
+  <LinkCard
+    title="🧭 Teste de Perfil Tech"
+    href="#career-quiz"
+    description="Descubra em qual área de tecnologia você tem mais afinidade com 20 perguntas rápidas."
+  />
+</CardGrid>
+
+---
+
+## 🧭 Teste de Perfil Tech
+
+Não sabe se vai para frontend, backend, dados, segurança ou outra área? Responda as perguntas abaixo e descubra quais áreas combinam mais com seu estilo.
+
+<CareerQuiz lang="pt" />
