@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "portal-v2" ]
+    branches: [ "master" ]
   workflow_dispatch:
 
 permissions:
