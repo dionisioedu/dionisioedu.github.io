@@ -72,9 +72,9 @@ export default defineConfig({
               label: 'Labs',
               items: [
                 { label: 'Code Lab', link: 'reference/code-lab/' },
-                { label: 'Applications', link: 'labs/applications/' },
               ],
             },
+            { label: 'Applications', link: 'labs/applications/' },
             {
               label: 'Portfolio',
               items: [
@@ -130,9 +130,9 @@ export default defineConfig({
           label: 'Labs',
           items: [
             { label: 'Code Lab', link: 'reference/code-lab/' },
-            { label: 'Aplicações', link: 'labs/applications/' },
           ],
         },
+        { label: 'Aplicações', link: 'labs/applications/' },
         {
           label: 'Portfólio',
           items: [
