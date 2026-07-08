@@ -74,7 +74,13 @@ export default defineConfig({
                 { label: 'Code Lab', link: 'reference/code-lab/' },
               ],
             },
-            { label: 'Applications', link: 'labs/applications/' },
+            {
+              label: 'Applications',
+              collapsed: false,
+              items: [
+                { label: 'Tech Profile Quiz', link: 'labs/applications/career-quiz/' },
+              ],
+            },
             {
               label: 'Portfolio',
               items: [
@@ -132,7 +138,13 @@ export default defineConfig({
             { label: 'Code Lab', link: 'reference/code-lab/' },
           ],
         },
-        { label: 'Aplicações', link: 'labs/applications/' },
+        {
+          label: 'Aplicações',
+          collapsed: false,
+          items: [
+            { label: 'Teste de Perfil Tech', link: 'labs/applications/career-quiz/' },
+          ],
+        },
         {
           label: 'Portfólio',
           items: [
