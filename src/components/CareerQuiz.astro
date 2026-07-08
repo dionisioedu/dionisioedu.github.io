@@ -3,301 +3,251 @@
  * CareerQuiz.astro
  *
  * 20-question MCQ to help newcomers find their best-fit tech area.
- * Bilingual (pt / en). Detects locale from `lang` prop.
+ * Bilingual (pt / en). Self-contained — no external module imports.
  */
 const lang = Astro.props.lang ?? "pt";
 ---
 
 <section class="career-quiz" data-career-quiz data-lang={lang}>
-  <!-- Intro screen -->
-  <div class="quiz-intro" data-quiz-intro>
+  <div class="quiz-screen quiz-intro" data-quiz-intro>
     <div class="quiz-icon">🧭</div>
-    <h2 data-i18n="introTitle">Descubra sua área na tecnologia</h2>
-    <p data-i18n="introText">
-      Responda 20 perguntas rápidas e descubra qual área de tecnologia mais combina com seu perfil.
-      Leva menos de 5 minutos.
-    </p>
-    <button class="quiz-btn quiz-btn--primary" data-quiz-start data-i18n="startBtn">
-      Começar teste
-    </button>
+    <h2 data-quiz-l10n="introTitle"></h2>
+    <p data-quiz-l10n="introText"></p>
+    <button class="quiz-btn quiz-btn--primary" data-quiz-start data-quiz-l10n="startBtn"></button>
   </div>
 
-  <!-- Question screen (hidden initially) -->
-  <div class="quiz-question" data-quiz-question hidden>
+  <div class="quiz-screen quiz-question" data-quiz-question hidden>
     <div class="quiz-progress">
-      <div class="quiz-progress-bar" data-quiz-progress-bar></div>
-      <span class="quiz-progress-text" data-quiz-progress-text>1/20</span>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
+      <span class="quiz-progress-text" data-quiz-progress-text></span>
     </div>
     <h3 class="quiz-question-text" data-quiz-question-text></h3>
     <div class="quiz-options" data-quiz-options></div>
   </div>
 
-  <!-- Results screen (hidden initially) -->
-  <div class="quiz-results" data-quiz-results hidden>
+  <div class="quiz-screen quiz-results" data-quiz-results hidden>
     <div class="quiz-icon">🎯</div>
-    <h2 data-i18n="resultsTitle">Seu perfil tech</h2>
-    <p class="quiz-results-sub" data-i18n="resultsSub">
-      As áreas que mais combinam com você:
-    </p>
+    <h2 data-quiz-l10n="resultsTitle"></h2>
+    <p class="quiz-results-sub" data-quiz-l10n="resultsSub"></p>
     <div class="quiz-results-list" data-quiz-results-list></div>
-    <button class="quiz-btn quiz-btn--primary" data-quiz-restart data-i18n="restartBtn">
-      Refazer teste
-    </button>
+    <button class="quiz-btn quiz-btn--primary" data-quiz-restart data-quiz-l10n="restartBtn"></button>
   </div>
 </section>
 
-<script>
-  import CareerQuiz from "./careerQuiz.client.js";
+<script is:inline>
+(function() {
+  // ── i18n ──────────────────────────────────────────────
+  const L10N = {
+    pt: {
+      introTitle: "Descubra sua área na tecnologia",
+      introText: "Responda 20 perguntas rápidas e descubra qual área de tecnologia mais combina com seu perfil. Leva menos de 5 minutos.",
+      startBtn: "Começar teste",
+      resultsTitle: "Seu perfil tech",
+      resultsSub: "As áreas que mais combinam com você:",
+      restartBtn: "Refazer teste",
+      of: "de",
+      match: "match",
+    },
+    en: {
+      introTitle: "Discover your tech career path",
+      introText: "Answer 20 quick questions and find out which tech area fits you best. Takes less than 5 minutes.",
+      startBtn: "Start quiz",
+      resultsTitle: "Your tech profile",
+      resultsSub: "The areas that match you best:",
+      restartBtn: "Retake quiz",
+      of: "of",
+      match: "match",
+    },
+  };
 
-  // Mount on load and after Astro page swaps
-  function mount() {
-    const root = document.querySelector("[data-career-quiz]");
-    if (root && !root.dataset.mounted) {
-      root.dataset.mounted = "1";
-      CareerQuiz.mount(root);
+  // ── Career areas ─────────────────────────────────────
+  const AREAS = {
+    frontend: { icon: "🎨", id: "frontend", pt: { title:"Desenvolvimento Web Frontend", desc:"Você se destaca criando interfaces que encantam. Tem olho para design, usabilidade e adora ver o resultado do seu trabalho ganhar vida no navegador.", tags:["React","CSS","UX","TypeScript","Next.js","Acessibilidade"] }, en: { title:"Frontend Web Development", desc:"You shine when creating interfaces that delight users. You have an eye for design, usability, and love seeing your work come to life in the browser.", tags:["React","CSS","UX","TypeScript","Next.js","Accessibility"] }},
+    backend:  { icon: "⚙️", id: "backend",  pt: { title:"Desenvolvimento Web Backend", desc:"Você pensa em sistemas. Gosta de arquitetar APIs, modelar bancos de dados e resolver problemas complexos de lógica que ninguém vê — mas todos dependem.", tags:["APIs","Banco de Dados","Node.js","Go","Microsserviços","Arquitetura"] }, en: { title:"Backend Web Development", desc:"You think in systems. You enjoy architecting APIs, modeling databases, and solving complex logic problems that nobody sees — but everyone depends on.", tags:["APIs","Databases","Node.js","Go","Microservices","Architecture"] }},
+    devops:   { icon: "🚀", id: "devops",   pt: { title:"DevOps / SRE / Cloud", desc:"Você gosta de manter tudo funcionando. Infraestrutura, pipelines, monitoramento — você é a pessoa que garante que o código chegue em produção e fique lá.", tags:["Docker","Kubernetes","CI/CD","AWS","Terraform","Observabilidade"] }, en: { title:"DevOps / SRE / Cloud", desc:"You like keeping everything running. Infrastructure, pipelines, monitoring — you're the person who ensures code reaches production and stays there.", tags:["Docker","Kubernetes","CI/CD","AWS","Terraform","Observability"] }},
+    data:     { icon: "📊", id: "data",     pt: { title:"Ciência de Dados / IA / ML", desc:"Você encontra padrões onde outros veem caos. Adora explorar dados, criar modelos preditivos e transformar informação bruta em decisões estratégicas.", tags:["Python","SQL","Machine Learning","Pandas","Estatística","LLMs"] }, en: { title:"Data Science / AI / ML", desc:"You find patterns where others see chaos. You love exploring data, building predictive models, and turning raw information into strategic decisions.", tags:["Python","SQL","Machine Learning","Pandas","Statistics","LLMs"] }},
+    mobile:   { icon: "📱", id: "mobile",   pt: { title:"Desenvolvimento Mobile", desc:"Você quer construir apps que as pessoas carregam no bolso. Gosta da ideia de impactar milhões de usuários diretamente pelo smartphone.", tags:["React Native","Flutter","Swift","Kotlin","App Store","Push Notifications"] }, en: { title:"Mobile Development", desc:"You want to build apps that people carry in their pockets. You love the idea of impacting millions of users directly through their smartphones.", tags:["React Native","Flutter","Swift","Kotlin","App Store","Push Notifications"] }},
+    security: { icon: "🔐", id: "security", pt: { title:"Segurança da Informação", desc:"Você pensa como atacante para defender melhor. Adora encontrar vulnerabilidades, entender ameaças e proteger sistemas antes que alguém os explore.", tags:["Pentest","Criptografia","Red Team","OWASP","Blue Team","CTF"] }, en: { title:"Cybersecurity", desc:"You think like an attacker to defend better. You love finding vulnerabilities, understanding threats, and protecting systems before someone exploits them.", tags:["Pentest","Cryptography","Red Team","OWASP","Blue Team","CTF"] }},
+    gamedev:  { icon: "🎮", id: "gamedev",  pt: { title:"Desenvolvimento de Jogos", desc:"Você quer criar mundos. Mistura programação com arte, física e narrativa para construir experiências interativas que divertem e emocionam.", tags:["Unity","Unreal","C#","C++","3D","Game Design"] }, en: { title:"Game Development", desc:"You want to create worlds. You mix programming with art, physics, and storytelling to build interactive experiences that entertain and move people.", tags:["Unity","Unreal","C#","C++","3D","Game Design"] }},
+    embedded: { icon: "🔧", id: "embedded", pt: { title:"Sistemas Embarcados / IoT", desc:"Você gosta de programar perto do hardware. Sensores, microcontroladores e dispositivos físicos — você faz código que interage com o mundo real.", tags:["C","C++","Arduino","ARM","RTOS","PCB"] }, en: { title:"Embedded Systems / IoT", desc:"You like programming close to the hardware. Sensors, microcontrollers, and physical devices — you write code that interacts with the real world.", tags:["C","C++","Arduino","ARM","RTOS","PCB"] }},
+    qa:       { icon: "🧪", id: "qa",       pt: { title:"QA / Testes de Software", desc:"Você tem mente investigativa. Adora quebrar coisas de propósito para garantir que elas funcionem. Qualidade é sua obsessão.", tags:["Automação","Selenium","Cypress","Testes","BDD","Performance"] }, en: { title:"QA / Software Testing", desc:"You have an investigative mind. You love breaking things on purpose to make sure they work. Quality is your obsession.", tags:["Automation","Selenium","Cypress","Testing","BDD","Performance"] }},
+    product:  { icon: "💡", id: "product",  pt: { title:"Produto / Gestão Técnica", desc:"Você conecta tecnologia e negócio. Entende o que usuários precisam, prioriza funcionalidades e lidera times para entregar valor real.", tags:["Product Management","OKRs","Roadmap","Stakeholders","Discovery","Métricas"] }, en: { title:"Product / Technical Management", desc:"You bridge technology and business. You understand what users need, prioritize features, and lead teams to deliver real value.", tags:["Product Management","OKRs","Roadmap","Stakeholders","Discovery","Metrics"] }},
+  };
+
+  // ── Questions ────────────────────────────────────────
+  const Q = {
+    pt: [
+      {q:"O que mais te motiva ao construir algo?",o:[{t:"Ver o design ganhar vida na tela",a:"frontend"},{t:"Resolver um problema lógico complexo por trás da cena",a:"backend"},{t:"Garantir que o sistema aguente milhares de acessos",a:"devops"},{t:"Descobrir padrões ocultos nos dados gerados",a:"data"}]},
+      {q:"Qual tipo de bug você mais gostaria de corrigir?",o:[{t:"Layout quebrado em telas menores",a:"frontend"},{t:"Condição de corrida corrompendo dados",a:"backend"},{t:"Vazamento de memória derrubando servidores",a:"devops"},{t:"Modelo de ML com overfitting",a:"data"}]},
+      {q:"Em um projeto novo, o que você prefere fazer primeiro?",o:[{t:"Prototipar a interface e testar com usuários",a:"product"},{t:"Investigar vulnerabilidades da stack escolhida",a:"security"},{t:"Configurar CI/CD e ambientes",a:"devops"},{t:"Modelar o banco e definir contratos de API",a:"backend"}]},
+      {q:"Como você prefere aprender uma tecnologia nova?",o:[{t:"Construindo um app visual e iterando rápido",a:"frontend"},{t:"Criando um jogo simples para explorar a engine",a:"gamedev"},{t:"Escrevendo testes automatizados para cada funcionalidade",a:"qa"},{t:"Conectando sensores e fazendo um LED piscar",a:"embedded"}]},
+      {q:"Qual projeto paralelo mais te atrai?",o:[{t:"E-commerce com carrinho, pagamento e dashboard",a:"backend"},{t:"App de realidade aumentada para iOS e Android",a:"mobile"},{t:"Honeypot que registra tentativas de invasão",a:"security"},{t:"Modelo que prevê preço de ações",a:"data"}]},
+      {q:"O que você considera mais gratificante no dia a dia?",o:[{t:"Ver métricas de uptime em 99.99%",a:"devops"},{t:"Feedback de usuários dizendo que o app está fluido",a:"mobile"},{t:"Automatizar processo manual que ninguém aguentava mais",a:"qa"},{t:"Convencer stakeholders com dados, não com opinião",a:"product"}]},
+      {q:"Qual problema te tira o sono (no bom sentido)?",o:[{t:"Animação de 60fps rodando liso em qualquer dispositivo",a:"frontend"},{t:"Otimizar query de 3s para 50ms",a:"backend"},{t:"Descobrir como um atacante burlou a autenticação",a:"security"},{t:"Fazer drone autônomo desviar de obstáculos",a:"embedded"}]},
+      {q:"Qual stack você acha mais interessante?",o:[{t:"React + Tailwind + Framer Motion",a:"frontend"},{t:"Go + PostgreSQL + Redis",a:"backend"},{t:"Kubernetes + Terraform + Prometheus",a:"devops"},{t:"Python + Jupyter + PyTorch",a:"data"}]},
+      {q:"Em discussão de time, qual papel você assume?",o:[{t:"Questionar se estamos construindo a coisa certa",a:"product"},{t:"Perguntar como vamos testar isso antes de entregar",a:"qa"},{t:"Lembrar que precisamos de logs e alertas",a:"devops"},{t:"Sugerir engine pronta em vez de reinventar a roda",a:"gamedev"}]},
+      {q:"Qual conferência você teria mais interesse?",o:[{t:"WWDC ou Google I/O — novidades mobile",a:"mobile"},{t:"DEF CON ou Black Hat — segurança",a:"security"},{t:"NeurIPS ou KDD — pesquisa em IA",a:"data"},{t:"Embedded World — sistemas embarcados",a:"embedded"}]},
+      {q:"Como explicaria seu trabalho para uma criança de 8 anos?",o:[{t:"Faço os botões e telas que você vê nos sites",a:"frontend"},{t:"Crio as regras que fazem o jogo funcionar",a:"gamedev"},{t:"Testo tudo muitas vezes pra nada quebrar",a:"qa"},{t:"Cuido para os servidores não dormirem",a:"devops"}]},
+      {q:"O que é mais importante em um projeto?",o:[{t:"Experiência do usuário impecável",a:"mobile"},{t:"Código limpo, testado e sustentável",a:"qa"},{t:"Dados seguros e em conformidade",a:"security"},{t:"Entregar valor mensurável para o negócio",a:"product"}]},
+      {q:"Qual ferramenta usaria para resolver um problema agora?",o:[{t:"Figma — desenhar a solução visualmente",a:"frontend"},{t:"Pandas — analisar os dados primeiro",a:"data"},{t:"Wireshark — inspecionar tráfego de rede",a:"security"},{t:"Osciloscópio — medir sinal no hardware",a:"embedded"}]},
+      {q:"O que mais admira em um sistema bem construído?",o:[{t:"Fluidez e responsividade da interface",a:"mobile"},{t:"Arquitetura limpa que escala horizontalmente",a:"backend"},{t:"Engine de física que simula o mundo real",a:"gamedev"},{t:"Visão de produto que resolve dor real",a:"product"}]},
+      {q:"Qual tarefa faria com mais prazer?",o:[{t:"Pipeline que faz deploy em 5 ambientes ao mesmo tempo",a:"devops"},{t:"Scraper que coleta dados de 100 sites diariamente",a:"data"},{t:"Bancada de testes com Arduino e sensores reais",a:"embedded"},{t:"Code review caçando edge cases e falhas",a:"qa"}]},
+      {q:"Qual sua maior força profissional?",o:[{t:"Empatia com usuário e visão de produto",a:"product"},{t:"Pensamento crítico e antecipação de falhas",a:"security"},{t:"Criatividade para experiências imersivas",a:"gamedev"},{t:"Disciplina para escrever testes e documentação",a:"qa"}]},
+      {q:"Primeiro conselho para um júnior?",o:[{t:"Aprenda a debugar com DevTools do navegador",a:"frontend"},{t:"Entenda bem HTTP, REST e bancos relacionais",a:"backend"},{t:"Aprenda Linux, linha de comando e shell script",a:"devops"},{t:"Construa algo simples com microcontrolador barato",a:"embedded"}]},
+      {q:"Qual métrica mais importa?",o:[{t:"Tempo de carregamento da página (LCP)",a:"frontend"},{t:"Latência p99 das chamadas de API",a:"backend"},{t:"MTTR — tempo médio para recuperação",a:"devops"},{t:"Acurácia e recall do modelo em produção",a:"data"}]},
+      {q:"Em qual cenário você se sente mais realizado?",o:[{t:"Lançar app na Play Store com 1000 instalações",a:"mobile"},{t:"Reportar vulnerabilidade crítica antes do deploy",a:"security"},{t:"Ver robô que você programou se movendo",a:"embedded"},{t:"Apresentar roadmap que convenceu a diretoria",a:"product"}]},
+      {q:"O que gostaria de estar fazendo daqui a 5 anos?",o:[{t:"Liderando design system de grande plataforma",a:"frontend"},{t:"Arquitetando sistemas de milhões de transações/min",a:"backend"},{t:"Construindo engine de jogo usada por milhares",a:"gamedev"},{t:"Criando modelos de IA para problemas reais de saúde",a:"data"}]},
+    ],
+    en: [
+      {q:"What motivates you most when building something?",o:[{t:"Seeing the design come to life on screen",a:"frontend"},{t:"Solving a complex logic problem behind the scenes",a:"backend"},{t:"Ensuring the system handles thousands of requests",a:"devops"},{t:"Discovering hidden patterns in the data",a:"data"}]},
+      {q:"Which type of bug would you enjoy fixing most?",o:[{t:"A layout that breaks on smaller screens",a:"frontend"},{t:"A race condition corrupting data",a:"backend"},{t:"A memory leak taking down servers",a:"devops"},{t:"An ML model overfitting training data",a:"data"}]},
+      {q:"In a new project, what do you prefer to do first?",o:[{t:"Prototype the interface and test with users",a:"product"},{t:"Investigate known vulnerabilities in the stack",a:"security"},{t:"Set up CI/CD pipeline and environments",a:"devops"},{t:"Model the database and define API contracts",a:"backend"}]},
+      {q:"How do you prefer learning a new technology?",o:[{t:"Building a visual app and iterating fast",a:"frontend"},{t:"Creating a simple game to explore the engine",a:"gamedev"},{t:"Writing automated tests to cover every feature",a:"qa"},{t:"Connecting sensors and making an LED blink",a:"embedded"}]},
+      {q:"Which side project appeals most to you?",o:[{t:"E-commerce with cart, payment, and dashboard",a:"backend"},{t:"Augmented reality app for iOS and Android",a:"mobile"},{t:"A honeypot that logs intrusion attempts",a:"security"},{t:"A model that predicts stock prices",a:"data"}]},
+      {q:"What do you find most rewarding day-to-day?",o:[{t:"Seeing 99.99% uptime metrics",a:"devops"},{t:"User feedback saying the app feels smooth",a:"mobile"},{t:"Automating a manual process everyone hated",a:"qa"},{t:"Convincing stakeholders with data, not opinion",a:"product"}]},
+      {q:"Which problem keeps you up at night (in a good way)?",o:[{t:"Making 60fps animation run smoothly on any device",a:"frontend"},{t:"Optimizing a query from 3s down to 50ms",a:"backend"},{t:"Figuring out how an attacker bypassed auth",a:"security"},{t:"Making a drone avoid obstacles in real time",a:"embedded"}]},
+      {q:"Which stack do you find most interesting?",o:[{t:"React + Tailwind + Framer Motion",a:"frontend"},{t:"Go + PostgreSQL + Redis",a:"backend"},{t:"Kubernetes + Terraform + Prometheus",a:"devops"},{t:"Python + Jupyter + PyTorch",a:"data"}]},
+      {q:"In team discussions, which role do you naturally take?",o:[{t:"Questioning if we're building the right thing",a:"product"},{t:"Asking how we'll test this before shipping",a:"qa"},{t:"Reminding we need logging and alerting",a:"devops"},{t:"Suggesting a ready-made engine instead of DIY",a:"gamedev"}]},
+      {q:"Which conference would you most want to attend?",o:[{t:"WWDC or Google I/O — mobile platform news",a:"mobile"},{t:"DEF CON or Black Hat — security",a:"security"},{t:"NeurIPS or KDD — AI research",a:"data"},{t:"Embedded World — embedded systems",a:"embedded"}]},
+      {q:"How would you explain your job to an 8-year-old?",o:[{t:"I make the buttons and screens on websites",a:"frontend"},{t:"I create the rules that make the game work",a:"gamedev"},{t:"I test everything many times so nothing breaks",a:"qa"},{t:"I make sure the servers don't fall asleep",a:"devops"}]},
+      {q:"What matters most to you in a project?",o:[{t:"Flawless user experience",a:"mobile"},{t:"Clean, tested, and maintainable code",a:"qa"},{t:"Data is secure and compliant",a:"security"},{t:"Measurable business value delivered",a:"product"}]},
+      {q:"Which tool would you reach for to solve a problem?",o:[{t:"Figma — design the solution visually",a:"frontend"},{t:"Pandas — analyze the data first",a:"data"},{t:"Wireshark — inspect network traffic",a:"security"},{t:"Oscilloscope — measure signal on hardware",a:"embedded"}]},
+      {q:"What do you admire most in a well-built system?",o:[{t:"Fluidity and responsiveness of the interface",a:"mobile"},{t:"Clean architecture that scales horizontally",a:"backend"},{t:"Physics engine that perfectly simulates reality",a:"gamedev"},{t:"Product vision solving a real market pain",a:"product"}]},
+      {q:"Which task would you do with the most pleasure?",o:[{t:"Pipeline deploying to 5 environments at once",a:"devops"},{t:"Scraper collecting data from 100 sites daily",a:"data"},{t:"Test bench with Arduino and real sensors",a:"embedded"},{t:"Code review hunting for edge cases",a:"qa"}]},
+      {q:"What is your greatest professional strength?",o:[{t:"User empathy and product vision",a:"product"},{t:"Critical thinking and anticipating failures",a:"security"},{t:"Creativity to build immersive experiences",a:"gamedev"},{t:"Discipline to write tests and documentation",a:"qa"}]},
+      {q:"First piece of advice for a junior?",o:[{t:"Learn to debug with browser DevTools",a:"frontend"},{t:"Understand HTTP, REST, and relational databases",a:"backend"},{t:"Learn Linux, command line, and shell scripting",a:"devops"},{t:"Build something simple with a cheap microcontroller",a:"embedded"}]},
+      {q:"Which metric matters most to you?",o:[{t:"Page load time (LCP)",a:"frontend"},{t:"API p99 latency",a:"backend"},{t:"MTTR — mean time to recovery",a:"devops"},{t:"Model accuracy and recall in production",a:"data"}]},
+      {q:"In which scenario do you feel most fulfilled?",o:[{t:"Launching an app with 1000 Play Store installs",a:"mobile"},{t:"Reporting a critical vulnerability before deploy",a:"security"},{t:"Watching a robot you programmed move physically",a:"embedded"},{t:"Presenting a roadmap that convinced leadership",a:"product"}]},
+      {q:"What would you like to be doing 5 years from now?",o:[{t:"Leading the design system of a major platform",a:"frontend"},{t:"Architecting systems with millions of tx/min",a:"backend"},{t:"Building a game engine used by thousands",a:"gamedev"},{t:"Creating AI models for real health problems",a:"data"}]},
+    ],
+  };
+
+  // ── Mount logic ──────────────────────────────────────
+  const roots = document.querySelectorAll("[data-career-quiz]");
+  roots.forEach(function(root) {
+    if (root.dataset.mounted === "1") return;
+    root.dataset.mounted = "1";
+
+    const lang = root.dataset.lang || "pt";
+    const T = L10N[lang];
+    const questions = Q[lang];
+    let idx = 0, scores = {};
+
+    // DOM refs
+    const intro = root.querySelector("[data-quiz-intro]");
+    const questionEl = root.querySelector("[data-quiz-question]");
+    const resultsEl = root.querySelector("[data-quiz-results]");
+    const progressFill = root.querySelector(".quiz-progress-fill");
+    const progressText = root.querySelector("[data-quiz-progress-text]");
+    const questionText = root.querySelector("[data-quiz-question-text]");
+    const optionsEl = root.querySelector("[data-quiz-options]");
+    const resultsList = root.querySelector("[data-quiz-results-list]");
+    const startBtn = root.querySelector("[data-quiz-start]");
+    const restartBtn = root.querySelector("[data-quiz-restart]");
+
+    // i18n
+    root.querySelectorAll("[data-quiz-l10n]").forEach(function(el) {
+      el.textContent = T[el.dataset.quizL10n] || "";
+    });
+
+    function show(el) {
+      intro.hidden = true; questionEl.hidden = true; resultsEl.hidden = true;
+      el.hidden = false;
     }
-  }
 
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(mount);
-  } else {
-    setTimeout(mount, 100);
-  }
-  document.addEventListener("astro:page-load", mount);
+    function renderQuestion() {
+      var q = questions[idx];
+      questionText.textContent = q.q;
+      progressText.textContent = (idx + 1) + " " + T.of + " " + questions.length;
+      progressFill.style.width = ((idx + 1) / questions.length * 100) + "%";
+      optionsEl.innerHTML = "";
+      q.o.forEach(function(opt) {
+        var btn = document.createElement("button");
+        btn.className = "quiz-option";
+        btn.textContent = opt.t;
+        btn.addEventListener("click", function() { pick(opt.a); });
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function pick(area) {
+      scores[area] = (scores[area] || 0) + 1;
+      idx++;
+      if (idx >= questions.length) showResults();
+      else renderQuestion();
+    }
+
+    function showResults() {
+      var ranked = Object.entries(scores).filter(function(e) { return e[1] > 0; }).sort(function(a,b) { return b[1] - a[1]; }).slice(0,3);
+      resultsList.innerHTML = "";
+      ranked.forEach(function(entry, i) {
+        var areaId = entry[0], score = entry[1];
+        var area = AREAS[areaId];
+        if (!area) return;
+        var loc = area[lang];
+        var pct = Math.round((score / 20) * 100);
+        var card = document.createElement("div");
+        card.className = "quiz-result-card" + (i === 0 ? " quiz-result-card--top" : "");
+        card.innerHTML =
+          '<div class="quiz-result-header">' +
+            '<span class="quiz-result-icon">' + area.icon + '</span>' +
+            '<span class="quiz-result-title">' + loc.title + '</span>' +
+            '<span class="quiz-result-score">' + pct + '% ' + T.match + '</span>' +
+          '</div>' +
+          '<p class="quiz-result-desc">' + loc.desc + '</p>' +
+          '<div class="quiz-result-tags">' +
+            loc.tags.map(function(t) { return '<span class="quiz-tag">' + t + '</span>'; }).join("") +
+          '</div>';
+        resultsList.appendChild(card);
+      });
+      show(resultsEl);
+    }
+
+    function startQuiz() {
+      scores = {};
+      idx = 0;
+      renderQuestion();
+      show(questionEl);
+    }
+
+    startBtn.addEventListener("click", startQuiz);
+    restartBtn.addEventListener("click", startQuiz);
+  });
+})();
 </script>
 
 <style>
-  .career-quiz {
-    max-width: 720px;
-    margin: 2rem auto;
-    background: var(--sl-color-bg-nav, #fff);
-    border: 1px solid var(--sl-color-hairline, #e5e7eb);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  }
+  .career-quiz { max-width: 720px; margin: 2rem auto; background: var(--sl-color-bg-nav, #fff); border: 1px solid var(--sl-color-hairline, #e5e7eb); border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+  .quiz-screen { }
+  .quiz-icon { font-size: 3rem; text-align: center; margin-bottom: 0.75rem; }
+  .quiz-screen h2, .quiz-results h2 { text-align: center; font-size: 1.6rem; margin: 0 0 0.75rem; color: var(--sl-color-text, #1a1a2e); }
+  .quiz-intro p, .quiz-results-sub { text-align: center; color: var(--sl-color-text-muted, #666); margin: 0 auto 2rem; max-width: 480px; line-height: 1.6; }
+  .quiz-btn { display: block; margin: 0 auto; padding: 0.75rem 2.5rem; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+  .quiz-btn--primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; }
+  .quiz-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102,126,234,0.4); }
+  .quiz-progress { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+  .quiz-progress-bar { flex: 1; height: 6px; background: var(--sl-color-hairline, #e5e7eb); border-radius: 3px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 3px; width: 0%; transition: width 0.35s ease; }
+  .quiz-progress-text { font-size: 0.875rem; font-weight: 600; color: var(--sl-color-text-muted, #888); white-space: nowrap; }
+  .quiz-question-text { font-size: 1.2rem; margin: 0 0 1.5rem; color: var(--sl-color-text, #1a1a2e); line-height: 1.5; }
+  .quiz-options { display: flex; flex-direction: column; gap: 0.625rem; }
+  .quiz-option { display: block; width: 100%; text-align: left; padding: 0.9rem 1.2rem; border: 2px solid var(--sl-color-hairline, #e5e7eb); border-radius: 10px; background: var(--sl-color-bg, #fff); color: var(--sl-color-text, #1a1a2e); font-size: 0.95rem; cursor: pointer; transition: all 0.18s ease; font-family: inherit; }
+  .quiz-option:hover { border-color: #667eea; background: rgba(102,126,234,0.04); }
+  .quiz-option:active { transform: scale(0.985); }
+  .quiz-results-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+  .quiz-result-card { border: 2px solid var(--sl-color-hairline, #e5e7eb); border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .quiz-result-card--top { border-color: #667eea; background: linear-gradient(135deg, rgba(102,126,234,0.06) 0%, rgba(118,75,162,0.04) 100%); }
+  .quiz-result-header { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.5rem; }
+  .quiz-result-icon { font-size: 1.5rem; }
+  .quiz-result-title { font-size: 1.1rem; font-weight: 700; color: var(--sl-color-text, #1a1a2e); }
+  .quiz-result-score { margin-left: auto; font-size: 0.85rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 20px; background: rgba(102,126,234,0.12); color: #667eea; }
+  .quiz-result-desc { color: var(--sl-color-text-muted, #555); font-size: 0.9rem; line-height: 1.55; margin-bottom: 0.5rem; }
+  .quiz-result-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .quiz-tag { font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px; background: rgba(102,126,234,0.08); color: #667eea; font-weight: 500; }
 
-  .quiz-icon {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 0.75rem;
-  }
+  @media (max-width: 520px) { .career-quiz { padding: 1.5rem 1.25rem; border-radius: 12px; } .quiz-question-text { font-size: 1.05rem; } }
 
-  .quiz-intro h2,
-  .quiz-results h2 {
-    text-align: center;
-    font-size: 1.6rem;
-    margin: 0 0 0.75rem;
-    color: var(--sl-color-text, #1a1a2e);
-  }
-
-  .quiz-intro p {
-    text-align: center;
-    color: var(--sl-color-text-muted, #666);
-    margin: 0 auto 2rem;
-    max-width: 480px;
-    line-height: 1.6;
-  }
-
-  /* Buttons */
-  .quiz-btn {
-    display: block;
-    margin: 0 auto;
-    padding: 0.75rem 2.5rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .quiz-btn--primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-  }
-
-  .quiz-btn--primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-  }
-
-  /* Progress */
-  .quiz-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-  }
-
-  .quiz-progress-bar {
-    flex: 1;
-    height: 6px;
-    background: var(--sl-color-hairline, #e5e7eb);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .quiz-progress-bar::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 3px;
-    width: 0%;
-    transition: width 0.35s ease;
-  }
-
-  .quiz-progress-text {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--sl-color-text-muted, #888);
-    white-space: nowrap;
-  }
-
-  /* Question */
-  .quiz-question-text {
-    font-size: 1.2rem;
-    margin: 0 0 1.5rem;
-    color: var(--sl-color-text, #1a1a2e);
-    line-height: 1.5;
-  }
-
-  .quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-  }
-
-  .quiz-option {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 0.9rem 1.2rem;
-    border: 2px solid var(--sl-color-hairline, #e5e7eb);
-    border-radius: 10px;
-    background: var(--sl-color-bg, #fff);
-    color: var(--sl-color-text, #1a1a2e);
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.18s ease;
-  }
-
-  .quiz-option:hover {
-    border-color: #667eea;
-    background: rgba(102, 126, 234, 0.04);
-  }
-
-  .quiz-option:active {
-    transform: scale(0.985);
-  }
-
-  /* Results */
-  .quiz-results-sub {
-    text-align: center;
-    color: var(--sl-color-text-muted, #666);
-    margin-bottom: 1.5rem;
-  }
-
-  .quiz-results-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .quiz-result-card {
-    border: 2px solid var(--sl-color-hairline, #e5e7eb);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    transition: border-color 0.2s;
-  }
-
-  .quiz-result-card--top {
-    border-color: #667eea;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.04) 100%);
-  }
-
-  .quiz-result-header {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .quiz-result-icon {
-    font-size: 1.5rem;
-  }
-
-  .quiz-result-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--sl-color-text, #1a1a2e);
-  }
-
-  .quiz-result-score {
-    margin-left: auto;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    background: rgba(102, 126, 234, 0.12);
-    color: #667eea;
-  }
-
-  .quiz-result-desc {
-    color: var(--sl-color-text-muted, #555);
-    font-size: 0.9rem;
-    line-height: 1.55;
-    margin-bottom: 0.5rem;
-  }
-
-  .quiz-result-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .quiz-tag {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    background: rgba(102, 126, 234, 0.08);
-    color: #667eea;
-    font-weight: 500;
-  }
-
-  @media (max-width: 520px) {
-    .career-quiz {
-      padding: 1.5rem 1.25rem;
-      border-radius: 12px;
-    }
-    .quiz-question-text {
-      font-size: 1.05rem;
-    }
-  }
-
-  /* Dark mode support */
-  :root[data-theme="dark"] .career-quiz,
-  html.dark .career-quiz {
-    background: var(--sl-color-bg-nav, #111);
-    border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  }
-
-  :root[data-theme="dark"] .quiz-option,
-  html.dark .quiz-option {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.08);
-    color: var(--sl-color-text, #eee);
-  }
-
-  :root[data-theme="dark"] .quiz-option:hover,
-  html.dark .quiz-option:hover {
-    border-color: #667eea;
-    background: rgba(102, 126, 234, 0.08);
-  }
+  :root[data-theme="dark"] .career-quiz, html.dark .career-quiz { background: var(--sl-color-bg-nav, #111); border-color: rgba(255,255,255,0.08); box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+  :root[data-theme="dark"] .quiz-option, html.dark .quiz-option { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); color: var(--sl-color-text, #eee); }
+  :root[data-theme="dark"] .quiz-option:hover, html.dark .quiz-option:hover { border-color: #667eea; background: rgba(102,126,234,0.08); }
 </style>
