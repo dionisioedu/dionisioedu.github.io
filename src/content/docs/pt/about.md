@@ -1,25 +1,24 @@
 ---
 title: Sobre
-description: Eduardo Dionisio — Engenheiro C++ sênior, 20+ anos construindo sistemas de alta performance
+description: Eduardo Dionisio — Desenvolvedor C++ e Engenheiro de IA, 20+ anos construindo sistemas de alta performance
 ---
-
-import { getCollection } from 'astro:content';
 
 ## Eduardo Dionisio Fernandes
 
-Engenheiro de Software C++ Sênior. 20+ anos escrevendo código de missão crítica — de sistemas
-embarcados em tempo real a plataformas distribuídas de trading, build systems e ferramentas para devs.
+Desenvolvedor C++ ~ Engenheiro de IA. 20+ anos escrevendo código de missão crítica — de
+sistemas embarcados em tempo real a plataformas distribuídas de trading, build systems e
+ferramentas para devs. Baseado no Brasil, trabalhando remotamente.
 
 ### O que eu faço
 
 - **Engenharia de sistemas em C++** — baixa latência, lock-free, cache-aware. O tipo de código
   onde cada nanossegundo conta.
+- **Engenharia de IA** — IA aplicada, pipelines RAG locais, Vision Transformers, automação com
+  n8n e LLMs.
 - **Arquitetura de performance** — projetando sistemas que escalam sem colapsar sob carga.
-- **Infraestrutura de trading** — matching engines, order books, pipelines de market data. A
-  interseção entre engenharia de software e sistemas financeiros.
-- **Ferramentas e plataformas para devs** — construí o [Code Royale](https://coderoyale.app), uma
-  plataforma multiplayer de batalhas de código com WebSocket em tempo real, ranking Elo e bots
-  programáveis.
+- **Ferramentas e plataformas para devs** — construí o [Code Royale](https://coderoyale.app),
+  uma plataforma multiplayer de batalhas de código com WebSocket em tempo real, ranking Elo e
+  bots programáveis.
 
 ### Filosofia
 
@@ -29,8 +28,8 @@ construindo sistemas que processam milhões de eventos por segundo.
 
 > "O gargalo não é a CPU. É o caminho entre a CPU e a memória."
 
-É sobre isso que escrevo neste site. Se você está otimizando para nanossegundos, está no
-lugar certo.
+Escrevo sobre isso no blog e compartilho diariamente no [X](https://x.com/dionisiodev), onde
+já publiquei mais de 10 mil posts e construí uma audiência de 8 mil+ devs.
 
 ### Open source
 
@@ -43,16 +42,16 @@ lugar certo.
 
 ### Onde me encontrar
 
+- [X / Twitter](https://x.com/dionisiodev) — 8K+ seguidores, posts diários sobre C++, IA e carreira
 - [LinkedIn](https://www.linkedin.com/in/dionisiodev/)
 - [GitHub](https://github.com/dionisioedu)
-- [X / Twitter](https://x.com/dionisiodev)
 - [YouTube](https://www.youtube.com/@dionisiodev)
 
 ### Este site
 
 Construído com [Astro](https://astro.build) + [Starlight](https://starlight.astro.build).
-Escuro por padrão. Sem trackers. RSS disponível.
+Escuro por padrão. Sem trackers. [RSS disponível](/rss.xml).
 
 ---
 
-*Baseado no Brasil. Disponível para vagas remotas de C++, consultoria e escrita técnica.*
+*Disponível para vagas remotas de C++, consultoria e escrita técnica.*

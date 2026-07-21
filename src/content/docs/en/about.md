@@ -1,22 +1,21 @@
 ---
 title: About
-description: Eduardo Dionisio — Senior C++ engineer, 20+ years building high-performance systems
+description: Eduardo Dionisio — C++ Software Developer & AI Engineer, 20+ years building high-performance systems
 ---
-
-import { getCollection } from 'astro:content';
 
 ## Eduardo Dionisio Fernandes
 
-Senior C++ Software Engineer. 20+ years writing performance-critical code — from real-time
-embedded systems to distributed trading platforms, build systems, and developer tooling.
+C++ Software Developer ~ AI Engineer. 20+ years writing performance-critical code — from
+real-time embedded systems to distributed trading platforms, build systems, and developer
+tooling. Based in Brazil, working remotely.
 
 ### What I do
 
 - **C++ systems engineering** — low-latency, lock-free, cache-aware. The kind of code where
   every nanosecond counts.
+- **AI engineering** — applied AI, local RAG pipelines, Vision Transformers, automation with
+  n8n and LLMs.
 - **Performance architecture** — designing systems that scale without falling apart under load.
-- **Trading infrastructure** — matching engines, order books, market data pipelines. The
-  intersection of software engineering and financial systems.
 - **Developer tools & platforms** — built [Code Royale](https://coderoyale.app), a multiplayer
   coding battle platform with real-time WebSocket gameplay, Elo ranking, and programmable bots.
 
@@ -28,8 +27,8 @@ building systems that process millions of events per second.
 
 > "The bottleneck isn't the CPU. It's the path between the CPU and memory."
 
-This is what I write about on this site. If you're optimizing for nanoseconds, you're in the
-right place.
+I write about this on my blog and share daily on [X](https://x.com/dionisiodev), where I've
+published over 10,000 posts and built an audience of 8,000+ developers.
 
 ### Open source
 
@@ -42,16 +41,16 @@ right place.
 
 ### Where to find me
 
+- [X / Twitter](https://x.com/dionisiodev) — 8K+ followers, daily posts on C++, AI, and career
 - [LinkedIn](https://www.linkedin.com/in/dionisiodev/)
 - [GitHub](https://github.com/dionisioedu)
-- [X / Twitter](https://x.com/dionisiodev)
 - [YouTube](https://www.youtube.com/@dionisiodev)
 
 ### This site
 
 Built with [Astro](https://astro.build) + [Starlight](https://starlight.astro.build).
-Dark by default. No trackers. RSS available.
+Dark by default. No trackers. [RSS available](/rss.xml).
 
 ---
 
-*Currently based in Brazil. Available for remote C++ roles, consulting, and technical writing.*
+*Available for remote C++ roles, consulting, and technical writing.*
