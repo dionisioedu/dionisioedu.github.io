@@ -47,8 +47,10 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'C++ in High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
                 { label: 'Real-Time Image Classification with ViT', link: 'artigos-tecnicos/classificacao-imagens-vision-transformer/' },
                 { label: 'Local RAG with PDFs', link: 'artigos-tecnicos/rag-local-com-pdfs/' },
+                { label: 'Install n8n Free on Oracle Cloud', link: 'artigos-tecnicos/n8n-gratis-oracle-cloud/' },
                 { label: 'Will AI End Developer Jobs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
                 { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
                 { label: 'SRE', link: 'artigos-tecnicos/sre/' },
@@ -110,6 +112,7 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
             { label: 'Vision Transformer com webcam', link: 'artigos-tecnicos/classificacao-imagens-vision-transformer/' },
             { label: 'RAG local com PDFs', link: 'artigos-tecnicos/rag-local-com-pdfs/' },
             { label: 'n8n grátis na Oracle Cloud', link: 'artigos-tecnicos/n8n-gratis-oracle-cloud/' },
