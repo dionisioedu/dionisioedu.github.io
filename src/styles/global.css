@@ -789,10 +789,9 @@
 }
 
 @layer starlight.core {
-  /* Hide left sidebar completely */
+  /* Hide left sidebar */
   .sidebar-pane { display: none !important; }
 
-  /* Full-width content, no sidebar offset */
   [data-has-sidebar] .main-pane {
     --sl-sidebar-width: 0px;
     width: 100% !important;
@@ -802,17 +801,25 @@
     padding-left: 0 !important;
   }
 
-  /* Center and constrain content */
+  /* Center content */
   .content-panel .sl-container {
     max-width: 800px !important;
     margin-inline: auto !important;
     width: 100% !important;
   }
 
-  /* Hide old Starlight header (we have custom DocsHeader) */
-  .header { display: none !important; }
+  /* Restyle Starlight header wrapper to match homepage */
+  .header {
+    position: sticky !important;
+    background: var(--ae-surface, #0d1418) !important;
+    border-bottom: 1px solid var(--ae-border, rgba(210,233,236,0.08)) !important;
+    box-shadow: none !important;
+    height: auto !important;
+    min-height: 44px !important;
+    padding: 10px 24px !important;
+    backdrop-filter: blur(8px) !important;
+  }
 
-  /* Adjust main padding to account for sticky topbar */
   .main-frame { padding-top: 0 !important; }
 
   /* Restyle markdown content */
@@ -893,19 +900,15 @@
     color: var(--ae-muted) !important;
   }
 
-  .sl-markdown-content hr {
-    border-color: var(--ae-border) !important;
-  }
+  .sl-markdown-content hr { border-color: var(--ae-border) !important; }
 
   .sl-markdown-content img {
     border-radius: 3px !important;
     border: 1px solid var(--ae-border) !important;
   }
 
-  /* Hide page title component (we render h1 via markdown) */
   .sl-container > h1#_top { display: none !important; }
 
-  /* Right sidebar for TOC and blog tags — keep it but restyle */
   .right-sidebar-panel { padding-top: 0 !important; }
 
   @media (min-width: 72rem) {
