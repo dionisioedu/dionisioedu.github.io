@@ -8,8 +8,7 @@ import { getCollection } from 'astro:content';
 ## Eduardo Dionisio Fernandes
 
 Engenheiro de Software C++ Sênior. 20+ anos escrevendo código de missão crítica — de sistemas
-embarcados em tempo real a plataformas distribuídas de trading. Atualmente na
-[Wabtec Corporation](https://www.wabtec.com/), construindo tecnologia ferroviária que move o mundo.
+embarcados em tempo real a plataformas distribuídas de trading, build systems e ferramentas para devs.
 
 ### O que eu faço
 

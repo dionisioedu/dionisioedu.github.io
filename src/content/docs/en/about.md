@@ -8,8 +8,7 @@ import { getCollection } from 'astro:content';
 ## Eduardo Dionisio Fernandes
 
 Senior C++ Software Engineer. 20+ years writing performance-critical code — from real-time
-embedded systems to distributed trading platforms. Currently at
-[Wabtec Corporation](https://www.wabtec.com/), building rail technology that moves the world.
+embedded systems to distributed trading platforms, build systems, and developer tooling.
 
 ### What I do
 
