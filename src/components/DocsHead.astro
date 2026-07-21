@@ -18,6 +18,45 @@ const filteredHead = head.filter(({ tag, attrs }) => {
     attrs.name === 'twitter:image:alt'
   );
 });
+
+const isArticle = entry.id.includes('artigos-tecnicos/') && !entry.id.endsWith('/index');
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Eduardo Dionisio',
+  alternateName: 'dionisiodev',
+  jobTitle: 'Senior C++ Software Engineer',
+  url: 'https://dionisio.dev',
+  sameAs: [
+    'https://www.linkedin.com/in/dionisiodev/',
+    'https://github.com/dionisioedu',
+    'https://x.com/dionisiodev',
+    'https://www.youtube.com/@dionisiodev'
+  ],
+};
+
+const articleLd = isArticle ? {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: entry.data.title,
+  description: entry.data.description,
+  image: socialImage,
+  author: {
+    '@type': 'Person',
+    name: entry.data.author ?? 'Eduardo Dionisio',
+    url: 'https://dionisio.dev',
+  },
+  datePublished: entry.data.publishedAt?.toISOString() ?? new Date().toISOString(),
+  publisher: {
+    '@type': 'Person',
+    name: 'Eduardo Dionisio',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': new URL(entry.id.replace(/\.(md|mdx)$/, '/').replace(/^\/+/, '/'), siteUrl).href,
+  },
+} : null;
 ---
 
 {filteredHead.map(({ tag: Tag, attrs, content }) => <Tag {...attrs} set:html={content} />)}
@@ -25,3 +64,5 @@ const filteredHead = head.filter(({ tag, attrs }) => {
 <meta property="og:image:alt" content={socialImageAlt} />
 <meta name="twitter:image" content={socialImage} />
 <meta name="twitter:image:alt" content={socialImageAlt} />
+<script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+{articleLd && <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />}

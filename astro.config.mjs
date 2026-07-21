@@ -39,6 +39,66 @@ export default defineConfig({
         pt: {
           label: 'Português',
           lang: 'pt-BR',
+          sidebar: [
+            {
+              label: 'Blog',
+              items: [
+                { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
+                { label: 'Cache Affinity — Por Que Seus Dados Não Devem Viajar', link: 'artigos-tecnicos/cache-affinity/' },
+                { label: 'Vision Transformer com webcam', link: 'artigos-tecnicos/classificacao-imagens-vision-transformer/' },
+                { label: 'RAG local com PDFs', link: 'artigos-tecnicos/rag-local-com-pdfs/' },
+                { label: 'n8n grátis na Oracle Cloud', link: 'artigos-tecnicos/n8n-gratis-oracle-cloud/' },
+                { label: 'IA Vai Acabar com os Devs?', link: 'artigos-tecnicos/ia-vai-acabar-com-os-devs/' },
+                { label: 'Clean Code', link: 'artigos-tecnicos/clean-code/' },
+                { label: 'SRE', link: 'artigos-tecnicos/sre/' },
+                { label: 'Big-O', link: 'artigos-tecnicos/bigo/' },
+              ],
+            },
+            {
+              label: 'Guias',
+              items: [
+                { label: 'Visão geral', link: 'reference/' },
+                { label: 'Por Onde Começar?', link: 'reference/getting-started/' },
+                { label: 'Lógica de Programação', link: 'reference/logica-de-programacao/' },
+                { label: 'Tipos de Dados', link: 'reference/tipos-de-dados/' },
+                { label: 'Estruturas de Dados', link: 'reference/estruturas-de-dados/' },
+                { label: 'Algoritmos', link: 'reference/algoritmos/' },
+                { label: 'Tabela ASCII', link: 'reference/tabela-ascii/' },
+                { label: 'Currículo Que Se Destaca', link: 'reference/curriculo-que-se-destaca/' },
+              ],
+            },
+            {
+              label: 'Labs',
+              items: [{ label: 'Code Lab', link: 'reference/code-lab/' }],
+            },
+            {
+              label: 'Aplicações',
+              collapsed: false,
+              items: [{ label: 'Teste de Perfil Tech', link: 'labs/applications/career-quiz/' }],
+            },
+            {
+              label: 'Portfólio',
+              items: [
+                { label: 'Visão geral', link: 'projects/' },
+                { label: 'SportPulse.today', link: 'projects/sportpulse/' },
+                { label: 'Amorfy', link: 'projects/amorfy/' },
+                { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
+              ],
+            },
+            {
+              label: 'Tutoriais',
+              items: [{ label: 'Hello World no C++', link: 'tutorials/hello-world-cpp/' }],
+            },
+            {
+              label: 'eBooks',
+              items: [
+                { label: 'Guia do Dev Iniciante', link: 'ebooks/guia-do-dev-iniciante/' },
+                { label: 'Guia Avançado C++', link: 'ebooks/guia-avancado-cpp/' },
+              ],
+            },
+            { label: 'Loja', link: 'shop/' },
+            { label: 'Sobre', link: 'about/' },
+          ],
         },
         en: {
           label: 'English',
@@ -105,10 +165,11 @@ export default defineConfig({
               ],
             },
             { label: 'Shop', link: 'shop/' },
+            { label: 'About', link: 'about/' },
           ],
         },
       },
-      defaultLocale: 'pt',
+      defaultLocale: 'en',
       sidebar: [
         {
           label: 'Blog',
@@ -166,11 +227,12 @@ export default defineConfig({
         {
           label: 'eBooks',
           items: [
-            { label: 'Guia do Dev Iniciante', link: 'ebooks/guia-do-dev-iniciante/' },
-            { label: 'Guia Avançado C++', link: 'ebooks/guia-avancado-cpp/' },
+            { label: 'Beginner Dev Guide', link: 'ebooks/beginner-dev-guide/' },
+            { label: 'Advanced C++ Guide', link: 'ebooks/advanced-cpp-guide/' },
           ],
         },
-        { label: 'Loja', link: 'shop/' },
+        { label: 'Shop', link: 'shop/' },
+        { label: 'About', link: 'about/' },
       ],
     }),
   ],

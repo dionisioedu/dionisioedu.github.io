@@ -1,49 +1,23 @@
 ---
-const options = [
-  {
-    locale: 'pt',
-    title: 'Português',
-    description:
-      'Portfólio, blog, loja e referência técnica para acompanhar o trabalho de @dionisiodev em software, IA aplicada e produto.',
-    href: '/pt/',
-    cta: 'Entrar em português',
-    image: '/assets/images/projects-2.webp',
-  },
-  {
-    locale: 'en',
-    title: 'English',
-    description:
-      'Portfolio, writing, products, and technical reference for people following @dionisiodev across software, applied AI, and product work.',
-    href: '/en/',
-    cta: 'Enter in English',
-    image: '/assets/images/desktop-5.webp',
-  },
+import { getCollection } from 'astro:content';
+import { getLocalizedBlogPosts, formatBlogDate } from '../utils/blog';
+
+const docs = await getCollection('docs');
+const enPosts = getLocalizedBlogPosts(docs, 'en');
+const latestPosts = enPosts.slice(0, 3);
+
+const primaryLinks = [
+  { label: 'About', href: '/en/about/' },
+  { label: 'Blog', href: '/en/artigos-tecnicos/' },
+  { label: 'Portfolio', href: '/en/projects/' },
+  { label: 'Reference', href: '/en/reference/' },
 ];
 
-const pillars = [
-  {
-    title: 'Portfolio',
-    body: 'Real projects with product thinking, architecture, UX, and delivery decisions in context.',
-  },
-  {
-    title: 'Blog',
-    body: 'Writing on software engineering, applied AI, career growth, and practical technical judgment.',
-  },
-  {
-    title: 'Store',
-    body: 'eBooks, materials, and curated recommendations that support real developer routines.',
-  },
-  {
-    title: 'Reference',
-    body: 'Guides, labs, and fundamentals for studying better and returning faster to execution.',
-  },
-];
-
-const socials = [
+const externalLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
+  { label: 'GitHub', href: 'https://github.com/dionisioedu' },
   { label: 'X', href: 'https://x.com/dionisiodev' },
   { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev' },
-  { label: 'Medium', href: 'https://medium.com/@dionisiodev' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
 ];
 ---
 
@@ -52,339 +26,331 @@ const socials = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Dionisio Developer</title>
-    <meta
-      name="description"
-      content="Dionisio Developer is the home base for @dionisiodev: portfolio, blog, store, and technical reference across software engineering, applied AI, and product work."
-    />
+    <title>Eduardo Dionisio — C++ Engineer</title>
+    <meta name="description" content="Senior C++ engineer. 20+ years building high-performance systems, trading infrastructure, and developer tools." />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Dionisio Developer Blog" href="/rss.xml" />
     <style>
       :root {
         color-scheme: dark;
         --bg: #0d1418;
-        --surface: rgba(13, 23, 29, 0.96);
-        --surface-soft: rgba(210, 233, 236, 0.05);
-        --border: rgba(210, 233, 236, 0.12);
-        --border-strong: rgba(210, 233, 236, 0.22);
-        --text: #f3f8fa;
-        --muted: #afc3cb;
+        --surface: #101a20;
+        --surface-hover: #16222a;
+        --border: rgba(210, 233, 236, 0.08);
+        --border-strong: rgba(210, 233, 236, 0.14);
+        --text: #e8f0f3;
+        --muted: #7a8f99;
         --accent: #38c6ca;
-        --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+        --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+        --sans: 'Inter', system-ui, -apple-system, sans-serif;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; margin: 0; }
 
       body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: Inter, "Segoe UI", system-ui, sans-serif;
+        font-family: var(--sans);
         color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(56, 198, 202, 0.12), transparent 30%),
-          linear-gradient(180deg, #121a20 0%, var(--bg) 100%);
+        background: var(--bg);
+        min-height: 100vh;
+        line-height: 1.6;
       }
 
-      main {
-        width: min(1160px, calc(100% - 32px));
+      .mono { font-family: var(--mono); font-size: 0.88em; }
+
+      .container {
+        max-width: 960px;
         margin: 0 auto;
-        padding: 40px 0 64px;
+        padding: 48px 24px 64px;
       }
 
+      /* ── Hero ── */
       .hero {
         display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.9fr);
-        gap: 20px;
-        padding: 26px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
+        gap: 12px;
+        margin-bottom: 48px;
       }
 
-      .eyebrow {
-        margin: 0 0 12px;
+      .hero-pre {
         color: var(--accent);
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
+        opacity: 0.8;
       }
 
-      h1,
-      h2,
-      h3 {
-        margin: 0;
-        line-height: 1.05;
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        color: #fff;
       }
 
-      h1 {
-        max-width: 10ch;
-        font-size: clamp(2.8rem, 6vw, 5.6rem);
-      }
-
-      .lede {
-        margin: 18px 0 0;
-        max-width: 60ch;
+      .hero .tagline {
         color: var(--muted);
         font-size: 1.05rem;
-        line-height: 1.75;
+        max-width: 52ch;
+        line-height: 1.7;
       }
 
-      .actions,
-      .socials {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .actions {
-        margin-top: 22px;
-      }
-
-      .action,
-      .socials a,
-      .card a {
+      .hero .lang-switch {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        padding: 0 16px;
-        border-radius: 8px;
-        border: 1px solid transparent;
-        font-weight: 700;
+        gap: 6px;
+        margin-top: 8px;
+        font-size: 0.82rem;
+        color: var(--muted);
         text-decoration: none;
-        transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+        font-family: var(--mono);
+        transition: color 140ms;
+        width: fit-content;
+      }
+      .hero .lang-switch:hover { color: var(--accent); }
+
+      /* ── Nav strip ── */
+      .nav-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 40px;
       }
 
-      .action,
-      .card a {
-        background: var(--accent);
-        color: #081115;
-        -webkit-text-fill-color: #081115;
-      }
-
-      .action.secondary {
-        background: transparent;
-        border: 1px solid var(--border-strong);
-        color: var(--text);
-        -webkit-text-fill-color: var(--text);
-      }
-
-      .socials a {
-        background: transparent;
-        border-color: var(--border-strong);
-        color: var(--text);
-        -webkit-text-fill-color: var(--text);
-      }
-
-      .action:hover,
-      .socials a:hover,
-      .card a:hover {
-        transform: translateY(-1px);
-      }
-
-      .action.secondary:hover,
-      .socials a:hover {
-        background: var(--surface-soft);
-      }
-
-      .side-panel,
-      .card,
-      .pillars article {
+      .nav-strip a {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 14px;
         border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--surface-soft);
-      }
-
-      .side-panel {
-        padding: 18px;
-        display: grid;
-        gap: 16px;
-        align-content: start;
-      }
-
-      .side-panel p,
-      .side-panel li,
-      .footer-note {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .side-panel ul {
-        margin: 0;
-        padding-left: 1rem;
-      }
-
-      .side-panel li + li {
-        margin-top: 0.5rem;
-      }
-
-      .side-panel a,
-      .footer-note a {
+        border-radius: 4px;
         color: var(--text);
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: border-color 140ms, background 140ms;
       }
-
-      .pillars {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 20px;
+      .nav-strip a:hover {
+        border-color: var(--accent);
+        background: var(--surface-hover);
       }
-
-      .pillars article {
-        padding: 16px;
-      }
-
-      .pillars h2 {
-        font-size: 1rem;
-        margin-bottom: 8px;
-      }
-
-      .pillars p {
-        margin: 0;
+      .nav-strip a.external::after {
+        content: ' ↗';
+        font-size: 0.72rem;
         color: var(--muted);
-        line-height: 1.65;
+        margin-left: 2px;
       }
 
-      .grid {
-        margin-top: 28px;
+      /* ── Sections ── */
+      .section-title {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 16px;
+        opacity: 0.8;
+      }
+
+      .section {
+        margin-bottom: 48px;
+      }
+
+      /* ── Blog posts ── */
+      .post-list {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-      }
-
-      .card {
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
         overflow: hidden;
+      }
+
+      .post-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: baseline;
+        padding: 16px 20px;
         background: var(--surface);
-        box-shadow: var(--shadow);
+        text-decoration: none;
+        transition: background 140ms;
       }
+      .post-row:hover { background: var(--surface-hover); }
 
-      .card img {
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+      .post-row h3 {
+        font-size: 0.98rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.4;
       }
-
-      .copy {
-        padding: 20px;
-      }
-
-      .copy p {
-        margin: 10px 0 18px;
+      .post-row .post-date {
+        font-family: var(--mono);
+        font-size: 0.75rem;
         color: var(--muted);
+        white-space: nowrap;
+      }
+      .post-row .post-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+      .post-row .post-tags span {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        color: var(--accent);
+        opacity: 0.6;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .view-all {
+        display: inline-block;
+        margin-top: 16px;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--accent);
+        text-decoration: none;
+        transition: color 140ms;
+      }
+      .view-all:hover { color: #fff; }
+      .view-all::after { content: ' →'; }
+
+      /* ── About snippet ── */
+      .about-snippet {
+        padding: 24px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        display: grid;
+        gap: 12px;
+      }
+      .about-snippet p {
+        color: var(--muted);
+        font-size: 0.94rem;
         line-height: 1.7;
+        max-width: 60ch;
+      }
+      .about-snippet .highlight {
+        color: var(--text);
+        font-weight: 600;
       }
 
-      .footer-note {
-        margin-top: 24px;
-        padding: 18px 20px;
-        border-left: 3px solid var(--accent);
-        background: var(--surface-soft);
+      /* ── Footer ── */
+      .footer {
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-family: var(--mono);
       }
-
-      @media (max-width: 920px) {
-        .hero,
-        .grid,
-        .pillars {
-          grid-template-columns: 1fr;
-        }
+      .footer a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 140ms;
       }
+      .footer a:hover { color: var(--accent); }
 
       @media (max-width: 640px) {
-        main {
-          width: min(100% - 24px, 720px);
-          padding: 24px 0 48px;
-        }
-
-        .hero {
-          padding: 20px;
-        }
+        .container { padding: 32px 16px 48px; }
+        .post-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 16px; }
       }
     </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eduardo Dionisio",
+        "givenName": "Eduardo",
+        "familyName": "Dionisio Fernandes",
+        "alternateName": "dionisiodev",
+        "jobTitle": "Senior C++ Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "Wabtec Corporation" },
+        "url": "https://dionisio.dev",
+        "sameAs": [
+          "https://www.linkedin.com/in/dionisiodev/",
+          "https://github.com/dionisioedu",
+          "https://x.com/dionisiodev",
+          "https://www.youtube.com/@dionisiodev"
+        ],
+        "knowsAbout": ["C++", "Low-Latency Systems", "High-Frequency Trading", "Performance Engineering", "Software Architecture", "Real-Time Systems"],
+        "description": "Senior C++ engineer with 20+ years of experience building high-performance systems, trading infrastructure, and developer tools."
+      }
+    </script>
   </head>
   <body>
-    <main>
-      <section class="hero" aria-label="Dionisio Developer">
-        <div>
-          <p class="eyebrow">Dionisio Developer</p>
-          <h1>Dionisio Developer</h1>
-          <p class="lede">
-            Portfolio, writing, products, and technical reference by
-            <a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a>
-            across software engineering, applied AI, product thinking, and developer growth.
-          </p>
-          <div class="actions">
-            <a class="action" href="/pt/">Entrar em português</a>
-            <a class="action secondary" href="/en/">Enter in English</a>
-          </div>
-          <section class="pillars" aria-label="Main areas">
-            {pillars.map((pillar) => (
-              <article>
-                <h2>{pillar.title}</h2>
-                <p>{pillar.body}</p>
-              </article>
-            ))}
-          </section>
+    <div class="container">
+      <!-- Hero -->
+      <section class="hero">
+        <p class="hero-pre">~/eduardo.dionisio $ whoami</p>
+        <h1>Eduardo Dionisio</h1>
+        <p class="tagline">
+          Senior C++ engineer. <span class="mono">20+</span> years building high-performance systems,
+          trading infrastructure, and developer tools. Currently at Wabtec.
+          I write about <span class="mono">C++</span>, low-latency, cache, and systems engineering.
+        </p>
+        <a class="lang-switch" href="/pt/">🇧🇷 Também disponível em português</a>
+      </section>
+
+      <!-- Nav -->
+      <nav class="nav-strip">
+        {primaryLinks.map(link => <a href={link.href}>{link.label}</a>)}
+        {externalLinks.map(link => <a href={link.href} class="external" target="_blank" rel="noopener noreferrer">{link.label}</a>)}
+      </nav>
+
+      <!-- Latest posts -->
+      <section class="section">
+        <p class="section-title">// Latest writing</p>
+        <div class="post-list">
+          {latestPosts.map(post => (
+            <a href={post.href} class="post-row">
+              <div>
+                <h3>{post.title}</h3>
+                {post.tags.length > 0 && (
+                  <div class="post-tags">
+                    {post.tags.slice(0, 3).map(tag => <span>{tag.label}</span>)}
+                  </div>
+                )}
+              </div>
+              <span class="post-date">{post.publishedAt ? formatBlogDate(post.publishedAt, 'en') : ''}</span>
+            </a>
+          ))}
         </div>
-
-        <aside class="side-panel">
-          <div>
-            <p class="eyebrow">Across the web</p>
-            <h2><a href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">@dionisiodev</a></h2>
-          </div>
-          <div class="socials">
-            {socials.map((social) => (
-              <a href={social.href} target="_blank" rel="noopener noreferrer">
-                {social.label}
-              </a>
-            ))}
-          </div>
-          <div>
-            <p class="eyebrow">Start here</p>
-            <ul>
-              <li>Open the portfolio for real projects, product thinking, and engineering decisions.</li>
-              <li>Read the blog for technical perspective on software, AI, and career growth.</li>
-              <li>Use the store and reference library for practical materials you can apply fast.</li>
-            </ul>
-          </div>
-        </aside>
+        <a class="view-all" href="/en/artigos-tecnicos/">All articles →</a>
       </section>
 
-      <section class="grid" aria-label="Language editions">
-        {options.map((option) => (
-          <article class="card">
-            <img src={option.image} alt={option.title} loading="lazy" />
-            <div class="copy">
-              <p class="eyebrow">{option.title}</p>
-              <h3>{option.description}</h3>
-              <p>Same work, same identity, one home base in the language that fits best.</p>
-              <a href={option.href} data-locale-link={option.locale}>{option.cta}</a>
-            </div>
-          </article>
-        ))}
+      <!-- About snippet -->
+      <section class="section">
+        <p class="section-title">// About</p>
+        <div class="about-snippet">
+          <p>
+            <span class="highlight">Eduardo Dionisio Fernandes.</span>
+            20+ years in C++ — from real-time embedded systems to distributed trading platforms.
+            Based in Brazil, working remotely for global teams.
+          </p>
+          <p>
+            I built <span class="highlight">Code Royale</span> — a multiplayer coding battle platform —
+            and maintain open-source projects across Go, TypeScript, and Python.
+            I believe in <span class="mono">conscious C++</span>: knowing what happens between your
+            code and the silicon.
+          </p>
+          <a class="view-all" href="/en/about/">More about me →</a>
+        </div>
       </section>
 
-      <div class="footer-note">
-        One place to understand who Dionisio is, what he builds, what he writes, and what people
-        can learn or buy from that work.
-      </div>
-    </main>
-
-    <script is:inline>
-      document.querySelectorAll('[data-locale-link]').forEach((link) => {
-        link.addEventListener('click', () => {
-          try {
-            localStorage.setItem('preferredLocale', link.getAttribute('data-locale-link'));
-          } catch {}
-        });
-      });
-    </script>
+      <!-- Footer -->
+      <footer class="footer">
+        <span>© {new Date().getFullYear()} Eduardo Dionisio</span>
+        <a href="/rss.xml">RSS</a>
+        <a href="/en/">Home (EN)</a>
+        <a href="/pt/">Português</a>
+      </footer>
+    </div>
   </body>
 </html>

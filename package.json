@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/starlight": "^0.37.6",
     "codejar": "^4.3.0",
     "prismjs": "^1.30.0",
