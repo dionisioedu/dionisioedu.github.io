@@ -789,6 +789,125 @@
 }
 
 @layer starlight.core {
+  /* Hide left sidebar completely */
+  .sidebar-pane { display: none !important; }
+
+  /* Full-width content, no sidebar offset */
+  [data-has-sidebar] .main-pane {
+    --sl-sidebar-width: 0px;
+    width: 100% !important;
+  }
+
+  [data-has-sidebar] .main-frame {
+    padding-left: 0 !important;
+  }
+
+  /* Center and constrain content */
+  .content-panel .sl-container {
+    max-width: 800px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+
+  /* Hide old Starlight header (we have custom DocsHeader) */
+  .header { display: none !important; }
+
+  /* Adjust main padding to account for sticky topbar */
+  .main-frame { padding-top: 0 !important; }
+
+  /* Restyle markdown content */
+  .sl-markdown-content h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .sl-markdown-content h2 {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .sl-markdown-content h2::before {
+    content: '// ';
+    font-family: var(--sl-font-mono);
+    font-size: 0.7rem;
+    color: var(--sl-color-accent);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    vertical-align: middle;
+    opacity: 0.8;
+  }
+
+  .sl-markdown-content p {
+    color: var(--ae-muted) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .sl-markdown-content a {
+    color: var(--sl-color-accent) !important;
+    text-decoration: none !important;
+  }
+
+  .sl-markdown-content a:hover { color: var(--sl-color-white) !important; }
+
+  .sl-markdown-content ul, .sl-markdown-content ol {
+    color: var(--ae-muted) !important;
+    line-height: 1.7 !important;
+  }
+
+  .sl-markdown-content code {
+    background: var(--ae-surface) !important;
+    border: 1px solid var(--ae-border) !important;
+    border-radius: 2px !important;
+    padding: 2px 6px !important;
+  }
+
+  .sl-markdown-content blockquote {
+    border-left: 2px solid var(--sl-color-accent) !important;
+    background: rgba(56, 198, 202, 0.04) !important;
+  }
+
+  .sl-markdown-content pre {
+    background: var(--ae-surface) !important;
+    border: 1px solid var(--ae-border) !important;
+    border-radius: 3px !important;
+  }
+
+  .sl-markdown-content table th {
+    font-family: var(--sl-font-mono) !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: var(--sl-color-accent) !important;
+    text-transform: uppercase !important;
+    background: var(--ae-surface) !important;
+    border-color: var(--ae-border) !important;
+  }
+
+  .sl-markdown-content table td {
+    border-color: var(--ae-border) !important;
+    color: var(--ae-muted) !important;
+  }
+
+  .sl-markdown-content hr {
+    border-color: var(--ae-border) !important;
+  }
+
+  .sl-markdown-content img {
+    border-radius: 3px !important;
+    border: 1px solid var(--ae-border) !important;
+  }
+
+  /* Hide page title component (we render h1 via markdown) */
+  .sl-container > h1#_top { display: none !important; }
+
+  /* Right sidebar for TOC and blog tags — keep it but restyle */
+  .right-sidebar-panel { padding-top: 0 !important; }
+
   @media (min-width: 72rem) {
     :root { --ae-toc-width: 17.5rem; }
 

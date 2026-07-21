@@ -1,0 +1,54 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
+
+const { locale, slug } = Astro.props;
+const isPt = locale === 'pt';
+---
+
+<style>
+  .dd-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    background: var(--ae-bg, #0d1418);
+    border-bottom: 1px solid var(--ae-border, rgba(210,233,236,0.08));
+    backdrop-filter: blur(8px);
+  }
+  .dd-topbar .dd-brand {
+    font-family: var(--sl-font-mono, monospace);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--sl-color-accent, #38c6ca);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .dd-topbar .dd-brand::before { content: '~/'; opacity: 0.5; }
+  .dd-topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .dd-topbar nav a {
+    font-family: var(--sl-font-mono, monospace);
+    font-size: 0.74rem;
+    color: var(--ae-muted, #7a8f99);
+    text-decoration: none;
+    transition: color 140ms;
+  }
+  .dd-topbar nav a:hover { color: var(--sl-color-accent, #38c6ca); }
+</style>
+
+<header class="dd-topbar">
+  <a class="dd-brand" href="/">dionisio</a>
+  <nav>
+    <a href={isPt ? '/' : '/pt/'}>{isPt ? 'EN' : 'PT'}</a>
+    <a href="/en/about/">About</a>
+    <a href={isPt ? '/pt/artigos-tecnicos/' : '/en/artigos-tecnicos/'}>Blog</a>
+    <a href={isPt ? '/pt/open-source/' : '/en/open-source/'}>OSS</a>
+  </nav>
+</header>

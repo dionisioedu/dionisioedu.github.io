@@ -11,6 +11,7 @@ export default defineConfig({
       description:
         'Portfolio, blog, store, and technical reference by @dionisiodev on software engineering, applied AI, products, and career growth.',
       components: {
+        Header: './src/components/DocsHeader.astro',
         Footer: './src/components/DocsFooter.astro',
         Head: './src/components/DocsHead.astro',
         PageTitle: './src/components/DocsPageTitle.astro',

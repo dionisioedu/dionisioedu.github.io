@@ -1,0 +1,298 @@
+---
+// Custom Starlight PageLayout — engineer aesthetic, no sidebar chrome
+import type { Props } from '@astrojs/starlight/props';
+import DocsFooter from './DocsFooter.astro';
+
+const { entry, locale, slug, hasSidebar, headings, sidebar } = Astro.props;
+
+const isPt = slug.startsWith('pt/') || slug === 'pt';
+const siteTitle = 'Dionisio';
+
+const langSwitch = isPt
+  ? { label: 'EN', href: '/' + slug.replace(/^pt\/?/, 'en/').replace(/\/$/, '') }
+  : { label: 'PT', href: '/pt/' + slug.replace(/^en\/?/, '').replace(/\/$/, '') };
+---
+
+<!doctype html>
+<html lang={isPt ? 'pt-BR' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{entry.data.title} — Dionisio</title>
+    <meta name="description" content={entry.data.description || ''} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="alternate" type="application/rss+xml" title="Dionisio Developer Blog" href="/rss.xml" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0d1418;
+        --surface: #101a20;
+        --border: rgba(210, 233, 236, 0.08);
+        --border-strong: rgba(210, 233, 236, 0.14);
+        --text: #e8f0f3;
+        --muted: #7a8f99;
+        --accent: #38c6ca;
+        --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+        --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        font-family: var(--sans);
+        color: var(--text);
+        background: var(--bg);
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      /* top bar */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 24px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(8px);
+      }
+      .topbar .site-title {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+      .topbar .lang-link {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-decoration: none;
+        padding: 3px 8px;
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        transition: border-color 140ms, color 140ms;
+      }
+      .topbar .lang-link:hover { border-color: var(--accent); color: var(--accent); }
+
+      /* content */
+      .page-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 32px 24px 64px;
+      }
+
+      /* markdown content styling */
+      .page-content h1 {
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+        margin: 0 0 0.5rem;
+        color: #fff;
+      }
+      .page-content h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 2rem 0 0.6rem;
+        color: #fff;
+      }
+      .page-content h2::before {
+        content: '// ';
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        vertical-align: middle;
+        opacity: 0.8;
+      }
+      .page-content h3 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.5rem;
+        color: var(--text);
+      }
+      .page-content p {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .page-content a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .page-content a:hover { color: #fff; }
+      .page-content ul, .page-content ol {
+        margin: 0 0 1rem;
+        padding-left: 1.5rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .page-content li + li { margin-top: 0.3rem; }
+
+      /* code */
+      .page-content code {
+        font-family: var(--mono);
+        font-size: 0.85em;
+        background: var(--surface);
+        padding: 2px 6px;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+      }
+      .page-content pre {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        padding: 14px 16px;
+        overflow-x: auto;
+        margin: 0 0 1rem;
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+      .page-content pre code {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: inherit;
+      }
+      .page-content blockquote {
+        margin: 0 0 1rem;
+        padding: 0.6rem 1rem;
+        border-left: 2px solid var(--accent);
+        background: rgba(56, 198, 202, 0.04);
+        color: var(--muted);
+      }
+      .page-content blockquote p { margin: 0; }
+      .page-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 0 1rem;
+        font-size: 0.9rem;
+      }
+      .page-content th, .page-content td {
+        padding: 8px 12px;
+        text-align: left;
+        border: 1px solid var(--border);
+      }
+      .page-content th {
+        background: var(--surface);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+      }
+      .page-content td { color: var(--muted); }
+      .page-content hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 1.5rem 0;
+      }
+      .page-content img {
+        max-width: 100%;
+        border-radius: 3px;
+        border: 1px solid var(--border);
+      }
+
+      /* hero cards in blog posts (ae-feature) */
+      .page-content .ae-feature {
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        background: var(--surface);
+        overflow: hidden;
+        margin: 0 0 1.5rem;
+      }
+      .page-content .ae-feature img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 7;
+        object-fit: cover;
+        border: none;
+        border-radius: 0;
+      }
+      .page-content .ae-feature-copy {
+        padding: 1rem;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .page-content .ae-kicker {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.8;
+        margin: 0;
+      }
+      .page-content .ae-kicker::before { content: '// '; }
+      .page-content .ae-feature h2 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+      .page-content .ae-feature h2::before { content: none; }
+      .page-content .ae-feature p { margin: 0; }
+      .page-content .ae-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 0.7rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+      }
+      .page-content .ae-post-meta-line {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        margin: 0;
+      }
+      .page-content .ae-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.3rem;
+        padding: 0 0.8rem;
+        border-radius: 3px;
+        background: var(--accent);
+        color: var(--bg) !important;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.88rem;
+      }
+
+      /* footer */
+      .page-footer {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 24px 48px;
+      }
+
+      @media (max-width: 640px) {
+        .topbar { padding: 10px 16px; }
+        .page-content { padding: 24px 16px 48px; }
+        .page-footer { padding: 0 16px 32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="site-title" href="/">~/dionisio $</a>
+      <a class="lang-link" href={langSwitch.href}>{langSwitch.label}</a>
+    </header>
+
+    <main class="page-content">
+      <h1>{entry.data.title}</h1>
+      <slot />
+    </main>
+
+    <div class="page-footer">
+      <DocsFooter />
+    </div>
+  </body>
+</html>
