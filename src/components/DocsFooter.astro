@@ -1,7 +1,25 @@
 ---
+import RelatedPosts from './RelatedPosts.astro';
+
 const isPt = Astro.url.pathname.startsWith('/pt');
 const year = new Date().getFullYear();
 type FooterLink = { label: string; href: string; external?: boolean };
+
+const isBlogPost = Astro.url.pathname.includes('/artigos-tecnicos/') && !Astro.url.pathname.endsWith('/artigos-tecnicos/');
+
+const followCta = isPt
+  ? { text: 'Gostou do artigo? Me acompanhe no', links: [
+      { label: 'X', href: 'https://x.com/dionisiodev' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
+      { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev' },
+      { label: 'RSS', href: '/rss.xml' },
+    ]}
+  : { text: 'Enjoyed this article? Follow me on', links: [
+      { label: 'X', href: 'https://x.com/dionisiodev' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
+      { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev' },
+      { label: 'RSS', href: '/rss.xml' },
+    ]};
 
 const copy = isPt
   ? {
@@ -81,6 +99,16 @@ const copy = isPt
 ---
 
 <footer class="ae-site-footer">
+  {isBlogPost && <RelatedPosts />}
+  {
+    isBlogPost && (
+      <div class="ae-follow-cta">
+        <p>{followCta.text} {followCta.links.map((l, i) => (
+          <>{i > 0 && ' · '}<a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></>
+        ))}</p>
+      </div>
+    )
+  }
   <section class="ae-footer-shell" aria-label={copy.kicker}>
     <div class="ae-footer-intro">
       <p class="ae-kicker">{copy.kicker}</p>

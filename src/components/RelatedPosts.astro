@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import { getLocalizedBlogPosts, toHref, slugifyTag } from '../utils/blog';
+
+const { entry, locale } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
+const currentLocale = (locale ?? 'en') as 'pt' | 'en';
+
+if (!entry.id.includes('artigos-tecnicos/') || entry.id.endsWith('/index')) {
+  // Not a blog post — don't render
+  return new Response(null, { status: 204 });
+}
+
+const docs = await getCollection('docs');
+const allPosts = getLocalizedBlogPosts(docs, currentLocale);
+
+const currentHref = toHref(entry.id);
+const currentTags = (entry.data.tags ?? []).map((t: string) => slugifyTag(t.trim())).filter(Boolean);
+
+// Score other posts by shared tag count, exclude current
+const related = allPosts
+  .filter(p => p.href !== currentHref)
+  .map(p => {
+    const sharedTags = p.tags.filter(t => currentTags.includes(t.slug)).length;
+    return { ...p, sharedTags };
+  })
+  .filter(p => p.sharedTags > 0)
+  .sort((a, b) => b.sharedTags - a.sharedTags)
+  .slice(0, 3);
+
+if (related.length === 0) return new Response(null, { status: 204 });
+
+const labels = currentLocale === 'pt'
+  ? { title: 'Posts relacionados', readMore: 'Ler mais' }
+  : { title: 'Related posts', readMore: 'Read more' };
+---
+
+<section class="ae-related" aria-label={labels.title}>
+  <p class="ae-kicker">{labels.title}</p>
+  <div class="ae-related-grid">
+    {related.map(post => (
+      <a href={post.href} class="ae-related-card">
+        <h4>{post.title}</h4>
+        <p>{post.excerpt}</p>
+        <span class="ae-post-link">{labels.readMore}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .ae-related {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ae-border);
+  }
+
+  .ae-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.6rem;
+  }
+
+  .ae-related-card {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.9rem;
+    border: 1px solid var(--ae-border);
+    border-radius: var(--br, 3px);
+    text-decoration: none;
+    transition: border-color 140ms;
+  }
+
+  .ae-related-card:hover {
+    border-color: var(--ae-border-strong);
+  }
+
+  .ae-related-card h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    color: var(--sl-color-white);
+  }
+
+  .ae-related-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--ae-muted);
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .ae-related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -642,6 +642,29 @@
 
   .ae-site-footer { margin-top: 2rem; }
 
+  .ae-follow-cta {
+    margin-top: 0.75rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--ae-border);
+    border-radius: var(--br);
+    background: var(--ae-surface-soft);
+    font-family: var(--sl-font-mono);
+    font-size: 0.8rem;
+  }
+
+  .ae-follow-cta p {
+    margin: 0;
+    color: var(--ae-muted);
+  }
+
+  .ae-follow-cta a {
+    color: var(--sl-color-accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .ae-follow-cta a:hover { color: var(--sl-color-white); }
+
   .ae-footer-utility { display: grid; gap: 1rem; }
 
   .ae-footer-meta {

@@ -17,6 +17,7 @@ const copy = {
     recentLabel: 'Posts recentes',
     readMore: 'Ler mais',
     by: 'por',
+    minRead: 'min de leitura',
     loadMore: 'Mais artigos',
     filterPrefix: 'Filtrando por',
     empty: 'Nenhum artigo encontrado com essa tag.',
@@ -29,6 +30,7 @@ const copy = {
     recentLabel: 'Recent posts',
     readMore: 'Read more',
     by: 'by',
+    minRead: 'min read',
     loadMore: 'More articles',
     filterPrefix: 'Filtering by',
     empty: 'No articles found for this tag.',
@@ -75,7 +77,7 @@ const morePostsId = `${feedId}-more`;
           <div class="ae-feature-copy">
             <p class="ae-kicker">{labels.featuredLabel}</p>
             <p class="ae-post-meta-line">
-              {formatBlogDate(featuredPost.publishedAt, locale)} · {labels.by} {featuredPost.author}
+              {formatBlogDate(featuredPost.publishedAt, locale)} · {featuredPost.readingTime} {labels.minRead} · {labels.by} {featuredPost.author}
             </p>
             <h2 class="ae-feature-title">
               <a href={featuredPost.href}>{featuredPost.title}</a>
@@ -104,7 +106,7 @@ const morePostsId = `${feedId}-more`;
             )}
             <div class="ae-post-row-copy">
               <p class="ae-post-meta-line">
-                {formatBlogDate(post.publishedAt, locale)} · {labels.by} {post.author}
+                {formatBlogDate(post.publishedAt, locale)} · {post.readingTime} {labels.minRead} · {labels.by} {post.author}
               </p>
               <h3>
                 <a href={post.href}>{post.title}</a>

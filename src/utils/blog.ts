@@ -17,6 +17,7 @@ export interface BlogPostSummary {
   href: string;
   excerpt: string;
   tags: BlogTag[];
+  readingTime: number;
 }
 
 export interface BlogTagSummary extends BlogTag {
@@ -120,17 +121,22 @@ export const getLocalizedBlogPosts = (docs: CollectionEntry<'docs'>[], locale: B
   docs
     .filter((entry) => isPostEntry(entry.id, locale))
     .map(
-      (entry): BlogPostSummary => ({
-        title: entry.data.title,
-        description: entry.data.description,
-        publishedAt: entry.data.publishedAt,
-        author: entry.data.author ?? 'Dionisio',
-        cover: entry.data.cover,
-        coverAlt: entry.data.coverAlt ?? entry.data.title,
-        href: toHref(entry.id),
-        excerpt: extractExcerpt(entry.body, entry.data.description),
-        tags: normalizeTags(entry.data.tags),
-      })
+      (entry): BlogPostSummary => {
+        const wordCount = (entry.body ?? '').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean).length;
+        const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+        return {
+          title: entry.data.title,
+          description: entry.data.description,
+          publishedAt: entry.data.publishedAt,
+          author: entry.data.author ?? 'Dionisio',
+          cover: entry.data.cover,
+          coverAlt: entry.data.coverAlt ?? entry.data.title,
+          href: toHref(entry.id),
+          excerpt: extractExcerpt(entry.body, entry.data.description),
+          tags: normalizeTags(entry.data.tags),
+          readingTime,
+        };
+      }
     )
     .sort((a, b) => {
       const aTime = a.publishedAt?.getTime() ?? 0;
