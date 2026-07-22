@@ -111,6 +111,47 @@ const externalLinks = [
       }
       .hero .lang-switch:hover { color: var(--accent); }
 
+      /* ── Topbar ── */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 24px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(8px);
+      }
+      .topbar .brand {
+        font-family: var(--mono);
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+      .topbar .brand::before { content: '~/'; opacity: 0.5; }
+      .topbar nav {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .topbar nav a {
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 140ms;
+      }
+      .topbar nav a:hover { color: var(--accent); }
+      .topbar .lang-link {
+        margin-left: 8px;
+        padding-left: 8px;
+        border-left: 1px solid var(--border);
+      }
+
       /* ── Nav strip ── */
       .nav-strip {
         display: flex;
@@ -284,6 +325,16 @@ const externalLinks = [
     </script>
   </head>
   <body>
+    <header class="topbar">
+      <a class="brand" href="/">dionisio</a>
+      <nav>
+        <a class="lang-link" href="/pt/">PT</a>
+        <a href="/en/about/">About</a>
+        <a href="/en/artigos-tecnicos/">Blog</a>
+        <a href="/en/open-source/">OSS</a>
+        <a href="/en/shop/">Shop</a>
+      </nav>
+    </header>
     <div class="container">
       <!-- Hero -->
       <section class="hero">
