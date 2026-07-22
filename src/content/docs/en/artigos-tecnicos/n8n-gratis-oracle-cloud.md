@@ -1,7 +1,7 @@
 ---
 title: How to Install n8n Free on Oracle Cloud and Keep It Running 24/7
 description: Updated step-by-step guide, tested in July 2026, to deploy n8n on Oracle Cloud Always Free with Docker and public access
-publishedAt: 2026-07-21
+publishedAt: 2026-04-16
 author: Dionisio
 tags:
   - Automation

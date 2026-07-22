@@ -1,7 +1,7 @@
 ---
 title: C++ em High-Frequency Trading — O Que Realmente Importa para Baixa Latência
 description: "Técnicas reais de C++ usadas em HFT: lock-free, cache locality, alocação customizada e o que faz diferença de verdade nos nanossegundos"
-publishedAt: 2026-07-21
+publishedAt: 2026-07-17
 author: Dionisio
 tags:
   - C++

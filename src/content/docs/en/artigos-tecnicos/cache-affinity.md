@@ -1,7 +1,7 @@
 ---
 title: "Cache Affinity: Why Your Data Shouldn't Travel Between Cores"
 description: "Understand cache affinity, false sharing, alignment, and why moving data across cores can cost hundreds of CPU cycles"
-publishedAt: 2026-07-21
+publishedAt: 2026-07-19
 author: Dionisio
 tags:
   - Performance

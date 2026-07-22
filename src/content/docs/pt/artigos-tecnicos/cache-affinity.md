@@ -1,7 +1,7 @@
 ---
 title: "Cache Affinity: Por Que Seus Dados Não Devem Viajar Entre Núcleos"
 description: "Entenda afinidade de cache, false sharing, alinhamento e por que mover dados entre cores pode custar centenas de ciclos de CPU"
-publishedAt: 2026-07-21
+publishedAt: 2026-07-19
 author: Dionisio
 tags:
   - Performance

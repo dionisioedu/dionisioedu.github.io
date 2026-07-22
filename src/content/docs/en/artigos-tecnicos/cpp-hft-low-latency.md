@@ -1,7 +1,7 @@
 ---
 title: C++ in High-Frequency Trading — What Actually Matters for Low Latency
 description: "Real C++ techniques used in HFT: lock-free programming, cache locality, custom allocation, and what genuinely makes a difference at the nanosecond level"
-publishedAt: 2026-07-21
+publishedAt: 2026-07-17
 author: Dionisio
 tags:
   - C++
