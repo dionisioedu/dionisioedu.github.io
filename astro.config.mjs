@@ -44,7 +44,8 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
-                { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
+                { label: 'SDLC — O Ciclo de Vida do Desenvolvimento de Software', link: 'artigos-tecnicos/sdlc-reference/' },
+            { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
                 { label: 'Cache Affinity — Por Que Seus Dados Não Devem Viajar', link: 'artigos-tecnicos/cache-affinity/' },
                 { label: 'Vision Transformer com webcam', link: 'artigos-tecnicos/classificacao-imagens-vision-transformer/' },
                 { label: 'RAG local com PDFs', link: 'artigos-tecnicos/rag-local-com-pdfs/' },
@@ -109,6 +110,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'SDLC — The Software Development Life Cycle', link: 'artigos-tecnicos/sdlc-reference/' },
                 { label: 'C++ in High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
                 { label: 'Cache Affinity — Why Data Shouldn\'t Travel', link: 'artigos-tecnicos/cache-affinity/' },
                 { label: 'Real-Time Image Classification with ViT', link: 'artigos-tecnicos/classificacao-imagens-vision-transformer/' },
@@ -177,8 +179,9 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
-            { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
-            { label: 'Cache Affinity — Por Que Seus Dados Não Devem Viajar', link: 'artigos-tecnicos/cache-affinity/' },
+            { label: 'SDLC — The Software Development Life Cycle', link: 'artigos-tecnicos/sdlc-reference/' },
+            { label: 'C++ in High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
+            { label: 'Cache Affinity — Why Data Shouldn\'t Travel', link: 'artigos-tecnicos/cache-affinity/' },
             { label: 'Vision Transformer com webcam', link: 'artigos-tecnicos/classificacao-imagens-vision-transformer/' },
             { label: 'RAG local com PDFs', link: 'artigos-tecnicos/rag-local-com-pdfs/' },
             { label: 'n8n grátis na Oracle Cloud', link: 'artigos-tecnicos/n8n-gratis-oracle-cloud/' },
