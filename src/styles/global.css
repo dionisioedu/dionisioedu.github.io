@@ -864,6 +864,12 @@
     opacity: 0.8;
   }
 
+  /* Remove // prefix from blog feed headings (they're UI, not content) */
+  .ae-blog-feed .sl-markdown-content h2::before,
+  .ae-feature h2::before,
+  .ae-post-row h3::before,
+  .ae-blog-feed h2::before { content: none !important; }
+
   .sl-markdown-content p {
     color: var(--ae-muted) !important;
     line-height: 1.7 !important;
