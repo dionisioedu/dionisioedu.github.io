@@ -16,7 +16,7 @@ const isPt = (Astro.url?.pathname ?? '').startsWith('/pt');
   }
   .dd-topbar .dd-brand {
     font-family: var(--sl-font-mono, monospace);
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     font-weight: 600;
     color: var(--sl-color-accent, #38c6ca);
     text-decoration: none;
@@ -53,5 +53,6 @@ const isPt = (Astro.url?.pathname ?? '').startsWith('/pt');
     <a href={isPt ? '/pt/about/' : '/en/about/'}>About</a>
     <a href={isPt ? '/pt/artigos-tecnicos/' : '/en/artigos-tecnicos/'}>Blog</a>
     <a href={isPt ? '/pt/open-source/' : '/en/open-source/'}>OSS</a>
+    <a href={isPt ? '/pt/shop/' : '/en/shop/'}>Shop</a>
   </nav>
 </div>
