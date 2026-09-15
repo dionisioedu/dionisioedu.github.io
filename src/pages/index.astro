@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import { getLocalizedBlogPosts, formatBlogDate } from '../utils/blog';
 
 const docs = await getCollection('docs');
@@ -25,6 +26,7 @@ const externalLinks = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <GoogleAnalytics />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Eduardo Dionisio — C++ Engineer</title>
     <meta name="description" content="Senior C++ engineer. 20+ years building high-performance systems, trading infrastructure, and developer tools." />

@@ -1,5 +1,6 @@
 ---
 import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import GoogleAnalytics from './GoogleAnalytics.astro';
 
 const { head, entry } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
 
@@ -60,6 +61,7 @@ const articleLd = isArticle ? {
 ---
 
 {filteredHead.map(({ tag: Tag, attrs, content }) => <Tag {...attrs} set:html={content} />)}
+<GoogleAnalytics />
 <meta property="og:image" content={socialImage} />
 <meta property="og:image:alt" content={socialImageAlt} />
 <meta name="twitter:image" content={socialImage} />
