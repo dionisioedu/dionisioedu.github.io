@@ -44,6 +44,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'C++ por Versão — Do C++98 ao C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
                 { label: 'SDLC — O Ciclo de Vida do Desenvolvimento de Software', link: 'artigos-tecnicos/sdlc-reference/' },
             { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
                 { label: 'Cache Affinity — Por Que Seus Dados Não Devem Viajar', link: 'artigos-tecnicos/cache-affinity/' },
@@ -110,6 +111,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'C++ by Version — From C++98 to C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
                 { label: 'SDLC — The Software Development Life Cycle', link: 'artigos-tecnicos/sdlc-reference/' },
                 { label: 'C++ in High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
                 { label: 'Cache Affinity — Why Data Shouldn\'t Travel', link: 'artigos-tecnicos/cache-affinity/' },
@@ -179,6 +181,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'C++ by Version — From C++98 to C++26',
+              translations: { 'pt-BR': 'C++ por Versão — Do C++98 ao C++26' },
+              link: 'artigos-tecnicos/cpp-versoes-features/',
+            },
             { label: 'SDLC — The Software Development Life Cycle', link: 'artigos-tecnicos/sdlc-reference/' },
             { label: 'C++ in High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
             { label: 'Cache Affinity — Why Data Shouldn\'t Travel', link: 'artigos-tecnicos/cache-affinity/' },

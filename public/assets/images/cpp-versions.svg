@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d1418"/>
+  <g fill="none" stroke="#20343c"><path d="M0 126H1200M0 252H1200M0 378H1200M0 504H1200"/><path d="M120 0V630M360 0V630M600 0V630M840 0V630M1080 0V630"/></g>
+  <text x="72" y="92" fill="#38c6ca" font-family="monospace" font-size="22">DIONISIO.DEV / C++</text>
+  <text x="68" y="222" fill="#e8f0f3" font-family="monospace" font-size="98" font-weight="bold">C++98 → C++26</text>
+  <path d="M92 365H1108" stroke="#38c6ca" stroke-width="3"/>
+  <g fill="#0d1418" stroke="#38c6ca" stroke-width="3"><circle cx="92" cy="365" r="10"/><circle cx="237" cy="365" r="10"/><circle cx="382" cy="365" r="10"/><circle cx="527" cy="365" r="10"/><circle cx="672" cy="365" r="10"/><circle cx="817" cy="365" r="10"/><circle cx="962" cy="365" r="10"/><circle cx="1107" cy="365" r="10"/></g>
+  <g fill="#e8f0f3" font-family="monospace" font-size="26" text-anchor="middle"><text x="92" y="420">98</text><text x="237" y="420">03</text><text x="382" y="420">11</text><text x="527" y="420">14</text><text x="672" y="420">17</text><text x="817" y="420">20</text><text x="962" y="420">23</text><text x="1107" y="420">26</text></g>
+  <text x="72" y="546" fill="#afc3cb" font-family="monospace" font-size="25">STL · move · lambdas · ranges · reflection</text>
+</svg>
