@@ -30,6 +30,10 @@ Essa sequência costuma resolver a maior parte da confusão mental de quem está
 
 ## O que cada página ajuda a resolver
 
+### [Trilha de C++: da Linguagem à Baixa Latência](/pt/reference/trilha-cpp/)
+
+Para quem já conhece a sintaxe e quer conectar versões, ownership, move semantics, concepts, ranges e cache. Uma sequência com exemplos compiláveis, tarefas pequenas e checklist gratuito para aplicar no projeto.
+
 ### [Por Onde Começar?](/pt/reference/getting-started/)
 
 Para quem precisa transformar curiosidade em ordem de estudo.
@@ -78,6 +82,7 @@ Quando a prioridade é reforçar base e comunicar melhor valor técnico.
 
 ## Próximos passos
 
+- Se seu foco é C++ e performance, siga a [Trilha de C++](/pt/reference/trilha-cpp/)
 - Se você está começando, abra [Por Onde Começar?](/pt/reference/getting-started/)
 - Se quer prática imediata, vá para o [Code Lab](/pt/reference/code-lab/)
 - Se quer ligar base com trabalho real, continue em [Portfólio](/pt/projects/) e [Blog](/pt/blog/)

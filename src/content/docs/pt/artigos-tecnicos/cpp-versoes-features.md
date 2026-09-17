@@ -8,12 +8,12 @@ tags:
   - Engenharia de Software
   - Boas Práticas
   - Performance
-cover: /assets/images/cpp-versions.png
+cover: /assets/images/cpp-versions.webp
 coverAlt: Linha do tempo das oito versões do C++, de 1998 a 2026
 ---
 
 <section class="ae-feature">
-  <img src="/assets/images/cpp-versions.png" alt="Linha do tempo das oito versões do C++, de 1998 a 2026" loading="eager" />
+  <img src="/assets/images/cpp-versions.webp" alt="Linha do tempo das oito versões do C++, de 1998 a 2026" loading="eager" width="1200" height="630" fetchpriority="high" decoding="async" />
   <div class="ae-feature-copy">
     <p class="ae-kicker">C++ · Linguagem · Biblioteca Padrão</p>
     <h2>Seu projeto usa C++. Mas qual C++?</h2>
@@ -264,6 +264,7 @@ Isso pede **pelo menos C++20**; não certifica que todo recurso da edição est�
 
 ## Continue a Leitura
 
+- Escolheu a versão? A [trilha prática de C++](/pt/reference/trilha-cpp/) conecta ownership, move semantics, ranges e performance, com exercícios e um checklist gratuito para aplicar no projeto.
 - [C++ em HFT: onde a latência aparece de verdade](/pt/artigos-tecnicos/cpp-hft-low-latency/).
 - [Cache affinity: o custo de movimentar dados](/pt/artigos-tecnicos/cache-affinity/).
 - [Referência técnica para aprofundar os fundamentos](/pt/reference/).

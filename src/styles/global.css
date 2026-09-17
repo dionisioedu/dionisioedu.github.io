@@ -932,5 +932,18 @@
     border: 1px solid var(--ae-border) !important;
   }
 
-  .sl-container > h1#_top { display: none !important; }
+  /* Keep the actual page title visible and preserve the document heading hierarchy. */
+  .sl-container > h1#_top { display: block; }
+}
+
+/* Readable content links and keyboard focus, independent of theme. */
+/* SiteNav supplies the mobile menu; the original sidebar is intentionally hidden. */
+starlight-menu-button { display: none !important; }
+[data-has-sidebar] .header { padding-inline-end: var(--sl-nav-pad-x) !important; }
+.sl-markdown-content :is(p, li, td) > a { text-decoration: underline !important; text-underline-offset: .18em; }
+:is(a, button, summary, input):focus-visible { outline: 2px solid var(--sl-color-accent, #38c6ca); outline-offset: 3px; }
+:root { --ae-muted: #acbdc6; }
+:root[data-theme='light'] { --ae-muted: #405966; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }

@@ -27,14 +27,6 @@ export default defineConfig({
             href: '/favicon.ico',
           },
         },
-        {
-          tag: 'script',
-          attrs: {
-            async: true,
-            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057',
-            crossorigin: 'anonymous',
-          },
-        },
       ],
       locales: {
         pt: {
@@ -61,6 +53,7 @@ export default defineConfig({
               label: 'Guias',
               items: [
                 { label: 'Visão geral', link: 'reference/' },
+                { label: 'Trilha C++', link: 'reference/trilha-cpp/' },
                 { label: 'Por Onde Começar?', link: 'reference/getting-started/' },
                 { label: 'Lógica de Programação', link: 'reference/logica-de-programacao/' },
                 { label: 'Tipos de Dados', link: 'reference/tipos-de-dados/' },
@@ -128,6 +121,7 @@ export default defineConfig({
               label: 'Guides',
               items: [
                 { label: 'Overview', link: 'reference/' },
+                { label: 'C++ learning path', link: 'reference/trilha-cpp/' },
                 { label: 'Where to Start?', link: 'reference/getting-started/' },
                 { label: 'Programming Logic', link: 'reference/logica-de-programacao/' },
                 { label: 'Data Types', link: 'reference/tipos-de-dados/' },
@@ -202,6 +196,7 @@ export default defineConfig({
           label: 'Guias',
           items: [
             { label: 'Visão geral', link: 'reference/' },
+            { label: 'C++ learning path', translations: { 'pt-BR': 'Trilha C++' }, link: 'reference/trilha-cpp/' },
             { label: 'Por Onde Começar?', link: 'reference/getting-started/' },
             { label: 'Lógica de Programação', link: 'reference/logica-de-programacao/' },
             { label: 'Tipos de Dados', link: 'reference/tipos-de-dados/' },

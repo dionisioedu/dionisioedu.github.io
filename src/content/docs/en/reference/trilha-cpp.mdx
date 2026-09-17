@@ -1,0 +1,133 @@
+---
+title: "C++ Learning Path: from Language Basics to Low Latency"
+description: "A practical sequence for modern C++: versions, RAII, ownership, move semantics, concepts, ranges, cache, and low latency. Includes a free checklist."
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+You know the syntax, but still have to stop and think about who frees memory, when a copy happens, and why a loop became slow? That is where this path starts.
+
+The order is straightforward: understand the tools, manage resources, express operations, then investigate performance. Each step ends with a small assignment. Move forward when you can explain the decision in your own code.
+
+[Leia em português](/pt/reference/trilha-cpp/).
+
+## The map
+
+| Step | Question you will answer | Material |
+| --- | --- | --- |
+| 1. Versions | What does my toolchain actually support? | [C++ by version](/en/artigos-tecnicos/cpp-versoes-features/) |
+| 2. RAII and ownership | Who releases this resource? | Lesson and exercise below |
+| 3. Move semantics | Am I copying or transferring? | Lesson and exercise below |
+| 4. Concepts and ranges | How do I state requirements and compose operations? | Lesson and exercise below |
+| 5. Memory and cache | How does data organization affect access? | [Cache affinity](/en/artigos-tecnicos/cache-affinity/) |
+| 6. Low latency | Where is the delay that matters to the user? | [C++ in HFT and low latency](/en/artigos-tecnicos/cpp-hft-low-latency/) |
+
+## 1. Find out which C++ you are using
+
+Start with the [version map](/en/artigos-tecnicos/cpp-versoes-features/). Then open your project's build configuration: find the selected standard, compiler version, and standard library. A language flag does not install a newer library implementation.
+
+**Assignment:** record the combination used in development and CI, including the standard flag. Pick a small improvement that this combination already supports. Check the official [GCC](https://gcc.gnu.org/projects/cxx-status.html) and [Clang](https://clang.llvm.org/cxx_status.html) tables.
+
+## 2. RAII: let object lifetime do the work
+
+RAII ties resource ownership to an object's lifetime. Here, a `unique_ptr` owns the integer; its destructor releases the resource when it leaves scope. There is no manual `delete`. A local variable would be enough for this isolated integer: allocation is used to illustrate ownership.
+
+```cpp
+// C++14: raii.cpp
+#include <cassert>
+#include <memory>
+
+int main() {
+    auto value = std::make_unique<int>(42);
+    assert(*value == 42);
+}
+```
+
+`unique_ptr` has existed since C++11; `make_unique` arrived in C++14. The recommendation to tie resources to objects is in [R.1 of the C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii).
+
+**Assignment:** find a resource in your project and write down who owns it, who only observes it, and when it is released. For dynamically allocated memory with a single owner, try `unique_ptr`. For local objects and collections, consider values and containers first. Do not replace every pointer with `shared_ptr` without a real need for shared ownership.
+
+## 3. Move semantics: make transfers explicit
+
+`std::move` is a value-category cast; the operation called afterward decides what happens. Here, constructing the second `unique_ptr` transfers ownership and leaves the first empty. That is a guarantee for this particular type, not a rule for every moved-from object. See [unique.ptr.single.ctor in the C++20 draft](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/n4861.pdf).
+
+```cpp
+// C++14: move.cpp
+#include <cassert>
+#include <memory>
+#include <utility>
+
+int main() {
+    auto source = std::make_unique<int>(42);
+    auto target = std::move(source);
+    assert(source == nullptr);
+    assert(*target == 42);
+}
+```
+
+**Assignment:** replace the second statement with `auto target = source;` and read the error: this type does not allow copying ownership. Restore the example and compile. Then review an API of your own: does the parameter receive ownership, or only use the object during the call?
+
+## 4. Concepts and ranges: clear requirements, small operations
+
+Concepts constrain template arguments. Ranges let you compose operations on sequences. This C++20 example filters even numbers before doubling them; evaluation happens while iterating the view. The source `values` stays alive throughout that use. See [temp.constr and range.adaptors in the C++20 draft](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/n4861.pdf).
+
+```cpp
+// C++20: ranges.cpp
+#include <cassert>
+#include <concepts>
+#include <ranges>
+#include <vector>
+
+template <std::integral T>
+bool is_even(T value) {
+    return value % 2 == 0;
+}
+
+int main() {
+    std::vector<int> values{1, 2, 3, 4};
+    auto result = values
+        | std::views::filter([](int x) { return is_even(x); })
+        | std::views::transform([](int x) { return x * 2; });
+    int sum = 0;
+    for (int value : result) sum += value;
+    assert(sum == 12);
+}
+```
+
+**Assignment:** implement the same operation with a simple loop and check the result. Choose the form that communicates intent best to your team. Fewer lines alone do not demonstrate lower execution time.
+
+### Run the examples
+
+Save each block with the indicated filename. With GCC or Clang supporting the features used:
+
+```sh
+c++ -std=c++14 -Wall -Wextra -pedantic raii.cpp -o raii
+c++ -std=c++14 -Wall -Wextra -pedantic move.cpp -o move
+c++ -std=c++20 -Wall -Wextra -pedantic ranges.cpp -o ranges
+```
+
+Run the resulting binaries. All assertions should pass. In PowerShell, use `./raii.exe`, `./move.exe`, and `./ranges.exe`; on Linux/macOS, use `./raii`, `./move`, and `./ranges`.
+
+<Aside type="note" title="Practice in the right environment">
+The [Code Lab](/en/reference/code-lab/) helps you explore logic and algorithms with JavaScript and Python. The C++ examples in this path require a local C++ toolchain or a compatible online compiler.
+</Aside>
+
+## 5. Memory and cache: investigate the data
+
+Continue with [Cache Affinity](/en/artigos-tecnicos/cache-affinity/). Draw the data's journey: where it is created, who writes to it, and which threads access it. This gives you a concrete hypothesis to measure.
+
+**Assignment:** choose a traversal over a real collection and record input size, hardware, compiler, and optimization flags. Compare one change at a time, verify identical output, and preserve the computation's result so the compiler cannot discard the work. Repeat measurements; publish variation alongside the central value. Do not turn one machine's result into a universal rule.
+
+## 6. Low latency: choose the question before the benchmark
+
+Read [C++ in HFT and low latency](/en/artigos-tecnicos/cpp-hft-low-latency/). Use that context to separate throughput — how much work fits in an interval — from latency — how long one operation takes.
+
+**Assignment:** describe an end-to-end operation, define the measurement's start and finish, and record p50, p95, and p99 with sample size, load, warmup, and test conditions. Compare errors and correct output too. A lower average alone does not resolve the requests that became very slow.
+
+## Bring the path into your project
+
+<a href="/downloads/cpp-modernization-checklist-en.md" download data-analytics-event="file_download" data-content-id="cpp-modernization-checklist" data-content-language="en">Download the C++ modernization checklist — free Markdown</a>
+
+Copy the checklist into an issue or code review. Pick one item, make a small change, and record the evidence. Useful modernization makes the next step easier to explain.
+
+**Read next:** [C++ by version](/en/artigos-tecnicos/cpp-versoes-features/) if you still need to choose a baseline; [Cache Affinity](/en/artigos-tecnicos/cache-affinity/) if ownership is familiar and you want to investigate performance.

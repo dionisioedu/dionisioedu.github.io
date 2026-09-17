@@ -4,12 +4,31 @@ const enabled = import.meta.env.PROD;
 
 {enabled && (
   <>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF"></script>
     <script is:inline>
+      if (['dionisio.dev', 'www.dionisio.dev'].includes(window.location.hostname)) {
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7BZ62SG9QF');
+      window.gtag = function(){window.dataLayer.push(arguments);};
+      const tag = document.createElement('script');
+      tag.async = true;
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-7BZ62SG9QF';
+      document.head.appendChild(tag);
+      window.gtag('js', new Date());
+      const campaign = new URLSearchParams(window.location.search);
+      const campaignParams = campaign.get('utm_campaign') === 'cpp_learning_path'
+        && ['linkedin', 'x', 'youtube', 'newsletter'].includes(campaign.get('utm_source'))
+        && ['social', 'video', 'email'].includes(campaign.get('utm_medium'))
+        ? { campaign_name: 'cpp_learning_path', campaign_source: campaign.get('utm_source'), campaign_medium: campaign.get('utm_medium') } : {};
+      window.gtag('config', 'G-7BZ62SG9QF', {
+        ...campaignParams,
+        page_location: window.location.origin + window.location.pathname,
+        page_referrer: (() => { try { return document.referrer ? new URL(document.referrer).origin : ''; } catch { return ''; } })(),
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
+      }
     </script>
   </>
 )}
+<script>
+  import './analytics.client.js';
+</script>

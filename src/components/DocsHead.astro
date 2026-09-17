@@ -1,6 +1,11 @@
 ---
 import type { StarlightRouteData } from '@astrojs/starlight/route-data';
 import GoogleAnalytics from './GoogleAnalytics.astro';
+import AdSense from './AdSense.astro';
+import { getCollection } from 'astro:content';
+import { toHref } from '../utils/blog';
+import { canonicalPath, articleDates } from '../utils/seo.mjs';
+import { alternatePage } from '../utils/navigation.mjs';
 
 const { head, entry } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
 
@@ -8,11 +13,27 @@ const siteUrl = Astro.site ?? new URL('https://dionisio.dev');
 const fallbackImage = new URL('/assets/images/social-card.png', siteUrl).href;
 const socialImage = entry.data.cover ? new URL(entry.data.cover, siteUrl).href : fallbackImage;
 const socialImageAlt = entry.data.coverAlt ?? entry.data.title;
+const canonical = new URL(canonicalPath(Astro.url.pathname), siteUrl).href;
+const locale = Astro.url.pathname.startsWith('/pt/') ? 'pt' : 'en';
+const feedPath = locale === 'pt' ? '/pt/rss.xml' : '/rss.xml';
+const docs = await getCollection('docs');
+const availablePaths = new Set(docs.map((doc) => canonicalPath(toHref(doc.id))));
+const translation = alternatePage(Astro.url.pathname, docs.map((doc) => doc.id));
+const alternates = [
+  { lang: locale === 'pt' ? 'pt-BR' : 'en', path: canonicalPath(Astro.url.pathname) },
+  ...(translation.translated ? [{
+    lang: translation.other === 'pt' ? 'pt-BR' : 'en',
+    path: canonicalPath(translation.href),
+  }] : []),
+].filter(({ path }) => availablePaths.has(path));
 
 const filteredHead = head.filter(({ tag, attrs }) => {
+  if (tag === 'link' && attrs && (attrs.rel === 'canonical' ||
+      (attrs.rel === 'alternate' && (attrs.hreflang || attrs.type === 'application/rss+xml')))) return false;
   if (tag !== 'meta' || !attrs) return true;
 
   return !(
+    attrs.property === 'og:url' ||
     attrs.property === 'og:image' ||
     attrs.property === 'og:image:alt' ||
     attrs.name === 'twitter:image' ||
@@ -20,7 +41,7 @@ const filteredHead = head.filter(({ tag, attrs }) => {
   );
 });
 
-const isArticle = entry.id.includes('artigos-tecnicos/') && !entry.id.endsWith('/index');
+const isArticle = /^\/(pt|en)\/artigos-tecnicos\/[^/]+\/$/.test(Astro.url.pathname);
 
 const personLd = {
   '@context': 'https://schema.org',
@@ -40,6 +61,8 @@ const personLd = {
 const articleLd = isArticle ? {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
+  '@id': `${canonical}#article`,
+  url: canonical,
   headline: entry.data.title,
   description: entry.data.description,
   image: socialImage,
@@ -48,23 +71,29 @@ const articleLd = isArticle ? {
     name: entry.data.author ?? 'Eduardo Dionisio',
     url: 'https://dionisio.dev',
   },
-  datePublished: entry.data.publishedAt?.toISOString() ?? new Date().toISOString(),
+  ...articleDates(entry.data.publishedAt, entry.data.updatedAt),
   publisher: {
     '@type': 'Person',
     name: 'Eduardo Dionisio',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': new URL(entry.id.replace(/\.(md|mdx)$/, '/').replace(/^\/+/, '/'), siteUrl).href,
+    '@id': canonical,
   },
 } : null;
 ---
 
 {filteredHead.map(({ tag: Tag, attrs, content }) => <Tag {...attrs} set:html={content} />)}
 <GoogleAnalytics />
+<AdSense />
+<link rel="canonical" href={canonical} />
+<meta property="og:url" content={canonical} />
+{alternates.map(({ lang, path }) => <link rel="alternate" hreflang={lang} href={new URL(path, siteUrl).href} />)}
+<link rel="alternate" type="application/rss+xml" title={`Dionisio Developer — ${locale === 'pt' ? 'Português' : 'English'}`} href={new URL(feedPath, siteUrl).href} />
+{isArticle && entry.data.cover && <link rel="preload" as="image" href={entry.data.cover} fetchpriority="high" />}
 <meta property="og:image" content={socialImage} />
 <meta property="og:image:alt" content={socialImageAlt} />
 <meta name="twitter:image" content={socialImage} />
 <meta name="twitter:image:alt" content={socialImageAlt} />
-<script type="application/ld+json" set:html={JSON.stringify(personLd)} />
-{articleLd && <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(personLd)} />
+{articleLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(articleLd)} />}

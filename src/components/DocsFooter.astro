@@ -1,5 +1,7 @@
 ---
 import RelatedPosts from './RelatedPosts.astro';
+import Newsletter from './Newsletter.astro';
+import ArticleActions from './ArticleActions.astro';
 
 const isPt = Astro.url.pathname.startsWith('/pt');
 const year = new Date().getFullYear();
@@ -12,7 +14,7 @@ const followCta = isPt
       { label: 'X', href: 'https://x.com/dionisiodev' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
       { label: 'YouTube', href: 'https://www.youtube.com/@dionisiodev' },
-      { label: 'RSS', href: '/rss.xml' },
+      { label: 'RSS', href: '/pt/rss.xml' },
     ]}
   : { text: 'Enjoyed this article? Follow me on', links: [
       { label: 'X', href: 'https://x.com/dionisiodev' },
@@ -99,6 +101,8 @@ const copy = isPt
 ---
 
 <footer class="ae-site-footer">
+  {isBlogPost && <ArticleActions locale={isPt ? 'pt' : 'en'} />}
+  {isBlogPost && /cpp|c-plus|low-latency|baixa-latencia/.test(Astro.url.pathname) && <p><a href={`/${isPt ? 'pt' : 'en'}/reference/trilha-cpp/`} data-analytics-event="select_content" data-analytics-source="cpp-trail">{isPt ? 'Continue na trilha de C++ e performance →' : 'Continue with the C++ and performance learning path →'}</a></p>}
   {isBlogPost && <RelatedPosts />}
   {
     isBlogPost && (
@@ -112,7 +116,7 @@ const copy = isPt
   {
     isBlogPost && (
       <div class="ae-newsletter-cta">
-        <script async data-uid="6fa15fabec" src="https://dionisio-developer.kit.com/6fa15fabec/index.js"></script>
+        <Newsletter locale={isPt ? 'pt' : 'en'} />
       </div>
     )
   }

@@ -308,6 +308,7 @@ previsível. Isso é projeto de portfólio que faz recrutador de HFT parar e ler
 
 ## Leitura Recomendada
 
+- [Trilha prática de C++](/pt/reference/trilha-cpp/): revise ownership, toolchain e método de medição antes da próxima otimização. Inclui exercícios e um checklist gratuito de modernização.
 - *C++ Concurrency in Action* — Anthony Williams. A bíblia de lock-free em C++.
 - *Computer Systems: A Programmer's Perspective* — Bryant & O'Hallaron. Entenda o que seu código
   faz no hardware.

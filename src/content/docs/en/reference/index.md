@@ -30,6 +30,10 @@ That sequence solves most of the mental noise people face when they are starting
 
 ## What each page helps solve
 
+### [C++ Learning Path: from Language Basics to Low Latency](/en/reference/trilha-cpp/)
+
+For developers who know the syntax and want to connect versions, ownership, move semantics, concepts, ranges, and cache. A sequence with compilable examples, small assignments, and a free checklist to apply in your project.
+
 ### [Where to Start?](/en/reference/getting-started/)
 
 For turning curiosity into a study order.
@@ -78,6 +82,7 @@ When the priority is stronger fundamentals and better communication of technical
 
 ## Next steps
 
+- If your focus is C++ and performance, follow the [C++ learning path](/en/reference/trilha-cpp/)
 - If you are starting, open [Where to Start?](/en/reference/getting-started/)
 - If you want immediate practice, go to the [Code Lab](/en/reference/code-lab/)
 - If you want to connect fundamentals with real work, continue to the [Portfolio](/en/projects/) and [Blog](/en/blog/)

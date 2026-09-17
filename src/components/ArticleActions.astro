@@ -1,0 +1,43 @@
+---
+const { locale = 'en' } = Astro.props;
+const pt = locale === 'pt';
+---
+<div class="article-actions" data-article-actions data-locale={locale}>
+  <button type="button" data-share>{pt ? 'Compartilhar artigo' : 'Share article'}</button>
+  <button type="button" data-copy>{pt ? 'Copiar link' : 'Copy link'}</button>
+  <span role="status" aria-live="polite"></span>
+</div>
+<script>
+  import { track } from './analytics.client.js';
+  function mountActions() {
+    document.querySelectorAll<HTMLElement>('[data-article-actions]').forEach((root) => {
+      if (root.dataset.bound) return;
+      root.dataset.bound = 'true';
+      root.addEventListener('click', async (event) => {
+        if (!(event.target instanceof Element)) return;
+        const button = event.target.closest('button');
+        if (!button) return;
+        const pt = root.dataset.locale === 'pt';
+        const status = root.querySelector('span')!;
+        const url = document.querySelector<HTMLLinkElement>('link[rel=canonical]')?.href || location.origin + location.pathname;
+        try {
+          const native = button.hasAttribute('data-share') && !!navigator.share;
+          if (native) await navigator.share({ title: document.title, url });
+          else await navigator.clipboard.writeText(url);
+          status.textContent = native ? (pt ? 'Compartilhado.' : 'Shared.') : (pt ? 'Link copiado.' : 'Link copied.');
+          track('share', { method: native ? 'native' : 'clipboard' });
+        } catch (error) {
+          if (error instanceof Error && error.name === 'AbortError') return;
+          status.textContent = pt ? 'Copie o endereço pela barra do navegador.' : 'Copy the address from your browser’s address bar.';
+        }
+      });
+    });
+  }
+  mountActions();
+  document.addEventListener('astro:page-load', mountActions);
+</script>
+<style>
+  .article-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1.5rem; align-items: center; }
+  button { font: inherit; background: transparent; color: inherit; padding: .55rem .9rem; border: 1px solid var(--ae-border, #64748b); border-radius: 4px; cursor: pointer; }
+  span { font-size: .85rem; }
+</style>

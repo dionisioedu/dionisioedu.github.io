@@ -8,6 +8,7 @@ export const collections = {
     schema: docsSchema({
       extend: z.object({
         publishedAt: z.coerce.date().optional(),
+        updatedAt: z.coerce.date().optional(),
         author: z.string().optional(),
         cover: z.string().optional(),
         coverAlt: z.string().optional(),

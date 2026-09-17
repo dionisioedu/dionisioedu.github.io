@@ -308,6 +308,7 @@ That's the portfolio project that makes HFT recruiters stop and read.
 
 ## Recommended Reading
 
+- [Practical C++ learning path](/en/reference/trilha-cpp/): review ownership, toolchain support, and measurement methods before your next optimization. Includes exercises and a free modernization checklist.
 - *C++ Concurrency in Action* — Anthony Williams. The lock-free C++ bible.
 - *Computer Systems: A Programmer's Perspective* — Bryant & O'Hallaron. Understand what your code
   does on the hardware.

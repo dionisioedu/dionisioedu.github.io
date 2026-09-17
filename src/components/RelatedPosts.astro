@@ -36,11 +36,11 @@ const labels = currentLocale === 'pt'
 ---
 
 <section class="ae-related" aria-label={labels.title}>
-  <p class="ae-kicker">{labels.title}</p>
+  <h2 class="ae-kicker">{labels.title}</h2>
   <div class="ae-related-grid">
     {related.map(post => (
-      <a href={post.href} class="ae-related-card">
-        <h4>{post.title}</h4>
+      <a href={post.href} class="ae-related-card" data-analytics-event="select_content" data-analytics-source="related-posts">
+        <h3>{post.title}</h3>
         <p>{post.excerpt}</p>
         <span class="ae-post-link">{labels.readMore}</span>
       </a>
@@ -76,7 +76,7 @@ const labels = currentLocale === 'pt'
     border-color: var(--ae-border-strong);
   }
 
-  .ae-related-card h4 {
+  .ae-related-card h3 {
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.3;

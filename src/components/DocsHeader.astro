@@ -1,58 +1,8 @@
 ---
-// Custom Starlight Header — renders inside Starlight's <header> wrapper
-// Must NOT output its own <header> tag to avoid nesting
-import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
-
-const isPt = (Astro.url?.pathname ?? '').startsWith('/pt');
+import { getCollection } from 'astro:content';
+import SiteNav from './SiteNav.astro';
+import { alternatePage } from '../utils/navigation.mjs';
+const docs = await getCollection('docs');
+const alternate = alternatePage(Astro.url.pathname, docs.map((entry) => entry.id));
 ---
-
-<style>
-  .dd-topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-  }
-  .dd-topbar .dd-brand {
-    font-family: var(--sl-font-mono, monospace);
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--sl-color-accent, #38c6ca);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-  }
-  .dd-topbar .dd-brand::before { content: '~/'; opacity: 0.5; }
-  .dd-topbar nav {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .dd-topbar nav a {
-    font-family: var(--sl-font-mono, monospace);
-    font-size: 0.74rem;
-    color: var(--ae-muted, #7a8f99);
-    text-decoration: none;
-    transition: color 140ms;
-  }
-  .dd-topbar nav a:hover { color: var(--sl-color-accent, #38c6ca); }
-  .dd-topbar .dd-lang {
-    margin-left: 8px;
-    padding-left: 8px;
-    border-left: 1px solid var(--ae-border, rgba(210,233,236,0.08));
-  }
-
-  /* Hide Starlight elements we don't want but that are rendered outside our component */
-  .header starlight-menu-button { display: none !important; }
-</style>
-
-<div class="dd-topbar">
-  <a class="dd-brand" href="/">dionisio</a>
-  <nav>
-    <a class="dd-lang" href={isPt ? '/' : '/pt/'}>{isPt ? 'EN' : 'PT'}</a>
-    <a href={isPt ? '/pt/about/' : '/en/about/'}>About</a>
-    <a href={isPt ? '/pt/artigos-tecnicos/' : '/en/artigos-tecnicos/'}>Blog</a>
-    <a href={isPt ? '/pt/open-source/' : '/en/open-source/'}>OSS</a>
-    <a href={isPt ? '/pt/shop/' : '/en/shop/'}>Shop</a>
-  </nav>
-</div>
+<SiteNav locale={alternate.locale as 'pt' | 'en'} alternateHref={alternate.href} translated={alternate.translated} />

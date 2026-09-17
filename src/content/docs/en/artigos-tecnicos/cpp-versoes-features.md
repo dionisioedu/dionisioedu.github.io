@@ -8,12 +8,12 @@ tags:
   - Software Engineering
   - Best Practices
   - Performance
-cover: /assets/images/cpp-versions.png
+cover: /assets/images/cpp-versions.webp
 coverAlt: Timeline of the eight C++ versions, from 1998 to 2026
 ---
 
 <section class="ae-feature">
-  <img src="/assets/images/cpp-versions.png" alt="Timeline of the eight C++ versions, from 1998 to 2026" loading="eager" />
+  <img src="/assets/images/cpp-versions.webp" alt="Timeline of the eight C++ versions, from 1998 to 2026" loading="eager" width="1200" height="630" fetchpriority="high" decoding="async" />
   <div class="ae-feature-copy">
     <p class="ae-kicker">C++ · Language · Standard Library</p>
     <h2>Your project uses C++. But which C++?</h2>
@@ -264,6 +264,7 @@ This requests **at least C++20**; it does not certify that every feature in the 
 
 ## Keep Reading
 
+- Chosen your baseline? The [practical C++ learning path](/en/reference/trilha-cpp/) connects ownership, move semantics, ranges, and performance, with exercises and a free checklist to apply in your project.
 - [C++ in HFT: where latency actually appears](/en/artigos-tecnicos/cpp-hft-low-latency/).
 - [Cache affinity: the cost of moving data](/en/artigos-tecnicos/cache-affinity/).
 - [Technical reference for stronger fundamentals](/en/reference/).

@@ -30,8 +30,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Verify and build
+        run: npm run verify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -9,7 +9,9 @@
     "check": "astro check",
     "build": "astro build",
     "check:links": "node scripts/check-dist-links.mjs",
-    "verify": "npm run check && npm run build && npm run check:links",
+    "test": "node --test scripts/test-*.mjs",
+    "check:seo": "node scripts/check-dist-seo.mjs",
+    "verify": "npm test && npm run check && npm run build && npm run check:links && npm run check:seo",
     "preview": "astro preview",
     "astro": "astro"
   },

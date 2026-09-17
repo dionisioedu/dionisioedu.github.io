@@ -11,13 +11,12 @@ export async function GET() {
     description: 'Writing on C++, low-latency systems, performance engineering, and software craftsmanship by Eduardo Dionisio.',
     site: 'https://dionisio.dev',
     xmlns: { atom: 'http://www.w3.org/2005/Atom' },
-    customData: `<atom:link href="https://dionisio.dev/rss.xml" rel="self" type="application/rss+xml"/>`,
+    customData: `<language>en</language><atom:link href="https://dionisio.dev/rss.xml" rel="self" type="application/rss+xml"/>`,
     items: posts.map((post) => ({
       title: post.title,
       description: post.excerpt,
       link: `https://dionisio.dev${post.href}`,
-      pubDate: post.publishedAt ?? new Date(),
-      author: post.author,
+      ...(post.publishedAt ? { pubDate: post.publishedAt } : {}),
       categories: post.tags.map((t) => t.label),
     })),
   });

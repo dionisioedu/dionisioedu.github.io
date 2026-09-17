@@ -1,0 +1,23 @@
+---
+const enabled = import.meta.env.PROD;
+---
+{enabled && <script is:inline>
+  (() => {
+    if (!['dionisio.dev', 'www.dionisio.dev'].includes(location.hostname)) return;
+    const loadAds = () => {
+      if (document.querySelector('script[data-dionisio-ads]')) return;
+      const script = document.createElement('script');
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.dataset.dionisioAds = '';
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6858130394830057';
+      document.head.append(script);
+    };
+    const schedule = () => {
+      if ('requestIdleCallback' in window) window.requestIdleCallback(loadAds, { timeout: 1500 });
+      else window.setTimeout(loadAds, 0);
+    };
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule, { once: true });
+  })();
+</script>}

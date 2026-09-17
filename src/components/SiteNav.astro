@@ -1,0 +1,52 @@
+---
+import SiteSearch from './SiteSearch.astro';
+interface Props { locale: 'pt' | 'en'; alternateHref: string; translated?: boolean }
+const { locale, alternateHref, translated = true } = Astro.props;
+const pt = locale === 'pt';
+---
+<div class="site-nav" data-pagefind-ignore>
+  <a class="brand" href={pt ? '/pt/' : '/'}>dionisio</a>
+  <div class="nav-tools">
+    <a class="language" href={alternateHref} lang={pt ? 'en' : 'pt-BR'} hreflang={pt ? 'en' : 'pt-BR'} title={translated ? (pt ? 'Read this page in English' : 'Ler esta página em português') : (pt ? 'Browse articles in English' : 'Ver artigos em português')}>{pt ? 'EN' : 'PT'}</a>
+    <SiteSearch locale={locale} />
+    <details class="nav-menu">
+      <summary>Menu</summary>
+      <nav aria-label={pt ? 'Navegação principal' : 'Main navigation'}>
+        <a href={`/${locale}/artigos-tecnicos/`}>Blog</a>
+        <a href={`/${locale}/reference/trilha-cpp/`}>{pt ? 'Trilha C++' : 'C++ path'}</a>
+        <a href={`/${locale}/reference/`}>{pt ? 'Referência' : 'Reference'}</a>
+        <a href={`/${locale}/open-source/`}>Open Source</a>
+        <a href={`/${locale}/about/`}>{pt ? 'Sobre' : 'About'}</a>
+        <a href={`/${locale}/shop/`}>{pt ? 'Loja' : 'Shop'}</a>
+      </nav>
+    </details>
+  </div>
+</div>
+<style>
+  .site-nav { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: .75rem; color: var(--sl-color-text, #e8f0f3); font: .85rem/1.5 var(--sl-font-mono, monospace); }
+  .brand { color: var(--sl-color-accent, #38c6ca); font-size: 1.15rem; font-weight: 700; text-decoration: none; padding: .5rem 0; }
+  .brand::before { content: '~/'; opacity: .65; }
+  .nav-tools { display: flex; gap: .75rem; align-items: center; }
+  .language { color: inherit; padding: .6rem .3rem; text-decoration: none; }
+  .nav-menu { position: relative; }
+  summary { cursor: pointer; padding: .65rem .6rem; border: 1px solid #48606b; border-radius: 3px; }
+  nav { position: absolute; top: calc(100% + .5rem); right: 0; min-width: 190px; padding: .5rem; background: var(--sl-color-bg, #101a20); border: 1px solid #48606b; border-radius: 3px; z-index: 50; box-shadow: 0 8px 28px #0005; }
+  nav a { display: block; color: inherit; padding: .75rem; text-decoration: none; }
+  nav a:hover { background: #38c6ca18; }
+  :is(a,summary):focus-visible { outline: 2px solid #38c6ca; outline-offset: 3px; }
+  @media (min-width: 1100px) {
+    .nav-menu[open] > summary { display: none; }
+    .nav-menu > nav { display: flex; position: static; padding: 0; border: 0; background: transparent; box-shadow: none; }
+    nav a { padding: .5rem; font-size: .78rem; }
+  }
+  @media (max-width: 420px) { .nav-tools { gap: .4rem; } .brand { font-size: 1rem; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.nav-menu').forEach((menu) => {
+    const media = window.matchMedia('(min-width: 1100px)');
+    const sync = () => { menu.open = media.matches; };
+    sync(); media.addEventListener('change', sync);
+    menu.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !media.matches) { menu.open = false; menu.querySelector('summary')?.focus(); } });
+    document.addEventListener('click', (event) => { if (!media.matches && !menu.contains(event.target as Node)) menu.open = false; });
+  });
+</script>

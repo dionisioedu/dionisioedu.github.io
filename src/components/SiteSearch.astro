@@ -1,0 +1,125 @@
+---
+interface Props { locale: 'pt' | 'en' }
+const { locale } = Astro.props;
+const pt = locale === 'pt';
+---
+<site-search-panel data-site-search data-locale={locale}>
+  <button class="search-toggle" type="button" aria-label={pt ? 'Buscar no site' : 'Search the site'} aria-haspopup="dialog" hidden>
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg>
+    <span>{pt ? 'Buscar' : 'Search'}</span>
+  </button>
+  <noscript><a href={`/${locale}/artigos-tecnicos/`}>{pt ? 'Artigos' : 'Articles'}</a></noscript>
+  <dialog aria-label={pt ? 'Buscar no site' : 'Search the site'}>
+    <div class="search-top"><label>{pt ? 'O que você quer aprender?' : 'What do you want to learn?'}<input type="search" autocomplete="off" maxlength="120" placeholder={pt ? 'Ex.: C++, cache, algoritmos' : 'Try C++, cache, algorithms'} /></label><button class="close-search" type="button">{pt ? 'Fechar' : 'Close'}</button></div>
+    <p class="search-status" role="status" aria-live="polite"></p>
+    <ol class="search-results"></ol>
+    <button class="load-more" type="button" hidden>{pt ? 'Carregar mais' : 'Load more'}</button>
+    <a href={`/${locale}/artigos-tecnicos/`}>{pt ? 'Explorar todos os artigos' : 'Browse all articles'}</a>
+  </dialog>
+</site-search-panel>
+<script>
+  class SiteSearchPanel extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const toggle = this.querySelector<HTMLButtonElement>('.search-toggle')!;
+      const dialog = this.querySelector<HTMLDialogElement>('dialog')!;
+      const input = this.querySelector<HTMLInputElement>('input')!;
+      const status = this.querySelector<HTMLElement>('.search-status')!;
+      const results = this.querySelector<HTMLOListElement>('.search-results')!;
+      const more = this.querySelector<HTMLButtonElement>('.load-more')!;
+      const pt = this.dataset.locale === 'pt';
+      let request = 0;
+      let timer: ReturnType<typeof setTimeout>;
+      let engine: Promise<any> | undefined;
+      let pending: Array<{ data: () => Promise<any> }> | undefined;
+      let offset = 0;
+      let activeQuery = '';
+      const loadPage = async (token: number, moveFocus = false) => {
+        if (token !== request) return;
+        const query = activeQuery;
+        more.disabled = true;
+        results.setAttribute('aria-busy', 'true');
+        status.textContent = pt ? 'Buscando…' : 'Searching…';
+        try {
+          if (!pending) {
+            const engineUrl = '/pagefind/pagefind.js';
+            engine ??= import(/* @vite-ignore */ engineUrl).catch((error) => { engine = undefined; throw error; });
+            const response = await (await engine).search(query);
+            if (token !== request) return;
+            pending = response.results;
+          }
+          const page = pending!.slice(offset, offset + 8);
+          const matches = await Promise.all(page.map((result) => result.data()));
+          if (token !== request) return;
+          // Prepare the whole page before appending so a failed page can be retried.
+          const fragment = document.createDocumentFragment();
+          let firstLink: HTMLAnchorElement | undefined;
+          for (const match of matches) {
+            const url = new URL(match.url, location.origin);
+            if (url.origin !== location.origin) continue;
+            const li = document.createElement('li'); const a = document.createElement('a'); const p = document.createElement('p');
+            a.href = url.pathname + url.search + url.hash; a.dataset.searchResult = ''; a.textContent = match.meta.title;
+            p.textContent = new DOMParser().parseFromString(match.excerpt, 'text/html').body.textContent;
+            firstLink ??= a;
+            li.append(a, p); fragment.append(li);
+          }
+          results.append(fragment);
+          offset += page.length;
+          const total = pending!.length;
+          status.textContent = total
+            ? (pt ? `Mostrando ${results.children.length} de ${total} resultados.` : `Showing ${results.children.length} of ${total} results.`)
+            : (pt ? 'Nenhum resultado. Tente outra palavra.' : 'No results. Try another word.');
+          more.textContent = pt ? 'Carregar mais' : 'Load more';
+          more.hidden = offset >= total;
+          if (moveFocus) firstLink?.focus();
+        } catch {
+          if (token !== request) return;
+          status.textContent = pt ? 'Não foi possível carregar os resultados. Tente novamente.' : 'Could not load results. Try again.';
+          more.textContent = pt ? 'Tentar novamente' : 'Try again';
+          more.hidden = false;
+        } finally {
+          if (token === request) { more.disabled = false; results.setAttribute('aria-busy', 'false'); }
+        }
+      };
+      const open = () => { if (!dialog.open) dialog.showModal(); input.focus(); };
+      toggle.hidden = false;
+      toggle.addEventListener('click', open);
+      this.querySelector('.close-search')!.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => toggle.focus());
+      document.addEventListener('keydown', (event) => { if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); open(); } });
+      more.addEventListener('click', () => { void loadPage(request, true); });
+      input.addEventListener('input', () => {
+        const token = ++request;
+        clearTimeout(timer); results.replaceChildren();
+        pending = undefined; offset = 0; more.hidden = true; more.disabled = false;
+        results.setAttribute('aria-busy', 'false'); status.textContent = '';
+        activeQuery = input.value.trim();
+        if (!activeQuery) return;
+        timer = setTimeout(() => { void loadPage(token); }, 200);
+      });
+    }
+  }
+  if (!customElements.get('site-search-panel')) customElements.define('site-search-panel', SiteSearchPanel);
+</script>
+<style>
+  site-search-panel { display: inline-flex; }
+  button { font: inherit; cursor: pointer; }
+  .search-toggle { display: inline-flex; gap: .4rem; align-items: center; min-height: 44px; padding: .4rem .6rem; color: inherit; border: 1px solid #48606b; border-radius: 3px; background: transparent; }
+  .search-toggle[hidden] { display: none; }
+  dialog { box-sizing: border-box; position: fixed; inset: 10vh auto auto 50%; transform: translateX(-50%); margin: 0; width: min(680px, calc(100vw - 32px)); max-height: 80vh; overflow-y: auto; padding: 1.25rem; border: 1px solid #48606b; border-radius: 6px; background: #101a20; color: #e8f0f3; font: 16px/1.5 system-ui, sans-serif; z-index: 100; }
+  dialog::backdrop { background: #000a; }
+  .search-top { display: flex; gap: .75rem; align-items: flex-end; }
+  label { display: grid; gap: .5rem; flex: 1; min-width: 0; }
+  input { width: 100%; box-sizing: border-box; font: inherit; background: #0d1418; color: #e8f0f3; border: 1px solid #627986; border-radius: 3px; min-height: 44px; padding: .5rem; }
+  .close-search, .load-more { min-height: 44px; border: 1px solid #627986; color: #e8f0f3; background: transparent; padding: .4rem .6rem; border-radius: 3px; }
+  .load-more { margin: 0 .75rem .75rem 0; }
+  .load-more:disabled { cursor: wait; opacity: .6; }
+  .search-results { padding: 0; list-style: none; }
+  .search-results :global(li) { border-top: 1px solid #354b56; padding: .9rem 0; }
+  .search-results :global(a), dialog > a { color: #65dce0; font-weight: 600; }
+  .search-results :global(p) { margin: .4rem 0 0; color: #bdcdd5; }
+  .search-status { color: #bdcdd5; margin: .8rem 0; }
+  :is(button, input):focus-visible { outline: 2px solid #65dce0; outline-offset: 3px; }
+  @media (max-width: 420px) { .search-toggle span { display: none; } }
+</style>

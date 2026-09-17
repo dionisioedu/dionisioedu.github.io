@@ -354,3 +354,7 @@ relativamente pequenas no layout de dados e política de scheduling.
 
 Da próxima vez que seu sistema estiver lento, antes de mexer no algoritmo, pergunte: **meus dados
 estão no lugar certo?**
+
+## Continue a Leitura
+
+Conecte o custo de memória ao orçamento de latência em [C++ em HFT e baixa latência](/pt/artigos-tecnicos/cpp-hft-low-latency/). Se ainda precisa organizar a base, a [trilha prática de C++](/pt/reference/trilha-cpp/) passa por ownership, move semantics e ranges antes de chegar aos benchmarks. Leve o checklist gratuito da trilha para a próxima revisão de código.

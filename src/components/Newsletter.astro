@@ -1,0 +1,59 @@
+---
+interface Props { locale?: 'pt' | 'en' }
+const { locale = 'en' } = Astro.props;
+const pt = locale === 'pt';
+---
+<section class="newsletter" aria-label="Newsletter" data-newsletter data-locale={locale}>
+  <p>{pt ? 'Receba exemplos práticos de C++ e performance no seu e-mail.' : 'Get practical C++ and performance examples in your inbox.'}</p>
+  <form action="https://app.kit.com/forms/9715720/subscriptions" method="post" data-newsletter-form>
+    <label>{pt ? 'Seu e-mail' : 'Your email'}<input name="email_address" type="email" autocomplete="email" required /></label>
+    <button type="submit">{pt ? 'Quero receber' : 'Subscribe'}</button>
+  </form>
+  <p class="newsletter-note">{pt ? 'Cancele quando quiser.' : 'Unsubscribe at any time.'} <a href="https://dionisio-developer.kit.com/6fa15fabec">{pt ? 'Abrir formulário no Kit' : 'Open form on Kit'}</a></p>
+  <p role="status" aria-live="polite" data-newsletter-status></p>
+</section>
+<script>
+  import { track } from './analytics.client.js';
+  function mountNewsletters() {
+    document.querySelectorAll<HTMLFormElement>('[data-newsletter-form]').forEach((form) => {
+      if (form.dataset.bound) return;
+      form.dataset.bound = 'true';
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const button = form.querySelector<HTMLButtonElement>('button')!;
+        if (button.disabled) return;
+        const root = form.closest<HTMLElement>('[data-newsletter]')!;
+        const pt = root.dataset.locale === 'pt';
+        const status = root.querySelector<HTMLElement>('[data-newsletter-status]')!;
+        button.disabled = true;
+        status.textContent = pt ? 'Enviando…' : 'Sending…';
+        track('newsletter_submit', { source: 'newsletter', content_id: '6fa15fabec' });
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          const result = await response.json();
+          if (!response.ok || result.status !== 'success') throw new Error('Subscription not confirmed');
+          status.textContent = pt ? 'Pedido recebido! Confira seu e-mail para confirmar a inscrição.' : 'Request received! Check your email to confirm your subscription.';
+          track('newsletter_signup', { source: 'newsletter', content_id: '6fa15fabec' });
+          form.hidden = true;
+        } catch {
+          status.textContent = pt ? 'Não foi possível confirmar. Tente novamente ou abra o formulário no Kit.' : 'Could not confirm. Try again or open the form on Kit.';
+          button.disabled = false;
+        }
+      });
+    });
+  }
+  mountNewsletters();
+  document.addEventListener('astro:page-load', mountNewsletters);
+</script>
+<style>
+  .newsletter { margin: 2rem 0; padding-block: 1rem; border-block: 1px solid var(--ae-border, #64748b); min-height: 210px; }
+  form { display: flex; align-items: end; gap: .75rem; flex-wrap: wrap; }
+  label { display: grid; gap: .35rem; flex: 1; min-width: 180px; }
+  input, button { font: inherit; padding: .65rem .9rem; border-radius: 4px; border: 1px solid var(--ae-border, #64748b); }
+  input { color: var(--sl-color-text, #fff); background: var(--sl-color-bg, #13232d); width: 100%; }
+  button { cursor: pointer; background: var(--sl-color-accent-high, #38c6ca); color: var(--sl-color-accent-low, #102329); }
+  button:disabled { opacity: .6; cursor: wait; }
+  .newsletter-note { font-size: .85rem; }
+  [data-newsletter-status] { min-height: 1.5em; }
+  form[hidden] { display: none; }
+</style>

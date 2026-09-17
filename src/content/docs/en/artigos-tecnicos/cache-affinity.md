@@ -353,3 +353,7 @@ relatively small changes to data layout and scheduling policy.
 
 Next time your system is slow, before touching the algorithm, ask: **is my data in the right
 place?**
+
+## Keep Reading
+
+Connect memory costs to a latency budget in [C++ in HFT and low latency](/en/artigos-tecnicos/cpp-hft-low-latency/). If you still need to organize the fundamentals, the [practical C++ learning path](/en/reference/trilha-cpp/) covers ownership, move semantics, and ranges before reaching benchmarks. Bring the path's free checklist to your next code review.
