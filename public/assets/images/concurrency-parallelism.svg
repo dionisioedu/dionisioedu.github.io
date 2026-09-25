@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d1418"/>
+  <g fill="none" stroke="#22343d"><path d="M0 100H1200M0 530H1200M600 100V530"/></g>
+  <g font-family="Consolas, monospace" fill="#bdd0d8">
+    <text x="56" y="65" font-size="22" fill="#38c6ca">DIONISIO.DEV / C++</text>
+    <text x="56" y="162" font-size="35" fill="#e8f0f3">1 CPU</text>
+    <text x="656" y="162" font-size="35" fill="#e8f0f3">2 CPUs</text>
+    <text x="56" y="238" font-size="22">CPU 1</text>
+    <text x="656" y="238" font-size="22">CPU 1</text>
+    <text x="656" y="378" font-size="22">CPU 2</text>
+  </g>
+  <g fill="#38c6ca"><rect x="56" y="260" width="106" height="80" rx="5"/><rect x="304" y="260" width="106" height="80" rx="5"/><rect x="656" y="260" width="206" height="80" rx="5"/><rect x="882" y="260" width="206" height="80" rx="5"/></g>
+  <g fill="#c6a7ff"><rect x="180" y="260" width="106" height="80" rx="5"/><rect x="428" y="260" width="106" height="80" rx="5"/><rect x="656" y="400" width="206" height="80" rx="5"/><rect x="882" y="400" width="206" height="80" rx="5"/></g>
+  <g font-family="Consolas, monospace" font-size="30" fill="#0d1418" text-anchor="middle">
+    <text x="109" y="310">A1</text><text x="233" y="310">B1</text><text x="357" y="310">A2</text><text x="481" y="310">B2</text>
+    <text x="759" y="310">A1</text><text x="985" y="310">A2</text><text x="759" y="450">B1</text><text x="985" y="450">B2</text>
+  </g>
+  <g stroke="#bdd0d8" stroke-width="2" fill="none"><path d="M56 575H534l-12 -8m12 8l-12 8M656 575H1088l-12 -8m12 8l-12 8"/></g>
+  <g font-family="Consolas, monospace" font-size="22" fill="#bdd0d8"><text x="548" y="582">t</text><text x="1102" y="582">t</text></g>
+</svg>

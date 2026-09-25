@@ -36,6 +36,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Paralelismo vs. Concorrência', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
                 { label: 'C++ por Versão — Do C++98 ao C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
                 { label: 'SDLC — O Ciclo de Vida do Desenvolvimento de Software', link: 'artigos-tecnicos/sdlc-reference/' },
             { label: 'C++ em High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
@@ -104,6 +105,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Parallelism vs. Concurrency', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
                 { label: 'C++ by Version — From C++98 to C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
                 { label: 'SDLC — The Software Development Life Cycle', link: 'artigos-tecnicos/sdlc-reference/' },
                 { label: 'C++ in High-Frequency Trading', link: 'artigos-tecnicos/cpp-hft-low-latency/' },
@@ -175,6 +177,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'Parallelism vs. Concurrency',
+              translations: { 'pt-BR': 'Paralelismo vs. Concorrência' },
+              link: 'artigos-tecnicos/paralelismo-vs-concorrencia/',
+            },
             {
               label: 'C++ by Version — From C++98 to C++26',
               translations: { 'pt-BR': 'C++ por Versão — Do C++98 ao C++26' },
