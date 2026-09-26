@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d1418"/>
+  <path d="M0 100H1200M0 530H1200" stroke="#22343d"/>
+  <g font-family="Consolas, monospace">
+    <text x="56" y="65" fill="#38c6ca" font-size="22">DIONISIO.DEV / C++20</text>
+    <text x="56" y="172" fill="#e8f0f3" font-size="48">co_await</text>
+    <text x="58" y="228" fill="#bdd0d8" font-size="22">coroutine A</text>
+    <rect x="56" y="270" width="250" height="86" rx="5" fill="#38c6ca"/>
+    <rect x="850" y="270" width="294" height="86" rx="5" fill="#38c6ca"/>
+    <g fill="#0d1418" font-size="27" text-anchor="middle"><text x="181" y="323">A: start</text><text x="997" y="323">A: resume</text></g>
+    <path d="M308 313H848" fill="none" stroke="#bdd0d8" stroke-width="2" stroke-dasharray="8 8"/>
+    <text x="578" y="289" fill="#bdd0d8" font-size="21" text-anchor="middle">suspended</text>
+    <rect x="368" y="408" width="420" height="74" rx="5" fill="#c6a7ff"/>
+    <text x="578" y="455" fill="#0d1418" font-size="27" text-anchor="middle">B: work</text>
+    <path d="M306 355L366 420M790 420L850 355" stroke="#bdd0d8" stroke-width="2" fill="none"/>
+    <path d="M56 575H1118l-12 -8m12 8l-12 8" stroke="#bdd0d8" stroke-width="2" fill="none"/>
+    <text x="1130" y="583" fill="#bdd0d8" font-size="22">t</text>
+  </g>
+</svg>

@@ -36,6 +36,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Corrotinas e Programação Assíncrona em C++', link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/' },
                 { label: 'Paralelismo vs. Concorrência', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
                 { label: 'C++ por Versão — Do C++98 ao C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
                 { label: 'SDLC — O Ciclo de Vida do Desenvolvimento de Software', link: 'artigos-tecnicos/sdlc-reference/' },
@@ -105,6 +106,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Coroutines and Asynchronous Programming in C++', link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/' },
                 { label: 'Parallelism vs. Concurrency', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
                 { label: 'C++ by Version — From C++98 to C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
                 { label: 'SDLC — The Software Development Life Cycle', link: 'artigos-tecnicos/sdlc-reference/' },
@@ -177,6 +179,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'Coroutines and Asynchronous Programming in C++',
+              translations: { 'pt-BR': 'Corrotinas e Programação Assíncrona em C++' },
+              link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/',
+            },
             {
               label: 'Parallelism vs. Concurrency',
               translations: { 'pt-BR': 'Paralelismo vs. Concorrência' },
