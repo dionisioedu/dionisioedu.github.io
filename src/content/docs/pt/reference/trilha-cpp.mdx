@@ -16,7 +16,7 @@ A ordem é simples: entender a ferramenta, cuidar dos recursos, expressar as ope
 | Etapa | Pergunta que você vai responder | Material |
 | --- | --- | --- |
 | 1. Versões | O que minha toolchain realmente suporta? | [C++ por versão](/pt/artigos-tecnicos/cpp-versoes-features/) |
-| 2. RAII e ownership | Quem libera este recurso? | Lição e exercício abaixo |
+| 2. RAII e ownership | Quem libera este recurso? | [RAII: ownership como tipo](/pt/artigos-tecnicos/raii/) · Lição abaixo |
 | 3. Move semantics | Estou copiando ou transferindo? | Lição e exercício abaixo |
 | 4. Concepts e ranges | Como declarar requisitos e compor operações? | Lição e exercício abaixo |
 | 5. Memória e cache | Como a organização dos dados afeta o acesso? | [Cache affinity](/pt/artigos-tecnicos/cache-affinity/) |
@@ -43,7 +43,7 @@ int main() {
 }
 ```
 
-`unique_ptr` existe desde C++11; `make_unique` chegou em C++14. A recomendação de ligar recursos a objetos está em [R.1 das C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii).
+`unique_ptr` existe desde C++11; `make_unique` chegou em C++14. A recomendação de ligar recursos a objetos está em [R.1 das C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii). Para o argumento completo — o que o padrão garante, onde o RAII quebra e as cinco regras de ownership — leia [RAII: ownership como tipo](/pt/artigos-tecnicos/raii/).
 
 **Entrega:** encontre um recurso no projeto e escreva quem o possui, quem só o consulta e quando ele é liberado. Para memória dinâmica com um único dono, experimente `unique_ptr`. Para objetos locais e coleções, considere primeiro valores e containers. Não troque todo ponteiro por `shared_ptr` sem uma necessidade real de posse compartilhada.
 

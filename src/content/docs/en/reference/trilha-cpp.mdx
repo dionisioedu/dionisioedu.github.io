@@ -16,7 +16,7 @@ The order is straightforward: understand the tools, manage resources, express op
 | Step | Question you will answer | Material |
 | --- | --- | --- |
 | 1. Versions | What does my toolchain actually support? | [C++ by version](/en/artigos-tecnicos/cpp-versoes-features/) |
-| 2. RAII and ownership | Who releases this resource? | Lesson and exercise below |
+| 2. RAII and ownership | Who releases this resource? | [RAII: ownership as a type](/en/artigos-tecnicos/raii/) · Lesson below |
 | 3. Move semantics | Am I copying or transferring? | Lesson and exercise below |
 | 4. Concepts and ranges | How do I state requirements and compose operations? | Lesson and exercise below |
 | 5. Memory and cache | How does data organization affect access? | [Cache affinity](/en/artigos-tecnicos/cache-affinity/) |
@@ -43,7 +43,7 @@ int main() {
 }
 ```
 
-`unique_ptr` has existed since C++11; `make_unique` arrived in C++14. The recommendation to tie resources to objects is in [R.1 of the C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii).
+`unique_ptr` has existed since C++11; `make_unique` arrived in C++14. The recommendation to tie resources to objects is in [R.1 of the C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-raii). For the full argument — what the standard guarantees, where RAII breaks, and the five ownership rules — read [RAII: ownership as a type](/en/artigos-tecnicos/raii/).
 
 **Assignment:** find a resource in your project and write down who owns it, who only observes it, and when it is released. For dynamically allocated memory with a single owner, try `unique_ptr`. For local objects and collections, consider values and containers first. Do not replace every pointer with `shared_ptr` without a real need for shared ownership.
 
