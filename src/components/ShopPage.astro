@@ -92,14 +92,15 @@ const copy = {
         staticLabel: 'Lançamento futuro',
       },
       {
-        image: '/assets/images/office-1.webp',
-        alt: 'Sessão de mentoria técnica',
-        badge: 'Em breve',
-        title: 'Mentoria 1:1',
-        body: 'Uma proposta para revisar carreira, código, direção de estudo e próximos passos com contexto técnico.',
+        image: '/assets/images/mentoria-1.webp',
+        alt: 'Sessão de mentoria técnica 1:1',
+        badge: 'Disponível',
+        title: 'Mentoria 1:1 — Direção de Carreira',
+        body: 'Diagnóstico honesto, plano de 90 dias e acompanhamento com quem tem 20+ anos de C++. Comece pela sessão de diagnóstico.',
         meta: ['Mentoria', 'Carreira', 'Direção'],
-        currentPrice: 'Em breve',
-        staticLabel: 'Abertura futura',
+        currentPrice: 'A partir de R$ 297',
+        href: '/pt/mentoria/',
+        button: 'Ver detalhes',
       },
       {
         image: '/assets/images/trilha-de-aprendizado.webp',
@@ -225,14 +226,15 @@ const copy = {
         staticLabel: 'Future release',
       },
       {
-        image: '/assets/images/office-1.webp',
-        alt: 'Technical mentoring session',
-        badge: 'Coming soon',
-        title: '1:1 Mentoring',
-        body: 'A future offer for reviewing career direction, code, study plans, and next technical moves with context.',
+        image: '/assets/images/mentoria-1.webp',
+        alt: 'Technical 1:1 mentorship session',
+        badge: 'Available',
+        title: '1:1 Mentorship — Career Direction',
+        body: 'An honest diagnosis, a 90-day plan, and follow-through with someone who has 20+ years in C++. Start with the diagnosis session.',
         meta: ['Mentoring', 'Career', 'Direction'],
-        currentPrice: 'Coming soon',
-        staticLabel: 'Future opening',
+        currentPrice: 'From $99',
+        href: '/en/mentorship/',
+        button: 'See details',
       },
       {
         image: '/assets/images/trilha-de-aprendizado.webp',
@@ -338,9 +340,13 @@ const t = copy[locale];
               <span class="dd-price-current">{product.currentPrice}</span>
             </div>
             {product.href ? (
-              <a class="dd-shop-buy" href={product.href} target="_blank" rel="noopener noreferrer">
-                {product.action}
-              </a>
+              product.href.startsWith('/') ? (
+                <a class="dd-shop-buy" href={product.href}>{product.button ?? t.buy}</a>
+              ) : (
+                <a class="dd-shop-buy" href={product.href} target="_blank" rel="noopener noreferrer">
+                  {product.action}
+                </a>
+              )
             ) : (
               <span class="dd-shop-link">{product.staticLabel}</span>
             )}
