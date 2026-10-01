@@ -240,6 +240,7 @@ If you are early in your C++ journey, RAII is the concept worth being able to ex
 
 ## Keep Reading
 
+- [Smart Pointers in C++](/en/artigos-tecnicos/smart-pointers/) — how ownership-as-a-type turns into the three concrete types you actually use, and what each one costs.
 - [C++ by Version](/en/artigos-tecnicos/cpp-versoes-features/) — when `unique_ptr`, `make_unique`, `noexcept` defaults, and `std::uncaught_exceptions` entered the standard.
 - [Practical C++ learning path](/en/reference/trilha-cpp/) — the ownership module, exercises, and a free modernization checklist.
 - [Cache Affinity](/en/artigos-tecnicos/cache-affinity/) — where ownership decisions turn into performance.
