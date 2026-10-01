@@ -66,6 +66,20 @@
     --sl-shadow-sm: 0 4px 12px rgba(10, 20, 30, 0.04);
     --sl-shadow-md: 0 8px 24px rgba(10, 20, 30, 0.06);
     --sl-shadow-lg: 0 16px 40px rgba(10, 20, 30, 0.08);
+
+    --sl-text-body: 1rem;
+    --sl-text-body-sm: 0.875rem;
+    --sl-text-code: 1rem;
+    --sl-text-code-sm: 0.875rem;
+    --sl-text-h1: 2rem;
+    --sl-text-h2: 1.5rem;
+    --sl-text-h3: 1.25rem;
+    --sl-text-h4: 1.1rem;
+    --sl-text-h5: 1rem;
+    --sl-text-xs: 0.75rem;
+    --sl-text-sm: 0.875rem;
+    --sl-text-lg: 1.125rem;
+    --sl-text-xl: 1.25rem;
   }
 }
 
@@ -851,7 +865,7 @@
   }
 
   .sl-markdown-content h2 {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
     font-weight: 600 !important;
     margin-top: 2rem !important;
     margin-bottom: 0.6rem !important;
@@ -946,4 +960,44 @@ starlight-menu-button { display: none !important; }
 :root[data-theme='light'] { --ae-muted: #405966; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ── Hierarchical table of contents ── */
+/* Starlight nests child headings in a <ul> inside their parent <li>. Without
+   this, every level renders at the same size/weight and the outline is flat. */
+starlight-toc a {
+  font-size: 0.82rem !important;
+  line-height: 1.35;
+  color: var(--sl-color-gray-2) !important;
+  border-left: 2px solid transparent;
+  border-radius: 0 !important;
+}
+starlight-toc > nav > ul > li > a {
+  font-size: 0.86rem !important;
+  font-weight: 600;
+  color: var(--sl-color-gray-1) !important;
+}
+starlight-toc li > ul a {
+  font-size: 0.78rem !important;
+  font-weight: 400;
+  color: var(--ae-muted) !important;
+}
+starlight-toc li > ul li > ul a {
+  font-size: 0.74rem !important;
+  color: var(--sl-color-gray-3) !important;
+}
+starlight-toc a:hover {
+  color: var(--sl-color-white) !important;
+  border-left-color: var(--ae-border-strong);
+}
+starlight-toc a[aria-current='true'],
+starlight-toc a[aria-current='true']:hover {
+  color: var(--sl-color-accent) !important;
+  border-left-color: var(--sl-color-accent);
+}
+starlight-toc li > ul {
+  margin-top: 0.15rem;
+  margin-bottom: 0.4rem;
+  padding-inline-start: 0.75rem;
+  border-inline-start: 1px solid var(--ae-border);
 }

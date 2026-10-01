@@ -1,0 +1,25 @@
+# Dionisio Developer
+
+> Personal site of Eduardo Dionisio (@dionisiodev), a C++ Software Developer & AI Engineer. Practical C++ (modern language features, ownership, concurrency, performance engineering), applied AI, developer tooling, career guidance, technical reference material, and a small shop of guides and ebooks.
+
+## Blog
+
+- [Technical Articles (Blog)](https://dionisio.dev/en/artigos-tecnicos/): All English technical articles on C++, performance, applied AI and career.
+- [RAII in C++ — Ownership as a Type, Not a Convention](https://dionisio.dev/en/artigos-tecnicos/raii/): Deterministic resource management and RAII in modern C++.
+- [Smart Pointers in C++ — unique_ptr, shared_ptr and weak_ptr](https://dionisio.dev/en/artigos-tecnicos/smart-pointers/): Choosing the right smart pointer and how ownership works.
+- [C++ by Version — What Changed from C++98 to C++26](https://dionisio.dev/en/artigos-tecnicos/cpp-versoes-features/): A per-version tour of the C++ language and standard library.
+- [C++ in High-Frequency Trading — What Actually Matters for Low Latency](https://dionisio.dev/en/artigos-tecnicos/cpp-hft-low-latency/): Low-latency C++ engineering and performance in HFT systems.
+- [RSS feed](https://dionisio.dev/rss.xml): Subscribe to new English articles.
+
+## Reference
+
+- [Reference (Guides)](https://dionisio.dev/en/reference/): Technical reference and learning material — data types, data structures, algorithms and more.
+- [C++ Learning Path](https://dionisio.dev/en/reference/trilha-cpp/): A structured roadmap for learning C++ from the ground up.
+
+## Portfolio
+
+- [Projects](https://dionisio.dev/en/projects/): Selected software projects, products and experiments by Eduardo Dionisio.
+
+## Shop
+
+- [Shop](https://dionisio.dev/en/shop/): Guides, ebooks and digital products for developers.

@@ -278,6 +278,48 @@ const externalLinks = [
       .view-all:hover { color: #fff; }
       .view-all::after { content: ' →'; }
 
+      /* ── Start here ── */
+      .start-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .start-card {
+        display: grid;
+        gap: 6px;
+        padding: 18px 20px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        text-decoration: none;
+        transition: border-color 140ms, background 140ms;
+      }
+      .start-card:hover {
+        border-color: var(--accent);
+        background: var(--surface-hover);
+      }
+      .start-card .start-kicker {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.75;
+      }
+      .start-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.3;
+      }
+      .start-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.6;
+      }
+
       /* ── About snippet ── */
       .about-snippet {
         padding: 24px;
@@ -320,6 +362,7 @@ const externalLinks = [
       @media (max-width: 640px) {
         .container { padding: 32px 16px 48px; }
         .post-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 16px; }
+        .start-grid { grid-template-columns: 1fr; }
       }
     </style>
     <script type="application/ld+json">
@@ -361,11 +404,39 @@ const externalLinks = [
         <a class="lang-switch" href="/pt/">🇧🇷 Também disponível em português</a>
       </section>
 
+      <!-- Start here -->
+      <section class="section start-here">
+        <h2 class="section-title">// Start here</h2>
+        <div class="start-grid">
+          <a class="start-card" href="/en/reference/trilha-cpp/">
+            <span class="start-kicker">Learning path</span>
+            <h3>The C++ Path</h3>
+            <p>Six steps from ownership and move semantics to ranges, cache, and low latency — with working examples.</p>
+          </a>
+          <a class="start-card" href="/en/artigos-tecnicos/raii/">
+            <span class="start-kicker">Most read</span>
+            <h3>RAII — Ownership as a Type</h3>
+            <p>Why a smart-pointer bug is an ownership bug, not a memory bug.</p>
+          </a>
+          <a class="start-card" href="/en/shop/">
+            <span class="start-kicker">eBooks</span>
+            <h3>Practical C++ Guides</h3>
+            <p>Focused, example-driven material for engineers who want depth without the fluff.</p>
+          </a>
+        </div>
+      </section>
+
       <!-- Nav -->
       <nav class="nav-strip">
         {primaryLinks.map(link => <a href={link.href}>{link.label}</a>)}
         {externalLinks.map(link => <a href={link.href} class="external" target="_blank" rel="noopener noreferrer">{link.label}</a>)}
       </nav>
+
+      <!-- Newsletter -->
+      <section class="section">
+        <p class="section-title">// Newsletter</p>
+        <Newsletter locale="en" />
+      </section>
 
       <!-- Latest posts -->
       <section class="section">
@@ -392,12 +463,6 @@ const externalLinks = [
         <h2 class="section-title">// Learn C++ with a path</h2>
         <p>From ownership and move semantics to ranges, cache, and low latency. Follow six steps with working examples and a modernization checklist.</p>
         <a class="view-all" href="/en/reference/trilha-cpp/">Start the C++ learning path →</a>
-      </section>
-
-      <!-- Newsletter -->
-      <section class="section">
-        <p class="section-title">// Newsletter</p>
-        <Newsletter locale="en" />
       </section>
 
       <!-- About snippet -->

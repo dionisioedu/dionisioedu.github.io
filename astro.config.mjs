@@ -1,5 +1,102 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { join, relative, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+/** @type {Map<string, Date>} normalised URL path -> last modification date */
+const lastmodByPath = new Map();
+
+const DOCS_DIR = fileURLToPath(new URL('./src/content/docs', import.meta.url));
+const SITE_ORIGIN = 'https://dionisio.dev';
+
+/** Recursively collect every `.md`/`.mdx` file under `dir`. */
+function walkDocs(dir) {
+  const out = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...walkDocs(full));
+    else if (/\.(md|mdx)$/i.test(entry.name)) out.push(full);
+  }
+  return out;
+}
+
+/**
+ * Builds a URL-path -> Date map from the `docs` collection frontmatter
+ * (`updatedAt`, falling back to `publishedAt`). Reads the files directly from
+ * disk so it does not depend on Vite's module runner (unavailable in this
+ * build hook). Pages without a known date are left untouched so we never emit
+ * a build-time timestamp that would churn the sitemap on every deployment.
+ */
+function collectLastmodDates(logger) {
+  for (const file of walkDocs(DOCS_DIR)) {
+    const source = readFileSync(file, 'utf8');
+    // Only inspect the leading YAML frontmatter block.
+    const match = /^---\r?\n([\s\S]*?)\r?\n---/.exec(source);
+    if (!match) continue;
+    const frontmatter = match[1];
+    const updated = /^\s*updatedAt:\s*(.+)$/m.exec(frontmatter);
+    const published = /^\s*publishedAt:\s*(.+)$/m.exec(frontmatter);
+    const raw = (updated?.[1] ?? published?.[1] ?? '').trim().replace(/^['"]|['"]$/g, '');
+    if (!raw) continue;
+    const date = new Date(raw);
+    if (Number.isNaN(date.getTime())) continue;
+    // Content path relative to src/content/docs, e.g. `en/about.md` -> `/en/about/`.
+    const id = relative(DOCS_DIR, file).replace(/\.(md|mdx)$/i, '').split(sep).join('/');
+    lastmodByPath.set(`/${id}/`, date);
+  }
+  logger.info(`sitemap lastmod: resolved dates for ${lastmodByPath.size} docs entries`);
+}
+
+/** Inject `<lastmod>` into the `<url>` entries that have a known date. */
+function injectLastmod(sitemapXml, logger) {
+  let injected = 0;
+  const updated = sitemapXml.replace(
+    /<url><loc>([^<]+)<\/loc>/g,
+    (full, loc) => {
+      const path = loc.startsWith(SITE_ORIGIN)
+        ? loc.slice(SITE_ORIGIN.length) || '/'
+        : loc;
+      const date = lastmodByPath.get(path);
+      if (!date) return full;
+      injected += 1;
+      return `<url><loc>${loc}</loc><lastmod>${date.toISOString()}</lastmod>`;
+    },
+  );
+  return { updated, injected };
+}
+
+/**
+ * Populates `lastmodByPath` before the build and rewrites the sitemap that
+ * Starlight's bundled `@astrojs/sitemap` integration writes to `dist`, so we
+ * do not interfere with Starlight's own sitemap/i18n wiring.
+ */
+function sitemapLastmodData() {
+  return {
+    name: 'dionisio:sitemap-lastmod',
+    hooks: {
+      'astro:build:start'({ logger }) {
+        try {
+          collectLastmodDates(logger);
+        } catch (error) {
+          logger.warn(`sitemap lastmod: could not resolve dates (${error.message})`);
+        }
+      },
+      'astro:build:done'({ dir, logger }) {
+        const destDir = fileURLToPath(dir);
+        const files = readdirSync(destDir).filter((name) => /^sitemap-\d+\.xml$/.test(name));
+        let total = 0;
+        for (const name of files) {
+          const file = join(destDir, name);
+          const { updated, injected } = injectLastmod(readFileSync(file, 'utf8'), logger);
+          if (injected > 0) writeFileSync(file, updated);
+          total += injected;
+        }
+        logger.info(`sitemap lastmod: added <lastmod> to ${total} sitemap URLs`);
+      },
+    },
+  };
+}
 
 export default defineConfig({
   site: 'https://dionisio.dev',
@@ -262,5 +359,6 @@ export default defineConfig({
         { label: 'About', link: 'about/' },
       ],
     }),
+    sitemapLastmodData(),
   ],
 });

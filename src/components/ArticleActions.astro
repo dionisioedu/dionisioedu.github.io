@@ -1,10 +1,17 @@
 ---
 const { locale = 'en' } = Astro.props;
 const pt = locale === 'pt';
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://dionisio.dev').href;
+const shareTitle = pt ? 'Compartilhar artigo' : 'Share article';
+const xShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(shareTitle)}`;
+const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`;
 ---
 <div class="article-actions" data-article-actions data-locale={locale}>
   <button type="button" data-share>{pt ? 'Compartilhar artigo' : 'Share article'}</button>
   <button type="button" data-copy>{pt ? 'Copiar link' : 'Copy link'}</button>
+  <a href={xShareUrl} target="_blank" rel="noopener noreferrer" data-share-x>{pt ? 'Compartilhar no X' : 'Share on X'}</a>
+  <a href={linkedinShareUrl} target="_blank" rel="noopener noreferrer" data-share-linkedin>{pt ? 'Compartilhar no LinkedIn' : 'Share on LinkedIn'}</a>
   <span role="status" aria-live="polite"></span>
 </div>
 <script>
@@ -15,6 +22,11 @@ const pt = locale === 'pt';
       root.dataset.bound = 'true';
       root.addEventListener('click', async (event) => {
         if (!(event.target instanceof Element)) return;
+        const link = event.target.closest<HTMLAnchorElement>('a[data-share-x], a[data-share-linkedin]');
+        if (link) {
+          track('share', { method: link.hasAttribute('data-share-x') ? 'x' : 'linkedin' });
+          return;
+        }
         const button = event.target.closest('button');
         if (!button) return;
         const pt = root.dataset.locale === 'pt';
@@ -39,5 +51,7 @@ const pt = locale === 'pt';
 <style>
   .article-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block: 1.5rem; align-items: center; }
   button { font: inherit; background: transparent; color: inherit; padding: .55rem .9rem; border: 1px solid var(--ae-border, #64748b); border-radius: 4px; cursor: pointer; }
+  a[data-share-x], a[data-share-linkedin] { font: inherit; background: transparent; color: inherit; padding: .55rem .9rem; border: 1px solid var(--ae-border, #64748b); border-radius: 4px; cursor: pointer; text-decoration: none; }
+  a[data-share-x]:hover, a[data-share-linkedin]:hover { border-color: var(--sl-color-white, #fff); }
   span { font-size: .85rem; }
 </style>

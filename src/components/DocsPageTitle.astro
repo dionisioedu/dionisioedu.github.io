@@ -22,6 +22,16 @@ const dateLabel =
     : undefined;
 const authorLabel = author ?? 'Dionisio';
 const byLabel = currentLocale === 'pt' ? 'por' : 'by';
+const readingTime = Math.max(
+  1,
+  Math.ceil(
+    (entry.body ?? '').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean).length / 200
+  )
+);
+const readingTimeLabel =
+  currentLocale === 'pt'
+    ? `${readingTime} min de leitura`
+    : `${readingTime} min read`;
 ---
 
 <>
@@ -32,6 +42,8 @@ const byLabel = currentLocale === 'pt' ? 'por' : 'by';
         {dateLabel}
         {dateLabel && authorLabel ? ' · ' : ''}
         {authorLabel ? `${byLabel} ${authorLabel}` : ''}
+        {' · '}
+        {readingTimeLabel}
       </p>
     )
   }

@@ -9,6 +9,20 @@ type FooterLink = { label: string; href: string; external?: boolean };
 
 const isBlogPost = Astro.url.pathname.includes('/artigos-tecnicos/') && !Astro.url.pathname.endsWith('/artigos-tecnicos/');
 
+const authorBio = {
+  name: 'Eduardo Dionisio',
+  handle: '@dionisiodev',
+  role: isPt ? 'Desenvolvedor C++ e Engenheiro de IA' : 'C++ Software Developer & AI Engineer',
+  text: isPt
+    ? 'Mais de 20 anos construindo sistemas de alta performance, infraestrutura de trading e ferramentas para desenvolvedores. Escrevo sobre ownership em C++, performance e IA aplicada.'
+    : '20+ years building high-performance systems, trading infrastructure, and developer tools. I write about C++ ownership, performance, and applied AI.',
+  links: [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dionisiodev/' },
+    { label: 'GitHub', href: 'https://github.com/dionisioedu' },
+    { label: 'X', href: 'https://x.com/dionisiodev' },
+  ],
+};
+
 const followCta = isPt
   ? { text: 'Gostou do artigo? Me acompanhe no', links: [
       { label: 'X', href: 'https://x.com/dionisiodev' },
@@ -102,6 +116,22 @@ const copy = isPt
 
 <footer class="ae-site-footer">
   {isBlogPost && <ArticleActions locale={isPt ? 'pt' : 'en'} />}
+  {
+    isBlogPost && (
+      <section class="ae-author-bio" aria-label="Author">
+        <p class="ae-author-bio-name">
+          {authorBio.name} <span class="ae-author-bio-handle">{authorBio.handle}</span>
+        </p>
+        <p class="ae-author-bio-role">{authorBio.role}</p>
+        <p class="ae-author-bio-text">{authorBio.text}</p>
+        <p class="ae-author-bio-links">
+          {authorBio.links.map((l, i) => (
+            <>{i > 0 && ' · '}<a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></>
+          ))}
+        </p>
+      </section>
+    )
+  }
   {isBlogPost && /cpp|c-plus|low-latency|baixa-latencia/.test(Astro.url.pathname) && <p><a href={`/${isPt ? 'pt' : 'en'}/reference/trilha-cpp/`} data-analytics-event="select_content" data-analytics-source="cpp-trail">{isPt ? 'Continue na trilha de C++ e performance →' : 'Continue with the C++ and performance learning path →'}</a></p>}
   {isBlogPost && <RelatedPosts />}
   {
@@ -154,3 +184,31 @@ const copy = isPt
     <p>{copy.bottomRight}</p>
   </div>
 </footer>
+
+<style>
+  .ae-author-bio {
+    border-top: 1px solid var(--ae-border, #64748b);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    color: var(--ae-muted, var(--sl-color-gray-3, #94a3b8));
+    font-size: .95rem;
+  }
+  .ae-author-bio p { margin: 0 0 .35rem; }
+  .ae-author-bio-name {
+    color: var(--sl-color-white, #fff);
+    font-weight: 600;
+  }
+  .ae-author-bio-handle {
+    color: var(--ae-muted, var(--sl-color-gray-3, #94a3b8));
+    font-family: var(--sl-font-mono, ui-monospace, monospace);
+    font-size: .85em;
+    font-weight: 400;
+  }
+  .ae-author-bio-role {
+    font-family: var(--sl-font-mono, ui-monospace, monospace);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .ae-author-bio-links a { color: inherit; }
+</style>
