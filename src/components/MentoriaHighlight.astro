@@ -1,0 +1,163 @@
+---
+// Destaque do produto de mentoria 1:1 na home PT.
+// Produto é PT-only (não há versão EN), por isso este bloco vive só no índice PT.
+---
+
+<section class="mh-wrap not-content" aria-labelledby="mh-title">
+  <div class="mh-card">
+    <div class="mh-media">
+      <img src="/assets/images/mentoria-1.webp" alt="Mentoria 1:1 — diagnóstico, plano de 90 dias e acompanhamento de carreira técnica" loading="eager" />
+    </div>
+    <div class="mh-copy">
+      <p class="mh-kicker">Mentoria 1:1 · Direção de Carreira</p>
+      <h2 id="mh-title">Pare de estudar no escuro</h2>
+      <p>
+        Diagnóstico honesto de onde você está, um plano de 90 dias que caiba na sua semana
+        e acompanhamento para você não desistir na terceira semana. Com quem tem 20+ anos
+        de C++ e sistemas de alta performance.
+      </p>
+      <div class="mh-meta">
+        <span>1:1</span>
+        <span>4 encontros</span>
+        <span>Vagas limitadas</span>
+      </div>
+      <div class="mh-actions">
+        <a class="mh-btn" href="/pt/mentoria/">Conhecer a mentoria</a>
+        <a class="mh-btn ghost" href="/pt/shop/">Ver todos os produtos</a>
+      </div>
+      <p class="mh-price">A partir de <strong>R$ 297</strong> — sessão de diagnóstico avulsa.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer starlight.components {
+  .mh-wrap {
+    margin: 0 0 2rem;
+  }
+
+  .mh-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-accent);
+    border-radius: 0.5rem;
+    background: var(--ae-surface, var(--sl-color-bg-nav));
+    box-shadow: 0 0 0 1px var(--sl-color-accent), var(--sl-shadow-sm);
+  }
+
+  .mh-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mh-copy {
+    display: grid;
+    align-content: center;
+    gap: 0.85rem;
+    padding: 1.75rem;
+  }
+
+  .mh-kicker {
+    margin: 0;
+    color: color-mix(in srgb, var(--sl-color-accent) 55%, var(--sl-color-white));
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .mh-copy h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.15;
+    color: var(--sl-color-text);
+  }
+
+  .mh-copy p {
+    margin: 0;
+    color: var(--sl-color-text);
+    opacity: 0.88;
+    line-height: 1.65;
+  }
+
+  .mh-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .mh-meta span {
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--sl-color-accent);
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--sl-color-accent) 12%, transparent);
+    color: var(--sl-color-text);
+    font-family: var(--sl-font-mono, monospace);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .mh-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .mh-card .mh-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid var(--sl-color-accent);
+    border-radius: 3px;
+    background: var(--sl-color-accent);
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 140ms, color 140ms;
+  }
+
+  .mh-card .mh-btn:hover {
+    background: transparent;
+    color: var(--sl-color-accent) !important;
+  }
+
+  .mh-card .mh-btn.ghost {
+    background: transparent;
+    color: var(--sl-color-text) !important;
+    border-color: var(--ae-border, var(--sl-color-hairline));
+  }
+
+  .mh-card .mh-btn.ghost:hover {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-accent) !important;
+  }
+
+  .mh-price {
+    font-size: 0.85rem;
+    color: color-mix(in srgb, var(--sl-color-text) 75%, transparent);
+  }
+
+  @media (max-width: 768px) {
+    .mh-card {
+      grid-template-columns: 1fr;
+    }
+
+    .mh-media img {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+
+    .mh-copy {
+      padding: 1.35rem;
+    }
+  }
+  }
+</style>

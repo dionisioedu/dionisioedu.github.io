@@ -24,8 +24,7 @@
 
 - [Shop](https://dionisio.dev/en/shop/): Guides, ebooks and digital products for developers.
 
-## Mentorship
+## Mentorship (PT-BR only)
 
-- [1:1 Mentorship](https://dionisio.dev/en/mentorship/): Technical and career 1:1 mentorship — diagnosis, a 90-day plan and follow-through for developers. Diagnosis session from $99.
-- [Mentoria 1:1 (PT-BR)](https://dionisio.dev/pt/mentoria/): Mentoria técnica e de carreira 1:1 — diagnóstico, plano de 90 dias e acompanhamento. A partir de R$ 297.
-- [Diagnosis template (sample deliverable)](https://dionisio.dev/material/diagnosis-template.md): The diagnosis document mentees receive after Session 1.
+- [Mentoria 1:1](https://dionisio.dev/pt/mentoria/): Mentoria técnica e de carreira 1:1 — diagnóstico, plano de 90 dias e acompanhamento. A partir de R$ 297.
+- [Diagnóstico (modelo entregável)](https://dionisio.dev/material/diagnostico-modelo.md): O documento de diagnóstico que o mentorado recebe após a Sessão 1.

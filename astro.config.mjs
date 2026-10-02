@@ -102,11 +102,6 @@ export default defineConfig({
   site: 'https://dionisio.dev',
   base: '/',
   output: 'static',
-  redirects: {
-    // Starlight's locale fallback mirrors the English page into the PT locale.
-    // The PT page lives at /pt/mentoria/ — send the mirrored URL there.
-    '/pt/mentorship': '/pt/mentoria/',
-  },
   integrations: [
     starlight({
       title: 'Dionisio Developer',
@@ -275,7 +270,6 @@ export default defineConfig({
                 { label: 'Advanced C++ Guide', link: 'ebooks/advanced-cpp-guide/' },
               ],
             },
-            { label: '1:1 Mentorship', link: 'mentorship/' },
             { label: 'Shop', link: 'shop/' },
             { label: 'Open Source', link: 'open-source/' },
             { label: 'About', link: 'about/' },
