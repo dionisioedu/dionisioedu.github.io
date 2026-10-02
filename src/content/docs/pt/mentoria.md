@@ -92,10 +92,15 @@ Se é a primeira vez, comece pela **Sessão de Diagnóstico**. Ela existe justam
 
 ## Como começar
 
+O primeiro passo é me chamar direto. Escolhe o canal que preferir:
+
 <div class="ae-hero-actions">
-  <a class="ae-cta" href="#agendar">Agendar o diagnóstico</a>
-  <a class="ae-cta secondary" href="#faq">Ver perguntas frequentes</a>
+  <a class="ae-cta" href="https://wa.me/5511996643485?text=Ol%C3%A1%20Dionisio%2C%20quero%20entender%20melhor%20a%20mentoria%201%3A1." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a class="ae-cta secondary" href="mailto:ceduardodfernandes@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20entender%20melhor">E-mail</a>
+  <a class="ae-cta secondary" href="https://t.me/dionisiodev" target="_blank" rel="noopener noreferrer">Telegram</a>
 </div>
+
+Me conta em uma frase onde você está travado e qual é o seu objetivo. Eu respondo dizendo se faz sentido pro seu momento — se não fizer, eu falo também.
 
 ### Vagas
 
@@ -137,15 +142,17 @@ A Sessão de Diagnóstico é a porta de entrada justamente por isso: baixo compr
 
 ## Ainda em dúvida?
 
-Escreve pra mim no [X (@dionisiodev)](https://x.com/dionisiodev) ou no [LinkedIn](https://www.linkedin.com/in/dionisiodev/). Se fizer sentido pro seu momento, eu falo — se não fizer, eu também falo.
+Me chama no [WhatsApp](https://wa.me/5511996643485), manda um [e-mail](mailto:ceduardodfernandes@gmail.com) ou me encontra no [Telegram (@dionisiodev)](https://t.me/dionisiodev) e no [X (@dionisiodev)](https://x.com/dionisiodev). Se fizer sentido pro seu momento, eu falo — se não fizer, eu também falo.
 
 <div class="ae-feature-copy" id="agendar">
   <p class="ae-kicker">PRÓXIMO PASSO</p>
   <h2>Comece pelo diagnóstico</h2>
-  <p>90 minutos, um documento de plano de 90 dias, e clareza sobre o que fazer nos próximos meses.</p>
+  <p>90 minutos, um documento de plano de 90 dias, e clareza sobre o que fazer nos próximos meses. O primeiro passo é me chamar — respondo pessoalmente.</p>
 </div>
 
 <div class="ae-hero-actions">
-  <a class="ae-cta" href="https://x.com/dionisiodev" target="_blank" rel="noopener noreferrer">Falar comigo</a>
-  <a class="ae-cta secondary" href="/pt/shop/">Voltar à loja</a>
+  <a class="ae-cta" href="https://wa.me/5511996643485?text=Ol%C3%A1%20Dionisio%2C%20quero%20marcar%20a%20sess%C3%A3o%20de%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a class="ae-cta secondary" href="mailto:ceduardodfernandes@gmail.com?subject=Mentoria%201%3A1%20-%20sess%C3%A3o%20de%20diagn%C3%B3stico">E-mail</a>
+  <a class="ae-cta secondary" href="https://t.me/dionisiodev" target="_blank" rel="noopener noreferrer">Telegram</a>
+  <a class="ae-cta secondary" href="/pt/shop/">Ver a loja</a>
 </div>
