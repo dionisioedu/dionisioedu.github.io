@@ -8,8 +8,8 @@ tags:
   - Estudo
   - Mentoria
   - Iniciante
-cover: /assets/images/trainning-1.webp
-coverAlt: Pessoa estudando em frente ao computador com anotações ao lado, ilustrando o ciclo de estudo sem progresso
+cover: /assets/images/carreira-estudo.webp
+coverAlt: Capa do artigo sobre estudar muito sem sair do lugar, com fluxo de curso passivo para projeto real e direção
 ---
 
 Você abre o curso, assiste a aula, faz os exercícios, entende tudo na hora. Na semana seguinte, abre um projeto do zero e trava. Não sabe por onde começar. Volta pro próximo curso. Repete.

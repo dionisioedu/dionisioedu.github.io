@@ -133,6 +133,9 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Estudo há meses e não saio do lugar', link: 'artigos-tecnicos/estudo-meses-nao-saio-do-lugar/' },
+                { label: 'Seu currículo não passa da triagem', link: 'artigos-tecnicos/curriculo-nao-passa-da-triagem/' },
+                { label: 'Não sei se estou pronto para sênior', link: 'artigos-tecnicos/nao-sei-se-estou-pronto-para-senior/' },
                 { label: 'Corrotinas e Programação Assíncrona em C++', link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/' },
                 { label: 'Paralelismo vs. Concorrência', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
                 { label: 'C++ por Versão — Do C++98 ao C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
@@ -193,6 +196,7 @@ export default defineConfig({
                 { label: 'Guia Avançado C++', link: 'ebooks/guia-avancado-cpp/' },
               ],
             },
+            { label: 'Carreira em Tech', link: 'carreira/' },
             { label: 'Mentoria 1:1', link: 'mentoria/' },
             { label: 'Loja', link: 'shop/' },
             { label: 'Open Source', link: 'open-source/' },

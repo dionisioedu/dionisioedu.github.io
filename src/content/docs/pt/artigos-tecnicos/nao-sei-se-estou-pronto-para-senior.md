@@ -1,15 +1,15 @@
 ---
 title: 'Não sei se estou pronto para sênior — a resposta honesta sobre o gap'
 description: 'Você entrega o que pedem, resolve o que aparece, mas trava na hora de dar o próximo passo na carreira. O que separa pleno de sênior raramente é técnica — e é por isso que tanta gente fica parada no mesmo nível.'
-publishedAt: 2026-09-30
+publishedAt: 2026-09-29
 author: Dionisio
 tags:
   - Carreira
   - Senioridade
   - Mentoria
   - Mercado
-cover: /assets/images/desktop-3.webp
-coverAlt: Estação de trabalho de um desenvolvedor com múltiplas telas, ilustrando decisões de arquitetura e carreira
+cover: /assets/images/carreira-senioridade.webp
+coverAlt: Capa do artigo sobre o gap de senioridade, com fluxo de pleno para decisão sob risco e sênior
 ---
 
 Você tem anos de experiência. Entrega o que pedem, resolve os bugs, participa das reuniões, não trava o time. E mesmo assim, na hora de pleitear uma vaga sênior ou pedir uma promoção, vem a dúvida: "será que eu estou pronto?"

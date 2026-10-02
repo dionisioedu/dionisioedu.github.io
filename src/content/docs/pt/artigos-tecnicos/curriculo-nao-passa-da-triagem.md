@@ -8,8 +8,8 @@ tags:
   - Currículo
   - Mentoria
   - Mercado
-cover: /assets/images/office-1.webp
-coverAlt: Mesa de trabalho com currículo e laptop, ilustrando o processo de triagem de candidaturas
+cover: /assets/images/carreira-curriculo.webp
+coverAlt: Capa do artigo sobre currículo que não passa da triagem, com fluxo de 30 segundos para evidência e entrevista
 ---
 
 Você enviou 40 currículos, recebeu duas respostas automáticas e nenhum convite. A conclusão que a cabeça tira é sempre a mesma: "falta experiência". Então você vai estudar mais, faz mais um projeto, e nada muda — porque o problema quase nunca está lá.
