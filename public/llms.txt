@@ -6,6 +6,7 @@
 
 - [Technical Articles (Blog)](https://dionisio.dev/en/artigos-tecnicos/): All English technical articles on C++, performance, applied AI and career.
 - [RAII in C++ — Ownership as a Type, Not a Convention](https://dionisio.dev/en/artigos-tecnicos/raii/): Deterministic resource management and RAII in modern C++.
+- [Move Semantics in C++ — std::move Doesn't Move Anything](https://dionisio.dev/en/artigos-tecnicos/move-semantics/): Rvalue references, value categories, and why the copy you thought you removed still runs.
 - [Smart Pointers in C++ — unique_ptr, shared_ptr and weak_ptr](https://dionisio.dev/en/artigos-tecnicos/smart-pointers/): Choosing the right smart pointer and how ownership works.
 - [C++ by Version — What Changed from C++98 to C++26](https://dionisio.dev/en/artigos-tecnicos/cpp-versoes-features/): A per-version tour of the C++ language and standard library.
 - [C++ in High-Frequency Trading — What Actually Matters for Low Latency](https://dionisio.dev/en/artigos-tecnicos/cpp-hft-low-latency/): Low-latency C++ engineering and performance in HFT systems.

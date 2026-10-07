@@ -241,6 +241,7 @@ Se você está no começo da sua jornada em C++, RAII é o conceito que vale sab
 ## Continue Lendo
 
 - [Smart Pointers em C++](/pt/artigos-tecnicos/smart-pointers/) — como ownership-como-tipo vira os três tipos concretos que você de fato usa, e quanto cada um custa.
+- [Move Semantics em C++](/pt/artigos-tecnicos/move-semantics/) — por que o `std::move` é um cast e não uma ação, e onde a cópia que você achou ter removido continua rodando.
 - [C++ por Versão](/pt/artigos-tecnicos/cpp-versoes-features/) — quando `unique_ptr`, `make_unique`, o padrão `noexcept` e `std::uncaught_exceptions` entraram no padrão.
 - [Trilha prática de C++](/pt/reference/trilha-cpp/) — o módulo de ownership, exercícios e um checklist gratuito de modernização.
 - [Cache Affinity](/pt/artigos-tecnicos/cache-affinity/) — onde decisões de ownership viram performance.

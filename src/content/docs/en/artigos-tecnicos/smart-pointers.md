@@ -218,6 +218,7 @@ Note what is missing: none of these questions are about `delete`. RAII already s
 ## Keep Reading
 
 - [RAII in C++](/en/artigos-tecnicos/raii/) — the mechanism these types are built on, and where ownership in a type system comes from.
+- [Move Semantics in C++](/en/artigos-tecnicos/move-semantics/) — the cast that makes `unique_ptr` a first-class owner, and the six ways the move silently becomes a copy.
 - [Parallelism vs. Concurrency](/en/artigos-tecnicos/paralelismo-vs-concorrencia/) — the context where the atomic-increment cost and the thread-safety caveat actually bite.
 - [Practical C++ learning path](/en/reference/trilha-cpp/) — ownership, move semantics, ranges and performance, with exercises and a free checklist.
 - [C++ by Version](/en/artigos-tecnicos/cpp-versoes-features/) — when `make_shared`, `make_unique` and `atomic<shared_ptr>` arrived.

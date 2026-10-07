@@ -218,6 +218,7 @@ Repare no que falta: nenhuma dessas perguntas é sobre `delete`. O RAII já reso
 ## Continue Lendo
 
 - [RAII em C++](/pt/artigos-tecnicos/raii/) — o mecanismo sobre o qual esses tipos são construídos, e de onde vem ownership no sistema de tipos.
+- [Move Semantics em C++](/pt/artigos-tecnicos/move-semantics/) — o cast que faz do `unique_ptr` um dono de primeira classe, e as seis formas de o move virar cópia em silêncio.
 - [Paralelismo vs. Concorrência](/pt/artigos-tecnicos/paralelismo-vs-concorrencia/) — o contexto onde o custo do incremento atômico e a ressalva de thread-safety realmente mordem.
 - [Trilha prática de C++](/pt/reference/trilha-cpp/) — ownership, move semantics, ranges e performance, com exercícios e um checklist gratuito.
 - [C++ por Versão](/pt/artigos-tecnicos/cpp-versoes-features/) — quando `make_shared`, `make_unique` e `atomic<shared_ptr>` chegaram.
