@@ -318,8 +318,8 @@ const pathHref = locale === 'pt' ? '/pt/reference/trilha-cpp/' : '/en/reference/
   }
 
   .dd-dl-spec dt {
-    color: var(--sl-color-accent);
-    font-size: 0.68rem;
+    color: var(--sl-color-accent-high, var(--sl-color-accent));
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -340,7 +340,8 @@ const pathHref = locale === 'pt' ? '/pt/reference/trilha-cpp/' : '/en/reference/
     padding: 0 1rem;
     border-radius: 0.5rem;
     background: var(--sl-color-accent);
-    color: var(--sl-color-text-invert);
+    color: #fff !important;
+    -webkit-text-fill-color: #fff;
     font-weight: 700;
     text-decoration: none;
   }
@@ -348,7 +349,8 @@ const pathHref = locale === 'pt' ? '/pt/reference/trilha-cpp/' : '/en/reference/
   .dd-dl-btn.secondary {
     border: 1px solid var(--ae-border-strong);
     background: transparent;
-    color: var(--sl-color-white);
+    color: var(--sl-color-white) !important;
+    -webkit-text-fill-color: var(--sl-color-white);
   }
 
   .dd-dl-links {
