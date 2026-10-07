@@ -25,6 +25,13 @@
 
 - [Shop](https://dionisio.dev/en/shop/): Guides, ebooks and digital products for developers.
 
+## Downloads
+
+- [Downloads](https://dionisio.dev/en/downloads/): Free technical wallpapers and checklists. No signup, no email.
+- [Data Structures Blueprint wallpaper](https://dionisio.dev/downloads/wallpapers/data-structures-wallpaper.png): 1920x1080 PNG reference for arrays, linked lists, hash tables, stacks, queues, trees and graphs with operation complexities.
+- [C++ modernization checklist (EN, Markdown)](https://dionisio.dev/downloads/cpp-modernization-checklist-en.md): A code-review checklist for taking one legacy C++ change to review.
+- [Checklist de modernização de C++ (PT, Markdown)](https://dionisio.dev/downloads/cpp-modernization-checklist-pt.md): O mesmo checklist em português.
+
 ## Mentorship (PT-BR only)
 
 - [Mentoria 1:1](https://dionisio.dev/pt/mentoria/): Mentoria técnica e de carreira 1:1 — diagnóstico, plano de 90 dias e acompanhamento. A partir de R$ 297.

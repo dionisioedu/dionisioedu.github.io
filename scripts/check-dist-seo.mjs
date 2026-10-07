@@ -27,6 +27,8 @@ for (const locale of ['en', 'pt']) {
   assert(rss.includes(`https://dionisio.dev/${route}`));
   assert(fs.existsSync(`dist/${locale}/reference/trilha-cpp/index.html`));
   assert(fs.existsSync(`dist/downloads/cpp-modernization-checklist-${locale}.md`));
+  assert(fs.existsSync(`dist/${locale}/downloads/index.html`));
+  assert(fs.existsSync('dist/downloads/wallpapers/data-structures-wallpaper.png'));
 }
 assert(fs.readFileSync('dist/robots.txt', 'utf8').includes('https://dionisio.dev/sitemap-index.xml'));
 console.log('Release canonical, alternates, schema, feeds and learning assets passed.');

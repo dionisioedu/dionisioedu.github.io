@@ -1,0 +1,373 @@
+---
+interface Props {
+  locale: 'pt' | 'en';
+}
+
+const { locale } = Astro.props;
+
+const wallpapers = {
+  pt: [
+    {
+      id: 'data-structures-wallpaper',
+      file: '/downloads/wallpapers/data-structures-wallpaper.png',
+      preview: '/downloads/wallpapers/data-structures-wallpaper.png',
+      title: 'Data Structures Blueprint',
+      body: 'Referência visual de arrays, listas ligadas, hash tables, pilhas, filas, árvores e grafos — com as complexidades de cada operação na cara, para consultar sem abrir uma aba.',
+      resolution: '1920 × 1080',
+      format: 'PNG',
+      tags: ['Estruturas de dados', 'Big-O', 'Referência'],
+    },
+  ],
+  en: [
+    {
+      id: 'data-structures-wallpaper',
+      file: '/downloads/wallpapers/data-structures-wallpaper.png',
+      preview: '/downloads/wallpapers/data-structures-wallpaper.png',
+      title: 'Data Structures Blueprint',
+      body: 'A visual reference for arrays, linked lists, hash tables, stacks, queues, trees, and graphs — with each operation complexity right there, no extra tab needed.',
+      resolution: '1920 × 1080',
+      format: 'PNG',
+      tags: ['Data structures', 'Big-O', 'Reference'],
+    },
+  ],
+} as const;
+
+const checklists = {
+  pt: [
+    {
+      id: 'cpp-modernization-checklist',
+      file: '/downloads/cpp-modernization-checklist-pt.md',
+      title: 'Checklist de modernização de C++',
+      body: 'Um roteiro enxuto para levar uma mudança de C++ legado até a revisão: contexto, posse de recursos, compatibilidade, validação e a evidência que outra pessoa consegue conferir.',
+      format: 'Markdown',
+      tags: ['C++', 'Code review', 'Modernização'],
+    },
+  ],
+  en: [
+    {
+      id: 'cpp-modernization-checklist',
+      file: '/downloads/cpp-modernization-checklist-en.md',
+      title: 'C++ modernization checklist',
+      body: 'A lean path for taking one legacy C++ change to review: context, resource ownership, compatibility, validation, and evidence someone else can check.',
+      format: 'Markdown',
+      tags: ['C++', 'Code review', 'Modernization'],
+    },
+  ],
+} as const;
+
+const copy = {
+  pt: {
+    kicker: 'Downloads',
+    heroTitle: 'Materiais gratuitos para levar para a sua mesa',
+    heroBody:
+      'Wallpapers técnicos e checklists criados a partir do conteúdo do site. Sem cadastro, sem e-mail, sem pegadinha: clique e baixe. É o mesmo material que eu uso no dia a dia, só organizado para você.',
+    wallpapers: 'Wallpapers',
+    wallpapersTitle: 'Wallpapers técnicos',
+    wallpapersBody: 'Feitos para ficar no monitor e responder a pergunta antes de você pesquisar.',
+    checklists: 'Checklists',
+    checklistsTitle: 'Checklists e guias rápidos',
+    checklistsBody: 'Roteiros curtos para consultar durante uma revisão ou um estudo focado.',
+    download: 'Baixar',
+    resolution: 'Resolução',
+    format: 'Formato',
+    keepGoing: 'Continue',
+    keepGoingTitle: 'Este material nasceu do conteúdo do site',
+    keepGoingBody:
+      'Cada wallpaper e checklist sai de um artigo ou de uma trilha. Se ele foi útil, o texto completo aprofunda o assunto sem enrolação.',
+    readBlog: 'Ler os artigos',
+    readPath: 'Ver a trilha de C++',
+    license:
+      'Uso pessoal livre. Pode usar na sua máquina, no setup e no trabalho. Não revenda nem redistribua como se fosse seu.',
+  },
+  en: {
+    kicker: 'Downloads',
+    heroTitle: 'Free materials to take to your desk',
+    heroBody:
+      'Technical wallpapers and checklists built from the site content. No signup, no email, no catch: click and download. It is the same material I use day to day, just organized for you.',
+    wallpapers: 'Wallpapers',
+    wallpapersTitle: 'Technical wallpapers',
+    wallpapersBody: 'Made to sit on your monitor and answer the question before you search for it.',
+    checklists: 'Checklists',
+    checklistsTitle: 'Checklists and quick guides',
+    checklistsBody: 'Short paths to consult during a review or a focused study session.',
+    download: 'Download',
+    resolution: 'Resolution',
+    format: 'Format',
+    keepGoing: 'Keep going',
+    keepGoingTitle: 'This material came from the content on the site',
+    keepGoingBody:
+      'Every wallpaper and checklist comes out of an article or a learning path. If it helped, the full piece goes deeper without the fluff.',
+    readBlog: 'Read the articles',
+    readPath: 'See the C++ path',
+    license:
+      'Free for personal use. Put it on your machine, your setup, your work. Do not resell or redistribute it as your own.',
+  },
+} as const;
+
+const t = copy[locale];
+const wp = wallpapers[locale];
+const cl = checklists[locale];
+
+const blogHref = locale === 'pt' ? '/pt/artigos-tecnicos/' : '/en/artigos-tecnicos/';
+const pathHref = locale === 'pt' ? '/pt/reference/trilha-cpp/' : '/en/reference/trilha-cpp/';
+---
+
+<section class="dd-dl">
+  <div class="dd-dl-hero">
+    <h2>{t.heroTitle}</h2>
+    <p>{t.heroBody}</p>
+  </div>
+
+  <section class="dd-dl-section" id="wallpapers">
+    <p class="dd-dl-kicker">{t.wallpapers}</p>
+    <h2>{t.wallpapersTitle}</h2>
+    <p class="dd-dl-sub">{t.wallpapersBody}</p>
+    <div class="dd-dl-grid dd-dl-grid--wall">
+      {wp.map((item) => (
+        <article class="dd-dl-card">
+          <a class="dd-dl-preview" href={item.file} download data-analytics-event="file_download" data-content-id={item.id} data-content-language={locale}>
+            <img src={item.preview} alt={`${item.title} — ${t.wallpapersTitle}`} loading="lazy" />
+          </a>
+          <div class="dd-dl-card-body">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <div class="dd-dl-meta">
+              {item.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+            <dl class="dd-dl-spec">
+              <div>
+                <dt>{t.resolution}</dt>
+                <dd>{item.resolution}</dd>
+              </div>
+              <div>
+                <dt>{t.format}</dt>
+                <dd>{item.format}</dd>
+              </div>
+            </dl>
+            <a class="dd-dl-btn" href={item.file} download data-analytics-event="file_download" data-content-id={item.id} data-content-language={locale}>
+              {t.download}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="dd-dl-section" id="checklists">
+    <p class="dd-dl-kicker">{t.checklists}</p>
+    <h2>{t.checklistsTitle}</h2>
+    <p class="dd-dl-sub">{t.checklistsBody}</p>
+    <div class="dd-dl-grid">
+      {cl.map((item) => (
+        <article class="dd-dl-card">
+          <div class="dd-dl-card-body">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <div class="dd-dl-meta">
+              {item.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+            <dl class="dd-dl-spec">
+              <div>
+                <dt>{t.format}</dt>
+                <dd>{item.format}</dd>
+              </div>
+            </dl>
+            <a class="dd-dl-btn" href={item.file} download data-analytics-event="file_download" data-content-id={item.id} data-content-language={locale}>
+              {t.download}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="dd-dl-cta">
+    <p class="dd-dl-kicker">{t.keepGoing}</p>
+    <h2>{t.keepGoingTitle}</h2>
+    <p>{t.keepGoingBody}</p>
+    <div class="dd-dl-links">
+      <a class="dd-dl-btn" href={blogHref}>{t.readBlog}</a>
+      <a class="dd-dl-btn secondary" href={pathHref}>{t.readPath}</a>
+    </div>
+    <p class="dd-dl-license">{t.license}</p>
+  </section>
+</section>
+
+<style>
+  .dd-dl {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .dd-dl-hero,
+  .dd-dl-section,
+  .dd-dl-cta {
+    padding: 1.5rem;
+    border: 1px solid var(--ae-border);
+    border-radius: 0.5rem;
+    background: var(--ae-surface);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .dd-dl-kicker {
+    margin: 0 0 0.75rem;
+    color: var(--sl-color-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dd-dl-hero h2,
+  .dd-dl-section h2,
+  .dd-dl-cta h2 {
+    margin: 0;
+    color: var(--sl-color-white);
+    line-height: 1.08;
+  }
+
+  .dd-dl-hero h2 {
+    font-size: clamp(2rem, 2.8vw, 3rem);
+  }
+
+  .dd-dl-hero p,
+  .dd-dl-sub,
+  .dd-dl-card p,
+  .dd-dl-cta p {
+    color: var(--ae-muted);
+    line-height: 1.7;
+  }
+
+  .dd-dl-sub {
+    margin: 0.5rem 0 1.25rem;
+  }
+
+  .dd-dl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1rem;
+  }
+
+  .dd-dl-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--ae-border);
+    border-radius: 0.5rem;
+    background: var(--ae-surface);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .dd-dl-preview {
+    display: block;
+    border-bottom: 1px solid var(--ae-border);
+    background: #0d1418;
+  }
+
+  .dd-dl-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .dd-dl-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .dd-dl-card h3 {
+    margin: 0;
+    color: var(--sl-color-white);
+    line-height: 1.15;
+  }
+
+  .dd-dl-card p {
+    margin: 0;
+  }
+
+  .dd-dl-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .dd-dl-meta span {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--ae-border-strong);
+    border-radius: 0.35rem;
+    color: var(--ae-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+  }
+
+  .dd-dl-spec {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+  }
+
+  .dd-dl-spec div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .dd-dl-spec dt {
+    color: var(--sl-color-accent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .dd-dl-spec dd {
+    margin: 0;
+    color: var(--ae-muted);
+    font-size: 0.85rem;
+  }
+
+  .dd-dl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    margin-top: auto;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    background: var(--sl-color-accent);
+    color: var(--sl-color-text-invert);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .dd-dl-btn.secondary {
+    border: 1px solid var(--ae-border-strong);
+    background: transparent;
+    color: var(--sl-color-white);
+  }
+
+  .dd-dl-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .dd-dl-license {
+    margin: 1.25rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ae-border);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 40rem) {
+    .dd-dl-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
