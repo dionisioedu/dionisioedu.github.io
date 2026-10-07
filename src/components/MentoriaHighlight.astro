@@ -47,11 +47,17 @@
     box-shadow: 0 0 0 1px var(--sl-color-accent), var(--sl-shadow-sm);
   }
 
+  .mh-media {
+    display: flex;
+    align-items: center;
+    background: #0d1418;
+  }
+
   .mh-media img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
   }
 
   .mh-copy {
@@ -152,7 +158,6 @@
 
     .mh-media img {
       height: auto;
-      aspect-ratio: 16 / 9;
     }
 
     .mh-copy {
