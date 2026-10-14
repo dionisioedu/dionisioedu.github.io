@@ -33,6 +33,15 @@ jobs:
       - name: Verify and build
         run: npm run verify
 
+      # Reconfigures the Pages site to "GitHub Actions" build mode.
+      # Without this, the Pages site stays in "legacy" (deploy from branch)
+      # mode, serves master:/ (Astro source, no index.html) and every URL 404s
+      # even though the deploy-pages job reports success.
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
