@@ -16,9 +16,9 @@ ferramentas para devs. Baseado no Brasil, trabalhando remotamente.
 - **Engenharia de IA** — IA aplicada, pipelines RAG locais, Vision Transformers, automação com
   n8n e LLMs.
 - **Arquitetura de performance** — projetando sistemas que escalam sem colapsar sob carga.
-- **Ferramentas e plataformas para devs** — construí o [Code Royale](https://coderoyale.app),
-  uma plataforma multiplayer de batalhas de código com WebSocket em tempo real, ranking Elo e
-  bots programáveis.
+- **Ferramentas e plataformas para devs** — construí o [Code Royale](https://coderoyale.site), um
+  jogo de programação competitivo 1v1 em tempo real com batalhas autoritativas via WebSocket, ranking
+  Elo por guerra e bots programáveis. [Estudo de caso completo →](/pt/projects/code-royale/)
 
 ### Filosofia
 
@@ -33,8 +33,8 @@ já publiquei mais de 10 mil posts e construí uma audiência de 8 mil+ devs.
 
 ### Open source
 
-- **[Code Royale](https://github.com/dionisioedu/code-royale)** — Batalhas de código multiplayer.
-  Backend Go, frontend Next.js, WebSocket, Judge0, ranking Elo.
+- **[Code Royale](https://github.com/dionisioedu/code-royale)** — Jogo de programação competitivo
+  1v1 em tempo real. Backend Go, frontend Next.js, WebSocket, ranking Elo por guerra, bots. [Estudo de caso](/pt/projects/code-royale/)
 - **[Wheel of List](https://github.com/dionisioedu/wheelofnames)** — Roleta de sorteio com mais
   de 10 ferramentas. Vanilla JS, GitHub Pages.
 - **[Amorfy](https://amorfy.com.br)** — Site de conteúdo sobre psicologia de relacionamentos.

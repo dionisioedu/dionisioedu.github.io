@@ -30,6 +30,20 @@ Esse tipo de leitura transforma portfólio em repertório.
 
 ## Projetos em destaque
 
+### [Code Royale](/pt/projects/code-royale/)
+
+Jogo de programação competitivo 1v1 em tempo real, com servidor autoritativo, matchmaking por Elo e bots.
+
+![Preview do Code Royale](/assets/images/code-royale.png)
+
+O que observar:
+
+- estado autoritativo sobre WebSocket e o que o cliente pode prever
+- um contador que fica correto em reconexão e aba em segundo plano
+- matchmaking que se alarga e cai para bot em vez de deixar a fila vazia
+- Elo por tópico: uma identidade, várias escadas
+- o banco de desafios tratado como problema de correção, não só de conteúdo
+
 ### [SportPulse.today](/pt/projects/sportpulse/)
 
 Produto orientado a dado em tempo real, com pressão de atualização, leitura rápida e backend como peça central.
@@ -81,6 +95,10 @@ Juntos, esses projetos mostram um padrão de interesse e execução:
 É essa combinação que organiza o restante do site também.
 
 ## Qual projeto abrir primeiro
+
+### Para ver estado em tempo real, tempo e confiança sob pressão
+
+Comece por [Code Royale](/pt/projects/code-royale/).
 
 ### Para ver backend, atualização e dado em contexto
 

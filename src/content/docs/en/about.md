@@ -16,8 +16,9 @@ tooling. Based in Brazil, working remotely.
 - **AI engineering** — applied AI, local RAG pipelines, Vision Transformers, automation with
   n8n and LLMs.
 - **Performance architecture** — designing systems that scale without falling apart under load.
-- **Developer tools & platforms** — built [Code Royale](https://coderoyale.app), a multiplayer
-  coding battle platform with real-time WebSocket gameplay, Elo ranking, and programmable bots.
+- **Developer tools & platforms** — built [Code Royale](https://coderoyale.site), a real-time 1v1
+  competitive coding game with authoritative WebSocket battles, per-war Elo ranking, and
+  programmable bots. [Full case study →](/en/projects/code-royale/)
 
 ### Philosophy
 
@@ -32,8 +33,8 @@ published over 10,000 posts and built an audience of 8,000+ developers.
 
 ### Open source
 
-- **[Code Royale](https://github.com/dionisioedu/code-royale)** — Multiplayer coding battles.
-  Go backend, Next.js frontend, WebSocket, Judge0, Elo ranking.
+- **[Code Royale](https://github.com/dionisioedu/code-royale)** — Real-time 1v1 competitive coding
+  game. Go backend, Next.js frontend, WebSocket, per-war Elo ranking, bots. [Case study](/en/projects/code-royale/)
 - **[Wheel of List](https://github.com/dionisioedu/wheelofnames)** — Random picker wheel with
   10+ tools. Vanilla JS, GitHub Pages.
 - **[Amorfy](https://amorfy.com.br)** — Relationship psychology content site. Static HTML,

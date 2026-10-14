@@ -133,6 +133,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Tempo, Estado e Confiança num Jogo em Tempo Real', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
                 { label: 'Estudo há meses e não saio do lugar', link: 'artigos-tecnicos/estudo-meses-nao-saio-do-lugar/' },
                 { label: 'Seu currículo não passa da triagem', link: 'artigos-tecnicos/curriculo-nao-passa-da-triagem/' },
                 { label: 'Não sei se estou pronto para sênior', link: 'artigos-tecnicos/nao-sei-se-estou-pronto-para-senior/' },
@@ -181,6 +182,7 @@ export default defineConfig({
               label: 'Portfólio',
               items: [
                 { label: 'Visão geral', link: 'projects/' },
+                { label: 'Code Royale', link: 'projects/code-royale/' },
                 { label: 'SportPulse.today', link: 'projects/sportpulse/' },
                 { label: 'Amorfy', link: 'projects/amorfy/' },
                 { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
@@ -212,6 +214,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Time, State and Trust in a Real-Time Game', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
                 { label: 'Coroutines and Asynchronous Programming in C++', link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/' },
                 { label: 'Parallelism vs. Concurrency', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
                 { label: 'C++ by Version — From C++98 to C++26', link: 'artigos-tecnicos/cpp-versoes-features/' },
@@ -261,6 +264,7 @@ export default defineConfig({
               label: 'Portfolio',
               items: [
                 { label: 'Overview', link: 'projects/' },
+                { label: 'Code Royale', link: 'projects/code-royale/' },
                 { label: 'SportPulse.today', link: 'projects/sportpulse/' },
                 { label: 'Amorfy', link: 'projects/amorfy/' },
                 { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
@@ -289,6 +293,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'Time, State and Trust in a Real-Time Game',
+              translations: { 'pt-BR': 'Tempo, Estado e Confiança num Jogo em Tempo Real' },
+              link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/',
+            },
             {
               label: 'Coroutines and Asynchronous Programming in C++',
               translations: { 'pt-BR': 'Corrotinas e Programação Assíncrona em C++' },
@@ -347,6 +356,7 @@ export default defineConfig({
           label: 'Portfólio',
           items: [
             { label: 'Visão geral', link: 'projects/' },
+            { label: 'Code Royale', link: 'projects/code-royale/' },
             { label: 'SportPulse.today', link: 'projects/sportpulse/' },
             { label: 'Amorfy', link: 'projects/amorfy/' },
             { label: 'Wheel Of List', link: 'projects/wheel-of-list/' },
