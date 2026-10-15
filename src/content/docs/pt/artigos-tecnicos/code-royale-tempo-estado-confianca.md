@@ -202,6 +202,8 @@ Se você quiser se aprofundar no código e no estudo de caso:
 
 - o [estudo de caso completo do Code Royale](/pt/projects/code-royale/) — arquitetura, trade-offs e
   exercícios de estudo
+- [Gamificando um Jogo de Programação](/pt/artigos-tecnicos/code-royale-gamificacao/) — a camada de
+  progressão: ofensiva, XP, missões pagas no servidor e o ranking mundial reconstruído
 - [Paralelismo vs. Concorrência](/pt/artigos-tecnicos/paralelismo-vs-concorrencia/) — o modelo mental
   por trás do timer e das goroutines do motor de batalha
 - [Cache Affinity](/pt/artigos-tecnicos/cache-affinity/) — o modelo de custo por trás de estado de

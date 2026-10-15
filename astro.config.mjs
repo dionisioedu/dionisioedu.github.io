@@ -133,6 +133,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Gamificando um Jogo de Programação: Ofensiva, XP e Ranking', link: 'artigos-tecnicos/code-royale-gamificacao/' },
                 { label: 'Tempo, Estado e Confiança num Jogo em Tempo Real', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
                 { label: 'Estudo há meses e não saio do lugar', link: 'artigos-tecnicos/estudo-meses-nao-saio-do-lugar/' },
                 { label: 'Seu currículo não passa da triagem', link: 'artigos-tecnicos/curriculo-nao-passa-da-triagem/' },
@@ -214,6 +215,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing', link: 'artigos-tecnicos/code-royale-gamificacao/' },
                 { label: 'Time, State and Trust in a Real-Time Game', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
                 { label: 'Coroutines and Asynchronous Programming in C++', link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/' },
                 { label: 'Parallelism vs. Concurrency', link: 'artigos-tecnicos/paralelismo-vs-concorrencia/' },
@@ -293,6 +295,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing',
+              translations: { 'pt-BR': 'Gamificando um Jogo de Programação: Ofensiva, XP e Ranking' },
+              link: 'artigos-tecnicos/code-royale-gamificacao/',
+            },
             {
               label: 'Time, State and Trust in a Real-Time Game',
               translations: { 'pt-BR': 'Tempo, Estado e Confiança num Jogo em Tempo Real' },

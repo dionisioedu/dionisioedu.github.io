@@ -200,6 +200,8 @@ If you want to dig into the code and the deeper case study:
 
 - the full [Code Royale case study](/en/projects/code-royale/) — architecture, trade-offs, and study
   exercises
+- [Gamifying a Coding Game](/en/artigos-tecnicos/code-royale-gamificacao/) — the progression layer:
+  streaks, XP, server-side mission payouts and the rebuilt world ranking
 - [Parallelism vs. Concurrency](/en/artigos-tecnicos/paralelismo-vs-concorrencia/) — the mental model
   behind the battle engine's timer and goroutines
 - [Cache Affinity](/en/artigos-tecnicos/cache-affinity/) — the cost model behind low-latency server
