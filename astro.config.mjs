@@ -133,6 +133,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'C# e C++ no Mesmo Processo — CLR, C++/CLI e a Fronteira Nativa', link: 'artigos-tecnicos/clr-cpp-cli-interop/' },
                 { label: 'Gamificando um Jogo de Programação: Ofensiva, XP e Ranking', link: 'artigos-tecnicos/code-royale-gamificacao/' },
                 { label: 'Tempo, Estado e Confiança num Jogo em Tempo Real', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
                 { label: 'Estudo há meses e não saio do lugar', link: 'artigos-tecnicos/estudo-meses-nao-saio-do-lugar/' },
@@ -215,6 +216,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'C# and C++ in the Same Process — CLR, C++/CLI, and the Native Boundary', link: 'artigos-tecnicos/clr-cpp-cli-interop/' },
                 { label: 'Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing', link: 'artigos-tecnicos/code-royale-gamificacao/' },
                 { label: 'Time, State and Trust in a Real-Time Game', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
                 { label: 'Coroutines and Asynchronous Programming in C++', link: 'artigos-tecnicos/corrotinas-programacao-assincrona-cpp/' },

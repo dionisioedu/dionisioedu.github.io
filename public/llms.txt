@@ -5,6 +5,7 @@
 ## Blog
 
 - [Technical Articles (Blog)](https://dionisio.dev/en/artigos-tecnicos/): All English technical articles on C++, performance, applied AI and career.
+- [C# and C++ in the Same Process — CLR, C++/CLI, and the Native Boundary](https://dionisio.dev/en/artigos-tecnicos/clr-cpp-cli-interop/): Calling a C++ function is easy; knowing who owns the memory after it returns is the job. CLR internals, C++/CLI bridges, P/Invoke, marshaling and lifetime contracts.
 - [Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing](https://dionisio.dev/en/artigos-tecnicos/code-royale-gamificacao/): Daily missions paid server-side, a breakable streak, XP independent of Elo, and rebuilding the world ranking on a shared grid definition.
 - [Time, State and Trust in a Real-Time Game](https://dionisio.dev/en/artigos-tecnicos/code-royale-tempo-estado-confianca/): What building a 1v1 real-time coding game taught about authoritative state, countdown drift, matchmaking fallbacks and per-topic Elo.
 - [RAII in C++ — Ownership as a Type, Not a Convention](https://dionisio.dev/en/artigos-tecnicos/raii/): Deterministic resource management and RAII in modern C++.
