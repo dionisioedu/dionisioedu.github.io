@@ -560,11 +560,11 @@ Esse princípio se aplica a qualquer sistema híbrido — uma aplicação Window
 ## Continue Lendo
 
 - [C++/CLI e Interop — a edição em inglês deste artigo](/en/artigos-tecnicos/clr-cpp-cli-interop/)
-- [RAII em C++ — Ownership Como Tipo, Não Como Convenção](/en/artigos-tecnicos/raii/) — a metade nativa do argumento deste artigo, em profundidade.
-- [Smart Pointers em C++ — unique_ptr, shared_ptr e weak_ptr](/en/artigos-tecnicos/smart-pointers/) — como manter o ownership real dentro da classe nativa.
-- [Paralelismo vs. Concorrência](/en/artigos-tecnicos/paralelismo-vs-concorrencia/) — o que "é thread-safe?" realmente pergunta.
-- [C++ em High-Frequency Trading](/en/artigos-tecnicos/cpp-hft-low-latency/) — por que limpeza determinística importa quando nanossegundos são dinheiro.
-- [A Trilha de Aprendizado C++](/en/reference/trilha-cpp/) — o módulo de ownership, exercícios e um checklist gratuito de modernização.
+- [RAII em C++ — Ownership Como Tipo, Não Como Convenção](/pt/artigos-tecnicos/raii/) — a metade nativa do argumento deste artigo, em profundidade.
+- [Smart Pointers em C++ — unique_ptr, shared_ptr e weak_ptr](/pt/artigos-tecnicos/smart-pointers/) — como manter o ownership real dentro da classe nativa.
+- [Paralelismo vs. Concorrência](/pt/artigos-tecnicos/paralelismo-vs-concorrencia/) — o que "é thread-safe?" realmente pergunta.
+- [C++ em High-Frequency Trading](/pt/artigos-tecnicos/cpp-hft-low-latency/) — por que limpeza determinística importa quando nanossegundos são dinheiro.
+- [A Trilha de Aprendizado C++](/pt/reference/trilha-cpp/) — o módulo de ownership, exercícios e um checklist gratuito de modernização.
 
 ## Referências
 
