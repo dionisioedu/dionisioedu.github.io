@@ -1,0 +1,25 @@
+---
+const { locale = 'en' } = Astro.props;
+const pt = locale === 'pt';
+---
+<figure class="ed-sketch" data-sketch data-mode="concurrent">
+  <div class="ed-sketch-top"><span>FIG. 01 / {pt ? 'MODELOS DE EXECUÇÃO' : 'EXECUTION MODELS'}</span><span aria-hidden="true">↙</span></div>
+  <svg viewBox="0 0 600 260" role="img" aria-labelledby={`sketch-title-${locale} sketch-desc-${locale}`}>
+    <title id={`sketch-title-${locale}`}>{pt ? 'Concorrência e paralelismo' : 'Concurrency and parallelism'}</title>
+    <desc id={`sketch-desc-${locale}`}>{pt ? 'Comparação conceitual entre tarefas intercaladas em uma linha de execução e tarefas simultâneas em duas linhas.' : 'Conceptual comparison of interleaved tasks on one execution lane and simultaneous tasks on two lanes.'}</desc>
+    <defs><pattern id={`sketch-grid-${locale}`} width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="currentColor" opacity=".08"/></pattern></defs>
+    <rect width="600" height="260" fill={`url(#sketch-grid-${locale})`}/>
+    <g class="sketch-axis" fill="none" stroke="currentColor"><path d="M65 110H550M65 186H550" stroke-dasharray="3 7" opacity=".3"/><path d="M65 233H550m-8-4 8 4-8 4"/></g>
+    <g class="sketch-labels" fill="currentColor" font-family="Consolas,monospace" font-size="12"><text x="15" y="115">01</text><text x="15" y="191">02</text><text x="470" y="253">{pt ? 'tempo →' : 'time →'}</text></g>
+    <g class="sketch-tasks" font-family="Georgia,serif" font-size="22" text-anchor="middle">
+      <g class="task task-a"><rect width="100" height="46" rx="3"/><text x="50" y="30">A₁</text></g>
+      <g class="task task-b"><rect width="100" height="46" rx="3"/><text x="50" y="30">B₁</text></g>
+      <g class="task task-c"><rect width="100" height="46" rx="3"/><text x="50" y="30">A₂</text></g>
+      <g class="task task-d"><rect width="100" height="46" rx="3"/><text x="50" y="30">B₂</text></g>
+    </g>
+    <text class="sketch-annotation" x="85" y="47" fill="currentColor" font-family="Georgia,serif" font-size="17" font-style="italic">{pt ? 'mesmas tarefas, outra organização.' : 'same tasks, a different arrangement.'}</text>
+  </svg>
+  <div class="ed-sketch-controls" hidden><button type="button" data-sketch-mode="concurrent" aria-pressed="true">{pt ? 'Concorrência' : 'Concurrency'}</button><button type="button" data-sketch-mode="parallel" aria-pressed="false">{pt ? 'Paralelismo' : 'Parallelism'}</button></div>
+  <figcaption data-sketch-caption data-concurrent={pt ? 'Tarefas avançam de forma intercalada em uma linha de execução.' : 'Tasks make interleaved progress on one execution lane.'} data-parallel={pt ? 'Duas linhas de execução trabalham ao mesmo tempo.' : 'Two execution lanes work at the same time.'}>{pt ? 'Tarefas avançam de forma intercalada em uma linha de execução.' : 'Tasks make interleaved progress on one execution lane.'}</figcaption>
+  <small>{pt ? 'Ilustração conceitual; não representa uma medição de desempenho.' : 'Conceptual illustration; not a performance measurement.'}</small>
+</figure>

@@ -1,9 +1,11 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import EditorialEnhancements from './EditorialEnhancements.astro';
 import type { StarlightRouteData } from '@astrojs/starlight/route-data';
 
 const { entry, locale, id } = (Astro.locals as { starlightRoute: StarlightRouteData }).starlightRoute;
 const { publishedAt, author } = entry.data;
+const isHome = /^\/(pt|en)\/$/.test(Astro.url.pathname);
 
 const isBlogPost =
   /(^|\/)artigos-tecnicos\/[^/]+$/.test(id) &&
@@ -25,7 +27,7 @@ const byLabel = currentLocale === 'pt' ? 'por' : 'by';
 ---
 
 <>
-  <Default />
+  {!isHome && <Default />}
   {
     isBlogPost && (dateLabel || authorLabel) && (
       <p class="ae-doc-meta">
@@ -35,4 +37,5 @@ const byLabel = currentLocale === 'pt' ? 'por' : 'by';
       </p>
     )
   }
+  {isBlogPost && <EditorialEnhancements locale={currentLocale} article />}
 </>

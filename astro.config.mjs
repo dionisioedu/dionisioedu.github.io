@@ -17,7 +17,7 @@ export default defineConfig({
         PageTitle: './src/components/DocsPageTitle.astro',
         PageSidebar: './src/components/PageSidebar.astro',
       },
-      customCss: ['./src/styles/global.css'],
+      customCss: ['./src/styles/global.css', './src/styles/editorial.css'],
       head: [
         {
           tag: 'link',

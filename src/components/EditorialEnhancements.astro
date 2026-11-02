@@ -1,0 +1,64 @@
+---
+const { locale = 'en', article = false } = Astro.props;
+const pt = locale === 'pt';
+---
+{article && <div class="ed-reading-tools" data-reading-tools data-pagefind-ignore hidden><span>{pt ? 'Sua leitura' : 'Your reading'}</span><button type="button" data-reading-size aria-pressed="false">A<span aria-hidden="true">+</span><span class="ed-sr-only">{pt ? ' Aumentar texto' : ' Enlarge text'}</span></button><button type="button" data-reading-focus aria-pressed="false">{pt ? 'Foco na leitura' : 'Reading focus'}</button><a href="#_top" class="ed-back-top">↑ {pt ? 'Início' : 'Top'}</a></div>}
+<dialog class="ed-image-dialog" aria-label={pt ? 'Imagem ampliada' : 'Expanded image'} data-image-dialog data-pagefind-ignore><button type="button" class="ed-dialog-close" autofocus>{pt ? 'Fechar' : 'Close'} <span aria-hidden="true">×</span></button><figure><img alt=""/><figcaption></figcaption></figure></dialog>
+{article && <div class="ed-page-progress" aria-hidden="true"></div>}
+<script>
+  function initEditorial() {
+    document.querySelectorAll<HTMLElement>('[data-sketch]').forEach(root => {
+      if(root.dataset.ready) return;
+      root.dataset.ready = 'true';
+      root.querySelector<HTMLElement>('.ed-sketch-controls')!.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>('[data-sketch-mode]').forEach(button => button.addEventListener('click',()=>{
+        const mode = button.dataset.sketchMode!;
+        root.dataset.mode = mode;
+        root.querySelectorAll<HTMLButtonElement>('[data-sketch-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+        const caption = root.querySelector<HTMLElement>('[data-sketch-caption]')!;
+        caption.textContent = caption.dataset[mode] || '';
+      }));
+    });
+    const dialog = document.querySelector<HTMLDialogElement>('[data-image-dialog]');
+    if(dialog && !dialog.dataset.ready){
+      dialog.dataset.ready = 'true';
+      const pt = document.documentElement.lang.startsWith('pt');
+      const close = dialog.querySelector<HTMLButtonElement>('button')!;
+      close.addEventListener('click',()=>dialog.close());
+      dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+      document.querySelectorAll<HTMLImageElement>('.sl-markdown-content img').forEach(img=>{
+        if(img.closest('a,button,.ed-home,dialog,[data-blog-feed]') || img.dataset.zoomReady) return;
+        img.dataset.zoomReady = 'true';
+        const button = document.createElement('button');
+        button.type = 'button';button.className = 'ed-zoom-button';button.textContent = pt ? 'Ampliar imagem ↗' : 'Enlarge image ↗';
+        button.setAttribute('aria-haspopup','dialog');
+        img.insertAdjacentElement('afterend',button);
+        button.addEventListener('click',()=>{
+          const target = dialog.querySelector<HTMLImageElement>('img')!;
+          target.src = img.currentSrc || img.src;target.alt = img.alt;
+          dialog.querySelector('figcaption')!.textContent = img.alt;
+          dialog.showModal();
+        });
+      });
+    }
+    const tools=document.querySelector<HTMLElement>('[data-reading-tools]');
+    if(tools && !tools.dataset.ready){
+      tools.dataset.ready='true';tools.hidden=false;
+      const size=tools.querySelector<HTMLButtonElement>('[data-reading-size]')!;
+      const focus=tools.querySelector<HTMLButtonElement>('[data-reading-focus]')!;
+      const setSize=(large:boolean)=>{document.documentElement.classList.toggle('ed-large-type',large);size.setAttribute('aria-pressed',String(large))};
+      try{setSize(localStorage.getItem('dionisio-reading-size')==='large')}catch{}
+      size.addEventListener('click',()=>{const large=size.getAttribute('aria-pressed')!=='true';setSize(large);try{localStorage.setItem('dionisio-reading-size',large?'large':'normal')}catch{}});
+      focus.addEventListener('click',()=>{const active=document.documentElement.classList.toggle('ed-reading-focus');focus.setAttribute('aria-pressed',String(active))});
+      if(!CSS.supports('animation-timeline: scroll()')){
+        const bar=document.querySelector<HTMLElement>('.ed-page-progress')!;
+        let queued=false;
+        const update=()=>{const total=document.documentElement.scrollHeight-innerHeight;bar.style.transform=`scaleX(${total>0?Math.min(1,Math.max(0,scrollY/total)):0})`;queued=false};
+        addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});
+        addEventListener('resize',update);update();
+      }
+    }
+  }
+  initEditorial();
+  document.addEventListener('astro:page-load',initEditorial);
+</script>

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { formatBlogDate, getLocalizedBlogPosts } from '../utils/blog';
+import { formatBlogDate, getLocalizedBlogPosts, getBlogTagSummary } from '../utils/blog';
 
 interface Props {
   locale: 'pt' | 'en';
@@ -12,7 +12,7 @@ const copy = {
   pt: {
     kicker: 'Dionisio Developer',
     lede:
-      'Textos sobre software, IA aplicada, produto e carreira, organizados em ordem de publicacao para leitura simples, direta e sem ruido.',
+      'Investigações sobre C++, performance, IA aplicada e as decisões por trás do software. Escolha um assunto e siga a sua curiosidade.',
     featuredLabel: 'Mais recente',
     recentLabel: 'Posts recentes',
     readMore: 'Ler mais',
@@ -25,7 +25,7 @@ const copy = {
   en: {
     kicker: 'Dionisio Developer',
     lede:
-      'Writing on software, applied AI, product, and career growth, organized in publishing order for direct reading without noise.',
+      'Investigations into C++, performance, applied AI and the decisions behind software. Choose a topic and follow your curiosity.',
     featuredLabel: 'Latest post',
     recentLabel: 'Recent posts',
     readMore: 'Read more',
@@ -39,6 +39,7 @@ const copy = {
 
 const docs = await getCollection('docs');
 const posts = getLocalizedBlogPosts(docs, locale);
+const filterTags = getBlogTagSummary(posts).slice(0, 8);
 
 const [featuredPost, ...recentPosts] = posts;
 const visibleRecentPosts = recentPosts.slice(0, 3);
@@ -60,6 +61,10 @@ const morePostsId = `${feedId}-more`;
     <p class="ae-lede">{labels.lede}</p>
     <p class="ae-filter-state" data-filter-state hidden></p>
   </header>
+  <nav class="ed-archive-filters" aria-label={locale === 'pt' ? 'Assuntos do acervo' : 'Archive topics'}>
+    <a href={Astro.url.pathname} data-blog-tag-link data-tag="" data-label={locale === 'pt' ? 'Todos' : 'All'}>{locale === 'pt' ? 'Todos' : 'All'}</a>
+    {filterTags.map(tag => <a href={`${Astro.url.pathname}?tag=${encodeURIComponent(tag.slug)}`} data-blog-tag-link data-tag={tag.slug} data-label={tag.label}>{tag.label} <small>{tag.count}</small></a>)}
+  </nav>
 
   {
     featuredPost && (

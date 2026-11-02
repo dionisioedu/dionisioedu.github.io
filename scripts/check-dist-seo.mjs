@@ -8,7 +8,8 @@ const canonical = (source) => tags(source, 'link').filter((tag) => tag.rel === '
 
 assert.deepEqual(canonical(html('')).map((t) => t.href), ['https://dionisio.dev/']);
 for (const locale of ['en', 'pt']) {
-  for (const alias of ['', 'blog/', 'artigos-tecnicos/']) {
+  assert.deepEqual(canonical(html(`${locale}/`)).map((t) => t.href), [locale === 'en' ? 'https://dionisio.dev/' : 'https://dionisio.dev/pt/']);
+  for (const alias of ['blog/', 'artigos-tecnicos/']) {
     assert.deepEqual(canonical(html(`${locale}/${alias}`)).map((t) => t.href), [`https://dionisio.dev/${locale}/artigos-tecnicos/`]);
   }
   const route = `${locale}/artigos-tecnicos/cpp-versoes-features/`;

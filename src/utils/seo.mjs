@@ -1,7 +1,9 @@
-/** Keep legacy blog indexes reachable while consolidating their search signals. */
+/** Localized homepages now have editorial content distinct from the archive. */
 export function canonicalPath(pathname) {
   const path = `/${pathname.replace(/^\/+|\/+$/g, '')}/`.replace('//', '/');
-  const listing = path.match(/^\/(pt|en)\/(?:index\/|blog\/|artigos-tecnicos\/)?$/);
+  if (/^\/en\/(?:index\/)?$/.test(path)) return '/';
+  if (/^\/pt\/(?:index\/)?$/.test(path)) return '/pt/';
+  const listing = path.match(/^\/(pt|en)\/(?:blog\/|artigos-tecnicos\/)$/);
   return listing ? `/${listing[1]}/artigos-tecnicos/` : path;
 }
 
