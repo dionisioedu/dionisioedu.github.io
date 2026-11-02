@@ -30,6 +30,20 @@ That kind of reading turns a portfolio into usable range.
 
 ## Featured projects
 
+### [Code Royale](/en/projects/code-royale/)
+
+A 1v1 real-time competitive coding game with an authoritative server, Elo matchmaking, and bots.
+
+![Code Royale preview](/assets/images/code-royale.png)
+
+What to observe:
+
+- authoritative state over WebSocket, and what the client is allowed to predict
+- a countdown that stays correct across reconnects and background tabs
+- matchmaking that widens its window and falls back to a bot instead of leaving a dead queue
+- per-topic Elo: one identity, many ladders
+- a challenge bank treated as a correctness problem, not just a content one
+
 ### [SportPulse.today](/en/projects/sportpulse/)
 
 A real-time data product with update pressure, fast consumption needs, and backend thinking at the center.
@@ -81,6 +95,10 @@ Taken together, these projects show a recognizable approach:
 That combination also shapes the rest of the site.
 
 ## Which project to open first
+
+### To see real-time state, time, and trust under pressure
+
+Start with [Code Royale](/en/projects/code-royale/).
 
 ### To see backend, updates, and data in context
 

@@ -1,0 +1,10 @@
+<script is:inline>
+  (() => {
+    let theme = 'light';
+    try {
+      const saved = localStorage.getItem('starlight-theme');
+      if (saved === 'dark' || saved === 'light') theme = saved;
+    } catch { /* Default to the editorial paper palette when storage is unavailable. */ }
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>

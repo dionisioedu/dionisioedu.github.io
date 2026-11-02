@@ -48,6 +48,18 @@ const copy = {
     viewPortfolio: 'Ver Portfólio',
     productsList: [
       {
+        featured: true,
+        image: '/assets/images/mentoria-1.webp',
+        alt: 'Sessão de mentoria técnica 1:1',
+        badge: 'Disponível',
+        title: 'Mentoria 1:1 — Direção de Carreira',
+        body: 'Diagnóstico honesto, plano de 90 dias e acompanhamento com quem tem 20+ anos de C++. Comece pela sessão de diagnóstico.',
+        meta: ['Mentoria', 'Carreira', 'Direção'],
+        currentPrice: 'A partir de R$ 297',
+        href: '/pt/mentoria/',
+        button: 'Ver detalhes',
+      },
+      {
         image: '/assets/images/books-1.webp',
         alt: 'Capa ilustrativa do Guia do Dev Iniciante',
         badge: 'Disponível',
@@ -90,16 +102,6 @@ const copy = {
         meta: ['Templates', 'Boilerplates', 'Produtividade'],
         currentPrice: 'Em breve',
         staticLabel: 'Lançamento futuro',
-      },
-      {
-        image: '/assets/images/office-1.webp',
-        alt: 'Sessão de mentoria técnica',
-        badge: 'Em breve',
-        title: 'Mentoria 1:1',
-        body: 'Uma proposta para revisar carreira, código, direção de estudo e próximos passos com contexto técnico.',
-        meta: ['Mentoria', 'Carreira', 'Direção'],
-        currentPrice: 'Em breve',
-        staticLabel: 'Abertura futura',
       },
       {
         image: '/assets/images/trilha-de-aprendizado.webp',
@@ -181,30 +183,6 @@ const copy = {
     viewPortfolio: 'View Portfolio',
     productsList: [
       {
-        image: '/assets/images/books-1.webp',
-        alt: 'Beginner Developer Guide cover art',
-        badge: 'Available',
-        title: 'Beginner Developer Guide',
-        body: 'A direct resource for landing the first role with stronger projects, positioning, and study structure.',
-        meta: ['eBook', 'Career', 'First job'],
-        oldPrice: '$9.99',
-        currentPrice: '$5.99',
-        href: 'https://pay.hotmart.com/F98094178H?off=fqzq49bv',
-        action: 'Buy now',
-      },
-      {
-        image: '/assets/images/books-2.webp',
-        alt: 'Advanced C++ guide cover art',
-        badge: 'Available',
-        title: 'Advanced C++: Quant Developer',
-        body: 'A deeper read for professional C++, performance thinking, and the quant market with real examples.',
-        meta: ['eBook', 'C++', 'Quant'],
-        oldPrice: '$14.99',
-        currentPrice: '$7.99',
-        href: 'https://pay.hotmart.com/M99932004R',
-        action: 'Buy now',
-      },
-      {
         image: '/assets/images/desktop-3.webp',
         alt: 'Software architecture workspace',
         badge: 'Coming soon',
@@ -223,16 +201,6 @@ const copy = {
         meta: ['Templates', 'Boilerplates', 'Productivity'],
         currentPrice: 'Coming soon',
         staticLabel: 'Future release',
-      },
-      {
-        image: '/assets/images/office-1.webp',
-        alt: 'Technical mentoring session',
-        badge: 'Coming soon',
-        title: '1:1 Mentoring',
-        body: 'A future offer for reviewing career direction, code, study plans, and next technical moves with context.',
-        meta: ['Mentoring', 'Career', 'Direction'],
-        currentPrice: 'Coming soon',
-        staticLabel: 'Future opening',
       },
       {
         image: '/assets/images/trilha-de-aprendizado.webp',
@@ -324,7 +292,7 @@ const t = copy[locale];
     <h2>{t.productsTitle}</h2>
     <div class="dd-shop-grid">
       {t.productsList.map((product) => (
-        <article class="dd-shop-card">
+        <article class:list={['dd-shop-card', { 'dd-shop-card--featured': product.featured }]}>
           <img src={product.image} alt={product.alt} loading="lazy" />
           <div class="dd-shop-card-body">
             <span class="dd-shop-badge">{product.badge}</span>
@@ -338,9 +306,13 @@ const t = copy[locale];
               <span class="dd-price-current">{product.currentPrice}</span>
             </div>
             {product.href ? (
-              <a class="dd-shop-buy" href={product.href} target="_blank" rel="noopener noreferrer">
-                {product.action}
-              </a>
+              product.href.startsWith('/') ? (
+                <a class="dd-shop-buy" href={product.href}>{product.button ?? t.buy}</a>
+              ) : (
+                <a class="dd-shop-buy" href={product.href} target="_blank" rel="noopener noreferrer">
+                  {product.action}
+                </a>
+              )
             ) : (
               <span class="dd-shop-link">{product.staticLabel}</span>
             )}
@@ -522,6 +494,29 @@ const t = copy[locale];
     box-shadow: var(--sl-shadow-sm);
   }
 
+  .dd-shop-card--featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    border-color: var(--sl-color-accent);
+    box-shadow: 0 0 0 1px var(--sl-color-accent), var(--sl-shadow-sm);
+  }
+
+  .dd-shop-card--featured img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .dd-shop-card--featured .dd-shop-card-body {
+    align-content: center;
+    gap: 0.85rem;
+    padding: 1.35rem;
+  }
+
+  .dd-shop-card--featured h3 {
+    font-size: 1.35rem;
+  }
+
   .dd-shop-card img,
   .dd-affiliate-card img {
     display: block;
@@ -591,6 +586,16 @@ const t = copy[locale];
     .dd-shop-grid,
     .dd-affiliate-grid {
       grid-template-columns: 1fr;
+    }
+
+    .dd-shop-card--featured {
+      grid-column: auto;
+      grid-template-columns: 1fr;
+    }
+
+    .dd-shop-card--featured img {
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
   }
 </style>

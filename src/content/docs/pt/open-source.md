@@ -9,15 +9,15 @@ Projetos que projetei, construí e coloquei em produção. Cada um resolve um pr
 
 ### Code Royale
 
-Plataforma multiplayer de batalhas de código. Gameplay em tempo real via WebSocket, bots
-programáveis, ranking Elo e um banco de desafios com 9 tópicos de programação.
+Jogo de programação competitivo 1v1 em tempo real. Batalhas autoritativas via WebSocket, ranking Elo
+por guerra, bots programáveis e um banco de desafios com nove tópicos de programação. [Estudo de caso completo →](/pt/projects/code-royale/)
 
 | | |
 |---|---|
-| **Stack** | Go, Next.js 15, TypeScript, PostgreSQL, Redis, WebSocket, Judge0 |
-| **Destaques** | Matchmaking lock-free, IA dos bots com escala Elo, i18n (PT/ES), Cloud Run |
+| **Stack** | Go, Next.js 15, TypeScript, PostgreSQL, Redis, WebSocket |
+| **Destaques** | Estado autoritativo em tempo real, matchmaking lock-free com fallback de bot, Elo por guerra, IA dos bots com escala Elo, i18n (PT/ES), Docker na AWS |
 | **Repo** | [github.com/dionisioedu/code-royale](https://github.com/dionisioedu/code-royale) |
-| **Ao vivo** | [coderoyale.app](https://coderoyale.app) |
+| **Ao vivo** | [coderoyale.site](https://coderoyale.site) |
 
 ### Wheel of List
 

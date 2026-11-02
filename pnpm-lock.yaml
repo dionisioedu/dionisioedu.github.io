@@ -14,6 +14,9 @@ importers:
       '@astrojs/rss':
         specifier: ^4.0.19
         version: 4.0.19
+      '@astrojs/sitemap':
+        specifier: ^3.7.3
+        version: 3.7.3
       '@astrojs/starlight':
         specifier: ^0.37.6
         version: 0.37.7(astro@5.18.2(@types/node@24.13.3)(rollup@4.62.2)(typescript@5.9.3)(yaml@2.9.0))
