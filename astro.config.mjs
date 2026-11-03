@@ -134,6 +134,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Uma entrevista falsa no caminho do ataque bilionário à Binance', link: 'artigos-tecnicos/binance-incidente-seguranca-2026/' },
                 { label: 'C# e C++ no Mesmo Processo — CLR, C++/CLI e a Fronteira Nativa', link: 'artigos-tecnicos/clr-cpp-cli-interop/' },
                 { label: 'Gamificando um Jogo de Programação: Ofensiva, XP e Ranking', link: 'artigos-tecnicos/code-royale-gamificacao/' },
                 { label: 'Tempo, Estado e Confiança num Jogo em Tempo Real', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
@@ -217,6 +218,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'A fake job interview on the path to Binance’s billion-dollar attack', link: 'artigos-tecnicos/binance-incidente-seguranca-2026/' },
                 { label: 'C# and C++ in the Same Process — CLR, C++/CLI, and the Native Boundary', link: 'artigos-tecnicos/clr-cpp-cli-interop/' },
                 { label: 'Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing', link: 'artigos-tecnicos/code-royale-gamificacao/' },
                 { label: 'Time, State and Trust in a Real-Time Game', link: 'artigos-tecnicos/code-royale-tempo-estado-confianca/' },
@@ -298,6 +300,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'A fake job interview on the path to Binance’s billion-dollar attack',
+              translations: { 'pt-BR': 'Uma entrevista falsa no caminho do ataque bilionário à Binance' },
+              link: 'artigos-tecnicos/binance-incidente-seguranca-2026/',
+            },
             {
               label: 'Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing',
               translations: { 'pt-BR': 'Gamificando um Jogo de Programação: Ofensiva, XP e Ranking' },
