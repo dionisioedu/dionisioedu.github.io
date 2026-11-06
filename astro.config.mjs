@@ -134,6 +134,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Jev Engineering em 10 passos', link: 'artigos-tecnicos/jev-engineering/' },
                 { label: 'Uma entrevista falsa no caminho do ataque bilionário à Binance', link: 'artigos-tecnicos/binance-incidente-seguranca-2026/' },
                 { label: 'C# e C++ no Mesmo Processo — CLR, C++/CLI e a Fronteira Nativa', link: 'artigos-tecnicos/clr-cpp-cli-interop/' },
                 { label: 'Gamificando um Jogo de Programação: Ofensiva, XP e Ranking', link: 'artigos-tecnicos/code-royale-gamificacao/' },
@@ -218,6 +219,7 @@ export default defineConfig({
             {
               label: 'Blog',
               items: [
+                { label: 'Jev Engineering in 10 steps', link: 'artigos-tecnicos/jev-engineering/' },
                 { label: 'A fake job interview on the path to Binance’s billion-dollar attack', link: 'artigos-tecnicos/binance-incidente-seguranca-2026/' },
                 { label: 'C# and C++ in the Same Process — CLR, C++/CLI, and the Native Boundary', link: 'artigos-tecnicos/clr-cpp-cli-interop/' },
                 { label: 'Gamifying a Coding Game: Streaks, XP and a Ranking Worth Chasing', link: 'artigos-tecnicos/code-royale-gamificacao/' },
@@ -300,6 +302,11 @@ export default defineConfig({
         {
           label: 'Blog',
           items: [
+            {
+              label: 'Jev Engineering in 10 steps',
+              translations: { 'pt-BR': 'Jev Engineering em 10 passos' },
+              link: 'artigos-tecnicos/jev-engineering/',
+            },
             {
               label: 'A fake job interview on the path to Binance’s billion-dollar attack',
               translations: { 'pt-BR': 'Uma entrevista falsa no caminho do ataque bilionário à Binance' },
